@@ -1,0 +1,18 @@
+.fontConteiner{
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+};
+.fontIconTag{
+    opacity: 0.25;
+
+    display: inline-block;
+    vertical-align: top;
+    text-align: end;
+    width: 37/403*100%;
+    font-weight: 400;
+};
+.fontIconText{
+    display: inline-block;
+    width: 336/402*100%;
+};

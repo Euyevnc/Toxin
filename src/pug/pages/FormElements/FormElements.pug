@@ -1,0 +1,21 @@
+extends ../../layout/layoutUIkit.pug
+include ../../includes/Inputs/TextField/TextField.pug
+block variables
+
+block head
+  link(rel="stylesheet" href="FormElements.css")
+  script(src="FormElements.js")
+  title= FormElements
+
+block content
+    span(class="bird")
+        include ../../includes/Images/logo.img.svg
+    .FormElementsWrapper
+        .ForemElementsConteiner
+            +TextField('TEXT FIELD', 'Email', 'DEFAULT')
+            +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active')
+
+        .ForemElementsConteiner
+        .ForemElementsConteiner
+
+block script

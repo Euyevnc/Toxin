@@ -1,0 +1,23 @@
+@import "../../layout/layoutUIkit.scss";
+@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/fonts/Quicksand.scss";
+@import "../../includes/Inputs/TextField/TextField_default.scss";
+@import "../../includes/Inputs/TextField/TextField_active.scss";
+
+.bird{
+	position: absolute;
+	left: 3rem;
+	top: 3rem;
+};
+.FormElementsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.ForemElementsConteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}

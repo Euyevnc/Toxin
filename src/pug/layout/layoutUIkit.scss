@@ -1,0 +1,18 @@
+.pageclass{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+html{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 10px;
+}
+.wrapper{
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    min-height: 900*(320/1440)*2.1 + px;
+    padding: 145px 150px;
+}

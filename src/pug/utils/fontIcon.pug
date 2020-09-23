@@ -1,0 +1,7 @@
+mixin fontIcon(tag,family, size, weight,line, text, opacity )
+    - if (!text) {text='Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
+    - if (!opacity) {opacity=1}
+    div(class="fontConteiner" style=`font-family:${family}; font-size:${size};line-height:${line}; color:#1F2041;`)
+        span(class="fontIconTag") #{tag}
+        div(class="fontIconText" style=`opacity:${opacity}; font-weight:${weight};`) #{text}
+

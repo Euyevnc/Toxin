@@ -1,0 +1,1 @@
+{"version":3,"sources":["colorAndTypes/colorAndTypes.js"],"names":["x","log","what","console"],"mappings":"aAEA,IAAOA,EAAG,YAENC,IAAG,SAAAC,GAACC,QAACD,IAAOA,IAACC,IAAAA","file":"colorAndTypes.js","sourcesContent":["\r\n\r\nconst x = 'RAAAAAAAA';\r\n\r\nlet log=(what)=>{console.log(what)};\r\nlog(\"нучёррт\");"]}
