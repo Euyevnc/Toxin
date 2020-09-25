@@ -1,21 +1,24 @@
 extends ../../layout/layoutUIkit.pug
 include ../../includes/Inputs/TextField/TextField.pug
+include ../../includes/Inputs/WithDropdown/WithDropdown.pug
+include ../../includes/Inputs/Mask_d-m-y/Mask_d-m-y.pug
 block variables
 
 block head
-  link(rel="stylesheet" href="FormElements.css")
-  script(src="FormElements.js")
-  title= FormElements
-
+    title= FormElements
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel="stylesheet" href="FormElements.css")
 block content
     span(class="bird")
         include ../../includes/Images/logo.img.svg
     .FormElementsWrapper
         .ForemElementsConteiner
             +TextField('TEXT FIELD', 'Email', 'DEFAULT')
-            +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active')
-
+            +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active').example
+            +WithDropdown('DROPDOWN', 'Сколько гостей', 'DEFAULT')
+            +Mask_d-m-y('MASKED TEXT FIELD', 'ДД.ММ.ГГГГ', 'DEFAULT' )
         .ForemElementsConteiner
         .ForemElementsConteiner
 
 block script
+

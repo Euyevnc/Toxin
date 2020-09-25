@@ -36,9 +36,9 @@ module.exports = {
 		// module: `${PATHS.src}/your-module.js`,
 	},
 	output: {
-		filename: `[name].js`,
-		path: PATHS.dist,
-		publicPath: '/'
+		filename: `./[name].js`,
+		path: path.resolve(__dirname, '../dist'),
+		publicPath: '../'
 	},
 	optimization: {
 		splitChunks: {

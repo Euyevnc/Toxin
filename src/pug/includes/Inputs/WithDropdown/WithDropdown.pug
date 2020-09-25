@@ -1,0 +1,17 @@
+mixin WithDropdown(label, placeholder, describe)
+    div(class=`TextField`)
+        p(class="TextFieldDescribe") #{describe}
+        include ../../Icons/arrow-down.pug 
+        label(style="font-weight:bold") #{label}
+                input(class="WithDropdown" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
+        div(class="WithDropdown-menu")
+            div(class="WithDropdown-element") Один
+            div(class="WithDropdown-element") Два
+            div(class="WithDropdown-element") Три 
+            div(class="WithDropdown-element") Четыре
+            div(class="WithDropdown-element") Пять 
+            div(class="WithDropdown-element") Более пяти
+
+
+
+    
