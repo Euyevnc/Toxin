@@ -2,6 +2,8 @@ extends ../../layout/layoutUIkit.pug
 include ../../includes/Inputs/TextField/TextField.pug
 include ../../includes/Inputs/WithDropdown/WithDropdown.pug
 include ../../includes/Inputs/Mask_d-m-y/Mask_d-m-y.pug
+include ../../includes/Inputs/Date-picker/Date-picker.pug
+include ../../includes/Inputs/Date-range/Date-range.pug
 block variables
 
 block head
@@ -17,6 +19,10 @@ block content
             +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active').example
             +WithDropdown('DROPDOWN', 'Сколько гостей', 'DEFAULT')
             +Mask_d-m-y('MASKED TEXT FIELD', 'ДД.ММ.ГГГГ', 'DEFAULT' )
+            div(style="display: flex; justify-content: space-between; width: 320px")
+                +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ')
+                +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ', 'filled-picker')
+            +Date-range('FILTER DATE DROPDOWN', 'Период', 'filled-picker')
         .ForemElementsConteiner
         .ForemElementsConteiner
 

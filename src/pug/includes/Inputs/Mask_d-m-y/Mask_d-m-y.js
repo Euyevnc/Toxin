@@ -1,4 +1,4 @@
-
+import $ from 'jquery';
 
 let fc3 = false
 
@@ -20,10 +20,5 @@ export default function(){
         item.addEventListener('mouseover', e=> {if(!fc3) inputfocus(e.target)} );
         item.addEventListener('mouseout', e=>{if(!fc3) inputnotfocus(e.target)} );
     });
-
-
-    jQuery(function($){
         $('.date').mask('99/99/9999');
-    });
-
 };

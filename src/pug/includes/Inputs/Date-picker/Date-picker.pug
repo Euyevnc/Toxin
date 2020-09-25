@@ -1,0 +1,7 @@
+mixin Date-picker(label, placeholder, filled)
+    - if(!filled){filled = ''}
+    - else{filled = 'filled-picker'}
+    div(class=`Date-picker`)
+        include ../../Icons/arrow-down.pug 
+        label(style="font-weight:bold") #{label}
+            input(class="Date-picker_value"+` ${filled}` placeholder=`${placeholder}`)

@@ -1,0 +1,7 @@
+mixin Date-range(label, placeholder, filled)
+    - if(!filled){filled = ''}
+    - else{filled = 'filled-range'}
+    div(class=`Date-range`)
+        include ../../Icons/arrow-down.pug 
+        label(style="font-weight:bold") #{label}
+            input(class="Date-range_value"+` ${filled}` placeholder=`${placeholder}`)

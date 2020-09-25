@@ -8,6 +8,8 @@
 @import "../../../assets/css/bootstrap.min.css";
 @import "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y_default.scss";
 @import "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y_active.scss";
+@import "../../includes/Inputs/Date-picker/Date-picker_default.scss";
+@import "../../includes/Inputs/Date-range/Date-range_default.scss";
 
 .bird{
 	position: absolute;
@@ -25,4 +27,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+}
+div{
+    z-index: 0;
 }
