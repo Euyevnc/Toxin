@@ -1,6 +1,7 @@
 import focusinput from '../../includes/Inputs/TextField/TextField.js'
 import withDropdown from '../../includes/Inputs/WithDropdown/WithDropdown.js'
 import Mask_d_m_y from "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y.js"
+import Field_arrow from "../../includes/Inputs/Field-with-arrow/Field-with-arrow.js"
 //import $ from 'jquery';
 //import 'bootstrap'
 import "../../plugins/jquery.maskinput.min.js"
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', function(e){
     Mask_d_m_y();
     Date_picker();
     Date_range();
+    Field_arrow();
 })

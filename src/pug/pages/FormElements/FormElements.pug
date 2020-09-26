@@ -4,6 +4,7 @@ include ../../includes/Inputs/WithDropdown/WithDropdown.pug
 include ../../includes/Inputs/Mask_d-m-y/Mask_d-m-y.pug
 include ../../includes/Inputs/Date-picker/Date-picker.pug
 include ../../includes/Inputs/Date-range/Date-range.pug
+include ../../includes/Inputs/Field-with-arrow/Field-with-arrow.pug
 block variables
 
 block head
@@ -23,6 +24,7 @@ block content
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ')
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ', 'filled-picker')
             +Date-range('FILTER DATE DROPDOWN', 'Период', 'filled-picker')
+            +Field-with-arrow('SUBSCRIPTION TEXT FIELD', 'Email')
         .ForemElementsConteiner
         .ForemElementsConteiner
 

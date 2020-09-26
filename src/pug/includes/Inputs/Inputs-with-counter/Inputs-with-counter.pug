@@ -1,0 +1,17 @@
+mixin Inputs-with-counter(label, placeholder, describe)
+    div(class=`Inputs-with-counter_textfield`)
+        p(class="Inputs-with-counter_describe") #{describe}
+        include ../../Icons/arrow-down.pug 
+        label(style="font-weight:bold") #{label}
+                input(class="Inputs-with-counter" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
+        div(class="Inputs-with-counter-menu")
+            div(class="Inputs-with-counter-element") Один
+            div(class="Inputs-with-counter-element") Два
+            div(class="Inputs-with-counter-element") Три 
+            div(class="Inputs-with-counter-element") Четыре
+            div(class="Inputs-with-counter-element") Пять 
+            div(class="Inputs-with-counter-element") Более пяти
+
+
+
+    

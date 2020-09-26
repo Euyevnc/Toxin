@@ -28,7 +28,6 @@ export default function(){
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 	
 	let inp = $(".Date-range_value")
-
     $(function(){
         inp.datepicker({
 			minDate: 0,
@@ -36,12 +35,18 @@ export default function(){
 			onSelect: function(dateText, inst, extensionRange) {
 				let start = extensionRange.startDateText;
 				let end = extensionRange.endDateText;
-				console.log(inp.value, start, end)
-				inp.val(`${start} - ${end}`)
+				inp.val(`${start} - ${end}`
+				)
 			  }
         });
 		$('div.ui-datepicker').css({ 'font-size': '15px',});
+		
+		try{$(".filled-range").datepicker("setDate", ['+0d', '+4d'])}
+		catch{}
+
+		let extensionRange = $('.Date-range_value').datepicker('widget').data('datepickerExtensionRange');
+		let start = extensionRange.startDateText;
+		let end = extensionRange.endDateText;
+		inp.val(`${start} - ${end}`)
     });
-
-
 };

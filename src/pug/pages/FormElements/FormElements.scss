@@ -10,6 +10,8 @@
 @import "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y_active.scss";
 @import "../../includes/Inputs/Date-picker/Date-picker_default.scss";
 @import "../../includes/Inputs/Date-range/Date-range_default.scss";
+@import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_default.scss";
+@import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_active.scss";
 
 .bird{
 	position: absolute;
@@ -30,4 +32,7 @@
 }
 div{
     z-index: 0;
+}
+input{
+    padding-left: 15px;
 }
