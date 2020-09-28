@@ -2,17 +2,17 @@
 @import "../../Icons/arrow-down.scss";
 
 
-.WithDropdown_textfield{
+.Inputs-with-counter_textfield{
     font-family: Montserrat;
     font-size: 12px;
     line-height: 14.5px;
-    width: 320px;
+    width: 266px;
     position: relative;
     margin-bottom: 2rem;
-    z-index: 1;
+    z-index: 0;
 
 };
-.WithDropdown_describe{
+.Inputs-with-counter_describe{
     color: rgba(31, 32, 65, 0.5);
     padding: 0px;
     margin: 0px;
@@ -24,42 +24,91 @@ label{
     display: block;
     margin-bottom: 0%;
 };
-.WithDropdown{
-    width: 100%;
-    height: 44px;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.25);
-    margin-top: 5px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-family: 'Montserrat';
-    transition-duration: 0.7s;
+.Inputs-with-counter{
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    color: rgba(31, 32, 65, 0.75);
+    border-color:rgba(31, 32, 65, 0.25);
     &::placeholder{
         color: rgba(31, 32, 65, 0.75);
     }
 };
-.WithDropdown-menu{
+.Inputs-with-counter-menu{
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
     position: absolute;
     top: 100%;
     left: 0%;
     font-size: 14px;
     line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
-    border-radius: 15px;
+    border-radius: 2px;
     font-family: 'Montserrat';
-    width: 280px;
-    z-index: 100;
+    width: 266px;
+    z-index: 1;
     background-color: white;
-};
-.WithDropdown-element{
-    width: 100%;
-    height: 44px;
-    border: 1px solid rgba(31, 32, 65, 0.155);
-    padding: 15px;
     display: none;
-    z-index: 100;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+};
+.Inputs-with-counter-element{
+    height: 44px;
+    width: 100%;
+    display: block;
+    z-index: 1;
     background-color: white;
+    list-style-type: none;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #1F2041;
+    padding-left: 1.5rem;
+    padding-right: 7px;
+
+}
+.Inputs-with-counter-counter{
+    
+    & .Inputs-with-counter-number{
+        border-radius: 0px;
+        border: none;
+        color: #1F2041;
+        font-weight: bold;
+        cursor: auto;
+    }
+    & span{
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 12px;
+        border-radius: 50%;
+        border: 1px solid rgba(31, 32, 65, 0.50);
+        color: rgba(31, 32, 65, 0.5);
+        display: inline-block;
+        font-weight: 400;
+        line-height: 30px;
+        vertical-align: middle;
+        cursor: pointer;
+        
+    }
 }
 
+.Inputs-with-counter_delete{
+    padding: 13px;
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Inputs-with-counter_confirm{
+    padding: 13px;
+    color: #BC9CFF;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -12,12 +12,34 @@
 @import "../../includes/Inputs/Date-range/Date-range_default.scss";
 @import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_default.scss";
 @import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_active.scss";
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_default.scss";
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_active.scss";
 
 .bird{
 	position: absolute;
 	left: 3rem;
-	top: 3rem;
+    top: 3rem;
 };
+input{
+    width: 100%;
+    line-height: 18px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.25);
+        transition-duration: 0.7s;
+    }
+    & .arrow-down{
+        color: rgba(31, 32, 65, 0.50);
+    }
+}
+
 .FormElementsWrapper{
     display: flex;
     flex-wrap: wrap;

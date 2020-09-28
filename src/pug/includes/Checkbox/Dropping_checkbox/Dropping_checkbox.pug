@@ -1,0 +1,11 @@
+mixin Dropping_checkbox(descr, ...issues)
+    div.Dropping_checkbpx_wrap
+        div.Dropping_checkbpx_head #{descr}
+        div.Dropping_checkbpx_cont
+            each val in issues
+                - var name = val.name
+                - var checked = val.checked
+                - if(!checked){checked = ''}
+                 label 
+                    input(`${checked}`, type="checkbox" class="Dropping_checkbpx_box")
+                    p #{name}

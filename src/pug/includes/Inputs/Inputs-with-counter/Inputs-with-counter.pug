@@ -1,16 +1,22 @@
-mixin Inputs-with-counter(label, placeholder, describe)
+mixin Inputs-with-counter(label, placeholder, describe, ...issues)
     div(class=`Inputs-with-counter_textfield`)
         p(class="Inputs-with-counter_describe") #{describe}
         include ../../Icons/arrow-down.pug 
         label(style="font-weight:bold") #{label}
                 input(class="Inputs-with-counter" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
-        div(class="Inputs-with-counter-menu")
-            div(class="Inputs-with-counter-element") Один
-            div(class="Inputs-with-counter-element") Два
-            div(class="Inputs-with-counter-element") Три 
-            div(class="Inputs-with-counter-element") Четыре
-            div(class="Inputs-with-counter-element") Пять 
-            div(class="Inputs-with-counter-element") Более пяти
+        ul(class="Inputs-with-counter-menu")
+            each val in issues
+                - var min = val.min
+                - var max = val.max
+                li(class="Inputs-with-counter-element")
+                    p(style="display: inline-block; margin: 0px;") #{val.name}
+                    span(class="Inputs-with-counter-counter" data-min=`${min}` data-max=`${max}`)
+                        span -
+                        span(class="Inputs-with-counter-number") #{val.base}
+                        span +
+            span(class="Inputs-with-counter_delete") ОЧИСТИТЬ
+            span(class="Inputs-with-counter_confirm") ПРИМЕНИТЬ
+
 
 
 

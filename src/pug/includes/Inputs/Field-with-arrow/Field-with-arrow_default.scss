@@ -4,7 +4,7 @@
     font-family: Montserrat;
     font-size: 12px;
     line-height: 14.5px;
-    width: 320px;
+    width: 267px;
     position: relative;
     margin-bottom: 2rem;
 };
@@ -18,21 +18,8 @@
 };
 .Field-with-arrow-value{
     width: 100%;
-    height: 44px;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.25);
-    margin-top: 5px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-family: 'Montserrat';
-    transition-duration: 0.7s;
-    &::placeholder{
-        color: rgba(31, 32, 65, 0.25);
-        transition-duration: 0.7s;
-    }
 }
+
 label{
     display: block;
 }

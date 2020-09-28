@@ -5,6 +5,9 @@ include ../../includes/Inputs/Mask_d-m-y/Mask_d-m-y.pug
 include ../../includes/Inputs/Date-picker/Date-picker.pug
 include ../../includes/Inputs/Date-range/Date-range.pug
 include ../../includes/Inputs/Field-with-arrow/Field-with-arrow.pug
+include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
+include ../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.pug
+
 block variables
 
 block head
@@ -25,8 +28,9 @@ block content
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ', 'filled-picker')
             +Date-range('FILTER DATE DROPDOWN', 'Период', 'filled-picker')
             +Field-with-arrow('SUBSCRIPTION TEXT FIELD', 'Email')
+            +Dropping_checkbox('expandable checkbox list', {name:'Завтрак'},{name:'Письменный стол', checked},{name:'Стул для кормления', checked})
         .ForemElementsConteiner
         .ForemElementsConteiner
-
+        .ForemElementsConteiner_hor
+            +Inputs-with-counter('DROPDOWN', '2 спальни, 2 кровати', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
 block script
-
