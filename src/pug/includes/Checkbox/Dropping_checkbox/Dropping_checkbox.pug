@@ -1,11 +1,15 @@
 mixin Dropping_checkbox(descr, ...issues)
-    div.Dropping_checkbpx_wrap
-        div.Dropping_checkbpx_head #{descr}
-        div.Dropping_checkbpx_cont
+    div.Dropping_checkbox_wrap
+        div.Dropping_checkbox_head #{descr}
+            include ../../Icons/arrow-down.pug 
+        div.Dropping_checkbox_cont
             each val in issues
+                - var id = val.id
                 - var name = val.name
-                - var checked = val.checked
-                - if(!checked){checked = ''}
-                 label 
-                    input(`${checked}`, type="checkbox" class="Dropping_checkbpx_box")
-                    p #{name}
+                - var checked = Boolean(val.checked)
+                div.Dropping_checkbox_div
+                    if checked 
+                        input(type="checkbox" id=`${id}` class="Dropping_checkbox_box" checked)
+                    else 
+                        input(type="checkbox" id=`${id}` class="Dropping_checkbox_box")
+                    label(for=`${id}`) #{name}

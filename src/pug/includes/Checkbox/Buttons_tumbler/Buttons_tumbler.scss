@@ -1,0 +1,67 @@
+
+.Buttons_tumbler_wrap{
+    font-family: 'Montserrat';
+}
+
+.Buttons_tumbler_head{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    position: relative;
+    
+}
+
+.Buttons_tumbler_wrap input[type="checkbox"]{
+    display: none;
+    & + label{ 
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 40px;
+        height: 20px;
+        position: relative;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        cursor: pointer;
+        border-radius: 25% / 50%;
+        transition-duration: 0.5s;
+        
+        &::before {
+            display: inline-block;
+            line-height: 20px;
+            content: "stop_circle";
+            font-family: 'Material Icons';
+            color: rgba(31, 32, 65, 0.25);
+            font-size: 13px;
+            position: absolute;
+            left: 1px;
+            transition-duration: 0.5s;
+
+        }
+
+    }
+
+}
+.Buttons_tumbler_wrap input[type="checkbox"]:checked{ 
+    & + label{ 
+        border: 1px solid  #BC9CFF;
+        transition-duration: 0.5s;
+        &::before {
+            color: #BC9CFF;
+            left: 25px;
+            transition-duration: 0.5s;
+        }
+    }
+
+}
+.Buttons_tumbler_text{
+    background-color: white;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    color: rgba(31, 32, 65, 0.75);
+    display: inline-block;
+    vertical-align: middle;
+}

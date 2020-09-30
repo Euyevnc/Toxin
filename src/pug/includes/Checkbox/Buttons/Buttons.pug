@@ -1,0 +1,15 @@
+mixin Buttons(descr, ...issues)
+    div.Buttons_wrap
+        div.Buttons_head #{descr}
+        div.Buttons_cont
+            each val in issues
+                - var id = val.id
+                - var name = val.name
+                - var checked = Boolean(val.checked)
+                div.Buttons_div
+                    if checked 
+                        input(name=`${descr}` value=`${id}` type="radio" id=`${id}` class="Buttons_box" checked)
+                    else 
+                        input(name=`${descr}` value=`${id}` type="radio" id=`${id}` class="Buttons_box")
+                    label(for=`${id}`) 
+                    p.Buttons_text #{name}

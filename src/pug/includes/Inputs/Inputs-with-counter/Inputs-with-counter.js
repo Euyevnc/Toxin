@@ -1,12 +1,11 @@
-
 export default function(){
     document.querySelectorAll(".Inputs-with-counter_textfield").forEach(par=>{
         let inp = par.querySelector('input');
         let list = par.querySelector('.Inputs-with-counter-menu');
         let listEl = list.querySelectorAll('li');
-        let sumof = false
-
-
+        let assign1
+        assign1 = 0
+        let assign2
         conf();
         listEl.forEach(li=>{
             let counter = li.querySelector('.Inputs-with-counter-counter')
@@ -19,6 +18,8 @@ export default function(){
             if (+numb.textContent == max){
                 depr(counter.lastChild)
             }
+            assign1+=(+numb.textContent)
+
 
             counter.firstChild.addEventListener('click', evmin)
             counter.lastChild.addEventListener('click', evplus)
@@ -27,7 +28,7 @@ export default function(){
                 let inc = Math.min(+numb.textContent+1, max)
                 numb.textContent = inc;
                 if (inc == max){depr(counter.lastChild)};
-                par.querySelector('.Inputs-with-counter_delete').style.display="inline-block";
+                par.querySelector('.Inputs-with-counter_delete').style.visibility= 'visible';
                 apr(counter.firstChild)
             }
             function evmin(){
@@ -35,12 +36,15 @@ export default function(){
                 numb.textContent = inc
                 if (inc == min){depr(counter.firstChild)};
                 apr(counter.lastChild);
+                assign2 = 0
+                listEl.forEach(el=>{
+                    assign2 +=(+el.querySelector('.Inputs-with-counter-number').textContent)
+
+                })
+                if (!assign2){par.querySelector('.Inputs-with-counter_delete').style.visibility= 'hidden';}
             }
-
-
-            sumof= Boolean(+numb.textContent)
-            if(!sumof){par.querySelector('.Inputs-with-counter_delete').style.display="none"}
         })
+        if(!assign1){par.querySelector('.Inputs-with-counter_delete').style.visibility= 'hidden'}
 
        
         inp.addEventListener('focus', e=>{
@@ -86,7 +90,7 @@ export default function(){
                 let limit = +item.querySelector('.Inputs-with-counter-counter').getAttribute('date-min')
                 item.querySelector('.Inputs-with-counter-number').textContent = `${limit}`;
                 let f = item.querySelector('.Inputs-with-counter-counter').firstChild;
-                par.querySelector('.Inputs-with-counter_delete').style.display="none";
+                par.querySelector('.Inputs-with-counter_delete').style.visibility= 'hidden';
                 depr(f)
                 conf()
             })

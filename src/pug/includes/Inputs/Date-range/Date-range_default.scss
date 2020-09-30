@@ -6,7 +6,6 @@
     position: relative;
     margin-bottom: 2rem;
     display: inline-block;
-
 };
 
 .Date-range_value{
@@ -15,3 +14,6 @@
 
     }
 };
+.ui-datepicker-calendar{
+    z-index: 10;
+}

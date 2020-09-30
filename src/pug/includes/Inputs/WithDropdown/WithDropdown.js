@@ -1,13 +1,3 @@
-let fc = false
-function inputfocus(item){
-    item.classList.add("WithDropdownactive");
-
-};
-function inputnotfocus(item){
-    item.classList.remove("WithDropdownactive");
-    
-};
-
 
 function jsUcfirst(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -16,19 +6,12 @@ function jsUcfirst(string){
 export default function(){
     let inputs = document.querySelectorAll('.WithDropdown');
 
-    inputs.forEach(item=>{
-        item.addEventListener('focus', e=> {fc = !fc; inputfocus(e.target)} );
-        item.addEventListener('blur', e=>{fc = !fc; inputnotfocus(e.target)} );
-        item.addEventListener('mouseover', e=> {if(!fc) inputfocus(e.target)} );
-        item.addEventListener('mouseout', e=>{if(!fc) inputnotfocus(e.target)} );
-    });
-
 
     document.querySelectorAll('.WithDropdown').forEach(inp =>{
+        
         inp.addEventListener('focus', e =>{
-            let drop = e.target.parentElement.nextElementSibling;
-            let dropch = drop.querySelectorAll('div')
-
+            let drop = e.target.closest('div').querySelector('.WithDropdown-menu');
+            let dropch = drop.querySelectorAll('div');
             dropch.forEach(ch=>{
                 ch.style.display = 'block';
                 ch.addEventListener('click', ev=>{
@@ -40,7 +23,7 @@ export default function(){
             })
         })
         inp.addEventListener('blur', e =>{
-            let drop = e.target.parentElement.nextElementSibling;
+            let drop = e.target.closest('div').querySelector('.WithDropdown-menu');
             let dropch = drop.querySelectorAll('div');
             setTimeout(()=>{
                 dropch.forEach(dropch =>{
@@ -49,7 +32,7 @@ export default function(){
             }, 100);
         })
         inp.addEventListener('input', e=>{
-            let drop = e.target.parentElement.nextElementSibling;
+            let drop = e.target.closest('div').querySelector('.WithDropdown-menu');
             let dropch = drop.querySelectorAll('div');
             inp.value = jsUcfirst(inp.value)
             dropch.forEach(e=>{

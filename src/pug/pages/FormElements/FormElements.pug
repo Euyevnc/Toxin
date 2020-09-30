@@ -7,7 +7,9 @@ include ../../includes/Inputs/Date-range/Date-range.pug
 include ../../includes/Inputs/Field-with-arrow/Field-with-arrow.pug
 include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
 include ../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.pug
-
+include ../../includes/Checkbox/Default_checkbox/Default_checkbox.pug
+include ../../includes/Checkbox/Buttons/Buttons.pug
+include ../../includes/Checkbox/Buttons_tumbler/Buttons_tumbler.pug
 block variables
 
 block head
@@ -27,10 +29,13 @@ block content
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ')
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ', 'filled-picker')
             +Date-range('FILTER DATE DROPDOWN', 'Период', 'filled-picker')
-            +Field-with-arrow('SUBSCRIPTION TEXT FIELD', 'Email')
-            +Dropping_checkbox('expandable checkbox list', {name:'Завтрак'},{name:'Письменный стол', checked},{name:'Стул для кормления', checked})
+            +Field-with-arrow('SUBSCRIPTION TEXT FIELD', 'Email')  
         .ForemElementsConteiner
+            +Default_checkbox('CHECKBOX BUTTONS', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей(до 10 человек)', id:'chd003', checked:"true"})
+            +Buttons('RADIO BUTTONS', {name:'Мужчина', id:'b001', checked:"true"},{name:'Женщина', id:'b002'})
+            +Buttons_tumbler('Toggle',{name:'Получать спецпредложения', id:"bt001"},{name:'Получать спецпредложения', id:"bt002", checked:"true"} )
         .ForemElementsConteiner
-        .ForemElementsConteiner_hor
-            +Inputs-with-counter('DROPDOWN', '2 спальни, 2 кровати', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+    .ForemElementsConteiner_hor
+        +Inputs-with-counter('DROPDOWN', '2 спальни, 2 кровати', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+        +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
 block script

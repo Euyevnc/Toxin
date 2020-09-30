@@ -9,7 +9,7 @@
     width: 266px;
     position: relative;
     margin-bottom: 2rem;
-    z-index: 0;
+    z-index: 5;
 
 };
 .Inputs-with-counter_describe{
@@ -27,6 +27,8 @@ label{
 .Inputs-with-counter{
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     color: rgba(31, 32, 65, 0.75);
     border-color:rgba(31, 32, 65, 0.25);
     &::placeholder{
@@ -34,6 +36,8 @@ label{
     }
 };
 .Inputs-with-counter-menu{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     position: absolute;
@@ -43,8 +47,6 @@ label{
     line-height: 18px;
     border-radius: 2px;
     font-family: 'Montserrat';
-    width: 266px;
-    z-index: 1;
     background-color: white;
     display: none;
     justify-content: space-between;
@@ -57,7 +59,6 @@ label{
     height: 44px;
     width: 100%;
     display: block;
-    z-index: 1;
     background-color: white;
     list-style-type: none;
     margin: 0px;
@@ -70,6 +71,7 @@ label{
     color: #1F2041;
     padding-left: 1.5rem;
     padding-right: 7px;
+    user-select: none;
 
 }
 .Inputs-with-counter-counter{

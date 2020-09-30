@@ -4,16 +4,17 @@
 @import "../../includes/Inputs/TextField/TextField_default.scss";
 @import "../../includes/Inputs/TextField/TextField_active.scss";
 @import "../../includes/Inputs/WithDropdown/WithDropdown_default.scss";
-@import "../../includes/Inputs/WithDropdown/WithDropdown_active.scss";
-@import "../../../assets/css/bootstrap.min.css";
+//@import "../../../assets/css/bootstrap.min.css";
 @import "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y_default.scss";
-@import "../../includes/Inputs/Mask_d-m-y/Mask_d-m-y_active.scss";
 @import "../../includes/Inputs/Date-picker/Date-picker_default.scss";
 @import "../../includes/Inputs/Date-range/Date-range_default.scss";
 @import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_default.scss";
-@import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_active.scss";
 @import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_default.scss";
-@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_active.scss";
+@import "../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.scss";
+@import "../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox_active.scss";
+@import "../../includes/Checkbox/Default_checkbox/Default_checkbox.scss";
+@import "../../includes/Checkbox/Buttons/Buttons.scss";
+@import "../../includes/Checkbox/Buttons_tumbler/Buttons_tumbler.scss";
 
 .bird{
 	position: absolute;
@@ -21,6 +22,8 @@
     top: 3rem;
 };
 input{
+    padding-left: 15px;
+    transition-duration: 0.7s;
     width: 100%;
     line-height: 18px;
     height: 44px;
@@ -34,27 +37,58 @@ input{
     &::placeholder{
         color: rgba(31, 32, 65, 0.25);
         transition-duration: 0.7s;
+        transition-duration: 0.7s;
     }
     & .arrow-down{
         color: rgba(31, 32, 65, 0.50);
     }
 }
 
+
 .FormElementsWrapper{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
-    align-items: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .ForemElementsConteiner{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
 }
 div{
     z-index: 0;
 }
-input{
-    padding-left: 15px;
+
+
+button:active, button:focus {
+    outline: none !important;
+  }
+  button::-moz-focus-inner {
+    border: 0 !important;
+  }
+  textarea:focus, input:focus
+{
+  outline: none;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  transition-duration: 0.7s;
+  &::placeholder{
+      color: rgba(31, 32, 65, 0.75);
+      transition-duration: 0.7s;
+  }
+}
+input:hover,
+textarea:hover{
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.75);
+        transition-duration: 0.7s;
+    }
 }
