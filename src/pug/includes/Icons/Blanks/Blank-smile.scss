@@ -1,0 +1,23 @@
+
+.Blank-smile-img{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    font-family: 'Material Icons';
+    font-size: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: #BC9CFF;
+    vertical-align: top;
+}
+.Blank-smile-text{
+    font-family: 'Montserrat';
+    display: inline-block;
+    height: 48px;
+    color: rgba(31, 32, 65, 0.75);
+    font-size: 14px;
+    vertical-align: top;
+    & p{
+        margin-top: 0px;
+    }
+}

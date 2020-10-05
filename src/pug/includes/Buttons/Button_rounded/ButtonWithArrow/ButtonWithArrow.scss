@@ -1,0 +1,14 @@
+@import "../../../Icons/arrow-right_blue.scss";
+.ButtonWithArrow{
+    
+    width: 320px;
+    height: 44px;
+    position: relative;
+    & .arrow-right_blue{
+        right: 0;
+        & i{
+            color: white;
+        }
+    }
+
+}

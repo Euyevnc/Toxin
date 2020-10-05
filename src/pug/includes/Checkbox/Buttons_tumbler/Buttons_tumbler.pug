@@ -8,8 +8,8 @@ mixin Buttons_tumbler(descr, ...issues)
                 - var checked = Boolean(val.checked)
                 div.Buttons_tumbler_div
                     if checked 
-                        input(value=`${id}` type="checkbox" id=`${id}` class="Buttons_tumbler_box" checked)
+                        input(type="checkbox" id=`${id}` class="Buttons_tumbler_box" checked)
                     else 
-                        input(value=`${id}` type="checkbox" id=`${id}` class="Buttons_tumbler_box")
+                        input(type="checkbox" id=`${id}` class="Buttons_tumbler_box")
                     label(for=`${id}`) 
                     p.Buttons_tumbler_text #{name}

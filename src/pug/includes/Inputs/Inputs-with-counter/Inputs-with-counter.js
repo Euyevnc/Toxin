@@ -72,13 +72,25 @@ export default function(){
         function conf(){
             let cont = ''
             listEl.forEach( (it,i) =>{
-                
-                let num = +it.querySelector(".Inputs-with-counter-number").textContent
-                let word = it.querySelector('p').textContent
-                if(i==2){cont+='...'}
-                else {cont+= `${num} ${word}, `}
-    
+                if(!par.closest('[data-counter="simple"]')){
+                    let num = +it.querySelector(".Inputs-with-counter-number").textContent
+                    let word = it.querySelector('p').textContent
+                    if(num==0){cont+=''}
+                    else if(i==2&&num>0){cont += "..."}
+                    else {cont+= `${num} ${word}, `}
+                }
+                else{
+                    let num = +it.querySelector(".Inputs-with-counter-number").textContent
+                    cont=+cont + num; 
+                    if(i==listEl.length-1){
+                        if(cont == 1) cont+= " гость";
+                        else if(cont>1) cont+= " гостя";
+                        else if (cont==0){cont=''}
+                        else cont+= " гостей";
+                    }
+                }
             })
+            cont = cont || inp.getAttribute("placeholder")
             inp.classList.remove('WithDropdownactive')
             inp.value = cont
 

@@ -10,6 +10,14 @@ include ../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.pug
 include ../../includes/Checkbox/Default_checkbox/Default_checkbox.pug
 include ../../includes/Checkbox/Buttons/Buttons.pug
 include ../../includes/Checkbox/Buttons_tumbler/Buttons_tumbler.pug
+include ../../includes/Icons/filling-star.pug
+include ../../includes/Checkbox/Buttons_liker/Buttons_liker.pug
+include ../../includes/Range-slider/Range-slider.pug
+include ../../includes/Buttons/Button_rounded/Button_rounded.pug
+include ../../includes/Buttons/Button_minimaze/Button_minimaze.pug
+include ../../includes/Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
+include ../../includes/PageSwitch/PageSwitch.pug
+include ../../includes/Icons/Blanks/Blank-smile.pug
 block variables
 
 block head
@@ -19,7 +27,7 @@ block head
 block content
     span(class="bird")
         include ../../includes/Images/logo.img.svg
-    .FormElementsWrapper
+    .FormElementsWrapper(style="margin-bottom: 100px")
         .ForemElementsConteiner
             +TextField('TEXT FIELD', 'Email', 'DEFAULT')
             +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active').example
@@ -34,8 +42,51 @@ block content
             +Default_checkbox('CHECKBOX BUTTONS', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей(до 10 человек)', id:'chd003', checked:"true"})
             +Buttons('RADIO BUTTONS', {name:'Мужчина', id:'b001', checked:"true"},{name:'Женщина', id:'b002'})
             +Buttons_tumbler('Toggle',{name:'Получать спецпредложения', id:"bt001"},{name:'Получать спецпредложения', id:"bt002", checked:"true"} )
+            div(style="margin-top: 45px")
+                +Buttons_liker('LIKE BUTTON', {id:"l001", am:'2'}, {id:"l002", am:'12', checked:"true"})
+            +Filling-star('RATE BUTTON', 4, 0.0)
+            +Filling-star('', 5)
+
         .ForemElementsConteiner
-    .ForemElementsConteiner_hor
-        +Inputs-with-counter('DROPDOWN', '2 спальни, 2 кровати', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
-        +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
+            +Range-slider('RANGE SLIDER', 0, 15000)
+            div 
+                h3 BUTTONS 
+                div(style="margin-top:16px")
+                    +Button_rounded('click me', 'purple')
+                    +Button_rounded('click me', 'purple_depr')
+                    div(style="height: 45px")
+                    +Button_rounded('click me', 'empty')
+                    +Button_rounded('click me', 'empty_depr')
+            div(style="margin: 30px 0")
+                +Button_minimaze('click me', 'purple')
+                +Button_minimaze('click me', 'grey')
+            div
+                +ButtonWithArrow('перейти к оплате')
+            div 
+                h3(style="margin-bottom:16px; margin-top:40px") pagination
+                +PageSwitch(175, 12)
+    .FormElementsWrapper   
+        .ForemElementsConteiner(style="width:320px")
+            div(style="position:relative; z-index:15")
+                +Inputs-with-counter('DROPDOWN', 'Выберете комплектацию', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+            div(style="margin-bottom: 175px" data-expended="true")
+                +Inputs-with-counter('DROPDOWN', 'Выберете комплектацию', 'EXPANDED', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+            div(style="margin-bottom:50px")
+                +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
+            div(data-expended="true")
+                +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
+            div(style="margin-top:40px")
+                +Blank-smile('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+                +Blank-smile('location_city', 'Удобство', 'Окно в каждой из спален')
+        
+        
+        .ForemElementsConteiner_hor(style="width:738px")
+            div(data-expended="true" data-counter="simple" style="margin-right: 70px; z-index:15;")
+                +Inputs-with-counter('DROPDOWN', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5", base: "0"}, {name: "дети", min: "0", max: "5", base: "0"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
+            div(data-expended="true" data-counter="simple")
+                +Inputs-with-counter('DROPDOWN', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
+            div(style="width:100%;display:flex;justify-content:stretch")
+                div
+                div
+        
 block script

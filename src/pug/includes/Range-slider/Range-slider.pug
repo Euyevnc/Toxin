@@ -1,0 +1,17 @@
+mixin Range-slider(descr, min, max)
+    .Range-slider-filter
+        div
+            div.Range-slider-header
+                h3 #{descr}
+                span.Range-slider-counter
+                    span.Range-slider-counter-min 0 
+                    span ₽ - 
+                    span.Range-slider-counter-max 15000
+                    span ₽
+            div.Range-slider-numbers
+                number #{min}
+                number #{max}
+            div(id="rating" class="Range-slider-slider")
+                div(class="Range-slider-block-min")
+                div(class="Range-slider-color-range")
+                div(class="Range-slider-block-max")

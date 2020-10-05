@@ -1,0 +1,38 @@
+.filling-star{
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14.5px;
+}
+.filling-star_cont{
+    margin-top: 16px;
+}
+.filling-star_outl{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    font-family: 'Material Icons';
+    position: relative;
+    color: #BC9CFF;
+    font-size: 24px;
+    text-align: center;
+    line-height: 24px;
+    & .filling-star_color{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.filling-star_color{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    font-family: 'Material Icons';
+    position: relative;
+    color: #BC9CFF;
+    font-size: 24px;
+    text-align: center;
+    line-height: 24px;
+    overflow: hidden;
+}

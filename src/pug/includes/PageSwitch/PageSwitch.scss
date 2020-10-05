@@ -1,0 +1,54 @@
+
+.PageSwitch-cell{
+    width: 40px;
+    height: 40px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
+}
+.PageSwitch-cell-ell{
+    width: 40px;
+    height: 40px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer; 
+    user-select: none;
+}
+.PageSwitch-cell-active{
+    border-radius: 50%;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: white;
+}
+.PageSwitch-arrow {
+    vertical-align: middle;
+    user-select: none;
+    & .arrow-right_blue{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+        & i{
+            color: white;
+            line-height: 40px;}
+    }
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+};
+.PageSwitch-text{
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+}

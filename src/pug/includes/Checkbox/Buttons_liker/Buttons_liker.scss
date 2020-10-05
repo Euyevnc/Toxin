@@ -1,67 +1,68 @@
 
-.Buttons_tumbler_wrap{
+.Buttons_liker_wrap{
     font-family: 'Montserrat';
+    
 }
 
-.Buttons_tumbler_head{
+.Buttons_liker_head{
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 5px;
     position: relative;
+    margin-bottom: 16px;
     
 }
 
-.Buttons_tumbler_wrap input[type="checkbox"]{
+
+.Buttons_liker_wrap input[type="checkbox"]{
     display: none;
     & + label{ 
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 10px;
         width: 40px;
         height: 20px;
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 10px;
         position: relative;
         border: 1px solid rgba(31, 32, 65, 0.25);
+        color: rgba(31, 32, 65, 0.25);
         cursor: pointer;
         border-radius: 25% / 50%;
         transition-duration: 0.5s;
+        line-height: 18px;
+        text-align:end;
+        padding-right: 10px;
         box-sizing: border-box;
         &::before {
             display: inline-block;
             line-height: 18px;
-            content: "stop_circle";
+            content: "favorite_border";
             font-family: 'Material Icons';
             color: rgba(31, 32, 65, 0.25);
-            font-size: 13px;
             position: absolute;
-            left: 1px;
+            left: 5px;
             transition-duration: 0.5s;
+            vertical-align: middle;
+            
 
         }
 
     }
 
 }
-.Buttons_tumbler_wrap input[type="checkbox"]:checked{ 
+.Buttons_liker_wrap input[type="checkbox"]:checked{ 
+    
     & + label{ 
+        color: #c2c2c2;
         border: 1px solid  #BC9CFF;
         transition-duration: 0.5s;
+        display: inline-block;
         &::before {
+            content: "favorite";
             color: #BC9CFF;
-            left: 24px;
             transition-duration: 0.5s;
         }
     }
 
 }
-.Buttons_tumbler_text{
-    background-color: white;
-    font-family: 'Montserrat';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    text-align: left;
-    color: rgba(31, 32, 65, 0.75);
-    display: inline-block;
-    vertical-align: middle;
-}
+

@@ -7,6 +7,10 @@
     width: 267px;
     position: relative;
     margin-bottom: 2rem;
+    & .arrow-right_blue{
+        top: 20px;
+        right: 0;
+    }
 };
 .TextFieldDescribe{
     color: rgba(31, 32, 65, 0.5);
