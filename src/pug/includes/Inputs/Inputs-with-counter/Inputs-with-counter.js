@@ -76,7 +76,7 @@ export default function(){
                     let num = +it.querySelector(".Inputs-with-counter-number").textContent
                     let word = it.querySelector('p').textContent
                     if(num==0){cont+=''}
-                    else if(i==2&&num>0){cont += "..."}
+                    else if(i==2&&num>0&&cont){cont += "..."}
                     else {cont+= `${num} ${word}, `}
                 }
                 else{

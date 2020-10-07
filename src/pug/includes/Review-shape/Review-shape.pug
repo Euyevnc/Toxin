@@ -1,0 +1,13 @@
+mixin Review-shape(link, name, date, review)
+    include ../Checkbox/Buttons_liker/Buttons_liker.pug
+    div 
+        div.Review-shape-header
+            span.Review-shape-img
+                img(src=`${link}`)
+            span
+                h4 #{name}
+                p #{date} дней назад
+        div.Review-shape-content
+            span.Review-shape-liker   
+                +Buttons_liker('', {id:`${name}`, am:"12", checked:"true"})
+            span.Review-shape-review  #{review}

@@ -18,12 +18,16 @@ include ../../includes/Buttons/Button_minimaze/Button_minimaze.pug
 include ../../includes/Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
 include ../../includes/PageSwitch/PageSwitch.pug
 include ../../includes/Icons/Blanks/Blank-smile.pug
+include ../../includes/Checkbox/Checkbox-with-describe/Checkbox-with-describe.pug
+include ../../includes/checkbox/Bullet/Bullet.pug
+include ../../includes/Review-shape/Review-shape.pug
 block variables
 
 block head
     title= FormElements
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     link(rel="stylesheet" href="FormElements.css")
+    link(rel="stylesheet" href="vendors.css.css")
 block content
     span(class="bird")
         include ../../includes/Images/logo.img.svg
@@ -33,15 +37,18 @@ block content
             +TextField('TEXT FIELD', 'This is pretty awesome ', 'HOVER/FOCUS', 'active').example
             +WithDropdown('DROPDOWN', 'Сколько гостей', 'DEFAULT')
             +Mask_d-m-y('MASKED TEXT FIELD', 'ДД.ММ.ГГГГ', 'DEFAULT' )
+           
             div(style="display: flex; justify-content: space-between; width: 320px")
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ')
                 +Date-picker('DATE DROPDOWN', 'ДД.ММ.ГГ', 'filled-picker')
             +Date-range('FILTER DATE DROPDOWN', 'Период', 'filled-picker')
             +Field-with-arrow('SUBSCRIPTION TEXT FIELD', 'Email')  
+
         .ForemElementsConteiner
             +Default_checkbox('CHECKBOX BUTTONS', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей(до 10 человек)', id:'chd003', checked:"true"})
             +Buttons('RADIO BUTTONS', {name:'Мужчина', id:'b001', checked:"true"},{name:'Женщина', id:'b002'})
             +Buttons_tumbler('Toggle',{name:'Получать спецпредложения', id:"bt001"},{name:'Получать спецпредложения', id:"bt002", checked:"true"} )
+           
             div(style="margin-top: 45px")
                 +Buttons_liker('LIKE BUTTON', {id:"l001", am:'2'}, {id:"l002", am:'12', checked:"true"})
             +Filling-star('RATE BUTTON', 4, 0.0)
@@ -49,6 +56,7 @@ block content
 
         .ForemElementsConteiner
             +Range-slider('RANGE SLIDER', 0, 15000)
+           
             div 
                 h3 BUTTONS 
                 div(style="margin-top:16px")
@@ -57,36 +65,58 @@ block content
                     div(style="height: 45px")
                     +Button_rounded('click me', 'empty')
                     +Button_rounded('click me', 'empty_depr')
+          
             div(style="margin: 30px 0")
                 +Button_minimaze('click me', 'purple')
                 +Button_minimaze('click me', 'grey')
+           
             div
                 +ButtonWithArrow('перейти к оплате')
+           
             div 
                 h3(style="margin-bottom:16px; margin-top:40px") pagination
                 +PageSwitch(175, 12)
     .FormElementsWrapper   
         .ForemElementsConteiner(style="width:320px")
+            
             div(style="position:relative; z-index:15")
                 +Inputs-with-counter('DROPDOWN', 'Выберете комплектацию', 'DEFAULT', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+           
             div(style="margin-bottom: 175px" data-expended="true")
                 +Inputs-with-counter('DROPDOWN', 'Выберете комплектацию', 'EXPANDED', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "0"} )
+            
             div(style="margin-bottom:50px")
                 +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
+            
             div(data-expended="true")
-                +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001'},{name:'Письменный стол', checked:"true", id:'ch002'},{name:'Стул для кормления', checked:"true", id:'ch003'},{name:'Кроватка', checked:"true", id:'ch004'},{name:'Телевизор', id:'ch005'},{name:'Шампунь', id:'ch006'},{name:'Телевизор', id:'ch007'},{name:'Шампунь', id:'ch008'})
+                +Dropping_checkbox('expandable checkbox list', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
+            
             div(style="margin-top:40px")
                 +Blank-smile('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
                 +Blank-smile('location_city', 'Удобство', 'Окно в каждой из спален')
         
         
-        .ForemElementsConteiner_hor(style="width:738px")
-            div(data-expended="true" data-counter="simple" style="margin-right: 70px; z-index:15;")
+        .ForemElementsConteiner_hor(style="max-width:738px")
+           
+            div(data-expended="true" data-counter="simple" style="z-index:15;")
                 +Inputs-with-counter('DROPDOWN', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5", base: "0"}, {name: "дети", min: "0", max: "5", base: "0"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
-            div(data-expended="true" data-counter="simple")
+           
+            div(data-expended="true" data-counter="simple" style="z-index:15;")
                 +Inputs-with-counter('DROPDOWN', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
-            div(style="width:100%;display:flex;justify-content:stretch")
-                div
-                div
-        
+            
+            div(style="width: 320px;")
+                h3(style="margin-bottom:15px") rich checkbox buttons
+                +Checkbox-with-describe({id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'})
+                +Checkbox-with-describe({id:'chdisc002', name:'Помощник для инвалидов', desc:'На первом этаже вас встретит специалист и проводит в номер.'})
+            
+            div(style="width:320px;")
+                h3(style="margin-bottom:15px") bullet list
+                +Bullet('Нельзя с питомцами')
+                +Bullet('Без вечеринок и мероприятий')
+                +Bullet('Время прибытия — после 13:00, а выезд до 12:00')
+            div(style="margin-bottom: auto; width: 100%")
+                +Review-shape("../assets/images/Review-shape-avatar.png", "Мурад Сарафанов", "5","Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+            
 block script
+    script(src="app.js")
+    script(src="vendors.js")

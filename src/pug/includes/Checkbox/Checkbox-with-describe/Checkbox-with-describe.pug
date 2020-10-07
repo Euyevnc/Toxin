@@ -1,0 +1,16 @@
+mixin Checkbox-with-describe(...issues)
+        div.Checkbox-with-describe_cont
+            each val in issues
+                - var id = val.id
+                - var name = val.name
+                - var checked = Boolean(val.checked)
+                - var desc = val.desc
+                div.Checkbox-with-describe_div
+                    if checked 
+                        input(type="checkbox" id=`${id}` class="Checkbox-with-describe_box" checked)
+                    else 
+                        input(type="checkbox" id=`${id}` class="Checkbox-with-describe_box")
+                    label(for=`${id}`) 
+                        div.Checkbox-with-describe-text
+                            p.Checkbox-with-describe-title #{name}
+                            p.Checkbox-with-describe-subscribe #{desc}
