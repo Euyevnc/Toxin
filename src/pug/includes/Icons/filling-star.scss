@@ -1,9 +1,13 @@
 .filling-star{
+    & + .filling-star{
+        margin-left: 20px;
+    }
     display: inline-block;
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 12px;
     line-height: 14.5px;
+    margin-top: 40px;
 }
 .filling-star_cont{
     margin-top: 16px;

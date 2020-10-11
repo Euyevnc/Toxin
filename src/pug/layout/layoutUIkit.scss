@@ -1,18 +1,97 @@
-.pageclass{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-}
-html{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    font-size: 10px;
-}
+@import "../utils/fonts/Montserrat.scss";
+@import "../utils/fonts/Quicksand.scss";
+
 .wrapper{
-    width: 100%;
     max-width: 1440px;
     min-width: 320px;
-    min-height: 900*(320/1440)*2.1 + px;
     padding: 145px 0;
+}
+.bird{
+	position: absolute;
+	left: 3rem;
+    top: 3rem;
+};
+input{
+    padding-left: 15px;
+    transition-duration: 0.7s;
+    width: 100%;
+    line-height: 18px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.25);
+        transition-duration: 0.7s;
+        transition-duration: 0.7s;
+    }
+    & .arrow-down{
+        color: rgba(31, 32, 65, 0.50);
+    }
+}
+h1{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+}
+h3{
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 5px;
+    padding: 0;
+}
+h4{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31,32,65,.75);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: 'Montserrat';
+}
+
+.FormElementsWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    z-index: 2;
+}
+
+button:active, button:focus {
+    outline: none !important;
+  }
+  button::-moz-focus-inner {
+    border: 0 !important;
+  }
+  textarea:focus, input:focus
+{
+  outline: none;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  transition-duration: 0.7s;
+  &::placeholder{
+      color: rgba(31, 32, 65, 0.75);
+      transition-duration: 0.7s;
+  }
+}
+input:hover,
+textarea:hover{
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.75);
+        transition-duration: 0.7s;
+    }
 }

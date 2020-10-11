@@ -1,0 +1,32 @@
+@import "../../layout/layoutUIkit.scss";
+@import "../../includes/Blocks/NumberFinder/NumberFinder.scss";
+@import "../../includes/Blocks/NumberBooker/NumberBooker.scss";
+@import "../../includes/Inputs/Date-range/Date-range_default.scss";
+
+
+html{
+    font-size: 10px;
+}
+body{
+    background: #E5E5E5;
+}
+
+.FormElementsConteiner{
+    margin-right: 20px;
+    & >*{
+        background-color: white;
+        padding: 40px 30px 30px;
+    }
+}
+
+#ui-datepicker-div{
+    z-index: 200 !important;
+}
+.Button_rounded{
+    margin: 0px;
+}
+
+
+
+
+

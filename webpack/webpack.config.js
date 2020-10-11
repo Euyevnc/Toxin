@@ -1,47 +1,82 @@
-let path = require('path');
-let MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const name= "Cards";
+const PATHS = {
+	relPathDist: `dist/${name}`,
+	relPathSrc: `src/pug/pages/${name}`,
+	src: path.join(__dirname, `../src/pug/pages/${name}`),
+	dist: path.join(__dirname,  `../dist/${name}`),
+	assets: 'assets/'
+  }
 
 let conf = {
-	entry: './src/index.js',
-	output: { 
-		path: path.resolve(__dirname, './dist'),
-		filename: 'main.js',
-		publicPath: 'dist/'
-	
+
+
+	entry: {
+		main: `./${PATHS.relPathSrc}/${name}.js`,
+		// module: `${PATHS.src}/your-module.js`,
+	},
+	output: {
+		filename: `[name].js`,
+		path: PATHS.dist,
+		publicPath: `./`
+	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					name: 'vendors',
+					test: /node_modules/,
+					chunks: 'all',
+					enforce: true
+				}	
+			}
+		}
 	},
 	devServer: {
 		overlay: true,
-		//proxy
+    	openPage: `dist/${name}/${name}.html`
 	},
-	plugins: [
-        new MiniCssExtractPlugin({
-            filename: `assets/[name].[hash].css`,
 
-        }),
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'main.css',
+		}),
+		new HtmlWebpackPlugin({
+			template: `${PATHS.relPathSrc}/${name}.pug`,
+			filename: `./${name}.html`,
+			//inject: false
+		}),
     ],
 	module:{
 		rules: [
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
+				options: {
+					presets: ['@babel/preset-env'],
+				
+				},
 				exclude: '/node_modules/'
 			},	
 			{	
 				test: /\.(png|jpe?g|gif)$/i,
 				loader: 'file-loader',
 				options: {
-					name: '[path][name].[ext]',
-					//outputPath: '[path]',
+					name: '[name].[ext]',
+					outputPath: `../assets/images`,
 				}
 			},	
 			{
-				test:/^((?!\.module).)*s[ac]ss$/i,
+				test:/\.s[ac]ss$/i,
 				use: [
-					process.env.NODE_ENV !== 'production'
-						? 'style-loader'
-						: MiniCssExtractPlugin.loader,
-						'css-loader',
+					 MiniCssExtractPlugin.loader,
+					
+					{
+						loader: 'css-loader', options: {url: false, import: true}
+					},
+					
 					{
 						loader: 'postcss-loader',
 						options: {
@@ -75,120 +110,13 @@ let conf = {
 							},
 						},
 					},
-						'sass-loader',
-					]
-			},
-			{
-                test: /\.module\.s[ac]ss$/i,
-                exclude: /node_modules/,
-                use: [
-					{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: process.env.NODE_ENV === 'development',
-                        }
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-							modules: {
-                                localIdentName: '[local]__[sha1:hash:hex:7]'
-                            }
-                        }
-                    },
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								plugins: [
-									[
-										'postcss-preset-env',
-											{
-												// Options
-											},
-									],
-									[
-										'autoprefixer',
-											{
-												// Options
-											},
-									],
-									[
-										'cssnano',
-											{
-												// Options
-											},
-									],
-									[
-										'css-mqpacker',
-											{
-												// Options
-											},
-									]									
-								],
-							},
-						},
-					},
+					{ loader: 'resolve-url-loader'},
 					'sass-loader',
-                ]
-            },
-			{
-                test: /\.module\.css$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: process.env.NODE_ENV === 'development'
-                        }
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                localIdentName: '[local]__[sha1:hash:hex:7]'
-                            }
-                        }
-                    },
-						{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								plugins: [
-									[
-										'postcss-preset-env',
-											{
-												// Options
-											},
-									],
-									[
-										'autoprefixer',
-											{
-												// Options
-											},
-									],
-									[
-										'cssnano',
-											{
-												// Options
-											},
-									],
-									[
-										'css-mqpacker',
-											{
-												// Options
-											},
-									]									
-								],
-							},
-						},
-					},
-                ]
-            },
+				]
+			},
+
             {
-                test: /^((?!\.module).)*css$/,
+                test: /\.css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -231,18 +159,21 @@ let conf = {
 						},
 				},
                 ]
-            }
+			},
+			{
+				test: /\.pug$/,
+				loader: 'pug-loader'
+			},
 		
 		]
-	}
+	},
+	resolve: {
+		alias: {
+      '~': PATHS.src,
+		}
+	},
 	
 };
 module.exports = (env, options) => {
-	let production = options.mode === 'production';
-	console.log(options);
-	conf.devtool = production 
-					? false
-					: 'eval-sourcemap';
-		
 	return conf;
 }

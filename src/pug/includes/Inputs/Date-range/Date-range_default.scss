@@ -1,3 +1,5 @@
+@import "../Date-picker/Date-picker_default.scss";
+
 .Date-range{
     font-family: Montserrat;
     font-size: 12px;
@@ -15,5 +17,5 @@
     }
 };
 .ui-datepicker-calendar{
-    z-index: 10;
+    z-index: 100;
 }

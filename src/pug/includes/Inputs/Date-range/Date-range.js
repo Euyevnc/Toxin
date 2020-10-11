@@ -41,7 +41,7 @@ export default function(){
         });
 		$('div.ui-datepicker').css({ 'font-size': '15px',});
 		
-		try{$(".filled-range").datepicker("setDate", ['+0d', '+4d'])}
+		try{$(".filled-range").datepicker("setDate", ['+3d', '+7d'])}
 		catch{}
 
 		let extensionRange = $('.Date-range_value').datepicker('widget').data('datepickerExtensionRange');
