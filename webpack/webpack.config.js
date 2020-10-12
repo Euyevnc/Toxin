@@ -14,13 +14,14 @@ let conf = {
 
 
 	entry: {
-		main: `./${PATHS.relPathSrc}/${name}.js`,
+		app: `./${PATHS.relPathSrc}/${name}.js`,
 		// module: `${PATHS.src}/your-module.js`,
 	},
 	output: {
 		filename: `[name].js`,
 		path: PATHS.dist,
-		publicPath: `./`
+		publicPath: `/dist/${name}/`
+		
 	},
 	optimization: {
 		splitChunks: {
@@ -36,7 +37,13 @@ let conf = {
 	},
 	devServer: {
 		overlay: true,
-    	openPage: `dist/${name}/${name}.html`
+		contentBase: `./`,
+		openPage:`../dist/${name}/${name}.html`,
+		hot: true,
+		inline: true,
+		watchContentBase: true,
+		liveReload: true,
+		
 	},
 
 	plugins: [

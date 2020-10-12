@@ -20,20 +20,25 @@ export default function(){
     	firstDay: 1,
     	isRTL: false,
     	showMonthAfterYear: false,
-    	yearSuffix: ''
+		yearSuffix: '', 
+		showOtherMonths: true,
+		selectOtherMonths:true,
     };
 
     $.datepicker.setDefaults($.datepicker.regional['ru']);
 
     $(function(){
-        $(".Date-picker_value").datepicker({
+        $("input.Date-picker_value").datepicker({
+			showButtonPanel: false,
             minDate: 0
         });
 		$('div.ui-datepicker').css({ 'font-size': '15px',});
 		
 		try{$(".filled-picker").datepicker("setDate", new Date)}
 		catch{}
-    });
+	});
+
 
 
 };
+
