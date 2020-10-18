@@ -3,7 +3,7 @@ mixin TextField(label, placeholder, describe, active)
     - else{active = ' TextFieldValueactive'}
     div(class=`TextField`)
         
-        label(style="font-weight:bold") #{label}
+        label(class="TextFieldLabel" style="font-weight:bold") #{label}
             div
                 input(class="TextFieldValue"+`${active}` placeholder=`${placeholder}`) 
         p(class="TextFieldDescribe") #{describe}

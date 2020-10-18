@@ -1,0 +1,14 @@
+mixin Header__menu(val)
+    if val.blocks
+        span(class=`Menu__element Menu__element_type_dropping ${val.addclass}`) 
+            a #{val.name} 
+            include ../../../Icons/arrow-down.pug
+            div.Menu__element_type_submenu
+                each block in val.blocks
+                    div(class="Menu__element")
+                        a(href=`${block.href}`) #{block.name}
+    
+    
+    else
+        a(class=`Menu__element Menu__element_type_inline ${val.addclass}`  href=`${val.href}`)
+            span #{val.name}

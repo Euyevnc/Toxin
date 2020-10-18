@@ -1,0 +1,28 @@
+@import "../../Inputs/Date-picker/Date-picker_default.scss";
+@import "../../Inputs/WithDropdown/WithDropdown_default.scss";
+@import "../../../utils/fonts/OpenSans.scss";
+@import "../../Inputs/Mask_d-m-y/Mask_d-m-y_default.scss";
+@import "../../Inputs/TextField/TextField_default.scss";
+@import "../../Checkbox/Buttons_tumbler/Buttons_tumbler.scss";
+@import "../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.scss";
+@import "../../Buttons/Button_rounded/Button_rounded.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+@import "../../../utils/fonts/Quicksand.scss";
+
+
+.NumberRegistrationCont{
+
+    & .Buttons_head{
+        display: none;
+    }
+    & .NumberRegistrationSubscribe{
+        align-items: center;
+        & p{
+            line-height: 100%;
+            font-family: 'Montserrat';
+            font-size: 14px;;
+            text-align: center;
+            color: #000000;
+        }
+    }
+}

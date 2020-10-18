@@ -1,0 +1,33 @@
+@import "../../Icons/arrow-down.scss";
+@import "./Header__menu/Header__menu.scss";
+@import "./Header__autorization/Header__autorization.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+
+.Header-wrap{
+    background-color: #FFFFFF;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    
+    & .Header{
+        margin: auto;
+        max-width: 1160px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .Header__menu {
+            & .Button_rounded{
+                width: 83px;
+                height: 30px;
+                line-height: 30px;
+                box-sizing: content-box;
+            }
+            & .ButtonWithArrow{
+                width: 192px;
+            }
+        }
+
+    }
+}

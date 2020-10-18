@@ -3,10 +3,6 @@
 @import "../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.scss";
 @import "../../../utils/fonts/OpenSans.scss";
 
-h1{
-    font-family: 'Open Sans';
-    margin-top: 0px;
-}
 .NumberFinderCont{
 
     & .Date-picker + .Date-picker{
@@ -15,4 +11,5 @@ h1{
     & .WithDropdown_textfield{
         margin-bottom: 30px;
     }
+
 }

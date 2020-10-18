@@ -1,13 +1,14 @@
 mixin Filling-star(descr, compl, pers)
-    - var pers = pers*100
     - var compl = compl
+    - if(!pers){pers =[]}
     div.filling-star
         div #{descr}
         div.filling-star_cont
             - for (var x = 0; x < compl; x++)
                 span.filling-star_color star
-            if pers || pers == 0 
+            each val in pers
+                - var am = (val*100)
                 span.filling-star_outl star_outline
-                    span(class="filling-star_color" style=`width: ${pers}%`) star
+                    span(class="filling-star_color" style=`width: ${am}%`) star
 
     

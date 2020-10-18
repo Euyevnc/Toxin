@@ -19,7 +19,6 @@ export default function(){
     	dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
     	dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
     	weekHeader: 'Не',
-    	dateFormat: 'dd M',
     	firstDay: 1,
     	isRTL: false,
     	showMonthAfterYear: false,
@@ -33,6 +32,7 @@ export default function(){
 	let picDiv = $("div.Date-range_value")
     $(function(){
         picDiv.datepicker({
+			dateFormat: 'dd M',
 			minDate: 0,
 			range: 'period', 
 			onSelect: function(dateText, inst, extensionRange) {

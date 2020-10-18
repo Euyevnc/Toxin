@@ -1,0 +1,47 @@
+@import "../../../utils/fonts/Montserrat.scss";
+@import "./Footer_block_content_refs/Footer_block_content_refs.scss";
+@import "../../Inputs/Field-with-arrow/Field-with-arrow_default.scss";
+.Footer-wrap{    
+    background-color: #FFFFFF;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    & .Footer{
+        margin: auto;
+        max-width: 1160px;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        & .highlight{
+            text-transform: uppercase;
+        }
+        &__block{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            &>*{
+                margin-bottom: 20px;
+                text-align: start;
+            }
+            &_width_wide{
+                max-width: 260px;
+
+                ;
+            }
+        }
+        a{
+            vertical-align: baseline;
+            font-family: 'Montserrat';
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.5);
+            text-decoration: none;
+            &:hover{
+                color: rgba(31, 32, 65, 0.75);
+            }
+        }
+    }
+}

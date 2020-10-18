@@ -2,20 +2,76 @@
 @import "../../includes/Blocks/NumberFinder/NumberFinder.scss";
 @import "../../includes/Blocks/NumberBooker/NumberBooker.scss";
 @import "../../includes/Inputs/Date-range/Date-range_default.scss";
+@import "../../includes/Blocks/NumberRegistration/NumberRegistration.scss";
+@import "../../includes/Checkbox/Buttons/Buttons.scss";
+@import "../../includes/Blocks/EntryForm/EntryForm.scss";
+@import "../../includes/Blocks/NumberDemonstration/NumberDemonstration.scss";
 
 
-html{
-    font-size: 10px;
+h1{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
-body{
-    background: #E5E5E5;
+h3{
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: rgba(31, 32, 65, 0.5);
+    text-transform: none;
+    vertical-align: baseline;
+    text-transform: none;
 }
-
+h4{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    font-family: 'Montserrat';
+    display: inline-block;
+    padding: 0;
+    color: #1F2041;
+    vertical-align: baseline;
+}
+p{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: baseline;
+}
+label{
+    text-transform: uppercase;
+    &::before{
+        text-transform: none;
+    }
+}
 .FormElementsConteiner{
-    margin-right: 20px;
-    & >*{
+    max-width: 380px;
+    &+.FormElementsConteiner{
+        margin-left: 40px;
+    }
+    
+    & >*:not(.NumberDemonstration){
         background-color: white;
         padding: 40px 30px 30px;
+        margin-bottom: 40px;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+        
+    }
+    & .Buttons_wrap{
+        margin: 0px;
+    }
+    & .NumberDemonstrationItem{
+        margin-bottom: 30px !important;
     }
 }
 
@@ -24,6 +80,13 @@ body{
 }
 .Button_rounded{
     margin: 0px;
+}
+.CardsPurple{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #BC9CFF;
+    font-size: 12px;
 }
 
 

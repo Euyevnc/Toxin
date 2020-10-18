@@ -1,18 +1,17 @@
 @import '../../Icons/arrow-right_blue.scss';
 
 .Field-with-arrow{
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 12px;
     line-height: 14.5px;
-    width: 267px;
+    width: 260px;
     position: relative;
     margin-bottom: 2rem;
     & .arrow-right_blue{
-        top: 20px;
         right: 0;
     }
 };
-.TextFieldDescribe{
+.Field-with-arrow-describe{
     color: rgba(31, 32, 65, 0.5);
     padding: 0px;
     margin: 0px;
@@ -26,4 +25,25 @@
 
 label{
     display: block;
+}
+input{
+    padding-left: 15px;
+    width: 100%;
+    line-height: 18px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.25);
+        transition-duration: 0.7s;
+        opacity: 1;
+    }
+    & .arrow-down{
+        color: rgba(31, 32, 65, 0.50);
+    }
 }

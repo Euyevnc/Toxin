@@ -1,0 +1,12 @@
+div(class="EntryForm")
+    h1 Войти
+    form(name="EntryForm")
+        div(style="margin-top:15px;")
+            +TextField('', 'Email', '')
+        div(style="margin-bottom: 20px;")
+            +TextField('', 'Пароль', '')
+        div(style="margin-bottom: 30px;")
+            +ButtonWithArrow('Войти')
+        div(class="EntryFormSubscribe" style="display:flex; justify-content: space-between")
+            p Нет аккаунта на Toxin?
+            +Button_rounded('создать', 'empty')

@@ -1,0 +1,5 @@
+mixin Footer_block_content_refs(refs)
+    div.highlight #{refs.caption}
+    each val in refs.links
+        a(href=`${val.href}`) #{val.desc}
+

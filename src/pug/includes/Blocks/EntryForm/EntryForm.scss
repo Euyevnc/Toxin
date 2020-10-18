@@ -1,0 +1,18 @@
+@import "../../../utils/fonts/OpenSans.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+@import "../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.scss";
+@import "../../Buttons/Button_rounded/Button_rounded.scss";
+@import "../../Inputs/TextField/TextField_default.scss";
+
+.EntryForm{
+    & .EntryFormSubscribe{
+        align-items: center;
+        & p{
+            line-height: 100%;
+            font-family: 'Montserrat';
+            font-size: 14px;;
+            text-align: center;
+            color: #000000;
+    }
+    }
+}

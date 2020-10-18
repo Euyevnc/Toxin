@@ -1,8 +1,15 @@
 @import "../utils/fonts/Montserrat.scss";
 @import "../utils/fonts/Quicksand.scss";
+@import "../utils/fonts/OpenSans.scss";
+@import "../utils/fonts/MaterialIcons.scss";
 
+html{
+    font-size: 10px;
+}
+body{
+    background-color: #F4F4F6;
+}
 .wrapper{
-    max-width: 1440px;
     min-width: 320px;
     padding: 145px 0;
 }
@@ -13,7 +20,6 @@
 };
 input{
     padding-left: 15px;
-    transition-duration: 0.7s;
     width: 100%;
     line-height: 18px;
     height: 44px;
@@ -27,7 +33,7 @@ input{
     &::placeholder{
         color: rgba(31, 32, 65, 0.25);
         transition-duration: 0.7s;
-        transition-duration: 0.7s;
+        opacity: 1;
     }
     & .arrow-down{
         color: rgba(31, 32, 65, 0.50);
@@ -94,5 +100,6 @@ textarea:hover{
     &::placeholder{
         color: rgba(31, 32, 65, 0.75);
         transition-duration: 0.7s;
+      
     }
 }
