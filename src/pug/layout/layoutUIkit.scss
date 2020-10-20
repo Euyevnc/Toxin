@@ -8,10 +8,12 @@ html{
 }
 body{
     background-color: #F4F4F6;
+    margin: 0 !important;
 }
 .wrapper{
     min-width: 320px;
-    padding: 145px 0;
+    padding: 140px 0;
+    max-width: 1440px;
 }
 .bird{
 	position: absolute;
@@ -25,7 +27,6 @@ input{
     height: 44px;
     border: 1px solid rgba(31, 32, 65, 0.25);
     color: rgba(31, 32, 65, 0.75);
-    margin-top: 5px;
     box-sizing: border-box;
     border-radius: 4px;
     font-family: 'Montserrat';
@@ -62,6 +63,16 @@ h4{
     margin-top: 0;
     margin-bottom: 5px;
     font-family: 'Montserrat';
+}
+h5{
+    font-family: 'Montserrat';
+    font-style: normal ;
+    font-weight: bold ;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+    margin-top: 0;
 }
 
 .FormElementsWrapper{

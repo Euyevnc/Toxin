@@ -2,32 +2,81 @@
 @import "./Header__menu/Header__menu.scss";
 @import "./Header__autorization/Header__autorization.scss";
 @import "../../../utils/fonts/Montserrat.scss";
+@import "../Burger/Burger.scss";
 
 .Header-wrap{
     background-color: #FFFFFF;
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     
     & .Header{
         margin: auto;
         max-width: 1160px;
+        padding: 0 15px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        min-height: 70px;
+        @media(max-width: 600px) {
+            padding: 15px 15px;
+        }
 
         & .Header__menu {
-            & .Button_rounded{
-                width: 83px;
-                height: 30px;
-                line-height: 30px;
-                box-sizing: content-box;
+            display: inline;
+            
+            @media(max-width: 920px)  {
+                text-align: right;
             }
+            @media(max-width: 600px)  {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                flex-direction: column;
+                z-index: 100;
+                border: 3px solid rgb(189, 156, 255);
+                padding: 15px 5px;
+                visibility: hidden;
+                
+                & a,i, span:not(.Button_rounded){
+                    line-height: 40px;
+                    font-size: 24px;
+                    text-align: left;
+                    min-height: 40px;
+                }
+                & .Menu__element_type_submenu-active{
+                    background-color:rgb(189, 156, 255);
+                    position: static;
+                    margin-left: -20px;
+                }
+                & .Autorization{
+                    &>*:last-child{
+                        margin-left: 0;  
+                    }
+                    &>*:first-child{
+                        margin-right: 10px;
+                    }
+                    margin-left: 0;
+                }
+            }
+            & .Autorization{
+                margin-left: 20px;
+
+            }
+            & .Button_rounded{
+                width: 87px;
+                height: 34px;
+                line-height: 32px;
+                box-sizing: border-box;        
+                
+            }
+
             & .ButtonWithArrow{
-                width: 192px;
+                width: 196px;
             }
         }
+
 
     }
 }

@@ -1,5 +1,4 @@
 include ./Header__menu/Header__menu.pug
-
 mixin Header(login, ...issues)
     - var logo = logo
     .Header-wrap
@@ -15,3 +14,4 @@ mixin Header(login, ...issues)
                         span #{login}
                 if !login 
                     include ./Header__autorization/Header__autorization.pug
+            include ../Burger/Burger.pug

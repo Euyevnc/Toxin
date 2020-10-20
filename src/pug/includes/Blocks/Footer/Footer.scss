@@ -8,40 +8,67 @@
     & .Footer{
         margin: auto;
         max-width: 1160px;
-        padding: 100px 0;
+        padding: 105px 15px 50px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
         flex-wrap: wrap;
-        & .highlight{
-            text-transform: uppercase;
-        }
         &__block{
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
+            margin-bottom: 30px;
+            &+*{
+                margin-left: 40px;
+            }
+
             &>*{
-                margin-bottom: 20px;
+                margin-bottom: 21px;
                 text-align: start;
+               
             }
             &_width_wide{
                 max-width: 260px;
-
-                ;
+                & h5{
+                    margin-bottom: 18.5px;
+                   
+                }
+            }
+            &_width_slim{
+                min-width: 160px;
+                color: rgba(31, 32, 65, 0.75);
             }
         }
-        a{
+        & a{
             vertical-align: baseline;
             font-family: 'Montserrat';
             font-size: 14px;
-            line-height: 24px;
+            line-height: 17px;
             color: rgba(31, 32, 65, 0.5);
             text-decoration: none;
             &:hover{
                 color: rgba(31, 32, 65, 0.75);
             }
+        }
+        & p{
+            line-height: 24px;
+            
+        }
+        .LogoConteiner{
+            min-width: 110px;
+            margin-top: -5px;
+            margin-bottom: 18.5px;
+            
+            &>*{
+                vertical-align: middle;
+            }
+            & :first-child{
+                margin-right: 10px;       
+            }
+            
+            
         }
     }
 }
