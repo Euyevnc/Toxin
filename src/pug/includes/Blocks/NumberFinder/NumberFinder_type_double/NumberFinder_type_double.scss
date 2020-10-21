@@ -1,0 +1,21 @@
+@import "../../../Inputs/Date-range_double/Date-range_double_default.scss";
+@import "../../../Inputs/WithDropdown/WithDropdown_default.scss";
+
+
+.NumberFinderCont{
+    background-color: #fff;
+    padding: 40px 30px 30px;
+    border-radius: 4px;
+    max-width: 320px;
+    margin-left: auto;
+
+    & .Date-range_double + .Date-range_double{
+        margin-left: 20px;
+    }
+    & .WithDropdown_textfield{
+        margin-bottom: 30px;
+    }
+    & input::placeholder{
+        color: rgba(31, 32, 65, 0.75);
+    }
+}

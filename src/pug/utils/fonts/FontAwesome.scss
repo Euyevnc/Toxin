@@ -4,20 +4,20 @@
     font-weight: normal;
  
 	src: local('Font Awesome'),
-		url("../assets/fonts/Awesome/fa-regular-400.ttf") format("truetype"),
-		url("../assets/fonts/Awesome/fa-regular-400.woff") format("woff"),
-		url("../assets/fonts/Awesome/fa-regular-400.svg") format("svg"),
-		url("../assets/fonts/Awesome/fa-regular-400.eot") format("eot"); 
+		url("../../../assets/fonts/Awesome/fa-regular-400.ttf") format("truetype"),
+		url("../../../assets/fonts/Awesome/fa-regular-400.woff") format("woff"),
+		url("../../../assets/fonts/Awesome/fa-regular-400.svg") format("svg"),
+		url("../../../assets/fonts/Awesome/fa-regular-400.eot") format("eot"); 
 };
 @font-face {
     font-family: 'Font Awesome 5 Brands';
     font-style: normal;
     font-weight: normal;
     src: local('Font Awesome 5 Brands'),
-        url('../assets/fonts/Awesome/fa-brands-400.woff2') format('woff2'),
-        url('../assets/fonts/Awesome/fa-brands-400.woff') format('woff'),
-        url('../assets/fonts/Awesome/fa-brands-400.ttf') format('truetype'),
-        url('../assets/fonts/Awesome/fa-brands-400.svg#fontawesome') format('svg');
+        url('../../../assets/fonts/Awesome/fa-brands-400.woff2') format('woff2'),
+        url('../../../assets/fonts/Awesome/fa-brands-400.woff') format('woff'),
+        url('../../../assets/fonts/Awesome/fa-brands-400.ttf') format('truetype'),
+        url('../../../assets/fonts/Awesome/fa-brands-400.svg#fontawesome') format('svg');
 }
   
 .fab {

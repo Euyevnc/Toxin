@@ -7,13 +7,20 @@ html{
     font-size: 10px;
 }
 body{
-    background-color: #F4F4F6;
     margin: 0 !important;
+    background-color: #F4F4F6;
 }
 .wrapper{
+    margin: auto;
     min-width: 320px;
-    padding: 140px 0;
+    padding: 0 0;
     max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    z-index: 2;
+    flex-wrap: wrap;
+    position: relative;
 }
 .bird{
 	position: absolute;
@@ -41,11 +48,13 @@ input{
     }
 }
 h1{
-    font-family: 'Quicksand';
+    font-family: 'Open Sans';
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
     color: #1F2041;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 h3{
     font-family: 'Montserrat';

@@ -1,0 +1,14 @@
+include ../../../Inputs/Date-range_double/Date-range_double.pug
+include ../../../Inputs/WithDropdown/WithDropdown.pug
+include ../../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
+
+mixin NumberFinder_type_double(id, ...props)
+    div(class="NumberFinderCont")
+        h1(style="max-width:320px") Найдём номера под ваши пожелания
+        form(name="NumberFinderDouble")
+            div(style="display:flex; justify-content: flex-start; margin-top:20px")
+                +Date-range_double(props)
+            div(style="margin-bottom: 10px")
+                +WithDropdown(`${id}`,'Гости', "Сколько гостей", '')
+            +ButtonWithArrow('подобрать номер')
+

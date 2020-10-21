@@ -3,6 +3,7 @@
     width: 99px;
     height: 44px;
     border-radius: 22px;
+    line-height: 40px;
     text-align: center;
     font-family: 'Montserrat';
     font-weight: 700;
@@ -11,6 +12,7 @@
     box-sizing: border-box;
     cursor: pointer;
     font-size: 12px;
+
     & + *{
         margin-left: 20px;
     }

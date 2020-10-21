@@ -1,0 +1,7 @@
+mixin Date-range_double(issues)
+    each val in issues
+        div(class=`Date-range_double`)
+            include ../../Icons/arrow-down.pug 
+            label(style="font-weight:bold") 
+                p #{val.label}
+                input(class="Date-range_double-value" placeholder=`${val.placeholder}` id=`${val.id}`)

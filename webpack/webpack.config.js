@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "HeadersAndFooters";
+const name= "LandingPage";
 const PATHS = {
 	relPathDist: `dist/${name}`,
 	relPathSrc: `src/pug/pages/${name}`,
@@ -73,6 +73,14 @@ module.exports = (env, options) =>{
 						name: '[name].[ext]',
 						outputPath: `../assets/images`,
 					}
+				},
+				{	
+					test: /\.(ttf|woff|woff2|eot|svg)$/i,
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]',
+						outputPath: `../assets/fonts`,
+					}
 				},	
 				{
 					test:/\.s[ac]ss$/i,
@@ -80,7 +88,7 @@ module.exports = (env, options) =>{
 						 MiniCssExtractPlugin.loader,
 
 						{
-							loader: 'css-loader', options: {url: false, import: true}
+							loader: 'css-loader', options: {url: true, import: true}
 						},
 
 						{

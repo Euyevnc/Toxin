@@ -13,6 +13,18 @@
             color: rgba(31, 32, 65, 0.75);
         }
     }
+    & .LogoConteiner{
+        min-width: 110px;
+        
+        &>*{
+            vertical-align: middle;
+        }
+        & :first-child{
+            margin-right: 10px;       
+        }
+        
+        
+    }
     &>*{
         display: inline-block;
         vertical-align: middle;

@@ -25,6 +25,7 @@ export default function(){
 		yearSuffix: '',
 		showOtherMonths: true,
 		selectOtherMonths:true,
+		
     };
 
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
