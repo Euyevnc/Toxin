@@ -1,0 +1,28 @@
+extends ../../layout/layoutUIkit.pug
+include ../../includes/Blocks/Header/Header.pug
+include ../../includes/Blocks/Footer/Footer.pug
+include ../../includes/Blocks/Сellar/Сellar.pug
+include ../../includes/Blocks/Social/Social.pug
+include ../../includes/Blocks/NumberFinder/NumberFinder_type_double/NumberFinder_type_double.pug
+block variables
+    
+block head
+    title= LandingPage
+
+block content    
+    +Header(false, {name: "О нас", href:"#", addclass:"highlight"},{name: "Услуги", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]}, {name: "Вакансии", href:"#" },{name: "Новости", href:"#" },{name: "Соглашения", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]} )
+    
+    
+    div.content
+       
+        div(style="width:520px; padding-top:70px"  data-expanded="true" )
+            +NumberFinder_type_double("anountofguestFinder", {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+        
+        div(style="margin-top:auto; padding-bottom:18px;width:430px;text-align:left;height:66px ")
+            p(style="text-align:right;width:297px;margin-right:auto") Лучшие номера для вашей работы, отдыха и просто вдохновения
+    
+    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "#",desc: "О нас"},{href: "#",desc: "Новости"},{href: "#",desc: "Служба поддержки"},{href: "#",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "#",desc: "О сервисе"},{href: "#",desc: "Наша команда"},{href: "#",desc: "Вакансии"},{href: "#",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "#",desc: "Соглашения"},{href: "#",desc: "Сообщества"},{href: "#",desc: "Связь с нами"} ]})
+    
+    
+    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "#", facebook:"#", instagram:"#"})
+block script

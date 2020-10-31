@@ -51,11 +51,32 @@ export default function(){
 				let end = extensionRange.endDateText;
 				arrive.val(`${start}`)
 				departure.val(`${end}`)
-			  }
+			},
         });
 		$('div.ui-datepicker').css({ 'font-size': '15px',});
+		departure.on("focus",e=>{
+			$('div.ui-datepicker').css({ 'margin-left': '-170px',});
+			
+		})
+		arrive.on("focus",e=>{
+			$('div.ui-datepicker').css({ 'margin-left': '0px',});
+			
+		})
 		
-		addButtons(arrive)
+		$('div.ui-datepicker').css({ 'font-size': '15px',});
+
+		// try{
+		// 	$(".filled-range#finder_arrival").datepicker("setDate",'+3d')
+		// 	$(".filled-range#finder_departure").datepicker("setDate", ['+3d', '+7d'])			
+		// }catch{}
+		try{
+			let Fdate = $("#finder_arrival").closest("label").attr("data-fiiledstart")
+			$("#finder_arrival").datepicker("setDate","+" + Fdate + "d")
+			let Ldate = $("#finder_arrival").closest("label").attr("date-filledend")
+			$("#finder_departure").datepicker("setDate", ["+" + Fdate + "d", "+" +Ldate + "d"])			
+		}catch{}
+		
+		addButtons(arrive, departure)
 		
 
 	});
@@ -65,7 +86,7 @@ export default function(){
 
 
 
-function addButtons(inp){
+function addButtons(inp, inp2){
 	document.querySelectorAll('.ui-datepicker').forEach((i)=>{
 		i.addEventListener('click', (ev)=>{
 			if(ev.target.closest('.ui-datepicker-button-clear')){
@@ -75,31 +96,22 @@ function addButtons(inp){
 				try{i.querySelector(".selected-start").classList.remove(".selected-start")
 				i.querySelector(".selected-end").classList.remove(".selected-end")}
 				catch{}
-			})
-		
+				})
+				inp.val(``)
+				inp2.val(``)
 			}
 			if(ev.target.closest('.ui-datepicker-button-conf')){
-				let calendar = ev.target.closest('.ui-datepicker').parentNode
-				if(calendar.tagName == "DIV"){
-					let jsDate = $(`#${calendar.id}`).datepicker('widget').data('datepickerExtensionRange')
-					let startDT = jsDate.startDateText
-					let endDT = jsDate.endDateText
-					let startD = jsDate.startDate
-					let endD = jsDate.endDate
-					alert(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);
-					calendar.blur()
-					calendar.style.display = "none"}
-				else{
-					let jsDate = inp.datepicker('widget').data('datepickerExtensionRange')
-					let startDT = jsDate.startDateText
-					let endDT = jsDate.endDateText
-					let startD = jsDate.startDate
-					let endD = jsDate.endDate
-					alert(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);
-					i.blur()
-					i.style.display = "none"
-
-				}
+	
+				let jsDate = inp.datepicker('widget').data('datepickerExtensionRange')
+				let startDT = jsDate.startDateText
+				let endDT = jsDate.endDateText
+				let startD = jsDate.startDate
+				let endD = jsDate.endDate
+	
+				$.datepicker._hideDatepicker();
+				
+				alert(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);	
+				
 			}
 		})
 	})

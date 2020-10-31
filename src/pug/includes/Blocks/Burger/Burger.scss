@@ -6,10 +6,8 @@
     border-top: 5px solid #BC9CFF;
     border-bottom: 5px solid #BC9CFF;
     transition-duration: 0.2s;
+    cursor: pointer;
     
-    @media(max-width: 600px)  {
-        display: inline;
-    }
     &::before{
         content: "";
         position: absolute;

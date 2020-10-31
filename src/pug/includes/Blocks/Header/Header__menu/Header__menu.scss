@@ -50,6 +50,7 @@
         }
         &_type_dropping{
             position: relative;
+            user-select: none;
             
             &-active{
                 &>a{

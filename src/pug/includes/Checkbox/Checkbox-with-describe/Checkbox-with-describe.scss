@@ -1,6 +1,6 @@
 
 .Checkbox-with-describe_wrap{
-    width: 266px;
+    
     z-index: 9;
 }
 
@@ -10,7 +10,6 @@
 .Checkbox-with-describe_cont input[type="checkbox"]{
     display: none;
     & + label{
-        background-color: white;
         font-family: 'Montserrat';
         font-size: 14px;
         font-style: normal;
@@ -19,9 +18,7 @@
         letter-spacing: 0em;
         text-align: left;
         color: rgba(31, 32, 65, 0.5);
-        & div{
-            display: inline-block;
-        }
+        display: inline-block;
         &::before {
             content:'';
             display: inline-block;
@@ -61,10 +58,14 @@
 }
 .Checkbox-with-describe-text{
     vertical-align: top;
+    display: inline-block;
+    
     & p{
         margin-top: 0px;
         margin-bottom: 5px;
         font-family: 'Montserrat';
+        max-width: 230px;
+        
     }
     & .Checkbox-with-describe-title{
         font-weight: 700;
@@ -77,6 +78,6 @@
         font-size: 12px;
         line-height: 14px;
         color: rgba(31, 32, 65, 0.5);
-        max-width: 210px;
+        
     }
 }

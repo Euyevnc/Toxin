@@ -1,0 +1,104 @@
+@import "../../layout/layoutUIkit.scss";
+@import "../../includes/Blocks/Header/Header.scss";
+@import "../../includes/Blocks/Footer/Footer.scss";
+@import "../../includes/Blocks/Сellar/Сellar.scss";
+@import "../../includes/Blocks/PictureDemonstration/PictureDemonstration.scss";
+@import "../../includes/Icons/Blanks/Blank-smile.scss";
+@import "../../includes/Blocks/Diogram/Diogram.scss";
+@import "../../includes/Review-shape/Review-shape.scss";
+@import "../../includes/Blocks/NumberBooker/NumberBooker.scss";
+@import "../../includes/Checkbox/Bullet/Bullet.scss";
+
+p{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: baseline;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    text-decoration: none;
+}
+
+
+.highlight{
+    font-family: 'Montserrat' !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 14px;
+    line-height: 17px !important;
+    color: rgba(31, 32, 65, 0.75) !important;
+}
+.wrapper{
+    background-color: white;
+    @media(max-width: 560px){
+        & .PictureDemonstration__smallPictures{
+            width:100% !important;
+            & img{
+                height: auto!important;
+                overflow: hidden !important;
+            }
+        }
+    }
+    @media(max-width:390px){
+        & .reviews>p{
+            display: none;
+        }
+        & .NumberBookerCont{
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+        & .information>*{
+            margin-left:0 !important;
+            margin-right:0 !important;
+        }
+
+    }
+
+
+    & .content{
+        padding: 30px 0 70px;
+        max-width: 1160px;
+        min-height:830px;
+        min-width: 320px;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        @media(max-width: 850px){
+            flex-wrap: wrap;
+            justify-content: center;
+            & .booker{
+                margin-top: 30px;
+            }
+            & .information{
+                margin: 0!important;
+            }
+        }
+        & .information{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-right: 70px;
+            & .cancel{
+                max-width: 340px; 
+                margin-left: auto;
+            }
+            @media(max-width: 1160px){
+                &>*{
+                    margin-top: 40px;
+                    margin-left: 10px !important;
+                }
+            }
+            & .stickers{
+                width:280px;
+                margin-right: 80px;
+            }
+            & .reviews{
+                position: relative;
+            }
+        }
+          
+    }
+}

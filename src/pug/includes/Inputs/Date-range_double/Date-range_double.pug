@@ -2,6 +2,6 @@ mixin Date-range_double(issues)
     each val in issues
         div(class=`Date-range_double`)
             include ../../Icons/arrow-down.pug 
-            label(style="font-weight:bold") 
-                p #{val.label}
+            label(style="font-weight:bold" data-fiiledStart=`${val.datestart}` date-filledEnd=`${val.dateend}`) 
+                h3 #{val.label}
                 input(class="Date-range_double-value" placeholder=`${val.placeholder}` id=`${val.id}`)

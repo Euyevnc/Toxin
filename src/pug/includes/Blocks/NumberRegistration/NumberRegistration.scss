@@ -4,6 +4,7 @@
 @import "../../Inputs/Mask_d-m-y/Mask_d-m-y_default.scss";
 @import "../../Inputs/TextField/TextField_default.scss";
 @import "../../Checkbox/Buttons_tumbler/Buttons_tumbler.scss";
+@import "../../Checkbox/Buttons/Buttons.scss";
 @import "../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.scss";
 @import "../../Buttons/Button_rounded/Button_rounded.scss";
 @import "../../../utils/fonts/Montserrat.scss";
@@ -11,7 +12,19 @@
 
 
 .NumberRegistrationCont{
+    background-color: white;
+    display: inline-block;
+    padding: 40px 30px 30px;
+    @media(max-width: 380px){
+        padding: 40px 10px 30px;
+    }
 
+    @media(max-width: 340px){
+        padding: 40px 5px 30px;
+    }
+    @media(max-width: 331px){
+        padding: 40px 0px 30px;
+    }
     & .Buttons_head{
         display: none;
     }

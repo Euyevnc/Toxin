@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "LandingPage";
+const name= "RoomDetails";
 const PATHS = {
 	relPathDist: `dist/${name}`,
 	relPathSrc: `src/pug/pages/${name}`,
@@ -54,6 +54,7 @@ module.exports = (env, options) =>{
 				filename: `./${name}.html`,
 				//inject: false
 			}),
+			
     	],
 		module:{
 			rules: [

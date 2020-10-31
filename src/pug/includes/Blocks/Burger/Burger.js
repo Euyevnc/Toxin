@@ -1,4 +1,4 @@
-const BurgerFirstTimeCecking = true
+let BurgerFirstTimeChecking = true
 
 export default function(){
     document.querySelectorAll(".Header__burger").forEach(it=>{
@@ -6,7 +6,7 @@ export default function(){
         it.addEventListener("click", e=>{
             it.classList.toggle("Header__burger_cond_active")
             menu.style.visibility = getComputedStyle(menu).visibility == "hidden" ? "visible" : "hidden"
-            if(BurgerFirstTimeCecking){
+            if(BurgerFirstTimeChecking){
                 
                 window.addEventListener('resize', ev=>{
                     if(document.documentElement.clientWidth> 600){
@@ -20,7 +20,7 @@ export default function(){
                         catch{}
                     }
                 })
-                BurgerFirstTimeCecking = false
+                BurgerFirstTimeChecking = false
             }
 
         })

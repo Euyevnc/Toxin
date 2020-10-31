@@ -1,6 +1,7 @@
 mixin Dropping_checkbox(descr, ...issues)
     div.Dropping_checkbox_wrap
-        div.Dropping_checkbox_head #{descr}
+        div.Dropping_checkbox_head
+            h3 #{descr}
             include ../../Icons/arrow-down.pug 
         div.Dropping_checkbox_cont
             each val in issues

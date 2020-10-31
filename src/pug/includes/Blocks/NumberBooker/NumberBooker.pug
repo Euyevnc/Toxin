@@ -1,20 +1,20 @@
-include ../../Inputs/Date-picker/Date-picker.pug
-include ../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
+include ../../Inputs/Date-range_double/Date-range_double.pug
 include ../../Inputs/Inputs-with-counter/Inputs-with-counter.pug
-mixin NumberBooker(number, category, price, guests, addit)
+include ../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
+
+mixin NumberBooker(number, category, price, guests, addit, data)
     div(class="NumberBookerCont")
         div(style="display: flex; justify-content: space-between; align-items: flex-end")
-            span  
-                h4 № 
+            span.NumberBooker__info
+                h3 № 
                 h1 #{number}
-                p(class="CardsPurple") &nbsp;#{category}
-            span
+                p(class="UpperPurple") &nbsp;#{category}
+            span.NumberBooker__info
                 h4(style="color: rgba(31, 32, 65, 0.5)") #{price}₽
-                h3 &nbsp;в сутки
+                h5 &nbsp;в сутки
         form(name="NumberBooker")
             div(style="display: flex; justify-content: space-between;")
-                +Date-picker('Прибытие', 'ДД.ММ.ГГГГ','', '19.08.2019')
-                +Date-picker('Выезд', 'ДД.ММ.ГГГГ', '', '23.08.2019') 
+                +Date-range_double(data)
             div(data-counter="simple")
                 +Inputs-with-counter('Гости', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5", base: `${guests}`}, {name: "дети", min: "0", max: "5", base: "0"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
             div.NumberBookerAddits 
@@ -24,11 +24,11 @@ mixin NumberBooker(number, category, price, guests, addit)
                         span.NumberBookerDayAmount 7 суток
                     span.NumberBookerMultipliedPrise 69 930₽ 
                 each val in addit
-                    div
+                    div.NumberBookerAddits_addit
                         span 
-                            span(style="width: 220px; vertical-align: top;") #{val.desc} 
-                            h3(style="vertical-align: top;font-size: 16px;border: 1px solid rgba(31, 32, 65, 0.25); width: 20px;text-align:center; height: 20px; font-weight: 700; border-radius:50%;") #{val.sign}
-                        span #{val.price}
+                            span(style="width: 215px;display:inline-block; vertical-align: top;") #{val.desc} 
+                            p(class="NumberBookerAddit_sign") #{val.sign}
+                        span #{val.price}₽
                 div.NumberBookerTotalPrice
                     span Итого
                     span 68 051₽

@@ -1,12 +1,13 @@
 @import "../../../Icons/arrow-right_blue.scss";
 @import "../Button_rounded.scss";
 .Button_rounded.ButtonWithArrow{
-    
     width: 320px;
-    height: 44px;
     position: relative;
+    line-height: 40px;
+
     & .arrow-right_blue{
         right: 0;
+        position: absolute;
         & i{
             color: white;
         }

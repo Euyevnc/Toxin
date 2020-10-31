@@ -1,13 +1,15 @@
 @import "../Date-picker/Date-picker_default.scss";
 
 .Date-range{
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 12px;
     line-height: 14.5px;
     width: 266px;
     position: relative;
-    margin-bottom: 2rem;
     display: inline-block;
+    & label{
+        text-transform: uppercase;
+    }
 };
 
 .Date-range_value{

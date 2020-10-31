@@ -19,30 +19,6 @@ document.addEventListener('DOMContentLoaded', function(e){
     input_counter();
     dropping_checkbox();
     moveRange()
-    //Ну тут вручную начальный диапазон настрою,  хотя в отдельную функцию вынести в будущем можно
-        let rangeSlider = document.querySelector(".Range-slider-filter")
-        let min = rangeSlider.querySelector(".Range-slider-block-min")
-        let max = rangeSlider.querySelector(".Range-slider-block-max")
-        let range = rangeSlider.querySelector(".Range-slider-color-range")
-        min.style.left = "92px";
-        max.style.left = "192px";
-        range.style.width = "100px"
-        range.style.left = "92px";
-        let countMin = rangeSlider.querySelector('.Range-slider-counter-min')
-        let countMax = rangeSlider.querySelector('.Range-slider-counter-max')
-        countMin.innerHTML = "5 000"
-        countMax.innerHTML = "10 000"
     PageSwitch()
-
-
-
-
    document.querySelectorAll('.Dropping_checkbox_head')[1].click()
-
-
-
-
-
-    
-    
 })

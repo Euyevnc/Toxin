@@ -30,20 +30,20 @@ export default function(){
 
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 	
-	let picDiv = $("div.Date-range_value")
+	let pic = $(".Date-range_value")
     $(function(){
-        picDiv.datepicker({
+        pic.datepicker({
 			dateFormat: 'dd M',
 			minDate: 0,
 			range: 'period', 
 			onSelect: function(dateText, inst, extensionRange) {
 				let start = extensionRange.startDateText;
 				let end = extensionRange.endDateText;
-				picDiv.val(`${start} - ${end}`
+				pic.val(`${start} - ${end}`
 				)
 			  }
         });
-		$('div.ui-datepicker').css({ 'font-size': '15px',});
+		$('ui-datepicker').css({ 'font-size': '15px',});
 		
 		try{$(".filled-range").datepicker("setDate", ['+3d', '+7d'])}
 		catch{}
@@ -51,7 +51,7 @@ export default function(){
 		let extensionRange = $('.Date-range_value').datepicker('widget').data('datepickerExtensionRange');
 		let start = extensionRange.startDateText;
 		let end = extensionRange.endDateText;
-		picDiv.val(`${start} - ${end}`)
+		pic.val(`${start} - ${end}`)
 		addButtons()
 		
 
@@ -63,7 +63,7 @@ export default function(){
 
 
 function addButtons(){
-	document.querySelectorAll('div>.ui-datepicker').forEach((i)=>{
+	document.querySelectorAll('.ui-datepicker').forEach((i)=>{
 		i.addEventListener('click', (ev)=>{
 			if(ev.target.closest('.ui-datepicker-button-clear')){
 				i.querySelectorAll(".ui-state-active").forEach((item)=>{
@@ -72,11 +72,13 @@ function addButtons(){
 				try{i.querySelector(".selected-start").classList.remove(".selected-start")
 				i.querySelector(".selected-end").classList.remove(".selected-end")}
 				catch{}
+
+				$(".Date-range_value").val(``)
 			})
 		
 			}
 			if(ev.target.closest('.ui-datepicker-button-conf')){
-				let calendar = ev.target.closest('.ui-datepicker').parentNode
+				let calendar = ev.target.closest('.ui-datepicker')
 
 				let jsDate = $(`#${calendar.id}`).datepicker('widget').data('datepickerExtensionRange')
 				let startDT = jsDate.startDateText
@@ -84,8 +86,9 @@ function addButtons(){
 				let startD = jsDate.startDate
 				let endD = jsDate.endDate
 				alert(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);
-				calendar.blur()
-				calendar.style.display = "none"
+				
+				$.datepicker._hideDatepicker();
+				
 			}
 		})
 	})

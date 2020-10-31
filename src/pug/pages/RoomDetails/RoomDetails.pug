@@ -1,0 +1,54 @@
+extends ../../layout/layoutUIkit.pug
+include ../../includes/Blocks/Header/Header.pug
+include ../../includes/Blocks/Footer/Footer.pug
+include ../../includes/Blocks/Сellar/Сellar.pug
+include ../../includes/Blocks/Diogram/Diogram.pug
+include ../../includes/Icons/Blanks/Blank-smile.pug
+include ../../includes/Review-shape/Review-shape.pug
+include ../../includes/Blocks/NumberBooker/NumberBooker.pug
+include ../../includes/Checkbox/Bullet/Bullet.pug
+
+block variables
+    
+block head
+    title=RoomDetails
+
+block content    
+    +Header(false, {name: "О нас", href:"#"},{name: "Услуги", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]}, {name: "Вакансии", href:"#" },{name: "Новости", href:"#" },{name: "Соглашения", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]} )
+    div(style="width:100%")
+        .PictureDemonstration 
+            .PictureDemonstration__largePicture
+                img(src= require("./image(1).png").default)
+            .PictureDemonstration__smallPictures
+                div
+                    img(src= require("./image 2(1).png").default)
+                div
+                    img(src= require("./image 3.png").default)
+    div.content
+        div(class = "information")
+            div(class="stickers")
+                h6 Сведения о номере
+                +Blank-smile("insert_emoticon", "Комфорт","Шумопоглощающие стены")
+                +Blank-smile("location_city", "Удобство", "Окно в каждой из спален")
+                +Blank-smile("whatshot", "Уют" ,"Номер оснащён камином")
+            div
+                h6 Впечатления от номера
+                +Diogram("diogram_doub", 130, 65, 65, 0) 
+            div.reviews
+                h6 Отзывы посетителей номера
+                +Review-shape(require("./review001.png").default , "Мурад Сарафанов" ,"5 дней", 12, true,  "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+                +Review-shape(require("./review002.png").default , "Патрисия Стёклышкова" ,"Неделю", 2,false , "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.")
+            div.bullets
+                h6(style="padding-left: 21px") Правила
+                +Bullet("Нельзя с питомцами")
+                +Bullet("Без вечеринок и мероприятий")
+                +Bullet("Время прибытия — после 13:00, а выезд до 12:00")
+            div(class="cancel")
+                h6 Отмена 
+                p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        div.booker  
+            +NumberBooker(888, 'Люкс', "9 990", 3, [{desc:'Сбор за услуги: скидка 2 179₽', sign: 'i', price: 0}, {desc:'Сбор за дополнительные услуги', sign: 'i', price: 300}], [{placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival", datestart: 3, dateend: 10},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure", datestart: 3, dateend: 10}])
+
+    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "#",desc: "О нас"},{href: "#",desc: "Новости"},{href: "#",desc: "Служба поддержки"},{href: "#",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "#",desc: "О сервисе"},{href: "#",desc: "Наша команда"},{href: "#",desc: "Вакансии"},{href: "#",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "#",desc: "Соглашения"},{href: "#",desc: "Сообщества"},{href: "#",desc: "Связь с нами"} ]})
+    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "#", facebook:"#", instagram:"#"})
+block script

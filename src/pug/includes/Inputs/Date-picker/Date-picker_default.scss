@@ -108,7 +108,7 @@
                     font-size: 12px;
                 }
                 & .ui-state-highlight{
-                    color: white;
+                    color: white !important;
                     font-weight: bold;
                     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
                 }
@@ -120,7 +120,7 @@
                 }
                 &.selected-start{
                     & .ui-state-active{
-                        color: white;
+                        color: white  !important;
                         font-weight: bold;
                         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
                         position: relative;
@@ -144,7 +144,7 @@
                 }
                 &.selected-end{
                     & .ui-state-active{
-                        color: white;
+                        color: white !important;
                         font-weight: bold;
                         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
                         position: relative;

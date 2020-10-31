@@ -1,16 +1,16 @@
 
 .Buttons_liker_wrap{
     font-family: 'Montserrat';
-    
+    user-select: none;
 }
 
 .Buttons_liker_head{
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    
     position: relative;
-    margin-bottom: 16px;
+    
     
 }
 
@@ -18,11 +18,13 @@
 .Buttons_liker_wrap input[type="checkbox"]{
     display: none;
     & + label{ 
+        text-align: right;
         width: 40px;
         height: 20px;
         display: inline-block;
         font-size: 10px;
-        margin-right: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
         position: relative;
         border: 1px solid rgba(31, 32, 65, 0.25);
         color: rgba(31, 32, 65, 0.25);

@@ -3,12 +3,13 @@ include ../../Inputs/WithDropdown/WithDropdown.pug
 include ../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
 
 div(class="NumberFinderCont")
-    h1(style="max-width=320px") Найдём номера под ваши пожелания
-    form(name="NumberFinder")
-        div(style="display:flex; justify-content: flex-start; margin-top:20px")
-            +Date-picker('Прибытие', 'ДД.ММ.ГГГГ','')
-            +Date-picker('Выезд', 'ДД.ММ.ГГГГ', '')
-        div(style="margin-bottom: 10px")
-            +WithDropdown('Гости', "Сколько гостей", '')
-        +ButtonWithArrow('подобрать номер')
+    form
+        h1(style="max-width=320px") Найдём номера под ваши пожелания
+        form(name="NumberFinder")
+            div(style="display:flex; justify-content: flex-start; margin-top:20px")
+                +Date-picker('Прибытие', 'ДД.ММ.ГГГГ','')
+                +Date-picker('Выезд', 'ДД.ММ.ГГГГ', '')
+            div(style="margin-bottom: 10px")
+                +WithDropdown('Гости', "Сколько гостей", '')
+            +ButtonWithArrow('подобрать номер')
 

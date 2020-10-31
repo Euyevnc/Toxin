@@ -1,0 +1,33 @@
+.PictureDemonstration{ 
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    & .PictureDemonstration__largePicture{
+        overflow: hidden;
+        &>img{
+            height: 100%;
+            width: auto;
+        }
+    }
+    & .PictureDemonstration__smallPictures{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+       
+        &>*{
+            overflow: hidden;
+            flex-grow: 1;
+            position: relative;
+            &+*{
+                margin-top: -2px;
+            }
+            & img{
+                height: 100%;
+                width: auto
+            }
+        }
+    }
+
+}

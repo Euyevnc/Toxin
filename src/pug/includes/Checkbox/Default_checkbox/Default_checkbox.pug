@@ -1,6 +1,7 @@
 mixin Default_checkbox(descr, ...issues)
     div.Default_checkbox_wrap
-        div.Default_checkbox_head #{descr}
+        div.Default_checkbox_head 
+            h3 #{descr}
         div.Default_checkbox_cont
             each val in issues
                 - var id = val.id
@@ -12,4 +13,4 @@ mixin Default_checkbox(descr, ...issues)
                     else 
                         input(type="checkbox" id=`${id}` class="Default_checkbox_box")
                     label(for=`${id}`) 
-                        p.Default_checkbox_text #{name}
+                    p.Default_checkbox_text #{name}

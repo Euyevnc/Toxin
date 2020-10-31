@@ -9,6 +9,8 @@
     margin-bottom: 2rem;
     & .arrow-right_blue{
         right: 0;
+        bottom: 0;
+        position: absolute;
     }
     & .Field-with-arrow-describe{
         color: rgba(31, 32, 65, 0.5);

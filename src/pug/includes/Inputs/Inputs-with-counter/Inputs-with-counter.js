@@ -74,20 +74,35 @@ export default function(){
             listEl.forEach( (it,i) =>{
                 if(!par.closest('[data-counter="simple"]')){
                     let num = +it.querySelector(".Inputs-with-counter-number").textContent
+                    if(cont&&i==1) cont += ', '
                     let word = it.querySelector('p').textContent
                     if(num==0){cont+=''}
                     else if(i==2&&num>0&&cont){cont += "..."}
-                    else {cont+= `${num} ${word}, `}
+                    else {cont+= `${num} ${word}`}
                 }
                 else{
                     let num = +it.querySelector(".Inputs-with-counter-number").textContent
-                    cont=+cont + num; 
-                    if(i==listEl.length-1){
-                        if(cont == 1) cont+= " гость";
-                        else if(cont>1) cont+= " гостя";
-                        else if (cont==0){cont=''}
-                        else cont+= " гостей";
+                    if(i==0){
+                        cont=+cont + num; 
                     }
+                    else if(i==listEl.length-2){
+                        cont = +cont + num;
+                        if (cont==0){cont=''}
+                        else if(cont == 1 || cont% 10 == 1) cont+= " гость";
+                        else if(5>cont || 5>(cont%10)) cont+= " гостя";
+                        else cont+= " гостей";
+                        
+                    }
+                    else if(i==listEl.length-1){
+                        if (num==0){num=''}
+                        else if(num == 1 || num% 10 == 1) num+= " младенец";
+                        else if(5>num || 5>num%10) num+= " младенца";
+                        else num += " младенцев";
+
+                        if(cont&&num) cont +=", " + num
+                        
+                    }
+
                 }
             })
             cont = cont || inp.getAttribute("placeholder")

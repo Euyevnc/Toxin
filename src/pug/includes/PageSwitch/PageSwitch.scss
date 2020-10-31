@@ -1,4 +1,11 @@
-
+.PageSwitch-cont{
+    text-align: center;
+    line-height: 40px;
+    &>*{
+        vertical-align: middle;
+        line-height: 40px;
+    }
+}
 .PageSwitch-cell{
     width: 40px;
     height: 40px;
@@ -9,6 +16,7 @@
     text-align: center;
     color: rgba(31, 32, 65, 0.5);
     cursor: pointer;
+    user-select: none;
 }
 .PageSwitch-cell-ell{
     width: 40px;
@@ -28,14 +36,15 @@
     color: white;
 }
 .PageSwitch-arrow {
-    vertical-align: middle;
+    position: relative;
     user-select: none;
     & .arrow-right_blue{
         position: absolute;
         width: 40px;
         height: 40px;
         text-align: center;
-        cursor: pointer;
+        left:0;
+        bottom :0;
         & i{
             color: white;
             line-height: 40px;}
@@ -49,6 +58,7 @@
 .PageSwitch-text{
     font-family: 'Montserrat';
     font-size: 14px;
+    width: 100%;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);
 }

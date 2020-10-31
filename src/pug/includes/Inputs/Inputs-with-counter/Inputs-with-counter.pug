@@ -2,7 +2,8 @@ mixin Inputs-with-counter(label, placeholder, describe, ...issues)
     div(class=`Inputs-with-counter_textfield`)
         p(class="Inputs-with-counter_describe") #{describe}
         include ../../Icons/arrow-down.pug 
-        label(style="font-weight:bold") #{label}
+        label(style="font-weight:bold") 
+                h3 #{label}
                 input(class="Inputs-with-counter" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
         ul(class="Inputs-with-counter-menu")
             each val in issues

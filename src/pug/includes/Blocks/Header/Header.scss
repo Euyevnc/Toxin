@@ -25,7 +25,7 @@
         & .Header__menu {
             display: inline;
             
-            @media(max-width: 920px)  {
+            @media(max-width: 945px)  {
                 text-align: right;
             }
             @media(max-width: 600px)  {
@@ -38,7 +38,10 @@
                 border: 3px solid rgb(189, 156, 255);
                 padding: 15px 5px;
                 visibility: hidden;
-                
+                & .Header__burger{
+                    display: inline !important;
+                }
+
                 & a,i, span:not(.Button_rounded){
                     line-height: 40px;
                     font-size: 24px;
@@ -76,7 +79,12 @@
                 width: 196px;
             }
         }
-
+        @media(max-width: 600px)  {
+        
+            & .Header__burger{
+                display: inline;
+            }
+        }
 
     }
 }

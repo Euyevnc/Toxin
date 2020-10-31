@@ -7,5 +7,8 @@ export default function(){
             if(par.classList.contains('Dropping_checkbox_wrap_active')){icon.innerHTML = 'expand_less'}
             else(icon.innerHTML = 'expand_more')
         })
+        if(el.closest("[data-expanded='true']") ){
+            el.click();
+        }
     })
 }

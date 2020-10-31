@@ -8,7 +8,6 @@
     line-height: 14.5px;
     width: 266px;
     position: relative;
-    margin-bottom: 2rem;
     z-index: 5;
 
 };
@@ -65,7 +64,6 @@ label{
     margin: 0px;
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
     font-weight: bold;
     line-height: 44px;
     text-transform: uppercase;
@@ -73,6 +71,10 @@ label{
     padding-left: 1.5rem;
     padding-right: 7px;
     user-select: none;
+    & p{
+        line-height: 44px;
+        font-size: 12px;
+    }
 
 }
 .Inputs-with-counter-counter{
@@ -85,6 +87,7 @@ label{
         cursor: auto;
     }
     & span{
+        box-sizing: border-box;
         width: 30px;
         height: 30px;
         text-align: center;
@@ -108,6 +111,7 @@ label{
     font-weight: bold;
     cursor: pointer;
     display: none;
+
 }
 .Inputs-with-counter_confirm{
     padding: 13px;
@@ -123,3 +127,10 @@ label{
         display: inline;
     }
 }
+[data-expanded='true'] .Inputs-with-counter-menu{
+    display: flex
+}
+[data-counter="simple"] .Inputs-with-counter_textfield{
+    width: 320px;
+};
+

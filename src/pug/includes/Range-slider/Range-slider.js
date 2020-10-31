@@ -1,6 +1,30 @@
 export default function(){
 	document.querySelectorAll(".Range-slider-filter").forEach(itm=>{
 		sliderbind(itm)
+		let rangeSlider = itm
+        let min = rangeSlider.querySelector(".Range-slider-block-min")
+        let max = rangeSlider.querySelector(".Range-slider-block-max")
+		let range = rangeSlider.querySelector(".Range-slider-color-range")
+
+		let countMin = rangeSlider.querySelector('.Range-slider-counter-min')
+		let countMax = rangeSlider.querySelector('.Range-slider-counter-max')
+
+		let countMinSt = rangeSlider.querySelector('.Range-slider-numbers > number:nth-child(1)').innerHTML
+		let countMaxSt = rangeSlider.querySelector('.Range-slider-numbers > number:nth-child(2)').innerHTML
+		
+
+		let originStart = rangeSlider.querySelector('.Range-slider-numbers > number:nth-child(1)').getAttribute("data-def")
+		let originEnd = rangeSlider.querySelector('.Range-slider-numbers > number:nth-child(2)').getAttribute("data-def")
+
+		countMin.innerHTML = Math.round((countMaxSt - countMinSt)*originStart /100)*100
+		countMax.innerHTML =  Math.round((countMaxSt - countMinSt)*originEnd /100)*100
+
+		min.style.left = originStart*100 + "%";
+        max.style.left = originEnd*100 + "%";
+        range.style.width = (originEnd - originStart)*100 + "%"
+        range.style.left =  originStart*100 + "%";
+		
+		  
 	})
 }
 
@@ -26,7 +50,7 @@ function getCoords(elem) {
 		leftX: coords.left,
 		rigth : coords.left + window.pageXOffset + coords.width,
 		bottom : coords.top + window.pageYOffset + coords.height,
-		width : coords.width
+		width : coords.width-17
 	}
 }
 
@@ -115,7 +139,7 @@ function rangeMove(elem){
     	let rangeMin = +document.querySelector('.Range-slider-filter number:first-child').innerHTML;
     	let rangeMax = +document.querySelector('.Range-slider-filter number:last-child').innerHTML;
         if(f==0){
-          value =  (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + rangeMin).toFixed(1);
+          value =  (newLeft / ( (parent.coords.width) / (rangeMax - rangeMin)) + rangeMin).toFixed(1);
         } else {
           value = (newLeft / (parent.coords.width / (rangeMax - rangeMin))+ 0.3 + rangeMin).toFixed(1);
         }

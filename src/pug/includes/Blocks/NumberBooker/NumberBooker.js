@@ -1,9 +1,7 @@
 import InputsWithCounter from  "../../Inputs/Inputs-with-counter/Inputs-with-counter.js"
-import date_picker from "../../Inputs/Date-picker/Date-picker.js"
+import date_picker_double from "../..//Inputs/Date-range_double/Date-range_double.js"
 
-export default{
-    InputsWithCounter: InputsWithCounter,
-    date_picker: date_picker
-    
-
+export default function(){
+    InputsWithCounter();
+    date_picker_double();
 }
