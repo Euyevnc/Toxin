@@ -5,6 +5,18 @@
 @import "../../Inputs/TextField/TextField_default.scss";
 
 .EntryForm{
+    background-color: white;
+    padding: 40px 30px 30px;
+    @media(max-width: 380px){
+        padding: 40px 10px 30px;
+    }
+
+    @media(max-width: 340px){
+        padding: 40px 5px 30px;
+    }
+    @media(max-width: 331px){
+        padding: 40px 0px 30px;
+    }
     & .EntryFormSubscribe{
         align-items: center;
         & p{

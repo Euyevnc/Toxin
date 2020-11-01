@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "RoomDetails";
+const name= "Login";
 const PATHS = {
 	relPathDist: `dist/${name}`,
 	relPathSrc: `src/pug/pages/${name}`,
