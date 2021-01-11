@@ -1,0 +1,176 @@
+@import "../utils/fonts/Montserrat.scss";
+@import "../utils/fonts/Quicksand.scss";
+@import "../utils/fonts/OpenSans.scss";
+@import "../utils/fonts/MaterialIcons.scss";
+
+html{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    color: rgba(31, 32, 65, 0.75);
+    background-color: #F4F4F6;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.no p{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.50);
+    text-decoration: none;
+    margin: 0;
+}
+
+.no label{
+    p{
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 14.5px;
+        margin-bottom: 5.5px;
+        color: rgb(31, 32, 65);
+    }
+    &::before{
+        text-transform: none;
+    }
+}
+.no input{
+    padding-left: 15px;
+    width: 100%;
+    line-height: 18px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    transition-duration: 0.7s;
+    &::placeholder{
+        color: rgba(31, 32, 65, 0.75);
+        transition-duration: 0.7s;
+        opacity: 1;
+    }
+    &:hover{
+        line-height: 24px;
+        color: rgba(31, 32, 65, .75);
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        transition-duration: 0.7s;
+        &::placeholder{
+            color: rgba(31, 32, 65, 0.75);
+            transition-duration: 0.7s;
+        }
+    }
+}
+.noh1{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.noh2{
+    font-family: 'Open Sans';
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+.no h3{
+    text-transform: uppercase;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5.5px;
+    color: rgba(31, 32, 65, 1)
+}
+.noh4{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #BC9CFF;
+    font-size: 12px;
+}
+.header-container{
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: relative;
+    z-index: 10;
+}
+.content-container{
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    z-index: 9;
+}
+.footer-container{
+    
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: relative;
+    z-index: 10;
+}
+.cellar-container{
+    border-top: 2px solid rgba(31, 32, 65, 0.25);
+    background-color: white;
+    position: relative;
+    z-index: 10;
+}
+.wrapper{
+    max-width: 1160px;
+    margin: auto;
+}
+.FormElementsWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+.bird{
+	position: absolute;
+	left: 3rem;
+    top: 3rem;
+};
+
+button:active, button:focus {
+    outline: none !important;
+  }
+  button::-moz-focus-inner {
+    border: 0 !important;
+  }
+//   textarea:focus, input:focus
+// {
+//   outline: none;
+//   line-height: 24px;
+//   color: rgba(31, 32, 65, 0.75);
+//   border: 1px solid rgba(31, 32, 65, 0.5);
+//   transition-duration: 0.7s;
+//   &::placeholder{
+//       color: rgba(31, 32, 65, 0.75);
+//       transition-duration: 0.7s;
+//   }
+// }
+// input:hover,
+// textarea:hover{
+//     line-height: 24px;
+//     color: rgba(31, 32, 65, 0.75);
+//     border: 1px solid rgba(31, 32, 65, 0.5);
+//     transition-duration: 0.7s;
+//     &::placeholder{
+//         color: rgba(31, 32, 65, 0.75);
+//         transition-duration: 0.7s;
+      
+//     }
+// }

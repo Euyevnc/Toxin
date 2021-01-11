@@ -1,0 +1,31 @@
+include ../../Inputs/TextField/TextField.pug
+include ../../Checkbox/Radio/Radio.pug
+include ../../Inputs/Mask_DMY/Mask_DMY.pug
+include ../../Checkbox/Tumblers/Tumblers.pug
+include ../../Buttons/Button_rounded-.../Button_rounded-....pug
+include ../../Buttons/Button_with_arrow/Button_with_arrow.pug
+
+div(class="Registration")
+    h1 Регистрация аккаунта
+    form(name="registration" class="Registration__form")
+        div(class="Registration__names")
+            +TextField('', 'Имя', '')
+            +TextField('', 'Фамилия', '')
+        div(class="Registration__sex")
+            +Radio('', 'sex', {id:'genderMan', describe:'Мужчина', checked:true},{id:'genderFem', describe:'Женщина'} )
+        div(class="Registration__data")
+            +Mask_DMY('ДАТА РОЖДЕНИЯ', "ДД.ММ.ГГГГ", '')
+        div(class="Registration__entry-date")
+            h3 данные для входа в сервис
+            +TextField('', 'Email', '')
+            +TextField('', 'Пароль', '')
+        div(class="Registration__offers-tumbler")
+            +Tumblers('', {id:'allowOfferts', name:'Получать спецпредложения'})
+        div(class="Registration__payment")
+            +Button_with_arrow('Перейти к оплате')
+    div(class="Registration__subscribe")
+        p Уже есть аккаунт на Toxin
+        +Button_rounded('войти', 'empty')
+
+
+

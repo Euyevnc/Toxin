@@ -1,0 +1,17 @@
+@import "../../layout/layoutUIkit.scss";
+@import "../../includes/Blocks/Header/Header.scss";
+@import "../../includes/Blocks/Footer/Footer.scss";
+@import "../../includes/Blocks/Сellar/Сellar.scss";
+@import "../../includes/Blocks/Registration/Registration.scss";
+
+.content-container{
+    background-image: url('./Registration_bg.png');
+    background-position: bottom;
+    & .wrapper{
+        min-width: 320px; 
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+    }
+}

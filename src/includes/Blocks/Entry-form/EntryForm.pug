@@ -1,0 +1,13 @@
+include ../../Inputs/TextField/TextField.pug
+include ../../Buttons/Button_rounded/ButtonWithArrow/ButtonWithArrow.pug
+include ../../Buttons/Button_rounded/Button_rounded.pug
+
+div(class="EntryForm")
+    h1 Войти
+    form.EntryForm__form(name="EntryForm")
+        +TextField('', 'Email', '')
+        +TextField('', 'Пароль', '')
+        +ButtonWithArrow('Войти')
+    div(class="EntryForm__subscribe")
+        p Нет аккаунта на Toxin?
+        +Button_rounded('создать', 'empty')

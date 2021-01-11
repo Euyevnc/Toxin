@@ -1,0 +1,151 @@
+@import "../../../utils/fonts/OpenSans.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+@import "../../../utils/fonts/Quicksand.scss";
+@import "../../Inputs/Date-range_double/Date-range_double_default.scss";
+@import "../../Inputs/Inputs-with-counter/Inputs-with-counter_default.scss";
+@import "../../Buttons/Button_with_arrow/Button_with_arrow.scss";
+
+
+.Booker{
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px 30px 10px;
+    max-width: 380px;
+    &>*{
+        margin-bottom: 20px;
+    }
+    & h2{
+        display: inline;
+        color: rgba(31, 32, 65, 1);
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0;
+        padding: 0;
+    }
+    & h3{
+        display: inline;
+        color: rgba(31, 32, 65, 1);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    & h4{
+        display: inline;
+        color: rgba(31, 32, 65, .5);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    & h5{
+        display: inline;
+        color: rgba(31, 32, 65, .5);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    &__info{
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-end;
+        vertical-align: bottom;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        &>*{
+            width: auto;
+            &>*{
+                display: inline;
+                margin: 0;
+            }
+        }
+    }
+    &__category{
+        display: inline;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: #BC9CFF;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    &__rent{
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-end;
+        vertical-align: bottom;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    }
+    &__service{
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-start;  
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        & p{
+            &:first-child{
+                width: 215px;
+            }
+            display:inline-block;
+            vertical-align: top; 
+            line-height: 18px;
+        }
+    }
+    &__sign_i{
+        font-size: 12px;
+        border: 1px solid rgba(31, 32, 65, 0.25); 
+        width: 20px;
+        text-align:center; 
+        height: 20px; 
+        font-weight: 700; 
+        border-radius:50%;
+        box-sizing: border-box;
+        color: rgba(31, 32, 65, 0.25) ;
+    }
+    &__total{
+        display: flex; 
+        justify-content: space-between;
+    }
+}
+
+// .NumberBookerAddits {
+//     font-size: 14px;
+//     font-family: 'Montserrat';
+//     color: rgba(31, 32, 65, 0.75);
+//     margin: 20px 0 30px;
+//     & .NumberBookerAddits_addit{
+//         margin-top: 10px;
+//         &>*{
+//             vertical-align: top;
+//             line-height: 20px;
+//         }
+//     }
+//     & .NumberBookerAddit_sign{
+//
+//     }
+//     &>div{
+//         display: flex;
+//         justify-content: space-between;
+//         &.NumberBookerTotalPrice{
+//             margin-bottom: 20px;
+//             margin-top:30px;
+//             font-size: 19px;
+//             font-weight: 700;
+//             font-family: "Quicksand";
+//             border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
+//             color: #1F2041;
+//             &>*{
+//                 line-height: 24px;
+//                 background: white;
+//                 position: relative;
+//                 bottom: -3px;
+//             }
+//         }
+//     }
+
+// }

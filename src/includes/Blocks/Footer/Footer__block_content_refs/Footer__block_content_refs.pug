@@ -1,0 +1,6 @@
+mixin Footer__block_content_refs(refs)
+    nav(class="Footer__block Footer__block_width_slim Footer__block_content_refs")
+        h3 #{refs.caption}
+        each val in refs.links
+            a(href=`${val.href}`) #{val.desc}
+

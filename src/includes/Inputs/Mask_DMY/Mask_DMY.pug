@@ -1,0 +1,9 @@
+mixin Mask_DMY(label, placeholder, describe)
+    div(class=`Mask_DMY`)  
+        label
+            if label
+                h3 #{label}
+            div
+                input(class="Mask_DMY__value" placeholder=`${placeholder}`) 
+        p(class="Mask_DMY__describe") #{describe}
+        

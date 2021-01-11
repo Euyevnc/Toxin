@@ -1,0 +1,25 @@
+mixin Inputs-with-counter(label, placeholder, describe, ...issues)
+    div(class=`inputs-with-counter`)
+        p(class="inputs-with-counter__describe") #{describe}
+        include ../../../static/Icons/arrow-down.pug
+        label
+            if label
+                h3 #{label}
+            input(class="inputs-with-counter__value" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
+        ul(class="inputs-with-counter__menu")
+            each val in issues
+                - var min = val.min
+                - var max = val.max
+                li(class="inputs-with-counter__element")
+                    p #{val.name}
+                    span(class="inputs-with-counter__counter" data-min=`${min}` data-max=`${max}`)
+                        span -
+                        span(class="inputs-with-counter__number") 0
+                        span +
+            span(class="inputs-with-counter__button-delete") ОЧИСТИТЬ
+            span(class="inputs-with-counter___button-confirm") ПРИМЕНИТЬ
+
+
+
+
+    

@@ -1,0 +1,18 @@
+@import "../../includes/Blocks/Header/Header.scss";
+@import "../../includes/Blocks/Footer/Footer.scss";
+@import "../../includes/Blocks/Сellar/Сellar.scss";
+@import "../../includes/Blocks/EntryForm/EntryForm.scss";
+@import "../../layout/layoutUIkit.scss";
+
+.content-container{
+    background-image: url('login_bg.png');
+    background-position: bottom;
+    & .wrapper{
+        width: 100%;
+        min-height: 683px;
+        min-width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

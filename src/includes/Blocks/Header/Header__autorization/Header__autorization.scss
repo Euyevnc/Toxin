@@ -1,0 +1,15 @@
+@import '../../../Buttons/Button-rounded/Button-rounded.scss';
+.header__autorization{
+    & .button-rounded{
+        height: 34px;
+        line-height: 30px;    
+        min-width: 87px;
+        font-size: 12px;           
+    }
+    &>*:first-child{
+        margin: 0 20px 0 10px;
+    }    
+    &>*:last-child{
+        width: 196px;
+    }
+}

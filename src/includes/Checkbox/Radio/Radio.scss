@@ -1,0 +1,61 @@
+@import "../../../utils/fonts/Montserrat.scss";
+.Radio{ 
+    &__header{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+    }
+    &__button{
+        display: inline-block;
+        margin-right: 20px;
+        & p{
+            display: inline-block;
+            vertical-align: baseline;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+        & input[type="radio"]{
+            display: none;
+            & + label{ 
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                &::before {
+                    content:'';
+                    display: inline-block;
+                    text-align: center;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid rgba(31, 32, 65, 0.25);
+                    cursor: pointer;
+                    border-radius: 50%;
+                    line-height: 20px;
+                    vertical-align: middle;
+                   
+                }
+        
+            }
+        
+        }
+        & input[type="radio"]:checked{ 
+            & + label{ 
+                & + p{
+                    color: rgba(31, 32, 65, 0.75);
+                }
+                &::before {
+                    content: "stop_circle";
+                    font-family: 'Material Icons';
+                    color: #BC9CFF;
+                    font-size: 12px;
+                    border: 1px solid  #BC9CFF;
+                   
+                }
+            }
+        
+        }
+    }
+}

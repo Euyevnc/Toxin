@@ -1,0 +1,168 @@
+@import "../../../static/Icons/arrow-down.scss";
+@import "../../../utils/fonts/OpenSans.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+
+.ui-datepicker{
+    display: none;
+    z-index: 100;
+    background-color: white;
+    width: auto;
+    padding: 20px;
+    & .ui-widget-header{
+        border: none;
+        background: #ffffff;
+        font-family: 'Open Sans';
+        font-size: 19px;
+        color: #1F2041;
+        font-weight: 700;
+        margin-bottom: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        & >*{
+            line-height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            &:hover{
+                border: none;
+                background-color: white;
+                
+            }
+        }
+        & .material-icons{
+            line-height: 24px;
+            color: #BC9CFF;
+            cursor: pointer;
+            top:0;
+            margin-top: 0;
+        }
+    }
+    .ui-datepicker-calendar{
+        border-collapse: collapse;
+        & thead{
+            & th{
+                padding: 0;
+                & span{
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    font-family: 'Montserrat';
+                    background-color: white;
+                    line-height: 40px;
+                    text-align: center;
+                    color: rgba(31, 32, 65, 0.5);
+                    border-radius: 50%;
+                    border: none;
+                    font-size: 12px;
+                    padding: 0;
+                    color: #BC9CFF;
+                }
+            }
+        }
+        & tbody{
+            & td{
+                
+                padding: 0;
+                font-family: 'Montserrat';
+                opacity: 1;
+                &.ui-state-disabled{
+                    & .ui-state-default{
+                        color: rgba(31, 32, 65, 0.25);
+                    }
+                }
+                & .ui-state-default{
+                    width: 40px;
+                    height: 40px;
+                    display: inline-block;
+                    background-color: white;
+                    line-height: 40px;
+                    text-align: center;
+                    color: rgba(31, 32, 65, 0.5);
+                    border-radius: 50%;
+                    border: none;
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+                & .ui-state-highlight{
+                    color: white;
+                    font-weight: bold;
+                    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                }
+                &.selected{
+                    & .ui-state-active{
+                        background: linear-gradient(180deg, rgba(188, 156, 255, .25) 0%, rgba(139, 164, 249,.25) 100%);
+                        border-radius: 0;
+                    }
+                }
+                &.selected-start{
+                    & .ui-state-active{
+                        color: white ;
+                        font-weight: bold;
+                        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                        position: relative;
+                        opacity: 1;
+                        border-radius: 50%;
+                    }
+                    &:not(.selected-end){
+                        & .ui-state-active{
+                            &::before{
+                                position: absolute;
+                                content: "";
+                                right: 0;
+                                top:0;
+                                height: 100%;
+                                width: 50%;
+                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                                opacity: 0.25;
+                            }
+                        }
+                    }
+                }
+                &.selected-end{
+                    & .ui-state-active{
+                        color: white;
+                        font-weight: bold;
+                        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                        position: relative;
+                        opacity: 1;
+                        border-radius: 50%;
+
+                    }
+                    &:not(.selected-start){
+                        & .ui-state-active{
+                            &::after{
+                                position: absolute;
+                                content: "";
+                                left: 0;
+                                top:0;
+                                height: 100%;
+                                width: 50%;
+                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                                opacity: 0.25;
+                            }
+
+                        }
+                    }
+                }
+                
+            }
+        }   
+    }
+    & .ui-datepicker-ButtonPanel{
+        display:flex;
+        margin-top: 20px;
+        justify-content:space-between;
+        & .ui-datepicker-button_conf, .ui-datepicker-button_clear{
+            margin:0px; 
+            padding:0px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: 'Montserrat';
+            font-size: 12px;
+            color: #BC9CFF;
+            cursor: pointer;
+            
+        }
+    }
+}

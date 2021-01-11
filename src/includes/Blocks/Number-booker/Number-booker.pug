@@ -1,0 +1,30 @@
+include ../../Inputs/Date-range_double/Date-range_double.pug
+include ../../Inputs/Inputs-with-counter/Inputs-with-counter.pug
+include ../../Buttons/Button_with_arrow/Button_with_arrow.pug
+
+div.Booker
+    div.Booker__info
+        span
+            h3 № 
+            h2.Booker__number
+            p.Booker__category 
+        span
+            h4.Booker__price(style="color: rgba(31, 32, 65, 0.5)") 
+            h5 в сутки
+    form(name="Booker")
+        div(style="display: flex; justify-content: space-between;")
+            +Date-range_double([ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"} ])
+        div(data-counter="simple")
+            +Inputs-with-counter('Гости', 'Сколько гостей', '', {name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
+    div.Booker__compute
+        div.Booker__rent
+            span    
+                p.Booker__price 
+                p &nbsp;x&nbsp;
+                p.Booker__amount
+            p.Booker__rent-total
+        div.Booker__total
+            h2 Итого
+            h2 
+    +Button_with_arrow('забронировать')
+

@@ -1,0 +1,19 @@
+mixin Header__menu(login, issues)
+    nav(class="header__menu menu")
+        each val in issues
+            if val.blocks
+                div(class=`menu__element menu__element_type_dropping ${val.highlight ? 'menu__element menu__element_type_dropping-highlight' : ''}`) 
+                    a #{val.name} 
+                    include ../../../../static/Icons/arrow-down.pug 
+                    div.menu__element_type_submenu
+                        each block in val.blocks
+                            div(class="menu__element")
+                                a(href=`${block.href}`) #{block.name}
+            else
+                a(class=`menu__element menu__element_type_inline ${val.addclass || ''}`  href=`${val.href}`)
+                    span #{val.name}
+        if login   
+            a(href="/account/" class="menu__element menu__element_type_login")
+                span #{login}
+        else
+            include ../Header__autorization/Header__autorization.pug

@@ -1,0 +1,7 @@
+include ../Social/Social.pug
+mixin Cellar(cr, links)
+    div.cellar 
+        span.cellar__text
+            p #{cr}
+        span.cellar__social 
+            +Social(links)

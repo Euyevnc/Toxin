@@ -1,0 +1,52 @@
+@import "../../../utils/fonts/Montserrat.scss";
+.TextField{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    width: 320px;
+    position: relative;
+    &__value{
+        padding-left: 15px;
+        width: 100%;
+        line-height: 18px;
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        color: rgba(31, 32, 65, 0.75);
+        box-sizing: border-box;
+        border-radius: 4px;
+        transition-duration: 0.7s;
+        &::placeholder{
+            color: rgba(31, 32, 65, 0.25);
+            transition-duration: 0.7s;
+            opacity: 1;
+            
+        } 
+        &:hover{
+            line-height: 24px;
+            color: rgba(31, 32, 65, .75);
+            border: 1px solid rgba(31, 32, 65, 0.5);
+            transition-duration: 0.7s;
+            &::placeholder{
+                color: rgba(31, 32, 65, 0.75);
+                transition-duration: 0.7s;
+            }
+        }
+    }
+    &__label{
+        & h3{
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 0 0 5.5px;
+            padding: 0;
+        }
+    }
+    &__describe{
+        color: rgba(31, 32, 65, 0.5);
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    };
+    
+}
+

@@ -1,0 +1,55 @@
+@import '../../../static/Icons/arrow-right_blue.scss';
+
+.field-with-arrow{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    position: relative;
+    & label{
+        font-weight:bold;
+        font-size: 12px;
+        line-height: 14.5px;
+    }
+    & input{
+        min-width: 260px;
+        font-size: 14px;
+        padding-left: 15px;
+        width: 100%;
+        line-height: 24px;
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        color: rgba(31, 32, 65, 0.75);
+        box-sizing: border-box;
+        border-radius: 4px;
+        transition-duration: 0.7s;
+        &::placeholder{
+            color: rgba(31, 32, 65, 0.25);
+            transition-duration: 0.7s;
+            opacity: 1;
+            font-size: 14px;
+            
+        } 
+        &:hover{
+            line-height: 24px;
+            color: rgba(31, 32, 65, .75);
+            border: 1px solid rgba(31, 32, 65, 0.5);
+            transition-duration: 0.7s;
+            &::placeholder{
+                color: rgba(31, 32, 65, 0.75);
+                transition-duration: 0.7s;
+            }
+        }
+    };
+    &__describe{
+        color: rgba(31, 32, 65, 0.5);
+        padding: 0px;
+        margin: 0px 0px 5px 0px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    };
+    & .arrow-right_blue{
+        right: 0;
+        bottom: 0;
+        position: absolute;
+    }
+};
+

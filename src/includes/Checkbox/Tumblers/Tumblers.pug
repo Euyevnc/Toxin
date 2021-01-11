@@ -1,0 +1,16 @@
+mixin Tumblers(descr, ...issues)
+    div.Tumblers
+        if descr
+            div.Tumblers__header #{descr}
+        div.Tumblers__container
+            each val in issues
+                - var id = val.id
+                - var name = val.name
+                - var checked = Boolean(val.checked)
+                div.Tumblers__buttons
+                    if checked 
+                        input(type="checkbox" id=`${id}`  checked)
+                    else 
+                        input(type="checkbox" id=`${id}`)
+                    label(for=`${id}`) 
+                    p #{name}

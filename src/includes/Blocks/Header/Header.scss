@@ -1,0 +1,27 @@
+@import "./Header__menu/Header__menu.scss";
+@import "./Header__burger/Header__burger.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+
+.header{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @media(max-width: 600px) {
+        padding: 10px 10px;
+        & .Header__burger{
+            display: inline;
+        }
+    }
+    &__sign{
+        flex-shrink: 0;
+        &>*{
+            vertical-align: middle;
+            &:last-child{
+                margin-left: 10px;
+            }
+        }
+    }
+
+}

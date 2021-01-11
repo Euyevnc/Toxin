@@ -1,0 +1,11 @@
+mixin Field-with-arrow(label, placeholder, describe, active)
+    - if(!describe){describe=''}
+    div(class=`field-with-arrow`)
+        include ../../../static/Icons/arrow-right_blue.pug   
+        label 
+            if label
+                h3 #{label}
+            div
+                input(class="field-with-arrow__value" placeholder=`${placeholder}`) 
+        p(class="field-with-arrow__describe") #{describe}
+        

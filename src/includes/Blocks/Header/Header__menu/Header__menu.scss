@@ -1,0 +1,84 @@
+@import '../../../../static/Icons/arrow-down.scss';
+@import '../Header__autorization/Header__autorization.scss';
+.header__menu, .menu{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @media(max-width: 600px) {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        z-index: 100;
+        border: 3px solid rgb(189, 156, 255);
+        padding: 15px 5px;
+        visibility: hidden;
+        & .menu__element{
+            line-height: 45px;
+            font-size: 24px;
+        }
+        & .header__autorization{
+            &>*{
+                margin: 10px
+            }
+        }
+    }
+    &__element{
+        position: relative;
+        cursor: pointer;
+        margin: 0 10px;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, 0.5);
+        text-decoration: none;
+        &:hover{
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &_type_login{
+            padding-left: 20px;
+            border-left: 1px solid rgba(31, 32, 65, 0.25);
+        }
+        &_type_dropping{
+            user-select: none;
+            &>*{
+                vertical-align: middle;
+            }
+            & .arrow-down{
+                width: 20px;
+                height: 20px;      
+            }
+            &-active{
+                &>a{
+                    color: rgba(31, 32, 65, 0.75);
+                }
+            }
+            &-highlight{
+                font-weight: bold ;
+                color: rgba(31, 32, 65, 0.75) ;
+            }
+            & .menu__element_type_submenu{
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                border-top-color: transparent;
+                &-active{
+                    z-index: 100;
+                    display: block;
+                    background: rgb(224, 220, 220);
+                    & a{
+                        line-height: 40px;
+                        font-size: 24px;
+                        text-decoration: none;
+                        color: rgba(31, 32, 65, 0.75);
+                    }
+                }
+            }   
+        }
+    }
+}

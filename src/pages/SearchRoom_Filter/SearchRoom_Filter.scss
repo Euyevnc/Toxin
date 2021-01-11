@@ -1,0 +1,40 @@
+@import "../../layout/layoutUIkit.scss";
+@import "../../includes/Blocks/Header/Header.scss";
+@import "../../includes/Blocks/Footer/Footer.scss";
+@import "../../includes/Blocks/Сellar/Сellar.scss";
+@import "../../includes/Blocks/Social/Social.scss";
+@import "../../includes/Inputs/Date-range/Date-range_default.scss";
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_default.scss";
+@import "../../includes/Range-slider/Range-slider.scss";
+@import "../../includes/Checkbox/Default_checkbox/Default_checkbox.scss";
+@import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
+@import "../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.scss";
+@import "../../includes/Blocks/NumberDemonstration/NumberDemonstration.scss";
+@import "../../includes/PageSwitch/PageSwitch.scss";
+.content-container{
+    background-color: white;
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        & .Inputs-containter{
+            min-width: 266px;
+            margin-right: 60px;
+            & .Range-slider-filter {
+                width: 266px;
+            }
+        }
+        & .Items-container{
+        
+            & h1{
+                margin:0;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 30px;
+                color: #1F2041;
+            };
+
+        }
+    }
+}
