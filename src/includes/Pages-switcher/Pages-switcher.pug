@@ -1,10 +1,10 @@
-mixin Page-switcher(totalamount, amountOnPage)
+mixin Pages-switcher(totalamount, amountOnPage)
     - let page = Math.ceil(totalamount/amountOnPage)
-    .Page-switcher(data-amountonpage=`${amountOnPage}`, data-totalamount=`${totalamount}`)
-        div(style="display: inline; margin-bottom: 10.5px")
+    .pages-switcher(data-amountonpage=`${amountOnPage}`, data-totalamount=`${totalamount}`)
+        div.pages-switcher__cell-container
             - for(let x= 0; x < page; x++)
                 - let y = x+1
-                span.Page-switcher__cell #{y}
-        span.Page-switcher__arrow 
-            include ../Icons/arrow-right_blue.pug
-        p.Page-switcher__text
+                span.pages-switcher__cell #{y}
+        span.pages-switcher__arrow 
+            include ../../static/Icons/arrow-right_blue.pug
+        p.pages-switcher__text

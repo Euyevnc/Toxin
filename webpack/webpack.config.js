@@ -1,24 +1,21 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "Login";
+const name= "Registration";
 const PATHS = {
-	relPathDist: `dist/${name}`,
-	relPathSrc: `src/pug/pages/${name}`,
-	src: path.join(__dirname, `../src/pug/pages/${name}`),
-	dist: path.join(__dirname,  `../dist/${name}`),
-	assets: 'assets/'
+	relPathSrc: `src/pages/${name}`,
+	src: path.join(__dirname, `../src/pages/${name}`),
+	dist: path.join(__dirname,  `../dist/`),
+	assets: 'assets'
 }
 module.exports = (env, options) =>{
-	const mode = options.mode == 'production' ? './' : `/dist/${name}/`
+	const mode = options.mode == 'production' ? './' : `/dist/`
  	return{
-		entry: {
-			app: `./${PATHS.relPathSrc}/${name}.js`,
-			// module: `${PATHS.src}/your-module.js`,
-		},
+		entry: `./${PATHS.relPathSrc}/${name}.js`,
+			
 		output: {
-			filename: `[name].js`,
-			path: PATHS.dist,
+			filename: `scripts/${name}.js`,
+			path: `${PATHS.dist}`,
 			publicPath: mode
 
 		},
@@ -34,11 +31,12 @@ module.exports = (env, options) =>{
 				}
 			}
 		},
+		devtool: 'eval',
 		devServer: {
 			overlay: true,
 
 			contentBase:`./` ,
-			openPage:`../dist/${name}/${name}.html`,
+			openPage:`../dist/${name}.html`,
 			hot: true,
 			inline: true,
 			watchContentBase: true,
@@ -47,17 +45,24 @@ module.exports = (env, options) =>{
 
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'main.css',
+				filename: `styles/${name}.css`,
 			}),
 			new HtmlWebpackPlugin({
 				template: `${PATHS.relPathSrc}/${name}.pug`,
-				filename: `./${name}.html`,
+				filename: `${name}.html`,
 				//inject: false
 			}),
 			
     	],
 		module:{
 			rules: [
+				{
+					test: require.resolve("jquery"),
+					loader: "expose-loader",
+					options: {
+					  exposes: ["$", "jQuery"],
+					},
+				},
 				{
 					test: /\.js$/,
 					loader: 'babel-loader',
@@ -72,7 +77,7 @@ module.exports = (env, options) =>{
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						outputPath: `../assets/images`,
+						outputPath: `${PATHS.assets}/images/`,
 					}
 				},
 				{	
@@ -80,16 +85,18 @@ module.exports = (env, options) =>{
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						outputPath: `../assets/fonts`,
+						outputPath: `${PATHS.assets}/fonts/`,
 					}
 				},	
 				{
 					test:/\.s[ac]ss$/i,
 					use: [
-						 MiniCssExtractPlugin.loader,
-
 						{
-							loader: 'css-loader', options: {url: true, import: true}
+							loader: MiniCssExtractPlugin.loader,
+						 	options: { publicPath: "../"}
+						},
+						{
+							loader: 'css-loader', options: {url: true, import: true,}
 						},
 
 						{

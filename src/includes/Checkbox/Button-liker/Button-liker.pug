@@ -1,14 +1,14 @@
-mixin Buttons_liker(descr, ...issues)
-    div.Buttons_liker_wrap
-        div.Buttons_liker_head #{descr}
-        div.Buttons_liker_cont
+mixin Button-liker(descr, ...issues)
+    div.button-liker
+        span.button-liker__head #{descr}
+        span.button-liker__cont
             each val in issues
                 - var id = val.id
                 - var am = val.am
                 - var checked = Boolean(val.checked)
                 if checked 
-                    input(type="checkbox" id=`${id}` class="Buttons_liker_box" checked)
+                    input(type="checkbox" id=`${id}` class="button-liker__box" checked)
                 else 
-                    input(type="checkbox" id=`${id}` class="Buttons_liker_box")
+                    input(type="checkbox" id=`${id}` class="button-liker__box")
                 label(for=`${id}`)=am
                    

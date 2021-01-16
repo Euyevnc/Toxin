@@ -1,4 +1,4 @@
-extends ../../layout/layoutUIkit.pug
+extends ../../layout/layout-for-hotel.pug
 include ../../includes/Blocks/Header/Header.pug
 include ../../includes/Blocks/Footer/Footer.pug
 include ../../includes/Blocks/Сellar/Сellar.pug
@@ -7,7 +7,9 @@ include ../../includes/Blocks/Сellar/Сellar.pug
 block variables
     
 block head
-    title= LandingPage
+    title Registration
+    meta(name="keywords", content="keywords")
+    meta(name="description", content="description")
 block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
 block content    

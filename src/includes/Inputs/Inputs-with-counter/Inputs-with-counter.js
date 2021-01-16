@@ -1,18 +1,20 @@
 export default function(values){
-    document.querySelectorAll(".inputs-with-counter").forEach(par=>{
+    document.querySelectorAll(".input-with-counter").forEach((par, i)=>{
+        let value
+        if(values) value = values[i]
         let inp = par.querySelector('input');
-        let list = par.querySelector('.inputs-with-counter__menu');
+        let list = par.querySelector('.input-with-counter__menu');
         let listEl = list.querySelectorAll('li');
         let assign1
         assign1 = 0
         let assign2
         listEl.forEach((li,i)=>{
-            let counter = li.querySelector('.inputs-with-counter__counter')
-            let numb = counter.querySelector(".inputs-with-counter__number")
+            let counter = li.querySelector('.input-with-counter__counter')
+            let numb = counter.querySelector(".input-with-counter__number")
             let min = +(counter.getAttribute('data-min') )
             let max = +(counter.getAttribute('data-max') )
-            if(values && values[i]){
-                numb.textContent = Math.max(min,Math.min(values[i], max))
+            if(value && value[i]){
+                numb.textContent = Math.max(min,Math.min(value[i], max))
             }
             if (+numb.textContent == min){
                 depr(counter.firstChild)
@@ -30,7 +32,7 @@ export default function(values){
                 let inc = Math.min(+numb.textContent+1, max)
                 numb.textContent = inc;
                 if (inc == max){depr(counter.lastChild)};
-                par.querySelector('.inputs-with-counter__button-delete').style.visibility= 'visible';
+                par.querySelector('.input-with-counter__button_delete').style.visibility= 'visible';
                 apr(counter.firstChild)
             }
             function evmin(){
@@ -40,22 +42,20 @@ export default function(values){
                 apr(counter.lastChild);
                 assign2 = 0
                 listEl.forEach(el=>{
-                    assign2 +=(+el.querySelector('.inputs-with-counter__number').textContent)
+                    assign2 +=(+el.querySelector('.input-with-counter__number').textContent)
 
                 })
-                if (!assign2){par.querySelector('.inputs-with-counter__button-delete').style.visibility= 'hidden';}
+                if (!assign2){par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';}
             }
         })
-        if(values) conf();
-        if(!assign1){par.querySelector('.inputs-with-counter__button-delete').style.visibility= 'hidden'}
+        if(value) conf();
+        if(!assign1){par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden'}
 
         inp.addEventListener('focus', e=>{
             list.style.display = "flex";
-            inp.classList.add('WithDropdownactive')
             document.addEventListener('click',function evcl(ev){
                 if (!par.contains(ev.target) ){ 
                     conf();
-                    inp.classList.remove('WithDropdownactive')
                     list.style.display = "none" 
                 }
             })
@@ -63,10 +63,10 @@ export default function(values){
         })
 
 
-        par.querySelector('.inputs-with-counter__button-delete').addEventListener('click', e=>{
+        par.querySelector('.input-with-counter__button_delete').addEventListener('click', e=>{
             del()
         })
-        par.querySelector('.inputs-with-counter___button-confirm').addEventListener('click',e=>{
+        par.querySelector('.input-with-counter___button_confirm').addEventListener('click',e=>{
             conf()
             list.style.display = "none" ;
         }) 
@@ -74,8 +74,8 @@ export default function(values){
         function conf(){
             let cont = ''
             listEl.forEach( (it,i) =>{
-                if(!par.closest('[data-counter="simple"]')){
-                    let num = +it.querySelector(".inputs-with-counter__number").textContent
+                if(par.classList.contains("input-with-counter_simple")){
+                    let num = +it.querySelector(".input-with-counter__number").textContent
                     if(cont&&i==1) cont += ', '
                     let word = it.querySelector('p').textContent
                     if(num==0){cont+=''}
@@ -83,7 +83,7 @@ export default function(values){
                     else {cont+= `${num} ${word}`}
                 }
                 else{
-                    let num = +it.querySelector(".inputs-with-counter__number").textContent
+                    let num = +it.querySelector(".input-with-counter__number").textContent
                     if(i==0){
                         cont=+cont + num; 
                     }
@@ -112,10 +112,10 @@ export default function(values){
         }
         function del(){
             listEl.forEach(item=>{
-                let limit = +item.querySelector('.inputs-with-counter__counter').getAttribute('date-min')
-                item.querySelector('.inputs-with-counter__number').textContent = `${limit}`;
-                let f = item.querySelector('.inputs-with-counter__counter').firstChild;
-                par.querySelector('.inputs-with-counter__button-delete').style.visibility= 'hidden';
+                let limit = +item.querySelector('.input-with-counter__counter').getAttribute('date-min')
+                item.querySelector('.input-with-counter__number').textContent = `${limit}`;
+                let f = item.querySelector('.input-with-counter__counter').firstChild;
+                par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';
                 depr(f)
                 conf()
             })

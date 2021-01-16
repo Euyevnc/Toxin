@@ -2,13 +2,15 @@
     display: flex;
     position: relative;
     align-items: flex-end;
-    & h2{
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 24px;
+    & p{
         margin: 0;
-        padding: 0;
+        display: inline-block;
+        vertical-align: baseline;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
     }
 
     &__title{
@@ -25,9 +27,14 @@
         }
         & p{
             font-size: 12px;
+            line-height: 15px;
         }
         & h2{
+            font-family: Montserrat , Arial, Helvetica, sans-serif;
+            font-weight: 700;
             font-size: 24px;
+            line-height: 29px;
+            margin: 0;
         }
     }
     &__image{
@@ -41,10 +48,11 @@
         font-size: 14px;
         line-height: 24px;
         color: rgba(31, 32, 65, 0.75);
-        min-width: 210px;
+        min-width: 200px;
         display: inline-block;
         &>*{
-            vertical-align: middle;
+            max-height: 24px;
+            
         }
         & span{
             display: inline-block;

@@ -1,11 +1,14 @@
 @import "../../utils/fonts/Montserrat.scss";
-.Page-switcher{
+.pages-switcher{
     text-align: center;
     line-height: 40px;
-    
     &>*{
         vertical-align: middle;
         line-height: 40px;
+    }
+    &__cell-container{
+        display: inline; 
+        margin-bottom: 10.5px;
     }
     &__cell{
         width: 40px;
@@ -61,7 +64,8 @@
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 14px;
         width: 100%;
-        line-height: 24px;
+        margin: 10.5px 0 0;
+        line-height: 20px;
         color: rgba(31, 32, 65, 0.75);
     }
 }

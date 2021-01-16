@@ -1,5 +1,5 @@
-
-.Tumblers{
+@import "../../../utils/fonts/Montserrat.scss";
+.tumblers{
     &__header{
         font-size: 12px;
         font-weight: bold;
@@ -7,15 +7,18 @@
         margin-bottom: 5px;
         position: relative;   
     }
-    &__container{
-      
-    }
     &__buttons{
-        vertical-align: middle;
+        &>*{
+            display: inline-block;
+            vertical-align: middle;
+        }
         & p{
+            margin: 0;
             font-family: Montserrat, Arial, Helvetica, sans-serif;
             font-size: 14px;
             color: rgba(31, 32, 65, 0.75);
+            line-height: 24px;
+
         }
         & input[type="checkbox"]{
             display: none;
@@ -30,10 +33,10 @@
                 cursor: pointer;
                 border-radius: 25% / 50%;
                 transition-duration: 0.5s;
-                box-sizing: content-box;
+                box-sizing: border-box;
                 &::before {
                     display: inline-block;
-                    line-height: 20px;
+                    line-height: 18px;
                     content: "stop_circle";
                     font-family: 'Material Icons';
                     color: rgba(31, 32, 65, 0.25);
@@ -42,7 +45,6 @@
                     left: 1px;
                     transition-duration: 0.5s;
                     top: 0px
-        
                 }
         
             }

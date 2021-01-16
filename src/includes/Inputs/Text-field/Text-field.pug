@@ -1,9 +1,8 @@
-mixin TextField(label, placeholder, describe)
-    div(class=`TextField`)
-        label(class="TextField__label" style="font-weight:bold")
+mixin Text-field(label, placeholder, describe)
+    div(class=`text-field`)
+        label(class="text-field__label")
             if label
                 h3  #{label}
-            div
-                input(class="TextField__value" placeholder=`${placeholder}`) 
-        p(class="TextField__describe") #{describe}
+            input(class="text-field__value" placeholder=`${placeholder}`) 
+        p(class="text-field__describe") #{describe}
         

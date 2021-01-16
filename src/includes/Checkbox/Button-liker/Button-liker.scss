@@ -1,70 +1,72 @@
 
-.Buttons_liker_wrap{
-    font-family: 'Montserrat';
-    user-select: none;
-}
-
-.Buttons_liker_head{
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    
-    position: relative;
-    
-    
-}
-
-
-.Buttons_liker_wrap input[type="checkbox"]{
-    display: none;
-    & + label{ 
-        text-align: right;
-        width: 40px;
-        height: 20px;
-        display: inline-block;
-        font-size: 10px;
-        margin-right: 5px;
-        margin-left: 5px;
+.button-liker{
+    display: inline-block;
+    &__head{
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
         position: relative;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        color: rgba(31, 32, 65, 0.25);
-        cursor: pointer;
-        border-radius: 25% / 50%;
-        transition-duration: 0.5s;
-        line-height: 18px;
-        text-align:end;
-        padding-right: 10px;
-        box-sizing: border-box;
-        &::before {
-            display: inline-block;
-            line-height: 18px;
-            content: "favorite_border";
-            font-family: 'Material Icons';
-            color: rgba(31, 32, 65, 0.25);
-            position: absolute;
-            left: 5px;
-            transition-duration: 0.5s;
-            vertical-align: middle;
-            
-
-        }
-
+        
+        
     }
 
-}
-.Buttons_liker_wrap input[type="checkbox"]:checked{ 
+    &__cont{
+        text-align: center;
+    }
     
-    & + label{ 
-        color: #c2c2c2;
-        border: 1px solid  #BC9CFF;
-        transition-duration: 0.5s;
-        display: inline-block;
-        &::before {
-            content: "favorite";
-            color: #BC9CFF;
+    & input[type="checkbox"]{
+        display: none;
+        & + label{ 
+            text-align: right;
+            width: 40px;
+            height: 20px;
+            display: inline-block;
+            font-size: 10px;
+            position: relative;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            color: rgba(31, 32, 65, 0.25);
+            cursor: pointer;
+            border-radius: 25% / 50%;
             transition-duration: 0.5s;
+            line-height: 18px;
+            text-align:end;
+            padding-right: 10px;
+            box-sizing: border-box;
+            &::before {
+                display: inline-block;
+                line-height: 18px;
+                content: "favorite_border";
+                font-family: 'Material Icons';
+                color: rgba(31, 32, 65, 0.25);
+                position: absolute;
+                left: 5px;
+                transition-duration: 0.5s;
+                vertical-align: middle;
+                
+    
+            }
+    
         }
+    
     }
-
+    & input[type="checkbox"]:checked{ 
+        
+        & + label{ 
+            color: #c2c2c2;
+            border: 1px solid  #BC9CFF;
+            transition-duration: 0.5s;
+            display: inline-block;
+            &::before {
+                content: "favorite";
+                color: #BC9CFF;
+                transition-duration: 0.5s;
+            }
+        }
+    
+    }
+    
 }
+
+
 

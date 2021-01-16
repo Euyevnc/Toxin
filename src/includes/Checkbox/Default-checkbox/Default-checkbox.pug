@@ -1,17 +1,17 @@
 mixin Checkbox(descr, ...issues)
-    div.Checkboxes__wrap
+    div.checkboxes__wrap
         if descr
-            div.Checkboxes__head 
+            div.checkboxes__head 
                 h3 #{descr}
-        div.Checkboxes__cont
+        div.checkboxes__cont
             each val in issues
                 - var id = val.id
                 - var name = val.name
                 - var checked = Boolean(val.checked)
-                div.Checkboxes__checkbox
+                div.checkboxes__checkbox
                     if checked 
                         input(type="checkbox" id=`${id}` class="Checkbox_box" checked)
                     else 
                         input(type="checkbox" id=`${id}` class="Checkbox_box")
                     label(for=`${id}`) 
-                    p.Checkboxes__text #{name}
+                        p.checkboxes__text #{name}  

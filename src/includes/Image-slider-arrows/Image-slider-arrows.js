@@ -7,7 +7,7 @@ export default function(arrowPrev,arrowNext, actImg, Btns, actBtn){
             i == rathNumber ? img.classList.add(actImg) : img.classList.remove(actImg)
         })
         try{
-            let arrButt = e.target.parentNode.querySelectorAll(`.${NumberDemonstrationItem__button}`)
+            let arrButt = e.target.parentNode.querySelectorAll(`.${Btns}`)
             arrButt.forEach((btn, btnN) => {
                 btnN == rathNumber ? btn.classList.add(actBtn) : btn.classList.remove(actBtn)
             })

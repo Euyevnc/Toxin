@@ -1,9 +1,9 @@
-extends ../../layout/layoutUIkit.pug
+extends ../../layout/layout-for-hotel.pug
 include ../../includes/Blocks/Header/Header.pug
 include ../../includes/Blocks/Footer/Footer.pug
 include ../../includes/Blocks/Сellar/Сellar.pug
 include ../../includes/Blocks/Diogram/Diogram.pug
-include ../../includes/Icons/Sticker.pug
+include ../../static/Icons/Sticker.pug
 include ../../includes/Review-shape/Review-shape.pug
 include ../../includes/Checkbox/Bullet/Bullet.pug
 
@@ -16,42 +16,40 @@ block head
 block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
 block content    
-    .PictureDemonstration 
-        .PictureDemonstration__largePicture
-            img(src= require("./image(1).png").default)
-        .PictureDemonstration__smallPictures
+    .picture-demonstration 
+        .picture-demonstration__large-picture
+            img(src= require("./image(1).jpg").default)
+        .picture-demonstration__small-pictures
             div
-                img(src= require("./image 2(1).png").default)
+                img(src= require("./image 2(1).jpg").default)
             div
-                img(src= require("./image 3.png").default)
+                img(src= require("./image 3.jpg").default)
     div(class="wrapper maintance")
-        div.information
-            div.stickers-container
+        section.information
+            section.stickers-container
                 h2 Сведения о номере
                 +Sticker("insert_emoticon", "Комфорт","Шумопоглощающие стены")
                 +Sticker("location_city", "Удобство", "Окно в каждой из спален")
                 +Sticker("whatshot", "Уют" ,"Номер оснащён камином")
-            div.diogram-container
+            section.diogram-container
                 h2 Впечатления от номера
                 +Diogram("diogram_doub") 
-            div.reviews-container
+            section.reviews-container
                 h2 Отзывы посетителей номера
-                +Review-shape(require("./review001.png").default , "Мурад Сарафанов" ,"5 дней", 12, true,  "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-                +Review-shape(require("./review002.png").default , "Патрисия Стёклышкова" ,"Неделю", 2,false , "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.")
-            div.bullets-container
+                +Review-shape(require("./review001.jpg").default , "Мурад Сарафанов" ,"5 дней", 12, true,  "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+                +Review-shape(require("./review002.jpg").default , "Патрисия Стёклышкова" ,"Неделю", 2,false , "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.")
+            section.bullets-container
                 h2 Правила
                 +Bullet("Нельзя с питомцами")
                 +Bullet("Без вечеринок и мероприятий")
                 +Bullet("Время прибытия — после 13:00, а выезд до 12:00")
-            div.cancel-container
+            section.cancel-container
                 h2 Отмена 
                 p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-        div.booking 
-            include ../../includes/Blocks/NumberBooker/NumberBooker.pug
-
+        section.booking 
+            include ../../includes/Blocks/Number-booker/Number-booker.pug
 block footer
     +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
 block cellar  
     +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
 block script
-

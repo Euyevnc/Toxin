@@ -6,29 +6,29 @@ export default function({number, category, price, arrival,departure, guests, ser
     InputsWithCounter(guests);
     booking()
     function booking(){
-        let card = document.querySelector(".Booker")
+        let card = document.querySelector(".booker")
 
-        card.querySelectorAll(".Booker__number").forEach(el=>el.innerHTML = number)
-        card.querySelectorAll(".Booker__category").forEach(el=>el.innerHTML = " " + category)
-        card.querySelectorAll(".Booker__price").forEach(el=>el.innerHTML = parseThousand(price) + "₽ ")
+        card.querySelectorAll(".booker__number").forEach(el=>el.innerHTML = number)
+        card.querySelectorAll(".booker__category").forEach(el=>el.innerHTML = '&nbsp;&nbsp;&nbsp;' + category)
+        card.querySelectorAll(".booker__price").forEach(el=>el.innerHTML = parseThousand(price) + "₽ ")
 
         let servicePrice = 0 
         services.forEach(el=>{
             servicePrice += el.impact 
             if(el.impact < 0) el.describe+=":скидка " + (parseThousand(-el.impact))+ "₽"
             let servBlock = document.createElement("div")
-            servBlock.className = "Booker__service"
-            servBlock.innerHTML = `<span>  <p>${el.describe}</p> <p class="Booker__sign_i">i</p></span> <p>${parseThousand(el.price)}₽</p>`
-            card.querySelector(".Booker__total").insertAdjacentElement("beforebegin", servBlock)
+            servBlock.className = "booker__service"
+            servBlock.innerHTML = `<span>  <p>${el.describe}</p> <p class="booker__sign_i">i</p></span> <p>${parseThousand(el.price)}₽</p>`
+            card.querySelector(".booker__total").insertAdjacentElement("beforebegin", servBlock)
         })
-        count(departure-arrival)
+        count(departure - arrival)
 
-        card.querySelectorAll(".Date-range__value").forEach(el=>{
+        card.querySelectorAll(".date-range__value").forEach(el=>{
             el.set
             el.onchange = (e)=>{
-                let firDate = (card.querySelectorAll(".Date-range__value")[0].value.split(".")) 
+                let firDate = (card.querySelectorAll(".date-range__value")[0].value.split(".")) 
                 let arrival = new Date(firDate[1] + " " + firDate[0] + " " + firDate[2])
-                let secDate = (card.querySelectorAll(".Date-range__value")[1].value.split(".")) 
+                let secDate = (card.querySelectorAll(".date-range__value")[1].value.split(".")) 
                 let departure = new Date(secDate[1] + " " + secDate[0] + " " + secDate[2])
         
                 let days = (departure - arrival)/(24*3600000)
@@ -39,13 +39,13 @@ export default function({number, category, price, arrival,departure, guests, ser
 
         function count(amount){
             let word
-            if(amount%10==1) word = "день"
-            else if(amount%10>=2 && amount%10<=4 ) word = "дня"
-            else word = "дней"
+            if(amount%10==1) word = "сутки"
+            else if(amount%10>=2 && amount%10<=4 ) word = "суток"
+            else word = "суток"
 
-            card.querySelectorAll(".Booker__amount").forEach(el=>el.textContent = amount + " " + word)
-            card.querySelectorAll(".Booker__rent-total").forEach(el=>el.textContent = parseThousand(amount*price) + "₽")
-            let total = card.querySelector(".Booker__total").lastElementChild
+            card.querySelectorAll(".booker__amount").forEach(el=>el.textContent = amount + " " + word)
+            card.querySelectorAll(".booker__rent-total").forEach(el=>el.textContent = parseThousand(amount*price) + "₽")
+            let total = card.querySelector(".booker__total").lastElementChild
             total.textContent = parseThousand(Math.max(0, amount*price + servicePrice) ) + "₽"
 
         }

@@ -1,40 +1,60 @@
-@import "../../layout/layoutUIkit.scss";
+@import "../../layout/layout-for-hotel.scss";
 @import "../../includes/Blocks/Header/Header.scss";
 @import "../../includes/Blocks/Footer/Footer.scss";
 @import "../../includes/Blocks/Сellar/Сellar.scss";
 @import "../../includes/Blocks/Social/Social.scss";
-@import "../../includes/Inputs/Date-range/Date-range_default.scss";
-@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter_default.scss";
+@import "../../includes/Inputs/Date-range/Date-range.scss";
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
 @import "../../includes/Range-slider/Range-slider.scss";
-@import "../../includes/Checkbox/Default_checkbox/Default_checkbox.scss";
+@import "../../includes/Checkbox/Default-checkbox/Default-checkbox.scss";
 @import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
-@import "../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.scss";
-@import "../../includes/Blocks/NumberDemonstration/NumberDemonstration.scss";
-@import "../../includes/PageSwitch/PageSwitch.scss";
+@import "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.scss";
+@import "../../includes/Blocks/Number-demonstration/Number-demonstration.scss";
+@import "../../includes/Pages-switcher/Pages-switcher.scss";
 .content-container{
     background-color: white;
-    .wrapper{
+    & .wrapper{
+        padding: 30px 0 70px;
         display: flex;
         justify-content: space-between;
-
-        & .Inputs-containter{
-            min-width: 266px;
-            margin-right: 60px;
-            & .Range-slider-filter {
-                width: 266px;
-            }
-        }
-        & .Items-container{
-        
-            & h1{
-                margin:0;
-                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 30px;
-                color: #1F2041;
-            };
-
-        }
     }
 }
+.footer-container{
+    border-top: 2px solid rgba(31, 32, 65, 0.15);
+}
+.Inputs-containter{
+    min-width: 266px;
+    margin-right: 60px;
+    &>*{
+        margin-bottom: 30.44px;
+        &:first-child{
+            margin-bottom: 20.44px;
+        }
+        &:nth-child(6){
+            margin-bottom: 16px;
+        }
+        
+    }
+ 
+}
+.Items-container{
+
+    & h1{
+        margin:0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: #1F2041;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        color: #1F2041;
+    };
+}
+.Switcher-container{
+    width: 100%;
+    margin-top: 41px;
+}
+

@@ -2,11 +2,12 @@
 .arrow-right_blue{
     font-size: 24px;
     width: 44px;
-    height: 44px;
+    height: 40px;
+    font-weight: 400;
     text-align: center;
     cursor: pointer;
     & i{
         color: #BC9CFF;
-        line-height: 44px;
+        line-height: 40px;
     }
 }

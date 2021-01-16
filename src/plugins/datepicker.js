@@ -799,7 +799,7 @@ $.extend( Datepicker.prototype, {
 		offset = $.datepicker._checkOffset( inst, offset, isFixed );
 		inst.dpDiv.css( { position: ( $.datepicker._inDialog && $.blockUI ?
 			"static" : ( isFixed ? "fixed" : "absolute" ) ), display: "none",
-			left: offset.left + "px", top: offset.top + "px" } );
+			left: offset.left + "px", top: offset.top + 5 + "px" } );
 
 		if ( !inst.inline ) {
 			showAnim = $.datepicker._get( inst, "showAnim" );
@@ -883,14 +883,15 @@ $.extend( Datepicker.prototype, {
 
 		offset.left -= ( this._get( inst, "isRTL" ) ? ( dpWidth - inputWidth ) : 0 );
 		offset.left -= ( isFixed && offset.left === inst.input.offset().left ) ? $( document ).scrollLeft() : 0;
-		offset.top -= ( isFixed && offset.top === ( inst.input.offset().top + inputHeight ) ) ? $( document ).scrollTop() : 0;
+		//offset.top -= ( isFixed && offset.top === ( inst.input.offset().top + inputHeight ) ) ? $( document ).scrollTop() : 0;
 
 		// Now check if datepicker is showing outside window viewport - move to a better place if so.
 		offset.left -= Math.min( offset.left, ( offset.left + dpWidth > viewWidth && viewWidth > dpWidth ) ?
 			Math.abs( offset.left + dpWidth - viewWidth ) : 0 );
-		offset.top -= Math.min( offset.top, ( offset.top + dpHeight > viewHeight && viewHeight > dpHeight ) ?
-			Math.abs( dpHeight + inputHeight ) : 0 );
-
+		// offset.top -= Math.min( offset.top, ( offset.top + dpHeight > viewHeight && viewHeight > dpHeight ) ?
+		// 	Math.abs( dpHeight + inputHeight ) : 0 );
+		//ДВЕ	СТРОКИ С OFFSET TOP ЗАКОММЕНТИРОВАНЫ ДЛЯ ФИКСИРОВАННОГО ПОЗИЦИОНИРОВАНИЯ КАЛЕНДАРЯ НИЖЕ ИНПУТА
+		//ЕСЛИ НУЖНА АДОПТИВНОСТЬ - РАСКОММЕНТИРОВАТЬ
 		return offset;
 	},
 

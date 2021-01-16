@@ -2,8 +2,8 @@
 .button_with_arrow{
     display: inline-block;
     position: relative;
-    width: 320px;
-    height: 44px;
+    min-width: 320px;
+    min-height: 44px;
     text-align: center;
     box-sizing: border-box;
     border-radius: 22px;
@@ -12,16 +12,17 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border: 2px solid rgb(188, 156, 255);
     &__subscribe{
+        vertical-align: middle;
         line-height: 40px;
         font-size: 12px;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         color: white;
         font-weight: 700;
-        font-style: normal;
         text-transform: uppercase;
     }
     & .arrow-right_blue{
         right: 0;
+        top:0;
         position: absolute;
         & i{
             color: white;

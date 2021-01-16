@@ -1,6 +1,17 @@
-.Sticker{
-    padding-bottom:17px;
-    margin-top:23px;
+.sticker{
+    padding-bottom:20px;
+    margin-top:20px;
+    & p{
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        vertical-align: baseline;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
+    }
     &:not(:last-child){
         border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     }

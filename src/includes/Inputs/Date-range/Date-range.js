@@ -31,7 +31,7 @@ export default function(firDate, secDate){
 
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 	
-	let pic = $(".Date-range__value")
+	let pic = $(".date-range__value")
     $(function(){
         pic.datepicker({
 			dateFormat: 'dd M',
@@ -53,7 +53,7 @@ export default function(firDate, secDate){
 		})
 		if(+firDate && +secDate){
 			pic.datepicker("setDate", [`+${firDate}d`, `+${secDate}d`])
-			let extensionRange = $('.Date-range__value').datepicker('widget').data('datepickerExtensionRange');
+			let extensionRange = $('.date-range__value').datepicker('widget').data('datepickerExtensionRange');
 			let start = extensionRange.startDateText;
 			let end = extensionRange.endDateText;
 			pic.val(`${start} - ${end}`)
@@ -75,7 +75,7 @@ function addButtons(e){
 					e.querySelector(".selected-end").classList.remove(".selected-end")}
 				catch{}
 			})
-			$(".Date-range_value").val(``)
+			$(".date-range_value").val(``)
 		}
 		if(ev.target.closest('.ui-datepicker-button_conf')){
 			let calendar = e

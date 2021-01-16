@@ -1,9 +1,10 @@
-@import "../../Icons/arrow-down.scss";
+@import "../../../static/Icons/arrow-down.scss";
 @import "../../../utils/fonts/Montserrat.scss";
-.Dropping-checkboxes{
+.dropping-checkboxes{
     &__header{
         position: relative;
         cursor: pointer;
+        user-select: none;
         min-height: 44px;
         display: flex;
         justify-content: space-between;

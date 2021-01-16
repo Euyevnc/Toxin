@@ -2,7 +2,7 @@ let BurgerFirstTimeChecking = true
 
 export default function(){
     document.querySelectorAll(".header__burger").forEach(it=>{
-        let menu = it.parentNode.querySelector(".Menu")
+        let menu = it.parentNode.querySelector(".header__menu")
         it.addEventListener("click", e=>{
             it.classList.toggle("header__burger_cond_active")
             menu.style.visibility = getComputedStyle(menu).visibility == "hidden" ? "visible" : "hidden"

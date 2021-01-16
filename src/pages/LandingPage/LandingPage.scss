@@ -37,7 +37,9 @@
                     padding-bottom:20px;
                     text-align: right;
                     margin-right: -5px; //Ну, а что поделать? Размечено так, не выносить же за обёртку...
-                   
+                    @media(max-width: 1165px){
+                        margin-right: 5px;
+                    }
                 }
                 @media(max-width: 660px){
                     width: auto;
@@ -48,16 +50,7 @@
             flex-wrap: wrap;
             justify-content: center;
             min-height:530px;
-        }
-        @media(max-width: 385px){
-            &>*{
-                width: 100%;
-                & .NumberFinder{
-                    padding-right: 5px;
-                    padding-left: 5px;
-                }
-            }
-        }   
+        } 
     }
     &::before{
         position: absolute;

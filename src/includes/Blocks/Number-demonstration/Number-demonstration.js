@@ -1,8 +1,8 @@
-import ImageSliderButtons from "../../ImageSliderButtons/ImageSlider.js";
-import ImageSliderArrows from "../../ImageSliderArrows/ImageSlider.js";
+import ImageSliderButtons from "../../Image-slider-buttons/Image-slider-buttons";
+import ImageSliderArrows from "../../Image-slider-arrows/Image-slider-arrows";
 import { resolve } from "path";
 export default function(list){
-    document.querySelector('.Number-demonstration').innerHTML = ''
+    document.querySelector('.number-demonstration').innerHTML = ''
     //-Имитация работы с сервером такая-с
     return new Promise( (resolve, rej)=>{
         setTimeout(e=>{
@@ -14,27 +14,27 @@ export default function(list){
 
 
 function load(list){
-    let cont = document.querySelector('.Number-demonstration')
+    let cont = document.querySelector('.number-demonstration')
     //let info = await getDate(list);
     list.forEach(i=>{
         let firstSlide
 
         let wrap = document.createElement("div")
-        wrap.className = "Number-demonstration__item"
+        wrap.className = "number-demonstration__item"
         cont.appendChild(wrap)
 
         let imageCont = document.createElement("div")
-        imageCont.className = "Number-demonstration__image-cont"
+        imageCont.className = "number-demonstration__image-cont"
 
         let spanCont = document.createElement('span')
-        spanCont.className = "Number-demonstration__buttons"
+        spanCont.className = "number-demonstration__buttons"
 
         let arrowPrev = document.createElement('span')
-        arrowPrev.classList.add("Number-demonstration__arrow")
+        arrowPrev.classList.add("number-demonstration__arrow")
         arrowPrev.classList.add("material-icons")
         arrowPrev.innerHTML = "expand_more"
         let arrowNext = document.createElement('span')
-        arrowNext.classList.add("Number-demonstration__arrow")
+        arrowNext.classList.add("number-demonstration__arrow")
         arrowNext.classList.add("material-icons")
         arrowNext.innerHTML= "expand_less"
 
@@ -50,34 +50,34 @@ function load(list){
             let image = document.createElement('img')
             image.setAttribute('src', pic)
             let butt = document.createElement("span")
-            butt.classList.add("Number-demonstration__button")
+            butt.classList.add("number-demonstration__button")
             imageCont.appendChild(image)
             spanCont.appendChild(butt)
-            butt.addEventListener('mouseover', e => ImageSliderButtons(butt, '.Number-demonstration__image-cont', 'Number-demonstration__button_state_active', "Number-demonstration__img_active"))
+            butt.addEventListener('mouseover', e => ImageSliderButtons(butt, '.number-demonstration__image-cont', 'number-demonstration__button_state_active', "number-demonstration__img_active"))
             if(i == 0){firstSlide = butt}
         })
-        ImageSliderButtons(firstSlide, '.Number-demonstration__image-cont', 'Number-demonstration__button_state_active', "Number-demonstration__img_active")
+        ImageSliderButtons(firstSlide, '.number-demonstration__image-cont', 'number-demonstration__button_state_active', "number-demonstration__img_active")
        
         let price = document.createElement('div')
-        price.className = "Number-demonstration__price"
+        price.className = "number-demonstration__price"
         wrap.appendChild(price)
 
         let number = document.createElement("span")
         price.appendChild(number)
-        number.innerHTML = `<h4>№</h4><h1>&nbsp;${i.number}</h1><p class="UpperPurple">&nbsp;${i.category}</p>`
+        number.innerHTML = `<h3>№</h3><h2>&nbsp;${i.number}</h2><h4>&nbsp;&nbsp;${i.category}</h4>`
 
         let numberPrice = document.createElement("span")
         price.appendChild(numberPrice)
-        numberPrice.innerHTML = `<h4 style="color: rgba(31, 32, 65, 0.5)")>${i.price}₽</h4> <h3>&nbsp;в сутки</h3>`
+        numberPrice.innerHTML = `<h5>${i.price}₽</h5> <p>&nbsp;в сутки</p>`
 
 
         let rate = document.createElement('div')
         wrap.appendChild(rate)
-        rate.className = "Number-demonstration__rate"
+        rate.className = "number-demonstration__rate"
 
         let stars = document.createElement("span")
         rate.appendChild(stars)
-        stars.className = "Number-demonstration__stars"
+        stars.className = "number-demonstration__stars"
 
         let filled = Math.floor(i.rate);
 
@@ -104,9 +104,9 @@ function load(list){
 
         let resps = document.createElement("span")
         rate.appendChild(resps)
-        resps.innerHTML = `<h4 style="color: rgba(31, 32, 65, 0.5)")>${i.reviews}</h4><h3>&nbsp;отзывов</h3>`
+        resps.innerHTML = `<h3>${i.reviews}</h3><h4>&nbsp;Отзывов</h4>`
 
-        ImageSliderArrows(arrowPrev, arrowNext,"Number-demonstration__img_active","Number-demonstration__button", "Number-demonstration__button_state_active")
+        ImageSliderArrows(arrowPrev, arrowNext,"number-demonstration__img_active","number-demonstration__button", "number-demonstration__button_state_active")
         
     })
 

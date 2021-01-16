@@ -1,0 +1,55 @@
+@import "../Date-picker/Date-picker.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+
+.date-range{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    & .arrow-down{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        color: rgba(31, 32, 65, 0.50);
+    }
+    & h3{
+        text-transform: uppercase;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5.5px;
+        color: rgba(31, 32, 65, 1);
+    }
+};
+
+.date-range__value{
+    padding-left: 15px;
+    width: 100%;
+    line-height: 18px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.75);
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    transition-duration: 0.7s;
+    &::placeholder{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        color: rgba(31, 32, 65, 0.75);
+        transition-duration: 0.7s;
+        opacity: 1;
+        font-size: 14px;
+    }
+    &:hover{
+        line-height: 24px;
+        color: rgba(31, 32, 65, .75);
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        transition-duration: 0.7s;
+        &::placeholder{
+            color: rgba(31, 32, 65, 0.75);
+            transition-duration: 0.7s;
+        }
+    }
+};

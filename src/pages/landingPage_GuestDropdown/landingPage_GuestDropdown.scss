@@ -2,98 +2,109 @@
 @import "../../includes/Blocks/Footer/Footer.scss";
 @import "../../includes/Blocks/Сellar/Сellar.scss";
 @import "../../includes/Blocks/Social/Social.scss";
-@import "../../layout/layoutUIkit.scss";
-@import "../../includes/Blocks/NumberFinder/NumberFinder_type_double/NumberFinder_type_double.scss";
-
-p{
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    vertical-align: baseline;
-    font-family: 'Montserrat';
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-    text-decoration: none;
-}
-
-label{
-    p{
-        text-transform: uppercase;
-        font-size: 12px;
-        line-height: 14.5px;
-        margin-bottom: 5.5px;
-        color: rgb(31, 32, 65);
+@import "../../layout/layout-for-hotel.scss";
+@import "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.scss";
+.content-container{
+    background-image: url('LandingPage-background-3.jpg');
+    background-position: bottom;
+    position: relative;
+    & .wrapper{
+        width: 100%;
+        min-height: 830px;
+        min-width: 320px;
+        display: flex;
+        justify-content: space-between;
+        &>*{  
+            &.searcher-container{   
+                align-self: flex-start;
+                &>*{
+                    margin-top: 70px;
+                }
+                @media(max-width: 660px){
+                    width: auto;
+                }
+            }
+            &.text-container{
+                align-self: flex-end;
+                & p{
+                    font-family: Montserrat, Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: rgba(31, 32, 65, 0.75);
+                    text-decoration: none;
+                    margin: 0;
+                    max-width: 280px;
+                    padding-bottom:20px;
+                    text-align: right;
+                    margin-right: -5px;
+                    @media(max-width: 1165px){
+                        margin-right: 5px;
+                    }
+                }
+                @media(max-width: 660px){
+                    width: auto;
+                }
+            }
+        }
+        @media(max-width: 660px){
+            flex-wrap: wrap;
+            justify-content: center;
+            min-height:530px;
+        } 
     }
     &::before{
-        text-transform: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: -1;
+        background-image: url('LandingPage-background.jpg');
+        background-position: bottom;
+        opacity: 0;
+        animation: sliding-before 30s linear 0s infinite ;
+    }
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: -1;
+        background-image: url('LandingPage-background-2.jpg');
+        background-position: bottom;
+        opacity: 0;
+        animation: sliding-after 30s linear 0s infinite ;
     }
 }
-.LogoConteiner{
-    min-width: 110px;
-    
-    &>*{
-        vertical-align: middle;
+@keyframes sliding-before{
+    26%{
+        opacity: 0;
     }
-    & :first-child{
-        margin-right: 10px;       
+    33%{
+        opacity: 1;
     }
-    
-    
-}
-.highlight{
-    font-family: 'Montserrat' !important;
-    font-style: normal !important;
-    font-weight: bold !important;
-    font-size: 14px;
-    line-height: 17px !important;
-    color: rgba(31, 32, 65, 0.75) !important;
-}
-.content{
-    background-image: url('LandingPage_background.png');
-    background-position: bottom;
-   
-    min-height:830px;
-    min-width: 320px;
-    display: flex;
-    align-items: bottom;
-    justify-content: space-between;
-    @media(max-width: 810px){
-        flex-wrap: wrap;
-        justify-content: center;
-        min-height:530px;
-        &>*{
-            width: 100%;
-            & .NumberFinderCont{
-                margin:auto;
-            }
-            &:last-child{
-                padding-top: 18px;
-                width: 380px !important;
-                text-align: center !important;
-                & p{
-                    width: 380px !important;
-                }
-            }
+    60%{
+        opacity: 1;
+    }
+    66%{
+        opacity: 0;
+    }
 
-        }
+}
+@keyframes sliding-after{
+    60%{
+        opacity: 0;
     }
-    @media(max-width: 385px){
-        &>*{
-            width: 100%;
-            & .NumberFinderCont{
-                padding-right: 5px;
-                padding-left: 5px;
-            }
-            &:last-child{
-                padding-top: 18px;
-                width: 320px !important;
-                text-align: center !important;
-                & p{
-                    width: 320px !important;
-                }
-            }
-        
-        }
-    }   
+    66%{
+        opacity: 1;
+    }
+    92%{
+        opacity: 1;
+    }
+    99%{
+        opacity: 0;
+    }
 }

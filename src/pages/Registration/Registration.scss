@@ -1,17 +1,44 @@
-@import "../../layout/layoutUIkit.scss";
+@import "../../layout/layout-for-hotel.scss";
 @import "../../includes/Blocks/Header/Header.scss";
 @import "../../includes/Blocks/Footer/Footer.scss";
 @import "../../includes/Blocks/Сellar/Сellar.scss";
 @import "../../includes/Blocks/Registration/Registration.scss";
 
 .content-container{
-    background-image: url('./Registration_bg.png');
+    background-image: url('./Registration_bg.jpg');
     background-position: bottom;
     & .wrapper{
         min-width: 320px; 
         width: 100%;
-        padding: 20px 0;
+        padding: 19px 0;
         display: flex;
         justify-content: center;
+    }
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: -1;
+        background-image: url('Registration_bg2.jpg');
+        background-position: bottom;
+        opacity: 0;
+        animation: sliding 20s linear 0s infinite ;
+    }
+}
+@keyframes sliding{
+    40%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }

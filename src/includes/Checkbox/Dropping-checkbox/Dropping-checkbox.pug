@@ -1,14 +1,14 @@
 mixin Dropping-checkboxes(descr, ...issues)
-    div.Dropping-checkboxes
-        div.Dropping-checkboxes__header
+    div.dropping-checkboxes
+        div.dropping-checkboxes__header
             h3 #{descr}
-            include ../../Icons/arrow-down.pug 
-        div.Dropping-checkboxes__container
+            include ../../../static/Icons/arrow-down.pug 
+        div.dropping-checkboxes__container
             each val in issues
                 - var id = val.id
                 - var name = val.name
                 - var checked = Boolean(val.checked)
-                div.Dropping-checkboxes__checkbox
+                div.dropping-checkboxes__checkbox
                     if checked 
                         input(type="checkbox" id=`${id}` checked)
                     else 

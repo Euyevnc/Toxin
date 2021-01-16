@@ -2,7 +2,7 @@
 @import "../../../static/Icons/arrow-down.scss";
 @import "../../../utils/fonts/Montserrat.scss";
 
-.inputs-with-counter{
+.input-with-counter{
     width: 100%;
     position: relative;
     z-index: 10;
@@ -56,49 +56,51 @@
         top: 0;
     };
     &__element{
-        height: 44px;
+        min-height: 30px;
         width: 100%;
         display: block;
         background-color: white;
         list-style-type: none;
-        margin: 0px;
         display: flex;
         justify-content: space-between;
-        font-weight: bold;
-        line-height: 44px;
-        text-transform: uppercase;
-        color: #1F2041;
-        padding-left: 1.5rem;
-        padding-right: 7px;
+        padding: 7px;
+        padding-left: 15px;
+        padding-bottom: 0;
+        
         user-select: none;
         & p{
-            line-height: 44px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #1F2041;
+            line-height: 30px;
             font-size: 12px;
+            margin: 0;
         }
     
     };
     &__counter{
+        line-height: 30px;
         &>span{
             box-sizing: border-box;
             width: 30px;
             height: 30px;
             text-align: center;
-            font-size: 12px;
+            font-size: 18px;
             border-radius: 50%;
             border: 1px solid rgba(31, 32, 65, 0.50);
             color: rgba(31, 32, 65, 0.5);
             display: inline-block;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
             font-weight: 400;
             line-height: 30px;
             vertical-align: middle;
             cursor: pointer;
-            &.inputs-with-counter__number{
+            &.input-with-counter__number{
                 border-radius: 0px;
                 border: none;
                 color: #1F2041;
                 font-weight: bold;
                 cursor: auto;
+                font-size: 12px;
             }
             
         }
@@ -112,9 +114,6 @@
         position: absolute;
         top: 100%;
         left: 0%;
-        font-size: 14px;
-        line-height: 18px;
-        border-radius: 2px;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         background-color: white;
         display: none;
@@ -122,25 +121,28 @@
         flex-wrap: wrap;
         margin: 0px;
         padding: 0px;
+        padding-bottom: 7px;
         border: 1px solid rgba(31, 32, 65, 0.5);
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
         z-index: 250;
     };
-    &__button-delete{
-        padding: 13px;
+    &__buttons{
+        padding: 20px 7px 6px 14px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button_delete{
         color: rgba(31, 32, 65, 0.5);
         font-size: 12px;
         font-weight: bold;
         cursor: pointer;
-        display: none;
-    
     }
-    &___button-confirm{
-        padding: 13px;
+    &___button_confirm{
         color: #BC9CFF;
         font-size: 12px;
         font-weight: bold;
         cursor: pointer;
-        display: none;
     }
     & .arrow-down{
         position: absolute;
@@ -148,15 +150,13 @@
         bottom: 10px;
         color: rgba(31, 32, 65, 0.50);
     }
-};
-[data-counter="simple"]{
-    & .inputs-with-counter__button-delete,
-    & .inputs-with-counter___button-confirm{
-        display: inline;
+    &_simple{
+        & .input-with-counter__buttons{
+            display: none
+        }
     }
-}
-[data-expanded='true'] .inputs-with-counter__menu{
-    display: flex
-}
+};
+
+
 
 

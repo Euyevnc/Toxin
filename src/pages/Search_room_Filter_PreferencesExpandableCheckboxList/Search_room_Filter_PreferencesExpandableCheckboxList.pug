@@ -1,4 +1,4 @@
-extends ../../layout/layoutUIkit.pug
+extends ../../layout/layout-for-hotel.pug
 include ../../includes/Blocks/Header/Header.pug
 include ../../includes/Blocks/Footer/Footer.pug
 include ../../includes/Blocks/Сellar/Сellar.pug
@@ -6,41 +6,36 @@ include ../../includes/Blocks/Social/Social.pug
 include ../../includes/Inputs/Date-range/Date-range.pug
 include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
 include ../../includes/Range-slider/Range-slider.pug
-include ../../includes/Checkbox/Default_checkbox/Default_checkbox.pug
-include ../../includes/Checkbox/Checkbox-with-describe/Checkbox-with-describe.pug
-include ../../includes/Checkbox/Dropping_checkbox/Dropping_checkbox.pug
-include ../../includes/PageSwitch/PageSwitch.pug
+include ../../includes/Checkbox/Default-checkbox/Default-checkbox.pug
+include ../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.pug
+include ../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.pug
+include ../../includes/Pages-switcher/Pages-switcher.pug
 
 block variables
     
 block head
-    title=SearchRoom_Filter_PreferencesExpandableCheckboxList
+    title Search_room_Filter_PreferencesExpandableCheckboxList
+    meta(name="keywords", content="keywords")
+    meta(name="description", content="description")
 
-block content    
-    +Header(false, {name: "О нас", href:"#"},{name: "Услуги", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]}, {name: "Вакансии", href:"#" },{name: "Новости", href:"#" },{name: "Соглашения", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]} )
-    div.content
-        .Inputs-containter
-            div(style="margin-bottom:20px")
-                +Date-range("Даты пребывания в отеле", "Выберете период", "period001", "filled")
-            div(data-counter="simple" style="margin-bottom:30px")
-                +Inputs-with-counter('Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "1"} )
-            div(style="margin-bottom:30px")
-                +Range-slider("Диапозон цены", 0, 15000, 0.333, 0.666)
-                p(style="color: rgba(31, 32, 65, 0.5); font-size: 12px") Стоимость за сутки прибывания в номере
-            div(style="margin-bottom:30px")
-                 +Default_checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
-            div(style="margin-bottom:30px")
-                +Checkbox-with-describe('доступность', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
-            div(style="margin-bottom:30px")
-                +Inputs-with-counter('удобства номера', 'Выберете комплектацию', '', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "1"} )
-            div(data-expanded="true")
-                +Dropping_checkbox('дополнительные удобства', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
-        .Items-container
+block header
+    +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
+block content
+        section.Inputs-containter
+            +Date-range("Даты пребывания в отеле", "Выберете период", "period001", "filled")
+            +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "1"} )
+            +Range-slider("Диапозон цены", "Стоимость за сутки прибывания в номере", 0, 15000, 0.333, 0.666)
+            +Checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
+            +Checkbox-with-subscribe('доступность', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
+            +Inputs-with-counter('simple', "удобства номера", 'Выберете комплектацию', '', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "1"} )
+            +Dropping-checkboxes('дополнительные удобства', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
+        section.Items-container
             h1 Номера, которые мы для вас подобрали
-            include ../../includes/Blocks/NumberDemonstration/NumberDemonstration.pug
-            div(style="margin-top: 41px")
-                +PageSwitch(175, 12)
-       
-    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "#",desc: "О нас"},{href: "#",desc: "Новости"},{href: "#",desc: "Служба поддержки"},{href: "#",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "#",desc: "О сервисе"},{href: "#",desc: "Наша команда"},{href: "#",desc: "Вакансии"},{href: "#",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "#",desc: "Соглашения"},{href: "#",desc: "Сообщества"},{href: "#",desc: "Связь с нами"} ]})
-    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "#", facebook:"#", instagram:"#"})
+            include ../../includes/Blocks/Number-demonstration/Number-demonstration.pug
+            div.Switcher-container
+                +Pages-switcher(175, 12)
+block footer
+    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
+block cellar  
+    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
 block script

@@ -1,31 +1,31 @@
-include ../../Inputs/TextField/TextField.pug
+include ../../Inputs/Text-field/Text-field.pug
 include ../../Checkbox/Radio/Radio.pug
 include ../../Inputs/Mask_DMY/Mask_DMY.pug
 include ../../Checkbox/Tumblers/Tumblers.pug
-include ../../Buttons/Button_rounded-.../Button_rounded-....pug
+include ../../Buttons/Button-rounded/Button-rounded.pug
 include ../../Buttons/Button_with_arrow/Button_with_arrow.pug
 
-div(class="Registration")
+div(class="registration")
     h1 Регистрация аккаунта
-    form(name="registration" class="Registration__form")
-        div(class="Registration__names")
-            +TextField('', 'Имя', '')
-            +TextField('', 'Фамилия', '')
-        div(class="Registration__sex")
+    form(name="registration" class="registration__form")
+        div(class="registration__names")
+            +Text-field('', 'Имя', '')
+            +Text-field('', 'Фамилия', '')
+        div(class="registration__sex")
             +Radio('', 'sex', {id:'genderMan', describe:'Мужчина', checked:true},{id:'genderFem', describe:'Женщина'} )
-        div(class="Registration__data")
+        div(class="registration__date")
             +Mask_DMY('ДАТА РОЖДЕНИЯ', "ДД.ММ.ГГГГ", '')
-        div(class="Registration__entry-date")
+        div(class="registration__entry-data")
             h3 данные для входа в сервис
-            +TextField('', 'Email', '')
-            +TextField('', 'Пароль', '')
-        div(class="Registration__offers-tumbler")
+            +Text-field('', 'Email', '')
+            +Text-field('', 'Пароль', '')
+        div(class="registration__receiving-offers")
             +Tumblers('', {id:'allowOfferts', name:'Получать спецпредложения'})
-        div(class="Registration__payment")
+        div(class="registration__payment")
             +Button_with_arrow('Перейти к оплате')
-    div(class="Registration__subscribe")
+    div(class="registration__subscribe")
         p Уже есть аккаунт на Toxin
-        +Button_rounded('войти', 'empty')
+        +Button-rounded('войти', 'empty')
 
 
 

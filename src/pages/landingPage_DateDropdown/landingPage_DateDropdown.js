@@ -1,13 +1,14 @@
 import "./landingPage_DateDropdown.scss"
 import Header from "../../includes/Blocks/Header/Header.js"
 import Footer from"../../includes/Blocks/Footer/Footer.js"
-import Double_range_date from "../../includes/Blocks/NumberFinder/NumberFinder_type_double/NumberFinder_type_double.js";
+import Double_range_date from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
 
 document.addEventListener('DOMContentLoaded', function(e){
-    Header()  
-    Footer() 
-    document.querySelector("#finder_arrival").classList.add("filled-range");
-    document.querySelector("#finder_departure").classList.add("filled-range")
-    Double_range_date()
-    setTimeout(e=>{document.querySelector("#finder_arrival").focus()}, 100)
+    Header()
+    Footer()
+    Double_range_date(false, 4, 8)
+    setTimeout(()=>{document.querySelector(".date-range__value").focus()}, 10)
+    //С открытой панелью разработчика ждёт пока она
+    // закроется (или задействуется инструмент выбора элементов со страницы)и только потом выполняется, 
+    //что меня ставит, елси честно, в тупик. (firefox)
 })

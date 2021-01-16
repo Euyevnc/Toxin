@@ -31,8 +31,8 @@ export default function(firDate, secDate){
 
 	$.datepicker.setDefaults($.datepicker.regional['ru']);
 	
-	let arrive = $(".date-range_double.date-range__value").first()
-	let departure = $(".date-range_double.date-range__value").last()
+	let arrive = $(".date-range_double .date-range__value").first()
+	let departure = $(".date-range_double .date-range__value").last()
     $(function(){
         arrive.datepicker({
 			minDate: 0,
@@ -62,16 +62,15 @@ export default function(firDate, secDate){
 				})	
 			},
         });
-		$('div.ui-datepicker').css({ 'font-size': '15px',});
-		departure.on("focus",e=>{
-			$('div.ui-datepicker').css({ 'margin-left': '-170px',});
-		})
-		arrive.on("focus",e=>{
-			$('div.ui-datepicker').css({ 'margin-left': '0px',});
+		//$('div.ui-datepicker').css({ 'font-size': '15px',});
+		// departure.on("focus",e=>{
+		// 	$('div.ui-datepicker').css({ 'margin-left': '-170px',});
+		// })
+		// arrive.on("focus",e=>{
+		// 	$('div.ui-datepicker').css({ 'margin-left': '0px',});
 			
-		})
+		// })
 		
-		$('div.ui-datepicker').css({ 'font-size': '15px',});
 		$('.ui-datepicker').each((i,e)=>{
 			addButtons(e, arrive, departure)
 		})

@@ -21,11 +21,11 @@
         border-radius: 4px;
         transition-duration: 0.7s;
         &::placeholder{
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
             color: rgba(31, 32, 65, 0.25);
             transition-duration: 0.7s;
             opacity: 1;
             font-size: 14px;
-            
         } 
         &:hover{
             line-height: 24px;

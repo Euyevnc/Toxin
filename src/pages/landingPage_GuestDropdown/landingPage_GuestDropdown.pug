@@ -1,28 +1,26 @@
-extends ../../layout/layoutUIkit.pug
+extends ../../layout/layout-for-hotel.pug
 include ../../includes/Blocks/Header/Header.pug
 include ../../includes/Blocks/Footer/Footer.pug
 include ../../includes/Blocks/Сellar/Сellar.pug
 include ../../includes/Blocks/Social/Social.pug
-include ../../includes/Blocks/NumberFinder/NumberFinder_type_double/NumberFinder_type_double.pug
+include ../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.pug
 block variables
     
 block head
-    title= LandingPage
+    title landingPage_GuestDropdown
+    meta(name="keywords", content="keywords")
+    meta(name="description", content="description")
 
-block content    
-    +Header(false, {name: "О нас", href:"#", addclass:"highlight"},{name: "Услуги", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]}, {name: "Вакансии", href:"#" },{name: "Новости", href:"#" },{name: "Соглашения", blocks:[{href:"#", name:"Some"},{href:"#", name:"Some else"} ]} )
-    
-    
-    div.content
-       
-        div(style="width:520px; padding-top:70px"  data-expanded="true" )
-            +NumberFinder_type_double("anountofguestFinder", {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
-        
-        div(style="margin-top:auto; padding-bottom:18px;width:430px;text-align:left;height:66px ")
-            p(style="text-align:right;width:297px;margin-right:auto") Лучшие номера для вашей работы, отдыха и просто вдохновения
-    
-    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "#",desc: "О нас"},{href: "#",desc: "Новости"},{href: "#",desc: "Служба поддержки"},{href: "#",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "#",desc: "О сервисе"},{href: "#",desc: "Наша команда"},{href: "#",desc: "Вакансии"},{href: "#",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "#",desc: "Соглашения"},{href: "#",desc: "Сообщества"},{href: "#",desc: "Связь с нами"} ]})
-    
-    
-    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "#", facebook:"#", instagram:"#"})
+
+block header
+    +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
+block content  
+    div.searcher-container
+        +Number-finder_type_double("anountofguestFinder", {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+    div.text-container
+        p Лучшие номера для вашей работы, отдыха и просто вдохновения
+block footer
+    +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
+block cellar  
+    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
 block script
