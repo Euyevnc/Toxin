@@ -85,7 +85,7 @@ export default function(firDate, secDate){
 
 function addButtons(e, inp, inp2){
 		e.addEventListener('click', (ev)=>{
-			if(ev.target.closest('.ui-datepicker-button-clear')){
+			if(ev.target.closest('.ui-datepicker-button_clear')){
 				e.querySelectorAll(".ui-state-active").forEach((item)=>{
 				item.classList.remove("ui-state-active")
 
@@ -96,7 +96,7 @@ function addButtons(e, inp, inp2){
 				inp.val(``)
 				inp2.val(``)
 			}
-			if(ev.target.closest('.ui-datepicker-button-conf')){
+			if(ev.target.closest('.ui-datepicker-button_conf')){
 	
 				let jsDate = inp.datepicker('widget').data('datepickerExtensionRange')
 				let startDT = jsDate.startDateText
@@ -106,7 +106,7 @@ function addButtons(e, inp, inp2){
 	
 				$.datepicker._hideDatepicker();
 				
-				alert(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);	
+				console.log(`Данные: ${startDT}- ${endDT}, (${startD};  ${endD})`);
 				
 			}
 		})

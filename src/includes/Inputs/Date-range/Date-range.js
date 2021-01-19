@@ -84,7 +84,7 @@ function addButtons(e){
 			let endDT = jsDate.endDateText
 			let startD = jsDate.startDate
 			let endD = jsDate.endDate
-			console.log(`Выводится всё, вот: ${startDT}- ${endDT}, (${startD};  ${endD})`);
+			console.log(`Данные: ${startDT}- ${endDT}, (${startD};  ${endD})`);
 			
 			$.datepicker._hideDatepicker();
 		}

@@ -18,9 +18,11 @@ document.addEventListener('DOMContentLoaded', function(e){
         review()
     })
 })
-async function getEmulation(number){
+function getEmulation(number){
     let num = number
-    let data = await fetch("./data.json")
-    data = await data.json()
-    return data.numbers[num]
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{   
+            resolve(data.numbers[num])
+        }, 100)
+    })
 }
