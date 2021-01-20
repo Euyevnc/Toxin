@@ -1,8 +1,8 @@
 mixin Date-picker(label, placeholder, value)
-    div(class=`Date-picker`)
+    div(class=`date-picker`)
         include ../../Icons/arrow-down.pug 
         label(style="font-weight:bold") #{label}
             - if(value)
-                input(class="Date-picker_value" placeholder=`${placeholder}` value=`${value}`)
+                input(class="date-picker_value" placeholder=`${placeholder}` value=`${value}`)
             - else
-                input(class="Date-picker_value" placeholder=`${placeholder}`)
+                input(class="date-picker_value" placeholder=`${placeholder}`)

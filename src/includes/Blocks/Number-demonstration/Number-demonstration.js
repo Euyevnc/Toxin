@@ -76,31 +76,8 @@ function load(list){
         rate.className = "number-demonstration__rate"
 
         let stars = document.createElement("span")
-        rate.appendChild(stars)
         stars.className = "number-demonstration__stars"
-
-        let filled = Math.floor(i.rate);
-
-        for(let i =1; i<=filled; i++){
-            let filledStar = document.createElement('span')
-            stars.appendChild(filledStar)
-            filledStar.className = "filling-star_color"
-            filledStar.innerHTML = "star"
-        }
-
-        if(filled < 5){
-            let perc = +((i.rate - filled)*100)
-            let lastStar = document.createElement('span')
-            stars.appendChild(lastStar)
-            lastStar.className = "filling-star_outl"
-            lastStar.innerHTML = `star_outline <span class="filling-star_color" style='width: ${perc}%'>star</span>`
-                for(let i =1; i<=(5-(filled+1) ); i++){
-                    let emptyStar = document.createElement('span')
-                    stars.appendChild(emptyStar)
-                    emptyStar.className = "filling-star_outl"
-                    emptyStar.innerHTML = `star_outline`
-            }
-        }
+        rate.appendChild(createStars(stars, i.rate))
 
         let resps = document.createElement("span")
         rate.appendChild(resps)
@@ -111,5 +88,32 @@ function load(list){
     })
 
 }
+//Да, в UI-kit были звёзды  через pug, но раз решил делать на лету, то пришлось фунцкию создать под эти цели
+function createStars(starContainer, rate){
+    let allStars = starContainer
+    let filledStars = Math.floor(rate)
+    let fillingStar = rate - filledStars
+    let emptyStars = (5 - rate)
 
-
+    for(let i =1; i<=filledStars; i++){
+        let star = document.createElement('span')
+        allStars.appendChild(star)
+        star.className = "rate-stars__star rate-stars__star_colorized"
+        star.innerHTML = "star"
+    }
+    if(fillingStar){
+        let perc = fillingStars*100
+        let star =  document.createElement('span')
+        allStars.appendChild(star)
+        star.className = "rate-stars__star rate-stars__star_outlined"
+        star.innerHTML = `star_outline <span class="rate-stars__star rate-stars__star_colorized" style='width: ${perc}%'>star</span>`
+        
+    }
+    for(let i=1; i<=emptyStars; i++){
+        let star = document.createElement('span')
+        allStars.appendChild(star)
+        star.className = "rate-stars__star rate-stars__star_outlined"
+        star.innerHTML = "star_outlined"
+    }
+    return allStars
+}

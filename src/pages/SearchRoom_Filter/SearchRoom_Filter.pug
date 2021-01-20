@@ -22,12 +22,12 @@ block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
 block content
         section.Inputs-containter
-            +Date-range("Даты пребывания в отеле", "Выберете период", "period001", "filled")
-            +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "1"} )
+            +Date-range("Даты пребывания в отеле", "Выберете период", "period001")
+            +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
             +Range-slider("Диапозон цены", "Стоимость за сутки прибывания в номере", 0, 15000, 0.333, 0.666)
             +Checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
             +Checkbox-with-subscribe('доступность', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
-            +Inputs-with-counter('simple', "удобства номера", 'Выберете комплектацию', '', {name: "спальни", min: "0", max: "5", base: "2"}, {name: "кровати", min: "0", max: "5", base: "2"}, {name: "ванные комнаты", min: "0", max: "5", base: "1"} )
+            +Inputs-with-counter('simple', "удобства номера", 'Выберете комплектацию', '', {name: "спальни", min: "0", max: "5"}, {name: "кровати", min: "0", max: "5"}, {name: "ванные комнаты", min: "0", max: "5"} )
             +Dropping-checkboxes('дополнительные удобства', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
         section.Items-container
             h1 Номера, которые мы для вас подобрали

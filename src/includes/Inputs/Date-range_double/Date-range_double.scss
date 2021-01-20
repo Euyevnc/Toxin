@@ -2,10 +2,10 @@
 @import "../../../utils/fonts/Montserrat.scss";
 @import "../../../static/Icons/arrow-down.scss";
 
-.date-range{
-    max-width: 150px;
-    position: relative;
-    display: inline-block;
+.date-range_double{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     & h3{
         text-transform: uppercase;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -17,10 +17,11 @@
         margin-bottom: 5.5px;
         color: rgba(31, 32, 65, 1)
     }
-    & label{
-        text-transform: uppercase;
-        font-weight: bold;
-        color: rgb(31, 32, 65);
+
+    &__container{
+        max-width: 150px;
+        position: relative;
+        display: inline-block;
     }
     &__value{
         padding-left: 15px;

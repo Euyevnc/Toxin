@@ -2,8 +2,9 @@ import InputsWithCounter from  "../../Inputs/Inputs-with-counter/Inputs-with-cou
 import date_picker_double from "../../Inputs/Date-range_double/Date-range_double.js"
 
 export default function({number, category, price, arrival,departure, guests, services}){
-    date_picker_double(arrival, departure);
-    InputsWithCounter(guests);
+    let bookerContainer = document.querySelector(".js-booker")
+    date_picker_double(arrival, departure, bookerContainer);
+    InputsWithCounter(guests, bookerContainer);
     booking()
     function booking(){
         let card = document.querySelector(".booker")

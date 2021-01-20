@@ -13,9 +13,9 @@ mixin Inputs-with-counter(type, label, placeholder, describe, ...issues)
                 li(class="input-with-counter__element")
                     p #{val.name}
                     span(class="input-with-counter__counter" data-min=`${min}` data-max=`${max}`)
-                        span -
+                        span.input-with-counter__tumbler -
                         span(class="input-with-counter__number") 0
-                        span +
+                        span.input-with-counter__tumbler +
             div.input-with-counter__buttons
                 span(class="input-with-counter__button_delete") ОЧИСТИТЬ
                 span(class="input-with-counter___button_confirm") ПРИМЕНИТЬ

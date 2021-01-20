@@ -1,0 +1,273 @@
+@import '../../utils/forUI-kit/colorIcon.scss';
+@import '../../utils/forUI-kit/fontIcon.scss';
+
+@import '../../includes/Inputs/Text-field/Text-field.scss';
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
+@import "../../includes/Inputs/Mask_DMY/Mask_DMY.scss";
+@import "../../includes/Inputs/Date-range_double/Date-range_double.scss";
+@import "../../includes/Inputs/Date-range/Date-range.scss";
+@import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_default.scss";
+@import "../../includes/Checkbox/Default-checkbox/Default-checkbox.scss";
+@import "../../includes/Checkbox/Radio/Radio.scss";
+@import "../../includes/Checkbox/Tumblers/Tumblers.scss";
+@import "../../includes/Checkbox/Button-liker/Button-liker.scss";
+@import "../../static/Icons/filling-star.scss";
+@import "../../includes/Range-slider/Range-slider.scss";
+@import "../../includes/Buttons/Button-rounded/Button-rounded.scss";
+@import "../../includes/Buttons/Button-minimaze/Button-minimaze.scss";
+@import "../../includes/Buttons/Button_with_arrow/Button_with_arrow.scss";
+@import "../../includes/Pages-switcher/Pages-switcher.scss";
+@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
+@import "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.scss";
+@import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
+@import "../../includes/Checkbox/Bullet/Bullet.scss";
+@import "../../static/Icons/Sticker.scss";
+@import "../../includes/Review-shape/Review-shape.scss";
+@import "../../includes/Blocks/Entry-form/Entry-form.scss";
+@import "../../includes/Blocks/Registration/Registration.scss";
+@import "../../includes/Blocks/Number-booker/Number-booker.scss";
+@import "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.scss";
+@import "../../includes/Blocks/Number-demonstration/Number-demonstration.scss";
+@import "../../includes/Blocks/Header/Header.scss";
+@import "../../includes/Blocks/Footer/Footer.scss";
+@import "../../includes/Blocks/Сellar/Сellar.scss";
+@import "../../includes/Blocks/Social/Social.scss";
+;
+.ui-kit-container{
+    display: flex;
+    flex-wrap: wrap;
+    background: #E5E5E5;
+    &>*{
+        background-color: #ffffff;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        width: 1440px;
+        margin: 25px;
+        box-sizing: border-box;
+        &>svg{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }  
+    }
+}
+.colors-and-type {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 900px;
+    padding: 145px 150px 0;
+
+    & .colors-container{
+        padding-right: 10px;
+        margin-bottom: 20px;
+    }
+    & .fonts-container{
+        padding-left: 10px;
+    }
+
+
+}
+.forms{
+    padding: 143px 0 132px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    &-fields-wrapper{
+        width: 320px;
+        &>*{
+            margin-bottom: 20px;
+        }
+    }
+    &-checkers-wrapper{
+        width: 320px;
+        padding: 0 2px 0 56px;
+        &>*{
+            margin-bottom: 40px;
+        }
+    }
+    &-buttons-wrapper{
+        width: 320px;
+        &>*{
+            margin-bottom: 40px;
+        }
+    }
+    &-dropdowns-wrapper{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        &>section{
+            width: 320px;
+            &:nth-child(2){
+                padding: 0 2px 0 56px; 
+            }
+        }
+    }
+    &-check-blockes-wrapper{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        margin-bottom: 40px;
+        &>section{
+            width: 320px;
+            &:nth-child(2){
+                padding: 0 2px 0 56px; 
+            }
+        }
+    }
+    & .reviews-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    & .textfield-active-container{
+        & input{
+            border: 1px solid rgba(31, 32, 65, 0.5);
+        }
+    }
+    & .double-range-calendar-container{
+        width: 100%
+    }
+    & .tumblers-container{
+        &>*{
+            margin-bottom: 10px;
+        }
+    }
+    & .range-slider-container{
+        width: 320px;
+    }
+    & .buttons-container {
+        margin-bottom: 30px;
+        & h3{
+            text-transform: uppercase;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 16.5px;
+            color: rgba(31, 32, 65, 1);
+        }
+        &>div{
+            margin-right: 19px;
+            margin-bottom: 30px;
+        }
+    }
+    & .pages-switcher-container {
+        & h3{
+            text-transform: uppercase;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 16.5px;
+            color: rgba(31, 32, 65, 1);
+        }
+        & .pages-switcher{
+            text-align: left;
+        }
+    }
+    & .default-input-drop-container {
+        margin-bottom: 20px;
+        & .input-with-counter{
+            z-index: 15
+        }
+    }
+    & .expand-input-drop-container{
+        & .input-with-counter__menu{
+            display: flex;
+        }
+        margin-bottom: 158px;
+    }
+    & .stickers-container {
+        margin: 0 20px;
+    }
+    & .bullets-container{
+        & h3{
+            text-transform: uppercase;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 16.5px;
+            color: rgba(31, 32, 65, 1);
+        }
+    }
+    & .review-wrapper {
+        max-width: 710px;
+        padding-top: 15px;
+    }
+
+}
+.cards{
+    background: #F4F4F6;
+    justify-content: center;
+    padding: 140px 0 140px;
+
+    &>section{
+        margin: 0 20px;
+        max-width: 380px;
+        &>*{
+            margin-bottom: 40px;
+        }
+    }
+    & .expended-calendar-container {
+        position: relative;
+        width: 320px;
+        height: 370px;
+        & .ui-datepicker{
+            display: block;
+            top: 0;
+            left: 0;
+            user-select: none;
+        }
+    }
+}
+.headers-and-footers{
+    padding: 140px 0;
+    background: #F4F4F6;
+    display: flex;
+    flex-direction: column;
+    &>*{
+        margin-bottom: 40px;
+        //width: 100%;
+    }
+    & .header-container {
+        width: 100%;
+        padding: 15px 0;
+        background-color: white;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        position: relative;
+        z-index: 10;
+            @media(max-width: 1160px){
+            padding: 10px;
+        }
+    }
+    & .footer-container{
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        position: relative;
+        z-index: 10;
+        @media(max-width: 1160px){
+            padding-left: 10px;
+        }
+    }
+}
+
+
+
+.wrapper{
+    max-width: 1160px;
+    margin: auto;
+}

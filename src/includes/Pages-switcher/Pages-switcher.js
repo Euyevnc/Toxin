@@ -9,21 +9,22 @@ export default function(func, cont){
             cell.addEventListener('click', e=>{
                 current = indx
                 switchPage(cells, indx)
-                cont.style.minWidth = cont.offsetWidth +"px"
-                cont.style.minHeight = cont.offsetHeight +"px"
-                i.parentNode.style.position = "absolute"
-                i.parentNode.style.bottom = "0"
-                func().then(n=>{
-                    i.parentNode.style.position = "relative"
-                    cont.style.minWidth = "auto"
-                    cont.style.minHeight = "auto"
-            
-                    let total = i.dataset.totalamount;
-                    if (total>100){total= "100+"}
-                    let pageamount = i.dataset.amountonpage
-                    subtext.textContent =(indx+1)*(+pageamount) -11 + " - " + (indx+1)*(+pageamount) + " из " + total + " вариантов аренды";
-                })
- 
+                if(func){
+                    cont.style.minWidth = cont.offsetWidth +"px"
+                    cont.style.minHeight = cont.offsetHeight +"px"
+                    i.parentNode.style.position = "absolute"
+                    i.parentNode.style.bottom = "0"
+                    func().then(n=>{
+                        i.parentNode.style.position = "relative"
+                        cont.style.minWidth = "auto"
+                        cont.style.minHeight = "auto"
+                    })
+                }
+                
+                let total = i.dataset.totalamount;
+                if (total>100){total= "100+"}
+                let pageamount = i.dataset.amountonpage
+                subtext.textContent =(indx+1)*(+pageamount) -11 + " - " + (indx+1)*(+pageamount) + " из " + total + " вариантов аренды";
             })
         })
 
@@ -33,7 +34,6 @@ export default function(func, cont){
                 cells[nextPage].click()
             }
         })  
-
         cells[0].click()
     })
 

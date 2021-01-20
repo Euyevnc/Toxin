@@ -1,0 +1,164 @@
+include ../../utils/forUI-kit/colorIcon.pug
+include ../../utils/forUI-kit/fontIcon.pug
+include ../../includes/Inputs/Text-field/Text-field.pug
+include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
+include ../../includes/Inputs/Mask_DMY/Mask_DMY.pug
+include ../../includes/Inputs/Date-range_double/Date-range_double.pug
+include ../../includes/Inputs/Date-range/Date-range.pug
+include ../../includes/Inputs/Field-with-arrow/Field-with-arrow.pug
+include ../../includes/Checkbox/Default-checkbox/Default-checkbox.pug
+include ../../includes/Checkbox/Radio/Radio.pug
+include ../../includes/Checkbox/Tumblers/Tumblers.pug
+include ../../includes/Checkbox/Button-liker/Button-liker.pug
+include ../../static/Icons/filling-star.pug
+include ../../includes/Range-slider/Range-slider.pug
+include ../../includes/Buttons/Button-rounded/Button-rounded.pug
+include ../../includes/Buttons/Button-minimaze/Button-minimaze.pug
+include ../../includes/Buttons/Button_with_arrow/Button_with_arrow.pug
+include ../../includes/Pages-switcher/Pages-switcher.pug
+include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
+include ../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.pug
+include ../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.pug
+include ../../includes/Checkbox/Bullet/Bullet.pug
+include ../../static/Icons/Sticker.pug
+include ../../includes/Review-shape/Review-shape.pug
+include ../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.pug
+include ../../includes/Blocks/Header/Header.pug
+include ../../includes/Blocks/Footer/Footer.pug
+include ../../includes/Blocks/Сellar/Сellar.pug
+include ../../includes/Blocks/Social/Social.pug
+
+div.ui-kit-container
+    section.colors-and-type 
+        include ../../static/Images/logo.img.svg
+        section.colors-container 
+            +colorIcon('#1F2041', "Dark Shade 100%", 1)
+            +colorIcon('#1F2041', "Dark Shade 75%", 0.75)
+            +colorIcon('#1F2041', "Dark Shade 50%", 0.5)
+            +colorIcon('#1F2041', "Dark Shade 25%", 0.25)
+            +colorIcon('#1F2041', "Dark Shade 5%", 0.05)
+            +colorIcon('#BC9CFF', "Purple")
+            +colorIcon('#6FCF97', "Green")    
+        section.fonts-container
+            +fontIcon('H1', 'Montserrat', '24px', '700', '30px', 'none', 'This one is the sub-section or widget title' )
+            +fontIcon('H2', 'Montserrat', '19px', '700', '24px', 'none', 'Next one is the item title inside widgets' )
+            +fontIcon('H3', 'Montserrat', '14px', '700', '15px', 'uppercase' , 'This is a label or CTA text.')
+            +fontIcon('Body', 'Montserrat', '14px', '400', '24px', 'none', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', '0.75')
+
+    section.forms
+        include ../../static/Images/logo.img.svg
+        section.forms-fields-wrapper
+            div.textfield-container 
+                +Text-field('text field', 'Email', 'default')
+            div.textfield-active-container 
+                +Text-field('text field', 'Email', 'hover/focus')
+            div.input-with-counter-container 
+                +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "1"} )
+            div.input-with-mask-container 
+                +Mask_DMY("masked text field", "ДД.ММ.ГГГГ", '')
+            div.double-range-calendar-container
+                +Date-range_double([{placeholder: "ДД.ММ.ГГГГ", label:"date Dropdown", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"date Dropdown", id:"finder_departure"}])
+            div.range-calendar-container 
+                +Date-range("filter date dropdown", "Выберете период", "period001")
+            div.field-with-arrow-container 
+                +Field-with-arrow('subscription text field', "Email")
+        section.forms-checkers-wrapper
+            div.default-checkboxes-container
+                +Checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
+            div.radios-container
+                +Radio('radio buttons', 'sex', {id:'genderMan', describe:'Мужчина', checked:true},{id:'genderFem', describe:'Женщина'} )
+            div.tumblers-container 
+                +Tumblers('toggle', {id:'allowOfferts', name:'Получать спецпредложения', checked: true})
+                +Tumblers('', {id:'allowOfferts', name:'Получать спецпредложения'})
+            div.likers-container 
+                +Button-liker('like button', {id:"like001", am: 2},{id:"like002", am: 12, checked:true})
+            div.start-container 
+                +Rate-stars('rate button', 4, [0.0])
+                +Rate-stars('', 5)
+        section.forms-buttons-wrapper
+            div.range-slider-container 
+                +Range-slider("range slider", "", 0, 15000, 0.333, 0.666)
+            div.buttons-container 
+                h3 buttons 
+                +Button-rounded('click me', 'purple')
+                +Button-rounded('click me', 'purple-depr')
+                +Button-rounded('click me', 'empty')
+                +Button-rounded('click me', 'empty-depr')
+                br
+                +Button_minimaze('click me', 'purple')
+                +Button_minimaze('click me', 'grey')
+            div.large-button-container 
+                +Button_with_arrow("перейти к оплате")
+            div.pages-switcher-container 
+                h3 pagination
+                +Pages-switcher(175, 12)
+
+        div(style="width: 100%; height:100px")
+
+        section.forms-dropdowns-wrapper
+            section
+                div.default-input-drop-container 
+                    +Inputs-with-counter('simple', "dropdown", 'Выберете комплектацию', 'default', {name: "спальни", min: "0", max: "5"}, {name: "кровати", min: "0", max: "5"}, {name: "ванные комнаты", min: "0", max: "5"} )
+
+                div.expand-input-drop-container 
+                    +Inputs-with-counter('simple', "dropdown", 'Выберете комплектацию', 'expanded', {name: "спальни", min: "0", max: "5"}, {name: "кровати", min: "0", max: "5"}, {name: "ванные комнаты", min: "0", max: "5"} )
+            section
+                div.expand-input-drop-container
+                    +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
+            section
+                div.expand-input-drop-container
+                    +Inputs-with-counter(false,'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
+
+        section.forms-check-blockes-wrapper
+            section
+                div.dropping-checkboxes-container 
+                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})   
+                div.dropped-checkboxes-container
+                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})   
+            section
+                dev.checkboxes-with-describe-container 
+                    +Checkbox-with-subscribe('rich Checkbox Buttons', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
+            section 
+                div.bullets-container
+                    h3 Правила
+                    +Bullet("Нельзя с питомцами")
+                    +Bullet("Без вечеринок и мероприятий")
+                    +Bullet("Время прибытия — после 13:00, а выезд до 12:00")
+        section.reviews-wrapper
+            div.stickers-container 
+                +Sticker("insert_emoticon", "Комфорт","Шумопоглощающие стены")
+                +Sticker("location_city", "Удобство", "Окно в каждой из спален")
+            div.review-wrapper 
+                +Review-shape(require("./review001.jpg").default , "Мурад Сарафанов" ,"5 дней", 12, true,  "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+
+    section.cards 
+        include ../../static/Images/logo.img.svg
+        section   
+            div.find-form-container
+                +Number-finder_type_double("anountofguestFinder", {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+            div.registration-form-container 
+                include ../../includes/Blocks/Registration/Registration.pug
+        section
+            div.number-booker-container
+                include ../../includes/Blocks/Number-booker/Number-booker.pug
+            div.entry-form-container
+                include ../../includes/Blocks/Entry-form/Entry-form.pug
+        section 
+            div.expended-calendar-container 
+            div.number-demonstration-container
+                include ../../includes/Blocks/Number-demonstration/Number-demonstration.pug
+    section.headers-and-footers
+        include ../../static/Images/logo.img.svg
+        section.header-container 
+            .wrapper
+                +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
+        section.header-container.header-autorized-container
+            .wrapper 
+                +Header("Юлий Цезарь", {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
+        section.footer-container 
+            .wrapper
+                +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
+                +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
+        section.card-container 
+
+

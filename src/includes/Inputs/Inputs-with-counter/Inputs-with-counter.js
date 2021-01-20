@@ -1,137 +1,181 @@
-export default function(values){
-    document.querySelectorAll(".input-with-counter").forEach((par, i)=>{
+export default function(values, container){
+    const area = container || document
+    area.querySelectorAll(".input-with-counter").forEach((block, index)=>{
         let value
-        if(values) value = values[i]
-        let inp = par.querySelector('input');
-        let list = par.querySelector('.input-with-counter__menu');
+        if(values) value = values[index]
+        let input = block.querySelector('input');
+        let list = block.querySelector('.input-with-counter__menu');
         let listEl = list.querySelectorAll('li');
-        let assign1
-        assign1 = 0
-        let assign2
-        listEl.forEach((li,i)=>{
-            let counter = li.querySelector('.input-with-counter__counter')
-            let numb = counter.querySelector(".input-with-counter__number")
-            let min = +(counter.getAttribute('data-min') )
-            let max = +(counter.getAttribute('data-max') )
-            if(value && value[i]){
-                numb.textContent = Math.max(min,Math.min(value[i], max))
+        let clearingButton = block.querySelector('.input-with-counter__button_delete')
+        let confirmingButton = block.querySelector('.input-with-counter___button_confirm')
+
+        input.addEventListener('focus', rollDownMenu)
+        clearingButton.addEventListener('click', handlerDeleteButtonClick)
+        confirmingButton.addEventListener('click', handlerConfirmButtonClick) 
+        clearingButton.tabIndex = 0
+        confirmingButton.tabIndex = 0
+
+        let valuesAreNotZero = 0
+        listEl.forEach((liElement, index)=>{
+            let counter = liElement.querySelector('.input-with-counter__counter')
+            let number = counter.querySelector(".input-with-counter__number")
+            let min = +(counter.getAttribute('data-min') );
+            let max = +(counter.getAttribute('data-max') );
+            let tumblerPlus = counter.lastChild
+            let tumblerMinus = counter.firstChild
+
+            
+            init()
+            valuesAreNotZero += +number.textContent
+
+            ///////
+            function init(){
+                if(value && value[index]){
+                    number.textContent = Math.max(min,Math.min(value[index], max))
+                }
+                
+                if (+number.textContent == min){
+                    tumblerMinus.classList.add("input-with-counter__tumbler_depricated")
+                };
+
+                if (+number.textContent == max){
+                    tumblerPlus.classList.add("input-with-counter__tumbler_depricated")
+                }
+                
+                tumblerMinus.addEventListener('click', handlerMinusClick)
+                tumblerPlus.addEventListener('click', handlerPlusClick)
+                tumblerMinus.tabIndex = 0;
+                tumblerPlus.tabIndex = 0;
             }
-            if (+numb.textContent == min){
-                depr(counter.firstChild)
-            };
-            if (+numb.textContent == max){
-                depr(counter.lastChild)
+
+            function handlerMinusClick(){
+                let newValue = Math.max(+number.textContent-1, min)
+                number.textContent = newValue
+                if (newValue == min){
+                    console.log(newValue == min)
+                    tumblerMinus.classList.add("input-with-counter__tumbler_depricated");
+                    valuesAreNotZero = 0
+                    listEl.forEach(el=>{
+                        valuesAreNotZero +=(+el.querySelector('.input-with-counter__number').textContent)
+                    
+                    })
+                    if (!valuesAreNotZero){block.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';}
+                };
+                if(newValue!==max){
+                    tumblerPlus.classList.remove("input-with-counter__tumbler_depricated");
+                }
             }
-            assign1+=(+numb.textContent)
-
-
-            counter.firstChild.addEventListener('click', evmin)
-            counter.lastChild.addEventListener('click', evplus)
-
-            function evplus(){
-                let inc = Math.min(+numb.textContent+1, max)
-                numb.textContent = inc;
-                if (inc == max){depr(counter.lastChild)};
-                par.querySelector('.input-with-counter__button_delete').style.visibility= 'visible';
-                apr(counter.firstChild)
-            }
-            function evmin(){
-                let inc = Math.max(+numb.textContent-1, min)
-                numb.textContent = inc
-                if (inc == min){depr(counter.firstChild)};
-                apr(counter.lastChild);
-                assign2 = 0
-                listEl.forEach(el=>{
-                    assign2 +=(+el.querySelector('.input-with-counter__number').textContent)
-
-                })
-                if (!assign2){par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';}
+            
+            function handlerPlusClick(){
+                let newValue = Math.min(+number.textContent+1, max)
+                number.textContent = newValue;
+                if (newValue == max){
+                    tumblerPlus.classList.add("input-with-counter__tumbler_depricated")
+                };
+                if(newValue!==min){
+                    tumblerMinus.classList.remove("input-with-counter__tumbler_depricated")
+                    block.querySelector('.input-with-counter__button_delete').style.visibility= 'visible';
+                }
             }
         })
-        if(value) conf();
-        if(!assign1){par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden'}
 
-        inp.addEventListener('focus', e=>{
+        if(value) confirment();
+        if(!valuesAreNotZero) clearingButton.style.visibility= 'hidden'
+        
+        //////
+        function rollDownMenu(){
             list.style.display = "flex";
-            document.addEventListener('click',function evcl(ev){
-                if (!par.contains(ev.target) ){ 
-                    conf();
-                    list.style.display = "none" 
-                }
-            })
+            list.querySelector(".input-with-counter__tumbler").focus()
+            document.addEventListener("click", rollUpMenu)
+            document.addEventListener("focusin", rollUpMenu)
+        };
 
-        })
+        function rollUpMenu(event){
+            if(!block.contains(event.target) ){
+                confirment();
+            }
+        };
 
-
-        par.querySelector('.input-with-counter__button_delete').addEventListener('click', e=>{
-            del()
-        })
-        par.querySelector('.input-with-counter___button_confirm').addEventListener('click',e=>{
-            conf()
+        function handlerConfirmButtonClick(){
+            confirment()
             list.style.display = "none" ;
-        }) 
-        
-        function conf(){
-            let cont = ''
-            listEl.forEach( (it,i) =>{
-                if(par.classList.contains("input-with-counter_simple")){
-                    let num = +it.querySelector(".input-with-counter__number").textContent
-                    if(cont&&i==1) cont += ', '
-                    let word = it.querySelector('p').textContent
-                    if(num==0){cont+=''}
-                    else if(i==2&&num>0&&cont){cont += "..."}
-                    else {cont+= `${num} ${word}`}
-                }
-                else{
-                    let num = +it.querySelector(".input-with-counter__number").textContent
-                    if(i==0){
-                        cont=+cont + num; 
-                    }
-                    else if(i==listEl.length-2){
-                        cont = +cont + num;
-                        if (cont==0){cont=''}
-                        else if(cont == 1 || cont% 10 == 1) cont+= " гость";
-                        else if(5>cont || 5>(cont%10)) cont+= " гостя";
-                        else cont+= " гостей";
-                    }
-                    else if(i==listEl.length-1){
-                        if (num==0){num=''}
-                        else if(num == 1 || num% 10 == 1) num+= " младенец";
-                        else if(5>num || 5>num%10) num+= " младенца";
-                        else num += " младенцев";
-
-                        if(cont&&num) cont +=", " + num
-                        
-                    }
-                }
-            })
-            cont = cont || inp.getAttribute("placeholder")
-            inp.classList.remove('WithDropdownactive')
-            inp.value = cont
-
         }
-        function del(){
+
+        function handlerDeleteButtonClick(){
             listEl.forEach(item=>{
-                let limit = +item.querySelector('.input-with-counter__counter').getAttribute('date-min')
-                item.querySelector('.input-with-counter__number').textContent = `${limit}`;
-                let f = item.querySelector('.input-with-counter__counter').firstChild;
-                par.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';
-                depr(f)
-                conf()
+                let min = +item.querySelector('.input-with-counter__counter').getAttribute('date-min')
+                item.querySelector('.input-with-counter__number').textContent = `${min}`;
+
+                let tumblerMinus = item.querySelector('.input-with-counter__counter').firstChild;
+                block.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';
+                tumblerMinus.classList.add("input-with-counter__tumbler_depricated")
+                input.value = ''
             })
         }
-        
+        function confirment(){
+            let stringForValue = ''
+            if(block.classList.contains("input-with-counter_simple")){
+                listEl.forEach( (it,i) =>{concatForSimplified(it,i)})
+            }
 
-        function depr(ar){
-            ar.style.border= '1px solid rgba(31, 32, 65, 0.25)';
-            ar.style.color = 'rgba(31, 32, 65, 0.25)';
-            ar.style.cursor = "auto"
-        }
-        function apr(ar){
-            ar.style.border= '1px solid rgba(31, 32, 65, 0.5)';
-            ar.style.color = 'rgba(31, 32, 65, 0.5)';
-            ar.style.cursor = "pointer"
-        }
+            else{
+                listEl.forEach( (it,i) =>{concatForStandart(it,i)})
+            }
 
+            stringForValue = stringForValue || input.getAttribute("placeholder")
+            input.value = stringForValue
+
+            ///
+            function concatForSimplified(element, index){
+                let number = +element.querySelector(".input-with-counter__number").textContent
+
+                if(index==0){
+                    let formsOfWord = ["спальня", "спальни", "спалень"] //Это стоило сделать переменной, но пусть пока так 
+                
+                    stringForValue  += number;
+                    if(number == 1 || number%10 == 1) stringForValue += (" " + formsOfWord[0]);
+                    else if(5>number || 5>(number%10)) stringForValue +=(" " + formsOfWord[1]);
+                    else stringForValue += (" " + formsOfWord[2]);
+                }
+                else if(index==1){
+                    let formsOfWord = ["кровать", "кровати", "кроватей"]
+                    if(number == 1 || number%10 == 1) stringForValue += (", " + number + " " + formsOfWord[0]);
+                    else if(5>number || 5>(number%10)) stringForValue +=(", " + number + " " + formsOfWord[1]);
+                    else stringForValue += (", " + number + " " + formsOfWord[2]);
+                }
+                else if(index==2){
+                    number == 0 ?
+                        stringForValue += ''
+                        :
+                        stringForValue += '...'
+                }
+            }
+
+            function concatForStandart(element, index){
+                let number= +element.querySelector(".input-with-counter__number").textContent
+
+                if(index==0){
+                    stringForValue=+stringForValue + number; 
+                }
+                else if(index==1){
+                    let formsOfWord = ["гость", "гостя", "гоcтей"]
+                    stringForValue = +stringForValue + number;
+                    if (stringForValue==0){stringForValue=''}
+                    else if(stringForValue == 1 || stringForValue%10 == 1) stringForValue += (" " + formsOfWord[0]);
+                    else if(5>stringForValue || 5>(stringForValue%10)) stringForValue +=(" " + formsOfWord[1]);
+                    else stringForValue += (" " + formsOfWord[2]);
+                }
+                else if(index== 2){
+                    let formsOfWord = ["младенец", "младенца", "младенцев"]
+                    let string = ""
+                    if (number==0) return
+                    else if(number == 1 || number % 10 == 1) string += (" " + formsOfWord[0]);
+                    else if(5>number || 5>number%10) string += (" " + formsOfWord[1]);
+                    else string += " " + formsOfWord[2];
+                    if(stringForValue && string) stringForValue += (", " + number + string)
+                    
+                }
+            }
+        }
     })
 }

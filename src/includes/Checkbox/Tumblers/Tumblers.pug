@@ -1,7 +1,7 @@
 mixin Tumblers(descr, ...issues)
     div.tumblers
         if descr
-            div.tumblers__header #{descr}
+            h3.tumblers__header #{descr}
         each val in issues
             - var id = val.id
             - var name = val.name

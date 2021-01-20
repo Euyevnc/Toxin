@@ -25,7 +25,8 @@
         border: 1px solid rgba(31, 32, 65, 0.25);
         color: rgba(31, 32, 65, 0.75);
         box-sizing: border-box;
-        border-radius: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         transition-duration: 0.7s;
         font-size: 14px;
@@ -48,8 +49,11 @@
         }
     }
     &__describe{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
         color: rgba(31, 32, 65, 0.5);
-        padding: 0px;
         margin: 0px;
         position: absolute;
         right: 0;
@@ -85,25 +89,29 @@
             width: 30px;
             height: 30px;
             text-align: center;
-            font-size: 18px;
-            border-radius: 50%;
-            border: 1px solid rgba(31, 32, 65, 0.50);
-            color: rgba(31, 32, 65, 0.5);
             display: inline-block;
             font-weight: 400;
             line-height: 30px;
             vertical-align: middle;
-            cursor: pointer;
-            &.input-with-counter__number{
-                border-radius: 0px;
-                border: none;
-                color: #1F2041;
-                font-weight: bold;
-                cursor: auto;
-                font-size: 12px;
-            }
-            
+  
         }
+    }
+    &__tumbler{
+        font-size: 18px;
+        border-radius: 50%;
+        border: 1px solid rgba(31, 32, 65, 0.50);
+        color: rgba(31, 32, 65, 0.5);
+        cursor: pointer;
+        &_depricated{
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            color: rgba(31, 32, 65, 0.25);
+            cursor: auto;
+        }
+    }
+    &__number{
+        color: #1F2041;
+        font-weight: bold;
+        font-size: 12px;
     }
 
     &__menu{
@@ -124,7 +132,7 @@
         padding-bottom: 7px;
         border: 1px solid rgba(31, 32, 65, 0.5);
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        z-index: 250;
+        z-index: 50;
     };
     &__buttons{
         padding: 20px 7px 6px 14px;
@@ -151,6 +159,7 @@
         color: rgba(31, 32, 65, 0.50);
     }
     &_simple{
+        max-width: 260px;
         & .input-with-counter__buttons{
             display: none
         }

@@ -1,6 +1,7 @@
 mixin Button-liker(descr, ...issues)
     div.button-liker
-        span.button-liker__head #{descr}
+        if descr
+            h3.button-liker__head #{descr}
         span.button-liker__cont
             each val in issues
                 - var id = val.id

@@ -1,23 +1,28 @@
-export default function(exp){
-    let expanded = Boolean(exp)
-    document.querySelectorAll('.dropping-checkboxes').forEach(el=>{
-        let icon = el.querySelector('i.material-icons')
-        let container = el.querySelector(".dropping-checkboxes__container")
+export default function(expend, container){
+    let expanded = Boolean(expend)
+    let area = container || document 
+    area.querySelectorAll('.dropping-checkboxes').forEach(checkbox=>{
+        let icon = checkbox.querySelector('i.material-icons')
+        let menu = checkbox.querySelector(".dropping-checkboxes__container")
+
+        checkbox.querySelector(".dropping-checkboxes__header").addEventListener('click', handlerHeaderClick)
         if(expanded) {
-            container.style.display = "block"
+            menu.style.display = "block"
             icon.innerHTML = 'expand_less'
         }
-        el.querySelector(".dropping-checkboxes__header").addEventListener('click', e=>{
-            console.log(expanded)
+
+        ////////
+        function handlerHeaderClick(e){
             if(expanded){
                 icon.innerHTML = 'expand_more'
-                container.style.display = "none"
+                menu.style.display = "none"
             }
             else{
                 icon.innerHTML = 'expand_less'
-                container.style.display = "block"
+                menu.style.display = "block"
             }
             expanded = !expanded
-        })
+        }
     })
 }
+

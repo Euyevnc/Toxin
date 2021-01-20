@@ -1,14 +1,15 @@
-mixin Filling-star(descr, compl, pers)
+mixin Rate-stars(descr, compl, pers)
     - var compl = compl
     - if(!pers){pers =[]}
-    div.filling-star
-        div #{descr}
-        div.filling-star_cont
+    div.rate-stars
+        if descr
+            h3.rate-stars__head #{descr}
+        div.rate-stars__container
             - for (var x = 0; x < compl; x++)
-                span.filling-star_color star
+                span(class="rate-stars__star  rate-stars__star_colorized") star
             each val in pers
                 - var am = (val*100)
-                span.filling-star_outl star_outline
-                    span(class="filling-star_color" style=`width: ${am}%`) star
+                span(class="rate-stars__star  rate-stars__star_outlined") star_outline
+                    span(class="rate-stars__star  rate-stars__star_colorized" style=`width: ${am}%`) star
 
     

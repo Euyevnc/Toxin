@@ -1,0 +1,31 @@
+@import "../../utils/fonts/Quicksand.scss";
+.color-icon__container{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 20px;
+    
+};
+.color-icon__color{
+    width: 70px;
+    height: 70px;
+    margin-right: 40px;
+    display: inline-block;
+    border-radius: 6px;
+};
+.color-icon__title,
+.color-icon__subtitle{
+    font-size: 19px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 25px;
+    margin: 0px;
+    padding: 0px;
+    font-family: Quicksand, Arial, Helvetica, sans-serif
+};
+.color-icon__subtitle{
+    font-weight: 400;
+    font-family: Montserrat, Arial, Helvetica, sans-serif
+}

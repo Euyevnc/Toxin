@@ -3,7 +3,7 @@ import Header from "../../includes/Blocks/Header/Header.js"
 import Footer from"../../includes/Blocks/Footer/Footer.js"
 import Date_range from "../../includes/Inputs/Date-range/Date-range.js"
 import Counter from "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.js";
-import Range_slider from "../../includes/Range-slider/Range-slider.js";
+import rangeSlider from "../../includes/Range-slider/Range-slider.js";
 import exp_checkboxes from "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox"
 import Demonstrate from "../../includes/Blocks/Number-demonstration/Number-demonstration.js";
 import PageSwitcher from "../../includes/Pages-switcher/Pages-switcher.js";
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(e){
     Footer() 
     Date_range(4, 8)
     Counter([[2,1,1], [2,2,1]])
-    Range_slider()
+    rangeSlider()
     exp_checkboxes()
     //
     PageSwitcher( Demonstrate.bind(this ,numbersList),ItemCont)

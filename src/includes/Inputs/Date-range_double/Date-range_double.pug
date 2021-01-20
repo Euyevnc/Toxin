@@ -1,8 +1,14 @@
 mixin Date-range_double(issues)
-    each val in issues
-        div(class=`date-range date-range_double`)
+    .date-range_double
+        div(class=`date-range_double__container`)
             include ../../../static/Icons/arrow-down.pug 
             label 
-                if val.label    
-                    h3 #{val.label}
-                input(class="date-range__value" placeholder=`${val.placeholder}` id=`${val.id}`)
+                if issues[0].label    
+                    h3 #{issues[0].label}
+                input(class="date-range_double__value date-range_double__value_first" placeholder=`${issues[0].placeholder}` id=`${Math.random()}`)
+        div(class=`date-range_double__container`)
+            include ../../../static/Icons/arrow-down.pug 
+            label 
+                if issues[1].label      
+                    h3 #{issues[1].label}
+                input(class="date-range_double__value date-range_double__value_second" placeholder=`${issues[1].placeholder}` id=`${Math.random()}`)

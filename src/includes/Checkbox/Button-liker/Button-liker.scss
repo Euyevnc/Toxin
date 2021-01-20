@@ -2,15 +2,15 @@
 .button-liker{
     display: inline-block;
     &__head{
-        font-size: 12px;
-        font-weight: bold;
         text-transform: uppercase;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
         margin: 0;
-        position: relative;
-        
-        
+        margin-bottom: 15px;
+        color: rgba(31, 32, 65, 1);  
     }
-
     &__cont{
         text-align: center;
     }
@@ -32,6 +32,7 @@
             line-height: 18px;
             text-align:end;
             padding-right: 10px;
+            margin-right: 10px;
             box-sizing: border-box;
             &::before {
                 display: inline-block;

@@ -1,11 +1,15 @@
 @import "../../../utils/fonts/Montserrat.scss";
 .tumblers{
     &__header{
-        font-size: 12px;
-        font-weight: bold;
         text-transform: uppercase;
-        margin-bottom: 5px;
-        position: relative;   
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        margin-bottom: 15px;
+        color: rgba(31, 32, 65, 1); 
+        
     }
     &__buttons{
         &>*{
