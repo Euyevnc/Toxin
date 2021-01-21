@@ -1,4 +1,5 @@
 @import "../../../utils/fonts/Montserrat.scss";
+@import "../../../utils/fonts/MaterialIcons.scss";
 .checkboxes{
     &__head{
         margin-bottom: 15px;
@@ -23,6 +24,7 @@
             margin-right: 10px;
         
             & + label{ 
+                user-select: none;
                 display: inline-block;
                 vertical-align: top;
                 &::before {
@@ -37,23 +39,22 @@
                     border-image: initial;
                     vertical-align: top;
                     cursor: pointer;
-                    font-size: 18px;
-                    margin-right: 7px;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    margin-right: 10px;
                 }
             }
         }
         & input[type="checkbox"]:checked{ 
             & + label{
                 &::before {
-                    content: "expand_more";
+                    content: "check";
                     font-family: 'Material Icons';
                     color: #BC9CFF;
                     border: 1px solid #BC9CFF ;
-                 
-                    }
-        
+                }  
             }
-        
         }
     }
     &__text{

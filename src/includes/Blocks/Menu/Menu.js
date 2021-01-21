@@ -14,7 +14,6 @@ export default function(){
 }
 
 function close(e){
-    
     let par = e.target
     if (!par.closest("menu__element_type_submenu-active" ) ){
         document.querySelector(".menu__element_type_dropping-active .arrow-down i").textContent = 'expand_more'

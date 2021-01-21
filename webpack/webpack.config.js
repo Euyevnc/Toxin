@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "UI-kit";
+const name= "WebsitePages";
 const PATHS = {
 	relPathSrc: `src/pages/${name}`,
 	src: path.join(__dirname, `../src/pages/${name}`),

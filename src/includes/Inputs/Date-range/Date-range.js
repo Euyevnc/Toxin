@@ -6,7 +6,7 @@ import "../../../plugins/datepicker.js"
 // import 'jquery-ui/themes/base/theme.css'
 
 
-export default function(firDate, secDate){
+export default function(firDate, secDate, area){
     $.datepicker.regional['ru'] = {
     	closeText: 'Закрыть',
     	prevText: 'Предыдущий',
@@ -31,7 +31,9 @@ export default function(firDate, secDate){
 	
 
     $(function(){
-		let pic = $(".date-range__value")
+		let pic
+		if(area) pic = $(area).find(".date-range__value")
+		else pic = $(".date-range__value")
 
         pic.datepicker({
 			dateFormat: 'dd M',

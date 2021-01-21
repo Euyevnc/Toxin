@@ -20,7 +20,6 @@ import img5 from './image-3.jpg'
 import img9 from './image-7.jpg'
 
 document.addEventListener('DOMContentLoaded', handlerDOMLoaded)
-
 const numbersList = [
     {
         pictures: [img1,img2,img5,img9],
@@ -42,6 +41,7 @@ function handlerDOMLoaded(){
     let countersContainer = document.querySelector(".forms")
     let doubleCalendarContainer = document.querySelector(".double-range-calendar-container")
     let expandedCheckboxes = document.querySelector(".dropped-checkboxes-container")
+    let expandingCheckboxes = document.querySelector(".dropping-checkboxes-container")
     let containerForSwitcher = document.querySelector(".pages-switcher-container ")
     let services =[
         {
@@ -80,7 +80,7 @@ function handlerDOMLoaded(){
     fieldWithArrow()
     rangeSlider()
     counter([null, [2,2,0], [2,2,0], null, [2,1,0]], countersContainer)
-    expandableCheckboxes()
+    expandableCheckboxes(false, expandingCheckboxes)
     expandableCheckboxes(true, expandedCheckboxes)
     finderForm()
     booker({number: 888, category: "люкс", price: 9990, services: services, arrival:4, departure: 8, guests: [2,1,0]})
@@ -95,4 +95,6 @@ function handlerDOMLoaded(){
     //Таймаут пришлось поставить. Плагин для календарика, к сожалению, асиинхронный
 
 }
-document.addEventListener('DOMContentLoaded', handlerDOMLoaded)
+export default function(){
+    document.addEventListener('DOMContentLoaded', handlerDOMLoaded)
+}

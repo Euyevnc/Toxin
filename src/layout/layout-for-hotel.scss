@@ -40,7 +40,7 @@ body{
     position: relative;
     z-index: 10;
     @media(max-width: 1160px){
-        padding-left: 10px;
+        padding: 0 10px;
     }
 }
 .cellar-container{
@@ -50,7 +50,7 @@ body{
     position: relative;
     z-index: 10;
     @media(max-width: 1160px){
-        padding-left: 10px;
+        padding: 0 10px;
     }
 }
 .wrapper{

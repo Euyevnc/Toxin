@@ -102,56 +102,57 @@
                     }
                 }
                 &.selected-start{
+                    position: relative;
+                    z-index: 10;
                     & .ui-state-active{
                         color: white ;
                         font-weight: bold;
                         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                        position: relative;
                         opacity: 1;
                         border-radius: 50%;
+                        z-index: 3;
+                        
                     }
                     &:not(.selected-end){
-                        & .ui-state-active{
-                            &::before{
-                                position: absolute;
-                                content: "";
-                                right: 0;
-                                top:0;
-                                height: 100%;
-                                width: 50%;
-                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                                opacity: 0.25;
-                            }
+                        &::before{
+                            z-index: -1;
+                            position: absolute;
+                            content: "";
+                            right: 0;
+                            top:0;
+                            height: 100%;
+                            width: 50%;
+                            background:#BC9CFF;;
+                            opacity: 0.25;
                         }
                     }
                 }
                 &.selected-end{
+                    position: relative;
+                    z-index: 10;
                     & .ui-state-active{
                         color: white;
                         font-weight: bold;
                         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                        position: relative;
                         opacity: 1;
                         border-radius: 50%;
+                        z-index: 3;
 
                     }
                     &:not(.selected-start){
-                        & .ui-state-active{
-                            &::after{
-                                position: absolute;
-                                content: "";
-                                left: 0;
-                                top:0;
-                                height: 100%;
-                                width: 50%;
-                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                                opacity: 0.25;
-                            }
-
+                        &::after{
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            top:0;
+                            height: 100%;
+                            width: 50%;
+                            background: #BC9CFF;
+                            opacity: 0.25;
+                            z-index: -1;
                         }
                     }
-                }
-                
+                }    
             }
         }   
     }

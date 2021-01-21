@@ -1,0 +1,35 @@
+@import "../../../utils/fonts/Montserrat.scss";
+.card{
+    background-color: white;
+    padding: 120px 0;
+    width: 100%;
+    flex-direction: column ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    &>*{
+        text-align: center;
+        display: inline-block;
+    }
+    &__logo{
+        &>*{
+            vertical-align: middle;
+            &:first-child{
+                margin-right: 12.5px;
+            }
+        }
+    }
+    &__subscribe{
+        margin-top: 20px;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 17.5px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
+        font-weight: 400;
+    }
+    &__social{
+        margin-top: 25px;
+    }
+}

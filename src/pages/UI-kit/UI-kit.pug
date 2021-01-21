@@ -26,7 +26,7 @@ include ../../includes/Blocks/Number-finder/Number-finder_type_double/Number-fin
 include ../../includes/Blocks/Header/Header.pug
 include ../../includes/Blocks/Footer/Footer.pug
 include ../../includes/Blocks/Сellar/Сellar.pug
-include ../../includes/Blocks/Social/Social.pug
+include ../../includes/Blocks/Card/Card.pug
 
 div.ui-kit-container
     section.colors-and-type 
@@ -64,7 +64,7 @@ div.ui-kit-container
                 +Field-with-arrow('subscription text field', "Email")
         section.forms-checkers-wrapper
             div.default-checkboxes-container
-                +Checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
+                +Checkbox('правила дома', {name:'Можно курить', id:'chd_t001'}, {name:'Можно с питомцами', id:'chd_t002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd_t003', checked:"true"})
             div.radios-container
                 +Radio('radio buttons', 'sex', {id:'genderMan', describe:'Мужчина', checked:true},{id:'genderFem', describe:'Женщина'} )
             div.tumblers-container 
@@ -112,12 +112,12 @@ div.ui-kit-container
         section.forms-check-blockes-wrapper
             section
                 div.dropping-checkboxes-container 
-                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})   
+                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch_t001'},{name:'Письменный стол', checked:"true", id:'ch_t002'},{name:'Стул для кормления', checked:"true", id:'ch_t003'},{name:'Кроватка', checked:"true", id:'ch_t004'},{name:'Телевизор', id:'ch_t005'},{name:'Шампунь', id:'ch_t006'},{name:'Телевизор', id:'ch_t007'},{name:'Шампунь', id:'ch_t008'})   
                 div.dropped-checkboxes-container
-                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})   
+                    +Dropping-checkboxes('expandable checkbox list', {name:'Завтрак', id:'ch_t001-2'},{name:'Письменный стол', checked:"true", id:'ch_t002-2'},{name:'Стул для кормления', checked:"true", id:'ch_t003-2'},{name:'Кроватка', checked:"true", id:'ch_t004-2'},{name:'Телевизор', id:'ch_t005-2'},{name:'Шампунь', id:'ch_t006-2'},{name:'Телевизор', id:'ch_t007-2'},{name:'Шампунь', id:'ch_t008-2'})   
             section
                 dev.checkboxes-with-describe-container 
-                    +Checkbox-with-subscribe('rich Checkbox Buttons', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
+                    +Checkbox-with-subscribe('rich Checkbox Buttons', {id:'chdisc_t001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc_t002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
             section 
                 div.bullets-container
                     h3 Правила
@@ -158,7 +158,11 @@ div.ui-kit-container
         section.footer-container 
             .wrapper
                 +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
+        section.cellar-container 
+            .wrapper
                 +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
         section.card-container 
+            .slim-wrapper
+                +Card("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
 
 

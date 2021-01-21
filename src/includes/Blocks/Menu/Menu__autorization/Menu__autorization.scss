@@ -1,5 +1,5 @@
 @import '../../../Buttons/Button-rounded/Button-rounded.scss';
-.header__autorization{
+.menu__autorization{
     & .button-rounded{
         height: 34px;
         line-height: 30px;    
@@ -11,5 +11,10 @@
     }    
     &>*:last-child{
         width: 196px;
+    }
+    @media(max-width: 600px) {
+        &>*{
+            margin: 10px;
+        }
     }
 }

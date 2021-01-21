@@ -1,11 +1,13 @@
-@import '../../../../static/Icons/arrow-down.scss';
-@import '../Header__autorization/Header__autorization.scss';
-.header__menu, .menu{
+@import '../../../static/Icons/arrow-down.scss';
+@import './Menu__autorization/Menu__autorization.scss';
+.menu{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
+    
     @media(max-width: 600px) {
+        background-color: white;
         position: absolute;
         top: 100%;
         right: 0;
@@ -18,11 +20,6 @@
         & .menu__element{
             line-height: 45px;
             font-size: 24px;
-        }
-        & .header__autorization{
-            &>*{
-                margin: 10px
-            }
         }
     }
     &__element{

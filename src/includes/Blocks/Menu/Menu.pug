@@ -1,10 +1,10 @@
-mixin Header__menu(login, issues)
+mixin Menu(login, issues)
     nav(class="header__menu menu")
         each val in issues
             if val.blocks
                 div(class=`menu__element menu__element_type_dropping ${val.highlight ? 'menu__element menu__element_type_dropping-highlight' : ''}`) 
                     a #{val.name} 
-                    include ../../../../static/Icons/arrow-down.pug 
+                    include ../../../static/Icons/arrow-down.pug 
                     div.menu__element_type_submenu
                         each block in val.blocks
                             div(class="menu__element")
@@ -16,4 +16,4 @@ mixin Header__menu(login, issues)
             a(href="/account/" class="menu__element menu__element_type_login")
                 span #{login}
         else
-            include ../Header__autorization/Header__autorization.pug
+            include ./Menu__autorization/Menu__autorization.pug

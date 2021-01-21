@@ -8,6 +8,26 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    & a{
+        vertical-align: baseline;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, 0.5);
+        text-decoration: none;
+        &:hover{
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+    & p{
+        display: inline-block;
+        vertical-align: baseline;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
+    }
     &__block{
         display: flex;
         justify-content: space-between;
@@ -31,7 +51,6 @@
 
         }
         & p{
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
             margin-bottom: 20px;
             margin-top: 0;
         }
@@ -48,27 +67,6 @@
             min-width: 160px;
             color: rgba(31, 32, 65, 0.75);
         }
-    }
-    & a{
-        vertical-align: baseline;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        line-height: 17px;
-        color: rgba(31, 32, 65, 0.5);
-        text-decoration: none;
-        &:hover{
-            color: rgba(31, 32, 65, 0.75);
-        }
-    }
-    & p{
- 
-        display: inline-block;
-        vertical-align: baseline;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
-        text-decoration: none;
     }
     .Footer__logo{
         flex-shrink: 0;

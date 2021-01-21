@@ -1,5 +1,6 @@
 @import "../../../static/Icons/arrow-down.scss";
 @import "../../../utils/fonts/Montserrat.scss";
+@import "../../../utils/fonts/MaterialIcons.scss";
 .dropping-checkboxes{
     max-width: 260px;
     &__header{
@@ -40,8 +41,9 @@
         & input[type="checkbox"]{
             display: none;
             & + label{
+                user-select: none;
                 background-color: white;
-                font-family: Montserrat;
+                font-family: Montserrat, Arial, Helvetica, sans-serif;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
@@ -55,7 +57,6 @@
                     display: inline-block;
                     margin-right: 10px;
                     position: relative;
-                    text-align: center;
                     text-indent: 0px;
                     width: 20px;
                     height: 20px;
@@ -65,6 +66,9 @@
                     border-image: initial;
                     vertical-align: middle;
                     cursor: pointer;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
                 }
             
             }
@@ -83,26 +87,13 @@
                 text-align: left;
                 color: rgba(31, 32, 65, 0.5);
                 &::before {
-                    content: "expand_more";
+                    content: "check";
                     font-family: 'Material Icons';
-                    font-size: 18px;
-                    display: inline-block;
-                    margin-right: 10px;
-                    font-style: normal;
-                    font-weight: 400;
-                    width: 20px;
-                    height: 20px;
-                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
                     color: #BC9CFF;
-                    border: 1px solid #BC9CFF ;
-                    vertical-align: middle;
-                    cursor: pointer;
-                    }
+                    border: 1px solid #BC9CFF ; 
+                }
         
             }
-        
         }
     }
 }

@@ -11,7 +11,9 @@ export default function(values, container){
 
         input.addEventListener('focus', rollDownMenu)
         clearingButton.addEventListener('click', handlerDeleteButtonClick)
+        clearingButton.addEventListener('keydown', handlerDeleteButtonClick)
         confirmingButton.addEventListener('click', handlerConfirmButtonClick) 
+        confirmingButton.addEventListener('keydown', handlerConfirmButtonClick) 
         clearingButton.tabIndex = 0
         confirmingButton.tabIndex = 0
 
@@ -43,16 +45,20 @@ export default function(values, container){
                 }
                 
                 tumblerMinus.addEventListener('click', handlerMinusClick)
+                tumblerMinus.addEventListener('keydown', handlerMinusClick)
                 tumblerPlus.addEventListener('click', handlerPlusClick)
+                tumblerPlus.addEventListener('keydown', handlerPlusClick)
                 tumblerMinus.tabIndex = 0;
                 tumblerPlus.tabIndex = 0;
             }
 
-            function handlerMinusClick(){
+            function handlerMinusClick(e){
+                if(e.type == 'keydown' && e.code !== "Enter") return
+                //Не знаю, не возбраняется ли, что я функцию с таким названием и на обработку для нажатия клавиши впихнул
+                //показалось удобным, ведь обработки абсолютно идентичны
                 let newValue = Math.max(+number.textContent-1, min)
                 number.textContent = newValue
                 if (newValue == min){
-                    console.log(newValue == min)
                     tumblerMinus.classList.add("input-with-counter__tumbler_depricated");
                     valuesAreNotZero = 0
                     listEl.forEach(el=>{
@@ -66,7 +72,8 @@ export default function(values, container){
                 }
             }
             
-            function handlerPlusClick(){
+            function handlerPlusClick(e){
+                if(e.type == 'keydown' && e.code !== "Enter") return
                 let newValue = Math.min(+number.textContent+1, max)
                 number.textContent = newValue;
                 if (newValue == max){
@@ -93,15 +100,20 @@ export default function(values, container){
         function rollUpMenu(event){
             if(!block.contains(event.target) ){
                 confirment();
+                list.style.display = "none"
+                document.removeEventListener("click", rollUpMenu)
+                document.removeEventListener("focusin", rollUpMenu)
             }
         };
 
-        function handlerConfirmButtonClick(){
+        function handlerConfirmButtonClick(e){
+            if(e.type == 'keydown' && e.code !== "Enter") return
             confirment()
             list.style.display = "none" ;
         }
 
-        function handlerDeleteButtonClick(){
+        function handlerDeleteButtonClick(e){
+            if(e.type == 'keydown' && e.code !== "Enter") return
             listEl.forEach(item=>{
                 let min = +item.querySelector('.input-with-counter__counter').getAttribute('date-min')
                 item.querySelector('.input-with-counter__number').textContent = `${min}`;
