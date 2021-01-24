@@ -1,11 +1,11 @@
 mixin Menu(login, issues)
-    nav(class="header__menu menu")
+    nav(class="js-header__menu header__menu menu js-menu")
         each val in issues
             if val.blocks
-                div(class=`menu__element menu__element_type_dropping ${val.highlight ? 'menu__element menu__element_type_dropping-highlight' : ''}`) 
+                div(class=`menu__element menu__element_type_dropping js-menu__element_type_dropping menu__element_type_dropping ${val.highlight ? 'menu__element menu__element_type_dropping-highlight' : ''}`) 
                     a #{val.name} 
                     include ../../../static/Icons/arrow-down.pug 
-                    div.menu__element_type_submenu
+                    div.js-menu__element_type_submenu.menu__element_type_submenu
                         each block in val.blocks
                             div(class="menu__element")
                                 a(href=`${block.href}`) #{block.name}

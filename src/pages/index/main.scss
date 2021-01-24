@@ -14,7 +14,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 5px 0;
+
 }    
 .content-container{
     max-width: none;
@@ -29,14 +29,13 @@ body{
     width: 49%;
     color: rgba(31, 32, 65, 0.5);
     border: 1px solid rgba(31, 32, 65, 0.25);
-    font-size: 34px;
+    font-size: 30px;
     text-align: center;
     font-weight: 700;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     cursor: pointer;
-    height: 70px;
-    line-height: 70px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+    height: 50px;
+    line-height: 50px;
     box-shadow: 1px 1px .05em rgba(0,0,0,0.4);
     user-select: none;
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');

@@ -13,7 +13,7 @@ mixin Checkbox-with-subscribe(desc, ...issues)
                     input(type="checkbox" id=`${id}` checked)
                 else 
                     input(type="checkbox" id=`${id}` )
-                label(for=`${id}`) 
+                label(tabindex=0 for=`${id}`) 
                     div.checkbox-with-subscribe__text
                         h3 #{title}
                         p #{sub}

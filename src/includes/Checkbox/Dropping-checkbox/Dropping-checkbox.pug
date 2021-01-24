@@ -1,9 +1,9 @@
 mixin Dropping-checkboxes(descr, ...issues)
-    div.dropping-checkboxes
-        div.dropping-checkboxes__header
+    div.dropping-checkboxes.js-dropping-checkboxes
+        div.dropping-checkboxes__header.js-dropping-checkboxes__header(tabindex=0)
             h3 #{descr}
             include ../../../static/Icons/arrow-down.pug 
-        div.dropping-checkboxes__container
+        div.dropping-checkboxes__container.js-dropping-checkboxes__container
             each val in issues
                 - var id = val.id
                 - var name = val.name
@@ -13,4 +13,4 @@ mixin Dropping-checkboxes(descr, ...issues)
                         input(type="checkbox" id=`${id}` checked)
                     else 
                         input(type="checkbox" id=`${id}`)
-                    label(for=`${id}`) #{name}
+                    label(tabindex=0 for=`${id}`) #{name}

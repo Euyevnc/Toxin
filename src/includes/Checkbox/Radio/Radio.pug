@@ -12,5 +12,4 @@ mixin Radio(descr,name, ...issues)
                         input(name=`${name}` value=`${id}` type="radio" id=`${id}` checked)
                     else 
                         input(name=`${name}` value=`${id}` type="radio" id=`${id}`)
-                    label(for=`${id}`) 
-                    p #{describe}
+                    label(for=`${id}`) #{describe}

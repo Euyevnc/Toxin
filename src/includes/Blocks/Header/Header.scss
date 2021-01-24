@@ -9,7 +9,10 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    @media(max-width: 600px) {
+    @media(max-width: 650px) {
+        &__menu{
+            visibility: hidden;
+        }
         padding: 10px 10px;
         & .header__burger{
             display: inline;

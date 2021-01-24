@@ -1,5 +1,6 @@
-import $ from 'jquery';
+import 'jquery';
 import "../../../plugins/datepicker.js"
+import "../../../plugins/jquery.datepicker.extension.range.min.js"
 //import 'jquery-ui/ui/widgets/datepicker'
 // import 'jquery-ui/themes/base/core.css'
 // import 'jquery-ui/themes/base/datepicker.css'
@@ -7,6 +8,7 @@ import "../../../plugins/datepicker.js"
 
 
 export default function(firDate, secDate, area){
+	
     $.datepicker.regional['ru'] = {
     	closeText: 'Закрыть',
     	prevText: 'Предыдущий',
@@ -32,9 +34,8 @@ export default function(firDate, secDate, area){
 
     $(function(){
 		let pic
-		if(area) pic = $(area).find(".date-range__value")
-		else pic = $(".date-range__value")
-
+		if(area) pic = $(area).find(".js-date-range__value")
+		else pic = $(".js-date-range__value")
         pic.datepicker({
 			dateFormat: 'dd M',
 			minDate: 0,
@@ -50,12 +51,12 @@ export default function(firDate, secDate, area){
 			  }
         });
 
-		$('.ui-datepicker').each((i,e)=>{
-			addButtons(e)
+		$('.ui-datepicker').each((i,picker)=>{
+			addButtons(picker)
 		})
 		if(+firDate && +secDate){
 			pic.datepicker("setDate", [`+${firDate}d`, `+${secDate}d`])
-			let extensionRange = $('.date-range__value').datepicker('widget').data('datepickerExtensionRange');
+			let extensionRange = $('.js-date-range__value').datepicker('widget').data('datepickerExtensionRange');
 			let start = extensionRange.startDateText;
 			let end = extensionRange.endDateText;
 			pic.val(`${start} - ${end}`)	
@@ -65,22 +66,21 @@ export default function(firDate, secDate, area){
 
 
 
-function addButtons(e){
-	e.addEventListener('click', (ev)=>{
+function addButtons(picker){
+	picker.addEventListener('click', (ev)=>{
 		if(ev.target.closest('.ui-datepicker-button_clear')){
-			e.querySelectorAll(".ui-state-active").forEach((item)=>{
+			picker.querySelectorAll(".ui-state-active").forEach((item)=>{
 				item.classList.remove("ui-state-active")
-				try{
-					e.querySelector(".selected-start").classList.remove(".selected-start")
-					e.querySelector(".selected-end").classList.remove(".selected-end")
-				}
-				catch {}
 			})
-			$(".date-range_value").val(``)
+			try{
+				picker.querySelector(".selected-start").classList.remove("selected-start")
+				picker.querySelector(".selected-end").classList.remove("selected-end")
+			}
+			catch {  }
+			picker.find(".js-date-range_value").val(``)
 		}
 		if(ev.target.closest('.ui-datepicker-button_conf')){
-			let calendar = e
-			let jsDate = $(`#${e.id}`).datepicker('widget').data('datepickerExtensionRange')
+			let jsDate = $(`#${picker.id}`).datepicker('widget').data('datepickerExtensionRange')
 			let startDT = jsDate.startDateText
 			let endDT = jsDate.endDateText
 			let startD = jsDate.startDate

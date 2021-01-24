@@ -13,5 +13,5 @@ mixin Checkbox(descr, ...issues)
                         input(type="checkbox" id=`${id}` class="Checkbox_box" checked)
                     else 
                         input(type="checkbox" id=`${id}` class="Checkbox_box")
-                    label(for=`${id}`)
+                    label(tabindex=0 for=`${id}`)
                         p(class="checkboxes__text") #{name}  

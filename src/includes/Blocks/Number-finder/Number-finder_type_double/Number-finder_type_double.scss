@@ -23,6 +23,7 @@
     }
     &__container{
         margin: 20px 0;
+        min-width: 320px;
         &_for_calendar{
             display: flex;
             justify-content: space-between;

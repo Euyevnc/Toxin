@@ -1,16 +1,16 @@
 include ./Footer__block_content_refs/Footer__block_content_refs.pug
 include ../../Inputs/Field-with-arrow/Field-with-arrow.pug
 mixin Footer(info, ...refs)
-    .Footer 
-        div(class="Footer__block Footer__block_width_wide")
-            div(class="Footer__logo")
+    .footer 
+        div(class="footer__block footer__block_width_wide")
+            div(class="footer__logo")
                 include ../../../static/Images/logo.img_color.svg
                 include ../../../static/Images/TOXIN.svg
             div 
                 p #{info} 
         each val in refs
             +Footer__block_content_refs(val)
-        div(class="Footer__block Footer__block_width_wide Footer_block_content_subscribe")
+        div(class="footer__block footer__block_width_wide footer_block_content_subscribe")
             h3 подписка
             p Получайте специальные предложения и новости сервиса
             +Field-with-arrow('', 'Email', '', '')

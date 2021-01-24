@@ -10,22 +10,18 @@
     &__button{
         display: inline-block;
         margin-right: 20px;
-        
-        & p{
-            display: inline-block;
-            vertical-align: middle;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            line-height: 24px;
-            color: rgba(31, 32, 65, 0.75);
-        }
         & input[type="radio"]{
+
             display: none;
             & + label{ 
+                font-family: Montserrat, Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                color: rgba(31, 32, 65, 0.75);
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 10px;
                 &::before {
+                    margin-right: 10px;
                     content:'';
                     display: inline-block;
                     text-align: center;
@@ -36,6 +32,8 @@
                     cursor: pointer;
                     border-radius: 50%;
                     line-height: 18px;
+                    font-size: 12px;
+                    vertical-align: middle;
                    
                 }
         
@@ -44,14 +42,12 @@
         }
         & input[type="radio"]:checked{ 
             & + label{ 
-                & + p{
                     color: rgba(31, 32, 65, 0.75);
-                }
+        
                 &::before {
                     content: "stop_circle";
                     font-family: 'Material Icons';
                     color: #BC9CFF;
-                    font-size: 12px;
                     border: 1px solid  #BC9CFF;
                    
                 }

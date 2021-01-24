@@ -1,12 +1,13 @@
 import $ from 'jquery';
 import "../../../plugins/datepicker"
+import "../../../plugins/jquery.datepicker.extension.range.min"
 // import 'jquery-ui/ui/widgets/datepicker'
 // import 'jquery-ui/themes/base/core.css'
 // import 'jquery-ui/themes/base/datepicker.css'
 // import 'jquery-ui/themes/base/theme.css'
-import "../../../plugins/jquery.datepicker.extension.range.min"
 
-export default function(firDate, secDate, area){
+
+function createDoubleDatepicker(firDate, secDate, area){
     $.datepicker.regional['ru'] = {
     	closeText: 'Закрыть',
     	prevText: 'Предыдущий',
@@ -32,12 +33,12 @@ export default function(firDate, secDate, area){
 		let arrive 
 		let departure
 		if(area){
-			arrive = $(area).find(".date-range_double__value_first")
-			departure = $(area).find(".date-range_double__value_second")
+			arrive = $(area).find(".js-date-range_double__value_first")
+			departure = $(area).find(".js-date-range_double__value_second")
 		}
 		else{	
-			arrive = $(".date-range_double__value_first")
-			departure = $(".date-range_double__value_second")
+			arrive = $(".js-date-range_double__value_first")
+			departure = $(".js-date-range_double__value_second")
 		}	
         arrive.datepicker({
 			minDate: 0,
@@ -68,8 +69,8 @@ export default function(firDate, secDate, area){
 			},
         });
 		
-		$('.ui-datepicker').each((i,e)=>{
-			addButtons(e, arrive, departure)
+		$('.ui-datepicker').each((i,picker)=>{
+			addButtons(picker, arrive, departure)
 		})
 		if(firDate && secDate){
 			arrive.datepicker("setDate",`+${firDate}d`)
@@ -87,16 +88,18 @@ export default function(firDate, secDate, area){
 
 
 
-function addButtons(e, inp, inp2){
-	e.addEventListener('click', (ev)=>{
+function addButtons(picker, inp, inp2){
+	picker.addEventListener('click', (ev)=>{
 		if(ev.target.closest('.ui-datepicker-button_clear')){
-			e.querySelectorAll(".ui-state-active").forEach((item)=>{
-			item.classList.remove("ui-state-active")
-			try{
-				e.querySelector(".selected-start").classList.remove(".selected-start")
-				e.querySelector(".selected-end").classList.remove(".selected-end")
-			} catch {}
+			picker.querySelectorAll(".ui-state-active").forEach((item)=>{
+				item.classList.remove("ui-state-active")
+
 			})
+			try{
+				console.log()
+				picker.querySelector(".selected-start").classList.remove("selected-start")
+				picker.querySelector(".selected-end").classList.remove("selected-end")
+			}catch { }
 			inp.val(``)
 			inp2.val(``)
 		}
@@ -115,5 +118,4 @@ function addButtons(e, inp, inp2){
 		}
 	})
 }
-	
-
+export default createDoubleDatepicker

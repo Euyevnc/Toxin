@@ -1,12 +1,17 @@
-export default function(){
-    let inputs = document.querySelectorAll('.field-with-arrow__value');
+export default function(container){
+    let area = container || document
+    let inputs = area.querySelectorAll('.field-with-arrow__value');
 
     inputs.forEach(item=>{
         let arrow = item.closest('.field-with-arrow').querySelector('i')
-        arrow.addEventListener('click', e=>{
-            item.value = "Спасибо...";
-            item.setAttribute("disabled", "true")
-        })
+        item.addEventListener("change", handlerValueSubmit)
     })
 
 };
+
+function handlerValueSubmit(e){
+    e.preventDefault()
+    let input = e.target
+    input.value = "Спасибо...";
+    input.setAttribute("disabled", "true")
+}

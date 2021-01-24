@@ -1,12 +1,12 @@
 import "./Search_room_Filter_PreferencesDropdown.scss"
-import Header from "../../includes/Blocks/Header/Header.js"
-import Footer from"../../includes/Blocks/Footer/Footer.js"
-import Date_range from "../../includes/Inputs/Date-range/Date-range.js"
-import Counter from "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.js";
-import Range_slider from "../../includes/Range-slider/Range-slider.js";
-import exp_checkboxes from "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox"
-import Demonstrate from "../../includes/Blocks/Number-demonstration/Number-demonstration.js";
-import PageSwitcher from "../../includes/Pages-switcher/Pages-switcher.js";
+import commonScripts from "../../layout/layout-for-hotel.js"
+import header from "../../includes/Blocks/Header/Header.js"
+import footer from"../../includes/Blocks/Footer/Footer.js"
+import dateRange from "../../includes/Inputs/Date-range/Date-range.js"
+import counter from "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.js";
+import rangeSlider from "../../includes/Range-slider/Range-slider.js";
+import expCheckboxes from "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox"
+import pageSwitcher from "../../includes/Pages-switcher/Pages-switcher.js";
 import img1 from './image-1.jpg'
 import img2 from './image.jpg'
 import img3 from './image-2.jpg'
@@ -19,17 +19,22 @@ import img9 from './image-7.jpg'
 import img10 from './image-10.jpg'
 import img11 from './image-9.jpg'
 import img12 from './image 2.jpg'
-document.addEventListener('DOMContentLoaded', function(e){
-    Header()  
-    Footer() 
-    Date_range(4, 8)
-    Counter([[2,1,1], [2,2,1]])
-    Range_slider()
-    exp_checkboxes()
-    let ItemCont = document.querySelector(".Items-container")
-    PageSwitcher( Demonstrate.bind(this ,numbersList),ItemCont)
+
+document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
+
+//////
+function handlerDocumentDomLoaded(){
+    header()  
+    footer() 
+    commonScripts()
+    dateRange(4, 8)
+    counter([[2,1,1], [2,2,1]])
+    rangeSlider()
+    expCheckboxes()
+    pageSwitcher(numbersList, 12)
+
     document.querySelector(".input-with-counter_simple .input-with-counter__value").focus()
-})
+}
 
 const numbersList = [
     {

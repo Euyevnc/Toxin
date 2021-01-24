@@ -23,6 +23,7 @@ body{
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
         @media(max-width: 1160px){
         padding: 10px;
     }
@@ -32,6 +33,7 @@ body{
     margin: auto;
     position: relative;
     z-index: 9;
+    box-sizing: border-box;
 }
 .footer-container{
     width: 100%;
@@ -39,6 +41,7 @@ body{
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
     @media(max-width: 1160px){
         padding: 0 10px;
     }
@@ -49,6 +52,7 @@ body{
     background-color: white;
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
     @media(max-width: 1160px){
         padding: 0 10px;
     }
@@ -57,42 +61,15 @@ body{
     max-width: 1160px;
     margin: auto;
 }
-.FormElementsWrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: stretch;
-    z-index: 2;
-    flex-wrap: wrap;
-}
 
-button:active, button:focus {
-    outline: none;
-  }
-  button::-moz-focus-inner {
-    border: 0;
-  }
-  textarea:focus, input:focus
+*:focus
 {
-  outline: none;
-  line-height: 24px;
+  outline-color: rgba(31, 32, 65, 0.25);
+  outline-width: 1px;
+
   color: rgba(31, 32, 65, 0.75);
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  transition-duration: 0.7s;
   &::placeholder{
       color: rgba(31, 32, 65, 0.75);
       transition-duration: 0.7s;
   }
 }
-// input:hover,
-// textarea:hover{
-//     line-height: 24px;
-//     color: rgba(31, 32, 65, 0.75);
-//     border: 1px solid rgba(31, 32, 65, 0.5);
-//     transition-duration: 0.7s;
-//     &::placeholder{
-//         color: rgba(31, 32, 65, 0.75);
-//         transition-duration: 0.7s;
-      
-//     }
-// }

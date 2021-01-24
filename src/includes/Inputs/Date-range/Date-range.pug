@@ -1,7 +1,7 @@
 mixin Date-range(label, placeholder, id)
-    div(class=`date-range`)
+    div(class=`js-date-range date-range`)
         include ../../../static/Icons/arrow-down.pug 
         label
             if label
                 h3 #{label}
-            input(id=`${id}` class="date-range__value" placeholder=`${placeholder}`)
+            input(id=`${id}` class="js-date-range__value date-range__value" placeholder=`${placeholder}`)

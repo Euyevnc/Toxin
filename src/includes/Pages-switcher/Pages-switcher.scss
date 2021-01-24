@@ -1,7 +1,12 @@
 @import "../../utils/fonts/Montserrat.scss";
+@import "../Blocks/Number-demonstration/Number-demonstration.scss";
 .pages-switcher{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     line-height: 40px;
+    max-width: 320px;
+    margin: auto;
     &>*{
         vertical-align: middle;
         line-height: 40px;
@@ -67,6 +72,7 @@
         margin: 10.5px 0 0;
         line-height: 20px;
         color: rgba(31, 32, 65, 0.75);
+        text-align: center;
     }
 }
 

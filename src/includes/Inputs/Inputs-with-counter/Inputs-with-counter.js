@@ -1,13 +1,13 @@
-export default function(values, container){
+function initInputWithCounter(values, container){
     const area = container || document
-    area.querySelectorAll(".input-with-counter").forEach((block, index)=>{
+    area.querySelectorAll(".js-input-with-counter").forEach((block, index)=>{
         let value
         if(values) value = values[index]
         let input = block.querySelector('input');
-        let list = block.querySelector('.input-with-counter__menu');
+        let list = block.querySelector('.js-input-with-counter__menu');
         let listEl = list.querySelectorAll('li');
-        let clearingButton = block.querySelector('.input-with-counter__button_delete')
-        let confirmingButton = block.querySelector('.input-with-counter___button_confirm')
+        let clearingButton = block.querySelector('.js-input-with-counter__button_delete')
+        let confirmingButton = block.querySelector('.js-input-with-counter___button_confirm')
 
         input.addEventListener('focus', rollDownMenu)
         clearingButton.addEventListener('click', handlerDeleteButtonClick)
@@ -19,19 +19,18 @@ export default function(values, container){
 
         let valuesAreNotZero = 0
         listEl.forEach((liElement, index)=>{
-            let counter = liElement.querySelector('.input-with-counter__counter')
-            let number = counter.querySelector(".input-with-counter__number")
+            let counter = liElement.querySelector('.js-input-with-counter__counter')
+            let number = counter.querySelector(".js-input-with-counter__number")
             let min = +(counter.getAttribute('data-min') );
             let max = +(counter.getAttribute('data-max') );
             let tumblerPlus = counter.lastChild
             let tumblerMinus = counter.firstChild
-
             
-            init()
+            initItem()
             valuesAreNotZero += +number.textContent
 
             ///////
-            function init(){
+            function initItem(){
                 if(value && value[index]){
                     number.textContent = Math.max(min,Math.min(value[index], max))
                 }
@@ -62,10 +61,10 @@ export default function(values, container){
                     tumblerMinus.classList.add("input-with-counter__tumbler_depricated");
                     valuesAreNotZero = 0
                     listEl.forEach(el=>{
-                        valuesAreNotZero +=(+el.querySelector('.input-with-counter__number').textContent)
+                        valuesAreNotZero +=(+el.querySelector('.js-input-with-counter__number').textContent)
                     
                     })
-                    if (!valuesAreNotZero){block.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';}
+                    if (!valuesAreNotZero){block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'hidden';}
                 };
                 if(newValue!==max){
                     tumblerPlus.classList.remove("input-with-counter__tumbler_depricated");
@@ -81,7 +80,7 @@ export default function(values, container){
                 };
                 if(newValue!==min){
                     tumblerMinus.classList.remove("input-with-counter__tumbler_depricated")
-                    block.querySelector('.input-with-counter__button_delete').style.visibility= 'visible';
+                    block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'visible';
                 }
             }
         })
@@ -92,7 +91,6 @@ export default function(values, container){
         //////
         function rollDownMenu(){
             list.style.display = "flex";
-            list.querySelector(".input-with-counter__tumbler").focus()
             document.addEventListener("click", rollUpMenu)
             document.addEventListener("focusin", rollUpMenu)
         };
@@ -115,11 +113,11 @@ export default function(values, container){
         function handlerDeleteButtonClick(e){
             if(e.type == 'keydown' && e.code !== "Enter") return
             listEl.forEach(item=>{
-                let min = +item.querySelector('.input-with-counter__counter').getAttribute('date-min')
+                let min = +item.querySelector('.js-input-with-counter__counter').getAttribute('date-min')
                 item.querySelector('.input-with-counter__number').textContent = `${min}`;
 
-                let tumblerMinus = item.querySelector('.input-with-counter__counter').firstChild;
-                block.querySelector('.input-with-counter__button_delete').style.visibility= 'hidden';
+                let tumblerMinus = item.querySelector('.js-input-with-counter__counter').firstChild;
+                block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'hidden';
                 tumblerMinus.classList.add("input-with-counter__tumbler_depricated")
                 input.value = ''
             })
@@ -139,7 +137,7 @@ export default function(values, container){
 
             ///
             function concatForSimplified(element, index){
-                let number = +element.querySelector(".input-with-counter__number").textContent
+                let number = +element.querySelector(".js-input-with-counter__number").textContent
 
                 if(index==0){
                     let formsOfWord = ["спальня", "спальни", "спалень"] //Это стоило сделать переменной, но пусть пока так 
@@ -164,7 +162,7 @@ export default function(values, container){
             }
 
             function concatForStandart(element, index){
-                let number= +element.querySelector(".input-with-counter__number").textContent
+                let number= +element.querySelector(".js-input-with-counter__number").textContent
 
                 if(index==0){
                     stringForValue=+stringForValue + number; 
@@ -191,3 +189,4 @@ export default function(values, container){
         }
     })
 }
+export default initInputWithCounter

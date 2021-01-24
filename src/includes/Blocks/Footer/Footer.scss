@@ -1,6 +1,6 @@
 @import "../../../utils/fonts/Montserrat.scss";
 @import "../../Inputs/Field-with-arrow/Field-with-arrow_default.scss";
-.Footer{
+.footer{
     background-color: #FFFFFF;
     width: 100%;
     padding: 85px 0 100px;
@@ -68,7 +68,7 @@
             color: rgba(31, 32, 65, 0.75);
         }
     }
-    .Footer__logo{
+    .footer__logo{
         flex-shrink: 0;
         &>*{
             vertical-align: middle;

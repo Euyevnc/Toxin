@@ -1,24 +1,24 @@
 mixin Inputs-with-counter(type, label, placeholder, describe, ...issues)
-    div(class=`input-with-counter input-with-counter${type?"_"+type: ""}`)
+    div(class=`js-input-with-counter input-with-counter input-with-counter${type?"_"+type: ""}`)
         p(class="input-with-counter__describe") #{describe}
         include ../../../static/Icons/arrow-down.pug
         label
             if label
                 h3 #{label}
-            input(class="input-with-counter__value" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
-        ul(class="input-with-counter__menu")
+            input(class="js-input-with-counter__value input-with-counter__value" placeholder=`${placeholder}` list="amount" name="amountOfGuests") 
+        ul(class="input-with-counter__menu js-input-with-counter__menu")
             each val in issues
                 - var min = val.min
                 - var max = val.max
-                li(class="input-with-counter__element")
+                li(class="js-input-with-counter__element input-with-counter__element")
                     p #{val.name}
-                    span(class="input-with-counter__counter" data-min=`${min}` data-max=`${max}`)
-                        span.input-with-counter__tumbler -
-                        span(class="input-with-counter__number") 0
-                        span.input-with-counter__tumbler +
-            div.input-with-counter__buttons
-                span(class="input-with-counter__button_delete") ОЧИСТИТЬ
-                span(class="input-with-counter___button_confirm") ПРИМЕНИТЬ
+                    span(class="js-input-with-counter__counter input-with-counter__counter" data-min=`${min}` data-max=`${max}`)
+                        span.js-input-with-counter__tumbler.input-with-counter__tumbler -
+                        span(class="js-input-with-counter__number input-with-counter__number") 0
+                        span.js-input-with-counter__tumbler.input-with-counter__tumbler +
+            div.js-input-with-counter__buttons.input-with-counter__buttons
+                span(class="js-input-with-counter__button_delete input-with-counter__button_delete") ОЧИСТИТЬ
+                span(class="js-input-with-counter___button_confirm input-with-counter___button_confirm") ПРИМЕНИТЬ
 
 
 

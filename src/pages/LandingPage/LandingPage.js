@@ -1,10 +1,12 @@
 import "./LandingPage.scss"
 import Header from "../../includes/Blocks/Header/Header.js"
 import Footer from"../../includes/Blocks/Footer/Footer.js"
-import Double_range_date from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
+import finder from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
 
-document.addEventListener('DOMContentLoaded', function(e){
+document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
+
+function handlerDocumentDOMLoaded(e){
     Header()
     Footer()
-    Double_range_date();
-})
+    finder();
+}

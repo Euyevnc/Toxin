@@ -12,6 +12,7 @@ import booker from "../../includes/Blocks/Number-booker/Number-booker.js"
 import finderForm from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
 import demonstrateNumber from "../../includes/Blocks/Number-demonstration/Number-demonstration.js";
 import header from "../../includes/Blocks/Header/Header.js"
+import footer from "../../includes/Blocks/Footer/Footer.js"
 
 import img1 from './image-1.jpg'
 import img2 from './image.jpg'
@@ -19,30 +20,14 @@ import img4 from './image-5.jpg'
 import img5 from './image-3.jpg'
 import img9 from './image-7.jpg'
 
-document.addEventListener('DOMContentLoaded', handlerDOMLoaded)
-const numbersList = [
-    {
-        pictures: [img1,img2,img5,img9],
-        number: 888,
-        category: "люкс",
-        price: "9 990",
-        rate: 5,
-        reviews: 145
-    },{
-        pictures: [img2,img4,img5,img9],
-        number: 840,
-        category: "",
-        price: "9 900",
-        rate: 4,
-        reviews: 65
-    }
-]
+
+
+///
 function handlerDOMLoaded(){
     let countersContainer = document.querySelector(".forms")
     let doubleCalendarContainer = document.querySelector(".double-range-calendar-container")
     let expandedCheckboxes = document.querySelector(".dropped-checkboxes-container")
     let expandingCheckboxes = document.querySelector(".dropping-checkboxes-container")
-    let containerForSwitcher = document.querySelector(".pages-switcher-container ")
     let services =[
         {
             "describe": "Сбор за услуги", 
@@ -72,29 +57,28 @@ function handlerDOMLoaded(){
             reviews: 65
         }
     ]
-
     header()
-    rangeDoubleCalendar(null , 5, doubleCalendarContainer)
+    footer()
     inputMask()
-    rangeCalendar(4, 8)
-    fieldWithArrow()
-    rangeSlider()
-    counter([null, [2,2,0], [2,2,0], null, [2,1,0]], countersContainer)
-    expandableCheckboxes(false, expandingCheckboxes)
-    expandableCheckboxes(true, expandedCheckboxes)
     finderForm()
+    rangeSlider()
+    fieldWithArrow()
+    rangeCalendar(4, 8)
+    pageSwitcher(numbersList, 12, 'isUI-kit')
+    expandableCheckboxes(true, expandedCheckboxes)
+    expandableCheckboxes(false, expandingCheckboxes)
+    rangeDoubleCalendar(null , 5, doubleCalendarContainer)
+    counter([null, [2,2,0], [2,2,0], null, [2,1,0]], countersContainer)
     booker({number: 888, category: "люкс", price: 9990, services: services, arrival:4, departure: 8, guests: [2,1,0]})
     demonstrateNumber(numbersList)
-    pageSwitcher(null, containerForSwitcher)
+
     document.querySelector(".textfield-active-container input").value = "This is pretty awesome";
     setTimeout(()=>{
         let calendar = document.querySelector(".ui-datepicker").cloneNode(true)
         let contForCalendar = document.querySelector(".expended-calendar-container")
         contForCalendar.appendChild(calendar)
-    }, 450)
+    }, 500)
     //Таймаут пришлось поставить. Плагин для календарика, к сожалению, асиинхронный
 
 }
-export default function(){
-    document.addEventListener('DOMContentLoaded', handlerDOMLoaded)
-}
+export default handlerDOMLoaded

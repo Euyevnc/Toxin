@@ -9,7 +9,7 @@ include ../../includes/Range-slider/Range-slider.pug
 include ../../includes/Checkbox/Default-checkbox/Default-checkbox.pug
 include ../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.pug
 include ../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.pug
-include ../../includes/Pages-switcher/Pages-switcher.pug
+
 
 block variables
     
@@ -32,8 +32,8 @@ block content
         section.Items-container
             h1 Номера, которые мы для вас подобрали
             include ../../includes/Blocks/Number-demonstration/Number-demonstration.pug
-            div.Switcher-container
-                +Pages-switcher(175, 12)
+            div.switcher-container
+                include ../../includes/Pages-switcher/Pages-switcher.pug
 block footer
     +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
 block cellar  

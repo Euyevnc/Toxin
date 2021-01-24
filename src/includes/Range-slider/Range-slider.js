@@ -1,20 +1,21 @@
-export default function(){
-	document.querySelectorAll(".range-slider").forEach(itm=>{
+export default function(container){
+	let area = container || document
+	area.querySelectorAll(".js-range-slider").forEach(itm=>{
 		sliderbind(itm)
 		let rangeSlider = itm
-		let min = rangeSlider.querySelector(".range-slider__tumbler_min")
-        let max = rangeSlider.querySelector(".range-slider__tumbler_max")
-		let range = rangeSlider.querySelector(".range-slider__selected")
+		let min = rangeSlider.querySelector(".js-range-slider__tumbler_min")
+        let max = rangeSlider.querySelector(".js-range-slider__tumbler_max")
+		let range = rangeSlider.querySelector(".js-range-slider__selected")
 
-		let countMin = rangeSlider.querySelector('.range-slider__min')
-		let countMax = rangeSlider.querySelector('.range-slider__max')
+		let countMin = rangeSlider.querySelector('.js-range-slider__min')
+		let countMax = rangeSlider.querySelector('.js-range-slider__max')
 
-		let countMinSt = rangeSlider.querySelector('.range-slider__numbers > span:nth-child(1)').innerHTML
-		let countMaxSt = rangeSlider.querySelector('.range-slider__numbers > span:nth-child(2)').innerHTML
+		let countMinSt = rangeSlider.querySelector('.js-range-slider__numbers > span:nth-child(1)').innerHTML
+		let countMaxSt = rangeSlider.querySelector('.js-range-slider__numbers > span:nth-child(2)').innerHTML
 		
 
-		let originStart = rangeSlider.querySelector('.range-slider__numbers > span:nth-child(1)').getAttribute("data-def")
-		let originEnd = rangeSlider.querySelector('.range-slider__numbers > span:nth-child(2)').getAttribute("data-def")
+		let originStart = rangeSlider.querySelector('.js-range-slider__numbers > span:nth-child(1)').getAttribute("data-def")
+		let originEnd = rangeSlider.querySelector('.js-range-slider__numbers > span:nth-child(2)').getAttribute("data-def")
 
 		countMin.innerHTML = Math.round((countMaxSt - countMinSt)*originStart /100)*100
 		countMax.innerHTML =  Math.round((countMaxSt - countMinSt)*originEnd /100)*100
@@ -30,10 +31,10 @@ export default function(){
 
 
 function sliderbind(elCont){
-	let min = elCont.querySelector(".range-slider__tumbler_min")
+	let min = elCont.querySelector(".js-range-slider__tumbler_min")
     min.addEventListener("mousedown",e=>rangeMove(min));
     min.addEventListener("touchstart",e=>rangeMove(min));
-    let max = elCont.querySelector(".range-slider__tumbler_max")
+    let max = elCont.querySelector(".js-range-slider__tumbler_max")
     max.addEventListener("mousedown",e=>rangeMove(max));
     max.addEventListener("touchstart",e=>rangeMove(max));
 }
@@ -69,7 +70,7 @@ function rangeMove(elem){
 		parent.coords = getCoords(parent.element);
 
 	var block2 = {}
-	if (elem.classList.contains('range-slider__tumbler_min')) {
+	if (elem.classList.contains('js-range-slider__tumbler_min')) {
 		block2.element = elem.parentElement.children[2];
 		block2.coords = getCoords(block2.element);
 		f=0;
@@ -79,12 +80,12 @@ function rangeMove(elem){
 		f=1;
 	}
 	let count 
-	if (elem.classList.contains('range-slider__tumbler_min')){
-		count = elem.parentElement.parentElement.querySelector('.range-slider__min')
+	if (elem.classList.contains('js-range-slider__tumbler_min')){
+		count = elem.parentElement.parentElement.querySelector('.js-range-slider__min')
 
 	}
 	else if(elem.classList.contains('range-slider__tumbler_max')){
-		count = elem.parentElement.parentElement.querySelector('.range-slider__max')
+		count = elem.parentElement.parentElement.querySelector('.js-range-slider__max')
 	}
 
 	/*Делаем индикатор над ползунком (скрыл его функционал. пока)*/
@@ -134,8 +135,8 @@ function rangeMove(elem){
     	elem.style.left = newLeft + 'px';
 
     	//     Определяем значение фильтра
-    	let rangeMin = +document.querySelector('.range-slider__numbers span:first-child').innerHTML;
-    	let rangeMax = +document.querySelector('.range-slider__numbers span:last-child').innerHTML;
+    	let rangeMin = +document.querySelector('.js-range-slider__numbers span:first-child').innerHTML;
+    	let rangeMax = +document.querySelector('.js-range-slider__numbers span:last-child').innerHTML;
         if(f==0){
           value =  (newLeft / ( (parent.coords.width) / (rangeMax - rangeMin)) + rangeMin).toFixed(1);
         } else {

@@ -15,7 +15,6 @@ include ../../includes/Range-slider/Range-slider.pug
 include ../../includes/Buttons/Button-rounded/Button-rounded.pug
 include ../../includes/Buttons/Button-minimaze/Button-minimaze.pug
 include ../../includes/Buttons/Button_with_arrow/Button_with_arrow.pug
-include ../../includes/Pages-switcher/Pages-switcher.pug
 include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
 include ../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.pug
 include ../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.pug
@@ -69,7 +68,7 @@ div.ui-kit-container
                 +Radio('radio buttons', 'sex', {id:'genderMan', describe:'Мужчина', checked:true},{id:'genderFem', describe:'Женщина'} )
             div.tumblers-container 
                 +Tumblers('toggle', {id:'allowOfferts', name:'Получать спецпредложения', checked: true})
-                +Tumblers('', {id:'allowOfferts', name:'Получать спецпредложения'})
+                +Tumblers('', {id:'allowOfferts-disable', name:'Получать спецпредложения'})
             div.likers-container 
                 +Button-liker('like button', {id:"like001", am: 2},{id:"like002", am: 12, checked:true})
             div.start-container 
@@ -91,7 +90,7 @@ div.ui-kit-container
                 +Button_with_arrow("перейти к оплате")
             div.pages-switcher-container 
                 h3 pagination
-                +Pages-switcher(175, 12)
+                include ../../includes/Pages-switcher/Pages-switcher.pug
 
         div(style="width: 100%; height:100px")
 

@@ -1,6 +1,8 @@
-import DateMask from "../../Inputs/Mask_DMY/Mask_DMY.js"
+import dateMask from "../../Inputs/Mask_DMY/Mask_DMY.js"
 
-export default function(){
-    DateMask();
+function initRegistration(){
+    dateMask();
 }
+
+export default initRegistration
 

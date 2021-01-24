@@ -1,16 +1,21 @@
 
 
-export default function(){
-    document.querySelectorAll(".menu__element_type_dropping").forEach(it=>{
-        it.addEventListener("click", e=>{
-            it.classList.add("menu__element_type_dropping-active")
-            let menu = it.querySelector(".menu__element_type_submenu")
-            menu.classList.add("menu__element_type_submenu-active")
-            it.querySelector(".arrow-down i").textContent = 'expand_less'
-            document.addEventListener("click", close, {capture: true, once:true})
-            
-        })
+function initMenu(container){
+    let area = container || document
+    area.querySelectorAll(".js-menu__element_type_dropping").forEach(it=>{
+        it.addEventListener("click", handlerElementTypeDroppingClick)
     })
+}
+
+function handlerElementTypeDroppingClick(click){
+    let element = click.target.closest(".js-menu__element_type_dropping")
+    let submenu = element.querySelector(".js-menu__element_type_submenu")
+
+    element.classList.add("menu__element_type_dropping-active")
+    submenu.classList.add("menu__element_type_submenu-active")
+    element.querySelector(".arrow-down i").textContent = 'expand_less'
+
+    document.addEventListener("click", close, {capture: true, once:true})
 }
 
 function close(e){
@@ -22,3 +27,4 @@ function close(e){
         e.stopPropagation()
     }
 }
+export default initMenu

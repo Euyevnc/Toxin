@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     
-    @media(max-width: 600px) {
+    @media(max-width: 650px) {
         background-color: white;
         position: absolute;
         top: 100%;
@@ -16,7 +16,6 @@
         z-index: 100;
         border: 3px solid rgb(189, 156, 255);
         padding: 15px 5px;
-        visibility: hidden;
         & .menu__element{
             line-height: 45px;
             font-size: 24px;
@@ -45,7 +44,8 @@
             }
             & .arrow-down{
                 width: 24px;
-                height: 21px;      
+                height: 21px;  
+                line-height: 21px;    
             }
             &-active{
                 &>a{
@@ -60,7 +60,8 @@
                 display: none;
                 position: absolute;
                 top: 100%;
-                right: 0;
+                min-width: 150px;
+                left: 0;
                 border: 1px solid rgba(31, 32, 65, 0.25);
                 border-top-color: transparent;
                 &-active{

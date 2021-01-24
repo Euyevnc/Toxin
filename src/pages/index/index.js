@@ -1,6 +1,6 @@
 import "../../layout/layout-for-hotel.js"
 import uiKit from"../UI-kit/UI-kit.js"
-import "./WebsitePages.scss";
+import "./main.scss";
 
 document.addEventListener("DOMContentLoaded", init)
 

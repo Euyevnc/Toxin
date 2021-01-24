@@ -9,7 +9,6 @@
 @import "../../includes/Checkbox/Default-checkbox/Default-checkbox.scss";
 @import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
 @import "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.scss";
-@import "../../includes/Blocks/Number-demonstration/Number-demonstration.scss";
 @import "../../includes/Pages-switcher/Pages-switcher.scss";
 .content-container{
     background-color: white;
@@ -53,8 +52,9 @@
         color: #1F2041;
     };
 }
-.Switcher-container{
+.switcher-container{
     width: 100%;
     margin-top: 41px;
 }
+
 
