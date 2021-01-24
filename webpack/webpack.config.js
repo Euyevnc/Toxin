@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "Search_room_Filter_PreferencesDropdown";
+const name= "index";
 const PATHS = {
 	relPathSrc: `src/pages/${name}`,
 	src: path.join(__dirname, `../src/pages/${name}`),

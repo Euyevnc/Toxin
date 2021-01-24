@@ -22,7 +22,7 @@ function renderItems(list, number, amount){
     // let firstNumber = number*amount 
     // let lastNumber = (number+1)*amount - 1
     let firstNumber = 0
-    let lastNumber = 11
+    let lastNumber = 1
     for (let n=firstNumber; n<= lastNumber; n++){
         createItem(list[n], cont)
     }
