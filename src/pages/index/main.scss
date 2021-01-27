@@ -76,33 +76,33 @@ body{
     align-content: flex-start;
     margin-bottom: 15px;
     box-shadow: 0 0 20px 20px rgba(21, 21, 34, 0.1);
-    &>div{
-        width: 288px;
-        height: 372px;
-        margin-top: 15px;
-        border: 4px dashed rgba(141, 130, 235, 1);
-        background: rgba(168, 159, 253, 1);
-        box-shadow: 10px 10px 20px rgba(21, 21, 34, 0.1);
+}
+.site-page-filler{
+    width: 288px;
+    height: 372px;
+    margin-top: 15px;
+    border: 4px dashed rgba(141, 130, 235, 1);
+    background: rgba(168, 159, 253, 1);
+    box-shadow: 10px 10px 20px rgba(21, 21, 34, 0.1);
+    transition-duration: .4s;
+    &:hover{
+        background:rgba(168, 159, 253, .5);
         transition-duration: .4s;
-        &:hover{
-            background:rgba(168, 159, 253, .5);
-            transition-duration: .4s;
-        }
-        & a{
-            height: 100%;
-            box-sizing: border-box;
-            padding: 30% 10px 0;
-            font-size: 30px;
-            font-family: "Quicksand";
-            word-wrap: break-word;
-            text-decoration: none;
-            font-weight: 700;
-            width: 100%;
-            display: inline-block;
-            color: rgb(252, 252, 252);
-            text-shadow: rgb(104, 14, 177) 1px 1px 0,   rgb(104, 14, 177) -1px -1px 0, 
-            rgb(104, 14, 177) -1px 1px 0,  rgb(104, 14, 177) 1px -1px 0;
-        
-        }  
     }
+    & a{
+        height: 100%;
+        box-sizing: border-box;
+        padding: 30% 10px 0;
+        font-size: 30px;
+        font-family: "Quicksand";
+        word-wrap: break-word;
+        text-decoration: none;
+        font-weight: 700;
+        width: 100%;
+        display: inline-block;
+        color: rgb(252, 252, 252);
+        text-shadow: rgb(104, 14, 177) 1px 1px 0,   rgb(104, 14, 177) -1px -1px 0, 
+        rgb(104, 14, 177) -1px 1px 0,  rgb(104, 14, 177) 1px -1px 0;
+    
+    }  
 }  

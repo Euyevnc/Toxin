@@ -1,16 +1,15 @@
 extends ../../layout/layout-for-hotel.pug
-include ../../includes/Blocks/Header/Header.pug
-include ../../includes/Blocks/Footer/Footer.pug
-include ../../includes/Blocks/Сellar/Сellar.pug
-include ../../includes/Blocks/Social/Social.pug
-include ../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.pug
+include ../../includes/Articles/Header/Header.pug
+include ../../includes/Articles/Footer/Footer.pug
+include ../../includes/Articles/Сellar/Сellar.pug
+include ../../includes/Articles/Social/Social.pug
+include ../../includes/Articles/Number-finder/Number-finder.pug
 block variables
     
 block head
     title LandingPage
     meta(name="keywords", content="keywords")
     meta(name="description", content="description")
-
 
 block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
