@@ -1,4 +1,4 @@
-@import "../../utils/fonts/MaterialIcons.scss";
+@import "../../../utils/fonts/MaterialIcons.scss";
 .arrow-down{
     width: 24px;
     height: 24px;
@@ -7,9 +7,4 @@
     color: rgba(31, 32, 65, 0.5);
     pointer-events: none;
     display: inline-block;
-    & i{
-        width: 100%;
-        height: 100%;
-        
-    }
 }

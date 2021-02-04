@@ -1,5 +1,5 @@
 mixin Button-liker(descr, ...issues)
-    div.button-liker
+    span.button-liker
         if descr
             h3.button-liker__head #{descr}
         span.button-liker__cont
@@ -11,5 +11,5 @@ mixin Button-liker(descr, ...issues)
                     input(type="checkbox" id=`${id}` class="button-liker__box" checked)
                 else 
                     input(type="checkbox" id=`${id}` class="button-liker__box")
-                label(for=`${id}`)=am
+                label(class="button-liker__label" for=`${id}`)=am
                    

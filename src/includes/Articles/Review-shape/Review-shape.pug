@@ -1,16 +1,13 @@
-mixin Review-shape(link, name, date, am, checked, review)
-    include ../Checkbox/Button-liker/Button-liker.pug
-    div.review-shape.js-review-shape
-        div.review-shape__header
-            span.review-shape__img
-                img(src=`${link}`)
-            span
-                h4 #{name}
-                p #{date} назад
-        div.review-shape__content
-            div.review-shape__liker  
-                if checked  
-                    +Button-liker('', {id:`${name}`, am:`${am}`, checked:"true"})
-                else
-                    +Button-liker('', {id:`${name}`, am:`${am}`})
-            p.review-shape__review  #{review}
+mixin Review-shape
+    include ../../Checkboxes/Button-liker/Button-liker.pug
+    article.review.js-review
+        section.review__header
+            span.review__avatar
+            span.review__info
+                strong.review__name 
+                p.review__days-ago 
+        section.review__body
+            div.review__liker  
+                +Button-liker('', {id:`#`, am:`#`})
+            p.review__content 
+        

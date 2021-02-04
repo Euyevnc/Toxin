@@ -1,11 +1,12 @@
 extends ../../layout/layout-for-hotel.pug
-include ../../includes/Blocks/Header/Header.pug
-include ../../includes/Blocks/Footer/Footer.pug
-include ../../includes/Blocks/Сellar/Сellar.pug
-include ../../includes/Blocks/Diogram/Diogram.pug
-include ../../static/Icons/Sticker.pug
-include ../../includes/Review-shape/Review-shape.pug
-include ../../includes/Checkbox/Bullet/Bullet.pug
+include ../../includes/Articles/Header/Header.pug
+include ../../includes/Articles/Footer/Footer.pug
+include ../../includes/Articles/Сellar/Сellar.pug
+include ../../includes/Articles/Pictures-demo/Pictures-demo.pug
+include ../../includes/Figures/Stickers/Stickers.pug
+include ../../includes/Articles/Diogram/Diogram.pug
+include ../../includes/Articles/Review-shape/Review-shape.pug
+include ../../includes/Checkboxes/Bullet/Bullet.pug
 
 block variables
     
@@ -16,40 +17,26 @@ block head
 block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
 block content    
-    .picture-demonstration 
-        .picture-demonstration__large-picture
-            img(src= require("./image(1).jpg").default)
-        .picture-demonstration__small-pictures
-            div
-                img(src= require("./image 2(1).jpg").default)
-            div
-                img(src= require("./image 3.jpg").default)
-    div(class="wrapper maintance")
-        section.information
-            section.stickers-container
-                h2 Сведения о номере
-                +Sticker("insert_emoticon", "Комфорт","Шумопоглощающие стены")
-                +Sticker("location_city", "Удобство", "Окно в каждой из спален")
-                +Sticker("whatshot", "Уют" ,"Номер оснащён камином")
-            section.diogram-container
-                h2 Впечатления от номера
-                +Diogram("diogram_doub") 
-            section.reviews-container
-                h2 Отзывы посетителей номера
-                +Review-shape(require("./review001.jpg").default , "Мурад Сарафанов" ,"5 дней", 12, true,  "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-                +Review-shape(require("./review002.jpg").default , "Патрисия Стёклышкова" ,"Неделю", 2,false , "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.")
-            section.bullets-container
-                h2 Правила
-                +Bullet("Нельзя с питомцами")
-                +Bullet("Без вечеринок и мероприятий")
-                +Bullet("Время прибытия — после 13:00, а выезд до 12:00")
-            section.cancel-container
-                h2 Отмена 
-                p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-        section.booking 
-            include ../../includes/Blocks/Number-booker/Number-booker.pug
+    section.pictures
+        +Pictures-demo(require("./img/image(1).jpg").default, require("./img/image 2(1).jpg").default, require("./img/image 3.jpg").default)
+    section.information
+        section.features-container
+            +Sticker("Сведения о номере", {icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"})
+        section.grades-container
+            +Diogram("Впечатления от номера", "diogram_doub") 
+        section.reviews-container
+            h2.section-header Отзывы посетителей номера
+            +Review-shape   
+        section.bullets-container
+            h2.section-header Правила
+            +Bullets("Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00")
+        section.cancel-container
+            h2.section-header Отмена 
+            p.default-font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+    section.booking 
+        include ../../includes/Articles/Number-booker/Number-booker.pug
 block footer
     +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
 block cellar  
-    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", {twitter: "/twit/", facebook:"/fb/", instagram:"/inst/"})
+    +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}])
 block script

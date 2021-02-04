@@ -1,20 +1,16 @@
-mixin Checkbox-with-subscribe(desc, ...issues)
-    div.checkbox-with-subscribe
-        if desc
-            .checkbox-with-subscribe__head
-                h3 #{desc}
+mixin Checkbox-with-subscribe(title, ...issues)
+    fieldset.checkbox-with-subscribe
+        if title
+            legend.checkbox-with-subscribe__header #{title}
         each val in issues
-            - var id = val.id
-            - var title = val.name
             - var checked = Boolean(val.checked)
-            - var sub = val.desc
-            div.checkbox-with-subscribe__checkbox
+            div.checkbox-with-subscribe__item
                 if checked 
-                    input(type="checkbox" id=`${id}` checked)
+                    input(class="checkbox-with-subscribe__checkbox" type="checkbox" id=`${val.id}` checked)
                 else 
-                    input(type="checkbox" id=`${id}` )
-                label(tabindex=0 for=`${id}`) 
-                    div.checkbox-with-subscribe__text
-                        h3 #{title}
-                        p #{sub}
+                    input(class="checkbox-with-subscribe__checkbox" type="checkbox" id=`${val.id}` )
+                label(class="checkbox-with-subscribe__label" tabindex=0 for=`${val.id}`) 
+                    div.checkbox-with-subscribe__textbox
+                        p.checkbox-with-subscribe__main-text #{val.name}
+                        p.checkbox-with-subscribe__sub-text #{val.desc}
                     

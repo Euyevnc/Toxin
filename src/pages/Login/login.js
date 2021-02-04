@@ -1,10 +1,10 @@
 import "./login.scss"
-import Header from "../../includes/Blocks/Header/Header.js"
-import Footer from "../../includes/Blocks/Footer/Footer.js"
+import header from "../../includes/Articles/Header/Header.js"
+import footer from "../../includes/Articles/Footer/Footer.js"
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
 
 function handlerDocumentDOMLoaded(){
-    Header()
-    Footer()
+    header()
+    footer()
 }

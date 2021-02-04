@@ -1,4 +1,4 @@
-import loadPages from"../Blocks/Number-demonstration/Number-demonstration.js"
+import loadPages from "../../Articles/Numbers-demonstration/Numbers-demonstration.js"
 
 function pageSwitcher(list, amountOnPage, isKit, container){  
     //аргумент uiskit нужен, чтобы на ui-kit-е он не переключал те несчастные 2 итема на странице          

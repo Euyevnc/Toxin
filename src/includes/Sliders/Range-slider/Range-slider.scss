@@ -8,20 +8,20 @@
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
-        & h3{
-            text-transform: uppercase;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 15px;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 5.5px;
-            color: rgba(31, 32, 65, 1)
-        }
+    }
+    &__title{
+        text-transform: uppercase;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5.5px;
+        color: rgba(31, 32, 65, 1)
     }
     &__counter{
-        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 12px;
         color: rgba(31, 32, 65, 0.5);
     }
@@ -63,17 +63,10 @@
         z-index: 3;
     }
     &__subscribe{
-        & p{
-            margin-bottom: 0;
-            margin-top: 16.5px;
-            font-size: 12px;
-            color: rgba(31, 32, 65, 0.5);
-        }
+        margin-bottom: 0;
+        margin-top: 16.5px;
+        font-size: 12px;
+        color: rgba(31, 32, 65, 0.5);
     }
     
 }
-
-
-// .Range-slider-filter .Range-slider-block-max{
-//     left: 95%;
-// }

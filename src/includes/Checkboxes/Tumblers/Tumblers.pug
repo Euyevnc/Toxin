@@ -6,10 +6,11 @@ mixin Tumblers(descr, ...issues)
             - var id = val.id
             - var name = val.name
             - var checked = Boolean(val.checked)
-            div.tumblers__buttons
+            div.tumblers__tumbler-container
                 if checked 
-                    input(type="checkbox" id=`${id}`  checked)
+                    input(class="tumblers__checkbox" type="checkbox" id=`${id}`  checked)
                 else 
-                    input(type="checkbox" id=`${id}`)
-                label(for=`${id}`) 
-                p #{name}
+                    input(class="tumblers__checkbox" type="checkbox" id=`${id}`)
+                label(for=`${id}` class="tumblers__label" tabindex=0) 
+                p.tumblers__subscribe #{name}
+                

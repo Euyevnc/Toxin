@@ -1,33 +1,16 @@
-@import "../../../static/Icons/filling-star.scss";
+@import "../../Figures/Rate-stars/Rate-stars.scss";
+@import "../../../utils/fonts/MaterialIcons.scss";
+@import "../../../utils/fonts/Montserrat.scss";
 
-.number-demonstration{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    background: inherit;
-
-    justify-content: space-between;
-    &__item{
-        margin-top: 20.5px;
-        background-color: white;
-        box-shadow: 0px 17px 20px 0px rgba(34, 60, 80, 0.05);
-        border-radius: 4px;
-    }
+.number-demo{
+    margin-top: 20.5px;
+    background-color: white;
+    box-shadow: 0px 17px 20px 0px rgba(34, 60, 80, 0.05);
+    border-radius: 4px;
     &__image-cont{
+        margin: 0;
         position: relative;
         max-height: 151.3px;
-        &>img{
-            display: none;
-            opacity: 0;
-            transition-duration: 0.7s;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            &.number-demonstration__img_active{
-                display: block;
-                opacity: 1;
-                transition-duration: 0.7s;
-            }
-        }
         &:hover{
             &::after{
                 transition-duration: 0.7s;
@@ -50,11 +33,23 @@
                 background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
                 transform: matrix(-1, 0, 0, 1, 0, 0);
             }
-            & .number-demonstration__arrow{
-                display: block;
+            & .number-demo__arrow{
+                visibility: visible;
                 transition-duration: 0.7s;
             }
         }
+    }
+    &__image{
+        display: none;
+        opacity: 0;
+        transition-duration: 0.7s;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    &__image_active{
+        display: block;
+        opacity: 1;
+        transition-duration: 0.7s;
     }
     &__arrow{
         font-size: 24px;
@@ -63,17 +58,23 @@
         width: 44px;
         height: 44px;
         text-align: center;
-        color: rgba(31, 32, 65, 0.5);
         z-index:  20;
         color: white;
         cursor: pointer;
         top:50%;
         transform: rotate(90deg) translateX(-50%);
         user-select: none;
-        display: none;
+        visibility: hidden;
         transition-duration: 0.7s;
         &:nth-child(2){
             right:0;
+        }
+        &:focus{
+            visibility: visible;
+            transition-duration: 0.7s;
+            & ~ .number-demo__arrow{
+                visibility: visible;
+            }
         }
     }
     &__buttons{
@@ -95,12 +96,11 @@
             background-color: white;
             transition-duration: 0.4s;
         }
-        &+span{
+        & + .number-demo__button{
             margin-left: 4px;
         }
     }
 
-    
     &__price{
         padding: 20px 0 10px 0;
         border-bottom: 1px solid rgba(31, 32, 65, 0.1);
@@ -108,50 +108,33 @@
         justify-content: space-between;
         align-items: flex-end;
         margin: 0 16px 0 20px;
-        & h2{
-            font-size: 19px;
-            line-height: 24px;
-            display: inline;
-            font-weight: bold;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            color: rgba(31, 32, 65, 1);
+    }
+    &__font{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;   
+        color: rgba(31, 32, 65, 1);
+        font-style: normal;
+        margin: 0;
+        &_grey{
+            color: rgba(31, 32, 65, 0.5);
         }
-        & h3{
-            font-size: 14px;
-            display: inline;
-            font-weight: bold;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            color: rgba(31, 32, 65, 1);
-        }
-        h4{    
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            display: inline;
-            text-transform: uppercase;
+        &_purple{
             color: #BC9CFF;
         }
-        & h5{
-            font-family: Montserrat,Arial, Helvetica, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 18px;  
-            color: rgba(31, 32, 65, 0.5);
-            display: inline;
+        &_uppercase{
+            text-transform: uppercase;
         }
-        & p{
-            font-family: Montserrat,Arial, Helvetica, sans-serif;
-            font-style: normal;
+        &_small{
             font-size: 12px;
-            line-height: 18px;  
-            color: rgba(31, 32, 65, 0.5);
-            display: inline;
-            margin: 0;
+            line-height: 18px;
         }
-
-
+        &_middle{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &_large{
+            font-size: 19px;
+            line-height: 24px;
+        }
     }
     &__rate{
         padding: 8px 20px 19px 21px;
@@ -176,5 +159,34 @@
     }
     &__stars{
         height: 24px;
+    }
+    &:focus{
+        .number-demo__image-cont{
+            &::after{
+                transition-duration: 0.7s;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width:42px;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+            }
+            &::before{
+                transition-duration: 0.7s;
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width:42px;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+                transform: matrix(-1, 0, 0, 1, 0, 0);
+            }
+            & .number-demo__arrow{
+                visibility: visible;
+                transition-duration: 0.7s;
+            }
+        }
     }
 }

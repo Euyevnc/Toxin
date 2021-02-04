@@ -1,12 +1,12 @@
 @import "../Date-picker/Date-picker.scss";
 @import "../../../utils/fonts/Montserrat.scss";
-@import "../../../static/Icons/arrow-down.scss";
+@import '../../Figures/Arrow-down/Arrow-down.scss';
 
 .date-range_double{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    & h3{
+    &__subscribe{
         text-transform: uppercase;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 12px;

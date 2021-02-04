@@ -1,7 +1,10 @@
-mixin Sticker(icon, describe, subscribe)
-    div(class="sticker")
-        span(class="sticker__img") #{icon}
-        span.sticker__text
-            p.sticker__describe #{describe}
-            br
-            p.sticker__subscribe #{subscribe}
+mixin Sticker(header, ...stickers)
+    article.sticker
+        if header 
+            h2.sticker__header #{header}
+        each sticker in stickers
+            section(class="sticker__item-container")
+                span.sticker__img #{sticker.icon}
+                span.sticker__text
+                    strong.sticker__describe #{sticker.describe}
+                    p.sticker__subscribe #{sticker.subscribe}

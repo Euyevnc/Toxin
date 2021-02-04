@@ -1,6 +1,6 @@
 import Chart from 'chart.js';
 
-function initDiogram(fir, sec, thir,four, container){
+function initDiogram(data, container){
     let area = container || document
     area.querySelectorAll(".js-diogram__canvas").forEach(el=>{
         let ctx =  el;
@@ -23,19 +23,19 @@ function initDiogram(fir, sec, thir,four, container){
         blackGrad.addColorStop(1, '#3D4975');
     
         let cont = el.parentElement
-        let FirstAmount = fir
-        let SecondAmount = sec
-        let ThirdAmount = thir
-        let FourthAmount = four
+        let FirstAmount = data.statistics.great
+        let SecondAmount = data.statistics.well
+        let ThirdAmount = data.statistics.fine
+        let FourthAmount = data.statistics.disappointed
     
         let total = FirstAmount + SecondAmount + ThirdAmount + FourthAmount;
-        cont.querySelector(".js-diogram__title h2").textContent = total;
+        cont.querySelector(".js-diogram__reviews-amount").textContent = total;
         
         let title
         if (5> total >1 || 5>total%10>1 ) title = "голоса"
         else if (total == 1 || total%10==1) titl = "голос"
         else title = "голосов"
-        cont.querySelector(".js-diogram__title p").textContent = title;
+        cont.querySelector(".js-diogram__subtitle").textContent = title;
     
         let myChart = new Chart(ctx, {
             type: 'doughnut',

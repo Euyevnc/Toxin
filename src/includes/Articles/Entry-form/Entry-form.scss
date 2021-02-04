@@ -10,7 +10,7 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.12);
     
-    & p{
+    &__text{
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 14px;
         text-align: center;
@@ -40,7 +40,7 @@
             }
         }
     }
-    &__subscribe{
+    &__registration{
         display:flex;
         justify-content: space-between;
         align-items: center;

@@ -1,15 +1,19 @@
 @import "../../layout/layout-for-hotel.scss";
-@import "../../includes/Blocks/Header/Header.scss";
-@import "../../includes/Blocks/Footer/Footer.scss";
-@import "../../includes/Blocks/Сellar/Сellar.scss";
-@import "../../includes/Blocks/Picture-demonstration/Picture-demonstration.scss";
-@import "../../includes/Blocks/Number-booker/Number-booker.scss";
-@import "../../static/Icons/Sticker.scss";
-@import "../../includes/Blocks/Diogram/Diogram.scss";
-@import "../../includes/Review-shape/Review-shape.scss";
-@import "../../includes/Checkbox/Bullet/Bullet.scss";
-
-h2{
+@import "../../includes/Articles/Header/Header.scss";
+@import "../../includes/Articles/Footer/Footer.scss";
+@import "../../includes/Articles/Сellar/Сellar.scss";
+@import "../../includes/Articles/Pictures-demo/Pictures-demo.scss";
+@import "../../includes/Articles/Diogram/Diogram.scss";
+@import "../../includes/Articles/Number-booker/Number-booker.scss";
+@import "../../includes/Figures/Stickers/Stickers.scss";
+@import "../../includes/Articles/Review-shape/Review-shape.scss";
+@import "../../includes/Checkboxes/Bullet/Bullet.scss";
+.content-container{
+    & .wrapper{
+        position: static
+    };
+}
+.section-header{
     margin:0 0 20px;
     color: rgba(31, 32, 65, 1);
     font-family: Montserrat,Arial, Helvetica, sans-serif;
@@ -19,7 +23,7 @@ h2{
     line-height: 24px;
     color: #1F2041;
 };
-p{
+.default-font{
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     line-height: 24px;
     font-size: 14px;
@@ -29,33 +33,31 @@ p{
     margin: 0;
 }
 .content-container{
-    padding-bottom: 62px;
+    padding-bottom: 60px;
     background-color: white;
-    &>.wrapper{
-        width: 100%;
-        max-width: 1440px;
-    }
-    & .maintance{
+    & .wrapper{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-top: 70px;
+    }
+    & .pictures{
+        width: 100%;
+        min-height: 485px;
+        padding-bottom: 70px;
     }
     & .information{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: flex-start;
         max-width: 710px;
-    }
-    & .stickers-container{
-        max-width:280px;
     }
     & .reviews-container{
         margin-top: 13px;
-        margin-bottom: 11px;
+        margin-bottom: 8px;
     }
     & .bullets-container{
-        & h2{
+        & .section-header{
             padding-left: 21px;
             line-height: 20px;
         }
@@ -64,9 +66,6 @@ p{
         max-width: 341px;
         padding-right: 8px;
         text-align: left;
-        & h2{
-            line-height: 20px;
-        }
     }
 }
 .footer-container{

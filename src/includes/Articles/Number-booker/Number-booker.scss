@@ -1,74 +1,59 @@
-@import "../../utils/fonts/OpenSans.scss";
-@import "../../utils/fonts/Montserrat.scss";
-@import "../Inputs/Date-range_double/Date-range_double.scss";
-@import "../Inputs/Inputs-with-counter/Inputs-with-counter.scss";
-@import "../Buttons/Button_with_arrow/Button_with_arrow.scss";
+@import "../../../utils/fonts/Montserrat.scss";
+@import "../../Inputs/Date-range_double/Date-range_double.scss";
+@import "../../Inputs/Inputs-with-counter/Inputs-with-counter.scss";
+@import "../../Buttons/Button_with_arrow/Button_with_arrow.scss";
 
 
 .booker{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
     background-color: white;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 25px rgba(151, 125, 125, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    padding: 41px 30px 30px;
-    max-width: 380px;
-    &>*{
-        width: 320px;
-        margin: auto;
+    padding: 39px 29px;
+    max-width: 320px;
+    @media(max-width: 400px){
+        padding: 29px 19px;
     }
-    & p,h2,h2,h4,h5{
+    @media(max-width: 380px){
+        padding: 29px 5px;
+    }
+    @media(max-width: 335px){
+        padding: 29px 0px;
+    }
+    &__font{
         font-family: Montserrat, Arial, Helvetica, sans-serif;
+        &_black{
+            color: rgba(31, 32, 65, 1);
+
+        }
+        &_grey{
+            color: rgba(31, 32, 65, .5);
+        }
+        &_purple{
+            color: #BC9CFF;
+        }
+        &_uppercase{
+            text-transform: uppercase;
+        }
+        &_large{
+            font-size: 24px;
+            line-height: 29px;
+        }
+        &_middle{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &_small{
+            font-size: 12px;
+            line-height: 18px;
+        }
     }
-    &__info{
+
+    &__info-cont{
         display: flex; 
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 19px;
-        & h3{
-            display: inline;
-            color: rgba(31, 32, 65, 1);
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 17px;
-            margin: 0;
-            padding: 0;
-        };
-        & p{
-            font-size: 12px;
-            line-height: 18px;
-            display: inline;
-            color: rgba(31, 32, 65, .5);
-        }
-    }
-    &__number{
-        display: inline;
-        color: rgba(31, 32, 65, 1);
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 29px;
-        margin: 0;
-        padding: 0;
-
-    }
-    &__price{
-        display: inline;
-        color: rgba(31, 32, 65, .5);
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        margin: 0;
-        padding: 0;
-    }
-    &__category{
-        display: inline;
-
-        text-transform: uppercase;
-        color: #BC9CFF;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
-        margin: 0;
-        padding: 0;
     }
     &__calendar{
         display: flex;
@@ -78,14 +63,11 @@
     &__counter{
         margin-bottom: 20.5px;
     }
-    &__compute{
-        & p:not(.booker__sign_i){
-
-            margin: 0;
-            padding: 0;
+    &__compute-cont{
+        & .booker__font{
             display: inline-block;
             font-size: 14px;
-            line-height: 18px;
+            line-height: 24px;
             color: rgba(31, 32, 65, 0.75);
             text-decoration: none;
             vertical-align: top; 
@@ -96,56 +78,46 @@
         display: flex; 
         justify-content: space-between;
         align-items: flex-end;
-        
-        margin-bottom: 16px;
+        margin-bottom: 10px;
     }
     &__service{
         display: flex; 
         justify-content: space-between;
-        margin-bottom: 16px;
-        & p{
-            &:first-child{
-                width: 215px;
-            }
-        };
-        &:last-child{
-            color: black;
-        }
+        margin-bottom: 10px;
+    }
+    &__service-desc{
+        width: 215px;
+        display: inline-block;
     }
     &__sign_i{
-        line-height: 18px;
-
-        font-size: 12px;
-        border: 1px solid rgba(31, 32, 65, 0.25); 
-        width: 20px;
-        text-align:center; 
+        display: inline-block;
         height: 20px; 
+        width: 20px;
+        vertical-align: top;
+        line-height: 18px;
+        font-size: 12px;
+        color: rgba(31, 32, 65, 0.25) ;
+        text-align:center; 
         font-weight: 700; 
         border-radius:50%;
         box-sizing: border-box;
-        color: rgba(31, 32, 65, 0.25) ;
-        margin: 0;
-        display: inline-block;
+        border: 1px solid rgba(31, 32, 65, 0.25); 
+ 
+
     }
     &__total{
         display: flex; 
         margin: 30px 0 20px;
-        min-width: 329px;
-        & h2{
-            font-style: normal;
-            font-weight: bold;
-            font-size: 19px;
-            line-height: 19px;
-            margin: 0;
-            padding: 0;
-            color: #1F2041;
-        }
-        & span{
-            border: 1px dashed rgba(31, 32, 65, 0.25);
-            box-sizing: border-box;
-            max-height: 1px;
-            flex-grow: 1;
-            align-self: flex-end;
-        }
+        font-size: 19px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 1); 
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+    }
+    &__total-filler{
+        border: 1px dashed rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        max-height: 1px;
+        flex-grow: 1;
+        align-self: flex-end;
     }
 }

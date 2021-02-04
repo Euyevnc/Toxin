@@ -1,11 +1,10 @@
 @import "../../Inputs/Mask_DMY/Mask_DMY.scss";
 @import "../../Inputs/Text-field/Text-field.scss";
-@import "../../Checkbox/Tumblers/Tumblers.scss";
-@import "../../Checkbox/Radio/Radio.scss";
+@import "../../Checkboxes/Tumblers/Tumblers.scss";
+@import "../../Checkboxes/Radio/Radio.scss";
 @import "../../Buttons/Button_with_arrow/Button_with_arrow.scss";
 @import "../../Buttons/Button-rounded/Button-rounded.scss";
 @import "../../../utils/fonts/Montserrat.scss";
-@import "../../../utils/fonts/OpenSans.scss";
 
 .registration{
     background-color: white;
@@ -14,15 +13,7 @@
     padding: 39px 29px 29px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    & p{
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
-        text-decoration: none;
-        margin: 0;
-    }
-    h1{
+    &__header{
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-weight: 700;
         font-size: 24px;
@@ -31,49 +22,40 @@
         margin: 0;
         margin-bottom: 20px;
     };
-    & h3{
-        font-weight: 700;
-        font-size: 12px;
-        text-transform: uppercase;
-        margin: 0 0 5.5px;
-        padding: 0;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        color: #1F2041;
-    }
     &__form{
         margin-bottom: 30px;
     }
-    &__names{
+    &__personal-data{
+        margin-bottom: 20px;
         &>*{
             margin-bottom: 10px;
         }
     }
-    &__sex{
-        margin-bottom: 19.5px;
-    }
-    &__date{
+    &__birthday-data{
         margin-bottom: 20px;
-    }
-    &__entry-data{
         &>*{
             margin-bottom: 10px;
         }
     }
-    &__receiving-offers{
+    &__account-data{
         margin-bottom: 20px;
+        &>*{
+            margin-bottom: 10px;
+        }
     }
-    &__subscribe{
+    &__text{
+        line-height: 100%;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;;
+        text-align: center;
+        color: #000000;
+    }
+    &__entry{
         align-items: center;
         display:flex; 
         justify-content: space-between;
-        & p{
-            line-height: 100%;
-            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-            font-size: 14px;;
-            text-align: center;
-            color: #000000;
-        }
     }
+
     @media(max-width: 380px){
         padding: 40px 10px 30px;
     }

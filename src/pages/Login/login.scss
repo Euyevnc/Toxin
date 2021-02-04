@@ -1,20 +1,21 @@
-@import "../../includes/Blocks/Header/Header.scss";
-@import "../../includes/Blocks/Footer/Footer.scss";
-@import "../../includes/Blocks/Сellar/Сellar.scss";
-@import "../../includes/Blocks/Entry-form/Entry-form.scss";
+@import "../../includes/Articles/Header/Header.scss";
+@import "../../includes/Articles/Footer/Footer.scss";
+@import "../../includes/Articles/Сellar/Сellar.scss";
+@import "../../includes/Articles/Entry-form/Entry-form.scss";
 @import "../../layout/layout-for-hotel.scss";
 
 .content-container{
-    background-image: url('login_bg.jpg');
+    background-image: url('./img/login_bg.jpg');
     background-position: bottom;
     position: relative;
     & .wrapper{
-        width: 100%;
-        min-height: 683px;
-        min-width: 320px;
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 684px;
+        @media(max-width: 660px){
+            min-height:450px;
+        } 
     }
     &::after{
         position: absolute;
@@ -24,7 +25,7 @@
         height: 100%;
         content: '';
         z-index: -1;
-        background-image: url('login_bg2.jpg');
+        background-image: url('./img/login_bg2.jpg');
         background-position: bottom;
         opacity: 0;
         animation: sliding 20s linear 0s infinite ;

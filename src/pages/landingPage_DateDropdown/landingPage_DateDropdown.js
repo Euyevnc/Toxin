@@ -1,7 +1,7 @@
 import "./landingPage_DateDropdown.scss"
-import Header from "../../includes/Blocks/Header/Header.js"
-import Footer from"../../includes/Blocks/Footer/Footer.js"
-import finder from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
+import Header from "../../includes/Articles/Header/Header.js"
+import Footer from"../../includes/Articles/Footer/Footer.js"
+import finder from "../../includes/Articles/Number-finder/Number-finder.js";
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
 

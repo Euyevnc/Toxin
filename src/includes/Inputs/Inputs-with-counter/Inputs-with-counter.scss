@@ -1,12 +1,12 @@
+@import '../../Figures/Arrow-down/Arrow-down.scss';
 @import "../../../utils/fonts/MaterialIcons.scss";
-@import "../../../static/Icons/arrow-down.scss";
 @import "../../../utils/fonts/Montserrat.scss";
 
 .input-with-counter{
     width: 100%;
     position: relative;
     z-index: 10;
-    & h3{
+    &__subscribe{
         text-transform: uppercase;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 12px;
@@ -70,33 +70,27 @@
         padding: 7px;
         padding-left: 15px;
         padding-bottom: 0;
-        
         user-select: none;
-        & p{
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #1F2041;
-            line-height: 30px;
-            font-size: 12px;
-            margin: 0;
-        }
     
     };
-    &__counter{
+    &__item-name{
+
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        color: #1F2041;
         line-height: 30px;
-        &>span{
-            box-sizing: border-box;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            display: inline-block;
-            font-weight: 400;
-            line-height: 30px;
-            vertical-align: middle;
-  
-        }
+        font-size: 12px;
+        margin: 0;
     }
+
     &__tumbler{
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
         font-size: 18px;
         border-radius: 50%;
         border: 1px solid rgba(31, 32, 65, 0.50);
@@ -109,8 +103,14 @@
         }
     }
     &__number{
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        display: inline-block;
+        line-height: 30px;
+        vertical-align: middle;
         color: #1F2041;
-        font-weight: bold;
         font-size: 12px;
     }
 
@@ -124,7 +124,7 @@
         left: 0%;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         background-color: white;
-        display: none;
+        display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         margin: 0px;
@@ -133,6 +133,9 @@
         border: 1px solid rgba(31, 32, 65, 0.5);
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
         z-index: 50;
+        &_hidden{
+            display: none;
+        }
     };
     &__buttons{
         padding: 20px 7px 6px 14px;
@@ -140,31 +143,32 @@
         display: flex;
         justify-content: space-between;
     }
-    &__button_delete{
-        color: rgba(31, 32, 65, 0.5);
+    &__button{
         font-size: 12px;
         line-height: 15px;
         font-weight: bold;
         cursor: pointer;
+        &_delete{
+            color: rgba(31, 32, 65, 0.5);
+            visibility: hidden;
+        }
+        &_visible-delete{
+            visibility: visible;
+        }
+        &_confirm{
+            color: #BC9CFF;
+        }
     }
-    &___button_confirm{
-        color: #BC9CFF;
-        font-size: 12px;
-        line-height: 15px;
-        font-weight: bold;
-        cursor: pointer;
+    &_simple{
+        & .input-with-counter__buttons{
+            display: none
+        }
     }
     & .arrow-down{
         position: absolute;
         right: 10px;
         bottom: 10px;
         color: rgba(31, 32, 65, 0.50);
-    }
-    &_simple{
-        max-width: 260px;
-        & .input-with-counter__buttons{
-            display: none
-        }
     }
 };
 

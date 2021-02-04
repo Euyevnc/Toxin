@@ -1,61 +1,77 @@
 @import "../../layout/layout-for-hotel.scss";
-@import "../../includes/Blocks/Header/Header.scss";
-@import "../../includes/Blocks/Footer/Footer.scss";
-@import "../../includes/Blocks/Сellar/Сellar.scss";
-@import "../../includes/Blocks/Social/Social.scss";
+@import "../../utils/fonts/Montserrat.scss";
+@import "../../includes/Articles/Header/Header.scss";
+@import "../../includes/Articles/Footer/Footer.scss";
+@import "../../includes/Articles/Сellar/Сellar.scss";
 @import "../../includes/Inputs/Date-range/Date-range.scss";
 @import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
-@import "../../includes/Range-slider/Range-slider.scss";
-@import "../../includes/Checkbox/Default-checkbox/Default-checkbox.scss";
-@import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
-@import "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.scss";
-@import "../../includes/Blocks/Number-demonstration/Number-demonstration.scss";
-@import "../../includes/Pages-switcher/Pages-switcher.scss";
+@import "../../includes/Sliders/Range-slider/Range-slider.scss";
+@import "../../includes/Checkboxes/Default-checkbox/Default-checkbox.scss";
+@import "../../includes/Checkboxes/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
+@import "../../includes/Checkboxes/Dropping-checkbox/Dropping-checkbox.scss";
+@import "../../includes/Sliders/Pages-switcher/Pages-switcher.scss";
+@import "../../includes/Articles/Numbers-demonstration/Numbers-demonstration.scss";
+
 .content-container{
     background-color: white;
+    padding: 30px 0 70px;
     & .wrapper{
-        padding: 30px 0 70px;
         display: flex;
         justify-content: space-between;
+        @media(max-width:600px){
+            flex-wrap: wrap;
+        }
     }
 }
 .footer-container{
     border-top: 2px solid rgba(31, 32, 65, 0.15);
 }
-.Inputs-containter{
+
+.inputs-containter{
     min-width: 266px;
     margin-right: 60px;
     &>*{
-        margin-bottom: 30.44px;
+        margin-bottom: 30px;
         &:first-child{
-            margin-bottom: 20.44px;
+            margin-bottom: 20px;
         }
         &:nth-child(6){
             margin-bottom: 16px;
         }
-        
+    }
+    @media(max-width:600px){
+        width: 100%;
+        text-align: center;
+        margin: 0 20px 0;
+
     }
  
 }
-.Items-container{
 
-    & h1{
-        margin:0;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1F2041;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 29px;
-        color: #1F2041;
-    };
-}
+.main__heading{
+    margin:0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #1F2041;
+    @media(max-width:600px){
+        text-align: center;
+    }
+};
 .switcher-container{
     width: 100%;
     margin-top: 41px;
+}
+.numbers-demonstration{
+    @media(max-width:600px){
+        justify-content: center;
+    }
 }
 
 

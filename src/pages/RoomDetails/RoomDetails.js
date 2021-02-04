@@ -1,12 +1,12 @@
 import "./RoomDetails.scss";
-import header from "../../includes/Blocks/Header/Header.js"
-import footer from"../../includes/Blocks/Footer/Footer.js"
-import diogram from "../../includes/Blocks/Diogram/Diogram.js"
-import booker from "../../includes/Blocks/Number-booker/Number-booker.js"
-import review from "../../includes/Review-shape/Review-shape.js"
+import header from "../../includes/Articles/Header/Header.js"
+import footer from"../../includes/Articles/Footer/Footer.js"
+import diogram from "../../includes/Articles/Diogram/Diogram.js"
+import booker from "../../includes/Articles/Number-booker/Number-booker.js"
+import review from "../../includes/Articles/Review-shape/Review-shape.js"
 import data from "./data.json"
 
-let legendClientData = {arrival: 4, departure: 8, guests:[[2,1,0]]}
+let legendClientData = {arrival: 4, departure: 8, guests:[[2,1,0]], likedReviews: [11460001]}
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
 
@@ -15,9 +15,10 @@ function handlerDocumentDomLoaded(){
     footer()
     getEmulation("1146")
     .then(data=>{
-        diogram(data.statistics.great, data.statistics.well, data.statistics.fine, data.statistics.disappointed)
-        booker({number: data.number, category: data.category, price: data.price, services: data.services, arrival:legendClientData.arrival, departure: legendClientData.departure, guests: legendClientData.guests})
-        review()
+        let dataForPage = Object.assign(data, legendClientData)
+        diogram(dataForPage)
+        booker(dataForPage)
+        review(dataForPage)
     }) 
 }
 

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 import "../../../plugins/datepicker"
-//Не используется нигде, разве что чтили импортируется в диапозонные календари
+//Не используется нигде, разве что  импортируется в диапозонные календари
 export default function(date){
     $.datepicker.regional['ru'] = {
     	closeText: 'Закрыть',

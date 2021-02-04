@@ -1,6 +1,7 @@
 
 .button-liker{
     display: inline-block;
+    text-align: center;
     &__head{
         text-transform: uppercase;
         font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -15,9 +16,9 @@
         text-align: center;
     }
     
-    & input[type="checkbox"]{
+    &__box{
         display: none;
-        & + label{ 
+        & + .button-liker__label{ 
             text-align: right;
             width: 40px;
             height: 20px;
@@ -32,7 +33,6 @@
             line-height: 18px;
             text-align:end;
             padding-right: 10px;
-            margin-right: 10px;
             box-sizing: border-box;
             &::before {
                 display: inline-block;
@@ -51,9 +51,9 @@
         }
     
     }
-    & input[type="checkbox"]:checked{ 
+    &__box:checked{ 
         
-        & + label{ 
+        & + .button-liker__label{ 
             color: #c2c2c2;
             border: 1px solid  #BC9CFF;
             transition-duration: 0.5s;

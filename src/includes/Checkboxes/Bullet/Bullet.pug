@@ -1,5 +1,7 @@
-mixin Bullet(desc)
-    div.Bullet__cont
-        span.Bullet__img   
-            include ../../../static/Images/Ellipse.svg
-        p.Bullet__desc #{desc} 
+mixin Bullets(...contents)
+    ul.bullets
+        each desc in contents
+            li.bullets__item
+                span.bullets__img   
+                    include ../../../static/Images/Ellipse.svg
+                p.bullets__desc #{desc} 

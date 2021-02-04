@@ -1,57 +1,23 @@
-@import "../../includes/Blocks/Header/Header.scss";
-@import "../../includes/Blocks/Footer/Footer.scss";
-@import "../../includes/Blocks/Сellar/Сellar.scss";
-@import "../../includes/Blocks/Social/Social.scss";
+@import "../../includes/Articles/Header/Header.scss";
+@import "../../includes/Articles/Footer/Footer.scss";
+@import "../../includes/Articles/Сellar/Сellar.scss";
 @import "../../layout/layout-for-hotel.scss";
-@import "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.scss";
+@import "../../includes/Articles/Number-finder/Number-finder.scss";
 .content-container{
-    background-image: url('LandingPage-background-3.jpg');
+    background-image: url('./img/LandingPage-background-3.jpg');
     background-position: bottom;
     position: relative;
     & .wrapper{
-        width: 100%;
-        min-height: 830px;
-        min-width: 320px;
         display: flex;
         justify-content: space-between;
-        &>*{  
-            &.searcher-container{   
-                align-self: flex-start;
-                &>*{
-                    margin-top: 70px;
-                }
-                @media(max-width: 660px){
-                    width: auto;
-                }
-            }
-            &.text-container{
-                align-self: flex-end;
-                & p{
-                    font-family: Montserrat, Arial, Helvetica, sans-serif;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color: rgba(31, 32, 65, 0.75);
-                    text-decoration: none;
-                    margin: 0;
-                    max-width: 280px;
-                    padding-bottom:20px;
-                    text-align: right;
-                    margin-right: -5px;
-                    @media(max-width: 1165px){
-                        margin-right: 5px;
-                    }
-                }
-                @media(max-width: 660px){
-                    width: auto;
-                }
-            }
-        }
+        height: 830px;
         @media(max-width: 660px){
             flex-wrap: wrap;
             justify-content: center;
-            min-height:530px;
+            height:530px;
         } 
     }
+    
     &::before{
         position: absolute;
         top: 0;
@@ -60,7 +26,7 @@
         height: 100%;
         content: '';
         z-index: -1;
-        background-image: url('LandingPage-background.jpg');
+        background-image: url('./img/LandingPage-background.jpg');
         background-position: bottom;
         opacity: 0;
         animation: sliding-before 30s linear 0s infinite ;
@@ -73,12 +39,42 @@
         height: 100%;
         content: '';
         z-index: -1;
-        background-image: url('LandingPage-background-2.jpg');
+        background-image: url('./img/LandingPage-background-2.jpg');
         background-position: bottom;
         opacity: 0;
         animation: sliding-after 30s linear 0s infinite ;
     }
 }
+
+.searcher-container{   
+    align-self: flex-start;
+    padding-top: 70px;
+    @media(max-width: 660px){
+        width: auto;
+    }
+}
+.text-container{
+    align-self: flex-end;
+    padding-bottom:20px;
+    @media(max-width: 660px){
+        width: auto;
+    }
+}
+.default-font{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    text-decoration: none;
+    margin: 0;
+    max-width: 280px;
+    text-align: right;
+    margin-right: -5px; 
+    @media(max-width: 1165px){
+        margin-right: 5px;
+    }
+}
+
 @keyframes sliding-before{
     26%{
         opacity: 0;

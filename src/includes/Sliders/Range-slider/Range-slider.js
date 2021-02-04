@@ -32,11 +32,18 @@ export default function(container){
 
 function sliderbind(elCont){
 	let min = elCont.querySelector(".js-range-slider__tumbler_min")
-    min.addEventListener("mousedown",e=>rangeMove(min));
-    min.addEventListener("touchstart",e=>rangeMove(min));
+    min.addEventListener("mousedown", handlerMinMousedown);
+    min.addEventListener("touchstart", handlerMinMousedown);
     let max = elCont.querySelector(".js-range-slider__tumbler_max")
-    max.addEventListener("mousedown",e=>rangeMove(max));
-    max.addEventListener("touchstart",e=>rangeMove(max));
+    max.addEventListener("mousedown", handlerMaxMousedown);
+	max.addEventListener("touchstart", handlerMaxMousedown);
+
+	function handlerMinMousedown(e){
+		rangeMove(min)
+	}
+	function handlerMaxMousedown(e){
+		rangeMove(max)
+	}
 }
 
 

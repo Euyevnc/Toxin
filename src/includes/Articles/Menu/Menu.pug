@@ -1,19 +1,22 @@
 mixin Menu(login, issues)
     nav(class="js-header__menu header__menu menu js-menu")
-        each val in issues
-            if val.blocks
-                div(class=`menu__element menu__element_type_dropping js-menu__element_type_dropping menu__element_type_dropping ${val.highlight ? 'menu__element menu__element_type_dropping-highlight' : ''}`) 
-                    a #{val.name} 
-                    include ../../../static/Icons/arrow-down.pug 
-                    div.js-menu__element_type_submenu.menu__element_type_submenu
-                        each block in val.blocks
-                            div(class="menu__element")
-                                a(href=`${block.href}`) #{block.name}
+        ul(class="js-header__menu__list header__menu__list menu__list js-menu__list")
+            each val in issues
+                - let modifier = val.modifier  ? `menu__element_type_${val.modifier}` : ''
+                if val.blocks
+                    li(class=`js-menu__element menu__element ${modifier}` tabindex=0) 
+                        a(class='menu__link') #{val.name} 
+                        include ../../Figures/Arrow-down/Arrow-down.pug
+                        ul.js-menu__submenu.menu__submenu
+                            each block in val.blocks
+                                - let modifier = block.modifier  ? `menu__element_type_${block.modifier}` : ''
+                                li(class=`js-menu__element menu__element ${modifier}`)
+                                    a(href=`${block.href}` class='menu__link') #{block.name}
+                else
+                    li(class = `js-menu__element menu__element ${modifier}`)
+                        a(class='menu__link'  href=`${val.href}`) #{val.name}
+            if login   
+                div(class="js-menu__element menu__element  menu__login")
+                    a(href="/account/" class="menu__link") #{login}
             else
-                a(class=`menu__element menu__element_type_inline ${val.addclass || ''}`  href=`${val.href}`)
-                    span #{val.name}
-        if login   
-            a(href="/account/" class="menu__element menu__element_type_login")
-                span #{login}
-        else
-            include ./Menu__autorization/Menu__autorization.pug
+                include ./Menu__autorization/Menu__autorization.pug

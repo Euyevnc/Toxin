@@ -1,22 +1,20 @@
-@import '../../../static/Icons/arrow-right_blue.scss';
+@import '../../Figures/Arrow-right/arrow-right_blue.scss';
 @import '../../../utils/fonts/Montserrat.scss';
 .field-with-arrow{
     width: 260px;
     position: relative;
-    & label{
-        & h3{
-            text-transform: uppercase;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 15px;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 5.5px;
-            color: rgba(31, 32, 65, 1)
-        }
+    &__subscribe{
+        text-transform: uppercase;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 15px;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5.5px;
+        color: rgba(31, 32, 65, 1)
     }
-    & input{
+    &__value{
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         font-size: 14px;
         padding-left: 15px;

@@ -11,62 +11,61 @@
         color: rgba(31, 32, 65, 1); 
         
     }
-    &__buttons{
+    &__tumbler-container{
         &>*{
+            user-select: none;
             display: inline-block;
             vertical-align: middle;
         }
-        & p{
-            margin: 0;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            color: rgba(31, 32, 65, 0.75);
-            line-height: 24px;
-
-        }
-        & input[type="checkbox"]{
-            display: none;
-            & + label{ 
+    }
+    &__checkbox{
+        display: none;
+        & + .tumblers__label{ 
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 40px;
+            height: 20px;
+            position: relative;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            cursor: pointer;
+            border-radius: 25% / 50%;
+            transition-duration: 0.5s;
+            box-sizing: border-box;
+            &::before {
                 display: inline-block;
-                vertical-align: middle;
-                margin-right: 10px;
-                width: 40px;
-                height: 20px;
-                position: relative;
-                border: 1px solid rgba(31, 32, 65, 0.25);
-                cursor: pointer;
-                border-radius: 25% / 50%;
+                line-height: 18px;
+                content: "stop_circle";
+                font-family: 'Material Icons';
+                color: rgba(31, 32, 65, 0.25);
+                font-size: 14px;
+                position: absolute;
+                left: 1px;
                 transition-duration: 0.5s;
-                box-sizing: border-box;
-                &::before {
-                    display: inline-block;
-                    line-height: 18px;
-                    content: "stop_circle";
-                    font-family: 'Material Icons';
-                    color: rgba(31, 32, 65, 0.25);
-                    font-size: 14px;
-                    position: absolute;
-                    left: 1px;
-                    transition-duration: 0.5s;
-                    top: 0px
-                }
-        
+                top: 0px
             }
-        
+    
         }
-        & input[type="checkbox"]:checked{ 
-            & + label{ 
-                border: 1px solid  #BC9CFF;
+    
+    }
+    &__checkbox:checked{ 
+        & + .tumblers__label{ 
+            border: 1px solid  #BC9CFF;
+            transition-duration: 0.5s;
+            &::before {
+                color: #BC9CFF;
+                left: 24px;
                 transition-duration: 0.5s;
-                &::before {
-                    color: #BC9CFF;
-                    left: 24px;
-                    transition-duration: 0.5s;
-                }
             }
-        
         }
-
+    
+    }
+    &__subscribe{
+        margin: 0;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.75);
+        line-height: 24px;
     }
 }
 

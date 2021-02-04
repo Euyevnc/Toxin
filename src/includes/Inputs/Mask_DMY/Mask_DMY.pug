@@ -2,7 +2,7 @@ mixin Mask_DMY(label, placeholder, describe)
     div(class=`js-mask_DMY mask_DMY`)  
         label
             if label
-                h3 #{label}
+                h3.mask_DMY__subscribe #{label}
             div
                 input(class="js-mask_DMY__value mask_DMY__value" placeholder=`${placeholder}`) 
         p(class="Mask_DMY__describe") #{describe}

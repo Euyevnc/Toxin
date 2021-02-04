@@ -1,30 +1,20 @@
-
-
 function initMenu(container){
     let area = container || document
-    area.querySelectorAll(".js-menu__element_type_dropping").forEach(it=>{
-        it.addEventListener("click", handlerElementTypeDroppingClick)
+    area.querySelectorAll(".js-menu__submenu").forEach(it=>{
+        it.closest('.js-menu__element').addEventListener("click", handlerElementTypeDroppingClick)
     })
 }
 
 function handlerElementTypeDroppingClick(click){
-    let element = click.target.closest(".js-menu__element_type_dropping")
-    let submenu = element.querySelector(".js-menu__element_type_submenu")
+    let element = click.target.closest('.js-menu__element') 
+    let submenu = element.querySelector(".js-menu__submenu")
 
-    element.classList.add("menu__element_type_dropping-active")
-    submenu.classList.add("menu__element_type_submenu-active")
-    element.querySelector(".arrow-down i").textContent = 'expand_less'
-
-    document.addEventListener("click", close, {capture: true, once:true})
+    element.classList.toggle("menu__element_active")
+    submenu.classList.toggle("menu__submenu_active")
+    element.querySelector(".arrow-down").textContent =  element.classList.contains("menu__element_active") ?
+    'expand_less'
+    : 
+    'expand_more'
 }
 
-function close(e){
-    let par = e.target
-    if (!par.closest("menu__element_type_submenu-active" ) ){
-        document.querySelector(".menu__element_type_dropping-active .arrow-down i").textContent = 'expand_more'
-        document.querySelector(".menu__element_type_dropping-active").classList.remove("menu__element_type_dropping-active")
-        document.querySelector(".menu__element_type_submenu-active").classList.remove("menu__element_type_submenu-active")
-        e.stopPropagation()
-    }
-}
 export default initMenu

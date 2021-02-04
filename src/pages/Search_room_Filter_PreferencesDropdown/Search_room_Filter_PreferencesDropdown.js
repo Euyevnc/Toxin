@@ -1,24 +1,24 @@
 import "./Search_room_Filter_PreferencesDropdown.scss"
 import commonScripts from "../../layout/layout-for-hotel.js"
-import header from "../../includes/Blocks/Header/Header.js"
-import footer from"../../includes/Blocks/Footer/Footer.js"
+import header from "../../includes/Articles/Header/Header.js"
+import footer from"../../includes/Articles/Footer/Footer.js"
 import dateRange from "../../includes/Inputs/Date-range/Date-range.js"
 import counter from "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.js";
-import rangeSlider from "../../includes/Range-slider/Range-slider.js";
-import expCheckboxes from "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox"
-import pageSwitcher from "../../includes/Pages-switcher/Pages-switcher.js";
-import img1 from './image-1.jpg'
-import img2 from './image.jpg'
-import img3 from './image-2.jpg'
-import img4 from './image-5.jpg'
-import img5 from './image-3.jpg'
-import img6 from './image-4.jpg'
-import img7 from './image-8.jpg'
-import img8 from './image-6.jpg'
-import img9 from './image-7.jpg'
-import img10 from './image-10.jpg'
-import img11 from './image-9.jpg'
-import img12 from './image 2.jpg'
+import rangeSlider from "../../includes/Sliders/Range-slider/Range-slider.js";
+import expCheckboxes from "../../includes/Checkboxes/Dropping-checkbox/Dropping-checkbox"
+import pageSwitcher from "../../includes/Sliders/Pages-switcher/Pages-switcher.js";
+import img1 from './img/image-1.jpg'
+import img2 from './img/image.jpg'
+import img3 from './img/image-2.jpg'
+import img4 from './img/image-5.jpg'
+import img5 from './img/image-3.jpg'
+import img6 from './img/image-4.jpg'
+import img7 from './img/image-8.jpg'
+import img8 from './img/image-6.jpg'
+import img9 from './img/image-7.jpg'
+import img10 from './img/image-10.jpg'
+import img11 from './img/image-9.jpg'
+import img12 from './img/image 2.jpg'
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
 
@@ -32,8 +32,7 @@ function handlerDocumentDomLoaded(){
     rangeSlider()
     expCheckboxes()
     pageSwitcher(numbersList, 12)
-
-    document.querySelector(".input-with-counter_simple .input-with-counter__value").focus()
+    document.querySelector(".input-with-counter_simple .js-input-with-counter__menu").classList.remove("input-with-counter__menu_hidden")
 }
 
 const numbersList = [

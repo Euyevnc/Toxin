@@ -10,10 +10,13 @@
     justify-content: space-between;
     position: relative;
     @media(max-width: 650px) {
+        padding: 10px 10px;
         &__menu{
             visibility: hidden;
+            &_expanded{
+                visibility: visible;
+            }
         }
-        padding: 10px 10px;
         & .header__burger{
             display: inline;
         }

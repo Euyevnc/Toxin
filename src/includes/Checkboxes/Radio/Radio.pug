@@ -1,15 +1,14 @@
 mixin Radio(descr,name, ...issues)
-    div.radio
+    div.radios
         if descr
-            div.radio__header #{descr}
-        div.radio__container
-            each val in issues
-                - var id = val.id
-                - var describe = val.describe
-                - var checked = Boolean(val.checked)
-                div.radio__button
-                    if checked 
-                        input(name=`${name}` value=`${id}` type="radio" id=`${id}` checked)
-                    else 
-                        input(name=`${name}` value=`${id}` type="radio" id=`${id}`)
-                    label(for=`${id}`) #{describe}
+            div.radios__header #{descr}
+        each val in issues
+            - var id = val.id
+            - var describe = val.describe
+            - var checked = Boolean(val.checked)
+            div.radios__radio-container
+                if checked 
+                    input(class="radios__checkbox" name=`${name}` value=`${id}` type="radio" id=`${id}` checked)
+                else 
+                    input(class="radios__checkbox" name=`${name}` value=`${id}` type="radio" id=`${id}`)
+                label(class="radios__label" for=`${id}` tabindex=0) #{describe}

@@ -14,6 +14,8 @@
     cursor: pointer;
     font-size: 12px;
     user-select: none;
+    padding: 0;
+    margin: 0;
 }
 .button-rounded_purple{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -28,10 +30,12 @@
     border: 2px solid rgb(188, 156, 255);
 }
 .button-rounded_empty{
+    background-color: transparent;
     color: #BC9CFF;
     border: 2px solid #BC9CFF;
 }
 .button-rounded_empty-depr{
+background-color: transparent;
     opacity: 0.5;
     color: #BC9CFF;
     border: 2px solid rgba(188, 156, 255, 0.5);

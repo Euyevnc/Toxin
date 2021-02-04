@@ -1,7 +1,7 @@
 mixin Range-slider(descr, subscr, min, max, defstart, defend)
     .range-slider.js-range-slider
         div.range-slider__header
-            h3 #{descr}
+            h3.range-slider__title #{descr}
             span.range-slider__counter
                 span(class="range-slider__min js-range-slider__min") #{min}
                 span ₽ - 
@@ -11,9 +11,9 @@ mixin Range-slider(descr, subscr, min, max, defstart, defend)
             span(data-def=`${defstart}`) #{min}
             span(data-def=`${defend}`) #{max}
         div(id="range-slider" class="range-slider__slider")
-            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_min js-range-slider__tumbler_min")
+            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_min js-range-slider__tumbler_min" tabindex=0)
             div(class="js-range-slider__selected range-slider__selected")
-            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_max js-range-slider__tumbler_max")
+            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_max js-range-slider__tumbler_max" tabindex=0)
         if subscr 
-            div.range-slider__subscribe
-                p #{subscr}
+            div
+                p.range-slider__subscribe #{subscr}

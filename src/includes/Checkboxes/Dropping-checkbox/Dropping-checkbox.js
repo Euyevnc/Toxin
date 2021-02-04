@@ -5,7 +5,7 @@ export default function(expend, container){
         let icon = checkboxes.querySelector('i.material-icons')
         let menu = checkboxes.querySelector(".js-dropping-checkboxes__container")
         if(expanded) {
-            menu.style.display = "block"
+            menu.classList.add("dropping-checkboxes__container_visible")
             icon.innerHTML = 'expand_less'
         }
 
@@ -15,24 +15,24 @@ export default function(expend, container){
         ////////
         function handlerHeaderClick(e){
             if(expanded){
+                menu.classList.remove("dropping-checkboxes__container_visible")
                 icon.innerHTML = 'expand_more'
-                menu.style.display = "none"
             }
             else{
+                menu.classList.add("dropping-checkboxes__container_visible")
                 icon.innerHTML = 'expand_less'
-                menu.style.display = "block"
             }
             expanded = !expanded
         }
         function handlerHeaderKeydown(e){
             if(e.code=="Enter"){
                 if(expanded){
+                    menu.classList.remove("dropping-checkboxes__container_visible")
                     icon.innerHTML = 'expand_more'
-                    menu.style.display = "none"
                 }
                 else{
+                    menu.classList.add("dropping-checkboxes__container_visible")
                     icon.innerHTML = 'expand_less'
-                    menu.style.display = "block"
                 }
                 expanded = !expanded
             }

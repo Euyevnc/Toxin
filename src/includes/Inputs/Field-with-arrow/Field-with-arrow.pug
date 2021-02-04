@@ -1,10 +1,10 @@
 mixin Field-with-arrow(label, placeholder, describe)
     - if(!describe){describe=''}
     div(class=`field-with-arrow`)
-        include ../../../static/Icons/arrow-right_blue.pug   
+        include ../../Figures/Arrow-right/arrow-right_blue.pug 
         label 
             if label
-                h3 #{label}
+                h3.field-with-arrow__subscribe #{label}
             div
                 input(class="field-with-arrow__value" placeholder=`${placeholder}`) 
         p(class="field-with-arrow__describe") #{describe}

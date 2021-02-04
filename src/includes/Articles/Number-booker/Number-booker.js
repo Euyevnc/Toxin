@@ -51,7 +51,7 @@ function initBooker({number, category, price, arrival,departure, guests, service
                 if(el.impact < 0) el.describe+=":скидка " + (parseThousand(-el.impact))+ "₽"
                 let servBlock = document.createElement("div")
                 servBlock.className = "booker__service"
-                servBlock.innerHTML = `<span>  <p>${el.describe}</p> <p class="booker__sign_i">i</p></span> <p>${parseThousand(el.price)}₽</p>`
+                servBlock.innerHTML = `<span class="booker__font" ><span class="booker__service-desc">${el.describe}</span>   <span class="booker__sign_i">i</span></span> <span class="booker__font">${parseThousand(el.price)}₽</span>`
                 card.querySelector(".js-booker__total").insertAdjacentElement("beforebegin", servBlock)
             })
             return servicePrice

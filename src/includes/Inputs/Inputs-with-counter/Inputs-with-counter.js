@@ -7,7 +7,7 @@ function initInputWithCounter(values, container){
         let list = block.querySelector('.js-input-with-counter__menu');
         let listEl = list.querySelectorAll('li');
         let clearingButton = block.querySelector('.js-input-with-counter__button_delete')
-        let confirmingButton = block.querySelector('.js-input-with-counter___button_confirm')
+        let confirmingButton = block.querySelector('.js-input-with-counter__button_confirm')
 
         input.addEventListener('focus', rollDownMenu)
         clearingButton.addEventListener('click', handlerDeleteButtonClick)
@@ -64,7 +64,7 @@ function initInputWithCounter(values, container){
                         valuesAreNotZero +=(+el.querySelector('.js-input-with-counter__number').textContent)
                     
                     })
-                    if (!valuesAreNotZero){block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'hidden';}
+                    if (!valuesAreNotZero)clearingButton.classList.remove("input-with-counter__button_visible-delete")
                 };
                 if(newValue!==max){
                     tumblerPlus.classList.remove("input-with-counter__tumbler_depricated");
@@ -80,17 +80,17 @@ function initInputWithCounter(values, container){
                 };
                 if(newValue!==min){
                     tumblerMinus.classList.remove("input-with-counter__tumbler_depricated")
-                    block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'visible';
+                    clearingButton.classList.add("input-with-counter__button_visible-delete")
                 }
             }
         })
 
         if(value) confirment();
-        if(!valuesAreNotZero) clearingButton.style.visibility= 'hidden'
+        if(valuesAreNotZero) clearingButton.classList.add("input-with-counter__button_visible-delete")
         
         //////
         function rollDownMenu(){
-            list.style.display = "flex";
+            list.classList.remove("input-with-counter__menu_hidden")
             document.addEventListener("click", rollUpMenu)
             document.addEventListener("focusin", rollUpMenu)
         };
@@ -98,7 +98,7 @@ function initInputWithCounter(values, container){
         function rollUpMenu(event){
             if(!block.contains(event.target) ){
                 confirment();
-                list.style.display = "none"
+                list.classList.add("input-with-counter__menu_hidden")
                 document.removeEventListener("click", rollUpMenu)
                 document.removeEventListener("focusin", rollUpMenu)
             }
@@ -107,7 +107,7 @@ function initInputWithCounter(values, container){
         function handlerConfirmButtonClick(e){
             if(e.type == 'keydown' && e.code !== "Enter") return
             confirment()
-            list.style.display = "none" ;
+            list.classList.add("input-with-counter__menu_hidden")
         }
 
         function handlerDeleteButtonClick(e){
@@ -117,7 +117,7 @@ function initInputWithCounter(values, container){
                 item.querySelector('.input-with-counter__number').textContent = `${min}`;
 
                 let tumblerMinus = item.querySelector('.js-input-with-counter__counter').firstChild;
-                block.querySelector('.js-input-with-counter__button_delete').style.visibility= 'hidden';
+                clearingButton.classList.remove("input-with-counter__button_visible-delete")
                 tumblerMinus.classList.add("input-with-counter__tumbler_depricated")
                 input.value = ''
             })
