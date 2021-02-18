@@ -16,9 +16,9 @@ body{
     justify-content: space-around;
 
 }    
-.content-container{
+.content{
     max-width: none;
-    &>.wrapper{
+    &__wrapper{
         width: 100%;
         max-width: none;
     }
@@ -67,7 +67,7 @@ body{
         }
     }
 }
-.linksDemonstrate{
+.links-demonstrate{
     display: none;
     flex-wrap: wrap;
     max-width: 1160px;

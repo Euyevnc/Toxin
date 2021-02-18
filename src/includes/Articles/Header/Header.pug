@@ -1,8 +1,0 @@
-include ../Menu/Menu.pug
-mixin Header(login, ...issues)
-    div.js-header.header
-        div(class="header__sign")
-            include ../../../static/Images/logo.img_color.svg
-            include ../../../static/Images/TOXIN.svg
-        +Menu(login, issues)
-        include ./Header__burger/Header__burger.pug

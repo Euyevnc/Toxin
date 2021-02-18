@@ -1,0 +1,21 @@
+@import '../button-rounded/button-rounded.scss';
+.autorization-panel{
+    &__entry-container{
+        display: inline-block;
+        height: 34px;
+        min-width: 87px;
+        margin: 0 20px 0 10px;
+        @media(max-width: 600px) {
+            margin: 10px;
+        }
+    };
+    &__registration-container{
+        display: inline-block;
+        height: 34px;  
+        min-width: 196px;
+        @media(max-width: 600px) {
+            margin: 10px;
+        }
+    }
+
+}

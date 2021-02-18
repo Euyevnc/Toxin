@@ -1,0 +1,14 @@
+include ../date-picker/_double/date-picker_double.pug
+include ../input-with-counter/input-with-counter.pug
+include ../button-rounded/button-rounded.pug
+
+article(class="js-number-finder number-finder")
+    h1.number-finder__header Найдём номера под ваши пожелания
+    form(class="number-finder__form" name="number-finder")
+        div(class="number-finder__container number-finder__container_for_calendar")
+            +Date-picker_double({placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+        div(class="number-finder__container number-finder__container_for_input")
+            +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '', 'counter001',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
+        div(class="number-finder__submit-button")
+            +Button-rounded('подобрать номер', ['purple'], 'arrow')
+

@@ -1,0 +1,15 @@
+mixin Liker(descr, ...issues)
+    span.liker
+        if descr
+            h3.liker__head #{descr}
+        each val in issues
+            span.liker__item
+                - var id = val.id
+                - var am = val.am
+                - var checked = Boolean(val.checked)
+                if checked 
+                    input(type="checkbox" id=`${id}` class="liker__box" checked)
+                else 
+                    input(type="checkbox" id=`${id}` class="liker__box")
+                label(class="liker__label" for=`${id}`)=am
+                   

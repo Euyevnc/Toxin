@@ -1,0 +1,26 @@
+@import "../../utils/fonts/Montserrat.scss";
+.marked-list{
+    margin: 0;
+    padding: 0;
+    &__item{
+        margin-bottom: 10px;
+        list-style-type: none; 
+    }
+    &__img{
+        width: 20px;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 7px;
+
+    }
+    &__desc{
+        font-size: 14px;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        color: rgba(31, 32, 65, 0.75);
+        margin: 0px;
+        display: inline-block;
+        max-width: 240px;
+        vertical-align: top;
+        line-height: 24px;
+    }
+}

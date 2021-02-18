@@ -1,0 +1,16 @@
+mixin Subscribed-checkboxes(title, ...issues)
+    fieldset.subscribed-checkboxes
+        if title
+            legend.subscribed-checkboxes__header #{title}
+        each val in issues
+            - var checked = Boolean(val.checked)
+            div.subscribed-checkboxes__item
+                if checked 
+                    input(class="subscribed-checkboxes__checkbox" type="checkbox" id=`${val.id}` checked)
+                else 
+                    input(class="subscribed-checkboxes__checkbox" type="checkbox" id=`${val.id}` )
+                label(class="subscribed-checkboxes__label" tabindex=0 for=`${val.id}`) 
+                    div.subscribed-checkboxes__textbox
+                        p.subscribed-checkboxes__main-text #{val.name}
+                        p.subscribed-checkboxes__sub-text #{val.desc}
+                    

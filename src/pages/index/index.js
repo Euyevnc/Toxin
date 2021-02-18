@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", init)
 
 function init(){
     let uiContainer = document.querySelector(".ui-demonstrate");
-    let pagesContainer = document.querySelector(".linksDemonstrate")
+    let pagesContainer = document.querySelector(".links-demonstrate")
     let uiButton = document.querySelector(".ui-button");
     let pagesButton = document.querySelector(".site-pages-button")
 

@@ -1,0 +1,55 @@
+{
+    "numbers": {
+        "1146": {
+            "id": 1146,
+            "number": 888,
+            "category": "люкс",
+            "price": 9990,
+            "services":[
+                {
+                    "describe": "Сбор за услуги", 
+                    "impact": -2179, 
+                    "price":0
+                },
+                {
+                    "describe": "Сбор за дополнительные услуги", 
+                    "impact": 300, 
+                    "price":300
+                } 
+            ],
+            "statistics":{"great": 130, "well": 65, "fine": 65, "disappointed": 0},
+            "reviews": [
+                {
+                    "id": 11460001,
+                    "avatar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3P/2wCEAAQEBAQEBAQEBAQGBgUGBggHBwcHCAwJCQkJCQwTDA4MDA4MExEUEA8QFBEeFxUVFx4iHRsdIiolJSo0MjRERFwBBAQEBAQEBAQEBAYGBQYGCAcHBwcIDAkJCQkJDBMMDgwMDgwTERQQDxAUER4XFRUXHiIdGx0iKiUlKjQyNEREXP/CABEIADEAMQMBIgACEQEDEQH/xAAdAAABBAMBAQAAAAAAAAAAAAAHBAUGCAECAwkA/9oACAEBAAAAAL+J483vEhylGHmrKLxlGRBSn4xfrWlQr0iAu/VkO174fQ0Rx6eegJcwyg4dmgy99Uqb7sr7f//EABgBAQADAQAAAAAAAAAAAAAAAAMAAgQB/9oACAECEAAAAKkl8wPpoDL2Sf/EABcBAQEBAQAAAAAAAAAAAAAAAAMABAL/2gAIAQMQAAAA6cj27MWN3AKr/8QAMxAAAQMEAAQEAwYHAAAAAAAAAQIDBAAFBhEHEhNBITFRYRAUIiQyM0KSoQgVcoKRorP/2gAIAQEAAT8AKqfkIj65/FR/KKk3K7qX9mLLY/LoAn/anL3e47gL623NdlITo/p1VtyKJNWiPIHy8gkAbO21H2Pat9jXN70++GGi6SN+SdnvXELNYeE49JvMzldkuHpRGO7r5Gxv0SPM1lT2XZTdX73Mv8hyW6rn/FKEJ9EoSPBIFYVxB4v4wQlqaq829ogLhzVl3SPRtZ8UVY5Iyex2zILeFpZmMhzkWnS21+S21e6FAg1YLk6ttFtuLoMxDSls7Pi6yggE/wBhUN1uuJPFS14bf7djkpgLkO2w3NaluBtCGC4pHMSf6DXE3PZWdzbfI+yiDGQtDPyj5fb2s7JKiB9VPOltkaSTvxCt9vXXnqrPJltMOOFBSlfgD6kVwTzKK1jsyDOnMhti5BttZcHIFPp30yex2mpVzaPEfAEJTovMXZv2IKEVr3r+KPGbhKyzGsiiDnbl4vc7UUJ8yuOlx0f9aiWePZoNssj7iDIiMn5oDu6olS9HukE6BpDMNbqZMlSy3HbW30uXbZSdEEEeR+moUy3XOKq3yyWwUlOkqKTr1BFXC+RYMRGP2KbLZEGSt7oIB5Vq8AHlHuraRXA+/Zdluc409f5r70i3zpi1h5OuiyWPrFdWsxxqNldkft7jPNLZJkQVgpQtL6QRpK1A8nOCUk1knDrMmn3ZMbGRGU3srjruKHnwf0IT+9Xe4yo8V9HQdafaX0ZMZaSlxCuwUk/se9R37wNc9mn7Hj4R1+X+KxPIoTa37VDQhDlxjLS6qRDCigDY6TZXsJ1oL5tb3XCXFJ1js7V4vXL/ADOZEQwygMoaU1EB5xzhAH1r8zv4LGjV2s8C8gGWC1IA0JCBskeix3FZnwPXkDjVwgojG5M/gyW3AkqTv7jqVa2B2qHwR4kPPLYmRIkNAVrrvS0FBHsEFaqwjg5YcVktXW5uout1Qedslvljsq9UpP3le5obWoqUdk1y05S6PnQpHem/P4f/xAAfEQABBAICAwAAAAAAAAAAAAABAAIREgMhECAxQYH/2gAIAQIBAT8Ac6Ff3ZNdOjxlME7+LymEw0cZMdtgbVCNVTMcGx7f/8QAIhEAAQQABQUAAAAAAAAAAAAAAgABAxIQESEiMQQTIEGB/9oACAEDAQE/ABGzrtvxRGGWrYdOFvX1VqTaqUdxvpxhFMUe3PailYsnupJbNUfL/9k=",
+                    "name": "Мурад Сарафанов",
+                    "date": 1612051200000,
+                    "likes": 12,
+                    "content": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+                },
+                {
+                    "id": 11460002,
+                    "avatar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3P/2wCEAAQEBAQEBAQEBAQGBgUGBggHBwcHCAwJCQkJCQwTDA4MDA4MExEUEA8QFBEeFxUVFx4iHRsdIiolJSo0MjRERFwBBAQEBAQEBAQEBAYGBQYGCAcHBwcIDAkJCQkJDBMMDgwMDgwTERQQDxAUER4XFRUXHiIdGx0iKiUlKjQyNEREXP/CABEIADEAMQMBIgACEQEDEQH/xAAcAAACAgIDAAAAAAAAAAAAAAAHCAQGAAMCBQn/2gAIAQEAAAAAfwLqFX2RbHmMUWNWgRHdtQ8mrLcLgtPoDRkfZWfaK8Z655kMJ2ZYLUjKeN+uM9g35Ej5ulSP/8QAGAEAAwEBAAAAAAAAAAAAAAAAAQMEBQD/2gAIAQIQAAAATPUzEXfoqz6bOIH/xAAYAQADAQEAAAAAAAAAAAAAAAAABAUCA//aAAgBAxAAAADo2lmo9GW3SR4AH//EADQQAAIBAgQEBAMGBwAAAAAAAAECAwQFAAYRIQcSEzEUQVFxMmFiCBAVU4HCIjNCY3KCkf/aAAgBAQABPwAnHETjLaslzTWm2wJcb2g/jQtpT0x/ukblvoGMx8deIVxnkIzNUQJrslCwpo19unoxxbeNfEOjqAUzldOcbr16hqhD7iYuMZA+0mtVUQWvP1NDCJCES6Uq8iAn8+P9y4jkSRI5Y3V43VXR1IKsrDUEEdwcc3vjirm6fKWVnktzaXW4y+Doz+USNXl/0Hb5kYntvV6stdPyKA0s0kjczHfd3J76nt6nGSeHOXK62U9VXWtJ43PUUTDv82xnPhBZayrpZLVRR0g6ModIQEU7Eg4zFw5q7fb5KqkLOIolnI8+kfiHuhx9mrP806VPD661BfowvVWp5G3Cr/Mg/cuNccVqZ5VpJGgUpDSlklPdTI24H/BjNFPVTU1ipIU6stxuqF4iNmSI6Ih+Q3xkW2VVujpaaVirT03NUosQhRZQN+RV8h64p7ReKStu/jpC7NKzUwVToYdBuzkkl9fLti32Ray3FZlDbunujAqQcWew1PD/AI3ZUpiDBT1N4jjpmIOjxVLmHl/UNjp4zxJCloSSeGORCCmkh0AIxmm4/ht0y/dAgApr01RyekC7t+gDYt1TWyXE8slQkxjUsyRK0TRtsORm22xXXGoo6mZlinNIATKZ1Cjn036fr8/LGV6tKu1wSgg8yDt2OL/lijvOeMgXTw8bVVFXOzyEEOsMCmYN7K6ge5x4g4zJaWv1juVojqBTzzxHw05GoinHwMw819RjM9vzjZM21NpzKxjuVKxjCTKOkydwYVUAGNvp744a8RbalBRWW/xVUc8UWtJIA7c9MNgGI1OqkYz5nYXq4WvLlnYRUszq1RMx0kZF3KqPIbb4yoJaHSZIz4NqaOJIgdSJUJGgHqcU0CwgVLxctVJGV3+JI2IYr7kga/dIuM25KyxnikipMy27rPDr4erhPTqqf/B/MfSdRjLXA632C8zXR8wC4xiMx0qVMPSkhQ/0kqSrYzFwPq7tma23qgv1BQwQOHl2eV2+QQADFjsdHY4QsU0tVUsqdSebYcyqBqidlwoJJJ3J7nHLh8NhsDC4T7v/xAAjEQACAQQBAwUAAAAAAAAAAAABAgMABBESECAhMSMyUXGB/9oACAECAQE/AJZ0hA27k+BS3oxuynFQyxzpvGfscXQZb4HbOV8fFE+kxORVgqRopB9478NEjnbA2xjNSW0xJQKNas7d4I8Ofys0Oj//xAAiEQACAQQBBAMAAAAAAAAAAAABAgMABBESIRAiMYETIEL/2gAIAQMBAT8AjieUkL7NNYkcBxkCnjaJtW6WmvwHPHcOax36qeCKuizO4P5PRZGQYHjzS3UOgYk7iriRZX2Ue/t//9k=",
+                    "name": "Патрисия Стёклышкова",
+                    "date": 1611878400000,
+                    "likes": 2,
+                    "content": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент."
+                }
+            ],
+            "information": [
+                
+            ],
+            "rules":[
+
+            ],
+            "cancel":{
+
+            },
+            "illustration":{
+                "large": "ing",
+                "small": "img",
+                "small2": "img"
+            }
+        }
+    }
+}

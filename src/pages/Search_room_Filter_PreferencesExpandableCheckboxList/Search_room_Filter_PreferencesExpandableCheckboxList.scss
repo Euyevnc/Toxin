@@ -1,77 +1,93 @@
 @import "../../layout/layout-for-hotel.scss";
+@import "../../layout/layout-for-hotel.scss";
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/cellar/cellar.scss";
+@import "../../blocks/date-picker/date-picker.scss";
+@import "../../blocks/input-with-counter/input-with-counter.scss";
+@import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/checkboxes/checkboxes.scss";
+@import "../../blocks/subscribed-checkboxes/subscribed-checkboxes.scss";
+@import "../../blocks/dropping-checkboxes/dropping-checkboxes.scss";
+@import "../../blocks/paginator/paginator.scss";
+@import "../../blocks/number-demo/number-demo.scss";
 @import "../../utils/fonts/Montserrat.scss";
-@import "../../includes/Articles/Header/Header.scss";
-@import "../../includes/Articles/Footer/Footer.scss";
-@import "../../includes/Articles/Сellar/Сellar.scss";
-@import "../../includes/Inputs/Date-range/Date-range.scss";
-@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
-@import "../../includes/Sliders/Range-slider/Range-slider.scss";
-@import "../../includes/Checkboxes/Default-checkbox/Default-checkbox.scss";
-@import "../../includes/Checkboxes/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
-@import "../../includes/Checkboxes/Dropping-checkbox/Dropping-checkbox.scss";
-@import "../../includes/Sliders/Pages-switcher/Pages-switcher.scss";
-@import "../../includes/Articles/Numbers-demonstration/Numbers-demonstration.scss";
 
-.content-container{
+.content{
     background-color: white;
     padding: 30px 0 70px;
-    & .wrapper{
+    &__wrapper{
         display: flex;
         justify-content: space-between;
         @media(max-width:600px){
             flex-wrap: wrap;
         }
     }
+
+    &__forms{
+        min-width: 266px;
+        margin-right: 60px;
+        @media(max-width:600px){
+            width: 100%;
+            text-align: center;
+            margin: 0 20px 0;
+    
+        }
+    }
+    &__date-picker{
+        margin-bottom: 20px;
+    }
+    &__guest-counter{
+        margin-bottom: 30px; 
+    }
+    &__price-picker{
+        margin-bottom: 30px; 
+    }
+    &__rules{
+        margin-bottom: 30px;  
+    }
+    &__availability{
+        margin-bottom: 30px; 
+    }
+    &__equipment-counter{
+        margin-bottom: 16px;
+    }
+    &__facilities{
+        margin-bottom: 30px;  
+    }
+
+    &__heading{
+        margin:0;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: #1F2041;
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        @media(max-width:600px){
+            text-align: center;
+        }
+    };
+    &__numbers-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        @media(max-width:600px){
+            justify-content: center;
+        }
+    }
+    &__paginator{
+        width: 100%;
+        margin-top: 41px;
+    }
+
+
 }
 .footer-container{
     border-top: 2px solid rgba(31, 32, 65, 0.15);
 }
 
-.inputs-containter{
-    min-width: 266px;
-    margin-right: 60px;
-    &>*{
-        margin-bottom: 30px;
-        &:first-child{
-            margin-bottom: 20px;
-        }
-        &:nth-child(6){
-            margin-bottom: 16px;
-        }
-    }
-    @media(max-width:600px){
-        width: 100%;
-        text-align: center;
-        margin: 0 20px 0;
 
-    }
- 
-}
 
-.main__heading{
-    margin:0;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    color: #1F2041;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    color: #1F2041;
-    @media(max-width:600px){
-        text-align: center;
-    }
-};
-.switcher-container{
-    width: 100%;
-    margin-top: 41px;
-}
-.numbers-demonstration{
-    @media(max-width:600px){
-        justify-content: center;
-    }
-}
 
 

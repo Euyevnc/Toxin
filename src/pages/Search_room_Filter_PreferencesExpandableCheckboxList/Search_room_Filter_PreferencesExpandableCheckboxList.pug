@@ -1,16 +1,30 @@
 extends ../../layout/layout-for-hotel.pug
-include ../../includes/Articles/Header/Header.pug
-include ../../includes/Articles/Footer/Footer.pug
-include ../../includes/Articles/Сellar/Сellar.pug
-include ../../includes/Inputs/Date-range/Date-range.pug
-include ../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.pug
-include ../../includes/Sliders/Range-slider/Range-slider.pug
-include ../../includes/Checkboxes/Default-checkbox/Default-checkbox.pug
-include ../../includes/Checkboxes/Checkbox-with-subscribe/Checkbox-with-subscribe.pug
-include ../../includes/Checkboxes/Dropping-checkbox/Dropping-checkbox.pug
-
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+include ../../blocks/cellar/cellar.pug
+include ../../blocks/date-picker/date-picker.pug
+include ../../blocks/input-with-counter/input-with-counter.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/checkboxes/checkboxes.pug
+include ../../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
+include ../../blocks/dropping-checkboxes/dropping-checkboxes.pug
+include ../../blocks/number-demo/number-demo.pug
+include ../../blocks/paginator/paginator.pug
 block variables
-    
+
+    - let img1 = require('./img/image-1.jpg').default
+    - let img2 = require('./img/image.jpg').default
+    - let img3 = require('./img/image-2.jpg').default
+    - let img4 = require('./img/image-5.jpg').default
+    - let img5 = require('./img/image-3.jpg').default
+    - let img6 = require('./img/image-4.jpg').default
+    - let img7 = require('./img/image-8.jpg').default
+    - let img8 = require('./img/image-6.jpg').default
+    - let img9 = require('./img/image-7.jpg').default
+    - let img10 = require('./img/image-10.jpg').default
+    - let img11 = require('./img/image-9.jpg').default
+    - let img12 = require('./img/image 2.jpg').default
+
 block head
     title Search_room_Filter_PreferencesExpandableCheckboxList
     meta(name="keywords", content="keywords")
@@ -18,22 +32,55 @@ block head
 
 block header
     +Header(false, {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"} ]} )
+
 block content
-        section.inputs-containter
-            +Date-range("Даты пребывания в отеле", "Выберете период", "period001")
-            +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
-            +Range-slider("Диапозон цены", "Стоимость за сутки прибывания в номере", 0, 15000, 0.333, 0.666)
-            +Checkbox('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
-            +Checkbox-with-subscribe('доступность', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
-            +Inputs-with-counter('simple', "удобства номера", 'Выберете комплектацию', '', {name: "спальни", min: "0", max: "5"}, {name: "кровати", min: "0", max: "5"}, {name: "ванные комнаты", min: "0", max: "5"} )
-            +Dropping-checkboxes('дополнительные удобства', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
-        section.items-container
-            h1.main__heading Номера, которые мы для вас подобрали
-            include ../../includes/Articles/Numbers-demonstration/Numbers-demonstration.pug
-            div.switcher-container
-                include ../../includes/Sliders/Pages-switcher/Pages-switcher.pug
+        section.content__filters 
+
+            form.content__forms
+                div.content__date-picker
+                    +Date-picker("Даты пребывания в отеле", "Выберете период", '', "period001")
+
+                div.content__guest-counter
+                    +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '', 'counter001',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
+                
+                div.content__price-picker
+                    +Range-slider("Диапозон цены", "Стоимость за сутки прибывания в номере", 0, 15000, 0.333, 0.666)
+                
+                div.content__rules
+                    +Checkboxes('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
+                div.content__availability
+                    +Subscribed-checkboxes('доступность', {id:'chdisc001', name:'Широкий коридор', desc:'Ширина коридоров в номере не менее 91 см.'}, {id:'chdisc002', name:'Помощник для инвалидов', desc:'На 1 этаже вас встретит специалист  и проводит до номера.'})
+                
+                div.content__equipment-counter
+                    +Inputs-with-counter('simple', "удобства номера", 'Выберете комплектацию', '', 'counter002', {name: "спальни", min: "0", max: "5"}, {name: "кровати", min: "0", max: "5"}, {name: "ванные комнаты", min: "0", max: "5"} )
+                
+                div.content__facilities 
+                    +Dropping-checkboxes('дополнительные удобства', {name:'Завтрак', id:'ch001-2'},{name:'Письменный стол', checked:"true", id:'ch002-2'},{name:'Стул для кормления', checked:"true", id:'ch003-2'},{name:'Кроватка', checked:"true", id:'ch004-2'},{name:'Телевизор', id:'ch005-2'},{name:'Шампунь', id:'ch006-2'},{name:'Телевизор', id:'ch007-2'},{name:'Шампунь', id:'ch008-2'})
+        
+        section.content__numbers-demonstration
+            h1.content__heading Номера, которые мы для вас подобрали
+
+            div.content__numbers-list
+                +Number-demo(888, "люкс", 9990, 5, 145,  [img1, img3, img5, img7])
+                +Number-demo(840, "", 9900, 4, 65,  [img2,img4,img5,img9])
+                +Number-demo(980, "люкс", 8500, 3, 35,  [img3,img2,img5,img9])
+                +Number-demo(856, "", 7300, 5, 19,  [img4,img2,img5,img9])
+                +Number-demo(740, "", 6600, 4, 44,  [img5,img2,img7,img9])
+                +Number-demo(982, "", 5800, 3, 56, [img6,img2,img5,img9])
+                +Number-demo(678, "", 5500, 5, 45, [img7,img2,img5,img9])
+                +Number-demo(350, "", 5000, 3, 77,  [img9,img2,img5,img1])
+                +Number-demo(666, "", 5000, 5, 25,  [img10,img2,img5,img9])
+                +Number-demo(444, "", 5000, 3, 15,[img11,img2,img5,img9])
+                +Number-demo(352, "", 5000, 3, 55, [img12,img2,img5,img9])
+                +Number-demo(888, "люкс", 9990, 5, 145,  [img1, img3, img5, img7])
+
+            div.content__paginator()
+                +Paginator(15)
+
 block footer
     +Footer("Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", {caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"} ]})
+
 block cellar  
     +Cellar("Copyright © 2018 Toxin отель. Все права зачищены.", [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}])
+
 block script

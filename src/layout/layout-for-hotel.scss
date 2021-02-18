@@ -1,7 +1,4 @@
 @import "../utils/fonts/Montserrat.scss";
-@import "../utils/fonts/Quicksand.scss";
-@import "../utils/fonts/OpenSans.scss";
-@import "../utils/fonts/MaterialIcons.scss";
 
 html{
     font-size: 10px;
@@ -26,7 +23,7 @@ body{
     z-index: 10;
     box-sizing: border-box;
 }
-.content-container{
+.content{
     min-width: 320px;
     max-width: 1440px;
     margin: auto;

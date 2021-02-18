@@ -1,0 +1,64 @@
+@import "../dmy-mask/dmy-mask.scss";
+@import "../text-field/text-field.scss";
+@import "../tumblers/tumblers.scss";
+@import "../radios/radios.scss";
+@import "../button-rounded/button-rounded.scss";
+@import "../../utils/fonts/Montserrat.scss";
+
+.registration{
+    background-color: white;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 39px 29px 29px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    &__header{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: #1F2041;
+        margin: 0;
+        margin-bottom: 20px;
+    };
+    &__form{
+        margin-bottom: 30px;
+        min-width: 320px;
+    }
+    &__data-name{
+        margin-bottom: 10px;
+    }
+    &__data-birthday{
+        margin: 20px 0;
+    }
+    &__data-email{
+        margin-bottom: 10px;
+    }
+    &__data-password{
+        margin-bottom: 10px;
+    }
+    &__data-offer{
+        margin-bottom: 20px;
+    }
+    &__button{
+        min-width: 99px;
+    }
+    &__text{
+        line-height: 100%;
+        font-size: 14px;;
+        text-align: center;
+        color: #000000;
+    }
+    &__entry{
+        align-items: center;
+        display:flex; 
+        justify-content: space-between;
+    }
+
+    @media(max-width: 380px){
+        padding: 40px 10px 30px;
+    }
+    @media(max-width: 340px){
+        padding: 40px 0px 30px;
+    }
+}

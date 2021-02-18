@@ -1,0 +1,13 @@
+mixin Button-rounded(text, styles, modifier, type)
+    - var classes = ""
+    - var bType = type ? type : "submit"
+
+    each style in styles 
+        - classes += `button-rounded_type_${style} `;
+    if modifier =="arrow"
+        button(class=`button-rounded ${classes} button-rounded_with_arrow` type =`${bType}`) 
+            span #{text}
+            span.button-rounded_with_arrow__arrow
+                include ../../static/figures/arrow-right/arrow-right.pug
+    else
+        button(class=`button-rounded ${classes}` type =`${bType}`) #{text}

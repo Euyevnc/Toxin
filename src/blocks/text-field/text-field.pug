@@ -1,0 +1,11 @@
+mixin Text-field(label, placeholder, describe, id, type)
+    div(class=`text-field`)
+        label(class="text-field__label")
+            if label
+                h3.text-field__subscribe  #{label}
+            if id
+                input(class="text-field__value" placeholder=`${placeholder}` id=`${id}` type=`${type || "text"}` ) 
+            else 
+                input(class="text-field__value" placeholder=`${placeholder}` type=`${type || "text"}` )
+        p(class="text-field__describe") #{describe}
+        

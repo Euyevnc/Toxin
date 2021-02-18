@@ -1,0 +1,9 @@
+mixin Stickers(...stickers)
+    article.stickers
+        ul.stickers__list
+            each sticker in stickers
+                li(class="stickers__item")
+                    span.stickers__img #{sticker.icon}
+                    span.stickers__text
+                        strong.stickers__describe #{sticker.describe}
+                        p.stickers__subscribe #{sticker.subscribe}

@@ -1,0 +1,24 @@
+include ../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.pug
+mixin Inputs-with-counter(type, label, placeholder, describe, id, ...issues)
+    div(class=`js-input-with-counter input-with-counter input-with-counter${type?"_"+type: ""}`)
+        +Text-field_with_arrow-down(label, placeholder, describe, id)
+
+        ul(class="input-with-counter__menu js-input-with-counter__menu input-with-counter__menu_hidden")
+            each val in issues
+                - var min = val.min
+                - var max = val.max
+                li(class="js-input-with-counter__element input-with-counter__element")
+                    strong(class="input-with-counter__item-name") #{val.name}
+                    span(class="js-input-with-counter__counter input-with-counter__counter" data-min=`${min}` data-max=`${max}`)
+                        span.js-input-with-counter__tumbler.input-with-counter__tumbler -
+                        b(class="js-input-with-counter__number input-with-counter__number") 0
+                        span.js-input-with-counter__tumbler.input-with-counter__tumbler +
+
+            div.js-input-with-counter__buttons.input-with-counter__buttons
+                button(type="button" class="js-input-with-counter__button_delete input-with-counter__button input-with-counter__button_delete") ОЧИСТИТЬ
+                button(type="button" class="js-input-with-counter__button_confirm input-with-counter__button input-with-counter__button_confirm") ПРИМЕНИТЬ
+
+
+
+
+    

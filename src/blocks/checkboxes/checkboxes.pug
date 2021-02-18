@@ -1,0 +1,15 @@
+mixin Checkboxes(descr, ...issues)
+    fieldset.checkboxes
+        if descr
+            legend.checkboxes__header #{descr}
+        each val in issues
+            - var id = val.id
+            - var name = val.name
+            - var checked = Boolean(val.checked)
+            div.checkboxes__item
+                if checked 
+                    input(class="checkboxes__checkbox" type="checkbox" id=`${id}` class="Checkbox_box" checked)
+                else 
+                    input(class="checkboxes__checkbox" type="checkbox" id=`${id}` class="Checkbox_box")
+                label(class="checkboxes__label" tabindex=0 for=`${id}`)
+                    p(class="checkboxes__text") #{name}  

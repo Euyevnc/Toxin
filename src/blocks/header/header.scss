@@ -1,0 +1,28 @@
+@import "../menu/menu.scss";
+@import "../burger/burger.scss";
+@import "../../utils/fonts/Montserrat.scss";
+
+.header{
+    background-color: white;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @media(max-width: 650px) {
+        padding: 10px 10px;
+    }
+    &__sign{
+        flex-shrink: 0;
+    }
+    &__logo{
+        vertical-align: middle;
+        display: inline-block;
+        max-height: 40px;
+    }
+    &__brand{
+        vertical-align: middle;
+        margin-left: 10px;
+        display: inline-block;
+    }
+}

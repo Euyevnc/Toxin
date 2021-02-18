@@ -1,13 +1,11 @@
 import "./landingPage_DateDropdown.scss"
-import Header from "../../includes/Articles/Header/Header.js"
-import Footer from"../../includes/Articles/Footer/Footer.js"
-import finder from "../../includes/Articles/Number-finder/Number-finder.js";
+import header from  "../../blocks/header/header.js";
+import finder from  "../../blocks/number-finder/number-finder.js";
 
-document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
+document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
 
-function handlerDocumentDomLoaded(e){
-    Header()
-    Footer()
+function handlerDocumentDOMLoaded(e){
+    header()
     finder(false, 4, 8)
-    setTimeout(()=>{document.querySelector(".date-range_double__value_first").focus()}, 100)
+    setTimeout(()=>{document.querySelector(".js-text-field_with_arrow-down__value").focus()}, 100)
 }

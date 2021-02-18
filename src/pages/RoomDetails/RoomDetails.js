@@ -1,9 +1,8 @@
 import "./RoomDetails.scss";
-import header from "../../includes/Articles/Header/Header.js"
-import footer from"../../includes/Articles/Footer/Footer.js"
-import diogram from "../../includes/Articles/Diogram/Diogram.js"
-import booker from "../../includes/Articles/Number-booker/Number-booker.js"
-import review from "../../includes/Articles/Review-shape/Review-shape.js"
+import header from "../../blocks/header/header.js"
+import diogram from "../../blocks/diogram/diogram.js"
+import booker from "../../blocks/number-booker/number-booker.js"
+import createReviews from "../../blocks/reviews/reviews.js"
 import data from "./data.json"
 
 let legendClientData = {arrival: 4, departure: 8, guests:[[2,1,0]], likedReviews: [11460001]}
@@ -12,13 +11,12 @@ document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
 
 function handlerDocumentDomLoaded(){
     header()  
-    footer()
     getEmulation("1146")
     .then(data=>{
         let dataForPage = Object.assign(data, legendClientData)
         diogram(dataForPage)
         booker(dataForPage)
-        review(dataForPage)
+        createReviews(dataForPage)
     }) 
 }
 

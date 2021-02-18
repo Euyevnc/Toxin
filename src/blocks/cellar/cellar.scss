@@ -1,0 +1,16 @@
+@import "../social/social.scss";
+.cellar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    min-height: 70px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 17px;
+    &__text{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        color: rgba(31, 32, 65, 0.75);
+    }
+}

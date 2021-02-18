@@ -1,33 +1,24 @@
 import "./UI-kit.scss"
 
-import inputMask from "../../includes/Inputs/Mask_DMY/Mask_DMY.js"
-import rangeDoubleCalendar from "../../includes/Inputs/Date-range_double/Date-range_double.js"
-import rangeCalendar from "../../includes/Inputs/Date-range/Date-range.js"
-import fieldWithArrow from "../../includes/Inputs/Field-with-arrow/Field-with-arrow.js";
-import rangeSlider from "../../includes/Range-slider/Range-slider.js";
-import pageSwitcher from "../../includes/Pages-switcher/Pages-switcher.js";
-import counter from "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.js";
-import expandableCheckboxes from "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox"
-import booker from "../../includes/Blocks/Number-booker/Number-booker.js"
-import finderForm from "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.js";
-import demonstrateNumber from "../../includes/Blocks/Number-demonstration/Number-demonstration.js";
-import header from "../../includes/Blocks/Header/Header.js"
-import footer from "../../includes/Blocks/Footer/Footer.js"
-
-import img1 from './image-1.jpg'
-import img2 from './image.jpg'
-import img4 from './image-5.jpg'
-import img5 from './image-3.jpg'
-import img9 from './image-7.jpg'
-
-
-
-///
+import inputMask from "../../blocks/dmy-mask/dmy-mask"
+import doubleDatePicker from "../../blocks/date-picker/_double/date-picker_double"
+import datePicker from "../../blocks/date-picker/date-picker"
+import rangeSlider from "../../blocks/range-slider/range-slider";
+import counter from "../../blocks/input-with-counter/input-with-counter";
+import expandableCheckboxes from "../../blocks/dropping-checkboxes/dropping-checkboxes"
+import booker from "../../blocks/number-booker/number-booker" 
+import finderForm from "../../blocks/number-finder/number-finder";
+import header from "../../blocks/header/header"
+import review from "../../blocks/reviews/reviews"
+import demo from "../../blocks/number-demo/number-demo"
+import data from "./data.json"  
+///  
 function handlerDOMLoaded(){
     let countersContainer = document.querySelector(".forms")
     let doubleCalendarContainer = document.querySelector(".double-range-calendar-container")
     let expandedCheckboxes = document.querySelector(".dropped-checkboxes-container")
     let expandingCheckboxes = document.querySelector(".dropping-checkboxes-container")
+   
     let services =[
         {
             "describe": "Сбор за услуги", 
@@ -40,45 +31,31 @@ function handlerDOMLoaded(){
             "price":300
         } 
     ];
-    const numbersList = [
-        {
-            pictures: [img1,img2,img5,img9],
-            number: 888,
-            category: "люкс",
-            price: "9 990",
-            rate: 5,
-            reviews: 145
-        },{
-            pictures: [img2,img4,img5,img9],
-            number: 840,
-            category: "",
-            price: "9 900",
-            rate: 4,
-            reviews: 65
-        }
-    ]
     header()
-    footer()
+    demo()
     inputMask()
     finderForm()
     rangeSlider()
-    fieldWithArrow()
-    rangeCalendar(4, 8)
-    pageSwitcher(numbersList, 12, 'isUI-kit')
+    datePicker(4, 8)
     expandableCheckboxes(true, expandedCheckboxes)
     expandableCheckboxes(false, expandingCheckboxes)
-    rangeDoubleCalendar(null , 5, doubleCalendarContainer)
+    doubleDatePicker(null , 5, doubleCalendarContainer)
     counter([null, [2,2,0], [2,2,0], null, [2,1,0]], countersContainer)
     booker({number: 888, category: "люкс", price: 9990, services: services, arrival:4, departure: 8, guests: [2,1,0]})
-    demonstrateNumber(numbersList)
+    review(Object.assign( data.numbers[1146], {likedReviews: [11460001]} ) )
+    
+    document.querySelectorAll(".expand-input-drop-container .js-input-with-counter__menu").forEach((el)=>{
+        el.classList.remove("input-with-counter__menu_hidden")
+        el.classList.remove("js-input-with-counter__menu_hidden")
+    })
 
     document.querySelector(".textfield-active-container input").value = "This is pretty awesome";
     setTimeout(()=>{
         let calendar = document.querySelector(".ui-datepicker").cloneNode(true)
         let contForCalendar = document.querySelector(".expended-calendar-container")
         contForCalendar.appendChild(calendar)
-    }, 500)
-    //Таймаут пришлось поставить. Плагин для календарика, к сожалению, асиинхронный
+    }, 700)
+    //Таймаут пришлось поставить. Плагин для календаря, к сожалению, асиинхронный
 
 }
 export default handlerDOMLoaded

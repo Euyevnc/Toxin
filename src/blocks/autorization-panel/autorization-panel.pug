@@ -1,0 +1,6 @@
+include ../button-rounded/button-rounded.pug
+span(class = 'autorization-panel')
+    span.autorization-panel__entry-container
+        +Button-rounded("Войти", ["empty", "low"], false, "button")
+    span.autorization-panel__registration-container
+        +Button-rounded("Зарегистрироваться", ["purple", "low"], false, "button")

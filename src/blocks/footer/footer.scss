@@ -1,0 +1,77 @@
+@import "../../utils/fonts/Montserrat.scss";
+@import "../text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.scss";
+.footer{
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 85px 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    &__block{
+        margin: 20px 0 0;
+        &_width_wide{
+            max-width: 260px;
+            &:first-child{
+                margin-top: 15px;
+            }
+        }
+        &_width_slim{
+            min-width: 160px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+    &__sign{
+
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+    &__logo{
+        vertical-align: middle;
+        margin-right: 10px;   
+        display: inline-block;
+    }
+    &__brand{
+        vertical-align: middle;
+        display: inline-block;
+    }
+    &__list{   
+        margin: 0;
+        padding: 0;
+    }
+    &__list-element{
+        list-style-type: none; 
+        margin-bottom: 20px;  
+        
+    }
+    &__link{
+        vertical-align: baseline;
+        font-size: 14px;
+        line-height: 17px;
+        min-height: 18px;
+        color: rgba(31, 32, 65, 0.5);
+        text-decoration: none;
+        text-align: left;
+        &:hover{
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+    &__inscription{
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
+        margin:0 0 20px;
+       
+    }
+    &__heading{
+        text-transform: uppercase;
+        color: rgba(31, 32, 65, 1);
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0 0 20px ;
+    }
+}

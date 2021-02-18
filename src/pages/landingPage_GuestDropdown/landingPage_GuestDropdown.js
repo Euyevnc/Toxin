@@ -1,13 +1,12 @@
 import "./landingPage_GuestDropdown.scss"
-import Header from "../../includes/Articles/Header/Header.js"
-import Footer from"../../includes/Articles/Footer/Footer.js"
-import finder from "../../includes/Articles/Number-finder/Number-finder.js";
+import header from  "../../blocks/header/header.js";
+import finder from  "../../blocks/number-finder/number-finder.js";
 
-document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded)
+document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
 
-function handlerDocumentDomLoaded(){
-    Header()
-    Footer()
+function handlerDocumentDOMLoaded(e){
+    header()
+    finder(false, 4, 8)
     finder([ [2, 1, 0] ], 4, 8);
-    document.querySelector(".js-input-with-counter__menu").classList.remove("input-with-counter__menu_hidden")
+    document.querySelector(".js-input-with-counter input").focus()
 }

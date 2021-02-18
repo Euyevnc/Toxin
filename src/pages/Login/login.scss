@@ -1,14 +1,14 @@
-@import "../../includes/Articles/Header/Header.scss";
-@import "../../includes/Articles/Footer/Footer.scss";
-@import "../../includes/Articles/Сellar/Сellar.scss";
-@import "../../includes/Articles/Entry-form/Entry-form.scss";
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/cellar/cellar.scss";
+@import "../../blocks/entry-form/entry-form.scss";
 @import "../../layout/layout-for-hotel.scss";
 
-.content-container{
+.content{
     background-image: url('./img/login_bg.jpg');
     background-position: bottom;
     position: relative;
-    & .wrapper{
+    &__wrapper{
         display: flex;
         justify-content: center;
         align-items: center;

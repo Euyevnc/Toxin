@@ -1,73 +1,79 @@
 @import "../../layout/layout-for-hotel.scss";
-@import "../../includes/Articles/Header/Header.scss";
-@import "../../includes/Articles/Footer/Footer.scss";
-@import "../../includes/Articles/Сellar/Сellar.scss";
-@import "../../includes/Articles/Pictures-demo/Pictures-demo.scss";
-@import "../../includes/Articles/Diogram/Diogram.scss";
-@import "../../includes/Articles/Number-booker/Number-booker.scss";
-@import "../../includes/Figures/Stickers/Stickers.scss";
-@import "../../includes/Articles/Review-shape/Review-shape.scss";
-@import "../../includes/Checkboxes/Bullet/Bullet.scss";
-.content-container{
-    & .wrapper{
-        position: static
-    };
-}
-.section-header{
-    margin:0 0 20px;
-    color: rgba(31, 32, 65, 1);
-    font-family: Montserrat,Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-    color: #1F2041;
-};
-.default-font{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    line-height: 24px;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: normal;
-    color: rgba(31, 32, 65, 0.75);
-    margin: 0;
-}
-.content-container{
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/cellar/cellar.scss";
+@import "../../blocks/pictures-demo/pictures-demo.scss";
+@import "../../blocks/diogram/diogram.scss";
+@import "../../blocks/number-booker/number-booker.scss";
+@import "../../blocks/stickers/stickers.scss";
+@import "../../blocks/reviews/reviews.scss";
+@import "../../blocks/marked-list/marked-list.scss";
+@import "../../utils/fonts/Montserrat.scss";
+
+.content{
     padding-bottom: 60px;
     background-color: white;
-    & .wrapper{
+    &__wrapper{ 
+        position: static;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
-    & .pictures{
+    };
+    &__header{
+        margin:0 0 20px;
+        color: rgba(31, 32, 65, 1);
+        font-family: Montserrat,Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 24px;
+        color: #1F2041;
+        &_margin_zero{
+            margin: 0;
+        }
+        &_shift_right{
+            padding-left: 21px;
+        }
+    };
+    &__font{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        line-height: 24px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        color: rgba(31, 32, 65, 0.75);
+        margin: 0;
+    };
+    &__pictures{
         width: 100%;
         min-height: 485px;
         padding-bottom: 70px;
-    }
-    & .information{
+    };
+    &__information{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
         max-width: 710px;
     }
-    & .reviews-container{
+    &__reviews{
         margin-top: 13px;
         margin-bottom: 8px;
     }
-    & .bullets-container{
-        & .section-header{
-            padding-left: 21px;
-            line-height: 20px;
-        }
-    }
-    & .cancel-container{
+    &__cancel-rules{
         max-width: 341px;
-        padding-right: 8px;
         text-align: left;
     }
+    & .pictures-demo{
+        width: 100%;
+        max-width: 1440px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
+
+
 .footer-container{
     border-top: 2px solid rgba(31, 32, 65, 0.15);
 }

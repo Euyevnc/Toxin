@@ -1,0 +1,37 @@
+include ../date-picker/_double/date-picker_double.pug
+include ../input-with-counter/input-with-counter.pug
+include ../button-rounded/button-rounded.pug
+
+article(class="booker js-booker")
+    section.booker__information
+        span
+            b.booker__font_color_black.booker__font_size_middle № 
+            strong.booker__number.js-booker__number.booker__font_color_black.booker__font_size_large
+            b.booker__category.js-booker__category.booker__font_color_purple.booker__font_size_small.booker__font_uppercase
+        span
+            strong.booker__price.js-booker__price.booker__font_color_grey.booker__font_size_middle
+            span.booker__font_color_grey.booker__font_size_small в сутки
+
+    section.booker__forms
+        form(name="booker")
+            div.booker__calendar
+                +Date-picker_double({placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+            div.booker__counter
+                +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '', 'counter001', {name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
+    
+    section.booker__rent-calculation
+        div.booker__rent
+            span
+                span.booker__price.js-booker__price
+                spant &nbsp;x&nbsp;
+                span.booker__amount.js-booker__amount
+            span.booker__rent-total.js-booker__rent-total
+        ul.booker__services.js-booker__services
+        div.booker__total.js-booker__total.booker__font_color_black
+            strong Итого
+            span.booker__total-filler
+            strong.js-booker__total-price
+            
+    section.booker__button-cont
+        +Button-rounded('забронировать', ['purple'], 'arrow')
+

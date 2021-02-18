@@ -1,23 +1,54 @@
-@import "../../includes/Articles/Header/Header.scss";
-@import "../../includes/Articles/Footer/Footer.scss";
-@import "../../includes/Articles/Сellar/Сellar.scss";
+@import "../../utils/fonts/Montserrat.scss";
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/cellar/cellar.scss";
+@import "../../blocks/number-finder/number-finder.scss";
 @import "../../layout/layout-for-hotel.scss";
-@import "../../includes/Articles/Number-finder/Number-finder.scss";
-.content-container{
+
+.content{
     background-image: url('./img/LandingPage-background-3.jpg');
     background-position: bottom;
     position: relative;
-    & .wrapper{
+    &__wrapper{
         display: flex;
         justify-content: space-between;
         min-height: 830px;
-        @media(max-width: 660px){
+        @media(max-width: 660px){ 
             flex-wrap: wrap;
             justify-content: center;
             min-height:530px;
         } 
     }
-    
+
+    &__searcher-container{   
+        align-self: flex-start;
+        padding-top: 70px;
+        @media(max-width: 660px){
+            width: auto;
+        }
+    }
+    &__text-container{
+        align-self: flex-end;
+        padding-bottom:20px;
+        @media(max-width: 660px){
+            width: auto;
+        }
+    }
+    &__text{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+        text-decoration: none;
+        margin: 0;
+        max-width: 280px;
+        text-align: right;
+        margin-right: -5px; 
+        @media(max-width: 1165px){
+            margin-right: 5px;
+        }
+    }
+
     &::before{
         position: absolute;
         top: 0;
@@ -46,34 +77,6 @@
     }
 }
 
-.searcher-container{   
-    align-self: flex-start;
-    padding-top: 70px;
-    @media(max-width: 660px){
-        width: auto;
-    }
-}
-.text-container{
-    align-self: flex-end;
-    padding-bottom:20px;
-    @media(max-width: 660px){
-        width: auto;
-    }
-}
-.default-font{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-    text-decoration: none;
-    margin: 0;
-    max-width: 280px;
-    text-align: right;
-    margin-right: -5px; 
-    @media(max-width: 1165px){
-        margin-right: 5px;
-    }
-}
 
 @keyframes sliding-before{
     26%{

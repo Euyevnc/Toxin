@@ -1,0 +1,64 @@
+@import "../liker/liker.scss";
+@import "../../utils/fonts/Montserrat.scss";
+.review{
+    margin-bottom: 22px;
+    
+    &__header{
+        position: relative;
+    }
+    &__avatar{
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px;
+        width: 48px;
+        height: 48px;
+    }
+    &__info{
+        display: inline-block;
+    }
+    &__name{ 
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        color: rgba(31, 32, 65, 0.75);
+        line-height: 24px;
+        margin: 0;
+        text-transform: none;
+        font-size: 14px;   
+    }
+    &__days-ago{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        color: rgba(31, 32, 65, 0.75);
+        line-height: 24px;
+        font-size: 14px;  
+        margin: 0;
+    }
+    &__body{
+        justify-content: flex-start;
+        display: flex;
+        margin-top: 9px;
+    }
+    &__liker{
+        min-width: 48px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    &__content{
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+        line-height: 24px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        color: rgba(31, 32, 65, 0.75);
+        margin: 0;
+    }
+    &__reviews-counter{
+        font-size: 14px;
+        line-height: 14px;
+        padding-top: 5px;
+        color: rgba(31, 32, 65, 0.5);
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+    

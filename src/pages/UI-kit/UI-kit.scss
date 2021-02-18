@@ -1,38 +1,38 @@
 @import '../../utils/forUI-kit/colorIcon.scss';
 @import '../../utils/forUI-kit/fontIcon.scss';
 
-@import '../../includes/Inputs/Text-field/Text-field.scss';
-@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
-@import "../../includes/Inputs/Mask_DMY/Mask_DMY.scss";
-@import "../../includes/Inputs/Date-range_double/Date-range_double.scss";
-@import "../../includes/Inputs/Date-range/Date-range.scss";
-@import "../../includes/Inputs/Field-with-arrow/Field-with-arrow_default.scss";
-@import "../../includes/Checkbox/Default-checkbox/Default-checkbox.scss";
-@import "../../includes/Checkbox/Radio/Radio.scss";
-@import "../../includes/Checkbox/Tumblers/Tumblers.scss";
-@import "../../includes/Checkbox/Button-liker/Button-liker.scss";
-@import "../../static/Icons/filling-star.scss";
-@import "../../includes/Range-slider/Range-slider.scss";
-@import "../../includes/Buttons/Button-rounded/Button-rounded.scss";
-@import "../../includes/Buttons/Button-minimaze/Button-minimaze.scss";
-@import "../../includes/Buttons/Button_with_arrow/Button_with_arrow.scss";
-@import "../../includes/Pages-switcher/Pages-switcher.scss";
-@import "../../includes/Inputs/Inputs-with-counter/Inputs-with-counter.scss";
-@import "../../includes/Checkbox/Dropping-checkbox/Dropping-checkbox.scss";
-@import "../../includes/Checkbox/Checkbox-with-subscribe/Checkbox-with-subscribe.scss";
-@import "../../includes/Checkbox/Bullet/Bullet.scss";
-@import "../../static/Icons/Sticker.scss";
-@import "../../includes/Review-shape/Review-shape.scss";
-@import "../../includes/Blocks/Entry-form/Entry-form.scss";
-@import "../../includes/Blocks/Registration/Registration.scss";
-@import "../../includes/Blocks/Number-booker/Number-booker.scss";
-@import "../../includes/Blocks/Number-finder/Number-finder_type_double/Number-finder_type_double.scss";
-@import "../../includes/Blocks/Number-demonstration/Number-demonstration.scss";
-@import "../../includes/Blocks/Header/Header.scss";
-@import "../../includes/Blocks/Footer/Footer.scss";
-@import "../../includes/Blocks/Сellar/Сellar.scss";
-@import "../../includes/Blocks/Card/Card.scss";
-;
+@import '../../blocks/text-field/text-field.scss';
+@import "../../blocks/input-with-counter/input-with-counter.scss";
+@import "../../blocks/dmy-mask/dmy-mask.scss";
+@import "../../blocks/date-picker/_double/date-picker_double.scss";
+@import "../../blocks/date-picker/date-picker.scss";
+@import "../../blocks/text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.scss";
+@import "../../blocks/checkboxes/checkboxes.scss";
+@import "../../blocks/radios/radios.scss";
+@import "../../blocks/tumblers/tumblers.scss";
+@import "../../blocks/liker/liker.scss";
+@import "../../blocks/rate-stars/rate-stars.scss";
+@import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/button-rounded/button-rounded.scss";
+@import "../../blocks/button-minimaze/button-minimaze.scss";
+@import "../../blocks/paginator/paginator.scss";
+@import "../../blocks/dropping-checkboxes/dropping-checkboxes.scss";
+@import "../../blocks/subscribed-checkboxes/subscribed-checkboxes.scss";
+@import "../../blocks/marked-list/marked-list.scss";
+@import "../../blocks/stickers/stickers.scss";
+@import "../../blocks/reviews/reviews.scss";
+@import "../../blocks/entry-form/entry-form.scss";
+@import "../../blocks/registration/registration.scss";
+@import "../../blocks/number-booker/number-booker.scss";
+@import "../../blocks/number-finder/number-finder.scss";
+@import "../../blocks/header/header.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/footer/footer.scss";
+@import "../../blocks/cellar/cellar.scss"; 
+@import "../../blocks/card/card.scss";
+@import "../../blocks/number-demo/number-demo.scss";
+
+//UI не нужно было, надеюсь, оформлять по стандартам,? я это налепил уже давно, переписывать это страшно
 .ui-kit-container{
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +93,15 @@
             margin-bottom: 40px;
         }
     }
+    & .rounded-button-container{
+        width: 99px;
+        display: inline-block;
+        margin-right: 19px;
+        margin-bottom: 30px;
+    }
+    & .simple-button-container{
+        margin-right: 20px;
+    }
     &-dropdowns-wrapper{
         width: 100%;
         display: flex;
@@ -132,9 +141,13 @@
             border: 1px solid rgba(31, 32, 65, 0.5);
         }
     }
-    & .double-range-calendar-container{
-        width: 100%
+    & .range-calendar-container{
+        max-width: 266px;
     }
+    & .field-with-arrow-container{
+        max-width: 266px;
+    }
+
     & .tumblers-container{
         &>*{
             margin-bottom: 10px;
@@ -156,10 +169,6 @@
             margin-bottom: 16.5px;
             color: rgba(31, 32, 65, 1);
         }
-        &>div{
-            margin-right: 19px;
-            margin-bottom: 30px;
-        }
     }
     & .pages-switcher-container {
         & h3{
@@ -172,9 +181,10 @@
             padding: 0;
             margin-bottom: 16.5px;
             color: rgba(31, 32, 65, 1);
+            display: inline-block;
         }
-        & .pages-switcher{
-            text-align: left;
+        & .paginator{
+            justify-content: flex-start;
         }
     }
     & .default-input-drop-container {
@@ -184,9 +194,6 @@
         }
     }
     & .expand-input-drop-container{
-        & .input-with-counter__menu{
-            display: flex;
-        }
         margin-bottom: 158px;
     }
     & .stickers-container {

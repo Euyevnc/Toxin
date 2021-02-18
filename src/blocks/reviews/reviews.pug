@@ -1,0 +1,13 @@
+mixin Reviews
+    include ../liker/liker.pug
+    article.review.js-review
+        section.review__header
+            span.review__avatar
+            span.review__info
+                strong.review__name 
+                p.review__days-ago 
+        section.review__body
+            div.review__liker  
+                +Liker('', {id:`#`, am:`#`})
+            p.review__content 
+        

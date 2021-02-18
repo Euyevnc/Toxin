@@ -1,0 +1,119 @@
+@import '../../static/figures/arrow-down/arrow-down.scss';
+@import '../autorization-panel/autorization-panel.scss';
+.menu{
+    &__list{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    &__element{
+        position: relative;
+        list-style-type: none; 
+        cursor: pointer;
+        margin: 0 ;
+        padding: 0 10px;
+        vertical-align: center;
+        max-height: 21px;
+        line-height: 21px;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.5);
+        border-radius: 4px;
+        background-color: white;
+        user-select: none;
+        &:hover{
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &:focus{
+            outline: none;
+            box-shadow: 0px 0px 0px 3px rgba(31, 32, 65, 0.25) inset;
+        }
+    }
+    &__arrow-down{
+        display: inline-block;
+        width: 24px;
+        min-height: 21px;  
+        line-height: 21px;    
+        vertical-align: top;
+    }
+    &__submenu{
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        top: 110%;
+        right: 0;
+        min-width: 150px;
+        border: 2px solid rgba(31, 32, 65, 0.25);
+        &_active{
+            z-index: 100;
+            display: block;
+        }
+        & .menu__element{
+            max-height: 45px;
+            padding: 0;
+            border-radius: 0;
+        }
+        & .menu__link{
+            display: inline-block;
+            width: 100%;
+            line-height: 45px;
+            font-size: 24px;
+            &:focus{
+                outline: 0;
+                box-shadow: 0px 0px 2px 2px rgba(31, 32, 65, 0.25) inset;
+            }
+        }
+    }   
+    &__link{    
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(31, 32, 65, 0.5);
+        vertical-align: top;
+        user-select: none;
+
+        &_active{
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+    &__login{
+        padding-left: 20px;
+        border-left: 1px solid rgba(31, 32, 65, 0.25);
+        margin: 0 10px;
+    }
+    
+    @media(max-width: 650px) {
+        visibility: hidden;
+        &_expanded{
+            visibility: visible;
+        }
+        &__list{
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            align-items: flex-start;
+            flex-direction: column;
+            z-index: 100;
+            border: 3px solid rgb(189, 156, 255);
+            padding: 15px 5px;
+        }
+        &__element{
+            max-height: 45px;
+            font-size: 24px;
+            vertical-align: middle; 
+            margin: 10px 0;
+        }
+        &__link{
+            line-height: 45px;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+        &__arrow-down{
+            vertical-align: middle;
+        }
+    }
+}
