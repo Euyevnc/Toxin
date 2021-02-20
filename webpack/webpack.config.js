@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "Registration";
+const name= "forReadme";
 const PATHS = {
 	relPathSrc: `src/pages/${name}`,
 	src: path.join(__dirname, `../src/pages/${name}`),
@@ -31,7 +31,6 @@ module.exports = (env, options) =>{
 				}
 			}
 		},
-		devtool: 'eval',
 		devServer: {
 			overlay: true,
 
@@ -62,6 +61,11 @@ module.exports = (env, options) =>{
 					options: {
 					  exposes: ["$", "jQuery"],
 					},
+				},
+				{
+					test: /\.tsx?$/,
+					use: 'ts-loader',
+					exclude: /node_modules/,
 				},
 				{
 					test: /\.js$/,

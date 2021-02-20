@@ -3,7 +3,7 @@ import "./UI-kit.scss"
 import inputMask from "../../blocks/dmy-mask/dmy-mask"
 import doubleDatePicker from "../../blocks/date-picker/_double/date-picker_double"
 import datePicker from "../../blocks/date-picker/date-picker"
-import rangeSlider from "../../blocks/range-slider/range-slider";
+import rangeOldSlider from "../../blocks/range-slider/range-slider";
 import counter from "../../blocks/input-with-counter/input-with-counter";
 import expandableCheckboxes from "../../blocks/dropping-checkboxes/dropping-checkboxes"
 import booker from "../../blocks/number-booker/number-booker" 
@@ -12,13 +12,13 @@ import header from "../../blocks/header/header"
 import review from "../../blocks/reviews/reviews"
 import demo from "../../blocks/number-demo/number-demo"
 import data from "./data.json"  
-///  
+///   
 function handlerDOMLoaded(){
     let countersContainer = document.querySelector(".forms")
     let doubleCalendarContainer = document.querySelector(".double-range-calendar-container")
     let expandedCheckboxes = document.querySelector(".dropped-checkboxes-container")
     let expandingCheckboxes = document.querySelector(".dropping-checkboxes-container")
-   
+    let uiCont = document.querySelector(".ui-kit-container")
     let services =[
         {
             "describe": "Сбор за услуги", 
@@ -35,7 +35,7 @@ function handlerDOMLoaded(){
     demo()
     inputMask()
     finderForm()
-    rangeSlider()
+    rangeOldSlider(uiCont)
     datePicker(4, 8)
     expandableCheckboxes(true, expandedCheckboxes)
     expandableCheckboxes(false, expandingCheckboxes)

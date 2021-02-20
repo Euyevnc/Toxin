@@ -1,33 +1,35 @@
 import "../../layout/layout-for-hotel.js"
 import uiKit from"../UI-kit/UI-kit.js"
+import initDemo from "./rangeDemo/main.ts"
 import "./main.scss";
+import "./rangeDemo/main.scss"
 
 document.addEventListener("DOMContentLoaded", init)
 
 function init(){
-    let uiContainer = document.querySelector(".ui-demonstrate");
-    let pagesContainer = document.querySelector(".links-demonstrate")
-    let uiButton = document.querySelector(".ui-button");
-    let pagesButton = document.querySelector(".site-pages-button")
+    let buttons = document.querySelectorAll(".js-switcher")
+    let sections = document.querySelectorAll("section.section")
+    buttons.forEach((but, butI)=>{
+        but.addEventListener("click", handlerSwitcherClick)
+        function handlerSwitcherClick(e){
+            if(but.classList.contains("actived") ) return 
+            buttons.forEach((el)=>{
+                el.classList.remove("actived")
+            })
+            but.classList.add("actived")
 
-    
-    uiButton.addEventListener("click", handlerKitButtonClick)
-    pagesButton.addEventListener("click", handlerPagesButtonClick)
+            sections.forEach((sec)=>{
+                sec.style.display = "none";
+            })
+            sections[butI].style.display = "flex";
+        }
+    })
+    if(window.location.hash == '#slider'){
+        buttons[2].click()
+    }
+    else buttons[0].click()
+
     uiKit()
-
+    initDemo()
     ////////
-    function handlerKitButtonClick(e){
-        if(uiButton.classList.contains("actived") ) return 
-        uiContainer.style.display = "block"
-        pagesContainer.style.display = "none"
-        pagesButton.classList.remove("actived")
-        uiButton.classList.add("actived")
-    }
-    function handlerPagesButtonClick(e){
-        if(pagesButton.classList.contains("actived") ) return 
-        pagesContainer.style.display = "flex"
-        uiContainer.style.display = "none"
-        uiButton.classList.remove("actived")
-        pagesButton.classList.add("actived")
-    }
 }
