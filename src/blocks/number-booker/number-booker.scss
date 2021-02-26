@@ -1,8 +1,7 @@
-@import "../../utils/fonts/Montserrat.scss";
 @import "../date-picker/_double/date-picker_double.scss";
 @import "../input-with-counter/input-with-counter.scss";
 @import "../button-rounded/button-rounded.scss";
-
+@import "../../utils/_mixin-font.scss";
 
 .booker{
     background-color: white;
@@ -14,26 +13,25 @@
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__font{
         &_color_black{
-            color: rgba(31, 32, 65, 1);
-
-        }
+            color: $main-color_darkest
+        };
         &_color_grey{
-            color: rgba(31, 32, 65, .5);
-        }
+            color: $main-color_lighter
+        };
         &_color_purple{
-            color: #BC9CFF;
-        }
+            color: $highlight-color;
+        };
         &_size_large{
-            font-size: 24px;
-            line-height: 29px;
+            font-size: $size-largest;
+            line-height: $size-largest+5;
         }
         &_size_middle{
-            font-size: 14px;
-            line-height: 18px;
+            font-size: $size-middle;
+            line-height: $default-line;
         }
         &_size_small{
-            font-size: 12px;
-            line-height: 18px;
+            font-size: $size-small;
+            line-height: $default-line;
         }
         &_uppercase{
             text-transform: uppercase;
@@ -55,12 +53,9 @@
         margin-bottom: 20.5px;
     }
     &__rent-calculation{
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
-        text-decoration: none;
+        @include default-font($line: $size-largest);
         vertical-align: top; 
-        font-weight: 400;
+
     }
     &__rent{
         display: flex; 
@@ -87,25 +82,20 @@
         height: 20px; 
         width: 20px;
         vertical-align: top;
-        line-height: 18px;
-        font-size: 12px;
-        color: rgba(31, 32, 65, 0.25) ;
         text-align:center; 
-        font-weight: 700; 
         border-radius:50%;
         box-sizing: border-box;
-        border: 1px solid rgba(31, 32, 65, 0.25); 
- 
-
+        border: 1px solid $main-color_lightest; 
+        @include default-font($size: $size-small, $color: $main-color_lightest, $weight: 700);
     }
     &__total{
         display: flex; 
         margin: 30px 0 20px;
-        font-size: 19px;
-        line-height: 24px;
+        font-size: $size-larger;
+        line-height: $size-largest;
     }
     &__total-filler{
-        border: 1px dashed rgba(31, 32, 65, 0.25);
+        border: 1px dashed $main-color_lightest;
         box-sizing: border-box;
         max-height: 1px;
         flex-grow: 1;

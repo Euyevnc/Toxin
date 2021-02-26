@@ -1,5 +1,5 @@
 @import "../../static/figures/arrow-down/arrow-down.scss";
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 @import "../../utils/fonts/MaterialIcons.scss";
 .dropping-checkboxes{
     margin: 0;
@@ -24,14 +24,9 @@
         line-height: 44px;
     }
     &__title{
-        text-transform: uppercase;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 44px;
+        @include default-font($main-color_darkest, $size-small, 44px,  700, none, uppercase );
         margin: 0;
         padding: 0;
-        color: rgba(31, 32, 65, 1)
     }
 
     &__container{
@@ -49,16 +44,12 @@
     &__checkbox{
         display: none;
         & + .dropping-checkboxes__label{
+            @include default-font($main-color_lighter);
             user-select: none;
             background-color: white;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 14px;
             font-style: normal;
-            font-weight: 400;
-            line-height: 18px;
             letter-spacing: 0em;
             text-align: left;
-            color: rgba(31, 32, 65, 0.5);
             
             &::before {
                 content:'';
@@ -68,7 +59,7 @@
                 text-indent: 0px;
                 width: 20px;
                 height: 20px;
-                border: 1px solid rgba(31, 32, 65, 0.25);
+                border: 1px solid $main-color_lightest;
                 box-sizing: border-box;
                 border-radius: 4px;
                 border-image: initial;
@@ -84,20 +75,11 @@
     }
     &__checkbox:checked{
         & + .dropping-checkboxes__label{
-            background-color: white;
-            font-family: Montserrat;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 18px;
-            letter-spacing: 0em;
-            text-align: left;
-            color: rgba(31, 32, 65, 0.5);
             &::before {
                 content: "check";
                 font-family: 'Material Icons';
-                color: #BC9CFF;
-                border: 1px solid #BC9CFF ; 
+                color: $highlight-color;
+                border: 1px solid $highlight-color ; 
             }
     
         }

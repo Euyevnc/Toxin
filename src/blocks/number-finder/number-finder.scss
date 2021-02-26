@@ -1,7 +1,7 @@
 @import '../date-picker/_double/date-picker_double.scss';
 @import '../input-with-counter/input-with-counter.scss';
 @import '../button-rounded/button-rounded.scss';
-@import '../../utils/fonts/Montserrat.scss';
+@import "../../utils/_mixin-font.scss";
 
 .number-finder{
     background-color: #fff;
@@ -12,13 +12,9 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     max-width: 380px;
     &__header{
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;
-        color: #1F2041;
+        @include default-font($main-color_darkest, $size-largest, $size-largest+5, 700);
         margin: 0;
-        padding: 0;
+        padding: 0; 
         margin-bottom: 21px;
     }
     &__form{

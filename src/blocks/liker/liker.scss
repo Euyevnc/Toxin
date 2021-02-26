@@ -1,16 +1,12 @@
+@import "../../utils/_mixin-font.scss";
 
 .liker{
     display: inline-block;
     text-align: center;
     &__head{
-        text-transform: uppercase;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px;
+        @include default-font($main-color_lightest, $size-small, $size-small+4, 700,none, uppercase);
         margin: 0;
         margin-bottom: 15px;
-        color: rgba(31, 32, 65, 1);  
     }
     
     &__box{
@@ -20,29 +16,25 @@
             width: 40px;
             height: 20px;
             display: inline-block;
-            font-size: 10px;
             position: relative;
-            border: 1px solid rgba(31, 32, 65, 0.25);
-            color: rgba(31, 32, 65, 0.25);
+            border: 1px solid $main-color_lightest;
             cursor: pointer;
             border-radius: 25% / 50%;
             transition-duration: 0.5s;
-            line-height: 18px;
             text-align:end;
             padding-right: 10px;
             box-sizing: border-box;
+            @include default-font($color: $main-color_lightest, $size: $size-small - 2);
             &::before {
                 display: inline-block;
-                line-height: 18px;
                 content: "favorite_border";
                 font-family: 'Material Icons';
-                color: rgba(31, 32, 65, 0.25);
+                color: $main-color_lightest;
+                line-height: $default-line;
                 position: absolute;
                 left: 5px;
                 transition-duration: 0.5s;
                 vertical-align: middle;
-                
-    
             }
     
         }
@@ -52,12 +44,12 @@
         
         & + .liker__label{ 
             color: #c2c2c2;
-            border: 1px solid  #BC9CFF;
+            border: 1px solid  $highlight-color;
             transition-duration: 0.5s;
             display: inline-block;
             &::before {
                 content: "favorite";
-                color: #BC9CFF;
+                color: $highlight-color;
                 transition-duration: 0.5s;
             }
         }

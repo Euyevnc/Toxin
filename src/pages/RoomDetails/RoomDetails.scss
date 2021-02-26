@@ -1,3 +1,5 @@
+@import "../../utils/mixin-font";
+@import "../../utils/variables";
 @import "../../layout/layout-for-hotel.scss";
 @import "../../blocks/header/header.scss";
 @import "../../blocks/footer/footer.scss";
@@ -8,7 +10,6 @@
 @import "../../blocks/stickers/stickers.scss";
 @import "../../blocks/reviews/reviews.scss";
 @import "../../blocks/marked-list/marked-list.scss";
-@import "../../utils/fonts/Montserrat.scss";
 
 .content{
     padding-bottom: 60px;
@@ -21,13 +22,7 @@
     };
     &__header{
         margin:0 0 20px;
-        color: rgba(31, 32, 65, 1);
-        font-family: Montserrat,Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 19px;
-        line-height: 24px;
-        color: #1F2041;
+        @include default-font($main-color_darkest, $size-larger, $size-largest, $weight: 700 );
         &_margin_zero{
             margin: 0;
         }
@@ -36,12 +31,7 @@
         }
     };
     &__font{
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        line-height: 24px;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: normal;
-        color: rgba(31, 32, 65, 0.75);
+        @include default-font($line: $size-largest);
         margin: 0;
     };
     &__pictures{

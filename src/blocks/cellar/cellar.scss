@@ -1,4 +1,5 @@
 @import "../social/social.scss";
+@import "../../utils/_mixin-font.scss";
 .cellar{
     width: 100%;
     display: flex;
@@ -7,10 +8,7 @@
     background-color: white;
     min-height: 70px;
     box-sizing: border-box;
-    font-size: 14px;
-    line-height: 17px;
     &__text{
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        color: rgba(31, 32, 65, 0.75);
+        @include default-font($line: $default-line - 1);
     }
 }

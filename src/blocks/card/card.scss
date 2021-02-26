@@ -1,5 +1,5 @@
-@import "../../utils/fonts/Montserrat.scss";
 @import "../../blocks/social/social.scss";
+@import "../../utils/_variables.scss";
 .card{
     background-color: white;
     padding: 120px 0;
@@ -17,13 +17,8 @@
         vertical-align: middle;
     }
     &__subscribe{
+        @include default-font($line: $default-line - 0.5, );
         margin-top: 20px;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        line-height: 17.5px;
-        color: rgba(31, 32, 65, 0.75);
-        text-decoration: none;
-        font-weight: 400;
     }
     &__social{
         margin-top: 25px;

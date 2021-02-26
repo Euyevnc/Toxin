@@ -1,16 +1,10 @@
 @import "../../utils/fonts/MaterialIcons.scss";
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 .stickers{
     min-width: 280px;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__header{
+        @include default-font($main-color_darkest, $size-larger, $size-largest, 700);
         margin: 0;
-        color: rgba(31, 32, 65, 1);
-        font-style: normal;
-        font-weight: bold;
-        font-size: 19px;
-        line-height: 24px;
-        color: #1F2041;
     }
     &__list{
         margin: 0;
@@ -31,7 +25,7 @@
         line-height: 48px;
         text-align: center;
         vertical-align: middle;
-        color: #BC9CFF;
+        color: $highlight-color;
         margin-right: 10px;
     }
     &__text{
@@ -39,17 +33,12 @@
         vertical-align: middle;
     }
     &__describe{
+        @include default-font($line: $size-largest, $weight: 700);
         margin: 0;
-        padding: 0;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
     }
     &__subscribe{
+        @include default-font($line: $size-largest);
         margin: 0;
-        padding: 0;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
+
     }
 }

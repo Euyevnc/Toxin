@@ -1,4 +1,5 @@
-@import "../../layout/layout-for-hotel.scss";
+@import "../../utils/mixin-font";
+@import "../../utils/variables";
 @import "../../layout/layout-for-hotel.scss";
 @import "../../blocks/header/header.scss";
 @import "../../blocks/footer/footer.scss";
@@ -11,8 +12,6 @@
 @import "../../blocks/dropping-checkboxes/dropping-checkboxes.scss";
 @import "../../blocks/paginator/paginator.scss";
 @import "../../blocks/number-demo/number-demo.scss";
-@import "../../utils/fonts/Montserrat.scss";
-
 .content{
     background-color: white;
     padding: 30px 0 70px;
@@ -57,12 +56,8 @@
     }
 
     &__heading{
+        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
         margin:0;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1F2041;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
         @media(max-width:600px){
             text-align: center;
         }

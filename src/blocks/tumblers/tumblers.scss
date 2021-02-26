@@ -1,16 +1,10 @@
 @import "../../utils/fonts/MaterialIcons.scss";
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 .tumblers{
     &__header{
-        text-transform: uppercase;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
+        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
         margin: 0;
         margin-bottom: 15px;
-        color: rgba(31, 32, 65, 1); 
-        
     }
     &__label{
         user-select: none;
@@ -20,18 +14,18 @@
         min-width: 40px;
         min-height: 20px;
         position: relative;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $main-color_lightest;
         cursor: pointer;
         border-radius: 25% / 50%;
         transition-duration: 0.5s;
         box-sizing: border-box;
         &::before {
             display: inline-block;
-            line-height: 18px;
             content: "stop_circle";
             font-family: 'Material Icons';
-            color: rgba(31, 32, 65, 0.25);
-            font-size: 14px;
+            color: $main-color_lightest;
+            font-size: $size-middle;
+            line-height: 18px;
             position: absolute;
             left: 1px;
             transition-duration: 0.5s;
@@ -43,10 +37,10 @@
     }
     &__checkbox:checked{ 
         & + .tumblers__label{ 
-            border: 1px solid  #BC9CFF;
+            border: 1px solid  $highlight-color;
             transition-duration: 0.5s;
             &::before {
-                color: #BC9CFF;
+                color: $highlight-color;
                 left: 24px;
                 transition-duration: 0.5s;
             }
@@ -56,10 +50,7 @@
     &__subscribe{
         user-select: none;
         vertical-align: middle;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        color: rgba(31, 32, 65, 0.75);
-        line-height: 24px;
+        @include default-font($line: $size-largest);
     }
 }
 

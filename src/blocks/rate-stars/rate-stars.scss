@@ -1,4 +1,5 @@
-@import "../../utils/fonts/MaterialIcons.scss";
+@import "../../utils/_mixin-font.scss";
+
 .rate-stars{
     display: inline-block;
     vertical-align: bottom;
@@ -7,14 +8,9 @@
         margin-left: 20px;
     }
     &__head{
-        text-transform: uppercase;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px;
+        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
         margin: 0;
-        margin-bottom: 15px;
-        color: rgba(31, 32, 65, 1); 
+        margin-bottom: 15px; 
     }
     &__star{
         display: inline-block;
@@ -23,7 +19,7 @@
         line-height: 24px;
         font-family: 'Material Icons';
         position: relative;
-        color: #BC9CFF;
+        color: $highlight-color;
         font-size: 24px;
         text-align: center;
         vertical-align: middle;

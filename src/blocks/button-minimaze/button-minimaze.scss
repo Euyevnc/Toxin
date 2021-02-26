@@ -1,6 +1,8 @@
+@import "../../utils/variables.scss";
+@import "../../utils/fonts/Montserrat.scss";
 .Button_minimaze{
     display: inline-block;
-    font-family: 'Montserrat';
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
@@ -13,10 +15,10 @@
     border: none;
     background-color: transparent;
     &_color_purple{
-        color: #BC9CFF;
+        color: $highlight-color;
     }
     &_color_grey{
-        color: rgba(31, 32, 65, 0.5);
+        color: $main-color_lighter;
     }
     
 }

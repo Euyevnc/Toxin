@@ -1,4 +1,4 @@
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 @import "../button-rounded/button-rounded.scss";
 @import "../text-field/text-field.scss";
 
@@ -11,18 +11,13 @@
     box-sizing: border-box;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__text{
-        font-size: 14px;
+        @include default-font($main-color_darkest);
         text-align: center;
-        color: #000000;
-        line-height: 18px;
         margin: 0;
     }
 
     &__header{
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1F2041;
+        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
         margin: 0;
         margin-bottom: 20px;
     }

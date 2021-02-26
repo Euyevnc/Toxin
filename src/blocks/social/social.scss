@@ -1,4 +1,6 @@
 @import "../../utils/fonts/FontAwesome.scss";
+@import "../../utils/variables";
+
 .social{
     &__link{
         text-decoration: none;
@@ -9,6 +11,6 @@
         width: 24px;
         height: 24px;
         font-size: 24px;
-        color: #BC9CFF ;
+        color: $highlight-color ;
     }
 }

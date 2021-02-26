@@ -1,6 +1,7 @@
 @import "../rate-stars/rate-stars.scss";
 @import "../../utils/fonts/MaterialIcons.scss";
 @import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_variables.scss";
 
 .number-demo{
     margin-top: 20.5px;
@@ -8,7 +9,7 @@
     box-shadow: 0px 17px 20px 0px rgba(34, 60, 80, 0.05);
     border-radius: 4px;
     font-family: Montserrat, Arial, Helvetica, sans-serif;   
-    color: rgba(31, 32, 65, 0.5);
+    color: $main-color_lighter;
     max-width: 270px;
     &__image-cont{
         margin: 0;
@@ -123,25 +124,25 @@
 
     &__font{
         &_color_black{
-            color: rgba(31, 32, 65, 1);
+            color: $main-color_darkest;
         }
         &_color_purple{
-            color: #BC9CFF;
+            color: $highlight-color;
         }
         &_uppercase{
             text-transform: uppercase;
         }
         &_size_small{
-            font-size: 12px;
-            line-height: 18px;
+            font-size: $size-small;
+            line-height: $default-line;
         }
         &_size_middle{
-            font-size: 14px;
-            line-height: 18px;
+            font-size: $size-middle;
+            line-height: $default-line;
         }
         &_size_large{
-            font-size: 19px;
-            line-height: 24px;
+            font-size: $size-larger;
+            line-height: $size-largest;
         }
     }
     &__rate{
@@ -149,9 +150,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 24px;
+        min-height: 24px;
     }
     &__stars{
-        height: 24px;
+        min-height: 24px;
     }
 }

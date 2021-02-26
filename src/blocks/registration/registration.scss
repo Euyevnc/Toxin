@@ -3,7 +3,7 @@
 @import "../tumblers/tumblers.scss";
 @import "../radios/radios.scss";
 @import "../button-rounded/button-rounded.scss";
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 
 .registration{
     background-color: white;
@@ -12,12 +12,8 @@
     padding: 39px 29px 29px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__header{
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1F2041;
+        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
         margin: 0;
         margin-bottom: 20px;
     };
@@ -44,10 +40,9 @@
         min-width: 99px;
     }
     &__text{
-        line-height: 100%;
-        font-size: 14px;;
+        @include default-font($main-color_darkest);
         text-align: center;
-        color: #000000;
+ 
     }
     &__entry{
         align-items: center;

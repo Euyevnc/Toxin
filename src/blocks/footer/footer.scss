@@ -1,4 +1,4 @@
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
 @import "../text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.scss";
 .footer{
     background-color: #FFFFFF;
@@ -8,7 +8,6 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__block{
         margin: 20px 0 0;
         &_width_wide{
@@ -19,7 +18,6 @@
         }
         &_width_slim{
             min-width: 160px;
-            color: rgba(31, 32, 65, 0.75);
         }
     }
     &__sign{
@@ -45,33 +43,24 @@
         margin-bottom: 20px;  
         
     }
+    &__heading{
+        margin: 0 0 20px ;
+        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
+    }
     &__link{
+        @include default-font($main-color_lighter, $size: $size-middle, $line: $size-middle - 1, );
         vertical-align: baseline;
-        font-size: 14px;
-        line-height: 17px;
         min-height: 18px;
-        color: rgba(31, 32, 65, 0.5);
         text-decoration: none;
         text-align: left;
         &:hover{
-            color: rgba(31, 32, 65, 0.75);
+            color: $main-color;
         }
     }
     &__inscription{
         display: inline-block;
         vertical-align: baseline;
-        font-size: 14px;
-        line-height: 24px;
-        color: rgba(31, 32, 65, 0.75);
-        text-decoration: none;
         margin:0 0 20px;
-       
-    }
-    &__heading{
-        text-transform: uppercase;
-        color: rgba(31, 32, 65, 1);
-        font-size: 12px;
-        line-height: 15px;
-        margin: 0 0 20px ;
+        @include default-font( $line: $size-largest );
     }
 }

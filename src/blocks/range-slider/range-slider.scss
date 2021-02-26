@@ -1,4 +1,4 @@
-
+@import "../../utils/_mixin-font.scss";
 .range-slider{
     width:100%;
     display: flex;
@@ -10,20 +10,13 @@
         justify-content: space-between;
     }
     &__title{
-        text-transform: uppercase;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 15px;
+        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
         margin: 0;
         padding: 0;
         margin-bottom: 5.5px;
-        color: rgba(31, 32, 65, 1)
     }
     &__counter{
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        color: rgba(31, 32, 65, 0.5);
+        @include default-font($main-color_lighter, $size-small, $size-small);
     }
     &__numbers{
         display: none;
@@ -32,7 +25,7 @@
         position: relative;
         height: 6px;
         background: #FFFFFF;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $main-color_lightest;
         border-radius: 3px;
         box-sizing: border-box;
         display: flex;
@@ -65,8 +58,7 @@
     &__subscribe{
         margin-bottom: 0;
         margin-top: 16.5px;
-        font-size: 12px;
-        color: rgba(31, 32, 65, 0.5);
+        @include default-font($main-color_lighter, $size-small, $size-small);
     }
     
 }

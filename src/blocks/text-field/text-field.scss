@@ -1,50 +1,42 @@
-@import "../../utils/fonts/Montserrat.scss";
+@import "../../utils/_mixin-font.scss";
+
 .text-field{
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     position: relative;
     &__value{
         padding-left: 15px;
         width: 100%;
-        font-size: 14px;
         height: 44px;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        color: rgba(31, 32, 65, 0.75);
+        border: 1px solid $main-color_lightest;
+        @include default-font($line: 44px);
         box-sizing: border-box;
         border-radius: 4px;
         transition-duration: 0.7s;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
         &::placeholder{
-            color: rgba(31, 32, 65, 0.25);
+            @include default-font($color: $main-color_lightest, $line: 44px);
             transition-duration: 0.7s;
             opacity: 1;   
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
         } 
         &:hover{
-            color: rgba(31, 32, 65, .75);
-            border: 1px solid rgba(31, 32, 65, 0.5);
+            color: $main-color;
+            border: 1px solid $main-color_lighter;
             transition-duration: 0.7s;
             &::placeholder{
-                color: rgba(31, 32, 65, 0.75);
+                color:  $main-color_lighter;
                 transition-duration: 0.7s;
             }
         }
     }
     &__subscribe{
-        font-weight: 700;
-        font-size: 12px;
-        text-transform: uppercase;
+        @include default-font($main-color_lighter, $size-small, $size-small+2.5, 700, none, uppercase);
         margin: 0 0 5.5px;
-        line-height: 14.5px;
     }
     &__describe{
-        color: rgba(31, 32, 65, 0.5);
+        @include default-font($main-color_lighter, $size-small, $size-small+3, 400, none, uppercase);
         margin: 0px;
         position: absolute;
         right: 0;
         top: 0;
-        font-size: 12px;
-        line-height: 15px;
-        text-transform: uppercase;
     };
     
 }
