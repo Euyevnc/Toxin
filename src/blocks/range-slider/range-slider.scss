@@ -1,5 +1,5 @@
 @import "../../utils/_mixin-font.scss";
-.range-slider{
+.range-picker{
     width:100%;
     display: flex;
     flex-direction: column;
@@ -15,45 +15,12 @@
         padding: 0;
         margin-bottom: 5.5px;
     }
+    &__container{
+        min-height: 12px;
+        width: 100%;
+    }
     &__counter{
         @include default-font($main-color_lighter, $size-small, $size-small);
-    }
-    &__numbers{
-        display: none;
-    }
-    &__slider{
-        position: relative;
-        height: 6px;
-        background: #FFFFFF;
-        border: 1px solid $main-color_lightest;
-        border-radius: 3px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        &>*{
-            cursor: pointer;
-        }
-    }
-    &__selected{
-        position: absolute;
-        border-top: 1px solid #FFFFFF;
-        border-bottom: 1px solid #FFFFFF;
-        width: 95%;
-        height: 6px;
-        left: 8px;
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        top: -2px;
-    }
-    &__tumbler{
-        box-sizing: border-box;
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        top: -6px;
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        border: 2px solid #FFFFFF;
-        border-radius: 10px;
-        z-index: 3;
     }
     &__subscribe{
         margin-bottom: 0;
@@ -61,4 +28,27 @@
         @include default-font($main-color_lighter, $size-small, $size-small);
     }
     
+}
+
+.range-slider{
+    &__line{
+        height: 6px;
+        box-sizing: border-box;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 3px;
+
+    }
+    &__selected{
+        height: 100%;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 3px;
+    }
+    &__tumbler{
+        height: 12px;
+        width: 12px;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+        box-sizing: content-box;
+    }
 }

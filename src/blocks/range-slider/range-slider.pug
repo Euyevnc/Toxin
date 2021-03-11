@@ -1,19 +1,14 @@
-mixin Range-slider(descr, subscr, min, max, defstart, defend)
-    .range-slider.js-range-slider
-        div.range-slider__header
-            h3.range-slider__title #{descr}
-            span.range-slider__counter
-                span(class="range-slider__min js-range-slider__min") #{min}
+mixin Range-picker(descr, subscr, min, max, defstart, defend)
+    .range-picker.js-range-picker
+        div.range-picker__header
+            h3.range-picker__title #{descr}
+            span.range-picker__counter
+                span(class="range-picker__min js-range-picker__min") 
                 span ₽ - 
-                span(class="range-slider__max js-range-slider__max") #{max}
+                span(class="range-picker__max js-range-picker__max")
                 span ₽
-        div.range-slider__numbers.js-range-slider__numbers
-            span(data-def=`${defstart}`) #{min}
-            span(data-def=`${defend}`) #{max}
-        div(id="range-slider" class="range-slider__slider")
-            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_min js-range-slider__tumbler_min" tabindex=0)
-            div(class="js-range-slider__selected range-slider__selected")
-            div(class="range-slider__tumbler js-range-slider__tumbler range-slider__tumbler_max js-range-slider__tumbler_max" tabindex=0)
+        div(id="range-picker" class="js-range-picker__container range-picker__container")
+
         if subscr 
             div
-                p.range-slider__subscribe #{subscr}
+                p.range-picker__subscribe #{subscr}
