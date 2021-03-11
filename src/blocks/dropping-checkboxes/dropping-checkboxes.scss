@@ -47,6 +47,8 @@
         display: none;
         & + .dropping-checkboxes__label{
             @include default-font($main-color_lighter);
+            display: inline-block;
+            min-height: 20px;
             user-select: none;
             background-color: white;
             font-style: normal;

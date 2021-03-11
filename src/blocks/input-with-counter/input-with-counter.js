@@ -1,3 +1,5 @@
+import inputInit from "../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.js"
+
 function initInputWithCounter(values, container){
     const area = container || document
     area.querySelectorAll(".js-input-with-counter").forEach((block, index)=>{
@@ -9,13 +11,13 @@ function initInputWithCounter(values, container){
         let clearingButton = block.querySelector('.js-input-with-counter__button_delete')
         let confirmingButton = block.querySelector('.js-input-with-counter__button_confirm')
 
+                    
+        inputInit()
         input.addEventListener('focus', rollDownMenu)
         clearingButton.addEventListener('click', handlerDeleteButtonClick)
         clearingButton.addEventListener('keydown', handlerDeleteButtonClick)
         confirmingButton.addEventListener('click', handlerConfirmButtonClick) 
         confirmingButton.addEventListener('keydown', handlerConfirmButtonClick) 
-        clearingButton.tabIndex = 0
-        confirmingButton.tabIndex = 0
 
         let valuesAreNotZero = 0
         listEl.forEach((liElement, index)=>{
@@ -25,7 +27,7 @@ function initInputWithCounter(values, container){
             let max = +(counter.getAttribute('data-max') );
             let tumblerPlus = counter.lastChild
             let tumblerMinus = counter.firstChild
-            
+
             initItem()
             valuesAreNotZero += +number.textContent
 

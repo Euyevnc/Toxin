@@ -1,4 +1,5 @@
 @import "../utils/fonts/Montserrat.scss";
+@import "../utils/_mixin_outline.scss";
 
 html{
     font-size: 10px;
@@ -59,13 +60,6 @@ body{
     box-sizing: border-box;
 }
 
-*:focus
-{
-  outline-color: rgba(31, 32, 65, 0.25);
-  outline-width: 1px;
-  color: rgba(31, 32, 65, 0.75);
-  &::placeholder{
-      color: rgba(31, 32, 65, 0.75);
-      transition-duration: 0.7s;
-  }
+*:focus{
+    @include outline();
 }
