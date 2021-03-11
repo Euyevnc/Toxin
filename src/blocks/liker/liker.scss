@@ -4,7 +4,7 @@
     display: inline-block;
     text-align: center;
     &__head{
-        @include default-font($main-color_lightest, $size-small, $size-small+4, 700,none, uppercase);
+        @include default-font($main-color_darkest, $size-small, $size-small+4, 700,none, uppercase);
         margin: 0;
         margin-bottom: 15px;
     }

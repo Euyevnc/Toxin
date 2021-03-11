@@ -37,7 +37,7 @@
         }
     }
     &__subscribe{
-        @include default-font($main-color_lighter, $size-small, $size-small+2.5, 700, none, uppercase);
+        @include default-font($main-color_darkest, $size-small, $size-small+2.5, 700, none, uppercase);
         margin: 0 0 5.5px;
     }
     &__describe{

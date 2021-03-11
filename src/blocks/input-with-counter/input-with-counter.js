@@ -118,12 +118,19 @@ function initInputWithCounter(values, container){
         function handlerDeleteButtonClick(e){
             if(e.type == 'keydown' && e.code !== "Enter") return
             listEl.forEach(item=>{
-                let min = +item.querySelector('.js-input-with-counter__counter').getAttribute('date-min')
+                let min = +item.querySelector('.js-input-with-counter__counter').getAttribute('data-min')
+                let max = +item.querySelector('.js-input-with-counter__counter').getAttribute('data-max')
                 item.querySelector('.input-with-counter__number').textContent = `${min}`;
 
                 let tumblerMinus = item.querySelector('.js-input-with-counter__counter').firstChild;
+                let tumblerPlus = item.querySelector('.js-input-with-counter__counter').lastChild;
                 clearingButton.classList.remove("input-with-counter__button_visible-delete")
                 tumblerMinus.classList.add("input-with-counter__tumbler_depricated")
+
+                if(min !== max){
+                    tumblerPlus.classList.remove("input-with-counter__tumbler_depricated")
+                }
+
                 input.value = ''
             })
         }
