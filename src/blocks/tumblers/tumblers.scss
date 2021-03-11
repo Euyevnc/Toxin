@@ -13,6 +13,7 @@
         margin-right: 10px;
         min-width: 40px;
         min-height: 20px;
+        line-height: 18px;
         position: relative;
         border: 1px solid $main-color_lightest;
         cursor: pointer;
@@ -24,29 +25,32 @@
             content: "stop_circle";
             font-family: 'Material Icons';
             color: $main-color_lightest;
-            font-size: $size-middle;
-            line-height: 18px;
+            font-size: 14px;
             position: absolute;
-            left: 1px;
+            left: 2px;
             transition-duration: 0.5s;
-            top: 0px
+            top: 0px;
         }
     }
     &__checkbox{
         display: none;
-    }
-    &__checkbox:checked{ 
-        & + .tumblers__label{ 
-            border: 1px solid  $highlight-color;
-            transition-duration: 0.5s;
-            &::before {
-                color: $highlight-color;
-                left: 24px;
+        &:checked{ 
+            & + .tumblers__label{ 
+                border: 1px solid  $highlight-color;
                 transition-duration: 0.5s;
+                &::before {
+                    left: 22px;
+                    transition-duration: 0.5s;
+                    color: $highlight-color;
+                    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+                }
             }
+        
         }
-    
     }
+    
     &__subscribe{
         user-select: none;
         vertical-align: middle;

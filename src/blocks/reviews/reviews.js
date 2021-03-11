@@ -24,11 +24,9 @@ function constructReview(review, reviewData, likedReviews){
 }
 
 function fillTheAvatar(reviewCont, reviewData){
-    let avatarCont = reviewCont.querySelector(".review__avatar")
-    let avatar = new Image()
+    let avatar = reviewCont.querySelector(".review__avatar")
     avatar.src = reviewData.avatar
     avatar.alt = "user's avatar"
-    avatarCont.append(avatar)    
 }
 
 function fillTheInfo(reviewCont, reviewData){
@@ -48,10 +46,11 @@ function fillTheArticle(reviewCont, reviewData){
 function fillTheLiker(reviewCont, reviewData, isLiked){
     let likerCheckbox = reviewCont.querySelector(".liker__box")
     let likerLabel = reviewCont.querySelector(".liker__label")
+    let likerCounter = reviewCont.querySelector(".liker__counter")
 
     likerCheckbox.setAttribute('id', 'liker' + reviewData.id)
     likerLabel.setAttribute('for', 'liker' + reviewData.id)
-    likerLabel.textContent = reviewData.likes
+    likerCounter.textContent = reviewData.likes
 
     if(isLiked) likerCheckbox.setAttribute('checked', true)
 }

@@ -17,7 +17,6 @@
     }
     &__checkbox{
         display: none;
-        margin-right: 10px;
     
         & + .checkboxes__label{ 
             user-select: none;
@@ -35,10 +34,17 @@
                 border-image: initial;
                 vertical-align: top;
                 cursor: pointer;
-                font-size: 14px;
+                font-family: 'Material Icons';
+                font-size: 10px;
                 line-height: 18px;
                 text-align: center;
                 margin-right: 10px;
+                font-weight: bold;
+                color: $highlight-color;
+                
+                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
             }
         }
     }
@@ -46,8 +52,6 @@
         & + .checkboxes__label{
             &::before {
                 content: "check";
-                font-family: 'Material Icons';
-                color: $highlight-color;
                 border: 1px solid $highlight-color ;
             }  
         }

@@ -11,5 +11,5 @@ mixin Liker(descr, ...issues)
                     input(type="checkbox" id=`${id}` class="liker__box" checked)
                 else 
                     input(type="checkbox" id=`${id}` class="liker__box")
-                label(class="liker__label" for=`${id}`)=am
-                   
+                label(class="liker__label" for=`${id}`) 
+                    span.liker__counter=am

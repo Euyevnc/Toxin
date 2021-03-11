@@ -1,0 +1,108 @@
+@import "../../layout/layout-for-hotel.scss";
+@import "../../utils/fonts/Montserrat.scss";
+@import "../UI-kit/UI-kit.scss";
+body{
+    position: relative;
+    &>.header-container{
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(247,241,241,1) 89%);
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+}
+.nav-panel{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}    
+.content{
+    max-width: none;
+    &__wrapper{
+        width: 100%;
+        max-width: none;
+    }
+}
+.ui-button, .site-pages-button{
+    position: relative;
+    min-width: 150px; 
+    width: 49%;
+    color: rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 1px 1px .05em rgba(0,0,0,0.4);
+    user-select: none;
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+    background: linear-gradient(top,  rgba(255,255,255,1), rgba(247,241,241,1));
+    
+    &:hover{
+        box-shadow: 0px 2px 3px 1px rgba(34, 60, 80, 0.4);
+        
+    }
+    &:active{
+        box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+        color:  rgba(31, 32, 65, 0.25);
+        top: 1px
+
+    }
+
+    &.actived{
+        background: linear-gradient(top,  rgba(139,164,249,1), rgba(188,156,255,1));
+        cursor: auto;
+        color: white;
+        box-shadow: 0px -3px 8px 7px rgba(34, 60, 80, 0.12) inset;
+        &:hover{
+            box-shadow: 0px -3px 8px 7px rgba(34, 60, 80, 0.12) inset;
+        };
+        &:active{
+            box-shadow: 0px -3px 8px 7px rgba(34, 60, 80, 0.12) inset;
+            color:  white;
+            top: 0
+        }
+    }
+}
+.links-demonstrate{
+    display: none;
+    flex-wrap: wrap;
+    max-width: 1160px;
+    margin: auto;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px 20px rgba(21, 21, 34, 0.1);
+}
+.site-page-filler{
+    width: 288px;
+    height: 372px;
+    margin-top: 15px;
+    border: 4px dashed rgba(141, 130, 235, 1);
+    background: rgba(168, 159, 253, 1);
+    box-shadow: 10px 10px 20px rgba(21, 21, 34, 0.1);
+    transition-duration: .4s;
+    &:hover{
+        background:rgba(168, 159, 253, .5);
+        transition-duration: .4s;
+    }
+    & a{
+        height: 100%;
+        box-sizing: border-box;
+        padding: 30% 10px 0;
+        font-size: 30px;
+        font-family: "Quicksand";
+        word-wrap: break-word;
+        text-decoration: none;
+        font-weight: 700;
+        width: 100%;
+        display: inline-block;
+        color: rgb(252, 252, 252);
+        text-shadow: rgb(104, 14, 177) 1px 1px 0,   rgb(104, 14, 177) -1px -1px 0, 
+        rgb(104, 14, 177) -1px 1px 0,  rgb(104, 14, 177) 1px -1px 0;
+    
+    }  
+}  

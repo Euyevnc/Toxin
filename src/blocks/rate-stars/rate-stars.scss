@@ -3,7 +3,6 @@
 .rate-stars{
     display: inline-block;
     vertical-align: bottom;
-    cursor: pointer;
     & + .rate-stars{
         margin-left: 20px;
     }
@@ -19,11 +18,14 @@
         line-height: 24px;
         font-family: 'Material Icons';
         position: relative;
-        color: $highlight-color;
         font-size: 24px;
         text-align: center;
         vertical-align: middle;
-        cursor: pointer;
+        color: $highlight-color;
+
+        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
         &_outlined{
             & .rate-stars__star_colorized{
                 overflow: hidden;

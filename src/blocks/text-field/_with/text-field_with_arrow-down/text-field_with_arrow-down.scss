@@ -24,14 +24,14 @@
         } 
         &_active{
             outline: 0;
-            border-color: $main-color ;
+            border-color: $main-color_lighter;
             border-radius: 0;
             border-top-right-radius: 4px;
             border-top-left-radius: 4px;
         }
         &:hover{
             color: $main-color;
-            border-color: $main-color ;
+            border-color:$main-color_lighter ;
             transition-duration: 0.7s;
             &::placeholder{
                 color: $main-color;

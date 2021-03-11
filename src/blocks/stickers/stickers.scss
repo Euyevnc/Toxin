@@ -19,14 +19,16 @@
     }
     &__img{
         font-family: 'Material Icons';
-        width: 48px;
-        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
         font-size: 48px;
-        line-height: 48px;
-        text-align: center;
         vertical-align: middle;
-        color: $highlight-color;
         margin-right: 10px;
+        color: $highlight-color;
+
+        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
     }
     &__text{
         display: inline-block;

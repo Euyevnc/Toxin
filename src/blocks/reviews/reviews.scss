@@ -7,12 +7,16 @@
     &__header{
         position: relative;
     }
-    &__avatar{
+    &__avatar-container{
         display: inline-block;
         vertical-align: top;
         margin-right: 10px;
         width: 48px;
         height: 48px;
+    }
+
+    &__avatar{
+        border-radius: 50%;
     }
     &__info{
         display: inline-block;

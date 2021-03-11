@@ -2,7 +2,8 @@ mixin Reviews
     include ../liker/liker.pug
     article.review.js-review
         section.review__header
-            span.review__avatar
+            span.review__avatar-container
+                img.review__avatar
             span.review__info
                 strong.review__name 
                 p.review__days-ago 

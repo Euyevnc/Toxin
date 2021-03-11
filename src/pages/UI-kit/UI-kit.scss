@@ -196,6 +196,15 @@
     }
     & .expand-input-drop-container{
         margin-bottom: 158px;
+        & input{
+            ////В нормальных условиях это всё делается через js, когда поле или список в фокусе, но 
+            ////поскольку нужно держать, для демонстрации, в таком состоянии нужно держать несколько окон, то определяю вручную
+            outline: 0;
+            border-color: $main-color_lighter;
+            border-radius: 0;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+        }
     }
     & .stickers-container {
         margin: 0 20px;
@@ -302,6 +311,5 @@
     width:100%
 }
 *:focus{
-    outline-color: rgba(31, 32, 65, 0.50);
-    
+    @include outline();
 }

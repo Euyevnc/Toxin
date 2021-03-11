@@ -26,6 +26,15 @@
                 transition-duration: 0.7s;
             }
         }
+        &:focus{
+            color: $main-color;
+            border: 1px solid $main-color_lighter;
+            transition-duration: 0.7s;
+            &::placeholder{
+                color:  $main-color_lighter;
+                transition-duration: 0.7s;
+            }
+        }
     }
     &__subscribe{
         @include default-font($main-color_lighter, $size-small, $size-small+2.5, 700, none, uppercase);

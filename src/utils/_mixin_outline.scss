@@ -1,0 +1,4 @@
+@mixin outline($weight: 2px, $color: $main-color_lighter){
+    outline: none;
+    box-shadow: 0px 0px 0px $weight $color inset;
+}
