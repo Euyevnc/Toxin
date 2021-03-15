@@ -13,7 +13,7 @@ function handlerDocumentDomLoaded(){
     header()  
     dateRange(4, 8)
     counter([[2,1,1], [2,2,1]])
-    rangeSlider()
+    rangeSlider(null, {type: "range", orient:"horizontal", scale: false, cloud: "none", origin: 1000, range: 14000, step: 500}, 5000, 10000)
     expCheckboxes(true)
     initDemo()
 }

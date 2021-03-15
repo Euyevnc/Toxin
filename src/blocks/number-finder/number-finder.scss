@@ -16,19 +16,20 @@
         margin: 0;
         padding: 0; 
         margin-bottom: 21px;
+        min-height: 59px;
     }
     &__form{
         min-width: 320px;
     }
     &__container{
-        margin: 20px 0;
         min-width: 320px;
         &_for_calendar{
             display: flex;
             justify-content: space-between;
+            margin-bottom: 21px;
         }
         &_for_input{
-            margin-bottom: 30px;
+            margin-bottom: 31px;
         }
     }
     &__submit-button{

@@ -3,6 +3,7 @@
 @import "../../utils/_mixin-font.scss";
 
 .menu{
+    margin-left: auto;
     &__list{
         margin: 0;
         padding: 0;
@@ -10,6 +11,7 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: flex-end;
+      
     }
     &__element{
         position: relative;
@@ -17,12 +19,11 @@
         cursor: pointer;
         margin: 0 ;
         padding: 0 10px;
-        vertical-align: center;
-        max-height: 21px;
+        max-height: 18px;
         border-radius: 4px;
-        background-color: white;
         user-select: none;
-        @include default-font($color: $main-color_lighter, $line: $size-middle+7 );
+        @include default-font($color: $main-color_lighter);
+        vertical-align: middle;
         &:hover{
             color: $main-color;
         }
@@ -32,11 +33,11 @@
         }
     }
     &__arrow-down{
-        display: inline-block;
-        width: 24px;
-        min-height: 21px;  
-        line-height: 21px;    
+        display: inline-block;      
         vertical-align: top;
+        height: 100%;
+        width: 25px;
+        line-height: 20px;
     }
     &__submenu{
         margin: 0;
@@ -69,10 +70,11 @@
         }
     }   
     &__link{    
+        display: inline-block;
         text-decoration: none;
-        vertical-align: top;
+        vertical-align: middle;
         user-select: none;
-        @include default-font($color: $main-color_lighter);
+        @include default-font($color: $main-color_lighter, $line: $size-middle+3);
         &_active{
             color: $main-color;
         }

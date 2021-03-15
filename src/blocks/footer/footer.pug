@@ -7,8 +7,7 @@ mixin Footer(info, ...refs)
                     include ../../static/Images/logo.img_color.svg
                 span.footer__brand
                     include ../../static/Images/TOXIN.svg
-            div 
-                p(class="footer__inscription") #{info} 
+            p(class="footer__inscription") #{info} 
         each block in refs
             section(class="footer__block footer__block_width_slim")
                 h3(class="footer__heading") #{block.caption}

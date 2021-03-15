@@ -3,13 +3,13 @@
 .text-field_with_arrow-down{
     position: relative;
     &__subscribe{
-        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
+        @include default-font($main-color_darkest, $size-small, $size-small+2, 700, none, uppercase);
         margin: 0;
         padding: 0;
         margin-bottom: 5.5px;
     }
     &__value{
-        @include default-font($line: $size-largest);
+        @include default-font();
         padding-left: 15px;
         width: 100%;
         height: 44px;
@@ -18,7 +18,6 @@
         border-radius: 4px;
         transition-duration: 0.7s;
         &::placeholder{
-            @include default-font($line: $size-largest);
             transition-duration: 0.7s;
             opacity: 1;
         } 
@@ -48,14 +47,15 @@
         @include default-font($main-color_lighter, $size-small, $size-small+3, 400, none, uppercase);
     };
     &__arrow{
+        position: absolute;
         display: inline-block;
-        line-height: 44px;
+        line-height: 45px;
         min-width: 44px;
         height: 44px;
         right: 0;
         bottom: 0;
         cursor: pointer;
-        position: absolute;
+
         text-align: center;
     }
 };

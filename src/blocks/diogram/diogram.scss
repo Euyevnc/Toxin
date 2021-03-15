@@ -15,18 +15,22 @@
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &__reviews-amount{
         @include default-font($highlight-color, $size-largest, $size-largest+5, 700, none, uppercase);
+        min-height: 30px;
     }
     &__subtitle{
-        @include default-font($highlight-color, $size-small, $size-small+3, 400, none, uppercase);
+        @include default-font($highlight-color, $size-small, $size-small+3, 700, none, uppercase);
     }
     &__image{
         width: 120px;
         height: 120px;
         position: relative;
+       
     }
     &__legend{
         margin-left: 30px;
@@ -34,7 +38,6 @@
         display: inline-block;
     }
     &__legend-item{
-        max-height: 24px;
         &:nth-child(1){
             & .diogram__legend-circle{background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);}
         }
@@ -57,8 +60,9 @@
     }
     &__legend-lettering{
         margin: 0;
+        margin-top: 6px;
         display: inline-block;
         vertical-align: baseline;
-        @include default-font($line: $size-largest);
+        @include default-font($line: $default-line);
     }
 }

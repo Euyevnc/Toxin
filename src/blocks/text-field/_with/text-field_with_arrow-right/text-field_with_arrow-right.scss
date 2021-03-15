@@ -18,7 +18,7 @@
         border-radius: 4px;
         transition-duration: 0.7s;
         &::placeholder{
-            @include default-font($line: $size-largest);
+            @include default-font($color: $main-color_lightest, $line: $size-largest);
             transition-duration: 0.7s;
             opacity: 1;
         } 

@@ -8,7 +8,7 @@
     }
     &__label{
         user-select: none;
-        vertical-align: middle;
+        vertical-align: top;
         display: inline-block;
         margin-right: 10px;
         min-width: 40px;
@@ -50,11 +50,15 @@
         
         }
     }
-    
+    &__item{
+        min-height: 24px;
+    }
     &__subscribe{
         user-select: none;
-        vertical-align: middle;
-        @include default-font($line: $size-largest);
+        vertical-align: top;
+        display: inline-block;
+        @include default-font();
+        
     }
 }
 

@@ -4,13 +4,13 @@ include ../button-rounded/button-rounded.pug
 
 article(class="booker js-booker")
     section.booker__information
-        span
+        span.booker__main-info
             b.booker__font_color_black.booker__font_size_middle № 
             strong.booker__number.js-booker__number.booker__font_color_black.booker__font_size_large
             b.booker__category.js-booker__category.booker__font_color_purple.booker__font_size_small.booker__font_uppercase
-        span
+        span.booker__price-info
             strong.booker__price.js-booker__price.booker__font_color_grey.booker__font_size_middle
-            span.booker__font_color_grey.booker__font_size_small в сутки
+            span.booker__font_color_grey.booker__font_size_small &nbsp;&nbsp;в сутки
 
     section.booker__forms
         form(name="booker")

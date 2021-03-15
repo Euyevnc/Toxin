@@ -3,17 +3,22 @@
 .footer{
     background-color: #FFFFFF;
     width: 100%;
-    padding: 85px 0 80px;
+    padding: 90px 0 80px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     &__block{
-        margin: 20px 0 0;
+        margin: 14px 0 0;
+        white-space: 0;
+        
         &_width_wide{
             max-width: 260px;
+            & .footer__heading{
+                margin-bottom: 18px;
+            }
             &:first-child{
-                margin-top: 15px;
+                margin: 10px 0 0;
             }
         }
         &_width_slim{
@@ -21,18 +26,19 @@
         }
     }
     &__sign{
-
-        margin-bottom: 20px;
+        margin-bottom: 17px;
         flex-shrink: 0;
     }
     &__logo{
         vertical-align: middle;
-        margin-right: 10px;   
+        margin-right: 12.5px;   
         display: inline-block;
+        max-height: 40px;
     }
     &__brand{
         vertical-align: middle;
         display: inline-block;
+        max-height: 13px;
     }
     &__list{   
         margin: 0;
@@ -41,16 +47,15 @@
     &__list-element{
         list-style-type: none; 
         margin-bottom: 20px;  
-        
+        min-height: 18px
     }
     &__heading{
-        margin: 0 0 20px ;
+        margin: 0 0 22px ;
+        
         @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
     }
     &__link{
-        @include default-font($main-color_lighter, $size: $size-middle, $line: $size-middle - 1, );
-        vertical-align: baseline;
-        min-height: 18px;
+        @include default-font($main-color_lighter, $size: $size-middle, $line: $size-middle + 3, );
         text-decoration: none;
         text-align: left;
         &:hover{
@@ -60,7 +65,11 @@
     &__inscription{
         display: inline-block;
         vertical-align: baseline;
-        margin:0 0 20px;
-        @include default-font( $line: $size-largest );
+        margin:0 0 23px;
+        @include default-font($color: $main-color, $line: $size-largest);
+
+        ///тут одно из мест в макете, которое не очень понимаю как можно реализовать без отрицатеьного марджина:
+        ////Текстовые элементы с разной выотой строки лежат отцентрированы
+        
     }
 }

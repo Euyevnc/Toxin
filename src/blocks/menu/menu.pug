@@ -6,7 +6,7 @@ mixin Menu(login, issues)
 
                 if val.blocks
                     li(class=`js-menu__element menu__element ${modifier}` tabindex=0) 
-                        span #{val.name} 
+                        span.menu__link #{val.name}
                         span.menu__arrow-down
                             include ../../static/figures/arrow-down/arrow-down.pug
                         ul.js-menu__submenu.menu__submenu
@@ -20,5 +20,5 @@ mixin Menu(login, issues)
             if login   
                 div(class="js-menu__element menu__element  menu__login")
                     a(href="/account/" class="menu__link") #{login}
-            else
+            if !login
                 include ../autorization-panel/autorization-panel.pug

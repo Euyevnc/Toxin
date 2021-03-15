@@ -8,7 +8,7 @@
     box-shadow: 0px 0px 25px rgba(151, 125, 125, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    padding: 39px 29px;
+    padding: 40px 29px 29px;
     max-width: 320px;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__font{
@@ -42,55 +42,70 @@
         display: flex; 
         justify-content: space-between;
         align-items: flex-end;
-        margin-bottom: 19px;
+        margin-bottom: 20px;
+        min-height: 30px;
+    }
+    &__price-info{
+        display: inline-block;
+        line-height: 20px;
     }
     &__calendar{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 23px;
     }
     &__counter{
-        margin-bottom: 20.5px;
+        margin-bottom: 19px;
     }
     &__rent-calculation{
-        @include default-font($line: $size-largest);
+        @include default-font($line: $default-line);
         vertical-align: top; 
+        padding-left: 1px;
 
     }
     &__rent{
         display: flex; 
         justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 10px;
+        align-items: center;
+        line-height: $size-largest;
+        
     }
     &__services{
-        margin: 0;
+        margin: 10px 0 0;
         padding: 0;
     }
     &__service{
         display: flex; 
         justify-content: space-between;
-        margin-bottom: 10px;
+        align-items: flex-start;
+        margin-bottom: 12px;
         list-style-type: none;
+        min-height: 24px;
+        line-height: $default-line;
     }
     &__service-desc{
-        width: 215px;
+        width: 220px;
         display: inline-block;
+        align-self: center;
+    }
+    &__service-price{
+        line-height: 24px;
     }
     &__sign_i{
         display: inline-block;
         height: 20px; 
         width: 20px;
-        vertical-align: top;
+        margin-right: auto;
         text-align:center; 
         border-radius:50%;
         box-sizing: border-box;
         border: 1px solid $main-color_lightest; 
-        @include default-font($size: $size-small, $color: $main-color_lightest, $weight: 700);
+        @include default-font($size: $size-small, $line: $size-small+8, $color: $main-color_lightest, $weight: 700);
     }
     &__total{
+        min-width: 329px;
         display: flex; 
-        margin: 30px 0 20px;
+        margin: 30px 0 21px;
         font-size: $size-larger;
         line-height: $size-largest;
     }
@@ -100,6 +115,7 @@
         max-height: 1px;
         flex-grow: 1;
         align-self: flex-end;
+        margin-bottom: 4px;
     }
     &__button-cont{
         height: 44px;

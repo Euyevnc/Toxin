@@ -111,7 +111,7 @@
         }
     }
 
-    &__price{
+    &__main-info{
         padding: 20px 0 10px 0;
         border-bottom: 1px solid rgba(31, 32, 65, 0.1);
         display: flex;
@@ -119,7 +119,11 @@
         align-items: flex-end;
         margin: 0 16px 0 20px;
     }
-
+    &__price{
+        min-width: 20px;
+        line-height: 20px;
+        display: inline-block;
+    }
     &__font{
         &_color_black{
             color: $main-color_darkest;

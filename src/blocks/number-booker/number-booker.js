@@ -13,7 +13,7 @@ function initBooker({number, category, price, arrival,departure, guests, service
 
         card.querySelectorAll(".js-booker__number").forEach(el=>el.innerHTML = number)
         card.querySelectorAll(".js-booker__category").forEach(el=>el.innerHTML = '&nbsp;&nbsp;&nbsp;' + category)
-        card.querySelectorAll(".js-booker__price").forEach(el=>el.innerHTML = price.toLocaleString() + "₽ ")
+        card.querySelectorAll(".js-booker__price").forEach(el=>el.innerHTML = price.toLocaleString() + "₽")
 
         let servicesPrice = countService(services)
         countTotal(departure - arrival, servicesPrice)
@@ -48,10 +48,10 @@ function initBooker({number, category, price, arrival,departure, guests, service
             let servicePrice = 0 
             servicesArray.forEach(el=>{
                 servicePrice += el.impact 
-                if(el.impact < 0) el.describe+=":скидка " + (-el.impact).toLocaleString()+ "₽"
+                if(el.impact < 0) el.describe+=": скидка " + (-el.impact).toLocaleString()+ "₽"
                 let servBlock = document.createElement("li")
                 servBlock.className = "booker__service"
-                servBlock.innerHTML = `<span><span class="booker__service-desc">${el.describe}</span>   <span class="booker__sign_i">i</span></span> <span>${(el.price).toLocaleString()}₽</span>`
+                servBlock.innerHTML = `<span class="booker__service-desc">${el.describe}</span><span class="booker__sign_i">i</span><span class="booker__service-price">${(el.price).toLocaleString()}₽</span>`
                 card.querySelector(".js-booker__services").appendChild(servBlock)
             })
             return servicePrice

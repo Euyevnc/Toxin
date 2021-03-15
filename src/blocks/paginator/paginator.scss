@@ -2,11 +2,7 @@
 @import "../../utils/_mixin-font.scss";
 
 .paginator{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 320px;
-    margin: auto;
+   
     &__buttons-list{
         display: inline; 
         margin: 0;
@@ -60,7 +56,7 @@
     }
 
     &__text{
-        @include default-font($line: $size-middle+6);
+        @include default-font();
         margin: 10.5px 0 0;
         text-align: center;
     }

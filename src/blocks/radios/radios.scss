@@ -12,6 +12,7 @@
         display: none;
         & + .radios__label{ 
             @include default-font($line: $size-middle+6);
+            max-height: 20px;
             display: inline-block;
             vertical-align: middle;
             color: $main-color;

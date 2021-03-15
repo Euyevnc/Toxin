@@ -3,7 +3,7 @@ import "./UI-kit.scss"
 import inputMask from "../../blocks/dmy-mask/dmy-mask"
 import doubleDatePicker from "../../blocks/date-picker/_double/date-picker_double"
 import datePicker from "../../blocks/date-picker/date-picker"
-import rangeOldSlider from "../../blocks/range-slider/range-slider";
+import rangeSlider from "../../blocks/range-slider/range-slider";
 import counter from "../../blocks/input-with-counter/input-with-counter";
 import expandableCheckboxes from "../../blocks/dropping-checkboxes/dropping-checkboxes"
 import booker from "../../blocks/number-booker/number-booker" 
@@ -35,7 +35,7 @@ function handlerDOMLoaded(){
     demo()
     inputMask()
     finderForm()
-    rangeOldSlider(uiCont)
+    rangeSlider(uiCont, {type: "range", orient:"horizontal", scale: false, cloud: "none", origin: 1000, range: 14000, step: 500}, 5000, 10000)
     datePicker(4, 8)
     expandableCheckboxes(true, expandedCheckboxes)
     expandableCheckboxes(false, expandingCheckboxes)

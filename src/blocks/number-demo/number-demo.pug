@@ -20,12 +20,12 @@ mixin Number-demo(number, category, price, rate, reviews, pictures)
                         span(class="number-demo__button number-demo__button_disactive")
                 -}
 
-        div(class="number-demo__price")
+        div(class="number-demo__main-info")
             span 
                 b(class="number-demo__font_color_black number-demo__font_size_middle") №
                 strong(class="number-demo__font_color_black number-demo__font_size_large") &nbsp;#{number}
-                strong(class="number-demo__font_color_purple number-demo__font_small number-demo__font_uppercase") &nbsp;#{category}
-            span 
+                strong(class="number-demo__font_color_purple number-demo__font_size_small number-demo__font_uppercase") &nbsp;&nbsp;#{category}
+            span.number-demo__price
                 b(class="number-demo__font_size_middle") #{validPrice}₽
                 span(class="number-demo__font_size_small") &nbsp;в сутки
 
@@ -36,4 +36,4 @@ mixin Number-demo(number, category, price, rate, reviews, pictures)
                 +Rate-stars('', compl, rest)
             span(class="number-demo__reviews")
                 b(class="number-demo__font_size_middle") #{reviews}
-                span(class="number-demo__font_size_small") &nbsp;Отзывов
+                span(class="number-demo__font_size_middle") &nbsp;Отзывов

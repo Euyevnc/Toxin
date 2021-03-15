@@ -44,7 +44,7 @@ block content
                     +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '', 'counter001',{name: "взрослые", min: "0", max: "5"}, {name: "дети", min: "0", max: "5"}, {name: "младенцы", min: "0", max: "5"} )
                 
                 div.content__price-picker
-                    +Range-slider("Диапозон цены", "Стоимость за сутки прибывания в номере", 0, 15000, 0.333, 0.666)
+                    +Range-picker("Диапазон цены", "Стоимость за сутки прибывания в номере")
                 
                 div.content__rules
                     +Checkboxes('правила дома', {name:'Можно курить', id:'chd001'}, {name:'Можно с питомцами', id:'chd002', checked:"true"},{name:'Можно пригласить гостей (до 10 человек)', id:'chd003', checked:"true"})
@@ -65,14 +65,14 @@ block content
                 +Number-demo(840, "", 9900, 4, 65,  [img2,img4,img5,img9])
                 +Number-demo(980, "люкс", 8500, 3, 35,  [img3,img2,img5,img9])
                 +Number-demo(856, "", 7300, 5, 19,  [img4,img2,img5,img9])
-                +Number-demo(740, "", 6600, 4, 44,  [img5,img2,img7,img9])
+                +Number-demo(740, "", 6000, 4, 44,  [img5,img2,img7,img9])
                 +Number-demo(982, "", 5800, 3, 56, [img6,img2,img5,img9])
                 +Number-demo(678, "", 5500, 5, 45, [img7,img2,img5,img9])
+                +Number-demo(450, "", 5300, 4, 39,  [img8, img3, img5, img7])
                 +Number-demo(350, "", 5000, 3, 77,  [img9,img2,img5,img1])
                 +Number-demo(666, "", 5000, 5, 25,  [img10,img2,img5,img9])
                 +Number-demo(444, "", 5000, 3, 15,[img11,img2,img5,img9])
                 +Number-demo(352, "", 5000, 3, 55, [img12,img2,img5,img9])
-                +Number-demo(888, "люкс", 9990, 5, 145,  [img1, img3, img5, img7])
 
             div.content__paginator()
                 +Paginator(15)

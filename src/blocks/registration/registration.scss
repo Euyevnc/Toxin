@@ -18,14 +18,17 @@
         margin-bottom: 20px;
     };
     &__form{
-        margin-bottom: 30px;
+        margin-bottom: 28px;
         min-width: 320px;
     }
     &__data-name{
         margin-bottom: 10px;
     }
+    &__data-sex{
+        margin: 0.5px 0 23.5px;
+    }
     &__data-birthday{
-        margin: 20px 0;
+        margin-bottom: 21px ;
     }
     &__data-email{
         margin-bottom: 10px;
