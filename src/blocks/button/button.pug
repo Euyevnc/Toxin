@@ -1,0 +1,11 @@
+mixin button({ text='', styles=[], type='', withArrow = false })
+
+    - let classes = ""
+    each style in styles 
+        - classes += `button_${style} `;
+
+    button(class=`button ${classes}` type = type || 'submit') 
+        span.button__text #{text}
+        if withArrow
+            span.button__arrow
+                include ../../static/figures/arrow-right/arrow-right.pug

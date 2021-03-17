@@ -3,8 +3,10 @@ $main-color_lighter: rgba(31, 32, 65, 0.5);
 $main-color_lightest: rgba(31, 32, 65, 0.25);
 $main-color_darkest: rgba(31, 32, 65, 1);
 
-$highlight-color: #BC9CFF; 
-$highlight-color_skew: #8BA4F9; 
+$highlight-color: rgba(188, 156, 255, 1); 
+$highlight-color_skew: rgba(139, 164, 249, 1); 
+$highlight-color_depr: rgba(188, 156, 255, 0.5); 
+$highlight-color_skew_depr: rgba(139, 164, 249, 0.5); 
 
 
 $size-small:12px;

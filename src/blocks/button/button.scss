@@ -1,18 +1,14 @@
-@import "../../utils/fonts/Montserrat.scss";
-@import "../../utils/_variables.scss";
+@import "../../utils/_mixin-font.scss";
 @import "../../static/figures/arrow-right/arrow-right.scss";
-.button-rounded{
+.button{
+    @include default-font($size: $size-small, $line: 44px, $weight: 700, $transform: uppercase);
+    display: inline-block;
     position: relative;
-    width: 100%;
+    min-width: 100%;
     height: 44px;
-    line-height: 44px;
     box-sizing: border-box;
     border-radius: 22px;
     text-align: center;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12px;
     user-select: none;
     cursor: pointer;
     border: none;
@@ -32,18 +28,19 @@
         right: 0;
 
     }
-    &_type_purple{
+    &_color_purple{
         background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
         color: white;
+
+        &:hover{
+            background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
+ 
+        }
     }
-    &_type_purple-depr{
-        background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-        color: white;
-        opacity: 0.5;
-    }
-    &_type_empty{
+    &_color_empty{
         background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
         color: $highlight-color;
+  
         &::after{
             content: "";
             background-color: white;
@@ -55,24 +52,12 @@
             left: 2px;
             right: 2px;
         }
-    }
-    &_type_empty-depr{
-        background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-        color: $highlight-color;
-        opacity: 0.5;
-        &::after{
-            content: "";
-            background-color: white;
-            position: absolute;
-            border-radius: 20px;
-            z-index: 0;
-            top: 2px;
-            bottom: 2px;
-            left: 2px;
-            right: 2px;
+        &:hover{
+            background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
         }
     }
-    &_type_low{
+
+    &_height_low{
         height: 34px;
         line-height: 34px;
     }

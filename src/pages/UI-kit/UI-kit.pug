@@ -85,20 +85,20 @@ div.ui-kit-container
             div.buttons-container
                 h3 buttons 
                 .rounded-button-container 
-                    +Button-rounded('click me', ['purple'])
-                .rounded-button-container
-                    +Button-rounded('click me', ['purple-depr'])
-                .rounded-button-container
-                    +Button-rounded('click me', ['empty'])
-                .rounded-button-container
-                    +Button-rounded('click me', ['empty-depr'])
+                    +button( {text: 'click me', styles: ['purple'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['purple'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['empty'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['empty'], type: 'button'})
                 br
                 span.simple-button-container
                     +Button_minimaze('click me', 'purple')
                 span.simple-button-container
                     +Button_minimaze('click me', 'grey')
             div.large-button-container 
-                +Button-rounded("перейти к оплате", ['purple'], 'arrow') 
+                +button({text: "перейти к оплате", styles: ['purple'], withArrow:true}) 
             div.pages-switcher-container 
                 h3 pagination
                 +Paginator(15)
