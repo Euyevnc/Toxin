@@ -1,4 +1,4 @@
-import dateMask from "../dmy-mask/dmy-mask.js"
+import dateMask from "../date-mask/date-mask.js"
 
 function initRegistration(){
     dateMask();

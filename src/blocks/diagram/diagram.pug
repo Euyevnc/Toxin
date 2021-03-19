@@ -1,0 +1,20 @@
+mixin diagram()
+    article(class="js-diagram diagram")
+        section.diagram__image
+            div(class="js-diagram__title diagram__title")
+                b.js-diagram__reviews-amount.diagram__reviews-amount
+                b.js-diagram__subtitle.diagram__subtitle
+            canvas(width="120px" height="120px" class="js-diagram__canvas diagram__canvas" )
+        section.diagram__legend.js-diagram__legend
+            div(class="diagram__legend-item")
+                span.diagram__legend-circle
+                p.diagram__legend-lettering Великолепно
+            div(class="diagram__legend-item" )
+                span.diagram__legend-circle 
+                p.diagram__legend-lettering Хорошо
+            div(class="diagram__legend-item")
+                span.diagram__legend-circle 
+                p.diagram__legend-lettering Удовлетворительно           
+            div(class="diagram__legend-item" ) 
+                span.diagram__legend-circle 
+                p.diagram__legend-lettering Разачарован

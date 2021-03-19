@@ -1,5 +1,5 @@
 include ../text-field/text-field.pug
-include ../dmy-mask/dmy-mask.pug
+include ../date-mask/date-mask.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
@@ -15,7 +15,7 @@ article(class="registration")
             +Radios('', 'sex', {id:'registrtion-gender-man', describe:'Мужчина', checked:true},{id:'registration-gender-fem', describe:'Женщина'} )
         
         div(class="registration__data-birthday")
-            +dmy-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+            +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
 
         div(class="registration__data-email")
             +text-field({label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"})

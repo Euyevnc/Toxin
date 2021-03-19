@@ -1,6 +1,6 @@
 import "./RoomDetails.scss";
 import header from "../../blocks/header/header.js"
-import diogram from "../../blocks/diogram/diogram.js"
+import diogram from "../../blocks/diagram/diagram.js"
 import booker from "../../blocks/number-booker/number-booker.js"
 import createReviews from "../../blocks/reviews/reviews.js"
 import data from "./data.json"

@@ -4,7 +4,7 @@ include ../../blocks/footer/footer.pug
 include ../../blocks/cellar/cellar.pug
 include ../../blocks/pictures-demo/pictures-demo.pug
 include ../../blocks/stickers/stickers.pug
-include ../../blocks/diogram/diogram.pug
+include ../../blocks/diagram/diagram.pug
 include ../../blocks/reviews/reviews.pug
 include ../../blocks/marked-list/marked-list.pug
 
@@ -26,7 +26,7 @@ block content
         
         div.content__diogram
             h2(class="content__header ") Впечатления от номера
-            +Diogram("diogram_doub") 
+            +diagram() 
 
         div.content__reviews
             h2(class="content__header ") Отзывы посетителей номера

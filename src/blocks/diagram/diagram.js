@@ -1,8 +1,8 @@
 import Chart from 'chart.js';
 
-function initDiogram(data, container){
+function initDiagram(data, container){
     let area = container || document
-    area.querySelectorAll(".js-diogram__canvas").forEach(el=>{
+    area.querySelectorAll(".js-diagram__canvas").forEach(el=>{
         let ctx =  el;
         let ctxM = el.getContext("2d");
         
@@ -29,13 +29,13 @@ function initDiogram(data, container){
         let FourthAmount = data.statistics.disappointed
     
         let total = FirstAmount + SecondAmount + ThirdAmount + FourthAmount;
-        cont.querySelector(".js-diogram__reviews-amount").textContent = total;
+        cont.querySelector(".js-diagram__reviews-amount").textContent = total;
         
         let title
         if (5> total >1 || 5>total%10>1 ) title = "голоса"
         else if (total == 1 || total%10==1) titl = "голос"
         else title = "голосов"
-        cont.querySelector(".js-diogram__subtitle").textContent = title;
+        cont.querySelector(".js-diagram__subtitle").textContent = title;
     
         let myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -70,4 +70,4 @@ function initDiogram(data, container){
     })
 }
 
-export default initDiogram
+export default initDiagram

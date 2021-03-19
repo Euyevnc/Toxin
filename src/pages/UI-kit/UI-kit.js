@@ -1,6 +1,6 @@
 import "./UI-kit.scss"
 
-import inputMask from "../../blocks/dmy-mask/dmy-mask"
+import inputMask from "../../blocks/date-mask/date-mask"
 import doubleDatePicker from "../../blocks/date-picker/_double/date-picker_double"
 import datePicker from "../../blocks/date-picker/date-picker"
 import rangeSlider from "../../blocks/range-slider/range-slider";
