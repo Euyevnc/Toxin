@@ -1,10 +1,10 @@
-mixin button({ text='', styles=[], type='', withArrow = false })
+mixin button({ text='', styles=[], type='button', withArrow = false })
 
     - let classes = ""
     each style in styles 
         - classes += `button_${style} `;
 
-    button(class=`button ${classes}` type = type || 'submit') 
+    button(class=`button ${classes}` type = type) 
         span.button__text #{text}
         if withArrow
             span.button__arrow

@@ -1,5 +1,5 @@
-mixin Dmy-mask(label, placeholder, describe)
+mixin dmy-mask({ label, placeholder, describe })
     include ../../blocks/text-field/text-field.pug
     div(class= "js-dmy-mask dmy-mask")
-        +Text-field(label, placeholder, describe)
+        +text-field({label, placeholder, describe})
         
