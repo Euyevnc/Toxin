@@ -11,39 +11,41 @@
     &__checkbox{
         display: none;
         & + .radios__label{ 
-            @include default-font($line: $size-middle+6);
-            max-height: 20px;
+            @include default-font($color: $main-color_lighter, $line: $size-middle+6);
+            max-height: 24px;
             display: inline-block;
             vertical-align: middle;
-            color: $main-color;
             cursor: pointer;
             &::before {
-                margin-right: 10px;
-                content:'';
+                font-family: 'Material Icons';
+                content:'radio_button_unchecked';
                 display: inline-block;
                 text-align: center;
-                width: 20px;
-                height: 20px;
+                width: 24px;
+                height: 24px;
                 box-sizing: border-box;
-                border: 1px solid $main-color_lightest;
+                margin-right: 8px;
                 border-radius: 50%;
-                line-height: 18px;
-                font-size: 14px;
-                font-family: 'Material Icons';
+                line-height: 24px;
+                font-size: 24px;
                 vertical-align: middle;   
-                color: $highlight-color;
+                color: $main-color_lightest;
 
-                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; 
+
             }
         }
     }
     &__checkbox:checked{ 
         & + .radios__label{ 
+            color: $main-color;
             &::before {
-                content: "stop_circle";
-                border: 1px solid  $highlight-color;
+                content: 'radio_button_checked';
+
+                color: $highlight-color;
+                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                
             }
         }
     

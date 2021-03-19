@@ -22,14 +22,14 @@
         box-sizing: border-box;
         &::before {
             display: inline-block;
-            content: "stop_circle";
+            content: "fiber_manual_record";
             font-family: 'Material Icons';
             color: $main-color_lightest;
-            font-size: 14px;
+            font-size: 18px;
             position: absolute;
-            left: 2px;
+            left: 0px;
             transition-duration: 0.5s;
-            top: 0px;
+            top: 1px;
         }
     }
     &__checkbox{
