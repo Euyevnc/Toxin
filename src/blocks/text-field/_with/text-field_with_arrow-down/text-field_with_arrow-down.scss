@@ -54,8 +54,11 @@
         height: 44px;
         right: 0;
         bottom: 0;
-        cursor: pointer;
-
         text-align: center;
+        cursor: pointer;
+        &:focus{
+            box-shadow: none;
+        }
     }
+
 };

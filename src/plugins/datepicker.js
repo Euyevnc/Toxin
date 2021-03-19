@@ -154,7 +154,7 @@ function Datepicker() {
 	$.extend( this._defaults, this.regional[ "" ] );
 	this.regional.en = $.extend( true, {}, this.regional[ "" ] );
 	this.regional[ "en-US" ] = $.extend( true, {}, this.regional.en );
-	this.dpDiv = datepicker_bindHover( $( "<div id='" + this._mainDivId + "' class='ui-datepicker ui-widget ui-widget-content ui-corner-all'></div>" ) );
+	this.dpDiv = datepicker_bindHover( $( "<div id='" + this._mainDivId + "' class='js-ui-datepicker ui-datepicker ui-widget ui-widget-content ui-corner-all'></div>" ) );
 }
 
 $.extend( Datepicker.prototype, {
@@ -819,6 +819,8 @@ $.extend( Datepicker.prototype, {
 
 			$.datepicker._curInst = inst;
 		}
+		let event = new CustomEvent("calendarshowing", { detail: {input} })
+		document.dispatchEvent(event)
 	},
 
 	/* Generate the date picker content. */
@@ -955,6 +957,8 @@ $.extend( Datepicker.prototype, {
 			}
 			this._inDialog = false;
 		}
+		let event = new CustomEvent("calendarhiding", { detail: {input} })
+		document.dispatchEvent(event)
 	},
 
 	/* Tidy up after a dialog display. */

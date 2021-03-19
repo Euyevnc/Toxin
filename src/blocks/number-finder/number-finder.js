@@ -1,12 +1,10 @@
-import Date_range_double from "../date-picker/_double/date-picker_double"
-import Counter from "../input-with-counter/input-with-counter";
+import date_range_double from "../date-picker/_double/date-picker_double"
+import counter from "../input-with-counter/input-with-counter";
 
-export default function(counter, firDate, secDate){
-    let FinderContainer = document.querySelector(".js-number-finder")
+export default function({values=[], firDate=null, secDate=null}){
+    let root = document.querySelector(".js-number-finder")
 
-    if(firDate && secDate) Date_range_double(firDate, secDate, FinderContainer)
-    else Date_range_double(null, null, FinderContainer)
+   date_range_double({ firDate , secDate, root })
     
-    if(counter) Counter(counter, FinderContainer)
-    else Counter(null, FinderContainer)
+    counter({ values, root})
 }

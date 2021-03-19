@@ -1,13 +1,10 @@
 mixin Text-field_with_arrow-down(label, placeholder, describe, id, type)
     div(class=`js-text-field_with_arrow-down text-field_with_arrow-down`)
-        span.text-field_with_arrow-down__arrow.js-text-field_with_arrow-down__arrow
+        span(class='text-field_with_arrow-down__arrow js-text-field_with_arrow-down__arrow')
             include ../../../../static/figures/arrow-down/arrow-down.pug 
         label 
             if label
                 h3.text-field_with_arrow-down__subscribe #{label}
-            if id
-                input(class="js-text-field_with_arrow-down__value text-field_with_arrow-down__value" placeholder=`${placeholder}` id=`${id}` type=`${type || "text"}`) 
-            else 
-                input(class="js-text-field_with_arrow-down__value text-field_with_arrow-down__value" placeholder=`${placeholder}` type=`${type || "text"}`) 
+                input(class="js-text-field_with_arrow-down__value text-field_with_arrow-down__value" placeholder=`${placeholder}` type=`${type || "text"}` autocomplete="off") 
         p(class="text-field_with_arrow-down__describe") #{describe}
         

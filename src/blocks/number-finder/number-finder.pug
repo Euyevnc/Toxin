@@ -6,9 +6,9 @@ article(class="js-number-finder number-finder")
     h1.number-finder__header Найдём номера под ваши пожелания
     form(class="number-finder__form" name="number-finder")
         div(class="number-finder__container number-finder__container_for_calendar")
-            +Date-picker_double({placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"})
+            +Date-picker_double({items: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"} ] })
         div(class="number-finder__container number-finder__container_for_input")
-            +Inputs-with-counter(false, 'Гости', 'Сколько гостей', '', 'counter001',{name: "взрослые", min: "0", max: "5", base: "2"}, {name: "дети", min: "0", max: "5", base: "1"}, {name: "младенцы", min: "0", max: "5", base: "0"} )
+            +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} ] })
         div(class="number-finder__submit-button")
             +button({ text: 'подобрать номер', styles: ['color_purple'], type: 'button', withArrow: true })
 

@@ -1,7 +1,7 @@
 include ../../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.pug
-mixin Date-picker_double(...issues)
-    .date-picker_double
-        div(class=`date-picker_double__container date-picker_double__container_for_first js-date-picker_double__container_for_first`)
-            +Text-field_with_arrow-down(issues[0].label, issues[0].placeholder, issues[0].describe, issues[0].id)
-        div(class=`date-picker_double__container date-picker_double__container_for_second js-date-picker_double__container_for_second`)
-            +Text-field_with_arrow-down(issues[1].label, issues[1].placeholder, issues[1].describe, issues[1].id)
+mixin Date-picker_double({ items=[] })
+    .js-date-picker_double.date-picker_double
+        div(class=`date-picker_double__container js-date-picker_double__container date-picker_double__container_for_first js-date-picker_double__container_for_first`)
+            +Text-field_with_arrow-down(items[0].label, items[0].placeholder, items[0].describe, items[0].id)
+        div(class=`date-picker_double__container js-date-picker_double__container date-picker_double__container_for_second js-date-picker_double__container_for_second`)
+            +Text-field_with_arrow-down(items[1].label, items[1].placeholder, items[1].describe, items[1].id)

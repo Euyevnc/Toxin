@@ -1,24 +1,21 @@
 include ../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.pug
-mixin Inputs-with-counter(type, label, placeholder, describe, id, ...issues)
-    div(class=`js-input-with-counter input-with-counter input-with-counter${type?"_"+type: ""}`)
-        +Text-field_with_arrow-down(label, placeholder, describe, id)
+mixin inputs-with-counter({ type='', label='', placeholder='PLACEHOLDER', describe='', items=[] } )
+    - let addedClass = type ? `input-with-counter${"_"+type}` : ""
+    div(class=`js-input-with-counter input-with-counter ${type}`)
+        +Text-field_with_arrow-down(label, placeholder, describe)
 
         ul(class="input-with-counter__menu js-input-with-counter__menu input-with-counter__menu_hidden")
-            each val in issues
-                - var min = val.min
-                - var max = val.max
+            each item in items
                 li(class="js-input-with-counter__element input-with-counter__element")
-                    strong(class="input-with-counter__item-name") #{val.name}
-                    span(class="js-input-with-counter__counter input-with-counter__counter" data-min=`${min}` data-max=`${max}`)
-                        span.js-input-with-counter__tumbler.input-with-counter__tumbler -
-                        b(class="js-input-with-counter__number input-with-counter__number") 0
-                        span.js-input-with-counter__tumbler.input-with-counter__tumbler +
+                    if item.concat
+                        strong(class="js-input-with-counter__item-name input-with-counter__item-name" data-concat = 'true') #{item.name}
+                    else
+                        strong(class="js-input-with-counter__item-name input-with-counter__item-name" data-form1=item.nameForm1 data-form2=item.nameForm2 data-form3=item.nameForm3) #{item.name}
+                    span(class="js-input-with-counter__counter input-with-counter__counter")
+                        span(class= "js-input-with-counter__tumbler input-with-counter__tumbler" data-min=item.min tabindex=0) -
+                        b(class="js-input-with-counter__number input-with-counter__number") 
+                        span(class= "js-input-with-counter__tumbler input-with-counter__tumbler" data-max=item.max tabindex=0) +
 
             div.js-input-with-counter__buttons.input-with-counter__buttons
-                button(type="button" class="js-input-with-counter__button_delete input-with-counter__button input-with-counter__button_delete" tabindex=0) ОЧИСТИТЬ
-                button(type="button" class="js-input-with-counter__button_confirm input-with-counter__button input-with-counter__button_confirm" tabindex=0) ПРИМЕНИТЬ
-
-
-
-
-    
+                button( type="button" class="js-input-with-counter__button_delete input-with-counter__button input-with-counter__button_delete" tabindex=0 ) ОЧИСТИТЬ
+                button( type="button" class="js-input-with-counter__button_confirm input-with-counter__button input-with-counter__button_confirm" tabindex=0 ) ПРИМЕНИТЬ
