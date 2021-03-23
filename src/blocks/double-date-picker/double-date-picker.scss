@@ -1,7 +1,7 @@
-@import "../../calendar/calendar.scss";
-@import '../../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.scss';
+@import "../calendar/calendar.scss";
+@import '../textfield-for-dropping/textfield-for-dropping.scss';
 
-.date-picker_double{
+.double-date-picker{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@
             margin-left: 20px;
         }
     }
-    .text-field_with_arrow-down__value{
+    .textfield-for-dropping__value{
         padding-bottom: 3px;
     }
 };

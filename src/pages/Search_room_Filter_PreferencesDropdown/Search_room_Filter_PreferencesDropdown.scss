@@ -11,7 +11,7 @@
 @import "../../blocks/dropping-checkboxes/dropping-checkboxes.scss";
 @import "../../blocks/paginator/paginator.scss";
 @import "../../blocks/number-demo/number-demo.scss";
-@import "../../blocks/range-slider/range-slider.scss";
+@import "../../blocks/range-picker/range-picker.scss";
 
 .content{
     background-color: white;
@@ -26,12 +26,14 @@
 
     &__forms{
         min-width: 266px;
+        box-sizing: border-box;
         margin-right: 60px;
         margin-top: 3px;
         @media(max-width:600px){
             width: 100%;
             text-align: center;
-            margin: 0 20px 0;
+            margin: 0 ;
+            padding: 0 20px;
     
         }
     }

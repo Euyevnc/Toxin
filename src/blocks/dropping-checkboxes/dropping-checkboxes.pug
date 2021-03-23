@@ -1,17 +1,19 @@
-mixin Dropping-checkboxes(descr, ...issues)
-    fieldset.dropping-checkboxes.js-dropping-checkboxes
-        legend.dropping-checkboxes__header.js-dropping-checkboxes__header(tabindex=0)
-            h3.dropping-checkboxes__title #{descr}
+mixin dropping-checkboxes({ checkboxes=[], header='', expanded = null }={})
+    fieldset(class = "dropping-checkboxes js-dropping-checkboxes" data-expanded = expanded)
+        legend(class = "dropping-checkboxes__header js-dropping-checkboxes__header" tabindex=0)
+            h3.dropping-checkboxes__title #{header}
             span.dropping-checkboxes__arrow
                 include ../../static/figures/arrow-down/arrow-down.pug
         ul.dropping-checkboxes__container.js-dropping-checkboxes__container
-            each val in issues
-                - var id = val.id
-                - var name = val.name
-                - var checked = Boolean(val.checked)
+            each checkbox in checkboxes
+                - let name = checkbox.name
+                - let checked = Boolean(checkbox.checked)
+                - let value = checkbox.value 
+                - let subscription = checkbox.subscription
                 li.dropping-checkboxes__item
-                    if checked 
-                        input(class="dropping-checkboxes__checkbox" type="checkbox" id=`${id}` checked)
-                    else 
-                        input(class="dropping-checkboxes__checkbox" type="checkbox" id=`${id}`)
-                    label(class="dropping-checkboxes__label" for=`${id}` tabindex=0) #{name}
+                    label(tabindex=0)
+                        if checked 
+                            input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" checked)
+                        else 
+                            input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" )
+                        span(class="dropping-checkboxes__label") #{subscription}

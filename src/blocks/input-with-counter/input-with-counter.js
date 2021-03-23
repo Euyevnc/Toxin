@@ -1,48 +1,38 @@
-import inputInit from "../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.js"
+import textfieldForDropping from "../textfield-for-dropping/textfield-for-dropping.js";
 
-function initInputWithCounter({ values = [], container = null}){
-    const area = container || document
+function inputWithCounter(){
+    textfieldForDropping()
+
     let counters = []
-    inputInit()
-    area.querySelectorAll(".js-input-with-counter").forEach((block, index)=>{
-        let newMenu = new Menu(block)
-        newMenu.init(values[index])
-        counters.push(newMenu)
+
+    document.querySelectorAll(".js-input-with-counter").forEach((element, index)=>{
+        let newCounter = new InputWithCounter(element)
+        newCounter.init()
+        counters.push(newCounter)
     })
-    return counters
+    if(counters.length === 1) return counters[0]
+    else return counters
 }
 
-class Menu{
+class InputWithCounter{
     constructor(root){
         this.root = root 
         this.items = new Array()
     }
     
-    init(values=[]){
+    init(){
         let elements = this.root.querySelectorAll('.js-input-with-counter__element')
         elements.forEach((item, index, array)=>{
-            let newItem = new Item(item)
-            newItem.init(values[index])
+            let newItem = new CounterItem(item)
+            newItem.init()
 
             let handlerPlusClick = (e)=> {
                 if(e.type == 'keydown' && e.code !== "Enter") return
-                if(newItem.value !== newItem.min){
-                    this.clearingButton.classList.add("input-with-counter__button_visible-delete")
-                }
                 this.confirm()
             }
 
             let handlerMinusClick = (e) => {
                 if(e.type == 'keydown' && e.code !== "Enter") return
-                if(newItem.value == newItem.min){
-                    let valuesAreZero = 0
-                    this.items.forEach((it)=>{
-                        valuesAreZero += +it.value 
-                        if(!valuesAreZero){
-                            this.clearingButton.classList.remove("input-with-counter__button_visible-delete")
-                        }
-                    })
-                }
                 this.confirm()
             }
 
@@ -55,8 +45,8 @@ class Menu{
             this.items.push(newItem);
         })
 
-        this.input = this.root.querySelector(".js-text-field_with_arrow-down__value")
-        this.arrow = this.root.querySelector(".js-text-field_with_arrow-down__arrow")
+        this.input = this.root.querySelector(".js-textfield-for-dropping__value")
+        this.arrow = this.root.querySelector(".js-textfield-for-dropping__arrow")
         this.menu = this.root.querySelector(".js-input-with-counter__menu")
         this.clearingButton = this.root.querySelector('.js-input-with-counter__button_delete')
         this.confirmingButton = this.root.querySelector('.js-input-with-counter__button_confirm')
@@ -65,6 +55,7 @@ class Menu{
         this.arrow.addEventListener("click", this.handlerArrowClick)
         this.confirmingButton.addEventListener("click", this.handlerConfirmButtonClick)
         this.clearingButton.addEventListener("click", this.handlerClearButton)
+        this.confirm()
     }
 
     menuRollDown(){
@@ -73,7 +64,7 @@ class Menu{
         this.arrow.addEventListener("click", this.handlerArrowClick2)
         this.arrow.removeEventListener("click", this.handlerArrowClick)
         
-        this.input.classList.add("text-field_with_arrow-down__value_active")
+        this.input.classList.add("textfield-for-dropping__value_active")
         this.menu.classList.remove("input-with-counter__menu_hidden")
         this.arrow.querySelector(".arrow-down").textContent = 'expand_less'
     }
@@ -86,7 +77,7 @@ class Menu{
         this.arrow.addEventListener("click", this.handlerArrowClick)
         this.arrow.removeEventListener("click", this.handlerArrowClick2)
 
-        this.input.classList.remove("text-field_with_arrow-down__value_active")
+        this.input.classList.remove("textfield-for-dropping__value_active")
         this.menu.classList.add("input-with-counter__menu_hidden")
         this.arrow.querySelector(".arrow-down").textContent = 'expand_more'
         
@@ -106,16 +97,20 @@ class Menu{
     
         this.input.value = stringForValue || this.input.getAttribute("placeholder")
 
-
+        if(stringForValue) this.clearingButton.classList.add("input-with-counter__button_visible-delete")
+        else this.clearingButton.classList.remove("input-with-counter__button_visible-delete")
         ///
         function concatForSimplified(element, index){
             let number = element.value
             
 
-            if(amountOfWord<3){    
+            if(amountOfWord<2){    
                 if(prevNumber) number += prevNumber
 
                 if(!element.concat){
+                    if(number==0) return
+                    if(stringForValue) stringForValue+= ", "
+
                     stringForValue  += number;
 
                     if(number == 1 || number%10 == 1) stringForValue += (" " + element.nameForms[0]);
@@ -123,14 +118,13 @@ class Menu{
                     else stringForValue += (" " + element.nameForms[2]);
                     
                     amountOfWord += 1
-
                     prevNumber = null
                 }
 
                 else prevNumber = number
             }
 
-            else if(amountOfWord==3){
+            else if(amountOfWord==2){
                 number == 0 ?
                     stringForValue += ''
                     :
@@ -138,12 +132,13 @@ class Menu{
 
                 amountOfWord += 1
             }
+            else return
         };
 
         function concatForStandart(element, index){
             let number = element.value
             
-            if(amountOfWord<3){
+            if(amountOfWord<2){
                 if(prevNumber) number += prevNumber
                 if(!element.concat){
                     if(number==0) return
@@ -158,7 +153,7 @@ class Menu{
                 }
                 else prevNumber = number
             }
-            else if(amountOfWord==3){
+            else if(amountOfWord==2){
                 number == 0 ?
                     stringForValue += ''
                     :
@@ -167,6 +162,7 @@ class Menu{
                 amountOfWord += 1
                 
             }
+            else return
         }
     }
     clear(){ 
@@ -216,11 +212,11 @@ class Menu{
     }
 }
 
-class Item{
+class CounterItem{
     constructor(item){
         this.root = item 
     }
-    init(value){
+    init(){
         this.name = this.root.querySelector(".js-input-with-counter__item-name")
         this.minus = this.root.querySelector(".js-input-with-counter__tumbler:first-child")
         this.plus = this.root.querySelector(".js-input-with-counter__tumbler:last-child")
@@ -238,7 +234,8 @@ class Item{
         this.min = +this.minus.dataset.min
         this.max = +this.plus.dataset.max
 
-        this.value = value || this.min
+        this.value = +this.number.dataset.init || this.min
+
         if (this.value == this.min){
             this.minus.classList.add("input-with-counter__tumbler_depricated")
         };
@@ -294,4 +291,4 @@ class Item{
     }
 }
 
-export default initInputWithCounter
+export default inputWithCounter

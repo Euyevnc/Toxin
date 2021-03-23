@@ -1,0 +1,8 @@
+mixin textfield({ label='', placeholder='Введите текст', describe='', type='text'}={})
+    div(class=`textfield`)
+        label(class="textfield__label")
+            if label
+                h3.textfield__subscribe  #{label}
+            input(class="textfield__value" placeholder=placeholder type=type )
+        p(class="textfield__describe") #{describe}
+        

@@ -6,5 +6,5 @@ document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
 
 function handlerDocumentDOMLoaded(e){
     header()
-    finder({}); 
+    finder(); 
 }

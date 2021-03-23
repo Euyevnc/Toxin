@@ -1,5 +1,5 @@
 @import "../../utils/_mixin-font.scss";
-@import "../text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.scss";
+@import "../textfiel-for-sending/textfiel-for-sending.scss";
 .footer{
     background-color: #FFFFFF;
     width: 100%;
@@ -66,10 +66,6 @@
         display: inline-block;
         vertical-align: baseline;
         margin:0 0 23px;
-        @include default-font($color: $main-color, $line: $size-largest);
-
-        ///тут одно из мест в макете, которое не очень понимаю как можно реализовать без отрицатеьного марджина:
-        ////Текстовые элементы с разной выотой строки лежат отцентрированы
-        
+        @include default-font($color: $main-color, $line: $size-largest);        
     }
 }

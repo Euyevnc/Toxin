@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "Registration";
+const name= "Search_room_Filter_PreferencesExpandableCheckboxList";
 const PATHS = {
 	relPathSrc: `src/pages/${name}`,
 	src: path.join(__dirname, `../src/pages/${name}`),
@@ -9,7 +9,7 @@ const PATHS = {
 	assets: 'assets'
 }
 module.exports = (env, options) =>{
-	const mode = options.mode == 'production' ? './' : `/dist/`
+	const mode = options.mode == 'production' ? './npm run ' : `/dist/`
  	return{
 		entry: `./${PATHS.relPathSrc}/${name}.js`,
 			

@@ -12,6 +12,7 @@
     }
     &__item{
         margin-bottom: 12px;
+        display: inline-block;
     }
     &__textbox{
         display: inline-block;
@@ -21,6 +22,7 @@
     }
     &__main-text{
         @include default-font($weight: 700);
+        display: inline-block;
         margin-top: 0px;
         margin-bottom: 5px;  
     }

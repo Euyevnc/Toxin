@@ -1,7 +1,7 @@
-mixin Paginator(amount)
+mixin paginator({ amount = 0}={})
     div.paginator.js-paginator
         ul.paginator__buttons-list
-            - for (var i = 1; i <= amount; i++) {
+            - for (let i = 1; i <= amount; i++) {
                 if i == 1
                     li(class="paginator__button js-paginator__button paginator__button_active")
                         a(class = "paginator__link" ) #{i}

@@ -1,14 +1,15 @@
-include ../date-picker/_double/date-picker_double.pug
+include ../double-date-picker/double-date-picker.pug
 include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
 
-article(class="js-number-finder number-finder")
-    h1.number-finder__header Найдём номера под ваши пожелания
-    form(class="number-finder__form" name="number-finder")
-        div(class="number-finder__container number-finder__container_for_calendar")
-            +Date-picker_double({items: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие", id:"finder_arrival"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд", id:"finder_departure"} ] })
-        div(class="number-finder__container number-finder__container_for_input")
-            +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} ] })
-        div(class="number-finder__submit-button")
-            +button({ text: 'подобрать номер', styles: ['color_purple'], type: 'button', withArrow: true })
+mixin number-finder({ header = 'Найдём номера под ваши пожелания', initArrive, initDeparture, initLI1, initLI2, initLI3}={})
+    article(class="js-number-finder number-finder")
+        h1.number-finder__header #{header}
+        form(class="number-finder__form" name="number-finder")
+            div(class="number-finder__container number-finder__container_for_calendar")
+                +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
+            div(class="number-finder__container number-finder__container_for_input")
+                +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+            div(class="number-finder__submit-button")
+                +button({ text: 'подобрать номер', styles: ['color_purple'], type: 'submit', withArrow: true })
 

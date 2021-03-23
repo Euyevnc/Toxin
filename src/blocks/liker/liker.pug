@@ -1,15 +1,9 @@
-mixin Liker(descr, ...issues)
+mixin liker({ amount=0, checked = false }={})
     span.liker
-        if descr
-            h3.liker__head #{descr}
-        each val in issues
-            span.liker__item
-                - var id = val.id
-                - var am = val.am
-                - var checked = Boolean(val.checked)
-                if checked 
-                    input(type="checkbox" id=`${id}` class="liker__box" checked)
-                else 
-                    input(type="checkbox" id=`${id}` class="liker__box")
-                label(class="liker__label" for=`${id}`) 
-                    span.liker__counter=am
+        label.liker__item
+            if checked 
+                input(type="checkbox" class="liker__box" checked)
+            else 
+                input(type="checkbox" class="liker__box")
+            span(class="liker__label") 
+                span.liker__counter #{amount}

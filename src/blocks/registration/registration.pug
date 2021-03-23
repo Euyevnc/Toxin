@@ -1,35 +1,35 @@
-include ../text-field/text-field.pug
+include ../textfield/textfield.pug
 include ../date-mask/date-mask.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
+mixin registration({ header='Регистрация аккаунта', subscription = 'Уже есть аккаунт на Toxin'}={})
+    article(class="registration")
+        h1.registration__header #{header}
+        form(name="registration" class="registration__form")
+            div(class="registration__data-name")
+                +textfield({ placeholder: 'Имя'})
+            div(class="registration__data-name")
+                +textfield({ placeholder: 'Фамилия'})
+            div(class="registration__data-sex")
+                +radios({ name: 'sex', radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] } )
+            
+            div(class="registration__data-birthday")
+                +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
 
-article(class="registration")
-    h1.registration__header Регистрация аккаунта
-    form(name="registration" class="registration__form")
-        div(class="registration__data-name")
-            +text-field({ placeholder: 'Имя'})
-        div(class="registration__data-name")
-            +text-field({ placeholder: 'Фамилия'})
-        div(class="registration__data-sex")
-            +Radios('', 'sex', {id:'registrtion-gender-man', describe:'Мужчина', checked:true},{id:'registration-gender-fem', describe:'Женщина'} )
-        
-        div(class="registration__data-birthday")
-            +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+            div(class="registration__data-email")
+                +textfield({label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"})
+            div(class="registration__data-password")
+                +textfield({placeholder: 'Пароль', type: "password"})
+            div(class="registration__data-offer")
+                +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] })
 
-        div(class="registration__data-email")
-            +text-field({label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"})
-        div(class="registration__data-password")
-            +text-field({placeholder: 'Пароль', type: "password"})
-        div(class="registration__data-offer")
-            +Tumblers('', {id:'registration-allow-offers', name:'Получать спецпредложения'})
-
-        div(class="registration__button")
-            +button({text: 'Зарегестрироваться', styles: ['color_purple'], withArrow: true, type: 'submit'})
-    div(class="registration__entry")
-        p.registration__text Уже есть аккаунт на Toxin
-        div(class="registration__button")
-            +button({text:'войти', styles: ['color_empty'] })
+            div(class="registration__button")
+                +button({text: 'Зарегестрироваться', styles: ['color_purple'], withArrow: true, type: 'submit'})
+        div(class="registration__entry")
+            p.registration__text #{subscription}
+            div(class="registration__button")
+                +button({text:'войти', styles: ['color_empty'] })
 
 
 

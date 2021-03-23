@@ -1,7 +1,7 @@
 import "./UI-kit.scss"
 
 import inputMask from "../../blocks/date-mask/date-mask"
-import doubleDatePicker from "../../blocks/date-picker/_double/date-picker_double"
+import doubleDatePicker from "../../blocks/double-date-picker/double-date-picker"
 import datePicker from "../../blocks/date-picker/date-picker"
 import rangeSlider from "../../blocks/range-slider/range-slider";
 import counter from "../../blocks/input-with-counter/input-with-counter";
@@ -9,7 +9,7 @@ import expandableCheckboxes from "../../blocks/dropping-checkboxes/dropping-chec
 import booker from "../../blocks/number-booker/number-booker" 
 import finderForm from "../../blocks/number-finder/number-finder";
 import header from "../../blocks/header/header"
-import review from "../../blocks/reviews/reviews"
+import review from "../../blocks/review/reviews"
 import demo from "../../blocks/number-demo/number-demo"
 import data from "./data.json"  
 ///   

@@ -1,6 +1,6 @@
-mixin Marked-list(...contents)
+mixin marked-list({ elements = [] }={})
     ul.marked-list
-        each desc in contents
+        each desc in elements
             li.marked-list__item
                 span.marked-list__img   
                     include ../../static/Images/Ellipse.svg

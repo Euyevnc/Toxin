@@ -1,15 +1,16 @@
-mixin Checkboxes(descr, ...issues)
+mixin checkboxes({ describe = '', checkboxes = []} = {})
     fieldset.checkboxes
         if descr
             legend.checkboxes__header #{descr}
-        each val in issues
-            - var id = val.id
-            - var name = val.name
-            - var checked = Boolean(val.checked)
-            div.checkboxes__item
+        each checkbox in checkboxes
+            - let name = checkbox.name
+            - let checked = Boolean(checkbox.checked)
+            - let value = checkbox.value 
+            - let subscription = checkbox.subscription
+            label.checkboxes__item
                 if checked 
-                    input(class="checkboxes__checkbox" type="checkbox" id=`${id}` class="Checkbox_box" checked)
+                    input(class="checkboxes__checkbox" type="checkbox" value=value name=name  checked)
                 else 
-                    input(class="checkboxes__checkbox" type="checkbox" id=`${id}` class="Checkbox_box")
-                label(class="checkboxes__label" tabindex=0 for=`${id}`)
-                    p(class="checkboxes__text") #{name}  
+                    input(class="checkboxes__checkbox" type="checkbox" value=value name=name )
+                span(class="checkboxes__label" tabindex=0)
+                    span(class="checkboxes__text") #{subscription}  

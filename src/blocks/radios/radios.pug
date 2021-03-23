@@ -1,14 +1,14 @@
-mixin Radios(descr,name, ...issues)
+mixin radios({ descr = '', name='', radios=[]} = {})
     div.radios
         if descr
             div.radios__header #{descr}
-        each val in issues
-            - var id = val.id
-            - var describe = val.describe
-            - var checked = Boolean(val.checked)
-            div.radios__radio-container
+        each val in radios
+            - let describe = val.describe
+            - let checked = Boolean(val.checked)
+            - let value = val.value
+            label.radios__radio-container
                 if checked 
-                    input(class="radios__checkbox" name=`${name}` value=`${id}` type="radio" id=`${id}` checked)
+                    input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio" checked)
                 else 
-                    input(class="radios__checkbox" name=`${name}` value=`${id}` type="radio" id=`${id}`)
-                label(class="radios__label" for=`${id}` tabindex=0) #{describe}
+                    input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio")
+                span(class="radios__label" tabindex=0) #{describe}

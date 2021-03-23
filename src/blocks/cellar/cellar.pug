@@ -1,7 +1,7 @@
 include ../social/social.pug
-mixin Cellar(text, links)
+mixin cellar({ text='', links=[] } = {})
     div.cellar 
         span.cellar__text-container
             p.cellar__text #{text}
         span.cellar__social-container
-            +Social(links)
+            +social({ icons: links })

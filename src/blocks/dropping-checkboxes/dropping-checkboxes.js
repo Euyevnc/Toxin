@@ -1,42 +1,63 @@
-export default function(expend, container){
-    let expanded = Boolean(expend)
-    let area = container || document 
-    area.querySelectorAll('.js-dropping-checkboxes').forEach(checkboxes=>{
-        let icon = checkboxes.querySelector('.arrow-down')
-        let menu = checkboxes.querySelector(".js-dropping-checkboxes__container")
-        if(expanded) {
-            menu.classList.add("dropping-checkboxes__container_visible")
-            icon.innerHTML = 'expand_less'
+function droppingCheckboxes(){
+ 	let fieldsets = []
+
+	document.querySelectorAll(".js-dropping-checkboxes").forEach((element, index)=>{
+		let newFieldset = new DroppingCheckboxes(element)
+		newFieldset.init()
+		fieldsets.push(newFieldset)
+	})
+    
+	if(fieldsets.length === 1) return fieldsets[0]
+	else return fieldsets
+}
+
+class DroppingCheckboxes{
+
+    constructor(root){
+        this.root = root
+        this.expanded = Boolean(root.dataset.expanded)
+    }
+
+    init(){
+        let root = this.root
+        let arrow = this.root.querySelector('.arrow-down')
+        let list = this.root.querySelector(".js-dropping-checkboxes__container");
+        let object = this
+
+        if(this.expanded) {
+            list.classList.add("dropping-checkboxes__container_visible")
+            arrow.innerHTML = 'expand_less'
         }
 
-        checkboxes.querySelector(".js-dropping-checkboxes__header").addEventListener('click', handlerHeaderClick)
-        checkboxes.querySelector(".js-dropping-checkboxes__header").addEventListener('keydown', handlerHeaderKeydown)
+        root.querySelector(".js-dropping-checkboxes__header").addEventListener('click', handlerHeaderClick)
+        root.querySelector(".js-dropping-checkboxes__header").addEventListener('keydown', handlerHeaderKeydown)
 
-        ////////
+        ///////
         function handlerHeaderClick(e){
-            if(expanded){
-                menu.classList.remove("dropping-checkboxes__container_visible")
-                icon.innerHTML = 'expand_more'
+            if(object.expanded){
+                list.classList.remove("dropping-checkboxes__container_visible")
+                arrow.innerHTML = 'expand_more'
             }
             else{
-                menu.classList.add("dropping-checkboxes__container_visible")
-                icon.innerHTML = 'expand_less'
+                list.classList.add("dropping-checkboxes__container_visible")
+                arrow.innerHTML = 'expand_less'
             }
-            expanded = !expanded
+            object.expanded = !object.expanded
         }
         function handlerHeaderKeydown(e){
             if(e.code=="Enter"){
-                if(expanded){
-                    menu.classList.remove("dropping-checkboxes__container_visible")
-                    icon.innerHTML = 'expand_more'
+                if(object.expanded){
+                    object.list.classList.remove("dropping-checkboxes__container_visible")
+                    object.arrow.innerHTML = 'expand_more'
                 }
                 else{
-                    menu.classList.add("dropping-checkboxes__container_visible")
-                    icon.innerHTML = 'expand_less'
+                    object.list.classList.add("dropping-checkboxes__container_visible")
+                    object.arrow.innerHTML = 'expand_less'
                 }
-                expanded = !expanded
+                object.expanded = !object.expanded
             }
         }
-    })
+    }
 }
 
+export default droppingCheckboxes

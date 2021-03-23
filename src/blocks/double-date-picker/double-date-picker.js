@@ -1,19 +1,24 @@
 import $ from 'jquery';
-import "../../../plugins/datepicker"
-import "../../../plugins/jquery.datepicker.extension.range.min"
+import "../../plugins/datepicker"
+import "../../plugins/jquery.datepicker.extension.range.min"
+import textfieldForDropping from "../textfield-for-dropping/textfield-for-dropping"
 
-function createDoubleDatepicker({firDate=null, secDate=null, container=null}){
-	let area = container || document
+function doubleDatePicker(){
+	textfieldForDropping()
+	
 	let pickers = []
-	area.querySelectorAll(".js-date-picker_double").forEach((item)=>{
-		let picker = new DatePicker(item)
-		picker.init(firDate, secDate)
-		pickers.push(picker)
+
+	document.querySelectorAll(".js-double-date-picker").forEach((element, index)=>{
+		let newPicker = new DoubleDatePicker(element)
+		newPicker.init()
+		pickers.push(newPicker)
 	})
-	return pickers
+	if(pickers.length === 1) return pickers[0]
+	else return pickers
 }
 
-class DatePicker{
+	
+class DoubleDatePicker{
 	constructor(root){
 		this.root = root
 		this.params = {
@@ -37,95 +42,106 @@ class DatePicker{
 		};
 	}
 
-	init(arriveDate, departureDate){
-		this.arriveInput = $(this.root).find(".js-date-picker_double__container_for_first input")
-		this.departureInput = $(this.root).find(".js-date-picker_double__container_for_second input")
-		this.arriveArrow = this.root.querySelector(".js-date-picker_double__container_for_first .js-text-field_with_arrow-down__arrow")
-		this.departureArrow = this.root.querySelector(".js-date-picker_double__container_for_second .js-text-field_with_arrow-down__arrow")
+	init(){
+		let arriveCont = this.root.querySelector(".js-double-date-picker__container_for_first")
+		let departureCont = this.root.querySelector(".js-double-date-picker__container_for_second")
+
+		let arriveInput = this.arriveInput = $(arriveCont).find(".js-textfield-for-dropping__value")
+		let departureInput = this.departureInput = $(departureCont).find(".js-textfield-for-dropping__value")
+
+		let arriveArrow = this.arriveArrow = arriveCont.querySelector(".js-textfield-for-dropping__arrow")
+		let departureArrow = this.departureArrow = departureCont.querySelector(".js-textfield-for-dropping__arrow")
+
+		let arriveDate = this.arriveDate = arriveCont.dataset.init 
+		let departureDate = this.departureDate = departureCont.dataset.init 
+	
 		$.datepicker.regional['ru'] = this.params
 		$.datepicker.setDefaults($.datepicker.regional['ru']);
-
-		let arriveInput = this.arriveInput 
-		let departureInput = this.departureInput
-		let arriveArrow = this.arriveArrow
-		let departureArrow = this.departureArrow
 
 		arriveInput.datepicker({
 			minDate: 0,
 			range: 'period', 
-			onSelect: function(dateText, inst, extensionRange) {
+			onSelect: (dateText, inst, extensionRange)=>{
 				let start = extensionRange.startDateText;
 				let end = extensionRange.endDateText;
 				arriveInput.val(start)
 				departureInput.val(end)
+				this.arriveDate = extensionRange.startDate;
+				this.departureDate = extensionRange.endDate
+
+				let select = new CustomEvent("ondateselect", { detail: extensionRange })
+				arriveInput[0].dispatchEvent(select)
 			}
 		});
 
 		departureInput.datepicker({
 			minDate: 0,
 			range: 'period', 
-			onSelect: function(dateText, inst, extensionRange) {
+			onSelect: (dateText, inst, extensionRange)=>{
 				let start = extensionRange.startDateText;
 				let end = extensionRange.endDateText;
 				arriveInput.val(start)
 				departureInput.val(end)
+				this.arriveDate = extensionRange.startDate;
+				this.departureDate = extensionRange.endDate
+
+				let select = new CustomEvent("ondateselect", { detail: extensionRange })
+				departureInput[0].dispatchEvent(select)
 			},
 		})
 
 		if(arriveDate && departureDate){
-			this.arrive.datepicker("setDate",`+${firDate}d`)
-			this.departure.datepicker("setDate", [`+${firDate}d`, `+${secDate}d`])			
+			arriveInput.datepicker("setDate",`+${arriveDate}d`)
+			departureInput.datepicker("setDate", [`+${arriveDate}d`, `+${departureDate}d`])			
 		}
 		else if(arriveDate){
-			this.arrive.datepicker("setDate",`+${firDate}d`)
+			arriveInput.datepicker("setDate",`+${arriveDate}d`)
 	
 		}
 		else if(departureDate){
-			this.departure.datepicker("setDate", [`+${firDate}d`, `+${secDate}d`])			
+			departureInput.datepicker("setDate", [`+${arriveDate}d`, `+${departureDate}d`])			
 		}
-
-		$('.js-ui-datepicker').each((i,picker)=>{
-			addButtons(picker, arriveInput, departureInput)
-		})
 
 		document.addEventListener("calendarshowing", handlerDocShowing)
 		document.addEventListener("calendarhiding", handlerDocHiding)
 		arriveArrow.addEventListener("click", handlerArrowClick)
 		departureArrow.addEventListener("click", handlerArrowClick)
-		/////
-		function addButtons(picker, inp, inp2){
-			picker.addEventListener('click', handlerPickerClick)
 
-			function handlerPickerClick(ev){
-				if(ev.target.closest('.ui-datepicker-button_clear')){
-					picker.querySelectorAll(".ui-state-active").forEach((item)=>{
-						item.classList.remove("ui-state-active")
-		
-					})
-					try{
-						picker.querySelector(".selected-start").classList.remove("selected-start")
-						picker.querySelector(".selected-end").classList.remove("selected-end")
-					}catch { }
-					inp.val(``)
-					inp2.val(``)
-				}
-				if(ev.target.closest('.ui-datepicker-button_conf')){
-		
-					let jsDate = inp.datepicker('widget').data('datepickerExtensionRange')
-					let startDT = jsDate.startDateText
-					let endDT = jsDate.endDateText
-					let startD = jsDate.startDate
-					let endD = jsDate.endDate
-		
-					$.datepicker._hideDatepicker();
-					
-					console.log(`Данные: ${startDT}- ${endDT}, (${startD};  ${endD})`);
-					
-				}
+
+		let picker = document.querySelector('.js-ui-datepicker')
+		picker.addEventListener("click", handlerPickerClick)
+
+		/////
+		function handlerPickerClick(ev){
+			if(ev.target.closest('.ui-datepicker-button_clear')){
+				picker.querySelectorAll(".ui-state-active").forEach((item)=>{
+					item.classList.remove("ui-state-active")
+	
+				})
+				try{
+					picker.querySelector(".selected-start").classList.remove("selected-start")
+					picker.querySelector(".selected-end").classList.remove("selected-end")
+				}catch { }
+				arriveInput.val(``)
+				departureInput.val(``)
+			}
+			if(ev.target.closest('.ui-datepicker-button_conf')){
+	
+				let jsDate = arriveInput.datepicker('widget').data('datepickerExtensionRange')
+				let startDT = jsDate.startDateText
+				let endDT = jsDate.endDateText
+				let startD = jsDate.startDate
+				let endD = jsDate.endDate
+	
+				$.datepicker._hideDatepicker();
+				
+				console.log(`Данные: ${startDT}- ${endDT}, (${startD};  ${endD})`);
+				
 			}
 		}
+
 		function handlerArrowClick(e){
-			let input = e.target.closest(".js-date-picker_double__container").querySelector("input")
+			let input = e.target.closest(".js-double-date-picker__container").querySelector("input")
 			$.datepicker._showDatepicker(input)
 		}
 		function handlerDocShowing(e){
@@ -137,6 +153,7 @@ class DatePicker{
 					arriveArrow.removeEventListener("click", handlerArrowClick)
 					arriveArrow.querySelector(".arrow-down").textContent = "expand_less"
 				}
+				
 				else if(e.detail.input == departureInput[0]){
 					departureArrow.removeEventListener("click", handlerArrowClick)
 					departureArrow.querySelector(".arrow-down").textContent = "expand_less"
@@ -145,11 +162,10 @@ class DatePicker{
 
 		}
 		function handlerDocHiding(e){
-			setTimeout(activateArrow, 100)
+			if(e.detail.datepickerShowing) setTimeout(activateArrow, 100)
 			function activateArrow(){
 				arriveArrow.addEventListener("click", handlerArrowClick)
 				departureArrow.addEventListener("click", handlerArrowClick)
-	
 				arriveArrow.querySelector(".arrow-down").textContent = "expand_more"
 				departureArrow.querySelector(".arrow-down").textContent = "expand_more"
 			}
@@ -158,4 +174,6 @@ class DatePicker{
 	}
 }
 
-export default createDoubleDatepicker
+
+
+export default doubleDatePicker

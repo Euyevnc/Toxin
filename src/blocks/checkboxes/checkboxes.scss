@@ -14,6 +14,8 @@
     }
     &__item{
         margin-bottom: 10px;
+        min-height: 20px;
+        display: block;
     }
     &__checkbox{
         display: none;

@@ -1,10 +1,29 @@
 import Chart from 'chart.js';
 
-function initDiagram(data, container){
-    let area = container || document
-    area.querySelectorAll(".js-diagram__canvas").forEach(el=>{
-        let ctx =  el;
-        let ctxM = el.getContext("2d");
+function diagram(){
+    let diagrams = []
+    document.querySelectorAll(".js-diagram").forEach((element)=>{
+        let newDiagram = new Diagram(element)
+        newDiagram.init()
+        diagrams.push(newDiagram)
+    })
+    if(diagrams.length === 1) return diagrams[0]
+    else return diagrams
+}
+
+class Diagram{
+
+    constructor(root){
+        this.root = root 
+    
+    }
+
+    init(){
+        let root =  this.root;
+        let canvas = this.canvas = root.querySelector(".js-diagram__canvas")
+        let subjectForm = this.subjectForm = Object.values(root.querySelector(".js-diagram__reviews-amount").dataset)
+
+        let ctxM = canvas.getContext("2d");
         
         let yellowGrad = ctxM.createLinearGradient(155, 0, 155, 120);
         yellowGrad.addColorStop(0, '#FFE39C');   
@@ -21,35 +40,38 @@ function initDiagram(data, container){
         let blackGrad = ctxM.createLinearGradient(155, 0, 155, 120);
         blackGrad.addColorStop(0, '#919191');   
         blackGrad.addColorStop(1, '#3D4975');
-    
-        let cont = el.parentElement
-        let FirstAmount = data.statistics.great
-        let SecondAmount = data.statistics.well
-        let ThirdAmount = data.statistics.fine
-        let FourthAmount = data.statistics.disappointed
-    
-        let total = FirstAmount + SecondAmount + ThirdAmount + FourthAmount;
-        cont.querySelector(".js-diagram__reviews-amount").textContent = total;
-        
+
         let title
-        if (5> total >1 || 5>total%10>1 ) title = "голоса"
-        else if (total == 1 || total%10==1) titl = "голос"
-        else title = "голосов"
-        cont.querySelector(".js-diagram__subtitle").textContent = title;
-    
-        let myChart = new Chart(ctx, {
+        if (5> total >1 || 5>total%10>1 ) title = subjectForm[1]
+        else if (total == 1 || total%10==1) title = subjectForm[0]
+        else title = subjectForm[2]
+        root.querySelector(".js-diagram__subtitle").textContent = title;
+
+        let amountArray = []
+        let nameArray = []
+        let total = 0
+        
+        root.querySelectorAll(".diagram__legend-item").forEach((item)=>{
+            let amount = +item.dataset.amount 
+            let name = item.querySelector(".diagram__legend-lettering").textContent
+            amountArray.unshift(amount)
+            nameArray.unshift(name)
+            total +=amount
+        })
+        root.querySelector(".js-diagram__reviews-amount").textContent = total;
+        let myChart = new Chart(canvas, {
             type: 'doughnut',
             data: {
-                labels: ['Разочарован','Удовлетворительно','Хорошо', 'Великолепно'],
+                labels: nameArray,
                 datasets: [{
                     
                     label: '# of Votes',
-                    data: [FourthAmount, ThirdAmount, SecondAmount, FirstAmount],
+                    data: amountArray,
                     backgroundColor: [
                         blackGrad,
                         purpleGrad,
                         greenGrad,
-                        yellowGrad
+                        yellowGrad,
                     ],
                     borderColor: [  
                         'white',
@@ -67,7 +89,8 @@ function initDiagram(data, container){
                 }
             },
         });
-    })
+    }
+
 }
 
-export default initDiagram
+export default diagram

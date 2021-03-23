@@ -1,10 +1,25 @@
-import date_range_double from "../date-picker/_double/date-picker_double"
+import doubleDatePicker from "../double-date-picker/double-date-picker"
 import counter from "../input-with-counter/input-with-counter";
 
-export default function({values=[], firDate=null, secDate=null}){
-    let root = document.querySelector(".js-number-finder")
 
-   date_range_double({ firDate , secDate, root })
-    
-    counter({ values, root})
+function numberFinder(){
+    let finders=[]
+    document.querySelectorAll(".js-number-finder").forEach((element)=>{
+        let newFinder = new NumberFinder(element)
+        newFinder.init()
+        finders.push(newFinder)
+    })
+    if(finders.length===1) return finders[0]
+    else return finders
 }
+class NumberFinder{
+    constructor(root){
+        this.root = root 
+    }
+    init(){
+        this.datepicker = doubleDatePicker()
+        this.counter = counter()
+    }
+}
+
+export default numberFinder

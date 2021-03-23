@@ -1,4 +1,4 @@
-include ../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.pug
-mixin Date-picker(label, placeholder, describe, id)
-    div(class=`js-date-picker date-picker`)
-        +Text-field_with_arrow-down(label, placeholder, describe, id)
+include ../textfield-for-dropping/textfield-for-dropping.pug
+mixin date-picker({ initArrive=0, initDeparture=0}={})
+    div(class=`js-date-picker date-picker` data-initArrive=initArrive data-initDeparture = initDeparture)
+        +textfield-for-dropping({label: 'Даты пребывания в отеле', placeholder: 'Выберете период',})

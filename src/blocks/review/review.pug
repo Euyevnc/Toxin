@@ -1,0 +1,14 @@
+mixin review( {name='', avatar='', date='01.01.1970', review='', likes=0, isLiked=false}={})
+    include ../liker/liker.pug
+    article.review.js-review
+        section.review__header
+            span.review__avatar-container
+                img(class= "review__avatar" src=`${avatar}` alt="user's avatar")
+            span.review__info
+                strong(class="review__name") #{name}
+                p(class="review__days-ago" data-date=date) 
+        section.review__body 
+            div.review__liker  
+                +liker({amount: likes, checked: isLiked})
+            p.review__content #{review}
+        

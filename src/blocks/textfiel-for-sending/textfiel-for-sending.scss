@@ -1,6 +1,6 @@
-@import '../../../../static/figures/arrow-right/arrow-right.scss';
-@import "../../../../utils/_mixin-font.scss";
-.text-field_with_arrow-right{
+@import '../../static/figures/arrow-right/arrow-right.scss';
+@import "../../utils/_mixin-font.scss";
+.textfiel-for-sending{
     position: relative;
     &__subscribe{
         @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);

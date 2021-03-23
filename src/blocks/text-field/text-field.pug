@@ -1,8 +1,0 @@
-mixin text-field({ label='', placeholder='', describe='', type='text'})
-    div(class=`text-field`)
-        label(class="text-field__label")
-            if label
-                h3.text-field__subscribe  #{label}
-            input(class="text-field__value" placeholder=placeholder type=type )
-        p(class="text-field__describe") #{describe}
-        

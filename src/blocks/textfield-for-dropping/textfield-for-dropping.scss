@@ -1,6 +1,6 @@
-@import '../../../../static/figures/arrow-down/arrow-down.scss';
-@import "../../../../utils/_mixin-font.scss";
-.text-field_with_arrow-down{
+@import '../../static/figures/arrow-down/arrow-down.scss';
+@import "../../utils/_mixin-font.scss";
+.textfield-for-dropping{
     position: relative;
     &__subscribe{
         @include default-font($main-color_darkest, $size-small, $size-small+2, 700, none, uppercase);

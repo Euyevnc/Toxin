@@ -1,6 +1,6 @@
 @import "../../utils/_mixin-font.scss";
-@import "../button-rounded/button-rounded.scss";
-@import "../text-field/text-field.scss";
+@import "../button/button.scss";
+@import "../textfield/textfield.scss";
 
 .entry-form{
     background-color: white;
@@ -11,7 +11,7 @@
     box-sizing: border-box;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     &__text{
-        @include default-font($main-color_darkest);
+        @include default-font($color: $main-color_darkest);
         text-align: center;
         margin: 0;
     }

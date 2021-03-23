@@ -1,13 +1,16 @@
-include ../text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.pug
-mixin Footer(info, ...refs)
+include ../textfiel-for-sending/textfiel-for-sending.pug
+mixin footer({ heading='', info='', heading2='', info2='', refs=[] }={})
     .footer 
         section(class="footer__block footer__block_width_wide")
+            if heading
+                h3(class="footer__heading") #{heading}
             div(class="footer__sign")
                 span.footer__logo
                     include ../../static/Images/logo.img_color.svg
                 span.footer__brand
                     include ../../static/Images/TOXIN.svg
-            p(class="footer__inscription") #{info} 
+            if info
+                p(class="footer__inscription") #{info} 
         each block in refs
             section(class="footer__block footer__block_width_slim")
                 h3(class="footer__heading") #{block.caption}
@@ -16,9 +19,11 @@ mixin Footer(info, ...refs)
                         li.footer__list-element
                             a(class="footer__link" href=`${link.href}`) #{link.desc}
         section(class="footer__block footer__block_width_wide")
-            h3(class="footer__heading") подписка
-            p(class="footer__inscription") Получайте специальные предложения и новости сервиса
-            +Text-field_with_arrow-right('', 'Email', '', false, "email")
+            if heading2
+                h3(class="footer__heading") #{heading2}
+            if info2
+                p(class="footer__inscription") #{info2} 
+            +textfiel-for-sending({ placeholder: 'Email', type: "email"})
 
 
 

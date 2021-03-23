@@ -921,7 +921,7 @@ $.extend( Datepicker.prototype, {
 		if ( !inst || ( input && inst !== $.data( input, "datepicker" ) ) ) {
 			return;
 		}
-
+		let datepickerShowing = this._datepickerShowing
 		if ( this._datepickerShowing ) {
 			showAnim = this._get( inst, "showAnim" );
 			duration = this._get( inst, "duration" );
@@ -940,6 +940,7 @@ $.extend( Datepicker.prototype, {
 			if ( !showAnim ) {
 				postProcess();
 			}
+			
 			this._datepickerShowing = false;
 
 			onClose = this._get( inst, "onClose" );
@@ -957,7 +958,8 @@ $.extend( Datepicker.prototype, {
 			}
 			this._inDialog = false;
 		}
-		let event = new CustomEvent("calendarhiding", { detail: {input} })
+		
+		let event = new CustomEvent("calendarhiding", { detail: {input, datepickerShowing} })
 		document.dispatchEvent(event)
 	},
 

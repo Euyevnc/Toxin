@@ -1,4 +1,4 @@
-@import "../text-field/_with/text-field_with_arrow-down/text-field_with_arrow-down.scss";
+@import "../textfield-for-dropping/textfield-for-dropping.scss";
 @import "../../utils/_mixin-font.scss";
 
 .input-with-counter{
@@ -104,7 +104,7 @@
         }
     }
 
-    & .text-field_with_arrow-down{
+    & .textfield-for-dropping{
         &__subscribe{
             margin-bottom: 5px
         }
