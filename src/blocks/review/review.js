@@ -24,7 +24,7 @@ class Review{
         this.timer.textContent = parseDate(daysAgo)
         ///////
         function parseDate(days) {
-            console.log(days)
+        
             let years = parseInt(days/340)
             days = days - years * 330
             let months = parseInt(days / 30);

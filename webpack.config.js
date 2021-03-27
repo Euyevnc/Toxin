@@ -1,22 +1,58 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const name= "Search_room_Filter_PreferencesExpandableCheckboxList";
+const fs = require('fs');
+
 const PATHS = {
-	relPathSrc: `src/pages/${name}`,
-	src: path.join(__dirname, `../src/pages/${name}`),
-	dist: path.join(__dirname,  `../dist/`),
-	assets: 'assets'
+	src: path.join(__dirname, `./src`),
+	dist: path.join(__dirname,  `./dist`),
 }
+
+const PAGES = {
+	index: `${PATHS.src}/index.js`
+};
+
+const htmlPlugins = [ 
+	new HtmlWebpackPlugin({
+		chunks: ["common", 'index'],
+		filename: "index.html",
+		template: `${PATHS.src}/index.pug`,
+		
+	})
+ ]
+
+const PAGES_DIRS = `${PATHS.src}/pages`
+fs.readdirSync(PAGES_DIRS).forEach( 
+	(item) => {
+		let itemPath  = `${PATHS.src}/pages/` + item + '/' + item 
+		Object.defineProperty(PAGES, item, {
+			enumerable: true,
+			configurable: false,
+			writable: false,
+			value: itemPath + '.js'
+		  });
+		let htmlPlugin = new HtmlWebpackPlugin({
+            chunks: ["common", item],
+            filename: item + ".html",
+            template: itemPath + ".pug",
+            
+        });
+		htmlPlugins.push(htmlPlugin)
+		
+	},
+);
+
+
+
 module.exports = (env, options) =>{
-	const mode = options.mode == 'production' ? './npm run ' : `/dist/`
+	const isProduction = options.mode == 'production'
  	return{
-		entry: `./${PATHS.relPathSrc}/${name}.js`,
+		entry: PAGES,
 			
 		output: {
-			filename: `scripts/${name}.js`,
+			filename: 'scripts/[name].js',
 			path: `${PATHS.dist}`,
-			publicPath: mode
+			publicPath: isProduction ? './' : '/'
 
 		},
 		optimization: {
@@ -33,26 +69,21 @@ module.exports = (env, options) =>{
 		},
 		devServer: {
 			overlay: true,
-
-			contentBase:`./` ,
-			openPage:`../dist/${name}.html`,
-			hot: true,
-			inline: true,
+			contentBase: 'dist',
 			watchContentBase: true,
 			liveReload: true,
 		},
 
-		plugins: [
+		// devtool: 'eval',
+		devtool: isProduction ? 'none': 'eval',
+
+		plugins: htmlPlugins.concat([			
 			new MiniCssExtractPlugin({
-				filename: `styles/${name}.css`,
-			}),
-			new HtmlWebpackPlugin({
-				template: `${PATHS.relPathSrc}/${name}.pug`,
-				filename: `${name}.html`,
-				//inject: false
-			}),
+			filename: 'styles/[name].css',
+			})
+		])
 			
-    	],
+    	,
 		module:{
 			rules: [
 				{
@@ -61,11 +92,6 @@ module.exports = (env, options) =>{
 					options: {
 					  exposes: ["$", "jQuery"],
 					},
-				},
-				{
-					test: /\.tsx?$/,
-					use: 'ts-loader',
-					exclude: /node_modules/,
 				},
 				{
 					test: /\.js$/,
@@ -81,7 +107,7 @@ module.exports = (env, options) =>{
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						outputPath: `${PATHS.assets}/images/`,
+						outputPath: `assets/images`,
 					}
 				},
 				{	
@@ -89,7 +115,7 @@ module.exports = (env, options) =>{
 					loader: 'file-loader',
 					options: {
 						name: '[name].[ext]',
-						outputPath: `${PATHS.assets}/fonts/`,
+						outputPath: `assets/fonts`,
 					}
 				},	
 				{
@@ -136,8 +162,14 @@ module.exports = (env, options) =>{
 								},
 							},
 						},
-						{ loader: 'resolve-url-loader'},
-						'sass-loader',
+						{ loader: 'resolve-url-loader', options: { removeCR: true } },
+						{
+							loader: 'sass-loader',
+							options: {
+							  sourceMap: true,
+							}
+						}
+					
 					]
 				},
 

@@ -1,38 +1,43 @@
-@import '../../utils/forUI-kit/colorIcon.scss';
-@import '../../utils/forUI-kit/fontIcon.scss';
+@import '../utils/forUI-kit/colorIcon.scss';
+@import '../utils/forUI-kit/fontIcon.scss';
 
-@import '../../blocks/text-field/text-field.scss';
-@import "../../blocks/input-with-counter/input-with-counter.scss";
-@import "../../blocks/dmy-mask/dmy-mask.scss";
-@import "../../blocks/date-picker/_double/date-picker_double.scss";
-@import "../../blocks/date-picker/date-picker.scss";
-@import "../../blocks/text-field/_with/text-field_with_arrow-right/text-field_with_arrow-right.scss";
-@import "../../blocks/checkboxes/checkboxes.scss";
-@import "../../blocks/radios/radios.scss";
-@import "../../blocks/tumblers/tumblers.scss";
-@import "../../blocks/liker/liker.scss";
-@import "../../blocks/rate-stars/rate-stars.scss";
-@import "../../blocks/range-slider/range-slider.scss";
-@import "../../blocks/button-rounded/button-rounded.scss";
-@import "../../blocks/button-minimaze/button-minimaze.scss";
-@import "../../blocks/paginator/paginator.scss";
-@import "../../blocks/dropping-checkboxes/dropping-checkboxes.scss";
-@import "../../blocks/subscribed-checkboxes/subscribed-checkboxes.scss";
-@import "../../blocks/marked-list/marked-list.scss";
-@import "../../blocks/stickers/stickers.scss";
-@import "../../blocks/reviews/reviews.scss";
-@import "../../blocks/entry-form/entry-form.scss";
-@import "../../blocks/registration/registration.scss";
-@import "../../blocks/number-booker/number-booker.scss";
-@import "../../blocks/number-finder/number-finder.scss";
-@import "../../blocks/header/header.scss";
-@import "../../blocks/footer/footer.scss";
-@import "../../blocks/footer/footer.scss";
-@import "../../blocks/cellar/cellar.scss"; 
-@import "../../blocks/card/card.scss";
-@import "../../blocks/number-demo/number-demo.scss";
+@import '../blocks/textfield/textfield.scss';
+@import "../blocks/input-with-counter/input-with-counter.scss";
+@import "../blocks/date-mask/date-mask.scss";
+@import "../blocks/double-date-picker/double-date-picker.scss";
+@import "../blocks/date-picker/date-picker.scss";
+@import "../blocks/textfield-for-sending/textfield-for-sending.scss";
+@import "../blocks/checkboxes/checkboxes.scss";
+@import "../blocks/radios/radios.scss";
+@import "../blocks/tumblers/tumblers.scss";
+@import "../blocks/liker/liker.scss";
+@import "../blocks/rate-stars/rate-stars.scss";
+@import "../blocks/range-picker/range-picker.scss";
+@import "../blocks/button/button.scss";
+@import "../blocks/link/link.scss";
+@import "../blocks/paginator/paginator.scss";
+@import "../blocks/dropping-checkboxes/dropping-checkboxes.scss";
+@import "../blocks/subscribed-checkboxes/subscribed-checkboxes.scss";
+@import "../blocks/marked-list/marked-list.scss";
+@import "../blocks/stickers/stickers.scss";
+@import "../blocks/review/review.scss";
+@import "../blocks/entry-form/entry-form.scss";
+@import "../blocks/registration/registration.scss";
+@import "../blocks/number-booker/number-booker.scss";
+@import "../blocks/number-finder/number-finder.scss";
+@import "../blocks/header/header.scss";
+@import "../blocks/footer/footer.scss";
+@import "../blocks/footer/footer.scss";
+@import "../blocks/cellar/cellar.scss"; 
+@import "../blocks/card/card.scss";
+@import "../blocks/number-demo/number-demo.scss";
+@import "../utils/_mixin-font.scss";
 
-//UI не нужно было, надеюсь, оформлять по стандартам,? я это налепил уже давно, переписывать это страшно
+h3{
+    @include default-font($main-color_darkest, $size-small, $size-small+4, 700,none, uppercase);
+    margin: 0;
+    margin-bottom: 15px;
+}
 .ui-kit-container{
     display: flex;
     flex-wrap: wrap;
@@ -137,11 +142,7 @@
         align-items: flex-start;
         flex-wrap: wrap;
     }
-    & .textfield-active-container{
-        & input{
-            border: 1px solid rgba(31, 32, 65, 0.5);
-        }
-    }
+
     & .range-calendar-container{
         max-width: 266px;
     }
@@ -159,35 +160,9 @@
     }
     & .buttons-container {
         margin-bottom: 30px;
-        & h3{
-            text-transform: uppercase;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 15px;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 16.5px;
-            color: rgba(31, 32, 65, 1);
-        }
+
     }
-    & .pages-switcher-container {
-        & h3{
-            text-transform: uppercase;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 15px;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 16.5px;
-            color: rgba(31, 32, 65, 1);
-            display: inline-block;
-        }
-        & .paginator{
-            justify-content: flex-start;
-        }
-    }
+
     & .default-input-drop-container {
         margin-bottom: 20px;
         & .input-with-counter{
@@ -196,15 +171,8 @@
     }
     & .expand-input-drop-container{
         margin-bottom: 158px;
-        & input{
-            ////В нормальных условиях это всё делается через js, когда поле или список в фокусе, но 
-            ////поскольку нужно держать, для демонстрации, в таком состоянии нужно держать несколько окон, то определяю вручную
-            outline: 0;
-            border-color: $main-color_lighter;
-            border-radius: 0;
-            border-top-right-radius: 4px;
-            border-top-left-radius: 4px;
-        }
+    
+
     }
     & .stickers-container {
         margin: 0 20px;

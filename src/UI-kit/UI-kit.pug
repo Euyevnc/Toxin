@@ -1,0 +1,191 @@
+include ../utils/forUI-kit/colorIcon.pug
+include ../utils/forUI-kit/fontIcon.pug
+include ../blocks/textfield/textfield.pug
+include ../blocks/input-with-counter/input-with-counter.pug
+include ../blocks/date-mask/date-mask.pug
+include ../blocks/double-date-picker/double-date-picker.pug
+include ../blocks/date-picker/date-picker.pug
+include ../blocks/textfield-for-sending/textfield-for-sending.pug
+include ../blocks/textfield-for-dropping/textfield-for-dropping.pug
+include ../blocks/checkboxes/checkboxes.pug
+include ../blocks/radios/radios.pug
+include ../blocks/tumblers/tumblers.pug
+include ../blocks/liker/liker.pug
+include ../blocks/rate-stars/rate-stars.pug
+include ../blocks/range-picker/range-picker.pug
+include ../blocks/button/button.pug
+include ../blocks/link/link.pug
+include ../blocks/dropping-checkboxes/dropping-checkboxes.pug
+include ../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
+include ../blocks/paginator/paginator.pug
+include ../blocks/marked-list/marked-list.pug
+include ../blocks/stickers/stickers.pug
+include ../blocks/review/review.pug
+include ../blocks/header/header.pug 
+include ../blocks/footer/footer.pug
+include ../blocks/cellar/cellar.pug
+include ../blocks/card/card.pug
+include ../blocks/number-demo/number-demo.pug 
+include ../blocks/registration/registration.pug
+include ../blocks/number-finder/number-finder.pug
+include ../blocks/number-booker/number-booker.pug
+include ../blocks/entry-form/entry-form.pug
+
+
+//- Относительные пути для pug'a вообще возможно сделать??
+- let img1 = require(`./UI-kit/img/image-1.jpg`).default
+- let img2 = require(`./UI-kit/img/image.jpg`).default
+- let img3 = require(`./UI-kit/img/image-7.jpg`).default
+- let img4 = require(`./UI-kit/img/image-5.jpg`).default
+- let img5 = require(`./UI-kit/img/image-3.jpg`).default
+
+div.ui-kit-container
+    section.colors-and-type 
+        include ../static/Images/logo.img.svg 
+        section.colors-container 
+            +colorIcon('#1F2041', "Dark Shade 100%", 1)
+            +colorIcon('#1F2041', "Dark Shade 75%", 0.75)
+            +colorIcon('#1F2041', "Dark Shade 50%", 0.5)
+            +colorIcon('#1F2041', "Dark Shade 25%", 0.25)
+            +colorIcon('#1F2041', "Dark Shade 5%", 0.05)
+            +colorIcon('#BC9CFF', "Purple")
+            +colorIcon('#6FCF97', "Green")    
+        section.fonts-container
+            +fontIcon('H1', 'Montserrat', '24px', '700', '30px', 'none', 'This one is the sub-section or widget title' )
+            +fontIcon('H2', 'Montserrat', '19px', '700', '24px', 'none', 'Next one is the item title inside widgets' )
+            +fontIcon('H3', 'Montserrat', '14px', '700', '15px', 'uppercase' , 'This is a label or CTA text.')
+            +fontIcon('Body', 'Montserrat', '14px', '400', '24px', 'none', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', '0.75')
+
+    section.forms
+        include ../static/Images/logo.img.svg
+        section.forms-fields-wrapper
+            div.textfield-container 
+                +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
+            div.textfield-active-container 
+                +textfield( {label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'hover/focus'})
+            div.input-with-counter-container 
+                +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+            div.input-with-mask-container 
+                +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+            div.double-range-calendar-container
+                +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
+            div.range-calendar-container 
+                +date-picker({ initArrive: 4, initDeparture: 8})
+            div.field-with-arrow-container 
+                +textfield-for-sending({lavel: 'subscription text field', placeholder: "Email"})
+        section.forms-checkers-wrapper
+            div.default-checkboxes-container
+                +checkboxes({ describe: 'правила дома', checkboxes: [{subscription:'Можно курить', value: 'smoking', name: 'smoking',}, {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},{subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}] })
+            div.radios-container
+                +radios({ name: 'sex', radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] } )
+            div.tumblers-container 
+                +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения', checked: "true"}, {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'}  ] })
+                
+            div.likers-container 
+                h3 like button
+                +liker({amount: 12, checked: 'checked'})
+                +liker({amount: 2})
+
+            div.start-container 
+                +rate-stars({descr: 'rateing', compl: 4, share:0})
+                +rate-stars({compl: 5})
+        section.forms-buttons-wrapper
+            div.range-slider-container 
+                +range-picker({ desc:"range slider", subscribe: "Стоимость за сутки прибывания в номере", slider: "{type: 'range', orient: 'horizontal', scale: false, cloud: 'none', origin: 1000, range: 15000, step: 500, initStart: 5000, initEnd: 10000}"})
+            div.buttons-container
+                h3 buttons 
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['color_purple'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['color_purple'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['color_empty'], type: 'button'})
+                .rounded-button-container 
+                    +button( {text: 'click me', styles: ['color_empty'], type: 'button'})
+                br
+                span.simple-button-container
+                    +link({ text: 'click me', styles: ['color_purple']})
+                span.simple-button-container
+                    +link({ text: 'click me', styles: ['color_grey']})
+            div.large-button-container 
+                +button({text: "перейти к оплате", styles: ['color_purple'], withArrow:true}) 
+            div.pages-switcher-container 
+                h3 pagination
+                +paginator({amount: 15})
+
+        div(style="width: 100%; height:100px")
+
+        section.forms-dropdowns-wrapper
+            section
+                div.default-input-drop-container 
+                    +inputs-with-counter({type: 'simple', label: "удобства номера", placeholder: 'Выберете комплектацию', items: [{name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}] })
+
+                div.expand-input-drop-container 
+                    +inputs-with-counter({type: 'simple', label: "удобства номера", placeholder: 'Выберете комплектацию', items: [{name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}] })
+            section
+                div.expand-input-drop-container
+                    +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+            section
+                div.expand-input-drop-container
+                    +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+
+        section.forms-check-blockes-wrapper
+            section
+                div.dropping-checkboxes-container 
+                    +dropping-checkboxes({ header: 'expandable checkbox list', checkboxes: [ {subscription:'Завтрак', name: 'breakfast', value: 'included'}, {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, {subscription:'Телевизор', name: 'TV', value: 'included'}, {subscription:'Шампунь', name: 'shampoo', value:'included'}, {subscription:'Телевизор', name: 'TV', value:'included'}, {subscription:'Шампунь', name: 'shampoo', value: 'included'}] })
+                div.dropped-checkboxes-container
+                    +dropping-checkboxes({ header: 'expandable checkbox list', expanded: "true", checkboxes: [ {subscription:'Завтрак', name: 'breakfast', value: 'included'}, {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, {subscription:'Телевизор', name: 'TV', value: 'included'}, {subscription:'Шампунь', name: 'shampoo', value:'included'}, {subscription:'Телевизор', name: 'TV', value:'included'}, {subscription:'Шампунь', name: 'shampoo', value: 'included'}] })
+            section
+                dev.checkboxes-with-describe-container 
+                    +subscribed-checkboxes({ title: 'richc checkbox button', checkboxes: [ {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} ] })
+            section 
+                div.bullets-container
+                    h3 Bullet list
+                    +marked-list({ elements: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"] })
+           
+        section.reviews-wrapper  
+            div.stickers-container 
+                +stickers({ issues: [{icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"}] })
+            div.review-wrapper 
+                +review({name: 'Мурад Сарафанов', avatar: require('./pages/RoomDetails/img/review001.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
+   
+    section.cards 
+        include ../static/Images/logo.img.svg
+        section   
+            div.find-form-container
+                +number-finder()
+
+            div.registration-form-container 
+                +registration()
+
+        section
+            div.number-booker-container
+                +number-booker({number: 888, category: 'люкс', price: 9990, servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', servPrice: '-2179, 300'})
+
+            div.entry-form-container
+                +entry-form()
+
+        section 
+            div.expended-calendar-container 
+            div.number-demonstration-container
+                +number-demo({ number: 888, category: "люкс", price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img4] })
+                +number-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img1] })
+    section.headers-and-footers
+        include ../static/Images/logo.img.svg
+        section.header-container 
+            .wrapper
+                +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+        section.header-container.header-autorized-container
+            .wrapper 
+                +header({ menu: { login: 'Юлий Цезарь', issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+        section.footer-container 
+            .wrapper
+                +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
+        section.cellar-container 
+            .wrapper
+                +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+        section.card-container 
+            div(class="slim-wrapper")
+                +card({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+
+

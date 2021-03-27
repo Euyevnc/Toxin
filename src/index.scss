@@ -1,8 +1,7 @@
-@import "../../layout/layout-for-hotel.scss";
-@import "../../utils/fonts/Montserrat.scss";
-@import "./rangeDemo/main.scss";
-@import "./rangeDemo/slider.scss";
-@import "../UI-kit/UI-kit.scss";
+@import "./layout/layout-for-hotel.scss";
+@import "./utils/fonts/Montserrat.scss";
+@import "./UI-kit/UI-kit.scss";
+
 body{
     position: relative;
     &>.header-container{
@@ -31,7 +30,7 @@ body{
         width: 100%;
     }
 }
-.ui-button, .site-pages-button, .slider-button{
+.ui-button, .site-pages-button{
     position: relative;
     min-width: 150px; 
     width: 32%;

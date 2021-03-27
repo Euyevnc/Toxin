@@ -1,9 +1,9 @@
 @font-face {
 	font-family: 'Open Sans'; 
 	src: local('Open Sans'),
-		url("../../assets/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"),
-		url("../../assets/fonts/OpenSans/OpenSans-Regular.woff") format("woff"),
-		url("../../assets/fonts/OpenSans/OpenSans-Regular.svg") format("svg");
+		url("/src/assets/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"),
+		url("/src/assets/fonts/OpenSans/OpenSans-Regular.woff") format("woff"),
+		url("/src/assets/fonts/OpenSans/OpenSans-Regular.svg") format("svg");
 
 	font-style: normal; 
 	font-weight: normal;
@@ -12,9 +12,9 @@
 @font-face{
 	font-family: 'Open Sans';
 	src: local('Open Sans'),
-		url('../../assets/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype'), 
-		url('../../assets/fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
-		url('../../assets/fonts/OpenSans/OpenSans-Bold.svg') format('svg');
+		url('/src/assets/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype'), 
+		url('/src/assets/fonts/OpenSans/OpenSans-Bold.woff') format('woff'),
+		url('/src/assets/fonts/OpenSans/OpenSans-Bold.svg') format('svg');
  
 	font-style: normal; 
 	font-weight: bold; 
