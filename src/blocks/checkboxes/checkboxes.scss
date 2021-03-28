@@ -1,5 +1,5 @@
 @import "../../utils/_mixin-font.scss";
-@import "../../utils/fonts/MaterialIcons.scss";
+@import "../../utils/fonts/FontAwesome.scss";
 
 .checkboxes{
     margin: 0;
@@ -36,8 +36,8 @@
                 border-image: initial;
                 vertical-align: top;
                 cursor: pointer;
-                font-family: 'Material Icons';
-                font-size: 10px;
+                font-family: 'Font Awesome 5 Free';
+                font-size: 11px;
                 line-height: 18px;
                 text-align: center;
                 margin-right: 10px;
@@ -53,7 +53,7 @@
     &__checkbox:checked{ 
         & + .checkboxes__label{
             &::before {
-                content: "check";
+                content: "\f00c";
                 border: 1px solid $highlight-color ;
             }  
         }

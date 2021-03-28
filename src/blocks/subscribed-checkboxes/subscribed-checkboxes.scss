@@ -1,4 +1,6 @@
 @import "../../utils/_mixin-font.scss";
+@import "../../utils/fonts/FontAwesome.scss";
+
 .subscribed-checkboxes{
     margin: 0;
     padding: 0;
@@ -41,28 +43,33 @@
             &::before {
                 content:'';
                 display: inline-block;
+                position: relative;
                 width: 20px;
                 height: 20px;
-                margin-right: 7px;
-                position: relative;
-                text-indent: 0px;
+                border: 1px solid $main-color_lightest;
                 box-sizing: border-box;
                 border-radius: 4px;
                 border-image: initial;
                 vertical-align: top;
                 cursor: pointer;
+                font-family: 'Font Awesome 5 Free';
+                font-size: 11px;
+                line-height: 18px;
                 text-align: center;
-                border: 1px solid $main-color_lightest;
-                @include default-font();
+                margin-right: 10px;
+                font-weight: bold;
+                color: $highlight-color;
+                
+                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
             }
         }
     }
     &__checkbox:checked{
         & + .subscribed-checkboxes__label{
             &::before {
-                content: "check";
-                font-family: 'Material Icons';
-                color: $highlight-color;
+                content: "\f00c";
                 border: 1px solid $highlight-color ;
             }
         }

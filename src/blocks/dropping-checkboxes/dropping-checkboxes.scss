@@ -1,7 +1,7 @@
 @import "../../static/figures/arrow-down/arrow-down.scss";
 @import "../../utils/_mixin-font.scss";
 @import "../../utils/_mixin_outline.scss";
-@import "../../utils/fonts/MaterialIcons.scss";
+@import "../../utils/fonts/FontAwesome.scss";
 
 .dropping-checkboxes{
     margin: 0;
@@ -58,20 +58,26 @@
             &::before {
                 content:'';
                 display: inline-block;
-                margin-right: 10px;
                 position: relative;
-                text-indent: 0px;
                 width: 20px;
                 height: 20px;
                 border: 1px solid $main-color_lightest;
                 box-sizing: border-box;
                 border-radius: 4px;
                 border-image: initial;
-                vertical-align: middle;
+                vertical-align: top;
                 cursor: pointer;
-                font-size: 14px;
+                font-family: 'Font Awesome 5 Free';
+                font-size: 11px;
                 line-height: 18px;
                 text-align: center;
+                margin-right: 10px;
+                font-weight: bold;
+                color: $highlight-color;
+                
+                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; 
             }
         
         }
@@ -80,10 +86,8 @@
     &__checkbox:checked{
         & + .dropping-checkboxes__label{
             &::before {
-                content: "check";
-                font-family: 'Material Icons';
-                color: $highlight-color;
-                border: 1px solid $highlight-color ; 
+                content: "\f00c";
+                border: 1px solid $highlight-color ;
             }
     
         }
