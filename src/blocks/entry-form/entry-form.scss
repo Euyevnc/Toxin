@@ -3,48 +3,48 @@
 @import "../textfield/textfield.scss";
 
 .entry-form{
-    background-color: white;
-    padding: 39px 29px 31px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    &__text{
-        @include default-font($color: $main-color_darkest);
-        text-align: center;
-        margin: 0;
-    }
+  background-color: white;
+  padding: 39px 29px 31px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  &__text{
+    @include default-font($color: $main-color_darkest);
+    text-align: center;
+    margin: 0;
+  }
 
-    &__header{
-        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
-        margin: 0;
-        margin-bottom: 20px;
+  &__header{
+    @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  &__form{
+    margin: 20px 0 30px;
+    min-width: 320px;
+  }
+  &__input-container{
+    margin: 10px 0;
+  }
+  &__registration{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__button{
+    height: 44px;
+    &_for_submit{
+      min-width: 320px;
+      margin-top: 20px;
     }
-    &__form{
-        margin: 20px 0 30px;
-        min-width: 320px;
+    &_for_regist{
+      min-width: 99px;
     }
-    &__input-container{
-        margin: 10px 0;
-    }
-    &__registration{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 30px;
-    }
-    &__button{
-        height: 44px;
-        &_for_submit{
-            min-width: 320px;
-            margin-top: 20px;
-        }
-        &_for_regist{
-            min-width: 99px;
-        }
-    }
-    @media(max-width: 380px){
-        padding: 40px 10px 30px;
-    }
+  }
+  @media(max-width: 380px){
+    padding: 40px 10px 30px;
+  }
 }

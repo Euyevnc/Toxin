@@ -34,250 +34,250 @@
 @import "../utils/_mixin-font.scss";
 
 h3{
-    @include default-font($main-color_darkest, $size-small, $size-small+4, 700,none, uppercase);
-    margin: 0;
-    margin-bottom: 15px;
+  @include default-font($main-color_darkest, $size-small, $size-small+4, 700,none, uppercase);
+  margin: 0;
+  margin-bottom: 15px;
 }
 .ui-kit-container{
+  display: flex;
+  flex-wrap: wrap;
+  background: #E5E5E5;
+  width: 100%;
+  justify-content: center;
+  &>*{
+    background-color: #ffffff;
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    background: #E5E5E5;
-    width: 100%;
-    justify-content: center;
-    &>*{
-        background-color: #ffffff;
-        position: relative;
-        display: flex;
-        align-items: flex-start;
-        width: 1440px;
-        margin: 25px;
-        box-sizing: border-box;
-        &>svg{
-            position: absolute;
-            top: 30px;
-            left: 30px;
-        }  
-    }
+    align-items: flex-start;
+    width: 1440px;
+    margin: 25px;
+    box-sizing: border-box;
+    &>svg{
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }  
+  }
 }
 .colors-and-type {
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    min-height: 900px;
-    padding: 145px 0 0;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-height: 900px;
+  padding: 145px 0 0;
 
-    & .colors-container{
-        padding-right: 10px;
-        margin-bottom: 20px;
-    }
-    & .fonts-container{
-        padding-left: 10px;
-    }
+  & .colors-container{
+    padding-right: 10px;
+    margin-bottom: 20px;
+  }
+  & .fonts-container{
+    padding-left: 10px;
+  }
 
 
 }
 .forms{
-    padding: 143px 0 132px;
+  padding: 143px 0 132px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  &-fields-wrapper{
+    width: 320px;
+    &>*{
+      margin-bottom: 20px;
+    }
+  }
+  &-checkers-wrapper{
+    width: 320px;
+    padding: 0 2px 0 56px;
+    &>*{
+      margin-bottom: 40px;
+    }
+  }
+  &-buttons-wrapper{
+    width: 320px;
+    &>*{
+      margin-bottom: 40px;
+    }
+  }
+  & .rounded-button-container{
+    width: 99px;
+    display: inline-block;
+    margin-right: 19px;
+    margin-bottom: 30px;
+  }
+  & .simple-button-container{
+    margin-right: 20px;
+  }
+  &-dropdowns-wrapper{
+    width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content: flex-start;
+    &>section{
+      width: 320px;
+      &:nth-child(2){
+        padding: 0 2px 0 56px; 
+      }
+    }
+  }
+  &-check-blockes-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    margin-bottom: 40px;
+    &>section{
+      width: 320px;
+      &:nth-child(2){
+        padding: 0 2px 0 56px; 
+      }
+    }
+  }
+  & .reviews-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     align-items: flex-start;
-    &-fields-wrapper{
-        width: 320px;
-        &>*{
-            margin-bottom: 20px;
-        }
-    }
-    &-checkers-wrapper{
-        width: 320px;
-        padding: 0 2px 0 56px;
-        &>*{
-            margin-bottom: 40px;
-        }
-    }
-    &-buttons-wrapper{
-        width: 320px;
-        &>*{
-            margin-bottom: 40px;
-        }
-    }
-    & .rounded-button-container{
-        width: 99px;
-        display: inline-block;
-        margin-right: 19px;
-        margin-bottom: 30px;
-    }
-    & .simple-button-container{
-        margin-right: 20px;
-    }
-    &-dropdowns-wrapper{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        &>section{
-            width: 320px;
-            &:nth-child(2){
-                padding: 0 2px 0 56px; 
-            }
-        }
-    }
-    &-check-blockes-wrapper{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-content: flex-start;
-        margin-bottom: 40px;
-        &>section{
-            width: 320px;
-            &:nth-child(2){
-                padding: 0 2px 0 56px; 
-            }
-        }
-    }
-    & .reviews-wrapper{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
+  }
 
-    & .range-calendar-container{
-        max-width: 266px;
-    }
-    & .field-with-arrow-container{
-        max-width: 266px;
-    }
+  & .range-calendar-container{
+    max-width: 266px;
+  }
+  & .field-with-arrow-container{
+    max-width: 266px;
+  }
 
-    & .tumblers-container{
-        &>*{
-            margin-bottom: 10px;
-        }
+  & .tumblers-container{
+    &>*{
+      margin-bottom: 10px;
     }
-    & .range-slider-container{
-        width: 320px;
-    }
-    & .buttons-container {
-        margin-bottom: 30px;
+  }
+  & .range-slider-container{
+    width: 320px;
+  }
+  & .buttons-container {
+    margin-bottom: 30px;
 
-    }
+  }
 
-    & .default-input-drop-container {
-        margin-bottom: 20px;
-        & .input-with-counter{
-            z-index: 15
-        }
+  & .default-input-drop-container {
+    margin-bottom: 20px;
+    & .input-with-counter{
+      z-index: 15
     }
-    & .expand-input-drop-container{
-        margin-bottom: 158px;
-    
+  }
+  & .expand-input-drop-container{
+    margin-bottom: 158px;
+  
 
+  }
+  & .stickers-container {
+    margin: 0 20px;
+  }
+  & .bullets-container{
+    & h3{
+      text-transform: uppercase;
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 16.5px;
+      color: rgba(31, 32, 65, 1);
     }
-    & .stickers-container {
-        margin: 0 20px;
-    }
-    & .bullets-container{
-        & h3{
-            text-transform: uppercase;
-            font-family: Montserrat, Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 15px;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 16.5px;
-            color: rgba(31, 32, 65, 1);
-        }
-    }
+  }
 
-    & .review-wrapper {
-        max-width: 710px;
-        padding-top: 15px;
-    }
+  & .review-wrapper {
+    max-width: 710px;
+    padding-top: 15px;
+  }
 
 }
 .cards{
-    background: #F4F4F6;
-    justify-content: center;
-    padding: 140px 0 140px;
-    flex-wrap: wrap;
-    &>section{
-        margin: 0 20px;
-        max-width: 380px;
-        &>*{
-            margin-bottom: 40px;
-        }
+  background: #F4F4F6;
+  justify-content: center;
+  padding: 140px 0 140px;
+  flex-wrap: wrap;
+  &>section{
+    margin: 0 20px;
+    max-width: 380px;
+    &>*{
+      margin-bottom: 40px;
     }
-    & .expended-calendar-container {
-        position: relative;
-        width: 320px;
-        height: 370px;
-        & .ui-datepicker{
-            display: block;
-            top: 0;
-            left: 0;
-            user-select: none;
-            pointer-events: none;
-        }
+  }
+  & .expended-calendar-container {
+    position: relative;
+    width: 320px;
+    height: 370px;
+    & .ui-datepicker{
+      display: block;
+      top: 0;
+      left: 0;
+      user-select: none;
+      pointer-events: none;
     }
+  }
 }
 .headers-and-footers{
-    padding: 140px 0;
-    background: #F4F4F6;
-    display: flex;
-    flex-direction: column;
-    &>*section{
-        margin-bottom: 40px;
-        width: 100%;
-        box-sizing: border-box;
+  padding: 140px 0;
+  background: #F4F4F6;
+  display: flex;
+  flex-direction: column;
+  &>*section{
+    margin-bottom: 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  & .header-container{
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: relative;
+    z-index: 10;
+    &:nth-child(2){
+      z-index: 11;
     }
-    & .header-container{
-        padding: 15px 0;
-        background-color: white;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        position: relative;
-        z-index: 10;
-        &:nth-child(2){
-            z-index: 11;
-        }
-        @media(max-width: 1160px){
-            padding: 10px;
-        };
-    }
-    & .footer-container{
-        background-color: white;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        position: relative;
-        z-index: 9;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.10);
-        margin-bottom: 0;
-        @media(max-width: 1160px){
-            padding: 0 10px;
-        };
-    }
-    & .cellar-container{
-        z-index: 9;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        background-color: white;
-        @media(max-width: 1160px){
-            padding: 0 10px;
-        };
-    }
+    @media(max-width: 1160px){
+      padding: 10px;
+    };
+  }
+  & .footer-container{
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    position: relative;
+    z-index: 9;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.10);
+    margin-bottom: 0;
+    @media(max-width: 1160px){
+      padding: 0 10px;
+    };
+  }
+  & .cellar-container{
+    z-index: 9;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    background-color: white;
+    @media(max-width: 1160px){
+      padding: 0 10px;
+    };
+  }
 }
 .wrapper{
-    max-width: 1160px;
-    margin: auto;
-    width:100%;
-    @media(max-width: 1160px){
-        padding: 0 10px;
-    }
+  max-width: 1160px;
+  margin: auto;
+  width:100%;
+  @media(max-width: 1160px){
+    padding: 0 10px;
+  }
 }
 .slim-wrapper{
-    max-width: 768px;
-    margin: auto;
-    width:100%
+  max-width: 768px;
+  margin: auto;
+  width:100%
 }
 *:focus{
-    @include outline();
+  @include outline();
 }

@@ -23,6 +23,14 @@ body{
     position: relative;
     z-index: 10;
     box-sizing: border-box;
+    &__wrapper{
+      max-width: 1180px;
+      padding: 0 10px;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      box-sizing: border-box;
+    }
 }
 .content{
     min-width: 320px;
@@ -31,6 +39,14 @@ body{
     position: relative;
     box-sizing: border-box;
     z-index: 9;
+    &__wrapper{
+      max-width: 1180px;
+      padding: 0 10px;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      box-sizing: border-box;
+    }
 }
 .footer-container{
     width: 100%;
@@ -40,6 +56,14 @@ body{
     position: relative;
     z-index: 10;
     box-sizing: border-box;
+    &__wrapper{
+      max-width: 1180px;
+      padding: 0 10px;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      box-sizing: border-box;
+    }
 }
 .cellar-container{
     width: 100%;
@@ -49,15 +73,14 @@ body{
     position: relative;
     z-index: 10;
     box-sizing: border-box;
-}
-.wrapper{
-    width: 100%;
-    max-width: 1180px;
-    padding: 0 10px;
-    height: 100%;
-    margin: auto;
-    position: relative;
-    box-sizing: border-box;
+    &__wrapper{
+      max-width: 1180px;
+      padding: 0 10px;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      box-sizing: border-box;
+    }
 }
 
 *:focus{

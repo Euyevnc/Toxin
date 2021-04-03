@@ -1,25 +1,25 @@
 .pictures-demo{ 
-    max-height: 485px;
+  max-height: 485px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  user-select: none;
+  &__large-picture-container{
+    overflow: hidden;
+    width: auto;
+    
+  }
+  &__small-pictures-container{
     display: flex;
+    flex-direction: column;
     justify-content: stretch;
-    align-items: stretch;
-    user-select: none;
-    &__large-picture-container{
-        overflow: hidden;
-        width: auto;
-        
-    }
-    &__small-pictures-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-        align-content: stretch;
-        overflow: hidden;
-        
-    }
-    &__image{
-      object-fit: cover;
-      height: 100%;
-    }
+    align-content: stretch;
+    overflow: hidden;
+    
+  }
+  &__image{
+    object-fit: cover;
+    height: 100%;
+  }
 
 }

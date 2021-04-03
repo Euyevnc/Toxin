@@ -1,11 +1,12 @@
+include ../arrow-right/arrow-right.pug
 mixin button({ text='', styles=[], type='button', withArrow = false }={})
 
-    - let classes = ""
-    each style in styles 
-        - classes += `button_${style} `;
+  - let classes = ""
+  each style in styles 
+    - classes += `button_${style} `;
 
-    button(class=`button ${classes}` type = type) 
-        span.button__text #{text}
-        if withArrow
-            span.button__arrow
-                include ../../static/figures/arrow-right/arrow-right.pug
+  button(class=`button ${classes}` type = type) 
+    span.button__text #{text}
+    if withArrow
+      span.button__arrow
+        +arrow-right()

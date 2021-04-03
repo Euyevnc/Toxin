@@ -1,10 +1,10 @@
-import "./LandingPage.scss"
-import header from  "../../blocks/header/header.js";
-import finder from  "../../blocks/number-finder/number-finder.js";
+import './LandingPage.scss';
+import header from '../../blocks/header/header';
+import finder from '../../blocks/number-finder/number-finder';
 
-document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
+document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
-function handlerDocumentDOMLoaded(e){
-    header()
-    finder(); 
+function handlerDocumentDOMLoaded() {
+  header();
+  finder();
 }

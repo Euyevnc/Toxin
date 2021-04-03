@@ -1,25 +1,26 @@
-import doubleDatePicker from "../double-date-picker/double-date-picker"
-import counter from "../input-with-counter/input-with-counter";
+import doubleDatePicker from '../double-date-picker/double-date-picker';
+import counter from '../input-with-counter/input-with-counter';
 
-
-function numberFinder(){
-    let finders=[]
-    document.querySelectorAll(".js-number-finder").forEach((element)=>{
-        let newFinder = new NumberFinder(element)
-        newFinder.init()
-        finders.push(newFinder)
-    })
-    if(finders.length===1) return finders[0]
-    else return finders
-}
-class NumberFinder{
-    constructor(root){
-        this.root = root 
-    }
-    init(){
-        this.datepicker = doubleDatePicker()
-        this.counter = counter()
-    }
+function numberFinder() {
+  const finders = [];
+  document.querySelectorAll('.js-number-finder').forEach((element) => {
+    const newFinder = new NumberFinder(element);
+    newFinder.init();
+    finders.push(newFinder);
+  });
+  if (finders.length === 1) return finders[0];
+  return finders;
 }
 
-export default numberFinder
+class NumberFinder {
+  constructor(root) {
+    this.root = root;
+  }
+
+  init() {
+    this.datepicker = doubleDatePicker();
+    this.counter = counter();
+  }
+}
+
+export default numberFinder;

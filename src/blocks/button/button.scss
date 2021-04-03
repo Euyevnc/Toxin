@@ -1,65 +1,65 @@
 @import "../../utils/_mixin-font.scss";
-@import "../../static/figures/arrow-right/arrow-right.scss";
+@import "../arrow-right/arrow-right.scss";
 .button{
-    @include default-font($size: $size-small, $line: 44px, $weight: 700, $transform: uppercase);
-    display: inline-block;
+  @include default-font($size: $size-small, $line: 44px, $weight: 700, $transform: uppercase);
+  display: inline-block;
+  position: relative;
+  min-width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  &__text{
     position: relative;
-    min-width: 100%;
-    height: 44px;
-    box-sizing: border-box;
-    border-radius: 22px;
+    z-index: 1;
+  }
+  &__arrow{
+    display: inline-block;
+    position: absolute;
+    min-width: 44px;
+    max-height: 24px;
+    line-height: 24px;
     text-align: center;
-    user-select: none;
-    cursor: pointer;
-    border: none;
-    &__text{
-        position: relative;
-        z-index: 1;
-    }
-    &__arrow{
-        display: inline-block;
-        position: absolute;
-        min-width: 44px;
-        max-height: 24px;
-        line-height: 24px;
-        text-align: center;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
 
-    }
-    &_color_purple{
-        background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-        color: white;
+  }
+  &_color_purple{
+    background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
+    color: white;
 
-        &:hover{
-            background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
+    &:hover{
+      background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
  
-        }
     }
-    &_color_empty{
-        background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-        color: $highlight-color;
+  }
+  &_color_empty{
+    background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
+    color: $highlight-color;
   
-        &::after{
-            content: "";
-            background-color: white;
-            position: absolute;
-            border-radius: 20px;
-            z-index: 0;
-            top: 2px;
-            bottom: 2px;
-            left: 2px;
-            right: 2px;
-        }
-        &:hover{
-            background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
-        }
+    &::after{
+      content: "";
+      background-color: white;
+      position: absolute;
+      border-radius: 20px;
+      z-index: 0;
+      top: 2px;
+      bottom: 2px;
+      left: 2px;
+      right: 2px;
     }
+    &:hover{
+      background: linear-gradient(180deg, $highlight-color_depr 0%, $highlight-color_skew_depr 100%);
+    }
+  }
 
-    &_height_low{
-        height: 34px;
-        line-height: 34px;
-    }
+  &_height_low{
+    height: 34px;
+    line-height: 34px;
+  }
 }
 

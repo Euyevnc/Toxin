@@ -1,7 +1,7 @@
 include ../textfield-for-dropping/textfield-for-dropping.pug
 mixin double-date-picker({ initArrive=null, initDeparture=null , textfields=[] }={})
-    .js-double-date-picker.double-date-picker
-        div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_first js-double-date-picker__container_for_first` data-init=initArrive)
-            +textfield-for-dropping({ label: textfields[0].label, placeholder: textfields[0].placeholder, describe: textfields[0].describe})
-        div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_second js-double-date-picker__container_for_second` data-init=initDeparture)
-            +textfield-for-dropping({ label: textfields[1].label, placeholder: textfields[1].placeholder, describe: textfields[1].describe})
+  .js-double-date-picker.double-date-picker
+    div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_first js-double-date-picker__container_for_first` data-init=initArrive)
+      +textfield-for-dropping({ label: textfields[0].label, placeholder: textfields[0].placeholder, describe: textfields[0].describe})
+    div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_second js-double-date-picker__container_for_second` data-init=initDeparture)
+      +textfield-for-dropping({ label: textfields[1].label, placeholder: textfields[1].placeholder, describe: textfields[1].describe})

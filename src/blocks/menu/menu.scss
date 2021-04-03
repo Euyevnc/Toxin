@@ -1,119 +1,119 @@
-@import '../../static/figures/arrow-down/arrow-down.scss';
+@import '../arrow-down/arrow-down.scss';
 @import '../autorization-panel/autorization-panel.scss';
 @import "../../utils/_mixin-font.scss";
 
 .menu{
-    margin-left: auto;
+  margin-left: auto;
+  &__list{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+  }
+  &__element{
+    position: relative;
+    list-style-type: none; 
+    cursor: pointer;
+    margin: 0 ;
+    padding: 0 10px;
+    max-height: 18px;
+    border-radius: 4px;
+    user-select: none;
+    @include default-font($color: $main-color_lighter);
+    vertical-align: middle;
+    &:hover{
+      color: $main-color;
+    }
+    &:focus{
+      outline: none;
+      box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
+    }
+  }
+  &__arrow-down{
+    display: inline-block;      
+    vertical-align: top;
+    height: 100%;
+    width: 25px;
+    line-height: 20px;
+  }
+  &__submenu{
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    min-width: 150px;
+    border: 2px solid  $main-color_lightest;
+    background-color: white;
+    &_active{
+      z-index: 100;
+      display: block;
+    }
+    & .menu__element{
+      max-height: 45px;
+      padding: 0;
+      border-radius: 0;
+    }
+    & .menu__link{
+      display: inline-block;
+      width: 100%;
+      line-height: 45px;
+      font-size: 24px;
+      &:focus{
+        outline: 0;
+        box-shadow: 0px 0px 2px 2px  $main-color_lightest inset;
+      }
+    }
+  }   
+  &__link{    
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    @include default-font($color: $main-color_lighter, $line: $size-middle+3);
+    &_active{
+      color: $main-color;
+    }
+  }
+  &__login{
+    padding-left: 20px;
+    border-left: 1px solid $main-color_lightest;
+    margin: 0 10px;
+  }
+  
+  @media(max-width: 650px) {
+    visibility: hidden;
+    &_expanded{
+      visibility: visible;
+    }
     &__list{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      
+      background-color: white;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      align-items: flex-start;
+      flex-direction: column;
+      z-index: 100;
+      border: 3px solid $highlight-color;
+      padding: 15px 5px;
     }
     &__element{
-        position: relative;
-        list-style-type: none; 
-        cursor: pointer;
-        margin: 0 ;
-        padding: 0 10px;
-        max-height: 18px;
-        border-radius: 4px;
-        user-select: none;
-        @include default-font($color: $main-color_lighter);
-        vertical-align: middle;
-        &:hover{
-            color: $main-color;
-        }
-        &:focus{
-            outline: none;
-            box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
-        }
+      max-height: 45px;
+      font-size: 24px;
+      vertical-align: middle; 
+      margin: 10px 0;
+    }
+    &__link{
+      line-height: 45px;
+      font-size: 24px;
+      vertical-align: middle;
     }
     &__arrow-down{
-        display: inline-block;      
-        vertical-align: top;
-        height: 100%;
-        width: 25px;
-        line-height: 20px;
+      vertical-align: middle;
     }
-    &__submenu{
-        margin: 0;
-        padding: 0;
-        display: none;
-        position: absolute;
-        top: 110%;
-        right: 0;
-        min-width: 150px;
-        border: 2px solid  $main-color_lightest;
-        background-color: white;
-        &_active{
-            z-index: 100;
-            display: block;
-        }
-        & .menu__element{
-            max-height: 45px;
-            padding: 0;
-            border-radius: 0;
-        }
-        & .menu__link{
-            display: inline-block;
-            width: 100%;
-            line-height: 45px;
-            font-size: 24px;
-            &:focus{
-                outline: 0;
-                box-shadow: 0px 0px 2px 2px  $main-color_lightest inset;
-            }
-        }
-    }   
-    &__link{    
-        display: inline-block;
-        text-decoration: none;
-        vertical-align: middle;
-        user-select: none;
-        @include default-font($color: $main-color_lighter, $line: $size-middle+3);
-        &_active{
-            color: $main-color;
-        }
-    }
-    &__login{
-        padding-left: 20px;
-        border-left: 1px solid $main-color_lightest;
-        margin: 0 10px;
-    }
-    
-    @media(max-width: 650px) {
-        visibility: hidden;
-        &_expanded{
-            visibility: visible;
-        }
-        &__list{
-            background-color: white;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            align-items: flex-start;
-            flex-direction: column;
-            z-index: 100;
-            border: 3px solid $highlight-color;
-            padding: 15px 5px;
-        }
-        &__element{
-            max-height: 45px;
-            font-size: 24px;
-            vertical-align: middle; 
-            margin: 10px 0;
-        }
-        &__link{
-            line-height: 45px;
-            font-size: 24px;
-            vertical-align: middle;
-        }
-        &__arrow-down{
-            vertical-align: middle;
-        }
-    }
+  }
 }

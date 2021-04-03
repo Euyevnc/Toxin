@@ -173,16 +173,16 @@ module.exports = (env, options) =>{
 					]
 				},
 
-    	        {
-    	            test: /\.css$/,
-    	            use: [
-    	                {
-    	                    loader: MiniCssExtractPlugin.loader,
-    	                    options: {
-    	                        hmr: process.env.NODE_ENV === 'development',
-    	                    }
-    	                }, 
-    	                'css-loader',
+				{
+				    test: /\.css$/,
+				    use: [
+				        {
+				            loader: MiniCssExtractPlugin.loader,
+				            options: {
+				                hmr: process.env.NODE_ENV === 'development',
+				            }
+				        }, 
+				        'css-loader',
 						{
 							loader: 'postcss-loader',
 							options: {
@@ -216,7 +216,7 @@ module.exports = (env, options) =>{
 								},
 							},
 					},
-    	            ]
+				    ]
 				},
 				{
 					test: /\.pug$/,

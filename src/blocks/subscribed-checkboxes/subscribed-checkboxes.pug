@@ -1,20 +1,20 @@
 mixin subscribed-checkboxes({ title='', checkboxes=[]}={})
-    fieldset.subscribed-checkboxes
-        if title
-            legend.subscribed-checkboxes__header #{title}
-        each checkbox in checkboxes
-            - let name = checkbox.name
-            - let checked = Boolean(checkbox.checked)
-            - let value = checkbox.value 
-            - let subscription = checkbox.subscription
-            - let description = checkbox.description
-            label.subscribed-checkboxes__item
-                if checked 
-                    input(class="subscribed-checkboxes__checkbox" type="checkbox" value=value name=name checked)
-                else 
-                    input(class="subscribed-checkboxes__checkbox" type="checkbox" value=value name=name )
-                span(class="subscribed-checkboxes__label" tabindex=0) 
-                    span.subscribed-checkboxes__textbox
-                        p.subscribed-checkboxes__main-text #{subscription}
-                        p.subscribed-checkboxes__sub-text #{description}
-                    
+  fieldset.subscribed-checkboxes
+    if title
+      legend.subscribed-checkboxes__header #{title}
+    each checkbox in checkboxes
+      - let name = checkbox.name
+      - let checked = Boolean(checkbox.checked)
+      - let value = checkbox.value 
+      - let subscription = checkbox.subscription
+      - let description = checkbox.description
+      label.subscribed-checkboxes__item
+        if checked 
+          input(class="subscribed-checkboxes__checkbox" type="checkbox" value=value name=name checked)
+        else 
+          input(class="subscribed-checkboxes__checkbox" type="checkbox" value=value name=name )
+        span(class="subscribed-checkboxes__label" tabindex=0) 
+          span.subscribed-checkboxes__textbox
+            p.subscribed-checkboxes__main-text #{subscription}
+            p.subscribed-checkboxes__sub-text #{description}
+          

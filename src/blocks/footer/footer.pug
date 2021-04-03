@@ -1,29 +1,29 @@
 include ../textfield-for-sending/textfield-for-sending.pug
 mixin footer({ heading='', info='', heading2='', info2='', refs=[] }={})
-    .footer 
-        section(class="footer__block footer__block_width_wide")
-            if heading
-                h3(class="footer__heading") #{heading}
-            div(class="footer__sign")
-                span.footer__logo
-                    include ../../static/Images/logo.img_color.svg
-                span.footer__brand
-                    include ../../static/Images/TOXIN.svg
-            if info
-                p(class="footer__inscription") #{info} 
-        each block in refs
-            section(class="footer__block footer__block_width_slim")
-                h3(class="footer__heading") #{block.caption}
-                ul.footer__list
-                    each link in block.links
-                        li.footer__list-element
-                            a(class="footer__link" href=`${link.href}`) #{link.desc}
-        section(class="footer__block footer__block_width_wide")
-            if heading2
-                h3(class="footer__heading") #{heading2}
-            if info2
-                p(class="footer__inscription") #{info2} 
-            +textfield-for-sending({ placeholder: 'Email', type: "email"})
+  .footer 
+    section(class="footer__block footer__block_width_wide")
+      if heading
+        h3(class="footer__heading") #{heading}
+      div(class="footer__sign")
+        span.footer__logo
+          include ../../static/Images/logo.img_color.svg
+        span.footer__brand
+          include ../../static/Images/TOXIN.svg
+      if info
+        p(class="footer__inscription") #{info} 
+    each block in refs
+      section(class="footer__block footer__block_width_slim")
+        h3(class="footer__heading") #{block.caption}
+        ul.footer__list
+          each link in block.links
+            li.footer__list-element
+              a(class="footer__link" href=`${link.href}`) #{link.desc}
+    section(class="footer__block footer__block_width_wide")
+      if heading2
+        h3(class="footer__heading") #{heading2}
+      if info2
+        p(class="footer__inscription") #{info2} 
+      +textfield-for-sending({ placeholder: 'Email', type: "email"})
 
 
 

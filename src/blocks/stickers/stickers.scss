@@ -1,46 +1,46 @@
 @import "../../utils/fonts/MaterialIcons.scss";
 @import "../../utils/_mixin-font.scss";
 .stickers{
-    min-width: 280px;
-    &__header{
-        @include default-font($main-color_darkest, $size-larger, $size-largest, 700);
-        margin: 0;
+  min-width: 280px;
+  &__header{
+    @include default-font($main-color_darkest, $size-larger, $size-largest, 700);
+    margin: 0;
+  }
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &__item{
+    padding: 23px 0 17px;
+    &:not(:last-child){
+      border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     }
-    &__list{
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    &__item{
-        padding: 23px 0 17px;
-        &:not(:last-child){
-            border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        }
-    }
-    &__img{
-        font-family: 'Material Icons';
-        min-width: 48px;
-        min-height: 48px;
-        font-size: 48px;
-        vertical-align: middle;
-        margin-right: 10px;
-        color: $highlight-color;
+  }
+  &__img{
+    font-family: 'Material Icons';
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 48px;
+    vertical-align: middle;
+    margin-right: 10px;
+    color: $highlight-color;
 
-        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-    }
-    &__text{
-        display: inline-block;
-        vertical-align: middle;
-    }
-    &__describe{
-        @include default-font($line: $size-largest, $weight: 700);
-        margin: 0;
-    }
-    &__subscribe{
-        @include default-font($line: $size-largest);
-        margin: 0;
+    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+  }
+  &__text{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__describe{
+    @include default-font($line: $size-largest, $weight: 700);
+    margin: 0;
+  }
+  &__subscribe{
+    @include default-font($line: $size-largest);
+    margin: 0;
 
-    }
+  }
 }

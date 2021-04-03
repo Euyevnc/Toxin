@@ -1,16 +1,16 @@
 mixin checkboxes({ describe = '', checkboxes = []} = {})
-    fieldset.checkboxes
-        if descr
-            legend.checkboxes__header #{descr}
-        each checkbox in checkboxes
-            - let name = checkbox.name
-            - let checked = Boolean(checkbox.checked)
-            - let value = checkbox.value 
-            - let subscription = checkbox.subscription
-            label.checkboxes__item
-                if checked 
-                    input(class="checkboxes__checkbox" type="checkbox" value=value name=name  checked)
-                else 
-                    input(class="checkboxes__checkbox" type="checkbox" value=value name=name )
-                span(class="checkboxes__label" tabindex=0)
-                    span(class="checkboxes__text") #{subscription}  
+  fieldset.checkboxes
+    if descr
+      legend.checkboxes__header #{descr}
+    each checkbox in checkboxes
+      - let name = checkbox.name
+      - let checked = Boolean(checkbox.checked)
+      - let value = checkbox.value 
+      - let subscription = checkbox.subscription
+      label.checkboxes__item
+        if checked 
+          input(class="checkboxes__checkbox" type="checkbox" value=value name=name  checked)
+        else 
+          input(class="checkboxes__checkbox" type="checkbox" value=value name=name )
+        span(class="checkboxes__label" tabindex=0)
+          span(class="checkboxes__text") #{subscription}  

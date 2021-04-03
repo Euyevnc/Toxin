@@ -1,60 +1,60 @@
 @import "../../utils/_mixin-font.scss";
 .range-picker{
-    width:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  &__header{
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
-    user-select: none;
-    &__header{
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
+    justify-content: space-between;
+  }
+  &__title{
+    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5.5px;
+  }
+  &__container{
+    min-height: 6px;
+    width: 100%;
+  }
+  &__counter{
+    @include default-font($main-color_lighter, $size-small, $size-small);
+  }
+  &__subscribe{
+    margin-bottom: 0;
+    margin-top: 13.5px;
+    @include default-font($main-color_lighter, $size-small, $size-middle);
+  }
+  .range-slider{
+    &__line{
+      height: 6px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 3px;
+      box-sizing: border-box;
+  
     }
-    &__title{
-        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
-        margin: 0;
-        padding: 0;
-        margin-bottom: 5.5px;
+    &__selected{
+      height: 6px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 3px;
+      z-index: 0;
     }
-    &__container{
-        min-height: 6px;
-        width: 100%;
+    &__tumbler{
+      box-sizing: border-box;
+      height: 12px;
+      width: 12px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      z-index: 1;
+      &:active{
+        cursor: pointer;
+      }
     }
-    &__counter{
-        @include default-font($main-color_lighter, $size-small, $size-small);
-    }
-    &__subscribe{
-        margin-bottom: 0;
-        margin-top: 13.5px;
-        @include default-font($main-color_lighter, $size-small, $size-middle);
-    }
-    .range-slider{
-        &__line{
-            height: 6px;
-            border: 1px solid rgba(31, 32, 65, 0.25);
-            border-radius: 3px;
-            box-sizing: border-box;
-    
-        }
-        &__selected{
-            height: 6px;
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            border-radius: 3px;
-            z-index: 0;
-        }
-        &__tumbler{
-            box-sizing: border-box;
-            height: 12px;
-            width: 12px;
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            border: 2px solid #FFFFFF;
-            border-radius: 50%;
-            z-index: 1;
-            &:active{
-                cursor: pointer;
-            }
-        }
-    }
-    
+  }
+  
 }
 
 

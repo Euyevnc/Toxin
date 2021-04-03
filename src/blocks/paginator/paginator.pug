@@ -1,23 +1,24 @@
+include ../arrow-right/arrow-right.pug
 mixin paginator({ amount = 0}={})
-    div.paginator.js-paginator
-        ul.paginator__buttons-list
-            - for (let i = 1; i <= amount; i++) {
-                if i == 1
-                    li(class="paginator__button js-paginator__button paginator__button_active")
-                        a(class = "paginator__link" ) #{i}
-                else if i < 4
-                    li(class="paginator__button js-paginator__button")
-                        a(class = "paginator__link" href=`/page/${i}`) #{i}
-                else if i == amount 
-                    if i > 4
-                        span.paginator__ellipsis  ...
-                    li(class="paginator__button js-paginator__button") 
-                        a(class = "paginator__link" href=`/page/${i}`) #{i}
-                else
-                    li(class="paginator__button js-paginator__button paginator__button_hidden") 
-                        a(class = "paginator__link" href=`/page/${i}`) #{i}
-            - }
-            li(class="paginator__button paginator__button_type_arrow")
-                a(class = "paginator__link" href=`/page/2`) 
-                    include ../../static/figures/arrow-right/arrow-right.pug
-        p.paginator__text 1 – 12 из 100+ вариантов аренды
+  div.paginator.js-paginator
+    ul.paginator__buttons-list
+      - for (let i = 1; i <= amount; i++) {
+        if i == 1
+          li(class="paginator__button js-paginator__button paginator__button_active")
+            a(class = "paginator__link" ) #{i}
+        else if i < 4
+          li(class="paginator__button js-paginator__button")
+            a(class = "paginator__link" href=`/page/${i}`) #{i}
+        else if i == amount 
+          if i > 4
+            span.paginator__ellipsis  ...
+          li(class="paginator__button js-paginator__button") 
+            a(class = "paginator__link" href=`/page/${i}`) #{i}
+        else
+          li(class="paginator__button js-paginator__button paginator__button_hidden") 
+            a(class = "paginator__link" href=`/page/${i}`) #{i}
+      - }
+      li(class="paginator__button paginator__button_type_arrow")
+        a(class = "paginator__link" href=`/page/2`) 
+          +arrow-right()
+    p.paginator__text 1 – 12 из 100+ вариантов аренды

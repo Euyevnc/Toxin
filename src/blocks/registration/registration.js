@@ -1,8 +1,7 @@
-import dateMask from "../date-mask/date-mask.js"
+import dateMask from '../date-mask/date-mask';
 
-function initRegistration(){
-    dateMask();
+function initRegistration() {
+  dateMask();
 }
 
-export default initRegistration
-
+export default initRegistration;

@@ -1,67 +1,67 @@
-@import "../../static/figures/arrow-right/arrow-right.scss";
+@import "../arrow-right/arrow-right.scss";
 @import "../../utils/_mixin-font.scss";
 
 .paginator{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__buttons-list{
-        display: inline; 
-        margin: 0;
-        padding: 0;
-        margin-bottom: 10.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__buttons-list{
+    display: inline; 
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10.5px;
+  }
+  &__button{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
+    &_type_arrow {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      & .paginator__link{
+        color: white;
+      }
+    };
+    &_active{
+      background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
+      & .paginator__link{
+        color: white;
+      }
     }
-    &__button{
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 50%;
-        vertical-align: middle;
-        &_type_arrow {
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-            & .paginator__link{
-                color: white;
-            }
-        };
-        &_active{
-            background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-            & .paginator__link{
-                color: white;
-            }
-        }
-        &_hidden{
-            display: none;
-        }
+    &_hidden{
+      display: none;
     }
-    &__link{
-        height: 100%;
-        display: block;
-        border-radius: 50%;
-        box-sizing: border-box;
-        @include default-font($main-color_lighter, $size-small, 40px);
-        &:focus{
-            outline: 0; 
-            box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
-        };
-    }
-    &__ellipsis{
-        width: 40px;
-        height: 40px;
-        font-family: Montserrat, Arial, Helvetica, sans-serif;
-        display: inline-block;
-        text-align: center;
-        user-select: none;
-        vertical-align: middle;
-        @include default-font($main-color_lighter, $size-small, 40px);
-    }
+  }
+  &__link{
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    box-sizing: border-box;
+    @include default-font($main-color_lighter, $size-small, 40px);
+    &:focus{
+      outline: 0; 
+      box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
+    };
+  }
+  &__ellipsis{
+    width: 40px;
+    height: 40px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    @include default-font($main-color_lighter, $size-small, 40px);
+  }
 
-    &__text{
-        @include default-font();
-        margin: 10.5px 0 0;
-        text-align: center;
-    }
+  &__text{
+    @include default-font();
+    margin: 10.5px 0 0;
+    text-align: center;
+  }
 }
 
 

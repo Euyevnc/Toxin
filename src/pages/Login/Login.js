@@ -1,8 +1,8 @@
-import "./login.scss"
-import header from "../../blocks/header/header.js"
+import './Login.scss';
+import header from '../../blocks/header/header';
 
-document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded)
+document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
-function handlerDocumentDOMLoaded(){
-    header() 
+function handlerDocumentDOMLoaded() {
+  header();
 }

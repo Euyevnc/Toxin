@@ -1,7 +1,7 @@
 mixin link({ text = '', styles=[], href='#', target='_self'}={})
 
-    - let classes = ""
-    each style in styles 
-        - classes += `link_${style} `;
+  - let classes = ""
+  each style in styles 
+    - classes += `link_${style} `;
 
-    a(class=`link ${classes}` href=href, target=target) #{text}
+  a(class=`link ${classes}` href=href, target=target) #{text}

@@ -1,65 +1,65 @@
 @import "../../utils/fonts/MaterialIcons.scss";
 @import "../../utils/_mixin-font.scss";
 .tumblers{
-    &__header{
-        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
-        margin: 0;
-        margin-bottom: 15px;
+  &__header{
+    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  &__label{
+    user-select: none;
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 40px;
+    min-height: 20px;
+    line-height: 18px;
+    position: relative;
+    border: 1px solid $main-color_lightest;
+    cursor: pointer;
+    border-radius: 25% / 50%;
+    transition-duration: 0.5s;
+    box-sizing: border-box;
+    &::before {
+      display: inline-block;
+      content: "fiber_manual_record";
+      font-family: 'Material Icons';
+      color: $main-color_lightest;
+      font-size: 18px;
+      position: absolute;
+      left: 0px;
+      transition-duration: 0.5s;
+      top: 0px;
     }
-    &__label{
-        user-select: none;
-        vertical-align: top;
-        display: inline-block;
-        margin-right: 10px;
-        min-width: 40px;
-        min-height: 20px;
-        line-height: 18px;
-        position: relative;
-        border: 1px solid $main-color_lightest;
-        cursor: pointer;
-        border-radius: 25% / 50%;
+  }
+  &__checkbox{
+    display: none;
+    &:checked{ 
+      & + .tumblers__label{ 
+        border: 1px solid  $highlight-color;
         transition-duration: 0.5s;
-        box-sizing: border-box;
         &::before {
-            display: inline-block;
-            content: "fiber_manual_record";
-            font-family: 'Material Icons';
-            color: $main-color_lightest;
-            font-size: 18px;
-            position: absolute;
-            left: 0px;
-            transition-duration: 0.5s;
-            top: 0px;
+          left: 22px;
+          transition-duration: 0.5s;
+          color: $highlight-color;
+          background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; 
         }
+      }
+    
     }
-    &__checkbox{
-        display: none;
-        &:checked{ 
-            & + .tumblers__label{ 
-                border: 1px solid  $highlight-color;
-                transition-duration: 0.5s;
-                &::before {
-                    left: 22px;
-                    transition-duration: 0.5s;
-                    color: $highlight-color;
-                    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent; 
-                }
-            }
-        
-        }
-    }
-    &__item{
-        min-height: 24px;
-        display: block;
-    }
-    &__subscribe{
-        user-select: none;
-        vertical-align: top;
-        display: inline-block;
-        @include default-font();
-        
-    }
+  }
+  &__item{
+    min-height: 24px;
+    display: block;
+  }
+  &__subscribe{
+    user-select: none;
+    vertical-align: top;
+    display: inline-block;
+    @include default-font();
+    
+  }
 }
 

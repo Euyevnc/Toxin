@@ -1,39 +1,39 @@
 mixin number-demo({ number=0, category='', price=0, rate=0, reviews=0, pictures=[]}={})
-    include ../rate-stars/rate-stars.pug
-    - let amount = pictures.length 
-    - let validPrice = price.toLocaleString()
-    article(class="js-number-demo number-demo")
-        div(class="js-number-demo__image-cont number-demo__image-cont" tabindex=0)
-            - for (let i = 0; i < amount; i++){
-                if i == 0
-                    img(class="js-number-demo__image number-demo__image" src=`${pictures[i]}` alt="this number looks like ")
-                else
-                    img(class="js-number-demo__image number-demo__image js-number-demo__image_disactive number-demo__image_disactive" src=`${pictures[i]}` alt="this number looks like ")
-            -}
-            span(class = "number-demo__arrow number-demo__arrow_left js-number-demo__arrow_left" tabindex=0) expand_more
-            span(class = "number-demo__arrow number-demo__arrow_right js-number-demo__arrow_right" tabindex=0) expand_less
-            span(class = "js-number-demo__buttons number-demo__buttons")
-                - for (let i = 0; i < amount; i++){
-                    if i == 0 
-                        span(class="js-number-demo__button number-demo__button")
-                    else
-                        span(class="js-number-demo__button number-demo__button js-number-demo__button_disactive number-demo__button_disactive")
-                -}
+  include ../rate-stars/rate-stars.pug
+  - let amount = pictures.length 
+  - let validPrice = price.toLocaleString()
+  article(class="js-number-demo number-demo")
+    div(class="js-number-demo__image-cont number-demo__image-cont" tabindex=0)
+      - for (let i = 0; i < amount; i++){
+        if i == 0
+          img(class="js-number-demo__image number-demo__image" src=`${pictures[i]}` alt="this number looks like ")
+        else
+          img(class="js-number-demo__image number-demo__image js-number-demo__image_disactive number-demo__image_disactive" src=`${pictures[i]}` alt="this number looks like ")
+      -}
+      span(class = "number-demo__arrow number-demo__arrow_left js-number-demo__arrow_left" tabindex=0) expand_more
+      span(class = "number-demo__arrow number-demo__arrow_right js-number-demo__arrow_right" tabindex=0) expand_less
+      span(class = "js-number-demo__buttons number-demo__buttons")
+        - for (let i = 0; i < amount; i++){
+          if i == 0 
+            span(class="js-number-demo__button number-demo__button")
+          else
+            span(class="js-number-demo__button number-demo__button js-number-demo__button_disactive number-demo__button_disactive")
+        -}
 
-        div(class="js-number-demo__main-info number-demo__main-info")
-            span 
-                b(class="number-demo__font_color_black number-demo__font_size_middle") №
-                strong(class="number-demo__font_color_black number-demo__font_size_large") &nbsp;#{number}
-                strong(class="number-demo__font_color_purple number-demo__font_size_small number-demo__font_uppercase") &nbsp;&nbsp;#{category}
-            span.number-demo__price
-                b(class="number-demo__font_size_middle") #{validPrice}₽
-                span(class="number-demo__font_size_small") &nbsp;в сутки
+    div(class="js-number-demo__main-info number-demo__main-info")
+      span 
+        b(class="number-demo__font_color_black number-demo__font_size_middle") №
+        strong(class="number-demo__font_color_black number-demo__font_size_large") &nbsp;#{number}
+        strong(class="number-demo__font_color_purple number-demo__font_size_small number-demo__font_uppercase") &nbsp;&nbsp;#{category}
+      span.number-demo__price
+        b(class="number-demo__font_size_middle") #{validPrice}₽
+        span(class="number-demo__font_size_small") &nbsp;в сутки
 
-        div(class="js-number-demo__rate number-demo__rate") 
-            span(class="js-number-demo__stars number-demo__stars")
-                - let compl = Math.floor(rate)
-                - let share = rate - compl
-                +rate-stars({compl, share})
-            span(class="js-number-demo__reviews number-demo__reviews")
-                b(class="number-demo__font_size_middle") #{reviews}
-                span(class="number-demo__font_size_middle") &nbsp;Отзывов
+    div(class="js-number-demo__rate number-demo__rate") 
+      span(class="js-number-demo__stars number-demo__stars")
+        - let compl = Math.floor(rate)
+        - let share = rate - compl
+        +rate-stars({compl, share})
+      span(class="js-number-demo__reviews number-demo__reviews")
+        b(class="number-demo__font_size_middle") #{reviews}
+        span(class="number-demo__font_size_middle") &nbsp;Отзывов

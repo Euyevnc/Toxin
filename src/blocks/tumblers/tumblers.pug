@@ -1,17 +1,17 @@
 mixin tumblers( { header='', issues=[]}={})
-    div.tumblers
-        if header
-            h3.tumblers__header #{header}
-        each val in issues
-            - let name = val.name
-            - let value = val.value 
-            - let desc = val.desc
-            - let checked = Boolean(val.checked)
-            label.tumblers__item
-                if checked 
-                    input(class="tumblers__checkbox" type="checkbox" name=name value=value checked)
-                else 
-                    input(class="tumblers__checkbox" type="checkbox" name=name value=value)
-                span(class="tumblers__label" tabindex=0) 
-                span.tumblers__subscribe #{desc}
-                
+  div.tumblers
+    if header
+      h3.tumblers__header #{header}
+    each val in issues
+      - let name = val.name
+      - let value = val.value 
+      - let desc = val.desc
+      - let checked = Boolean(val.checked)
+      label.tumblers__item
+        if checked 
+          input(class="tumblers__checkbox" type="checkbox" name=name value=value checked)
+        else 
+          input(class="tumblers__checkbox" type="checkbox" name=name value=value)
+        span(class="tumblers__label" tabindex=0) 
+        span.tumblers__subscribe #{desc}
+        

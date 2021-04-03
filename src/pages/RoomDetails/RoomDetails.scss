@@ -12,59 +12,59 @@
 @import "../../blocks/marked-list/marked-list.scss";
 
 .content{
-    padding-bottom: 60px;
-    background-color: white;
-    &__wrapper{ 
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    };
-    &__header{
-        margin:0 0 20px;
-        @include default-font($main-color_darkest, $size-larger, $size-largest, $weight: 700 );
-        &_margin_zero{
-            margin: 0;
-        }
-        &_shift_right{
-            padding-left: 21px;
-        }
-    };
-    &__font{
-        @include default-font($line: $size-largest);
-        margin: 0;
-    };
-    &__pictures{
-        width: 100%;
-        min-height: 485px;
-        padding-bottom: 70px;
-    };
-    &__information{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 710px;
+  padding-bottom: 60px;
+  background-color: white;
+  &__wrapper{ 
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  };
+  &__header{
+    margin:0 0 20px;
+    @include default-font($main-color_darkest, $size-larger, $size-largest, $weight: 700 );
+    &_margin_zero{
+      margin: 0;
     }
-    &__reviews{
-        margin-top: 13px;
-        margin-bottom: 10px;
+    &_shift_right{
+      padding-left: 21px;
     }
-    &__cancel-rules{
-        max-width: 345px;
-        padding-right: 5px;
-        text-align: left;
-    }
-    & .pictures-demo{
-        width: 100%;
-        max-width: 1440px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  };
+  &__font{
+    @include default-font($line: $size-largest);
+    margin: 0;
+  };
+  &__pictures{
+    width: 100%;
+    min-height: 485px;
+    padding-bottom: 70px;
+  };
+  &__information{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 710px;
+  }
+  &__reviews{
+    margin-top: 13px;
+    margin-bottom: 10px;
+  }
+  &__cancel-rules{
+    max-width: 345px;
+    padding-right: 5px;
+    text-align: left;
+  }
+  & .pictures-demo{
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 
 .footer-container{
-    border-top: 2px solid rgba(31, 32, 65, 0.15);
+  border-top: 2px solid rgba(31, 32, 65, 0.15);
 }

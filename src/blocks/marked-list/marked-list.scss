@@ -1,24 +1,24 @@
 @import "../../utils/_mixin-font.scss";
 
 .marked-list{
-    margin: 0;
-    padding: 0;
-    &__item{
-        margin-bottom: 10px;
-        list-style-type: none; 
-    }
-    &__img{
-        width: 20px;
-        display: inline-block;
-        vertical-align: top;
-        padding-top: 7px;
+  margin: 0;
+  padding: 0;
+  &__item{
+    margin-bottom: 10px;
+    list-style-type: none; 
+  }
+  &__img{
+    width: 20px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 7px;
 
-    }
-    &__desc{
-        @include default-font($line: $size-largest);
-        margin: 0px;
-        display: inline-block;
-        max-width: 240px;
-        vertical-align: top;
-    }
+  }
+  &__desc{
+    @include default-font($line: $size-largest);
+    margin: 0px;
+    display: inline-block;
+    max-width: 240px;
+    vertical-align: top;
+  }
 }

@@ -1,40 +1,40 @@
 @import "../../utils/_mixin-font.scss";
 
 .rate-stars{
+  display: inline-block;
+  vertical-align: bottom; 
+  
+  & + .rate-stars{
+    margin-left: 20px;
+  }
+  &__head{
+    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
+    margin: 0;
+    margin-bottom: 15px; 
+  }
+  &__star{
     display: inline-block;
-    vertical-align: bottom; 
-    
-    & + .rate-stars{
-        margin-left: 20px;
-    }
-    &__head{
-        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
-        margin: 0;
-        margin-bottom: 15px; 
-    }
-    &__star{
-        display: inline-block;
-        height: 24px;
-        width: 24px;
-        line-height: 24px;
-        font-family: 'Material Icons';
-        position: relative;
-        font-size: 24px;
-        text-align: center;
-        vertical-align: middle;
-        color: $highlight-color;
-         
-        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        &_outlined{
-            & .rate-stars__star_colorized{
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        }  
-    }
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    font-family: 'Material Icons';
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+    color: $highlight-color;
+     
+    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    &_outlined{
+      & .rate-stars__star_colorized{
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }  
+  }
 }
 

@@ -1,19 +1,16 @@
-@import "../calendar/calendar.scss";
+@import "../../utils/calendar/calendar.scss";
 @import '../textfield-for-dropping/textfield-for-dropping.scss';
 
 .double-date-picker{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    &__container{
-        max-width: 150px;
-        position: relative;
-        display: inline-block;
-        &_for_second{
-            margin-left: 20px;
-        }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__container{
+    max-width: 150px;
+    position: relative;
+    display: inline-block;
+    &_for_second{
+      margin-left: 20px;
     }
-    .textfield-for-dropping__value{
-        padding-bottom: 3px;
-    }
+  }
 };

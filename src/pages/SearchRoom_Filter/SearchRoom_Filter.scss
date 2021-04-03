@@ -14,75 +14,75 @@
 @import "../../blocks/range-picker/range-picker.scss";
 
 .content{
-    background-color: white;
-    padding: 30px 0 70px;
-    &__wrapper{
-        display: flex;
-        justify-content: space-between;
-        @media(max-width:600px){
-            flex-wrap: wrap;
-        }
+  background-color: white;
+  padding: 30px 0 70px;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    @media(max-width:600px){
+      flex-wrap: wrap;
     }
+  }
 
-    &__forms{
-        min-width: 266px;
-        margin-right: 60px;
-        margin-top: 3px;
-        @media(max-width:600px){
-            width: 100%;
-            text-align: center;
-            margin: 0 20px 0;
-    
-        }
+  &__forms{
+    min-width: 266px;
+    margin-right: 60px;
+    margin-top: 3px;
+    @media(max-width:600px){
+      width: 100%;
+      text-align: center;
+      margin: 0 20px 0;
+  
     }
-    &__date-picker{
-        margin-bottom: 20.5px;
-    }
-    &__guest-counter{
-        margin-bottom: 32px; 
-    }
-    &__price-picker{
-        margin-bottom: 30px; 
-    }
-    &__rules{
-        margin-bottom: 25px;  
-    }
-    &__availability{
-        margin-bottom: 20px; 
-    }
-    &__equipment-counter{
-        margin-bottom: 16px;
-    }
-    &__facilities{
-        margin-bottom: 30px;  
-    }
+  }
+  &__date-picker{
+    margin-bottom: 20.5px;
+  }
+  &__guest-counter{
+    margin-bottom: 32px; 
+  }
+  &__price-picker{
+    margin-bottom: 30px; 
+  }
+  &__rules{
+    margin-bottom: 25px;  
+  }
+  &__availability{
+    margin-bottom: 20px; 
+  }
+  &__equipment-counter{
+    margin-bottom: 16px;
+  }
+  &__facilities{
+    margin-bottom: 30px;  
+  }
 
-    &__heading{
-        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
-        margin:0;
-        @media(max-width:600px){
-            text-align: center;
-        }
-    };
-    &__numbers-list{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        @media(max-width:600px){
-            justify-content: center;
-        }
+  &__heading{
+    @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
+    margin:0;
+    @media(max-width:600px){
+      text-align: center;
     }
-    &__paginator{
-        margin-top: 41px;
-        text-align: center;
-        padding-right: 9px;
+  };
+  &__numbers-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @media(max-width:600px){
+      justify-content: center;
     }
+  }
+  &__paginator{
+    margin-top: 41px;
+    text-align: center;
+    padding-right: 9px;
+  }
 
 
 }
 .footer-container{
-    border-top: 2px solid rgba(31, 32, 65, 0.15);
+  border-top: 2px solid rgba(31, 32, 65, 0.15);
 }
 
 

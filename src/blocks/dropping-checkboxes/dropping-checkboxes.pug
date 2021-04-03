@@ -1,19 +1,20 @@
+include ../arrow-down/arrow-down.pug
 mixin dropping-checkboxes({ checkboxes=[], header='', expanded = null }={})
-    fieldset(class = "dropping-checkboxes js-dropping-checkboxes" data-expanded = expanded)
-        legend(class = "dropping-checkboxes__header js-dropping-checkboxes__header" tabindex=0)
-            h3.dropping-checkboxes__title #{header}
-            span.dropping-checkboxes__arrow
-                include ../../static/figures/arrow-down/arrow-down.pug
-        ul.dropping-checkboxes__container.js-dropping-checkboxes__container
-            each checkbox in checkboxes
-                - let name = checkbox.name
-                - let checked = Boolean(checkbox.checked)
-                - let value = checkbox.value 
-                - let subscription = checkbox.subscription
-                li.dropping-checkboxes__item
-                    label(tabindex=0)
-                        if checked 
-                            input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" checked)
-                        else 
-                            input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" )
-                        span(class="dropping-checkboxes__label") #{subscription}
+  fieldset(class = "dropping-checkboxes js-dropping-checkboxes" data-expanded = expanded)
+    legend(class = "dropping-checkboxes__header js-dropping-checkboxes__header" tabindex=0)
+      h3.dropping-checkboxes__title #{header}
+      span.dropping-checkboxes__arrow
+        +arrow-down()
+    ul.dropping-checkboxes__container.js-dropping-checkboxes__container
+      each checkbox in checkboxes
+        - let name = checkbox.name
+        - let checked = Boolean(checkbox.checked)
+        - let value = checkbox.value 
+        - let subscription = checkbox.subscription
+        li.dropping-checkboxes__item
+          label(tabindex=0)
+            if checked 
+              input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" checked)
+            else 
+              input(class="dropping-checkboxes__checkbox" name=name value=value type="checkbox" )
+            span(class="dropping-checkboxes__label") #{subscription}

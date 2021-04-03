@@ -7,102 +7,102 @@
 @import "../../layout/layout-for-hotel.scss";
 
 .content{
-    background-image: url('./img/LandingPage-background-3.jpg');
+  background-image: url('./img/LandingPage-background-3.jpg');
+  background-position: bottom;
+  position: relative;
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    min-height: 830px;
+    @media(max-width: 660px){ 
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height:530px;
+    } 
+  }
+
+  &__searcher-container{   
+    align-self: flex-start;
+    padding-top: 70px;
+    @media(max-width: 660px){
+      width: auto;
+    }
+  }
+  &__text-container{
+    align-self: flex-end;
+    padding-bottom:20px;
+    @media(max-width: 660px){
+      width: auto;
+    }
+  }
+  &__text{
+    @include default-font($line: $size-largest);
+    margin: 0;
+    max-width: 280px;
+    min-height: 48px;
+    text-align: right;
+    margin-right: -6px; 
+    
+    @media(max-width: 1165px){
+      margin-right: 5px;
+    }
+  }
+
+  &::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    content: '';
+    z-index: -1;
+    background-image: url('./img/LandingPage-background.jpg');
     background-position: bottom;
-    position: relative;
-    &__wrapper{
-        display: flex;
-        justify-content: space-between;
-        min-height: 830px;
-        @media(max-width: 660px){ 
-            flex-wrap: wrap;
-            justify-content: center;
-            min-height:530px;
-        } 
-    }
-
-    &__searcher-container{   
-        align-self: flex-start;
-        padding-top: 70px;
-        @media(max-width: 660px){
-            width: auto;
-        }
-    }
-    &__text-container{
-        align-self: flex-end;
-        padding-bottom:20px;
-        @media(max-width: 660px){
-            width: auto;
-        }
-    }
-    &__text{
-        @include default-font($line: $size-largest);
-        margin: 0;
-        max-width: 280px;
-        min-height: 48px;
-        text-align: right;
-        margin-right: -6px; 
-        
-        @media(max-width: 1165px){
-            margin-right: 5px;
-        }
-    }
-
-    &::before{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%; 
-        height: 100%;
-        content: '';
-        z-index: -1;
-        background-image: url('./img/LandingPage-background.jpg');
-        background-position: bottom;
-        opacity: 0;
-        animation: sliding-before 30s linear 0s infinite ;
-    }
-    &::after{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        z-index: -1;
-        background-image: url('./img/LandingPage-background-2.jpg');
-        background-position: bottom;
-        opacity: 0;
-        animation: sliding-after 30s linear 0s infinite ;
-    }
+    opacity: 0;
+    animation: sliding-before 30s linear 0s infinite ;
+  }
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+    background-image: url('./img/LandingPage-background-2.jpg');
+    background-position: bottom;
+    opacity: 0;
+    animation: sliding-after 30s linear 0s infinite ;
+  }
 }
 
 
 @keyframes sliding-before{
-    26%{
-        opacity: 0;
-    }
-    33%{
-        opacity: 1;
-    }
-    60%{
-        opacity: 1;
-    }
-    66%{
-        opacity: 0;
-    }
+  26%{
+    opacity: 0;
+  }
+  33%{
+    opacity: 1;
+  }
+  60%{
+    opacity: 1;
+  }
+  66%{
+    opacity: 0;
+  }
 
 }
 @keyframes sliding-after{
-    60%{
-        opacity: 0;
-    }
-    66%{
-        opacity: 1;
-    }
-    92%{
-        opacity: 1;
-    }
-    99%{
-        opacity: 0;
-    }
+  60%{
+    opacity: 0;
+  }
+  66%{
+    opacity: 1;
+  }
+  92%{
+    opacity: 1;
+  }
+  99%{
+    opacity: 0;
+  }
 }

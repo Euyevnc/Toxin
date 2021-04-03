@@ -1,14 +1,14 @@
 @import "../social/social.scss";
 @import "../../utils/_mixin-font.scss";
 .cellar{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    min-height: 70px;
-    box-sizing: border-box;
-    &__text{
-        @include default-font($line: $default-line - 1);
-    }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  min-height: 70px;
+  box-sizing: border-box;
+  &__text{
+    @include default-font($line: $default-line - 1);
+  }
 }

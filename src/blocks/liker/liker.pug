@@ -1,9 +1,9 @@
 mixin liker({ amount=0, checked = false }={})
-    span.liker
-        label.liker__item
-            if checked 
-                input(type="checkbox" class="liker__box" checked)
-            else 
-                input(type="checkbox" class="liker__box")
-            span(class="liker__label") 
-                span.liker__counter #{amount}
+  span.liker
+    label.liker__item
+      if checked 
+        input(type="checkbox" class="liker__box" checked)
+      else 
+        input(type="checkbox" class="liker__box")
+      span(class="liker__label") 
+        span.liker__counter #{amount}

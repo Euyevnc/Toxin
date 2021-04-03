@@ -1,53 +1,53 @@
 @import "../../utils/_mixin-font.scss";
 .radios{ 
-    &__header{
-        @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
-        margin-bottom: 15px;
-    }
-    &__radio-container{
+  &__header{
+    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
+    margin-bottom: 15px;
+  }
+  &__radio-container{
+    display: inline-block;
+    margin-right: 20px;
+  }
+  &__checkbox{
+    display: none;
+    & + .radios__label{ 
+      @include default-font($color: $main-color_lighter, $line: $size-middle+6);
+      max-height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      &::before {
+        font-family: 'Material Icons';
+        content:'radio_button_unchecked';
         display: inline-block;
-        margin-right: 20px;
-    }
-    &__checkbox{
-        display: none;
-        & + .radios__label{ 
-            @include default-font($color: $main-color_lighter, $line: $size-middle+6);
-            max-height: 24px;
-            display: inline-block;
-            vertical-align: middle;
-            cursor: pointer;
-            &::before {
-                font-family: 'Material Icons';
-                content:'radio_button_unchecked';
-                display: inline-block;
-                text-align: center;
-                width: 24px;
-                height: 24px;
-                box-sizing: border-box;
-                margin-right: 8px;
-                border-radius: 50%;
-                line-height: 24px;
-                font-size: 24px;
-                vertical-align: middle;   
-                color: $main-color_lightest;
+        text-align: center;
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+        margin-right: 8px;
+        border-radius: 50%;
+        line-height: 24px;
+        font-size: 24px;
+        vertical-align: middle;   
+        color: $main-color_lightest;
 
 
-            }
-        }
+      }
     }
-    &__checkbox:checked{ 
-        & + .radios__label{ 
-            color: $main-color;
-            &::before {
-                content: 'radio_button_checked';
+  }
+  &__checkbox:checked{ 
+    & + .radios__label{ 
+      color: $main-color;
+      &::before {
+        content: 'radio_button_checked';
 
-                color: $highlight-color;
-                background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; 
-                
-            }
-        }
-    
+        color: $highlight-color;
+        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        
+      }
     }
+  
+  }
 }

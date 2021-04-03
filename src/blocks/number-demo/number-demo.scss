@@ -4,157 +4,157 @@
 @import "../../utils/_variables.scss";
 
 .number-demo{
-    margin-top: 20.5px;
-    background-color: white;
-    box-shadow: 0px 17px 20px 0px rgba(34, 60, 80, 0.05);
-    border-radius: 4px;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;   
-    color: $main-color_lighter;
-    max-width: 270px;
-    &__image-cont{
-        margin: 0;
-        position: relative;
-        max-height: 151.3px;
-        width: 100%;
-        &:focus, &:hover{
-            &::after{
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width:42px;
-                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-            }
-            &::before{
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                height: 100%;
-                width:42px;
-                background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-                transform: matrix(-1, 0, 0, 1, 0, 0);
-            }
-            & .number-demo__arrow{
-                visibility: visible;
-                transition-duration: 0.1s;
-            }
-        }
-    }
-
-    &__image{
-        display: block;
-        opacity: 1;
-        transition-duration: 0.7s;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        object-fit: cover;
-        overflow: hidden;
-        &_disactive{
-            display: none;
-            opacity: 0;
-            transition-duration: 0.7s;
-        }
-    }
-
-    &__arrow{
-        font-family: 'Material Icons';
-        font-size: 24px;
-        line-height: 44px;
+  margin-top: 20.5px;
+  background-color: white;
+  box-shadow: 0px 17px 20px 0px rgba(34, 60, 80, 0.05);
+  border-radius: 4px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;   
+  color: $main-color_lighter;
+  max-width: 270px;
+  &__image-cont{
+    margin: 0;
+    position: relative;
+    max-height: 151.3px;
+    width: 100%;
+    &:focus, &:hover{
+      &::after{
+        content: "";
         position: absolute;
-        width: 44px;
-        height: 44px;
-        text-align: center;
-        z-index:  20;
-        color: white;
-        cursor: pointer;
-        top:50%;
-        transform: rotate(90deg) translateX(-50%);
-        user-select: none;
-        visibility: hidden;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width:42px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width:42px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+      & .number-demo__arrow{
+        visibility: visible;
         transition-duration: 0.1s;
-        &_right{
-            right:0;
-        }
-        &:focus{
-            visibility: visible;
-            transition-duration: 0.1s;
-            & ~ .number-demo__arrow{
-                visibility: visible;
-            }
-        }
+      }
     }
+  }
 
-    &__buttons{
-        position: absolute;
-        bottom: 12px;
-        right: 36px; 
-        transform: translateX(50%);
+  &__image{
+    display: block;
+    opacity: 1;
+    transition-duration: 0.7s;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    object-fit: cover;
+    overflow: hidden;
+    &_disactive{
+      display: none;
+      opacity: 0;
+      transition-duration: 0.7s;
     }
-    &__button{
-        background-color: white;
-        display: inline-block;
-        width: 7.5px;
-        height: 7.5px;
-        border-radius: 50%;
-        border: 1px solid white;
-        box-sizing: border-box;
-        cursor: pointer;
-        transition-duration: 0.4s;
-        &_disactive{
-            background-color: transparent;
-            transition-duration: 0.4s;
-        }
-        & + .number-demo__button{
-            margin-left: 4px;
-        }
-    }
+  }
 
-    &__main-info{
-        padding: 20px 0 10px 0;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin: 0 16px 0 20px;
+  &__arrow{
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 44px;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    z-index:  20;
+    color: white;
+    cursor: pointer;
+    top:50%;
+    transform: rotate(90deg) translateX(-50%);
+    user-select: none;
+    visibility: hidden;
+    transition-duration: 0.1s;
+    &_right{
+      right:0;
     }
-    &__price{
-        min-width: 20px;
-        line-height: 20px;
-        display: inline-block;
+    &:focus{
+      visibility: visible;
+      transition-duration: 0.1s;
+      & ~ .number-demo__arrow{
+        visibility: visible;
+      }
     }
-    &__font{
-        &_color_black{
-            color: $main-color_darkest;
-        }
-        &_color_purple{
-            color: $highlight-color;
-        }
-        &_uppercase{
-            text-transform: uppercase;
-        }
-        &_size_small{
-            font-size: $size-small;
-            line-height: $default-line;
-        }
-        &_size_middle{
-            font-size: $size-middle;
-            line-height: $default-line;
-        }
-        &_size_large{
-            font-size: $size-larger;
-            line-height: $size-largest;
-        }
+  }
+
+  &__buttons{
+    position: absolute;
+    bottom: 12px;
+    right: 36px; 
+    transform: translateX(50%);
+  }
+  &__button{
+    background-color: white;
+    display: inline-block;
+    width: 7.5px;
+    height: 7.5px;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    &_disactive{
+      background-color: transparent;
+      transition-duration: 0.4s;
     }
-    &__rate{
-        padding: 8px 20px 19px 21px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 24px;
+    & + .number-demo__button{
+      margin-left: 4px;
     }
-    &__stars{
-        min-height: 24px;
+  }
+
+  &__main-info{
+    padding: 20px 0 10px 0;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 16px 0 20px;
+  }
+  &__price{
+    min-width: 20px;
+    line-height: 20px;
+    display: inline-block;
+  }
+  &__font{
+    &_color_black{
+      color: $main-color_darkest;
     }
+    &_color_purple{
+      color: $highlight-color;
+    }
+    &_uppercase{
+      text-transform: uppercase;
+    }
+    &_size_small{
+      font-size: $size-small;
+      line-height: $default-line;
+    }
+    &_size_middle{
+      font-size: $size-middle;
+      line-height: $default-line;
+    }
+    &_size_large{
+      font-size: $size-larger;
+      line-height: $size-largest;
+    }
+  }
+  &__rate{
+    padding: 8px 20px 19px 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 24px;
+  }
+  &__stars{
+    min-height: 24px;
+  }
 }

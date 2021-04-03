@@ -6,57 +6,57 @@
 @import "../../utils/_mixin-font.scss";
 
 .registration{
-    background-color: white;
-    display: inline-block;
-    border-radius: 4px;
-    padding: 39px 29px 29px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    &__header{
-        @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
-        margin: 0;
-        margin-bottom: 20px;
-    };
-    &__form{
-        margin-bottom: 28px;
-        min-width: 320px;
-    }
-    &__data-name{
-        margin-bottom: 10px;
-    }
-    &__data-sex{
-        margin: 0.5px 0 23.5px;
-    }
-    &__data-birthday{
-        margin-bottom: 21px ;
-    }
-    &__data-email{
-        margin-bottom: 10px;
-    }
-    &__data-password{
-        margin-bottom: 10px;
-    }
-    &__data-offer{
-        margin-bottom: 20px;
-    }
-    &__button{
-        min-width: 99px;
-    }
-    &__text{
-        @include default-font($main-color_darkest);
-        text-align: center;
+  background-color: white;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 39px 29px 29px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  &__header{
+    @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
+    margin: 0;
+    margin-bottom: 20px;
+  };
+  &__form{
+    margin-bottom: 28px;
+    min-width: 320px;
+  }
+  &__data-name{
+    margin-bottom: 10px;
+  }
+  &__data-sex{
+    margin: 0.5px 0 23.5px;
+  }
+  &__data-birthday{
+    margin-bottom: 21px ;
+  }
+  &__data-email{
+    margin-bottom: 10px;
+  }
+  &__data-password{
+    margin-bottom: 10px;
+  }
+  &__data-offer{
+    margin-bottom: 20px;
+  }
+  &__button{
+    min-width: 99px;
+  }
+  &__text{
+    @include default-font($main-color_darkest);
+    text-align: center;
  
-    }
-    &__entry{
-        align-items: center;
-        display:flex; 
-        justify-content: space-between;
-    }
+  }
+  &__entry{
+    align-items: center;
+    display:flex; 
+    justify-content: space-between;
+  }
 
-    @media(max-width: 380px){
-        padding: 40px 10px 30px;
-    }
-    @media(max-width: 340px){
-        padding: 40px 0px 30px;
-    }
+  @media(max-width: 380px){
+    padding: 40px 10px 30px;
+  }
+  @media(max-width: 340px){
+    padding: 40px 0px 30px;
+  }
 }

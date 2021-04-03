@@ -1,14 +1,14 @@
 mixin radios({ descr = '', name='', radios=[]} = {})
-    div.radios
-        if descr
-            div.radios__header #{descr}
-        each val in radios
-            - let describe = val.describe
-            - let checked = Boolean(val.checked)
-            - let value = val.value
-            label.radios__radio-container
-                if checked 
-                    input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio" checked)
-                else 
-                    input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio")
-                span(class="radios__label" tabindex=0) #{describe}
+  div.radios
+    if descr
+      div.radios__header #{descr}
+    each val in radios
+      - let describe = val.describe
+      - let checked = Boolean(val.checked)
+      - let value = val.value
+      label.radios__radio-container
+        if checked 
+          input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio" checked)
+        else 
+          input(class="radios__checkbox" name=`${name}` value=`${value}` type="radio")
+        span(class="radios__label" tabindex=0) #{describe}

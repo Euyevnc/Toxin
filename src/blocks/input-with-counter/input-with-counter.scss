@@ -2,113 +2,113 @@
 @import "../../utils/_mixin-font.scss";
 
 .input-with-counter{
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  &__element{
+    min-height: 30px;
     width: 100%;
-    position: relative;
-    z-index: 10;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    &__element{
-        min-height: 30px;
-        width: 100%;
-        display: block;
-        background-color: white;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 7px;
-        padding-bottom: 0;
-        user-select: none;
-    
-    };
-    &__item-name{
-        @include default-font($main-color_darkest, $size-small, 30px, 700, none, uppercase);
-    }
+    display: block;
+    background-color: white;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    padding-bottom: 0;
+    user-select: none;
+  
+  };
+  &__item-name{
+    @include default-font($main-color_darkest, $size-small, 30px, 700, none, uppercase);
+  }
 
-    &__tumbler{
-        box-sizing: border-box;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 18px;
-        border-radius: 50%;
-        border: 1px solid $main-color_lighter;
-        color: $main-color_lighter;
-        cursor: pointer;
-        &_depricated{
-            border: 1px solid $main-color_lightest;
-            color: $main-color_lightest;
-            cursor: auto;
-        }
+  &__tumbler{
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    border-radius: 50%;
+    border: 1px solid $main-color_lighter;
+    color: $main-color_lighter;
+    cursor: pointer;
+    &_depricated{
+      border: 1px solid $main-color_lightest;
+      color: $main-color_lightest;
+      cursor: auto;
     }
-    &__number{
-        box-sizing: border-box;
-        min-width: 32px;
-        min-height: 30px;
-        text-align: center;
-        display: inline-block;
-        line-height: 30px;
-        vertical-align: middle;
-        font-weight: 700;
-        color: $main-color_darkest;
-        font-size: $size-small;
-    }
+  }
+  &__number{
+    box-sizing: border-box;
+    min-width: 32px;
+    min-height: 30px;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    font-weight: 700;
+    color: $main-color_darkest;
+    font-size: $size-small;
+  }
 
-    &__menu{
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
-        border-bottom-right-radius: 2px;
-        border-bottom-left-radius: 2px;
-        position: absolute;
-        top: 100%;
-        left: 0%;
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 4px 6px 12px 14px;
-        border: 1px solid $main-color_lighter;
-        border-top: none;
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-        z-index: 50;
-        &_hidden{
-            display: none;
-        }
-    };
-    &__buttons{
-        padding: 13px 0 0 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+  &__menu{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 4px 6px 12px 14px;
+    border: 1px solid $main-color_lighter;
+    border-top: none;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    z-index: 50;
+    &_hidden{
+      display: none;
     }
-    &__button{
-        @include default-font($highlight-color, $size-small, $size-small+3, 700, none, uppercase);
-        cursor: pointer;
-        user-select: none;
-        border: none;
-        background-color: transparent;
-        margin: 0;
-        padding: 0;
-        &_delete{
-            visibility: hidden;
-        }
-        &_visible-delete{
-            visibility: visible;
-        }
+  };
+  &__buttons{
+    padding: 13px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button{
+    @include default-font($highlight-color, $size-small, $size-small+3, 700, none, uppercase);
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    &_delete{
+      visibility: hidden;
     }
-    &_simple{
-        & .input-with-counter__buttons{
-            display: none
-        }
+    &_visible-delete{
+      visibility: visible;
     }
+  }
+  &_simple{
+    & .input-with-counter__buttons{
+      display: none
+    }
+  }
 
-    & .textfield-for-dropping{
-        &__subscribe{
-            margin-bottom: 5px
-        }
+  & .textfield-for-dropping{
+    &__subscribe{
+      margin-bottom: 5px
     }
+  }
 };
 
 

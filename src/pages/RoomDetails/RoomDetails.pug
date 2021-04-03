@@ -11,42 +11,42 @@ include ../../blocks/number-booker/number-booker.pug
 
 
 block variables
-    
+  
 block head
-    title RoomDetails
-    meta(name="keywords", content="keywords")
-    meta(name="description", content="description")
+  title RoomDetails
+  meta(name="keywords", content="keywords")
+  meta(name="description", content="description")
 block header
-    +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+  +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
 block content    
-    section.content__pictures
-        +pictures-demo({ largePic:require("./img/image(1).jpg").default, firSmallPic: require("./img/image 2(1).jpg").default, secSmallPic: require("./img/image 3.jpg").default})
-    section.content__information
-        div.content__stickers
-            h2(class="content__header content__header_margin_zero") Сведения о номере
-            +stickers({ issues: [{icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"}] })
-        
-        div.content__diogram
-            h2(class="content__header ") Впечатления от номера
-            +diagram({ statistic: [{amount: 155, name: 'Великолепно'}, {amount: 60, name: 'Хорошо'}, {amount: 60, name: 'Удовлетворительно'}, {amount: 0, name: 'Разочарован'}], subjects: ["голос", "голоса", "голосов"] }) 
-
-        div.content__reviews
-            h2(class="content__header ") Отзывы посетителей номера
-            +review({name: 'Мурад Сарафанов', avatar: require('./img/review001.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
-            +review({name: 'Патрисия Стёклышкова', avatar: require('./img/review002.jpg').default, review:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.', date: '03.21.2021', likes:2, isLiked: false})
-        
-        div.content__rules
-            h2(class="content__header content__header_shift_right") Правила
-            +marked-list({ elements: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"] })
-        
-        div.content__cancel-rules
-            h2(class="content__header ") Отмена 
-            p.content__font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  section.content__pictures
+    +pictures-demo({ largePic:require("./img/image(1).jpg").default, firSmallPic: require("./img/image 2(1).jpg").default, secSmallPic: require("./img/image 3.jpg").default})
+  section.content__information
+    div.content__stickers
+      h2(class="content__header content__header_margin_zero") Сведения о номере
+      +stickers({ issues: [{icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"}] })
     
-    section.content__booking 
-        +number-booker({number: 888, category: 'люкс', price: 9990, servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', servPrice: '-2179, 300'})
+    div.content__diogram
+      h2(class="content__header ") Впечатления от номера
+      +diagram({ statistic: [{amount: 155, name: 'Великолепно'}, {amount: 60, name: 'Хорошо'}, {amount: 60, name: 'Удовлетворительно'}, {amount: 0, name: 'Разочарован'}], subjects: ["голос", "голоса", "голосов"] }) 
+
+    div.content__reviews
+      h2(class="content__header ") Отзывы посетителей номера
+      +review({name: 'Мурад Сарафанов', avatar: require('./img/review001.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
+      +review({name: 'Патрисия Стёклышкова', avatar: require('./img/review002.jpg').default, review:'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.', date: '03.21.2021', likes:2, isLiked: false})
+    
+    div.content__rules
+      h2(class="content__header content__header_shift_right") Правила
+      +marked-list({ elements: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"] })
+    
+    div.content__cancel-rules
+      h2(class="content__header ") Отмена 
+      p.content__font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  
+  section.content__booking 
+    +number-booker({number: 888, category: 'люкс', price: 9990, servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', servPrice: '-2179, 300'})
 block footer
-    +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
+  +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
 block cellar  
-    +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+  +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
 block script

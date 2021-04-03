@@ -1,16 +1,27 @@
 {
     "parser": "babel-eslint",
-    "env": { "es6": true },
+    "env": { 
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "jquery": true
+    },
     "parserOptions": {
         "sourceType": "module"
     },
     "plugins": ["eslint-plugin-fsd"],
+    "extends": "airbnb",
     "rules": {
         "fsd/hof-name-prefix": "error",
         "fsd/no-heavy-constructor": "error",
         "fsd/jq-cache-dom-elements": "error",
         "fsd/jq-use-js-prefix-in-selector": "error",
         "fsd/no-function-declaration-in-event-listener": "error",
-        "fsd/split-conditionals": "error"
+        "fsd/split-conditionals": "error",
+        "linebreak-style": [2, "windows"],
+        "no-underscore-dangle": "off",
+        "no-use-before-define": ["error", { "functions": false, "classes": false }],
+        "max-classes-per-file": ["off"]
     }
 }

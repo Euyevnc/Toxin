@@ -1,10 +1,7 @@
-@import "../calendar/calendar.scss";
+@import "../../utils/calendar/calendar.scss";
 @import '../textfield-for-dropping/textfield-for-dropping.scss';
 
 .date-picker{
-    position: relative;
-    & .textfield-for-dropping__subscribe{
-        margin-bottom: 5px
-    }
+  position: relative;
 };
 
