@@ -35,16 +35,16 @@ class Review {
       // она тут без привязки к элементу
       if (years > 0) {
         if (years === 1 || years % 10 === 1) createdString = `${years} год`;
-        else if (years > 4 || years % 10 > 4) createdString = `${years} года`;
-        else createdString = `${years} лет`;
+        else if (years > 4 || years % 10 > 4) createdString = `${years} лет`;
+        else createdString = `${years} года`;
       } else if (months > 0) {
         if (months === 1 || months % 10 === 1) createdString = `${months} месяц`;
         else if (months > 4 || months % 10 > 4) createdString = `${months} месяцев`;
         else createdString = `${months} месяца`;
       } else if (weeks > 0) {
         if (weeks === 1 || weeks % 10 === 1) createdString = `${weeks} неделя`;
-        else if (weeks > 4 || weeks % 10 > 4) createdString = `${weeks} недели`;
-        else createdString = `${weeks} недель`;
+        else if (weeks > 4 || weeks % 10 > 4) createdString = `${weeks} недель`;
+        else createdString = `${weeks} недели`;
       } else if (days === 1 || days % 10 === 1) createdString = `${days} день`;
 
       else if (days > 4 || days % 10 > 4) createdString = `${days} дней`;
