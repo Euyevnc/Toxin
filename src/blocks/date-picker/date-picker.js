@@ -53,7 +53,6 @@ class DatePicker {
     const {
       input, arrow, arriveDate, departureDate,
     } = this;
-
     input.datepicker({
       dateFormat: 'dd M',
       minDate: 0,
@@ -107,7 +106,7 @@ class DatePicker {
     }
 
     function handlerArrowClick() {
-      $.datepicker._showDatepicker(input);
+      $.datepicker._showDatepicker(input[0]);
     }
 
     function handlerDocShowing() {
