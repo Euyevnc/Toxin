@@ -109,13 +109,13 @@ class DatePicker {
       $.datepicker._showDatepicker(input[0]);
     }
 
-    function handlerDocShowing() {
+    function handlerDocShowing(e) {
       function disactivateArrow() {
         arrow.removeEventListener('click', handlerArrowClick);
         arrow.querySelector('.arrow-down').textContent = 'expand_less';
       }
+      if (e.detail.input === input[0]) setTimeout(disactivateArrow, 100);
 
-      setTimeout(disactivateArrow, 100);
       // Таймаут использую потому как плагин запускает (не знаю почему) функцию _hide...
       // на этапе погружения, эту его часть я трогать не решился,
       // вдруг всё сломается, пришлось обходиться таймаутом
