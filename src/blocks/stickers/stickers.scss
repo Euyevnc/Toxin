@@ -24,11 +24,10 @@
     font-size: 48px;
     vertical-align: middle;
     margin-right: 10px;
-    color: $highlight-color;
-
     background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+    color: transparent;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    background-clip: text;
   }
   &__text{
     display: inline-block;

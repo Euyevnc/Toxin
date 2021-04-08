@@ -12,6 +12,9 @@
     width: 24px;
     height: 24px;
     font-size: 24px;
-    color: $highlight-color ;
+    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 }

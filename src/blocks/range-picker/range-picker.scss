@@ -42,11 +42,11 @@
       z-index: 0;
     }
     &__tumbler{
-      box-sizing: border-box;
       height: 12px;
       width: 12px;
+      box-sizing: content-box;
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      border: 2px solid #FFFFFF;
+      border: 3px solid #FFFFFF;
       border-radius: 50%;
       z-index: 1;
       &:active{
