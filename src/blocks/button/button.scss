@@ -1,4 +1,4 @@
-@import "../../utils/_mixin-font.scss";
+@import "../../assets/mixin-font";
 @import "../arrow-right/arrow-right.scss";
 .button{
   @include default-font($size: $size-small, $line: 44px, $weight: 700, $transform: uppercase);

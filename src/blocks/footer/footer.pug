@@ -6,9 +6,9 @@ mixin footer({ heading='', info='', heading2='', info2='', refs=[] }={})
         h3(class="footer__heading") #{heading}
       div(class="footer__sign")
         span.footer__logo
-          include ../../static/Images/logo.img_color.svg
+          include ../../assets/images/logo.img_color.svg
         span.footer__brand
-          include ../../static/Images/TOXIN.svg
+          include ../../assets/images/TOXIN.svg
       if info
         p(class="footer__inscription") #{info} 
     each block in refs

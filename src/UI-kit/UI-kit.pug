@@ -1,5 +1,5 @@
-include ../utils/forUI-kit/colorIcon.pug
-include ../utils/forUI-kit/fontIcon.pug
+include ../assets/forUI-kit/colorIcon.pug
+include ../assets/forUI-kit/fontIcon.pug
 include ../blocks/textfield/textfield.pug
 include ../blocks/input-with-counter/input-with-counter.pug
 include ../blocks/date-mask/date-mask.pug
@@ -41,7 +41,7 @@ include ../blocks/entry-form/entry-form.pug
 
 div.ui-kit-container
   section.colors-and-type 
-    include ../static/Images/logo.img.svg 
+    include ../assets/images/logo.img.svg 
     section.colors-container 
       +colorIcon('#1F2041', "Dark Shade 100%", 1)
       +colorIcon('#1F2041', "Dark Shade 75%", 0.75)
@@ -57,7 +57,7 @@ div.ui-kit-container
       +fontIcon('Body', 'Montserrat', '14px', '400', '24px', 'none', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', '0.75')
 
   section.forms
-    include ../static/Images/logo.img.svg
+    include ../assets/images/logo.img.svg
     section.forms-fields-wrapper
       div.textfield-container 
         +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
@@ -150,7 +150,7 @@ div.ui-kit-container
         +review({name: 'Мурад Сарафанов', avatar: require('./pages/RoomDetails/img/review001.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
    
   section.cards 
-    include ../static/Images/logo.img.svg
+    include ../assets/images/logo.img.svg
     section   
       div.find-form-container
         +number-finder()
@@ -171,7 +171,7 @@ div.ui-kit-container
         +number-demo({ number: 888, category: "люкс", price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img4] })
         +number-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img1] })
   section.headers-and-footers
-    include ../static/Images/logo.img.svg
+    include ../assets/images/logo.img.svg
     section.header-container 
       .wrapper
         +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })

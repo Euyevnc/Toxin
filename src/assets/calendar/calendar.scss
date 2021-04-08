@@ -1,5 +1,5 @@
-@import "../../utils/fonts/OpenSans.scss";
-@import "../../utils/fonts/Montserrat.scss";
+@import "../font-faces/OpenSans.scss";
+@import "../font-faces/Montserrat.scss";
 ///Стили написал к уже готовому плагину, так что БЭМа тут, понятно, нет
 .ui-datepicker{
   display: none;

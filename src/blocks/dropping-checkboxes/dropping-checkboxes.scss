@@ -1,7 +1,7 @@
 @import "../arrow-down/arrow-down.scss";
-@import "../../utils/_mixin-font.scss";
-@import "../../utils/_mixin_outline.scss";
-@import "../../utils/fonts/FontAwesome.scss";
+@import "../../assets/mixin-font";
+@import "../../assets/mixin_outline";
+@import "../../assets/font-faces/FontAwesome.scss";
 
 .dropping-checkboxes{
   margin: 0;
