@@ -17,7 +17,7 @@ include ../blocks/button/button.pug
 include ../blocks/link/link.pug
 include ../blocks/dropping-checkboxes/dropping-checkboxes.pug
 include ../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
-include ../blocks/paginator/paginator.pug
+include ../blocks/pagination/pagination.pug
 include ../blocks/marked-list/marked-list.pug
 include ../blocks/stickers/stickers.pug
 include ../blocks/review/review.pug
@@ -111,7 +111,7 @@ div.ui-kit-container
         +button({text: "перейти к оплате", styles: ['color_purple'], withArrow:true}) 
       div.pages-switcher-container 
         h3 pagination
-        +paginator({amount: 15})
+        +pagination({amount: 15})
 
     div(style="width: 100%; height:100px")
 

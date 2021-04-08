@@ -1,0 +1,24 @@
+include ../arrow-right/arrow-right.pug
+mixin pagination({ amount = 0}={})
+  div.pagination.js-pagination
+    ul.pagination__buttons-list
+      - for (let i = 1; i <= amount; i++) {
+        if i == 1
+          li(class="pagination__button js-pagination__button pagination__button_active")
+            a(class = "pagination__link" ) #{i}
+        else if i < 4
+          li(class="pagination__button js-pagination__button")
+            a(class = "pagination__link" href=`/page/${i}`) #{i}
+        else if i == amount 
+          if i > 4
+            span.pagination__ellipsis  ...
+          li(class="pagination__button js-pagination__button") 
+            a(class = "pagination__link" href=`/page/${i}`) #{i}
+        else
+          li(class="pagination__button js-pagination__button pagination__button_hidden") 
+            a(class = "pagination__link" href=`/page/${i}`) #{i}
+      - }
+      li(class="pagination__button pagination__button_type_arrow")
+        a(class = "pagination__link" href=`/page/2`) 
+          +arrow-right()
+    p.pagination__text 1 – 12 из 100+ вариантов аренды

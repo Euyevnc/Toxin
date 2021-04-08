@@ -9,7 +9,7 @@ include ../../blocks/checkboxes/checkboxes.pug
 include ../../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
 include ../../blocks/dropping-checkboxes/dropping-checkboxes.pug
 include ../../blocks/number-demo/number-demo.pug
-include ../../blocks/paginator/paginator.pug
+include ../../blocks/pagination/pagination.pug
 block variables
 
   - let img1 = require('./img/image-1.jpg').default
@@ -70,8 +70,8 @@ block content
       +number-demo({ number: 666, price: 5000, rate: 5, reviews: 25, pictures:[img10,img2,img5,img9] })
       +number-demo({ number: 444, price: 5000, rate: 3, reviews: 15, pictures:[img11,img2,img5,img9] })
       +number-demo({ number: 352, price: 5000, rate: 3, reviews: 55, pictures:[img12,img2,img5,img9] })
-    div.content__paginator()
-      +paginator({ amount:15} )
+    div.content__pagination()
+      +pagination({ amount:15} )
 block footer
   +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
 block cellar  

@@ -1,7 +1,7 @@
 @import "../arrow-right/arrow-right.scss";
 @import "../../utils/_mixin-font.scss";
 
-.paginator{
+.pagination{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,13 +21,13 @@
     vertical-align: middle;
     &_type_arrow {
       background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      & .paginator__link{
+      & .pagination__link{
         color: white;
       }
     };
     &_active{
       background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-      & .paginator__link{
+      & .pagination__link{
         color: white;
       }
     }
