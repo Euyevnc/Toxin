@@ -958,7 +958,6 @@ $.extend( Datepicker.prototype, {
 			}
 			this._inDialog = false;
 		}
-		
 		let event = new CustomEvent("calendarhiding", { detail: {input, datepickerShowing} })
 		document.dispatchEvent(event)
 	},
@@ -983,7 +982,7 @@ $.extend( Datepicker.prototype, {
 				!$target.closest( "." + $.datepicker._triggerClass ).length &&
 				$.datepicker._datepickerShowing && !( $.datepicker._inDialog && $.blockUI ) ) ) ||
 			( $target.hasClass( $.datepicker.markerClassName ) && $.datepicker._curInst !== inst ) ) {
-				$.datepicker._hideDatepicker();
+				$.datepicker._hideDatepicker($.datepicker._curInst.input[0]);
 		}
 	},
 

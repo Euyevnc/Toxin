@@ -139,30 +139,36 @@ class DoubleDatePicker {
       $.datepicker._showDatepicker(input);
     }
 
-    function handlerDocShowing(e) {
-      // Таймаут использую потому как плагин запускает (не знаю почему) функцию _hide... на этапе
-      // погружения,эту его часть я трогать не стал,чтобы не поломать, пришлось обходиться таймаутом
-      function disactivateArrow() {
-        if (e.detail.input === arriveInput[0]) {
-          arriveArrow.removeEventListener('click', handlerArrowClick);
-          arriveArrow.querySelector('.arrow-down').textContent = 'expand_less';
-        } else if (e.detail.input === departureInput[0]) {
-          departureArrow.removeEventListener('click', handlerArrowClick);
-          departureArrow.querySelector('.arrow-down').textContent = 'expand_less';
-        }
-      }
+    function makeHandlerDocClick(arrow) {
+      return function handlerDocClick() {
+        const actualArrow = arrow;
+        document.removeEventListener('click', handlerDocClick);
+        actualArrow.addEventListener('click', handlerArrowClick);
+        actualArrow.querySelector('.arrow-down').textContent = 'expand_more';
+      };
+    }
 
-      setTimeout(disactivateArrow, 100);
+    function handlerDocShowing(e) {
+      if (e.detail.input === arriveInput[0]) {
+        arriveArrow.removeEventListener('click', handlerArrowClick);
+        arriveArrow.querySelector('.arrow-down').textContent = 'expand_less';
+      } else if (e.detail.input === departureInput[0]) {
+        departureArrow.removeEventListener('click', handlerArrowClick);
+        departureArrow.querySelector('.arrow-down').textContent = 'expand_less';
+      }
     }
 
     function handlerDocHiding(e) {
-      function activateArrow() {
-        arriveArrow.addEventListener('click', handlerArrowClick);
-        departureArrow.addEventListener('click', handlerArrowClick);
-        arriveArrow.querySelector('.arrow-down').textContent = 'expand_more';
-        departureArrow.querySelector('.arrow-down').textContent = 'expand_more';
+      if (e.detail.datepickerShowing) {
+        if (e.detail.input === arriveInput[0]) {
+          const handlerDocClick = makeHandlerDocClick(arriveArrow);
+          document.addEventListener('click', handlerDocClick);
+        }
+        if (e.detail.input === departureInput[0]) {
+          const handlerDocClick = makeHandlerDocClick(departureArrow);
+          document.addEventListener('click', handlerDocClick);
+        }
       }
-      if (e.detail.datepickerShowing) setTimeout(activateArrow, 100);
     }
   }
 }

@@ -109,25 +109,24 @@ class DatePicker {
       $.datepicker._showDatepicker(input[0]);
     }
 
+    function handlerDocClick() {
+      document.removeEventListener('click', handlerDocClick);
+      arrow.addEventListener('click', handlerArrowClick);
+      arrow.querySelector('.arrow-down').textContent = 'expand_more';
+    }
+
     function handlerDocShowing(e) {
-      function disactivateArrow() {
+      if (e.detail.input === input[0]) {
         arrow.removeEventListener('click', handlerArrowClick);
         arrow.querySelector('.arrow-down').textContent = 'expand_less';
       }
-      if (e.detail.input === input[0]) setTimeout(disactivateArrow, 100);
-
-      // Таймаут использую потому как плагин запускает (не знаю почему) функцию _hide...
-      // на этапе погружения, эту его часть я трогать не решился,
-      // вдруг всё сломается, пришлось обходиться таймаутом
     }
 
     function handlerDocHiding(e) {
-      function activateArrow() {
-        arrow.addEventListener('click', handlerArrowClick);
-        arrow.querySelector('.arrow-down').textContent = 'expand_more';
+      if (e.detail.datepickerShowing && e.detail.input === input[0]) {
+        console.log(e.detail.input, 'hide');
+        document.addEventListener('click', handlerDocClick);
       }
-
-      if (e.detail.datepickerShowing) setTimeout(activateArrow, 100);
     }
   }
 }
