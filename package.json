@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --mode development --config webpack.config.js --open",
     "build": "webpack --mode production --config webpack.config.js",
     "deploy": "gh-pages -d dist",
-    "lint": "eslint"
+    "lint": "eslint src/**/*.js --ignore-pattern plugins/"
   },
   "author": "Evgeny",
   "license": "ISC",

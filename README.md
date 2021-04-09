@@ -4,6 +4,12 @@
 
 >npm i 
 
+|Scripts||
+|---|---|
+|  __Development__ | ``` npm run dev ```|
+|  __Production__ | ```npm run build ``` |
+| __Linting__ | ``` npm run lint```  |  
+
 ## Dependencies
 
 ### Plugins 

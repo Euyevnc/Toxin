@@ -1,30 +1,27 @@
-import "./layout/layout-for-hotel.js"
-import uiKit from "./UI-kit/UI-kit.js"
-import "./index.scss";
-document.addEventListener("DOMContentLoaded", init)
+import './layout/layout-for-hotel';
+import uiKit from './UI-kit/UI-kit';
+import './index.scss';
 
-function init(){
-    let buttons = document.querySelectorAll(".js-switcher")
-    let sections = document.querySelectorAll("section.section")
-    buttons.forEach((but, butI)=>{
-        but.addEventListener("click", handlerSwitcherClick)
-        function handlerSwitcherClick(e){
-            if(but.classList.contains("actived") ) return 
-            buttons.forEach((el)=>{
-                el.classList.remove("actived")
-            })
-            but.classList.add("actived")
+document.addEventListener('DOMContentLoaded', init);
 
-            sections.forEach((sec)=>{
-                sec.style.display = "none";
-            })
-            sections[butI].style.display = "flex";
-        }
-    })
-    if(window.location.hash == '#slider'){
-        buttons[2].click()
+function init() {
+  const buttons = document.querySelectorAll('.js-switcher');
+  const sections = document.querySelectorAll('section.section');
+  buttons.forEach((but, butI) => {
+    but.addEventListener('click', handlerSwitcherClick);
+    function handlerSwitcherClick() {
+      if (but.classList.contains('actived')) return;
+      buttons.forEach((el) => {
+        el.classList.remove('actived');
+      });
+      but.classList.add('actived');
+
+      sections.forEach((sec) => {
+        const section = sec;
+        section.style.display = 'none';
+      });
+      sections[butI].style.display = 'flex';
     }
-    else buttons[0].click()
-
-    uiKit()
+  });
+  uiKit();
 }
