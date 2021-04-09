@@ -1,4 +1,4 @@
-include ../autorization-panel/autorization-panel.pug
+include ../authorization-panel/authorization-panel.pug
 include ../arrow-down/arrow-down.pug
 mixin menu({ login = '', issues})
   nav(class="menu js-menu")
@@ -20,7 +20,8 @@ mixin menu({ login = '', issues})
           li(class = `js-menu__element menu__element ${modifier}`)
             a(class='menu__link'  href=`${val.href}`) #{val.name}
       if login   
-        div(class="js-menu__element menu__element")
+        li(class="js-menu__element menu__element")
           a(href="/account/" class="menu__link") #{login}
       if !login
-        +autorization()
+        li
+          +authorization-panel()

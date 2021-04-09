@@ -1,5 +1,5 @@
 @import '../arrow-down/arrow-down.scss';
-@import '../autorization-panel/autorization-panel.scss';
+@import '../authorization-panel/authorization-panel';
 @import "../../assets/mixin-font";
 
 .menu{
@@ -11,11 +11,10 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-end;
-    
+    list-style-type: none; 
   }
   &__element{
     position: relative;
-    list-style-type: none; 
     cursor: pointer;
     margin: 0 ;
     padding: 0 10px;
