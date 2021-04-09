@@ -1,14 +1,14 @@
 function textfieldForDropping() {
   const inputs = [];
   document.querySelectorAll('.js-textfield-for-dropping').forEach((element) => {
-    const newInput = new TextfielForDropping(element);
+    const newInput = new TextfieldForDropping(element);
     newInput.init();
     inputs.push(newInput);
   });
   if (inputs.length === 1) return inputs[0];
   return inputs;
 }
-class TextfielForDropping {
+class TextfieldForDropping {
   constructor(root) {
     this.root = root;
   }
