@@ -1,4 +1,4 @@
-function textfielForDropping() {
+function textfieldForDropping() {
   const inputs = [];
   document.querySelectorAll('.js-textfield-for-dropping').forEach((element) => {
     const newInput = new TextfielForDropping(element);
@@ -19,4 +19,4 @@ class TextfielForDropping {
   }
 }
 
-export default textfielForDropping;
+export default textfieldForDropping;
