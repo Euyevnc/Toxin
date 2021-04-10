@@ -1,4 +1,4 @@
-import './SearchRoom_Filter.scss';
+import './SearchRoom.scss';
 
 import header from '../../blocks/header/header';
 import datePicker from '../../blocks/date-picker/date-picker';
@@ -9,7 +9,6 @@ import numberDemo from '../../blocks/number-demo/number-demo';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
-/// ///
 function handlerDocumentDomLoaded() {
   header();
   datePicker();

@@ -31,7 +31,6 @@ class DroppingCheckboxes {
     root.querySelector('.js-dropping-checkboxes__header').addEventListener('click', handlerHeaderClick);
     root.querySelector('.js-dropping-checkboxes__header').addEventListener('keydown', handlerHeaderKeydown);
 
-    /// ////
     function handlerHeaderClick() {
       if (object.expanded) {
         list.classList.remove('dropping-checkboxes__container_visible');

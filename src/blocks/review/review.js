@@ -21,7 +21,7 @@ class Review {
     const daysAgo = Math.floor((new Date() - new Date(this.date)) / (24 * 3600000));
 
     this.timer.textContent = parseDate(daysAgo);
-    /// ////
+
     function parseDate(amountOfDays) {
       let days = amountOfDays;
       const years = parseInt(days / 340, 10);

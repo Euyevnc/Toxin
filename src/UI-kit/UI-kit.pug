@@ -33,11 +33,11 @@ include ../blocks/entry-form/entry-form.pug
 
 
 //- Относительные пути для pug'a вообще возможно сделать??
-- let img1 = require(`./UI-kit/img/image-1.jpg`).default
-- let img2 = require(`./UI-kit/img/image.jpg`).default
-- let img3 = require(`./UI-kit/img/image-7.jpg`).default
-- let img4 = require(`./UI-kit/img/image-5.jpg`).default
-- let img5 = require(`./UI-kit/img/image-3.jpg`).default
+- let img1 = require(`./UI-kit/img/room-picture-1.jpg`).default
+- let img2 = require(`./UI-kit/img/room-picture-2.jpg`).default
+- let img3 = require(`./UI-kit/img/room-picture-3.jpg`).default
+- let img4 = require(`./UI-kit/img/room-picture-4.jpg`).default
+- let img5 = require(`./UI-kit/img/room-picture-5.jpg`).default
 
 div.ui-kit-container
   section.colors-and-type 
@@ -147,7 +147,7 @@ div.ui-kit-container
       div.stickers-container 
         +stickers({ issues: [{icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"}] })
       div.review-wrapper 
-        +review({name: 'Мурад Сарафанов', avatar: require('./pages/RoomDetails/img/review001.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
+        +review({name: 'Мурад Сарафанов', avatar: require('./UI-kit/img/review-1-avatar.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
    
   section.cards 
     include ../assets/images/logo.img.svg

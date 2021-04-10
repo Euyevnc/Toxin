@@ -12,7 +12,6 @@ import header from '../blocks/header/header';
 import review from '../blocks/review/review';
 import demo from '../blocks/number-demo/number-demo';
 
-///
 function handlerDOMLoaded() {
   header();
   demo();

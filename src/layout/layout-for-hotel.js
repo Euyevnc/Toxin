@@ -4,5 +4,4 @@ function commonScripts() {
 
 }
 
-/// ///
 export default commonScripts;
