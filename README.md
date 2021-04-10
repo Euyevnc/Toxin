@@ -8,7 +8,8 @@
 |---|---|
 |  __Development__ | ``` npm run dev ```|
 |  __Production__ | ```npm run build ``` |
-| __Linting__ | ``` npm run lint```  |  
+| __Linting__ | ```npm run lint```  |
+| __Autofix__ | ```npm run autofix```  |
 
 ## Dependencies
 
