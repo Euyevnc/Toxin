@@ -18,15 +18,7 @@
       opacity: 1;
       transition-duration: 0.7s;
     }
-    &:hover {
-      color: $main-color;
-      border: 1px solid $main-color_lighter;
-      transition-duration: 0.7s;
-      &::placeholder {
-        color: $main-color_lighter;
-        transition-duration: 0.7s;
-      }
-    }
+    &:hover,
     &:focus {
       color: $main-color;
       border: 1px solid $main-color_lighter;

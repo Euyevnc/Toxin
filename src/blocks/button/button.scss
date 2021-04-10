@@ -41,7 +41,8 @@
       $highlight-color_skew 100%
     );
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: linear-gradient(
         180deg,
         $highlight-color_depr 0%,
@@ -68,7 +69,8 @@
       border-radius: 20px;
       content: '';
     }
-    &:hover {
+    &:hover,
+    &:focus {
       background: linear-gradient(
         180deg,
         $highlight-color_depr 0%,
