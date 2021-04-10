@@ -1,45 +1,56 @@
-@import "../../assets/font-faces/MaterialIcons.scss";
-@import "../../assets/mixin-font";
-.stickers{
+@import '../../assets/font-faces/MaterialIcons.scss';
+@import '../../assets/mixin-font';
+.stickers {
   min-width: 280px;
-  &__header{
-    @include default-font($main-color_darkest, $size-larger, $size-largest, 700);
+  &__header {
+    @include default-font(
+      $main-color_darkest,
+      $size-larger,
+      $size-largest,
+      700
+    );
+
     margin: 0;
   }
-  &__list{
+  &__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
-  &__item{
+  &__item {
     padding: 23px 0 17px;
-    &:not(:last-child){
+    &:not(:last-child) {
       border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     }
   }
-  &__img{
-    font-family: 'Material Icons';
+  &__img {
     min-width: 48px;
     min-height: 48px;
-    font-size: 48px;
-    vertical-align: middle;
     margin-right: 10px;
-    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
     color: transparent;
+    font-size: 48px;
+    font-family: 'Material Icons', fantasy;
+    vertical-align: middle;
+    background: linear-gradient(
+      180deg,
+      $highlight-color,
+      $highlight-color_skew
+    );
     -webkit-background-clip: text;
     background-clip: text;
   }
-  &__text{
+  &__text {
     display: inline-block;
     vertical-align: middle;
   }
-  &__describe{
+  &__describe {
     @include default-font($line: $size-largest, $weight: 700);
+
     margin: 0;
   }
-  &__subscribe{
+  &__subscribe {
     @include default-font($line: $size-largest);
-    margin: 0;
 
+    margin: 0;
   }
 }

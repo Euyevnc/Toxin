@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   const buttons = document.querySelectorAll('.js-switcher');
   const sections = document.querySelectorAll('section.section');
+  let UIbut;
   buttons.forEach((but, butI) => {
+    if (butI === 0) UIbut = but;
     but.addEventListener('click', handlerSwitcherClick);
     function handlerSwitcherClick() {
       if (but.classList.contains('actived')) return;
@@ -23,5 +25,6 @@ function init() {
       sections[butI].style.display = 'flex';
     }
   });
+  UIbut.click();
   uiKit();
 }

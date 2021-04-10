@@ -1,24 +1,24 @@
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.marked-list{
+.marked-list {
   margin: 0;
   padding: 0;
-  &__item{
+  &__item {
     margin-bottom: 10px;
-    list-style-type: none; 
+    list-style-type: none;
   }
-  &__img{
-    width: 20px;
+  &__img {
     display: inline-block;
-    vertical-align: top;
+    width: 20px;
     padding-top: 7px;
-
+    vertical-align: top;
   }
-  &__desc{
+  &__desc {
     @include default-font($line: $size-largest);
-    margin: 0px;
+
     display: inline-block;
     max-width: 240px;
+    margin: 0;
     vertical-align: top;
   }
 }

@@ -1,47 +1,47 @@
-@import "../../blocks/header/header.scss";
-@import "../../blocks/footer/footer.scss";
-@import "../../blocks/cellar/cellar.scss";
-@import "../../blocks/entry-form/entry-form.scss";
-@import "../../layout/layout-for-hotel.scss";
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../blocks/cellar/cellar.scss';
+@import '../../blocks/entry-form/entry-form.scss';
+@import '../../layout/layout-for-hotel.scss';
 
-.content{
+.content {
+  position: relative;
   background-image: url('./img/login_bg.jpg');
   background-position: bottom;
-  position: relative;
-  &__wrapper{
+  &__wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 684px;
-    @media(max-width: 660px){
-      min-height:450px;
-    } 
+    @media (max-width: 660px) {
+      min-height: 450px;
+    }
   }
-  &::after{
+  &::after {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    content: '';
-    z-index: -1;
     background-image: url('./img/login_bg2.jpg');
     background-position: bottom;
     opacity: 0;
-    animation: sliding 20s linear 0s infinite ;
+    animation: sliding 20s linear 0s infinite;
+    content: '';
   }
 }
-@keyframes sliding{
-  40%{
+@keyframes sliding {
+  40% {
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 1;
   }
-  90%{
+  90% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }

@@ -1,21 +1,21 @@
 @font-face {
-	font-family: 'Quicksand'; 
-	src: local('Quicksand'),
-		url("/src/assets/fonts/Quicksand/Quicksand-Regular.ttf") format("truetype"),
-		url("/src/assets/fonts/Quicksand/Quicksand-Regular.woff") format("woff"),
-		url("/src/assets/fonts/Quicksand/quicksand-regular.svg") format("svg"),
-		url("/src/assets/fonts/Quicksand/Quicksand-Regular.eot") format("eot"); 
-	font-style: normal; 
-	font-weight: normal;
-};
- 
-@font-face{
-	font-family: 'Quicksand';
-	src: local('Quicksand'),
-		url('/src/assets/fonts/Quicksand/Quicksand-Bold.ttf') format('truetype'), 
-		url('/src/assets/fonts/Quicksand/Quicksand-Bold.woff') format('woff'),
-		url('/src/assets/fonts/Quicksand/Quicksand-Bold.svg') format('svg'),
-		url('/src/assets/fonts/Quicksand/Quicksand-Bold.eot') format('eot'); 
-	font-style: normal; 
-	font-weight: bold; 
-};
+  font-weight: normal;
+  font-family: 'Quicksand';
+  font-style: normal;
+  src: local('Quicksand'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Regular.ttf') format('truetype'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Regular.woff') format('woff'),
+    url('/src/assets/fonts/Quicksand/quicksand-regular.svg') format('svg'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Regular.eot') format('eot');
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: 'Quicksand';
+  font-style: normal;
+  src: local('Quicksand'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Bold.ttf') format('truetype'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Bold.woff') format('woff'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Bold.svg') format('svg'),
+    url('/src/assets/fonts/Quicksand/Quicksand-Bold.eot') format('eot');
+}

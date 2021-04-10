@@ -1,44 +1,44 @@
-@import "../../layout/layout-for-hotel.scss";
-@import "../../blocks/header/header.scss";
-@import "../../blocks/footer/footer.scss";
-@import "../../blocks/cellar/cellar.scss";
-@import "../../blocks/registration/registration.scss";
+@import '../../layout/layout-for-hotel.scss';
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../blocks/cellar/cellar.scss';
+@import '../../blocks/registration/registration.scss';
 
-.content{
+.content {
   background-image: url('./img/Registration_bg.jpg');
   background-position: bottom;
-  &__wrapper{
-    min-height: 684px;
-    min-width: 320px; 
-    padding: 19px 0;
+  &__wrapper {
     display: flex;
     justify-content: center;
+    min-width: 320px;
+    min-height: 684px;
+    padding: 19px 0;
   }
-  &::after{
+  &::after {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    content: '';
-    z-index: -1;
     background-image: url('./img/Registration_bg2.jpg');
     background-position: bottom;
     opacity: 0;
-    animation: sliding 20s linear 0s infinite ;
+    animation: sliding 20s linear 0s infinite;
+    content: '';
   }
 }
-@keyframes sliding{
-  40%{
+@keyframes sliding {
+  40% {
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 1;
   }
-  90%{
+  90% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }

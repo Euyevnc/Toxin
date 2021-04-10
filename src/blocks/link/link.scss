@@ -1,15 +1,22 @@
-@import "../../assets/mixin-font";
-.link{
-  @include default-font($size: $size-small, $line: $size-small+2.5, $decor: none, $weight: 700, $transform: uppercase);
-  margin-right: 20px;
+@import '../../assets/mixin-font';
+.link {
+  @include default-font(
+    $size: $size-small,
+    $line: $size-small + 2.5,
+    $decor: none,
+    $weight: 700,
+    $transform: uppercase
+  );
+
   margin: 0;
+  margin-right: 20px;
   padding: 0;
-  border: none;
   background-color: transparent;
-  &_color_purple{
+  border: none;
+  &_color_purple {
     color: $highlight-color;
-    &:hover{
+    &:hover {
       color: $main-color_lighter;
     }
-  } 
+  }
 }

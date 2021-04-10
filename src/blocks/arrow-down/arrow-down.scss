@@ -1,15 +1,15 @@
-@import "../../assets/font-faces/MaterialIcons.scss";
-@import "../../assets/variables";
-.arrow-down{
+@import '../../assets/font-faces/MaterialIcons.scss';
+@import '../../assets/variables';
+.arrow-down {
   color: $main-color_lighter;
-  font-family: Material Icons;
   font-size: 24px;
-  user-select: none;
-  white-space: nowrap;
+  font-family: 'Material Icons', fantasy;
   direction: ltr;
+  white-space: nowrap;
+  user-select: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-feature-settings: "liga";
-  font-feature-settings: "liga";
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
 }

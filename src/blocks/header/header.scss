@@ -1,29 +1,29 @@
-@import "../menu/menu.scss";
-@import "../burger/burger.scss";
-@import "../../assets/font-faces/Montserrat.scss";
+@import '../menu/menu.scss';
+@import '../burger/burger.scss';
+@import '../../assets/font-faces/Montserrat.scss';
 
-.header{
-  background-color: white;
-  height:100%;
+.header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  @media(max-width: 650px) {
+  height: 100%;
+  background-color: white;
+  @media (max-width: 650px) {
     padding: 10px 10px;
   }
-  &__sign{
+  &__sign {
     flex-shrink: 0;
   }
-  &__logo{
-    vertical-align: middle;
+  &__logo {
     display: inline-block;
     max-height: 40px;
-  }
-  &__brand{
     vertical-align: middle;
-    margin-left: 12.5px;
-    max-height: 13px;
+  }
+  &__brand {
     display: inline-block;
+    max-height: 13px;
+    margin-left: 12.5px;
+    vertical-align: middle;
   }
 }

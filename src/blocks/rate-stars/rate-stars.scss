@@ -1,39 +1,50 @@
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.rate-stars{
+.rate-stars {
   display: inline-block;
-  vertical-align: bottom; 
-  
-  & + .rate-stars{
+  vertical-align: bottom;
+
+  & + .rate-stars {
     margin-left: 20px;
   }
-  &__head{
-    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase );
+  &__head {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 3,
+      700,
+      none,
+      uppercase
+    );
+
     margin: 0;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
   }
-  &__star{
-    display: inline-block;
-    height: 24px;
-    width: 24px;
-    line-height: 24px;
-    font-family: 'Material Icons';
+  &__star {
     position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: transparent;
     font-size: 24px;
+    font-family: 'Material Icons', fantasy;
+    line-height: 24px;
     text-align: center;
     vertical-align: middle;
-    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
-    color: transparent;
+    background: linear-gradient(
+      180deg,
+      $highlight-color,
+      $highlight-color_skew
+    );
     -webkit-background-clip: text;
     background-clip: text;
-    &_outlined{
-      & .rate-stars__star_colorized{
-        overflow: hidden;
+    &_outlined {
+      & .rate-stars__star_colorized {
         position: absolute;
         top: 0;
         left: 0;
+        overflow: hidden;
       }
-    }  
+    }
   }
 }
-

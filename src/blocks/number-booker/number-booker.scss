@@ -1,132 +1,136 @@
-@import "../double-date-picker/double-date-picker.scss";
-@import "../input-with-counter/input-with-counter.scss";
-@import "../button/button.scss";
-@import "../../assets/mixin-font";
+@import '../double-date-picker/double-date-picker.scss';
+@import '../input-with-counter/input-with-counter.scss';
+@import '../button/button.scss';
+@import '../../assets/mixin-font';
 
-.booker{
+.booker {
+  max-width: 320px;
+  padding: 40px 29px 29px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: white;
-  box-shadow: 0px 0px 25px rgba(151, 125, 125, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  padding: 40px 29px 29px;
-  max-width: 320px;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
-  &__font{
-    &_color_black{
-      color: $main-color_darkest
-    };
-    &_color_grey{
-      color: $main-color_lighter
-    };
-    &_color_purple{
-      color: $highlight-color;
-    };
-    &_size_large{
-      font-size: $size-largest;
-      line-height: $size-largest+5;
+  box-shadow: 0 0 25px rgba(151, 125, 125, 0.2);
+  &__font {
+    &_color_black {
+      color: $main-color_darkest;
     }
-    &_size_middle{
+    &_color_grey {
+      color: $main-color_lighter;
+    }
+    &_color_purple {
+      color: $highlight-color;
+    }
+    &_size_large {
+      font-size: $size-largest;
+      line-height: $size-largest + 5;
+    }
+    &_size_middle {
       font-size: $size-middle;
       line-height: $default-line;
     }
-    &_size_small{
+    &_size_small {
       font-size: $size-small;
       line-height: $default-line;
     }
-    &_uppercase{
+    &_uppercase {
       text-transform: uppercase;
     }
   }
 
-  &__information{
-    display: flex; 
-    justify-content: space-between;
+  &__information {
+    display: flex;
     align-items: flex-end;
-    margin-bottom: 20px;
+    justify-content: space-between;
     min-height: 30px;
+    margin-bottom: 20px;
   }
-  &__price-info{
+  &__price-info {
     display: inline-block;
     line-height: 20px;
   }
-  &__calendar{
+  &__calendar {
     display: flex;
     justify-content: space-between;
     margin-bottom: 23px;
   }
-  &__counter{
+  &__counter {
     margin-bottom: 19px;
   }
-  &__rent-calculation{
+  &__rent-calculation {
     @include default-font($line: $default-line);
-    vertical-align: top; 
-    padding-left: 1px;
 
+    padding-left: 1px;
+    vertical-align: top;
   }
-  &__rent{
-    display: flex; 
-    justify-content: space-between;
+  &__rent {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     line-height: $size-largest;
-    
   }
-  &__services{
+  &__services {
     margin: 10px 0 0;
     padding: 0;
   }
-  &__service{
-    display: flex; 
-    justify-content: space-between;
+  &__service {
+    display: flex;
     align-items: flex-start;
-    margin-bottom: 12px;
-    list-style-type: none;
+    justify-content: space-between;
     min-height: 24px;
+    margin-bottom: 12px;
     line-height: $default-line;
+    list-style-type: none;
   }
-  &__service-desc{
-    width: 220px;
+  &__service-desc {
     display: inline-block;
     align-self: center;
+    width: 220px;
   }
-  &__service-price{
+  &__service-price {
     line-height: 24px;
   }
-  &__sign_i{
+  &__sign_i {
     display: inline-block;
-    height: 20px; 
-    width: 20px;
-    margin-right: auto;
-    text-align:center; 
-    border-radius:50%;
     box-sizing: border-box;
-    border: 1px solid $main-color_lightest; 
-    @include default-font($size: $size-small, $line: $size-small+8, $color: $main-color_lightest, $weight: 700);
+    width: 20px;
+    height: 20px;
+    margin-right: auto;
+    text-align: center;
+    border: 1px solid $main-color_lightest;
+    border-radius: 50%;
+    @include default-font(
+      $size: $size-small,
+      $line: $size-small + 8,
+      $color: $main-color_lightest,
+      $weight: 700
+    );
   }
-  &__total{
+  &__total {
+    display: flex;
     min-width: 329px;
-    display: flex; 
     margin: 30px 0 21px;
     font-size: $size-larger;
     line-height: $size-largest;
   }
-  &__total-filler{
-    border: 1px dashed $main-color_lightest;
-    box-sizing: border-box;
-    max-height: 1px;
+  &__total-filler {
     flex-grow: 1;
     align-self: flex-end;
+    box-sizing: border-box;
+    max-height: 1px;
     margin-bottom: 4px;
+    border: 1px dashed $main-color_lightest;
   }
-  &__button-cont{
+  &__button-cont {
     height: 44px;
   }
-  @media(max-width: 400px){
+  @media (max-width: 400px) {
     padding: 29px 19px;
   }
-  @media(max-width: 380px){
+  @media (max-width: 380px) {
     padding: 29px 5px;
   }
-  @media(max-width: 330px){
-    padding: 29px 0px;
+  @media (max-width: 330px) {
+    padding: 29px 0;
   }
 }

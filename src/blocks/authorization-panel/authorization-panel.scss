@@ -1,21 +1,20 @@
 @import '../button/button.scss';
-.authorization-panel{
-  &__entry-container{
+.authorization-panel {
+  &__entry-container {
     display: inline-block;
-    height: 34px;
     min-width: 87px;
+    height: 34px;
     margin: 0 20px 0 10px;
-    @media(max-width: 600px) {
-      margin: 10px;
-    }
-  };
-  &__registration-container{
-    display: inline-block;
-    height: 34px;  
-    min-width: 196px;
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       margin: 10px;
     }
   }
-
+  &__registration-container {
+    display: inline-block;
+    min-width: 196px;
+    height: 34px;
+    @media (max-width: 600px) {
+      margin: 10px;
+    }
+  }
 }

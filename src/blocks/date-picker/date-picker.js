@@ -124,7 +124,6 @@ class DatePicker {
 
     function handlerDocHiding(e) {
       if (e.detail.datepickerShowing && e.detail.input === input[0]) {
-        console.log(e.detail.input, 'hide');
         document.addEventListener('click', handlerDocClick);
       }
     }

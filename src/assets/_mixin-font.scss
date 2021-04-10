@@ -1,12 +1,19 @@
-@import "./variables";
-@import "./font-faces/Montserrat.scss";
+@import './variables';
+@import './font-faces/Montserrat.scss';
 
-@mixin default-font($color: $main-color, $size: $size-middle, $line: $default-line, $weight: 400, $decor: none, $transform: none){
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    color: $color;
-    font-size: $size;
-    line-height: $line;
-    text-decoration:  $decor;
-    text-transform: $transform;
-    font-weight: $weight;
+@mixin default-font(
+  $color: $main-color,
+  $size: $size-middle,
+  $line: $default-line,
+  $weight: 400,
+  $decor: none,
+  $transform: none
+) {
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  line-height: $line;
+  text-transform: $transform;
+  text-decoration: $decor;
 }

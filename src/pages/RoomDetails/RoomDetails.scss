@@ -1,70 +1,75 @@
-@import "../../assets/mixin-font";
-@import "../../assets/variables";
-@import "../../layout/layout-for-hotel.scss";
-@import "../../blocks/header/header.scss";
-@import "../../blocks/footer/footer.scss";
-@import "../../blocks/cellar/cellar.scss";
-@import "../../blocks/pictures-demo/pictures-demo.scss";
-@import "../../blocks/diagram/diagram.scss";
-@import "../../blocks/number-booker/number-booker.scss";
-@import "../../blocks/stickers/stickers.scss";
-@import "../../blocks/review/review.scss";
-@import "../../blocks/marked-list/marked-list.scss";
+@import '../../assets/mixin-font';
+@import '../../assets/variables';
+@import '../../layout/layout-for-hotel.scss';
+@import '../../blocks/header/header.scss';
+@import '../../blocks/footer/footer.scss';
+@import '../../blocks/cellar/cellar.scss';
+@import '../../blocks/pictures-demo/pictures-demo.scss';
+@import '../../blocks/diagram/diagram.scss';
+@import '../../blocks/number-booker/number-booker.scss';
+@import '../../blocks/stickers/stickers.scss';
+@import '../../blocks/review/review.scss';
+@import '../../blocks/marked-list/marked-list.scss';
 
-.content{
+.content {
   padding-bottom: 60px;
   background-color: white;
-  &__wrapper{ 
+  &__wrapper {
     position: static;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  };
-  &__header{
-    margin:0 0 20px;
-    @include default-font($main-color_darkest, $size-larger, $size-largest, $weight: 700 );
-    &_margin_zero{
+  }
+  &__header {
+    margin: 0 0 20px;
+    @include default-font(
+      $main-color_darkest,
+      $size-larger,
+      $size-largest,
+      $weight: 700
+    );
+    &_margin_zero {
       margin: 0;
     }
-    &_shift_right{
+    &_shift_right {
       padding-left: 21px;
     }
-  };
-  &__font{
+  }
+  &__font {
     @include default-font($line: $size-largest);
+
     margin: 0;
-  };
-  &__pictures{
+  }
+  &__pictures {
     width: 100%;
     min-height: 485px;
     padding-bottom: 70px;
-  };
-  &__information{
+  }
+  &__information {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
     max-width: 710px;
   }
-  &__reviews{
+  &__reviews {
     margin-top: 13px;
     margin-bottom: 10px;
   }
-  &__cancel-rules{
+  &__cancel-rules {
     max-width: 345px;
     padding-right: 5px;
     text-align: left;
   }
-  & .pictures-demo{
-    width: 100%;
-    max-width: 1440px;
+  & .pictures-demo {
     position: absolute;
     left: 50%;
+    width: 100%;
+    max-width: 1440px;
     transform: translateX(-50%);
   }
 }
 
-
-.footer-container{
+.footer-container {
   border-top: 2px solid rgba(31, 32, 65, 0.15);
 }

@@ -1,65 +1,74 @@
-@import "../../assets/font-faces/MaterialIcons.scss";
-@import "../../assets/mixin-font";
-.tumblers{
-  &__header{
-    @include default-font($main-color_darkest, $size-small, $size-small+3, 700, none, uppercase);
+@import '../../assets/font-faces/MaterialIcons.scss';
+@import '../../assets/mixin-font';
+.tumblers {
+  &__header {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 3,
+      700,
+      none,
+      uppercase
+    );
+
     margin: 0;
     margin-bottom: 15px;
   }
-  &__label{
-    user-select: none;
-    vertical-align: top;
+  &__label {
+    position: relative;
     display: inline-block;
-    margin-right: 10px;
+    box-sizing: border-box;
     min-width: 40px;
     min-height: 20px;
+    margin-right: 10px;
     line-height: 18px;
-    position: relative;
+    vertical-align: top;
     border: 1px solid $main-color_lightest;
-    cursor: pointer;
     border-radius: 25% / 50%;
+    cursor: pointer;
     transition-duration: 0.5s;
-    box-sizing: border-box;
+    user-select: none;
     &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: inline-block;
-      content: "fiber_manual_record";
-      font-family: 'Material Icons';
       color: $main-color_lightest;
       font-size: 18px;
-      position: absolute;
-      left: 0px;
+      font-family: 'Material Icons', fantasy;
       transition-duration: 0.5s;
-      top: 0px;
+      content: 'fiber_manual_record';
     }
   }
-  &__checkbox{
+  &__checkbox {
     display: none;
-    &:checked{ 
-      & + .tumblers__label{ 
-        border: 1px solid  $highlight-color;
+    &:checked {
+      & + .tumblers__label {
+        border: 1px solid $highlight-color;
         transition-duration: 0.5s;
         &::before {
           left: 22px;
-          transition-duration: 0.5s;
           color: $highlight-color;
-          background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+          background: linear-gradient(
+            180deg,
+            $highlight-color,
+            $highlight-color_skew
+          );
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent; 
+          transition-duration: 0.5s;
+          -webkit-text-fill-color: transparent;
         }
       }
-    
     }
   }
-  &__item{
-    min-height: 24px;
+  &__item {
     display: block;
+    min-height: 24px;
   }
-  &__subscribe{
-    user-select: none;
-    vertical-align: top;
+  &__subscribe {
     display: inline-block;
+    vertical-align: top;
+    user-select: none;
     @include default-font();
-    
   }
 }
-

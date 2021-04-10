@@ -1,25 +1,22 @@
-.pictures-demo{ 
-  max-height: 485px;
+.pictures-demo {
   display: flex;
-  justify-content: stretch;
   align-items: stretch;
+  justify-content: stretch;
+  max-height: 485px;
   user-select: none;
-  &__large-picture-container{
-    overflow: hidden;
+  &__large-picture-container {
     width: auto;
-    
+    overflow: hidden;
   }
-  &__small-pictures-container{
+  &__small-pictures-container {
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
     align-content: stretch;
+    justify-content: stretch;
     overflow: hidden;
-    
   }
-  &__image{
-    object-fit: cover;
+  &__image {
     height: 100%;
+    object-fit: cover;
   }
-
 }

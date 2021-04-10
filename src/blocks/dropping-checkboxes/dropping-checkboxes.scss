@@ -1,100 +1,104 @@
-@import "../arrow-down/arrow-down.scss";
-@import "../../assets/mixin-font";
-@import "../../assets/mixin_outline";
-@import "../../assets/font-faces/FontAwesome.scss";
+@import '../arrow-down/arrow-down.scss';
+@import '../../assets/mixin-font';
+@import '../../assets/mixin_outline';
+@import '../../assets/font-faces/FontAwesome.scss';
 
-.dropping-checkboxes{
+.dropping-checkboxes {
   margin: 0;
   padding: 0;
-  border: none;
   text-align: left;
-  &__header{
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  border: none;
+  &__header {
     position: relative;
-    cursor: pointer;
-    user-select: none;
-    min-height: 44px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
   }
-  &__arrow{
-    text-align: center;
+  &__arrow {
     min-width: 44px;
     max-height: 44px;
     line-height: 44px;
+    text-align: center;
   }
-  &__title{
-    @include default-font($main-color_darkest, $size-small, 44px,  700, none, uppercase );
+  &__title {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      44px,
+      700,
+      none,
+      uppercase
+    );
+
     margin: 0;
     padding: 0;
   }
 
-  &__container{
+  &__container {
     display: none;
-    padding: 0;
     margin: 0;
-    &_visible{
+    padding: 0;
+    &_visible {
       display: block;
     }
   }
-  &__item{
-    list-style-type: none; 
+  &__item {
     margin-bottom: 15px;
+    list-style-type: none;
   }
-  &__checkbox{
+  &__checkbox {
     display: none;
-    & + .dropping-checkboxes__label{
+    & + .dropping-checkboxes__label {
       @include default-font($main-color_lighter);
+
       display: inline-block;
       min-height: 20px;
-      user-select: none;
-      background-color: white;
       font-style: normal;
-      letter-spacing: 0em;
+      letter-spacing: 0;
       text-align: left;
-      
+      background-color: white;
+      user-select: none;
+
       &::before {
-        content:'';
-        display: inline-block;
         position: relative;
+        display: inline-block;
+        box-sizing: border-box;
         width: 20px;
         height: 20px;
-        border: 1px solid $main-color_lightest;
-        box-sizing: border-box;
-        border-radius: 4px;
-        border-image: initial;
-        vertical-align: top;
-        cursor: pointer;
-        font-family: 'Font Awesome 5 Free';
+        margin-right: 10px;
+        color: $highlight-color;
+        font-weight: bold;
         font-size: 11px;
+        font-family: 'Font Awesome 5 Free', fantasy;
         line-height: 18px;
         text-align: center;
-        margin-right: 10px;
-        font-weight: bold;
-        color: $highlight-color;
-        
-        background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
+        vertical-align: top;
+        background: linear-gradient(
+          180deg,
+          $highlight-color,
+          $highlight-color_skew
+        );
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
+        border: 1px solid $main-color_lightest;
+        border-radius: 4px;
+        border-image: initial;
+        cursor: pointer;
+        content: '';
+        -webkit-text-fill-color: transparent;
       }
-    
     }
-    
   }
-  &__checkbox:checked{
-    & + .dropping-checkboxes__label{
+  &__checkbox:checked {
+    & + .dropping-checkboxes__label {
       &::before {
-        content: "\f00c";
-        border: 1px solid $highlight-color ;
+        border: 1px solid $highlight-color;
+        content: '\f00c';
       }
-  
     }
   }
 }
-
-
-
-
-

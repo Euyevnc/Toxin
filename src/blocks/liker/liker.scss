@@ -1,79 +1,84 @@
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.liker{
+.liker {
   display: inline-block;
   text-align: center;
-  &__head{
-    @include default-font($main-color_darkest, $size-small, $size-small+4, 700,none, uppercase);
+  &__head {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 4,
+      700,
+      none,
+      uppercase
+    );
+
     margin: 0;
     margin-bottom: 15px;
   }
-  &__item{
+  &__item {
     text-align: center;
-    & + .liker__item{
+    & + .liker__item {
       margin-left: 10px;
     }
   }
-  &__box{
+  &__box {
     display: none;
-    & + .liker__label{ 
+    & + .liker__label {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
       min-width: 40px;
       min-height: 20px;
-      line-height: 20px;
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
-      border-radius: 10px / 50%;
-      transition-duration: 0.5s;
-      @include default-font($main-color_lightest, $size-small - 2, 20px);
-      text-align: left;
-      box-sizing: border-box;
-      padding-left: 20px;
       padding-right: 5px;
+      padding-left: 20px;
+      line-height: 20px;
+      text-align: left;
       background-color: $main-color_lightest;
+      border-radius: 10px / 50%;
+      cursor: pointer;
+      transition-duration: 0.5s;
       user-select: none;
+      @include default-font($main-color_lightest, $size-small - 2, 20px);
       &::after {
-        display: inline-block;
-        content: "favorite_border";
-        font-family: 'Material Icons';
-        
         position: absolute;
         left: 5px;
-        transition-duration: 0.2s;
+        display: inline-block;
+        font-family: 'Material Icons', fantasy;
         vertical-align: middle;
-       
-      };
+        transition-duration: 0.2s;
+        content: 'favorite_border';
+      }
       &::before {
-        content: "";
         position: absolute;
-        background: white; 
-        border-radius: 9px / 50%;
         top: 1px;
+        right: 1px;
         bottom: 1px;
         left: 1px;
-        right: 1px;
+        background: white;
+        border-radius: 9px / 50%;
+        content: '';
       }
     }
   }
-  &__box:checked{ 
-    
-    & + .liker__label{ 
-      color: $highlight-color;
-      background: linear-gradient(180deg, $highlight-color, $highlight-color_skew);
-      transition-duration: 0.5s;
+  &__box:checked {
+    & + .liker__label {
       display: inline-block;
+      color: $highlight-color;
+      background: linear-gradient(
+        180deg,
+        $highlight-color,
+        $highlight-color_skew
+      );
+      transition-duration: 0.5s;
       &::after {
-        content: "favorite";
         transition-duration: 0.2s;
+        content: 'favorite';
       }
     }
-  
   }
-  &__counter{
-    z-index: 5;
+  &__counter {
     position: relative;
-  } 
+    z-index: 5;
+  }
 }
-
-
-

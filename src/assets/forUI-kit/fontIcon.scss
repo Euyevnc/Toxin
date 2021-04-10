@@ -1,22 +1,22 @@
 @import '../font-faces/Montserrat.scss';
-.font-icon__container{
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-};
-.font-icon__tag{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    opacity: 0.25;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    margin-right: 30px;
-    font-weight: 400;
-};
-.font-icon__text{
-    vertical-align: middle;
-    display: inline-block;
-    width: 377px;
-    margin: 0;
-    color:#1F2041;
-};
+.font-icon__container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.font-icon__tag {
+  display: inline-block;
+  margin-right: 30px;
+  font-weight: 400;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  text-align: left;
+  vertical-align: top;
+  opacity: 0.25;
+}
+.font-icon__text {
+  display: inline-block;
+  width: 377px;
+  margin: 0;
+  color: #1f2041;
+  vertical-align: middle;
+}

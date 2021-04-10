@@ -1,19 +1,23 @@
-@import "../../assets/font-faces/FontAwesome.scss";
-@import "../../assets//variables";
+@import '../../assets/font-faces/FontAwesome.scss';
+@import '../../assets//variables';
 
-.social{
-  &__link{
-    text-decoration: none;
-    margin:0;
+.social {
+  &__link {
+    margin: 0;
     margin-left: 20px;
     text-align: center;
+    text-decoration: none;
   }
-  &__icon{
+  &__icon {
     width: 24px;
     height: 24px;
-    font-size: 24px;
-    background: linear-gradient(180deg, $highlight-color, $highlight-color_skew); 
     color: transparent;
+    font-size: 24px;
+    background: linear-gradient(
+      180deg,
+      $highlight-color,
+      $highlight-color_skew
+    );
     -webkit-background-clip: text;
     background-clip: text;
   }

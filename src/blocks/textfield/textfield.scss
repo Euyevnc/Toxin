@@ -1,52 +1,67 @@
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.textfield{
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+.textfield {
   position: relative;
-  &__value{
-    padding-left: 15px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  &__value {
+    box-sizing: border-box;
     width: 100%;
     height: 44px;
+    padding-left: 15px;
     border: 1px solid $main-color_lightest;
-    @include default-font($line: 44px);
-    box-sizing: border-box;
     border-radius: 4px;
     transition-duration: 0.7s;
-    &::placeholder{
+    @include default-font($line: 44px);
+    &::placeholder {
       @include default-font($color: $main-color_lightest, $line: 44px);
+
+      opacity: 1;
       transition-duration: 0.7s;
-      opacity: 1;   
-    } 
-    &:hover{
+    }
+    &:hover {
       color: $main-color;
       border: 1px solid $main-color_lighter;
       transition-duration: 0.7s;
-      &::placeholder{
-        color:  $main-color_lighter;
+      &::placeholder {
+        color: $main-color_lighter;
         transition-duration: 0.7s;
       }
     }
-    &:focus{
+    &:focus {
       color: $main-color;
       border: 1px solid $main-color_lighter;
       transition-duration: 0.7s;
-      &::placeholder{
-        color:  $main-color_lighter;
+      &::placeholder {
+        color: $main-color_lighter;
         transition-duration: 0.7s;
       }
     }
   }
-  &__subscribe{
-    @include default-font($main-color_darkest, $size-small, $size-small+2.5, 700, none, uppercase);
+  &__subscribe {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 2.5,
+      700,
+      none,
+      uppercase
+    );
+
     margin: 0 0 5.5px;
   }
-  &__describe{
-    @include default-font($main-color_lighter, $size-small, $size-small+3, 400, none, uppercase);
-    margin: 0px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  };
-  
-}
+  &__describe {
+    @include default-font(
+      $main-color_lighter,
+      $size-small,
+      $size-small + 3,
+      400,
+      none,
+      uppercase
+    );
 
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+}

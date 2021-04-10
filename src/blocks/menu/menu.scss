@@ -1,117 +1,119 @@
 @import '../arrow-down/arrow-down.scss';
 @import '../authorization-panel/authorization-panel';
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.menu{
+.menu {
   margin-left: auto;
-  &__list{
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    list-style-type: none; 
+    list-style-type: none;
   }
-  &__element{
+  &__element {
     position: relative;
-    cursor: pointer;
-    margin: 0 ;
-    padding: 0 10px;
     max-height: 18px;
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: middle;
     border-radius: 4px;
+    cursor: pointer;
     user-select: none;
     @include default-font($color: $main-color_lighter);
-    vertical-align: middle;
-    &:hover{
+    &:hover {
       color: $main-color;
     }
-    &:focus{
+    &:focus {
       outline: none;
-      box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
+      box-shadow: 0 0 0 3px $main-color_lightest inset;
     }
   }
-  &__arrow-down{
-    display: inline-block;      
-    vertical-align: top;
-    height: 100%;
+  &__arrow-down {
+    display: inline-block;
     width: 25px;
+    height: 100%;
     line-height: 20px;
+    vertical-align: top;
   }
-  &__submenu{
-    margin: 0;
-    padding: 0;
-    display: none;
-    position: absolute;
-    top: 110%;
-    right: 0;
-    min-width: 150px;
-    border: 2px solid  $main-color_lightest;
-    background-color: white;
-    &_active{
-      z-index: 100;
-      display: block;
-    }
-    & .menu__element{
-      max-height: 45px;
-      padding: 0;
-      border-radius: 0;
-    }
-    & .menu__link{
-      display: inline-block;
-      width: 100%;
-      line-height: 45px;
-      font-size: 24px;
-      &:focus{
-        outline: 0;
-        box-shadow: 0px 0px 2px 2px  $main-color_lightest inset;
-      }
-    }
-  }   
-  &__link{    
+  &__link {
     display: inline-block;
     text-decoration: none;
     vertical-align: middle;
     user-select: none;
-    @include default-font($color: $main-color_lighter, $line: $size-middle+3);
-    &_active{
+    @include default-font($color: $main-color_lighter, $line: $size-middle + 3);
+    &_active {
       color: $main-color;
     }
   }
-  &__login{
+
+  &__submenu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    display: none;
+    min-width: 150px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border: 2px solid $main-color_lightest;
+    &_active {
+      z-index: 100;
+      display: block;
+    }
+    & .menu__element {
+      max-height: 45px;
+      padding: 0;
+      border-radius: 0;
+    }
+    & .menu__link {
+      display: inline-block;
+      width: 100%;
+      font-size: 24px;
+      line-height: 45px;
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 2px 2px $main-color_lightest inset;
+      }
+    }
+  }
+
+  &__login {
+    margin: 0 10px;
     padding-left: 20px;
     border-left: 1px solid $main-color_lightest;
-    margin: 0 10px;
   }
-  
-  @media(max-width: 650px) {
+
+  @media (max-width: 650px) {
     visibility: hidden;
-    &_expanded{
+    &_expanded {
       visibility: visible;
     }
-    &__list{
-      background-color: white;
+    &__list {
       position: absolute;
       top: 100%;
       right: 0;
-      align-items: flex-start;
-      flex-direction: column;
       z-index: 100;
-      border: 3px solid $highlight-color;
+      flex-direction: column;
+      align-items: flex-start;
       padding: 15px 5px;
+      background-color: white;
+      border: 3px solid $highlight-color;
     }
-    &__element{
+    &__element {
       max-height: 45px;
-      font-size: 24px;
-      vertical-align: middle; 
       margin: 10px 0;
-    }
-    &__link{
-      line-height: 45px;
       font-size: 24px;
       vertical-align: middle;
     }
-    &__arrow-down{
+    &__link {
+      font-size: 24px;
+      line-height: 45px;
+      vertical-align: middle;
+    }
+    &__arrow-down {
       vertical-align: middle;
     }
   }

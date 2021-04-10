@@ -1,50 +1,57 @@
-@import "../../assets/mixin-font";
-@import "../button/button.scss";
-@import "../textfield/textfield.scss";
+@import '../../assets/mixin-font';
+@import '../button/button.scss';
+@import '../textfield/textfield.scss';
 
-.entry-form{
-  background-color: white;
-  padding: 39px 29px 31px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+.entry-form {
   box-sizing: border-box;
+  padding: 39px 29px 31px;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  &__text{
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  &__text {
     @include default-font($color: $main-color_darkest);
-    text-align: center;
+
     margin: 0;
+    text-align: center;
   }
 
-  &__header{
-    @include default-font($main-color_darkest, $size-largest, $size-largest+6, 700);
+  &__header {
+    @include default-font(
+      $main-color_darkest,
+      $size-largest,
+      $size-largest + 6,
+      700
+    );
+
     margin: 0;
     margin-bottom: 20px;
   }
-  &__form{
-    margin: 20px 0 30px;
+  &__form {
     min-width: 320px;
+    margin: 20px 0 30px;
   }
-  &__input-container{
+  &__input-container {
     margin: 10px 0;
   }
-  &__registration{
-    display:flex;
-    justify-content: space-between;
+  &__registration {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-top: 30px;
   }
-  &__button{
+  &__button {
     height: 44px;
-    &_for_submit{
+    &_for_submit {
       min-width: 320px;
       margin-top: 20px;
     }
-    &_for_regist{
+    &_for_regist {
       min-width: 99px;
     }
   }
-  @media(max-width: 380px){
+  @media (max-width: 380px) {
     padding: 40px 10px 30px;
   }
 }

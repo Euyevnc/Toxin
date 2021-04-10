@@ -1,46 +1,52 @@
 @import '../double-date-picker/double-date-picker.scss';
 @import '../input-with-counter/input-with-counter.scss';
 @import '../button/button.scss';
-@import "../../assets/mixin-font";
+@import '../../assets/mixin-font';
 
-.number-finder{
-  background-color: #fff;
-  padding: 39px 29px 29px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+.number-finder {
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   max-width: 380px;
-  &__header{
-    @include default-font($main-color_darkest, $size-largest, $size-largest+5, 700);
-    margin: 0;
-    padding: 0; 
-    margin-bottom: 21px;
+  padding: 39px 29px 29px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  &__header {
+    @include default-font(
+      $main-color_darkest,
+      $size-largest,
+      $size-largest + 5,
+      700
+    );
+
     min-height: 59px;
+    margin: 0;
+    margin-bottom: 21px;
+    padding: 0;
   }
-  &__form{
+  &__form {
     min-width: 320px;
   }
-  &__container{
+  &__container {
     min-width: 320px;
-    &_for_calendar{
+    &_for_calendar {
       display: flex;
       justify-content: space-between;
       margin-bottom: 21px;
     }
-    &_for_input{
+    &_for_input {
       margin-bottom: 31px;
     }
   }
-  &__submit-button{
+  &__submit-button {
     height: 44px;
   }
-  @media(max-width: 380px){
-    padding-left: 10px;
+  @media (max-width: 380px) {
     padding-right: 10px;
+    padding-left: 10px;
   }
-  @media(max-width: 340px){
-    padding-left: 0px;
-    padding-right: 0px;
+  @media (max-width: 340px) {
+    padding-right: 0;
+    padding-left: 0;
   }
 }

@@ -1,67 +1,70 @@
-@import "../arrow-right/arrow-right.scss";
-@import "../../assets/mixin-font";
+@import '../arrow-right/arrow-right.scss';
+@import '../../assets/mixin-font';
 
-.pagination{
+.pagination {
   display: flex;
   flex-direction: column;
   align-items: center;
-  &__buttons-list{
-    display: inline; 
+  &__buttons-list {
+    display: inline;
     margin: 0;
-    padding: 0;
     margin-bottom: 10.5px;
+    padding: 0;
   }
-  &__button{
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 50%;
+    @include default-font($main-color_lighter, $size-small, 40px);
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 3px $main-color_lightest inset;
+    }
+  }
+  &__button {
+    display: inline-block;
     width: 40px;
     height: 40px;
-    display: inline-block;
     text-align: center;
-    cursor: pointer;
-    border-radius: 50%;
     vertical-align: middle;
+    border-radius: 50%;
+    cursor: pointer;
     &_type_arrow {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      & .pagination__link{
-        color: white;
-      }
-    };
-    &_active{
-      background: linear-gradient(180deg, $highlight-color 0%, $highlight-color_skew 100%);
-      & .pagination__link{
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      & .pagination__link {
         color: white;
       }
     }
-    &_hidden{
+    &_active {
+      background: linear-gradient(
+        180deg,
+        $highlight-color 0%,
+        $highlight-color_skew 100%
+      );
+      & .pagination__link {
+        color: white;
+      }
+    }
+    &_hidden {
       display: none;
     }
   }
-  &__link{
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-    box-sizing: border-box;
-    @include default-font($main-color_lighter, $size-small, 40px);
-    &:focus{
-      outline: 0; 
-      box-shadow: 0px 0px 0px 3px $main-color_lightest inset;
-    };
-  }
-  &__ellipsis{
+  &__ellipsis {
+    display: inline-block;
     width: 40px;
     height: 40px;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
-    display: inline-block;
     text-align: center;
-    user-select: none;
     vertical-align: middle;
+    user-select: none;
     @include default-font($main-color_lighter, $size-small, 40px);
   }
 
-  &__text{
+  &__text {
     @include default-font();
+
     margin: 10.5px 0 0;
     text-align: center;
   }
 }
-
-
