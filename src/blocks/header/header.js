@@ -1,9 +1,23 @@
-import initMenu from '../menu/menu';
-import initBurger from '../burger/burger';
+import menu from '../menu/menu';
+import burger from '../burger/burger';
 
-function initHeader() {
-  initMenu();
-  initBurger({ menuSelector: '.js-menu', activeClass: 'menu_expanded' });
+function header({ area = document } = {}) {
+  const headers = [];
+  const data = { menuSelector: '.js-menu', activeClass: 'menu_expanded' };
+  area.querySelectorAll('.js-header').forEach((element) => {
+    const newHeader = new Header(element, data);
+    headers.push(newHeader);
+  });
+  if (headers.length === 1) return headers[0];
+  return headers;
 }
 
-export default initHeader;
+class Header {
+  constructor(root, data) {
+    this.root = root;
+    this.menu = menu({ area: root });
+    this.burger = burger({ area: root, data });
+  }
+}
+
+export default header;

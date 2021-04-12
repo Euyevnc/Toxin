@@ -1,11 +1,11 @@
 @import '../../assets/font-faces/MaterialIcons.scss';
 @import '../../assets/variables';
-.arrow-down {
-  color: $main-color_lighter;
+.arrow {
   font-size: 24px;
   font-family: 'Material Icons', fantasy;
   direction: ltr;
   white-space: nowrap;
+  text-align: center;
   user-select: none;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

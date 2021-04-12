@@ -1,4 +1,4 @@
-include ../arrow-right/arrow-right.pug
+include ../arrow/arrow.pug
 mixin pagination({ amount = 0}={})
   div.pagination.js-pagination
     ul.pagination__buttons-list
@@ -20,5 +20,5 @@ mixin pagination({ amount = 0}={})
       - }
       li(class="pagination__button pagination__button_type_arrow")
         a(class = "pagination__link" href=`/page/2`) 
-          +arrow-right()
+          +arrow({ direction: 'right' })
     p.pagination__text 1 – 12 из 100+ вариантов аренды

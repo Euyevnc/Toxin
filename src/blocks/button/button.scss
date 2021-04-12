@@ -1,5 +1,5 @@
 @import '../../assets/mixin-font';
-@import '../arrow-right/arrow-right.scss';
+@import '../arrow/arrow.scss';
 .button {
   @include default-font(
     $size: $size-small,
@@ -31,6 +31,7 @@
     max-height: 24px;
     line-height: 24px;
     text-align: center;
+    text-transform: none;
     transform: translateY(-50%);
   }
   &_color_purple {

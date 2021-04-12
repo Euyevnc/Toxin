@@ -66,7 +66,7 @@ class InputWithCounter {
 
     this.input.classList.add('textfield-for-dropping__value_active');
     this.menu.classList.remove('input-with-counter__menu_hidden');
-    this.arrow.querySelector('.arrow-down').textContent = 'expand_less';
+    this.arrow.querySelector('.arrow').textContent = 'expand_less';
   }
 
   menuRollUp() {
@@ -79,7 +79,7 @@ class InputWithCounter {
 
     this.input.classList.remove('textfield-for-dropping__value_active');
     this.menu.classList.add('input-with-counter__menu_hidden');
-    this.arrow.querySelector('.arrow-down').textContent = 'expand_more';
+    this.arrow.querySelector('.arrow').textContent = 'expand_more';
   }
 
   confirm() {

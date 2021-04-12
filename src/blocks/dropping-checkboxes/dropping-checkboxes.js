@@ -19,7 +19,7 @@ class DroppingCheckboxes {
 
   init() {
     const { root } = this;
-    const arrow = this.root.querySelector('.arrow-down');
+    const arrow = this.root.querySelector('.js-dropping-checkboxes__arrow .arrow');
     const list = this.root.querySelector('.js-dropping-checkboxes__container');
     const object = this;
 

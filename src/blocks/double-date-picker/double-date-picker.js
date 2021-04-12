@@ -122,15 +122,7 @@ class DoubleDatePicker {
         departureInput.val('');
       }
       if (ev.target.closest('.ui-datepicker-button_conf')) {
-        const jsDate = arriveInput.datepicker('widget').data('datepickerExtensionRange');
-        const startDT = jsDate.startDateText;
-        const endDT = jsDate.endDateText;
-        const startD = jsDate.startDate;
-        const endD = jsDate.endDate;
-
         $.datepicker._hideDatepicker();
-
-        console.log(`Данные: ${startDT}- ${endDT}, (${startD};  ${endD})`);
       }
     }
 
@@ -144,30 +136,29 @@ class DoubleDatePicker {
         const actualArrow = arrow;
         document.removeEventListener('click', handlerDocClick);
         actualArrow.addEventListener('click', handlerArrowClick);
-        actualArrow.querySelector('.arrow-down').textContent = 'expand_more';
+        actualArrow.querySelector('.arrow').textContent = 'expand_more';
       };
     }
 
     function handlerDocShowing(e) {
       if (e.detail.input === arriveInput[0]) {
         arriveArrow.removeEventListener('click', handlerArrowClick);
-        arriveArrow.querySelector('.arrow-down').textContent = 'expand_less';
+        arriveArrow.querySelector('.arrow').textContent = 'expand_less';
       } else if (e.detail.input === departureInput[0]) {
         departureArrow.removeEventListener('click', handlerArrowClick);
-        departureArrow.querySelector('.arrow-down').textContent = 'expand_less';
+        departureArrow.querySelector('.arrow').textContent = 'expand_less';
       }
     }
 
     function handlerDocHiding(e) {
-      if (e.detail.datepickerShowing) {
-        if (e.detail.input === arriveInput[0]) {
-          const handlerDocClick = makeHandlerDocClick(arriveArrow);
-          document.addEventListener('click', handlerDocClick);
-        }
-        if (e.detail.input === departureInput[0]) {
-          const handlerDocClick = makeHandlerDocClick(departureArrow);
-          document.addEventListener('click', handlerDocClick);
-        }
+      if (!e.detail.datepickerShowing) return;
+      if (e.detail.input === arriveInput[0]) {
+        const handlerDocClick = makeHandlerDocClick(arriveArrow);
+        document.addEventListener('click', handlerDocClick);
+      }
+      if (e.detail.input === departureInput[0]) {
+        const handlerDocClick = makeHandlerDocClick(departureArrow);
+        document.addEventListener('click', handlerDocClick);
       }
     }
   }

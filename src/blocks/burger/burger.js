@@ -1,21 +1,23 @@
-function burger(data) {
-  const element = new Burger(document.querySelector('.js-burger'), data.menuSelector, data.activeClass);
-  element.init();
-  return element;
+function burger({ area = document, data = {} } = {}) {
+  const newBurger = new Burger(area, data.menuSelector, data.activeClass);
+  return newBurger;
 }
 
 class Burger {
-  constructor(root, menuSelector, activeClass) {
-    this.root = root;
+  constructor(area, menuSelector, activeClass) {
+    this.area = area;
     this.menuSelector = menuSelector;
     this.activeClass = activeClass;
+    this.#init();
   }
 
-  init() {
-    this.menu = document.querySelector(this.menuSelector);
-    const { root, activeClass, menu } = this;
+  #init = () => {
+    const { area, menuSelector, activeClass } = this;
+    this.menu = area.querySelector(menuSelector);
+    this.root = area.querySelector('.js-burger');
+    this.root.addEventListener('click', handlerBurgerClick);
 
-    root.addEventListener('click', handlerBurgerClick);
+    const { root, menu } = this;
     function handlerBurgerClick() {
       root.classList.toggle('burger_cond_active');
       menu.classList.toggle(activeClass);

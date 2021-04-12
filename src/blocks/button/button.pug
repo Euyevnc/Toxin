@@ -1,4 +1,4 @@
-include ../arrow-right/arrow-right.pug
+include ../arrow/arrow.pug
 mixin button({ text='', styles=[], type='button', withArrow = false }={})
 
   - let classes = ""
@@ -9,4 +9,4 @@ mixin button({ text='', styles=[], type='button', withArrow = false }={})
     span.button__text #{text}
     if withArrow
       span.button__arrow
-        +arrow-right()
+        +arrow({ direction: 'right' })

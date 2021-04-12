@@ -1,4 +1,4 @@
-@import '../arrow-down/arrow-down.scss';
+@import '../arrow/arrow.scss';
 @import '../../assets/mixin-font';
 @import '../../assets/mixin_outline';
 @import '../../assets/font-faces/FontAwesome.scss';
@@ -22,6 +22,7 @@
   &__arrow {
     min-width: 44px;
     max-height: 44px;
+    color: $main-color_lighter;
     line-height: 44px;
     text-align: center;
   }

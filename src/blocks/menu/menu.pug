@@ -1,5 +1,5 @@
 include ../authorization-panel/authorization-panel.pug
-include ../arrow-down/arrow-down.pug
+include ../arrow/arrow.pug
 mixin menu({ login = '', issues})
   nav(class="menu js-menu")
     ul(class="menu__list js-menu__list")
@@ -9,8 +9,8 @@ mixin menu({ login = '', issues})
         if val.blocks
           li(class=`js-menu__element menu__element ${modifier}` tabindex=0) 
             span.menu__link #{val.name}
-            span.menu__arrow-down
-              +arrow-down()
+            span.menu__arrow
+              +arrow({ direction: 'down' })
             ul.js-menu__submenu.menu__submenu
               each block in val.blocks
                 - let modifier = block.modifier  ? `menu__element_type_${block.modifier}` : ''

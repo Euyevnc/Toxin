@@ -1,9 +1,9 @@
-include ../arrow-right/arrow-right.pug
+include ../arrow/arrow.pug
 mixin textfield-for-sending({ label='', placeholder='Введите текст', describe='', type='text'}={})
   - if(!describe){describe=''}
   div(class=`js-textfield-for-sending textfield-for-sending`)
     span.textfield-for-sending__arrow.js-textfield-for-sending__arrow
-       +arrow-right()
+       +arrow({ direction: 'right' })
     label 
       if label
         h3.textfield-for-sending__subscribe #{label}

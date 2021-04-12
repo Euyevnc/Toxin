@@ -1,4 +1,4 @@
-@import '../arrow-down/arrow-down.scss';
+@import '../arrow/arrow.scss';
 @import '../authorization-panel/authorization-panel';
 @import '../../assets/mixin-font';
 
@@ -24,7 +24,7 @@
     user-select: none;
     @include default-font($color: $main-color_lighter);
   }
-  &__arrow-down {
+  &__arrow {
     display: inline-block;
     width: 25px;
     height: 100%;
@@ -106,7 +106,7 @@
       line-height: 45px;
       vertical-align: middle;
     }
-    &__arrow-down {
+    &__arrow {
       vertical-align: middle;
     }
   }

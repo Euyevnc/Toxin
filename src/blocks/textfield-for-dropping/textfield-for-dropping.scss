@@ -1,4 +1,4 @@
-@import '../arrow-down/arrow-down.scss';
+@import '../arrow/arrow.scss';
 @import '../../assets/mixin-font';
 .textfield-for-dropping {
   position: relative;
@@ -69,6 +69,7 @@
     display: inline-block;
     min-width: 44px;
     height: 44px;
+    color: $main-color_lighter;
     line-height: 45px;
     text-align: center;
     cursor: pointer;

@@ -1,8 +1,7 @@
-function textfieldForDropping() {
+function textfieldForDropping({ area = document } = {}) {
   const inputs = [];
-  document.querySelectorAll('.js-textfield-for-dropping').forEach((element) => {
+  area.querySelectorAll('.js-textfield-for-dropping').forEach((element) => {
     const newInput = new TextfieldForDropping(element);
-    newInput.init();
     inputs.push(newInput);
   });
   if (inputs.length === 1) return inputs[0];
@@ -11,9 +10,10 @@ function textfieldForDropping() {
 class TextfieldForDropping {
   constructor(root) {
     this.root = root;
+    this.#init();
   }
 
-  init() {
+  #init = () => {
     this.input = this.root.querySelector('.js-textfield-for-dropping__value');
     this.arrow = this.root.querySelector('.js-textfield-for-dropping__arrow');
   }
