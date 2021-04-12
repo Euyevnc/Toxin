@@ -1,7 +1,7 @@
-mixin radios({ descr = '', name='', radios=[]} = {})
+mixin radios({ label= '', name='', radios=[]} = {})
   div.radios
-    if descr
-      div.radios__header #{descr}
+    if label
+      div.radios__header #{label}
     each val in radios
       - let describe = val.describe
       - let checked = Boolean(val.checked)

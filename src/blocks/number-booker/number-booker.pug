@@ -1,7 +1,7 @@
 include ../double-date-picker/double-date-picker.pug
 include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
-mixin number-booker( {number='', category='', price = 0, servDesc='', servPrice='', initArrive, initDeparture, initLI1, initLI2, initLI3}={} )
+mixin number-booker( {number='', category='', price = 0, servDesc='', servPrice='', counter, datePicker}={} )
   article(class="booker js-booker")
     section.booker__information
       span.booker__main-info
@@ -15,9 +15,9 @@ mixin number-booker( {number='', category='', price = 0, servDesc='', servPrice=
     section.booker__forms
       form(name="booker")
         div.booker__calendar
-          +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
+          +double-date-picker( datePicker )
         div.booker__counter
-          +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI2} ] })
+          +inputs-with-counter( counter )
     
     section.booker__rent-calculation
       div.booker__rent

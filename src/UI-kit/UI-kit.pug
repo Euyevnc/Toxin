@@ -158,7 +158,7 @@ div.ui-kit-container
           header: 'Найдём номера под ваши пожелания',
           datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
           counter: { 
-            label: 'Гости', 
+            label: 'гости', 
             placeholder: 'Сколько гостей', 
             items:[ 
               {name: "взрослые", min: "0", max: "5", concat: true }, 
@@ -172,14 +172,56 @@ div.ui-kit-container
         })
 
       div.registration-form-container 
-        +registration()
+        +registration({
+          header: 'Регистрация аккаунта',
+          signupBtn: {text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'},
+          signinBtn: { text:'войти' },
+          signinText: 'Уже есть аккаунт на Toxin',
+          nameField: { placeholder: 'Имя'},
+          surnameField: { placeholder: 'Фамилия'},
+          sexRadio: { 
+            name: 'sex', 
+            radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] 
+          },
+          birthdayField: { label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"},
+          mailField: {label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"},
+          passwordField: {placeholder: 'Пароль', type: "password"},
+          offerTumbler: { issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] },
+        })
 
     section
       div.number-booker-container
-        +number-booker({number: 888, category: 'люкс', price: 9990, servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', servPrice: '-2179, 300'})
+        +number-booker({
+          number: 888, 
+          category: 'люкс', 
+          price: 9990, 
+          servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', 
+          servPrice: '-2179, 300',
+          counter: { 
+            label: 'Гости', 
+            placeholder: 'Сколько гостей', 
+            items:[ 
+              {name: "взрослые", min: "0", max: "5", concat: true, init: 2}, 
+              {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: 1}, 
+              {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+            ] 
+          },
+          datePicker: { 
+            initArrive: 4, 
+            initDeparture: 8, 
+            textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] 
+          }
+        })
 
       div.entry-form-container
-        +entry-form()
+        +entry-form({
+          header: 'Войти',
+          signinBtn: { text: 'Войти', isHighlight: true, withArrow: 'arrow', type: 'submit'},
+          signupBtn: { text: 'создать'},
+          signupText: 'Нет аккаунта на Toxin?',
+          mailField: {placeholder: 'Email', type: "email"},
+          passwordField: {placeholder: 'Пароль', type: "password"}
+        })
 
     section 
       div.expended-calendar-container 
@@ -190,10 +232,40 @@ div.ui-kit-container
     include ../assets/images/logo.img.svg
     section.header-container 
       .wrapper
-        +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+        +header({ 
+          menu: { 
+            login: false, 
+            issues: [ 
+              {name: "О нас", href:"/about_us/"},
+              {name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, 
+              {name: "Вакансии", href:"/list/" },
+              {name: "Новости", href:"/news/" },
+              {name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } 
+            ],
+            autorization: {
+              signinButton: 'войти',
+              signupButton: 'зарегестрироваться'
+            }
+          }, 
+        })
     section.header-container.header-autorized-container
       .wrapper 
-        +header({ menu: { login: 'Юлий Цезарь', issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+        +header({ 
+          menu: { 
+            login: 'Юлий Цезарь', 
+            issues: [ 
+              {name: "О нас", href:"/about_us/"},
+              {name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, 
+              {name: "Вакансии", href:"/list/" },
+              {name: "Новости", href:"/news/" },
+              {name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } 
+            ],
+            autorization: {
+              signinButton: 'войти',
+              signupButton: 'зарегестрироваться'
+            }  
+          }
+        })    
     section.footer-container 
       .wrapper
         +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )

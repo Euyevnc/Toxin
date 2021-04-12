@@ -1,5 +1,5 @@
-mixin date-mask({ label, placeholder, describe })
-  include ../../blocks/textfield/textfield.pug
+include ../../blocks/textfield/textfield.pug
+mixin date-mask( textfield )
   div(class= "js-date-mask date-mask")
-    +textfield({label, placeholder, describe})
+    +textfield( textfield )
     

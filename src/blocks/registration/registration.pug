@@ -3,33 +3,33 @@ include ../date-mask/date-mask.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
-mixin registration({ header='Регистрация аккаунта', subscription = 'Уже есть аккаунт на Toxin'}={})
+mixin registration({ header='account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler} = { })
   article(class="registration")
     h1.registration__header #{header}
     form(name="registration" class="registration__form")
       div(class="registration__data-name")
-        +textfield({ placeholder: 'Имя'})
+        +textfield( nameField )
       div(class="registration__data-name")
-        +textfield({ placeholder: 'Фамилия'})
+        +textfield( surnameField )
       div(class="registration__data-sex")
-        +radios({ name: 'sex', radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] } )
+        +radios( sexRadio )
       
       div(class="registration__data-birthday")
-        +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+        +date-mask( birthdayField )
 
       div(class="registration__data-email")
-        +textfield({label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"})
+        +textfield( mailField )
       div(class="registration__data-password")
-        +textfield({placeholder: 'Пароль', type: "password"})
+        +textfield( passwordField )
       div(class="registration__data-offer")
-        +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] })
+        +tumblers( offerTumbler )
 
       div(class="registration__button")
-        +button({text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'})
+        +button( signupBtn )
     div(class="registration__entry")
-      p.registration__text #{subscription}
+      p.registration__text #{signinText}
       div(class="registration__button")
-        +button({ text:'войти' })
+        +button( signinBtn )
 
 
 

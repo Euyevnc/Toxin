@@ -1,6 +1,6 @@
 include ../authorization-panel/authorization-panel.pug
 include ../arrow/arrow.pug
-mixin menu({ login = '', issues})
+mixin menu({ login = '', issues, autorization})
   nav(class="menu js-menu")
     ul(class="menu__list js-menu__list")
       each val in issues
@@ -24,4 +24,4 @@ mixin menu({ login = '', issues})
           a(href="/account/" class="menu__link") #{login}
       if !login
         li
-          +authorization-panel()
+          +authorization-panel( autorization )

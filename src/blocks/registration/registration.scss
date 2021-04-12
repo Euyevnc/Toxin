@@ -49,7 +49,7 @@
     min-width: 99px;
   }
   &__text {
-    @include default-font($main-color_darkest);
+    @include default-font($color: $main-color_darkest);
 
     text-align: center;
   }

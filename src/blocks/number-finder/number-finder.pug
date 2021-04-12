@@ -7,10 +7,8 @@ mixin number-finder({ header = 'We will find rooms according to your wishes', da
     h1.number-finder__header #{header}
     form(class="number-finder__form" name="number-finder")
       div(class="number-finder__container number-finder__container_for_calendar")
-        //- +double-date-picker( { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
         +double-date-picker( datePicker )
       div(class="number-finder__container number-finder__container_for_input")
-        //- +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true }, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} ] })
         +inputs-with-counter( counter )
       div(class="number-finder__submit-button")
         +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })
