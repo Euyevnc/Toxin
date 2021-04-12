@@ -1,7 +1,7 @@
 include ../button/button.pug
-mixin authorization-panel( {}={})
+mixin authorization-panel( { entryButton = 'sign in', registrationButton = 'sign up' } = { })
   span(class = 'authorization-panel')
     span.authorization-panel__entry-container
-      +button({text: "Войти", styles: ["color_empty", "height_low"], type: 'button'})
+      +button({text: entryButton, isLow: true, type: 'button'})
     span.authorization-panel__registration-container
-      +button({ text: "Зарегистрироваться", styles: ["color_purple", "height_low"], type: 'button' })
+      +button({ text: registrationButton, isLow: true, isHighlight: true, type: 'button' })

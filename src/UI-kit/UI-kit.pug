@@ -95,20 +95,20 @@ div.ui-kit-container
       div.buttons-container
         h3 buttons 
         .rounded-button-container 
-          +button( {text: 'click me', styles: ['color_purple'], type: 'button'})
+          +button( {text: 'click me', isHighlight: true, type: 'button'})
         .rounded-button-container 
-          +button( {text: 'click me', styles: ['color_purple'], type: 'button'})
+          +button( {text: 'click me', isHighlight: true, type: 'button'})
         .rounded-button-container 
-          +button( {text: 'click me', styles: ['color_empty'], type: 'button'})
+          +button( {text: 'click me', type: 'button'})
         .rounded-button-container 
-          +button( {text: 'click me', styles: ['color_empty'], type: 'button'})
+          +button( {text: 'click me', type: 'button'})
         br
         span.simple-button-container
           +link({ text: 'click me', styles: ['color_purple']})
         span.simple-button-container
           +link({ text: 'click me', styles: ['color_grey']})
       div.large-button-container 
-        +button({text: "перейти к оплате", styles: ['color_purple'], withArrow:true}) 
+        +button({text: "перейти к оплате", isHighlight: true, withArrow:true}) 
       div.pages-switcher-container 
         h3 pagination
         +pagination({amount: 15})
@@ -153,7 +153,23 @@ div.ui-kit-container
     include ../assets/images/logo.img.svg
     section   
       div.find-form-container
-        +number-finder()
+
+        +number-finder({ 
+          header: 'Найдём номера под ваши пожелания',
+          datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
+          counter: { 
+            label: 'Гости', 
+            placeholder: 'Сколько гостей', 
+            items:[ 
+              {name: "взрослые", min: "0", max: "5", concat: true }, 
+              {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
+              {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+            ], 
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить' 
+          }, 
+          buttonText: 'найти номер' 
+        })
 
       div.registration-form-container 
         +registration()

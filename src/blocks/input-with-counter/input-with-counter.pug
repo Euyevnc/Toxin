@@ -1,8 +1,7 @@
 include ../textfield-for-dropping/textfield-for-dropping.pug
-mixin inputs-with-counter({ label, placeholder, describe, type, items=[]} = {})
-  - let addedClass = type ? `input-with-counter_${type}` : ""
-  div(class=`js-input-with-counter input-with-counter ${addedClass}`)
-    +textfield-for-dropping({label, placeholder, describe, type})
+mixin inputs-with-counter({ label, placeholder, isSimple = false, items=[ ], deleteButtonText = 'delete', confirmButtonText = 'confirm' } = { })
+  div(class=`js-input-with-counter input-with-counter${isSimple ? ' input-with-counter_simple' : ''}`)
+    +textfield-for-dropping({ label, placeholder })
 
     ul(class="input-with-counter__menu js-input-with-counter__menu input-with-counter__menu_hidden")
       each item in items
@@ -13,8 +12,8 @@ mixin inputs-with-counter({ label, placeholder, describe, type, items=[]} = {})
             strong(class="js-input-with-counter__item-name input-with-counter__item-name" data-form1=item.nameForm1 data-form2=item.nameForm2 data-form3=item.nameForm3) #{item.name}
           span(class="js-input-with-counter__counter input-with-counter__counter")
             span(class= "js-input-with-counter__tumbler input-with-counter__tumbler" data-min=item.min tabindex=0) -
-            b(class="js-input-with-counter__number input-with-counter__number" data-init = item.init) 
+            b(class="js-input-with-counter__number input-with-counter__number") 
             span(class= "js-input-with-counter__tumbler input-with-counter__tumbler" data-max=item.max tabindex=0) +
       div.js-input-with-counter__buttons.input-with-counter__buttons
-        button(class="js-input-with-counter__button_delete input-with-counter__button input-with-counter__button_delete" tabindex=0 type='button') ОЧИСТИТЬ
-        button(class="js-input-with-counter__button_confirm input-with-counter__button input-with-counter__button_confirm" tabindex=0 type='button') ПРИМЕНИТЬ
+        button(class="js-input-with-counter__button_delete input-with-counter__button input-with-counter__button_delete" tabindex=0 type='button') #{deleteButtonText}
+        button(class="js-input-with-counter__button_confirm input-with-counter__button input-with-counter__button_confirm" tabindex=0 type='button') #{confirmButtonText}

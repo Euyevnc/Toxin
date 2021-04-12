@@ -25,11 +25,11 @@ mixin registration({ header='Регистрация аккаунта', subscript
         +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] })
 
       div(class="registration__button")
-        +button({text: 'Зарегестрироваться', styles: ['color_purple'], withArrow: true, type: 'submit'})
+        +button({text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'})
     div(class="registration__entry")
       p.registration__text #{subscription}
       div(class="registration__button")
-        +button({text:'войти', styles: ['color_empty'] })
+        +button({ text:'войти' })
 
 
 

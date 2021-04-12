@@ -14,7 +14,23 @@ block header
   +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
 block content   
   div.content__searcher-container
-     +number-finder()   
+
+    +number-finder({ 
+      header: 'Найдём номера под ваши пожелания',
+      datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
+      counter: { 
+        label: 'Гости', 
+        placeholder: 'Сколько гостей', 
+        items:[ 
+          {name: "взрослые", min: "0", max: "5", concat: true }, 
+          {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
+          {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+        ], 
+        deleteButtonText: 'очистить', 
+        confirmButtonText: 'подтвердить' 
+        }, 
+      buttonText: 'найти номер' 
+    })
   div.content__text-container
     p.content__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 block footer

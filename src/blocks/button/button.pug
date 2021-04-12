@@ -1,11 +1,6 @@
 include ../arrow/arrow.pug
-mixin button({ text='', styles=[], type='button', withArrow = false }={})
-
-  - let classes = ""
-  each style in styles 
-    - classes += `button_${style} `;
-
-  button(class=`button ${classes}` type = type) 
+mixin button({ text = '', isHighlight = false, isLow = false,  withArrow = false, type = 'button' } = { })
+  button(class=`button${ isHighlight ? ' button_highlight' : '' }${ isLow ? ' button_low' : '' }` type = type) 
     span.button__text #{text}
     if withArrow
       span.button__arrow
