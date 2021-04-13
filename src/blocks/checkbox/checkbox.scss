@@ -1,54 +1,13 @@
-@import '../../assets/mixin-font';
 @import '../../assets/font-faces/MaterialIcons.scss';
 
-.subscribed-checkboxes {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  border: none;
-  &__header {
-    @include default-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 3,
-      700,
-      none,
-      uppercase
-    );
-
-    margin: 0;
-    margin-bottom: 15px;
-    padding: 0;
-  }
-  &__item {
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-  &__textbox {
-    display: inline-block;
-    max-width: 230px;
-    padding-top: 1px;
-    user-select: none;
-  }
-  &__main-text {
-    @include default-font($weight: 700);
-
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-  &__sub-text {
-    @include default-font($main-color_lighter, $size-small, $size-middle);
-
-    margin: 0;
-  }
+.checkbox {
+  display: inline-block;
   &__checkbox {
     display: none;
-    & + .subscribed-checkboxes__label {
+
+    & + .checkbox__label {
       display: inline-block;
-      color: $main-color_lighter;
-      letter-spacing: 0;
-      text-align: left;
+      min-height: 20px;
       user-select: none;
       &::before {
         position: relative;
@@ -80,11 +39,36 @@
     }
   }
   &__checkbox:checked {
-    & + .subscribed-checkboxes__label {
+    & + .checkbox__label {
       &::before {
         border: 1px solid $highlight-color;
         content: '\f00c';
       }
+    }
+  }
+  &__text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 230px;
+    min-height: 20px;
+  }
+  &__main-text {
+    @include default-font($main-color_lighter);
+  }
+  &__sub-text {
+    @include default-font($main-color_lighter, $size-small, $size-middle);
+  }
+
+  &_with_subscription {
+    .checkbox__main-text {
+      @include default-font($weight: 700);
+
+      margin-bottom: 5px;
+    }
+    .checkbox__sub-text {
+      @include default-font($main-color_lighter, $size-small, $size-middle);
     }
   }
 }

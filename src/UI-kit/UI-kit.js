@@ -5,7 +5,7 @@ import doubleDatePicker from '../blocks/double-date-picker/double-date-picker';
 import datePicker from '../blocks/date-picker/date-picker';
 import rangeSlider from '../blocks/range-picker/range-picker';
 import counter from '../blocks/input-with-counter/input-with-counter';
-import expandableCheckboxes from '../blocks/dropping-checkboxes/dropping-checkboxes';
+import expandableCheckboxes from '../blocks/checkboxes/checkboxes';
 import booker from '../blocks/number-booker/number-booker';
 import finderForm from '../blocks/number-finder/number-finder';
 import header from '../blocks/header/header';
@@ -19,7 +19,6 @@ function handlerDOMLoaded() {
   finderForm();
   rangeSlider();
   datePicker();
-  expandableCheckboxes();
   expandableCheckboxes();
   doubleDatePicker();
   counter();

@@ -8,6 +8,7 @@ include ../blocks/date-picker/date-picker.pug
 include ../blocks/textfield-for-sending/textfield-for-sending.pug
 include ../blocks/textfield-for-dropping/textfield-for-dropping.pug
 include ../blocks/checkboxes/checkboxes.pug
+include ../blocks/checkbox/checkbox.pug
 include ../blocks/radios/radios.pug
 include ../blocks/tumblers/tumblers.pug
 include ../blocks/liker/liker.pug
@@ -15,8 +16,6 @@ include ../blocks/rate-stars/rate-stars.pug
 include ../blocks/range-picker/range-picker.pug
 include ../blocks/button/button.pug
 include ../blocks/link/link.pug
-include ../blocks/dropping-checkboxes/dropping-checkboxes.pug
-include ../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
 include ../blocks/pagination/pagination.pug
 include ../blocks/marked-list/marked-list.pug
 include ../blocks/stickers/stickers.pug
@@ -33,11 +32,11 @@ include ../blocks/entry-form/entry-form.pug
 
 
 //- Относительные пути для pug'a вообще возможно сделать??
-- let img1 = require(`./UI-kit/img/room-picture-1.jpg`).default
-- let img2 = require(`./UI-kit/img/room-picture-2.jpg`).default
-- let img3 = require(`./UI-kit/img/room-picture-3.jpg`).default
-- let img4 = require(`./UI-kit/img/room-picture-4.jpg`).default
-- let img5 = require(`./UI-kit/img/room-picture-5.jpg`).default
+- let img1 = require(`./UI-kit/img/UI-room-picture-1.jpg`).default
+- let img2 = require(`./UI-kit/img/UI-room-picture-2.jpg`).default
+- let img3 = require(`./UI-kit/img/UI-room-picture-3.jpg`).default
+- let img4 = require(`./UI-kit/img/UI-room-picture-4.jpg`).default
+- let img5 = require(`./UI-kit/img/UI-room-picture-5.jpg`).default
 
 div.ui-kit-container
   section.colors-and-type 
@@ -75,9 +74,21 @@ div.ui-kit-container
         +textfield-for-sending({lavel: 'subscription text field', placeholder: "Email"})
     section.forms-checkers-wrapper
       div.default-checkboxes-container
-        +checkboxes({ describe: 'правила дома', checkboxes: [{subscription:'Можно курить', value: 'smoking', name: 'smoking',}, {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},{subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}] })
+        +checkboxes({ 
+          header: '', 
+          checkboxes: [
+            {subscription:'Можно курить', value: 'smoking', name: 'smoking',}, 
+            {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},
+            {subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}
+          ] 
+        })
       div.radios-container
-        +radios({ name: 'sex', radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] } )
+        +radios({ 
+          name: 'sex', radios: [ 
+            {value: "man", describe:'Мужчина', checked:true},
+            {value: "women", describe:'Женщина'} 
+          ] 
+        } )
       div.tumblers-container 
         +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения', checked: "true"}, {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'}  ] })
         
@@ -87,7 +98,7 @@ div.ui-kit-container
         +liker({amount: 2})
 
       div.start-container 
-        +rate-stars({descr: 'rateing', compl: 4, share:0})
+        +rate-stars({descr: 'rateing', complete: 4, share:0})
         +rate-stars({compl: 5})
     section.forms-buttons-wrapper
       div.range-slider-container 
@@ -132,12 +143,45 @@ div.ui-kit-container
     section.forms-check-blockes-wrapper
       section
         div.dropping-checkboxes-container 
-          +dropping-checkboxes({ header: 'expandable checkbox list', checkboxes: [ {subscription:'Завтрак', name: 'breakfast', value: 'included'}, {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, {subscription:'Телевизор', name: 'TV', value: 'included'}, {subscription:'Шампунь', name: 'shampoo', value:'included'}, {subscription:'Телевизор', name: 'TV', value:'included'}, {subscription:'Шампунь', name: 'shampoo', value: 'included'}] })
+          +checkboxes({ 
+            header: 'expandable checkbox list', 
+            expanding: true,
+            checkboxes: [ 
+              {subscription:'Завтрак', name: 'breakfast', value: 'included'}, 
+              {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, 
+              {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, 
+              {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, 
+              {subscription:'Телевизор', name: 'TV', value: 'included'}, 
+              {subscription:'Шампунь', name: 'shampoo', value:'included'}, 
+              {subscription:'Телевизор', name: 'TV', value:'included'}, 
+              {subscription:'Шампунь', name: 'shampoo', value: 'included'}
+            ] 
+          })
         div.dropped-checkboxes-container
-          +dropping-checkboxes({ header: 'expandable checkbox list', expanded: "true", checkboxes: [ {subscription:'Завтрак', name: 'breakfast', value: 'included'}, {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, {subscription:'Телевизор', name: 'TV', value: 'included'}, {subscription:'Шампунь', name: 'shampoo', value:'included'}, {subscription:'Телевизор', name: 'TV', value:'included'}, {subscription:'Шампунь', name: 'shampoo', value: 'included'}] })
+          +checkboxes({ 
+            header: 'expandable checkbox list', 
+            expanding: true,
+            expanded: true,
+            checkboxes: [ 
+              {subscription:'Завтрак', name: 'breakfast', value: 'included'}, 
+              {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, 
+              {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, 
+              {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, 
+              {subscription:'Телевизор', name: 'TV', value: 'included'}, 
+              {subscription:'Шампунь', name: 'shampoo', value:'included'}, 
+              {subscription:'Телевизор', name: 'TV', value:'included'}, 
+              {subscription:'Шампунь', name: 'shampoo', value: 'included'}
+            ] 
+          })      
       section
         dev.checkboxes-with-describe-container 
-          +subscribed-checkboxes({ title: 'richc checkbox button', checkboxes: [ {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} ] })
+          +checkboxes({ 
+            header: 'richc checkbox button', 
+            checkboxes: [ 
+              {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, 
+              {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} 
+            ] 
+          })
       section 
         div.bullets-container
           h3 Bullet list

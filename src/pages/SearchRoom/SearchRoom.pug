@@ -6,8 +6,6 @@ include ../../blocks/date-picker/date-picker.pug
 include ../../blocks/input-with-counter/input-with-counter.pug
 include ../../blocks/range-picker/range-picker.pug
 include ../../blocks/checkboxes/checkboxes.pug
-include ../../blocks/subscribed-checkboxes/subscribed-checkboxes.pug
-include ../../blocks/dropping-checkboxes/dropping-checkboxes.pug
 include ../../blocks/number-demo/number-demo.pug
 include ../../blocks/pagination/pagination.pug
 block variables
@@ -45,15 +43,42 @@ block content
         +range-picker({ desc:"Диапазон цены", subscribe: "Стоимость за сутки прибывания в номере", keys: "{type, orient, scale, cloud, origin, range, step, initStart, initEnd", values: "range, horizontal, , none, 1000, 15000, 500, 5000, 10000" })
        
       div.content__rules
-        +checkboxes({ describe: 'правила дома', checkboxes: [{subscription:'Можно курить', value: 'smoking', name: 'smoking',}, {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},{subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}] })
+        +checkboxes({ 
+          header: 'правила дома',
+          checkboxes: [
+            {subscription:'Можно курить', value: 'smoking', name: 'smoking',}, 
+            {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},
+            {subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}
+          ] 
+        })
       div.content__availability
-        +subscribed-checkboxes({ title: 'доступность', checkboxes: [ {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} ] })
+        +checkboxes({
+          header: 'доступность', 
+          checkboxes: [ 
+            {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, 
+            {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} 
+          ] 
+        })
       
       div.content__equipment-counter
         +inputs-with-counter({type: 'simple', label: "удобства номера", placeholder: 'Выберете комплектацию', items: [{name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}] })
       
       div.content__facilities 
-        +dropping-checkboxes({ header: 'дополнительные удобства', checkboxes: [ {subscription:'Завтрак', name: 'breakfast', value: 'included'}, {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, {subscription:'Телевизор', name: 'TV', value: 'included'}, {subscription:'Шампунь', name: 'shampoo', value:'included'}, {subscription:'Телевизор', name: 'TV', value:'included'}, {subscription:'Шампунь', name: 'shampoo', value: 'included'}] })
+        +checkboxes({ 
+          header: 'дополнительные удобства', 
+          expanding: true, 
+          expanded: true,
+          checkboxes: [ 
+            {subscription:'Завтрак', name: 'breakfast', value: 'included'}, 
+            {subscription:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, 
+            {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, 
+            {subscription:'Кроватка', name: 'crib', value: 'included', checked:"true"}, 
+            {subscription:'Телевизор', name: 'TV', value: 'included'}, 
+            {subscription:'Шампунь', name: 'shampoo', value:'included'}, 
+            {subscription:'Телевизор', name: 'TV', value:'included'}, 
+            {subscription:'Шампунь', name: 'shampoo', value: 'included'}
+          ] 
+        })
   
   section.content__numbers-demonstration
     h1.content__heading Номера, которые мы для вас подобрали

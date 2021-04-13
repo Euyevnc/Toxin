@@ -9,6 +9,6 @@ mixin review( {name='', avatar='', date='01.01.1970', review='', likes=0, isLike
         p(class="review__days-ago" data-date=date) 
     section.review__body 
       div.review__liker  
-        +liker({amount: likes, checked: isLiked})
+        +liker({ amount: likes, checked: isLiked })
       p.review__content #{review}
     
