@@ -1,14 +1,15 @@
-mixin rate-stars({ descr='', compl=0, share=0}={})
-  - let added = 5 -(compl + Math.ceil(share) )
+mixin rate-stars({ label = '', complete = 0, share = 0} = { })
+  - const MAX_RATE = 5
+  - const added = MAX_RATE - (complete + Math.ceil(share) )
   div.rate-stars
     if descr
-      h3.rate-stars__head #{descr}
+      h3.rate-stars__head #{label}
     div.rate-stars__container
-      - for (let x = 0; x < compl; x++)
+      - for (let x = 0; x < complete; x++)
         span(class="rate-stars__star  rate-stars__star_colorized") star
       
       if(share)
-        - let pers = (share*100)
+        - const pers = (share*100)
         span(class="rate-stars__star  rate-stars__star_outlined") star_outline
           span(class="rate-stars__star  rate-stars__star_colorized" style=`width: ${pers}%`) star
 
