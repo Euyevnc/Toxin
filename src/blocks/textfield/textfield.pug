@@ -1,8 +1,11 @@
-mixin textfield({ label='', placeholder='enter text ', describe='', type='text'}={})
-  div(class=`textfield`)
-    label(class="textfield__label")
+mixin textfield({ label='', placeholder='enter text ', describe='', arrow = false, type='text'}={})
+  div.textfield.js-textfield
+    if arrow
+      span.textfield__arrow.js-textfield__arrow
+        +arrow({ direction: arrow })
+    label.textfield__label
       if label
         h3.textfield__subscribe  #{label}
-      input(class="textfield__value" placeholder=placeholder type=type )
-    p(class="textfield__describe") #{describe}
+      input.textfield__value.js-textfield__value(placeholder = placeholder type = type )
+    p.textfield__describe #{describe}
     

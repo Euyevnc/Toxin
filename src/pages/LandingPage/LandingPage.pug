@@ -19,8 +19,10 @@ block content
       header: 'Найдём номера под ваши пожелания',
       datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
       counter: { 
-        label: 'Гости', 
-        placeholder: 'Сколько гостей', 
+        textfield: {
+          label: 'Гости', 
+          placeholder: 'Сколько гостей',
+        }, 
         items:[ 
           {name: "взрослые", min: "0", max: "5", concat: true }, 
           {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 

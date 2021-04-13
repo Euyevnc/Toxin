@@ -1,7 +1,7 @@
 import 'jquery';
 import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
-import textfieldForDropping from '../textfield-for-dropping/textfield-for-dropping';
+import textfield from '../textfield/textfield';
 
 function datePicker({ area = document } = {}) {
   const pickers = [];
@@ -38,9 +38,9 @@ class DatePicker {
     this.arriveDate = root.dataset.initarrive;
     this.departureDate = root.dataset.initdeparture;
 
-    const textfield = textfieldForDropping({ area: root });
-    this.input = textfield.input;
-    this.arrow = textfield.arrow;
+    this.textfield = textfield({ area: root });
+    this.input = this.textfield.input;
+    this.arrow = this.textfield.arrow;
 
     this.#init();
   }

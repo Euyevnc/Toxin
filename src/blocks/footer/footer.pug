@@ -1,4 +1,4 @@
-include ../textfield-for-sending/textfield-for-sending.pug
+include ../textfield/textfield.pug
 mixin footer({ heading='', info='', heading2='', info2='', refs=[] }={})
   .footer 
     section(class="footer__block footer__block_width_wide")
@@ -23,7 +23,7 @@ mixin footer({ heading='', info='', heading2='', info2='', refs=[] }={})
         h3(class="footer__heading") #{heading2}
       if info2
         p(class="footer__inscription") #{info2} 
-      +textfield-for-sending({ placeholder: 'Email', type: "email"})
+      +textfield({ placeholder: 'Email', type: "email", arrow: 'right'})
 
 
 

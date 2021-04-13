@@ -1,7 +1,7 @@
-include ../textfield-for-dropping/textfield-for-dropping.pug
-mixin inputs-with-counter({ label, placeholder, describe, isSimple = false, items=[ ], deleteButtonText = 'delete', confirmButtonText = 'confirm' } = { })
+include ../textfield/textfield.pug
+mixin inputs-with-counter({ textfield, isSimple = false, items=[ ], deleteButtonText = 'delete', confirmButtonText = 'confirm' } = { })
   div(class=`js-input-with-counter input-with-counter${isSimple ? ' input-with-counter_simple' : ''}`)
-    +textfield-for-dropping({ label, placeholder, describe })
+    +textfield({ ...textfield, arrow: 'down' })
 
     ul(class="input-with-counter__menu js-input-with-counter__menu input-with-counter__menu_hidden")
       each item in items

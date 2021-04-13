@@ -1,5 +1,5 @@
 @import '../../assets/mixin-font';
-@import '../textfield-for-sending/textfield-for-sending.scss';
+@import '../textfield/textfield.scss';
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -80,5 +80,10 @@
     margin: 0 0 23px;
     vertical-align: baseline;
     @include default-font($color: $main-color, $line: $size-largest);
+  }
+  .textfield__arrow {
+    .arrow {
+      color: $highlight-color;
+    }
   }
 }

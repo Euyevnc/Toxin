@@ -44,7 +44,34 @@ block content
       p.content__font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
   
   section.content__booking 
-    +number-booker({number: 888, category: 'люкс', price: 9990, servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', servPrice: '-2179, 300'})
+    +number-booker({
+      number: 888, 
+      category: 'люкс', 
+      price: 9990, 
+      servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', 
+      servPrice: '-2179, 300',
+      counter: { 
+        textfield: {
+          label: 'Гости', 
+          placeholder: 'Сколько гостей', 
+        },
+        items:[ 
+          {name: "взрослые", min: "0", max: "5", concat: true, init: 2}, 
+          {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: 1}, 
+          {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+        ],
+        deleteButtonText: 'очистить', 
+        confirmButtonText: 'подтвердить'
+      },
+      datePicker: { 
+        initArrive: 4, 
+        initDeparture: 8, 
+        textfields: [ 
+          {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},
+          {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} 
+        ] 
+      }
+    })
 block footer
   +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
 block cellar  

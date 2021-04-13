@@ -1,11 +1,13 @@
-@import '../textfield-for-dropping/textfield-for-dropping.scss';
+@import '../textfield/textfield.scss';
 @import '../../assets/mixin-font';
 
 .input-with-counter {
   position: relative;
   z-index: 10;
   width: 100%;
+  color: $main-color_lighter;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+
   &__element {
     display: block;
     display: flex;
@@ -117,6 +119,11 @@
   &_simple {
     & .input-with-counter__buttons {
       display: none;
+    }
+  }
+  .textfield__value {
+    &::placeholder {
+      color: $main-color;
     }
   }
 }

@@ -6,7 +6,6 @@
 @import '../blocks/date-mask/date-mask.scss';
 @import '../blocks/double-date-picker/double-date-picker.scss';
 @import '../blocks/date-picker/date-picker.scss';
-@import '../blocks/textfield-for-sending/textfield-for-sending.scss';
 @import '../blocks/checkboxes/checkboxes.scss';
 @import '../blocks/checkbox/checkbox.scss';
 @import '../blocks/radios/radios.scss';
@@ -154,6 +153,7 @@ h3 {
   }
   & .field-with-arrow-container {
     max-width: 266px;
+    color: $highlight-color;
   }
 
   & .tumblers-container {

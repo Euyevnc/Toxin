@@ -1,6 +1,13 @@
 @import '../../assets/calendar/calendar.scss';
-@import '../textfield-for-dropping/textfield-for-dropping.scss';
+@import '../textfield/textfield.scss';
+@import '../../assets/_variables.scss';
 
 .date-picker {
   position: relative;
+  color: $main-color_lighter;
+  .textfield__value {
+    &::placeholder {
+      color: $main-color;
+    }
+  }
 }

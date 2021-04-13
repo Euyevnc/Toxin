@@ -1,8 +1,6 @@
-import textfieldForDropping from '../textfield-for-dropping/textfield-for-dropping';
+import textfield from '../textfield/textfield';
 
 function inputWithCounter() {
-  textfieldForDropping();
-
   const counters = [];
 
   document.querySelectorAll('.js-input-with-counter').forEach((element) => {
@@ -18,6 +16,9 @@ class InputWithCounter {
   constructor(root) {
     this.root = root;
     this.items = [];
+    this.textfield = textfield({ area: root });
+    this.input = this.textfield.input;
+    this.arrow = this.textfield.arrow;
   }
 
   init() {
@@ -45,8 +46,6 @@ class InputWithCounter {
       this.items.push(newItem);
     });
 
-    this.input = this.root.querySelector('.js-textfield-for-dropping__value');
-    this.arrow = this.root.querySelector('.js-textfield-for-dropping__arrow');
     this.menu = this.root.querySelector('.js-input-with-counter__menu');
     this.clearingButton = this.root.querySelector('.js-input-with-counter__button_delete');
     this.confirmingButton = this.root.querySelector('.js-input-with-counter__button_confirm');
@@ -64,7 +63,7 @@ class InputWithCounter {
     this.arrow.addEventListener('click', this.handlerArrowClick2);
     this.arrow.removeEventListener('click', this.handlerArrowClick);
 
-    this.input.classList.add('textfield-for-dropping__value_active');
+    this.input.classList.add('textfield__value_active');
     this.menu.classList.remove('input-with-counter__menu_hidden');
     this.arrow.querySelector('.arrow').textContent = 'expand_less';
   }
@@ -77,7 +76,7 @@ class InputWithCounter {
     this.arrow.addEventListener('click', this.handlerArrowClick);
     this.arrow.removeEventListener('click', this.handlerArrowClick2);
 
-    this.input.classList.remove('textfield-for-dropping__value_active');
+    this.input.classList.remove('textfield__value_active');
     this.menu.classList.add('input-with-counter__menu_hidden');
     this.arrow.querySelector('.arrow').textContent = 'expand_more';
   }

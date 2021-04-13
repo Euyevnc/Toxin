@@ -5,8 +5,6 @@ include ../blocks/input-with-counter/input-with-counter.pug
 include ../blocks/date-mask/date-mask.pug
 include ../blocks/double-date-picker/double-date-picker.pug
 include ../blocks/date-picker/date-picker.pug
-include ../blocks/textfield-for-sending/textfield-for-sending.pug
-include ../blocks/textfield-for-dropping/textfield-for-dropping.pug
 include ../blocks/checkboxes/checkboxes.pug
 include ../blocks/checkbox/checkbox.pug
 include ../blocks/radios/radios.pug
@@ -63,15 +61,28 @@ div.ui-kit-container
       div.textfield-active-container 
         +textfield( {label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'hover/focus'})
       div.input-with-counter-container 
-        +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+        +inputs-with-counter({ 
+            textfield: {
+            label: 'Гости',
+            placeholder: 'Сколько гостей'
+          },
+          items:[ 
+            {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, 
+            {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2},
+            {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
+          ] 
+        })
       div.input-with-mask-container 
         +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
       div.double-range-calendar-container
         +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
       div.range-calendar-container 
-        +date-picker({ initArrive: 4, initDeparture: 8})
+        +date-picker({ 
+          textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
+          initArrive: 4, 
+          initDeparture: 8})
       div.field-with-arrow-container 
-        +textfield-for-sending({lavel: 'subscription text field', placeholder: "Email"})
+        +textfield({lavel: 'subscription text field', placeholder: "Email", arrow: 'right'})
     section.forms-checkers-wrapper
       div.default-checkboxes-container
         +checkboxes({ 
@@ -129,16 +140,65 @@ div.ui-kit-container
     section.forms-dropdowns-wrapper
       section
         div.default-input-drop-container 
-          +inputs-with-counter({type: 'simple', label: "удобства номера", placeholder: 'Выберете комплектацию', items: [{name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}] })
+          +inputs-with-counter({
+            textfield: {
+              label: "удобства номера", 
+              placeholder: 'Выберете комплектацию', 
+            },
+            type: 'simple', 
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить',
+            items: [
+              {name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, 
+              {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, 
+              {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}
+            ] 
+          })
 
         div.expand-input-drop-container 
-          +inputs-with-counter({type: 'simple', label: "удобства номера", placeholder: 'Выберете комплектацию', items: [{name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}] })
+          +inputs-with-counter({
+            textfield: {
+              label: "удобства номера", 
+              placeholder: 'Выберете комплектацию', 
+            },
+            type: 'simple', 
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить',
+            items: [
+              {name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2},
+               {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, 
+               {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}
+              ] 
+            })
       section
         div.expand-input-drop-container
-          +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+          +inputs-with-counter({ 
+            textfield: {
+              label: "удобства номера", 
+              placeholder: 'Выберете комплектацию', 
+            },
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить', 
+            items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, 
+            {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, 
+            {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
+          ] 
+        })
       section
         div.expand-input-drop-container
-          +inputs-with-counter({ label: 'Гости', placeholder: 'Сколько гостей', items:[ {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} ] })
+          +inputs-with-counter({ 
+            textfield: {
+              label: 'Гости', 
+              placeholder: 'Сколько гостей',
+            },
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить', 
+            items:[ 
+              {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, 
+              {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, 
+              {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
+            ] 
+          })
 
     section.forms-check-blockes-wrapper
       section
@@ -202,8 +262,10 @@ div.ui-kit-container
           header: 'Найдём номера под ваши пожелания',
           datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
           counter: { 
-            label: 'гости', 
-            placeholder: 'Сколько гостей', 
+            textfield: {
+              label: 'гости', 
+              placeholder: 'Сколько гостей', 
+            },
             items:[ 
               {name: "взрослые", min: "0", max: "5", concat: true }, 
               {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
@@ -242,13 +304,17 @@ div.ui-kit-container
           servDesc: 'Сбор за услуги, Сбор за дополнительные услуги', 
           servPrice: '-2179, 300',
           counter: { 
-            label: 'Гости', 
-            placeholder: 'Сколько гостей', 
+            textfield: {
+              label: 'Гости', 
+              placeholder: 'Сколько гостей', 
+            },
             items:[ 
               {name: "взрослые", min: "0", max: "5", concat: true, init: 2}, 
               {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: 1}, 
               {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
-            ] 
+            ],
+            deleteButtonText: 'очистить', 
+            confirmButtonText: 'подтвердить'
           },
           datePicker: { 
             initArrive: 4, 

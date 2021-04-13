@@ -1,11 +1,9 @@
 import $ from 'jquery';
 import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
-import textfieldForDropping from '../textfield-for-dropping/textfield-for-dropping';
+import textfield from '../textfield/textfield';
 
 function doubleDatePicker() {
-  textfieldForDropping();
-
   const pickers = [];
 
   document.querySelectorAll('.js-double-date-picker').forEach((element) => {
@@ -13,6 +11,7 @@ function doubleDatePicker() {
     newPicker.init();
     pickers.push(newPicker);
   });
+
   if (pickers.length === 1) return pickers[0];
   return pickers;
 }
@@ -39,22 +38,21 @@ class DoubleDatePicker {
       selectOtherMonths: true,
       dateFormat: 'dd.mm.yy',
     };
+    this.textfields = textfield({ area: root });
+    this.arriveInput = this.textfields[0].input;
+    this.departureInput = this.textfields[1].input;
+    this.arriveArrow = this.textfields[0].arrow;
+    this.departureArrow = this.textfields[1].arrow;
+    this.arriveDate = root.querySelector('.js-double-date-picker__container_for_first').dataset.init;
+    this.departureDate = root.querySelector('.js-double-date-picker__container_for_second').dataset.init;
   }
 
   init() {
-    const arriveCont = this.root.querySelector('.js-double-date-picker__container_for_first');
-    const departureCont = this.root.querySelector('.js-double-date-picker__container_for_second');
-
-    this.arriveInput = $(arriveCont).find('.js-textfield-for-dropping__value');
-    this.departureInput = $(departureCont).find('.js-textfield-for-dropping__value');
-    this.arriveArrow = arriveCont.querySelector('.js-textfield-for-dropping__arrow');
-    this.departureArrow = departureCont.querySelector('.js-textfield-for-dropping__arrow');
-    this.arriveDate = arriveCont.dataset.init;
-    this.departureDate = departureCont.dataset.init;
-
     const object = this;
+    const arriveInput = $(this.arriveInput);
+    const departureInput = $(this.departureInput);
     const {
-      arriveInput, departureInput, arriveArrow, departureArrow, arriveDate, departureDate,
+      arriveArrow, departureArrow, arriveDate, departureDate,
     } = this;
 
     $.datepicker.regional.ru = this.params;
