@@ -3,13 +3,12 @@ include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
 
 mixin number-finder({ header = 'We will find rooms according to your wishes', datePicker = { }, counter = { }, buttonText = 'find a number' } = { })
-  article(class="js-number-finder number-finder")
+  article.js-number-finder.number-finder
     h1.number-finder__header #{header}
-    form(class="number-finder__form" name="number-finder")
-      div(class="number-finder__container number-finder__container_for_calendar")
+    form.number-finder__form(name = 'number-finder', action = '')
+      .number-finder__container.number-finder__container_for_calendar
         +double-date-picker( datePicker )
-      div(class="number-finder__container number-finder__container_for_input")
+      .number-finder__container.number-finder__container_for_input
         +inputs-with-counter( counter )
-      div(class="number-finder__submit-button")
+      .number-finder__submit-button
         +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })
-

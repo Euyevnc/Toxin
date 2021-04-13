@@ -1,7 +1,7 @@
 include ../textfield/textfield.pug
-mixin double-date-picker({ initArrive=null, initDeparture=null , textfields=[ { }, { }] }={})
+mixin double-date-picker({ initArrive = null, initDeparture = null , textfields = [ { }, { } ] } = { })
   .js-double-date-picker.double-date-picker
-    div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_first js-double-date-picker__container_for_first` data-init = initArrive)
+    .double-date-picker__container.js-double-date-picker__container.double-date-picker__container_for_first.js-double-date-picker__container_for_first(data-init = initArrive)
       +textfield({ ...textfields[0], arrow: 'down' })
-    div(class=`double-date-picker__container js-double-date-picker__container double-date-picker__container_for_second js-double-date-picker__container_for_second` data-init = initDeparture)
+    .double-date-picker__container.js-double-date-picker__container.double-date-picker__container_for_second.js-double-date-picker__container_for_second(data-init = initDeparture)
       +textfield({ ...textfields[1], arrow: 'down' })

@@ -2,11 +2,11 @@ include ../checkbox/checkbox.pug
 mixin checkboxes({ header = '', checkboxes = [ ], expanding = false, expanded = false} = { })
   fieldset.checkboxes.js-checkboxes
     if header
-      legend.checkboxes__header.js-checkboxes__header(class = `${expanding ? 'js-checkboxes__header_expanding checkboxes__header_expanding' : ''}`  tabindex = expanding ? 0 : -1 data-expanded = expanded ) #{header}
+      legend.checkboxes__header.js-checkboxes__header(class = `${expanding ? 'js-checkboxes__header_expanding checkboxes__header_expanding' : ''}`, tabindex = expanding ? 0 : -1, data-expanded = expanded) #{header}
         if expanding 
           span.js-checkboxes__arrow.checkboxes__arrow
             +arrow({ direction: 'down' })
-    div.checkboxes__container.js-checkboxes__container
+    .checkboxes__container.js-checkboxes__container
       each checkbox in checkboxes
-        div.checkboxes__item
+        .checkboxes__item
           +checkbox( checkbox )

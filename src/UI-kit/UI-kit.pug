@@ -28,15 +28,13 @@ include ../blocks/number-finder/number-finder.pug
 include ../blocks/number-booker/number-booker.pug
 include ../blocks/entry-form/entry-form.pug
 
-
-//- Относительные пути для pug'a вообще возможно сделать??
 - let img1 = require(`./UI-kit/img/UI-room-picture-1.jpg`).default
 - let img2 = require(`./UI-kit/img/UI-room-picture-2.jpg`).default
 - let img3 = require(`./UI-kit/img/UI-room-picture-3.jpg`).default
 - let img4 = require(`./UI-kit/img/UI-room-picture-4.jpg`).default
 - let img5 = require(`./UI-kit/img/UI-room-picture-5.jpg`).default
 
-div.ui-kit-container
+.ui-kit-container
   section.colors-and-type 
     include ../assets/images/logo.img.svg 
     section.colors-container 
@@ -56,11 +54,11 @@ div.ui-kit-container
   section.forms
     include ../assets/images/logo.img.svg
     section.forms-fields-wrapper
-      div.textfield-container 
+      .textfield-container 
         +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
-      div.textfield-active-container 
+      .textfield-active-container 
         +textfield( {label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'hover/focus'})
-      div.input-with-counter-container 
+      .input-with-counter-container 
         +inputs-with-counter({ 
             textfield: {
             label: 'Гости',
@@ -72,19 +70,19 @@ div.ui-kit-container
             {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
           ] 
         })
-      div.input-with-mask-container 
+      .input-with-mask-container 
         +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
-      div.double-range-calendar-container
+      .double-range-calendar-container
         +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
-      div.range-calendar-container 
+      .range-calendar-container 
         +date-picker({ 
           textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
           initArrive: 4, 
           initDeparture: 8})
-      div.field-with-arrow-container 
+      .field-with-arrow-container 
         +textfield({lavel: 'subscription text field', placeholder: "Email", arrow: 'right'})
     section.forms-checkers-wrapper
-      div.default-checkboxes-container
+      .default-checkboxes-container
         +checkboxes({ 
           header: '', 
           checkboxes: [
@@ -93,28 +91,28 @@ div.ui-kit-container
             {subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:"true"}
           ] 
         })
-      div.radios-container
+      .radios-container
         +radios({ 
           name: 'sex', radios: [ 
             {value: "man", describe:'Мужчина', checked:true},
             {value: "women", describe:'Женщина'} 
           ] 
         } )
-      div.tumblers-container 
+      .tumblers-container 
         +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения', checked: "true"}, {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'}  ] })
         
-      div.likers-container 
+      .likers-container 
         h3 like button
         +liker({amount: 12, checked: 'checked'})
         +liker({amount: 2})
 
-      div.start-container 
+      .start-container 
         +rate-stars({descr: 'rateing', complete: 4, share:0})
         +rate-stars({compl: 5})
     section.forms-buttons-wrapper
-      div.range-slider-container 
+      .range-slider-container 
         +range-picker({ desc:"Диапазон цены", subscribe: "Стоимость за сутки прибывания в номере", keys: "{type, orient, scale, cloud, origin, range, step, initStart, initEnd", values: "range, horizontal, , none, 1000, 15000, 500, 5000, 10000" })
-      div.buttons-container
+      .buttons-container
         h3 buttons 
         .rounded-button-container 
           +button( {text: 'click me', isHighlight: true, type: 'button'})
@@ -126,20 +124,20 @@ div.ui-kit-container
           +button( {text: 'click me', type: 'button'})
         br
         span.simple-button-container
-          +link({ text: 'click me', styles: ['color_purple']})
+          +link({ text: 'click me', isHighlight: true })
         span.simple-button-container
-          +link({ text: 'click me', styles: ['color_grey']})
-      div.large-button-container 
+          +link({ text: 'click me'})
+      .large-button-container 
         +button({text: "перейти к оплате", isHighlight: true, withArrow:true}) 
-      div.pages-switcher-container 
+      .pages-switcher-container 
         h3 pagination
         +pagination({amount: 15})
 
-    div(style="width: 100%; height:100px")
+    div(style = 'width: 100%; height:100px')
 
     section.forms-dropdowns-wrapper
       section
-        div.default-input-drop-container 
+        .default-input-drop-container 
           +inputs-with-counter({
             textfield: {
               label: "удобства номера", 
@@ -155,7 +153,7 @@ div.ui-kit-container
             ] 
           })
 
-        div.expand-input-drop-container 
+        .expand-input-drop-container 
           +inputs-with-counter({
             textfield: {
               label: "удобства номера", 
@@ -171,7 +169,7 @@ div.ui-kit-container
               ] 
             })
       section
-        div.expand-input-drop-container
+        .expand-input-drop-container
           +inputs-with-counter({ 
             textfield: {
               label: "удобства номера", 
@@ -185,7 +183,7 @@ div.ui-kit-container
           ] 
         })
       section
-        div.expand-input-drop-container
+        .expand-input-drop-container
           +inputs-with-counter({ 
             textfield: {
               label: 'Гости', 
@@ -202,7 +200,7 @@ div.ui-kit-container
 
     section.forms-check-blockes-wrapper
       section
-        div.dropping-checkboxes-container 
+        .dropping-checkboxes-container 
           +checkboxes({ 
             header: 'expandable checkbox list', 
             expanding: true,
@@ -217,7 +215,7 @@ div.ui-kit-container
               {subscription:'Шампунь', name: 'shampoo', value: 'included'}
             ] 
           })
-        div.dropped-checkboxes-container
+        .dropped-checkboxes-container
           +checkboxes({ 
             header: 'expandable checkbox list', 
             expanding: true,
@@ -243,20 +241,20 @@ div.ui-kit-container
             ] 
           })
       section 
-        div.bullets-container
+        .bullets-container
           h3 Bullet list
           +marked-list({ elements: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"] })
        
     section.reviews-wrapper  
-      div.stickers-container 
+      .stickers-container 
         +stickers({ issues: [{icon: "insert_emoticon", describe: "Комфорт", subscribe: "Шумопоглощающие стены"}, {icon: "location_city", describe: "Удобство",  subscribe: "Окно в каждой из спален"}, {icon: "whatshot", describe: "Уют" , subscribe: "Номер оснащён камином"}] })
-      div.review-wrapper 
+      .review-wrapper 
         +review({name: 'Мурад Сарафанов', avatar: require('./UI-kit/img/review-1-avatar.jpg').default, review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', date: '03.05.2021', likes:12, isLiked: true})
    
   section.cards 
     include ../assets/images/logo.img.svg
     section   
-      div.find-form-container
+      .find-form-container
 
         +number-finder({ 
           header: 'Найдём номера под ваши пожелания',
@@ -277,7 +275,7 @@ div.ui-kit-container
           buttonText: 'найти номер' 
         })
 
-      div.registration-form-container 
+      .registration-form-container 
         +registration({
           header: 'Регистрация аккаунта',
           signupBtn: {text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'},
@@ -296,7 +294,7 @@ div.ui-kit-container
         })
 
     section
-      div.number-booker-container
+      .number-booker-container
         +number-booker({
           number: 888, 
           category: 'люкс', 
@@ -323,7 +321,7 @@ div.ui-kit-container
           }
         })
 
-      div.entry-form-container
+      .entry-form-container
         +entry-form({
           header: 'Войти',
           signinBtn: { text: 'Войти', isHighlight: true, withArrow: 'arrow', type: 'submit'},
@@ -334,8 +332,8 @@ div.ui-kit-container
         })
 
     section 
-      div.expended-calendar-container 
-      div.number-demonstration-container
+      .expended-calendar-container 
+      .number-demonstration-container
         +number-demo({ number: 888, category: "люкс", price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img4] })
         +number-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img1] })
   section.headers-and-footers
@@ -383,7 +381,5 @@ div.ui-kit-container
       .wrapper
         +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
     section.card-container 
-      div(class="slim-wrapper")
+      .slim-wrapper
         +card({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
-
-

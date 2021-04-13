@@ -1,5 +1,5 @@
-mixin tumblers( { header='', issues=[]}={})
-  div.tumblers
+mixin tumblers( { header = ' ', issues = [ ] } = { })
+  .tumblers
     if header
       h3.tumblers__header #{header}
     each val in issues
@@ -9,9 +9,8 @@ mixin tumblers( { header='', issues=[]}={})
       - let checked = Boolean(val.checked)
       label.tumblers__item
         if checked 
-          input(class="tumblers__checkbox" type="checkbox" name=name value=value checked)
+          input.tumblers__checkbox(type = 'checkbox', name = name, value = value, checked)
         else 
-          input(class="tumblers__checkbox" type="checkbox" name=name value=value)
-        span(class="tumblers__label" tabindex=0) 
+          input.tumblers__checkbox(type = 'checkbox', name = name, value = value)
+        span.tumblers__label(tabindex = 0) 
         span.tumblers__subscribe #{desc}
-        

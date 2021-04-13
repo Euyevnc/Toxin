@@ -1,6 +1,6 @@
 mixin liker({ amount = 0, checked = false } = { })
   span.liker
     label.liker__item
-      input(type="checkbox" class="liker__box" checked=checked)
-      span(class="liker__label") 
+      input.liker__box(type='checkbox', checked=checked)
+      span.liker__label
         span.liker__counter #{amount}

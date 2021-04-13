@@ -1,37 +1,36 @@
 include ../double-date-picker/double-date-picker.pug
 include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
-mixin number-booker( {number='', category='', price = 0, servDesc='', servPrice='', counter, datePicker}={} )
-  article(class="booker js-booker")
+mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker } = { } )
+  article.booker.js-booker
     section.booker__information
       span.booker__main-info
         b.booker__font_color_black.booker__font_size_middle № 
-        strong(class="booker__number js-booker__number booker__font_color_black booker__font_size_large" data-number=number)
-        b(class="booker__category js-booker__category booker__font_color_purple booker__font_size_small booker__font_uppercase" data-category=category)
+        strong.booker__number.js-booker__number.booker__font_color_black.booker__font_size_large(data-number = number)
+        b.booker__category.js-booker__category.booker__font_color_purple.booker__font_size_small.booker__font_uppercase(data-category = category)
       span.booker__price-info
-        strong(class="booker__price js-booker__price booker__font_color_grey booker__font_size_middle" data-price=price)
+        strong.booker__price.js-booker__price.booker__font_color_grey.booker__font_size_middle(data-price = price)
         span.booker__font_color_grey.booker__font_size_small &nbsp;&nbsp;в сутки
 
     section.booker__forms
-      form(name="booker")
-        div.booker__calendar
+      form(name='booker', action = '')
+        .booker__calendar
           +double-date-picker( datePicker )
-        div.booker__counter
+        .booker__counter
           +inputs-with-counter( counter )
     
     section.booker__rent-calculation
-      div.booker__rent
+      .booker__rent
         span
           span.booker__price.js-booker__price
           spant &nbsp;x&nbsp;
           span.booker__amount.js-booker__amount
         span.booker__rent-total.js-booker__rent-total
-      ul(class="booker__services js-booker__services" data-price=servPrice data-desc = servDesc)
-      div.booker__total.js-booker__total.booker__font_color_black
+      ul.booker__services.js-booker__services(data-price = servPrice, data-desc = servDesc)
+      .booker__total.js-booker__total.booker__font_color_black
         strong Итого
         span.booker__total-filler
         strong.js-booker__total-price
         
     section.booker__button-cont
       +button({ text: 'забронировать', isHighlight: true, withArrow: true})
-

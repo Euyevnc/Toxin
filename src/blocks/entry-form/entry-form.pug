@@ -1,16 +1,16 @@
 include ../button/button.pug
 include ../textfield/textfield.pug
-mixin entry-form( {header = 'Enter', signinBtn, signupBtn, signupText = 'Don\'t have a Toxin account?', mailField, passwordField }={} )    
-  article(class="entry-form")
+mixin entry-form( {header = 'Enter', signinBtn, signupBtn, signupText = 'Don\'t have a Toxin account?', mailField, passwordField } = { } )    
+  article.entry-form
     h1.entry-form__header #{header}
-    form.entry-form__form(name="entry-form")
-      div.entry-form__input-container
+    form.entry-form__form(name = 'entry-form', action = '')
+      .entry-form__input-container
         +textfield( mailField )
-      div.entry-form__input-container   
+      .entry-form__input-container   
         +textfield( passwordField )
-      div(class="entry-form__button entry-form__button_for_submit")
+      .entry-form__button.entry-form__button_for_submit
         +button( signinBtn )
-    div(class="entry-form__registration")
+    .entry-form__registration
       p.entry-form__text #{signupText}
-      span(class="entry-form__button entry-form__button_for_regist")
+      span.entry-form__button.entry-form__button_for_regist
         +button( signupBtn )

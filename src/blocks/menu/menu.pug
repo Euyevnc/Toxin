@@ -1,13 +1,13 @@
 include ../authorization-panel/authorization-panel.pug
 include ../arrow/arrow.pug
-mixin menu({ login = '', issues, autorization})
-  nav(class="menu js-menu")
-    ul(class="menu__list js-menu__list")
+mixin menu({ login = '', issues, autorization })
+  nav.menu.js-menu
+    ul.menu__list.js-menu__list
       each val in issues
         - let modifier = val.modifier  ? `menu__element_type_${val.modifier}` : ''
 
         if val.blocks
-          li(class=`js-menu__element menu__element ${modifier}` tabindex=0) 
+          li(class=`js-menu__element menu__element ${modifier}`, tabindex=0) 
             span.menu__link #{val.name}
             span.menu__arrow
               +arrow({ direction: 'down' })
@@ -15,13 +15,13 @@ mixin menu({ login = '', issues, autorization})
               each block in val.blocks
                 - let modifier = block.modifier  ? `menu__element_type_${block.modifier}` : ''
                 li(class=`js-menu__element menu__element ${modifier}`)
-                  a(href=`${block.href}` class='menu__link') #{block.name}
+                  a.menu__link(href=`${block.href}`) #{block.name}
         else
           li(class = `js-menu__element menu__element ${modifier}`)
-            a(class='menu__link'  href=`${val.href}`) #{val.name}
+            a.menu__link(href = `${val.href}`) #{val.name}
       if login   
-        li(class="js-menu__element menu__element")
-          a(href="/account/" class="menu__link") #{login}
+        li.js-menu__element.menu__element
+          a.menu__link(href = '/account/') #{login}
       if !login
         li
           +authorization-panel( autorization )

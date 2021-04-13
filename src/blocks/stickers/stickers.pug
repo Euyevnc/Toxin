@@ -1,8 +1,8 @@
-mixin stickers( {issues=[]}={})
+mixin stickers( { issues = [ ] } = { })
   article.stickers
     ul.stickers__list
       each sticker in issues
-        li(class="stickers__item")
+        li.stickers__item
           span.stickers__img #{sticker.icon}
           span.stickers__text
             strong.stickers__describe #{sticker.describe}

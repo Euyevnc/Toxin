@@ -3,33 +3,30 @@ include ../date-mask/date-mask.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
-mixin registration({ header='account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler} = { })
-  article(class="registration")
+mixin registration({ header = 'account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler} = { })
+  article.registration
     h1.registration__header #{header}
-    form(name="registration" class="registration__form")
-      div(class="registration__data-name")
+    form.registration__form(name = 'registration', action = '')
+      .registration__data-name
         +textfield( nameField )
-      div(class="registration__data-name")
+      .registration__data-name
         +textfield( surnameField )
-      div(class="registration__data-sex")
+      .registration__data-sex
         +radios( sexRadio )
       
-      div(class="registration__data-birthday")
+      .registration__data-birthday
         +date-mask( birthdayField )
 
-      div(class="registration__data-email")
+      .registration__data-email
         +textfield( mailField )
-      div(class="registration__data-password")
+      .registration__data-password
         +textfield( passwordField )
-      div(class="registration__data-offer")
+      .registration__data-offer
         +tumblers( offerTumbler )
 
-      div(class="registration__button")
+      .registration__button
         +button( signupBtn )
-    div(class="registration__entry")
+    .registration__entry
       p.registration__text #{signinText}
-      div(class="registration__button")
+      .registration__button
         +button( signinBtn )
-
-
-

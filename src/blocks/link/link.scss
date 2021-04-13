@@ -13,7 +13,7 @@
   padding: 0;
   background-color: transparent;
   border: none;
-  &_color_purple {
+  &_highlight {
     color: $highlight-color;
     &:hover {
       color: $main-color_lighter;

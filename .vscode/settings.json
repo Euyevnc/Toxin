@@ -2,8 +2,11 @@
   "scss.validate": false,
   "css.validate": false,
   "less.validate": false,
-
-   "editor.codeActionsOnSave": {
-     "source.fixAll.stylelint": true
-   },
+  "puglint.enable": true,
+  "files.eol": "\r\n",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.pug-lint": true
+  },
  }

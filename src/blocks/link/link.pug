@@ -1,7 +1,2 @@
-mixin link({ text = '', styles=[], href='#', target='_self'}={})
-
-  - let classes = ""
-  each style in styles 
-    - classes += `link_${style} `;
-
-  a(class=`link ${classes}` href=href, target=target) #{text}
+mixin link({ text = '', isHighlight = false, href = '#', target = '_self' } = { })
+  a(class=`link ${isHighlight ? 'link_highlight' : ''}`, href = href, target = target) #{text}
