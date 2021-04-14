@@ -1,7 +1,7 @@
 mixin colorIcon(color, name, opacity)
-  div.color-icon__container
-    span(class="color-icon__color" style=`background-color: ${color}; opacity: ${opacity}`)
+  .color-icon__container
+    span.color-icon__color(style = `background-color: ${color}; opacity: ${opacity}`)
     span
-      span(class="color-icon__title") #{name}
+      span.color-icon__title #{name}
       br
-      span(class="color-icon__subtitle") #{color} 
+      span.color-icon__subtitle #{color} 

@@ -2,6 +2,5 @@ mixin marked-list({ elements = [ ] } = { })
   ul.marked-list
     each desc in elements
       li.marked-list__item
-        span.marked-list__img   
-          include ../../assets/images/Ellipse.svg
+        span.marked-list__circle   
         p.marked-list__desc #{desc} 

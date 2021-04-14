@@ -1,8 +1,7 @@
 mixin fontIcon(tag, family, size, weight, line, transform, text, opacity)
   - if (!text) {text='Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
   - if (!opacity) {opacity=1}
-  div(class="font-icon__container")
-    span(class="font-icon__tag" style=`font-size:${size}`) #{tag}
+  .font-icon__container
+    span.font-icon__tag(style=`font-size:${size}`) #{tag}
     - if (tag == "Body") tag = "span"
-    #{tag}(class="font-icon__text" style=`font-family:${family}; font-size:${size};line-height:${line}; opacity:${opacity}; font-weight:${weight}; text-transform:${transform}`) #{text}
-
+    #{tag}.font-icon__text(style = `font-family:${family}; font-size:${size};line-height:${line}; opacity:${opacity}; font-weight:${weight}; text-transform:${transform}`) #{text}
