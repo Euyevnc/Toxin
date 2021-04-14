@@ -1,6 +1,6 @@
-@import '../../assets/calendar/calendar.scss';
+@import '../../assets/styles/calendar/calendar.scss';
+@import '../../assets/styles/variables';
 @import '../textfield/textfield.scss';
-@import '../../assets/_variables.scss';
 
 .date-picker {
   position: relative;

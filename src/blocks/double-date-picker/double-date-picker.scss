@@ -1,6 +1,7 @@
-@import '../../assets/calendar/calendar.scss';
+@import '../../assets/styles/calendar/calendar.scss';
+@import '../../assets/styles/variables';
 @import '../textfield/textfield.scss';
-@import '../../assets/variables';
+
 .double-date-picker {
   display: flex;
   justify-content: space-between;

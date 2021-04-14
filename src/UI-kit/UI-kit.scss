@@ -1,5 +1,5 @@
-@import '../assets/forUI-kit/colorIcon.scss';
-@import '../assets/forUI-kit/fontIcon.scss';
+@import './UI-blocks/color-icon/color-icon.scss';
+@import './UI-blocks/font-icon/font-icon.scss';
 
 @import '../blocks/textfield/textfield.scss';
 @import '../blocks/input-with-counter/input-with-counter.scss';
@@ -28,8 +28,8 @@
 @import '../blocks/cellar/cellar.scss';
 @import '../blocks/card/card.scss';
 @import '../blocks/number-demo/number-demo.scss';
-@import '../assets/mixin-font';
-@import '../assets/_mixin_outline.scss';
+@import '../assets/styles/mixin-font';
+@import '../assets/styles/mixin_outline';
 /* stylelint-disable no-descending-specificity */
 
 h3 {

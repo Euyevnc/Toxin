@@ -4,9 +4,10 @@
   "less.validate": false,
   "puglint.enable": true,
   "files.eol": "\r\n",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true,
-    "source.fixAll.pug-lint": true
   },
  }
