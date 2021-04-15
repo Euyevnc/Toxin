@@ -10,12 +10,12 @@
   "parserOptions": {
     "sourceType": "module"
   },
-
+  "ignorePatterns": "/dist/**/*.js",
   "extends": [ "airbnb"],
   "rules": {
     "linebreak-style": [2, "windows"],
     "no-underscore-dangle": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
-    "max-classes-per-file": ["off"]
+    "max-classes-per-file": ["off"] 
   }
 }

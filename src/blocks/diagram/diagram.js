@@ -16,11 +16,11 @@ function diagram() {
 class Diagram {
   constructor(root) {
     this.root = root;
+    this.canvas = this.root.querySelector('.js-diagram__canvas');
+    this.subjectForm = Object.values(this.root.querySelector('.js-diagram__reviews-amount').dataset);
   }
 
   init() {
-    this.canvas = this.root.querySelector('.js-diagram__canvas');
-    this.subjectForm = Object.values(this.root.querySelector('.js-diagram__reviews-amount').dataset);
     const { root, canvas, subjectForm } = this;
 
     const ctxM = canvas.getContext('2d');

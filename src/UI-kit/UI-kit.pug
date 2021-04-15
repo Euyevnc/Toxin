@@ -68,7 +68,9 @@ include ../blocks/entry-form/entry-form.pug
             {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, 
             {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2},
             {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
-          ] 
+          ],
+          deleteButtonText: 'очистить', 
+          confirmButtonText: 'подтвердить',
         })
       .input-with-mask-container 
         +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
@@ -76,9 +78,8 @@ include ../blocks/entry-form/entry-form.pug
         +double-date-picker( { initArrive, initDeparture, textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] } )
       .range-calendar-container 
         +date-picker({ 
-          textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
-          initArrive: 4, 
-          initDeparture: 8})
+          textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' } 
+        })
       .field-with-arrow-container 
         +textfield({lavel: 'subscription text field', placeholder: "Email", arrow: 'right'})
     section.forms-checkers-wrapper
@@ -137,7 +138,7 @@ include ../blocks/entry-form/entry-form.pug
 
     section.forms-dropdowns-wrapper
       section
-        .default-input-drop-container 
+        .input-with-counter-container.default-input-drop-container
           +inputs-with-counter({
             textfield: {
               label: "удобства номера", 
@@ -153,7 +154,7 @@ include ../blocks/entry-form/entry-form.pug
             ] 
           })
 
-        .expand-input-drop-container 
+        .input-with-counter-container.expand-input-drop-container 
           +inputs-with-counter({
             textfield: {
               label: "удобства номера", 
@@ -169,7 +170,7 @@ include ../blocks/entry-form/entry-form.pug
               ] 
             })
       section
-        .expand-input-drop-container
+        .input-with-counter-container.expand-input-drop-container
           +inputs-with-counter({ 
             textfield: {
               label: "удобства номера", 
@@ -183,7 +184,7 @@ include ../blocks/entry-form/entry-form.pug
           ] 
         })
       section
-        .expand-input-drop-container
+        .input-with-counter-container.expand-input-drop-container
           +inputs-with-counter({ 
             textfield: {
               label: 'Гости', 
@@ -318,7 +319,12 @@ include ../blocks/entry-form/entry-form.pug
             initArrive: 4, 
             initDeparture: 8, 
             textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] 
-          }
+          },
+          button: { text: 'забронировать', isHighlight: true, withArrow: true},
+          day_local: 'суток', 
+          perDay_local:  'в сутки', 
+          total_local: 'Всего',
+          discount_local: 'скидка'
         })
 
       .entry-form-container

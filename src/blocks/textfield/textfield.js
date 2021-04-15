@@ -1,18 +1,17 @@
-function textfield({ area = document } = {}) {
-  const textfields = [];
-  area.querySelectorAll('.js-textfield').forEach((element) => {
-    const newTextfiels = new Textfield(element);
-    textfields.push(newTextfiels);
-  });
-  if (textfields.length === 1) return textfields[0];
-  return textfields;
-}
 class Textfield {
-  constructor(root) {
-    this.root = root;
-    this.input = root.querySelector('.js-textfield__value');
-    this.arrow = root.querySelector('.js-textfield__arrow');
+  constructor(area = document) {
+    this.root = area.querySelector('.js-textfield');
+    this.input = this.root.querySelector('.js-textfield__value');
+    this.arrow = this.root.querySelector('.js-textfield__arrow');
+  }
+
+  setValue(value) {
+    this.input.value = value;
+  }
+
+  getValue() {
+    return this.input.value;
   }
 }
 
-export default textfield;
+export default Textfield;

@@ -7,7 +7,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
   &__title {
     @include default-font(
@@ -25,13 +25,13 @@
   }
   &__container {
     width: 100%;
-    min-height: 6px;
+    padding: 10px 0;
   }
   &__counter {
     @include default-font($main-color_lighter, $size-small, $size-small);
   }
   &__subscribe {
-    margin-top: 13.5px;
+    margin-top: 3.5px;
     margin-bottom: 0;
     @include default-font($main-color_lighter, $size-small, $size-middle);
   }

@@ -14,6 +14,7 @@ mixin inputs-with-counter({ textfield, isSimple = false, items=[ ], deleteButton
             span.js-input-with-counter__tumbler.input-with-counter__tumbler(data-min = item.min, tabindex = 0) -
             b.js-input-with-counter__number.input-with-counter__number(data-init = item.init) 
             span.js-input-with-counter__tumbler.input-with-counter__tumbler(data-max = item.max, tabindex = 0) +
-      .js-input-with-counter__buttons.input-with-counter__buttons
-        button.js-input-with-counter__button_delete.input-with-counter__button.input-with-counter__button_delete(tabindex = 0, type='button') #{deleteButtonText}
-        button.js-input-with-counter__button_confirm.input-with-counter__button.input-with-counter__button_confirm(tabindex=0, type='button') #{confirmButtonText}
+      if !isSimple
+        .js-input-with-counter__buttons.input-with-counter__buttons
+          button.js-input-with-counter__button_delete.input-with-counter__button.input-with-counter__button_delete(tabindex = 0, type='button') #{deleteButtonText}
+          button.js-input-with-counter__button_confirm.input-with-counter__button.input-with-counter__button_confirm(tabindex=0, type='button') #{confirmButtonText}

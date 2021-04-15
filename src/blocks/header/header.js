@@ -1,23 +1,12 @@
-import menu from '../menu/menu';
-import burger from '../burger/burger';
-
-function header({ area = document } = {}) {
-  const headers = [];
-  const data = { menuSelector: '.js-menu', activeClass: 'menu_expanded' };
-  area.querySelectorAll('.js-header').forEach((element) => {
-    const newHeader = new Header(element, data);
-    headers.push(newHeader);
-  });
-  if (headers.length === 1) return headers[0];
-  return headers;
-}
+import Menu from '../menu/menu';
+import Burger from '../burger/burger';
 
 class Header {
-  constructor(root, data) {
-    this.root = root;
-    this.menu = menu({ area: root });
-    this.burger = burger({ area: root, data });
+  constructor(area = document) {
+    this.root = area.querySelector('.js-header');
+    this.menu = new Menu(this.root);
+    this.burger = new Burger({ area: this.root, menuSelector: '.js-menu', activeClass: 'menu_expanded' });
   }
 }
 
-export default header;
+export default Header;

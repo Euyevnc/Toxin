@@ -1,4 +1,4 @@
 include ../textfield/textfield.pug
-mixin date-picker({ textfield, initArrive = 0, initDeparture=0} = { })
+mixin date-picker({ textfield, initArrive = false, initDeparture = false } = { })
   .js-date-picker.date-picker(data-initarrive = initArrive, data-initdeparture = initDeparture)
     +textfield({ ...textfield, arrow: 'down' })

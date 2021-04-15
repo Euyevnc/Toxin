@@ -1,22 +1,11 @@
 import 'jquery';
 import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
-import textfield from '../textfield/textfield';
-
-function datePicker({ area = document } = {}) {
-  const pickers = [];
-
-  area.querySelectorAll('.js-date-picker').forEach((element) => {
-    const newPicker = new DatePicker(element);
-    pickers.push(newPicker);
-  });
-  if (pickers.length === 1) return pickers[0];
-  return pickers;
-}
+import Textfield from '../textfield/textfield';
 
 class DatePicker {
-  constructor(root) {
-    this.root = root;
+  constructor(area = document) {
+    this.root = area.querySelector('.js-date-picker');
     this.params = {
       closeText: 'Закрыть',
       prevText: 'Предыдущий',
@@ -35,25 +24,61 @@ class DatePicker {
       showOtherMonths: true,
       selectOtherMonths: true,
     };
-    this.arriveDate = root.dataset.initarrive;
-    this.departureDate = root.dataset.initdeparture;
+    this.arriveDate = this.root.dataset.initarrive;
+    this.departureDate = this.root.dataset.initdeparture;
 
-    this.textfield = textfield({ area: root });
+    this.textfield = new Textfield(this.root);
     this.input = this.textfield.input;
     this.arrow = this.textfield.arrow;
-
-    this.#init();
+    document.addEventListener('calendarshowing', this.#handlerDocShowing);
+    document.addEventListener('calendarhiding', this.#handlerDocHiding);
+    this.arrow.addEventListener('click', this.#handlerArrowClick);
   }
 
-  #init = () => {
+  #handlerPickerClick = (ev) => {
+    if (!this.calendarIsShowing) return;
+    const input = $(this.input);
+    if (ev.target.closest('.ui-datepicker-button_clear')) {
+      input.datepicker('setDate', '');
+    }
+    if (ev.target.closest('.ui-datepicker-button_conf')) {
+      input.datepicker('hide');
+    }
+  }
+
+  #handlerDocShowing = (e) => {
+    if (e.detail.input === this.input) {
+      this.arrow.removeEventListener('click', this.#handlerArrowClick);
+      this.arrow.querySelector('.arrow').textContent = 'expand_less';
+      this.calendarIsShowing = true;
+    }
+  }
+
+  #handlerDocHiding = (e) => {
+    if (e.detail.input === this.input) {
+      document.addEventListener('click', this.#handlerDocClick);
+      this.calendarIsShowing = false;
+    }
+  }
+
+  #handlerArrowClick = () => {
+    const input = $(this.input);
+    input.datepicker('show');
+  }
+
+  #handlerDocClick = () => {
+    document.removeEventListener('click', this.#handlerDocClick);
+    this.arrow.addEventListener('click', this.#handlerArrowClick);
+    this.arrow.querySelector('.arrow').textContent = 'expand_more';
+  }
+
+  launch = () => {
     $.datepicker.regional.ru = this.params;
 
     $.datepicker.setDefaults($.datepicker.regional.ru);
 
     const object = this;
-    const {
-      arrow, arriveDate, departureDate,
-    } = this;
+    const { arriveDate, departureDate } = this;
     const input = $(this.input);
 
     input.datepicker({
@@ -71,6 +96,8 @@ class DatePicker {
       },
     });
 
+    const picker = document.querySelector('.js-ui-datepicker');
+    picker.addEventListener('click', this.#handlerPickerClick);
     if (arriveDate && departureDate) {
       input.datepicker('setDate', [`+${arriveDate}d`, `+${departureDate}d`]);
       const extensionRange = $('.js-date-picker input').datepicker('widget').data('datepickerExtensionRange');
@@ -78,51 +105,7 @@ class DatePicker {
       const end = extensionRange.endDateText;
       input.val(`${start} - ${end}`);
     }
-
-    const picker = document.querySelector('.js-ui-datepicker');
-    document.addEventListener('calendarshowing', handlerDocShowing);
-    document.addEventListener('calendarhiding', handlerDocHiding);
-    arrow.addEventListener('click', handlerArrowClick);
-    picker.addEventListener('click', handlerPickerClick);
-
-    function handlerPickerClick(ev) {
-      if (ev.target.closest('.ui-datepicker-button_clear')) {
-        picker.querySelectorAll('.ui-state-active').forEach((item) => {
-          item.classList.remove('ui-state-active');
-        });
-        if (picker.querySelector('.selected-start')) picker.querySelector('.selected-start').classList.remove('selected-start');
-        if (picker.querySelector('.selected-end')) picker.querySelector('.selected-end').classList.remove('selected-end');
-
-        input.val('');
-      }
-      if (ev.target.closest('.ui-datepicker-button_conf')) {
-        $.datepicker._hideDatepicker();
-      }
-    }
-
-    function handlerArrowClick() {
-      $.datepicker._showDatepicker(input[0]);
-    }
-
-    function handlerDocClick() {
-      document.removeEventListener('click', handlerDocClick);
-      arrow.addEventListener('click', handlerArrowClick);
-      arrow.querySelector('.arrow').textContent = 'expand_more';
-    }
-
-    function handlerDocShowing(e) {
-      if (e.detail.input === input[0]) {
-        arrow.removeEventListener('click', handlerArrowClick);
-        arrow.querySelector('.arrow').textContent = 'expand_less';
-      }
-    }
-
-    function handlerDocHiding(e) {
-      if (e.detail.datepickerShowing && e.detail.input === input[0]) {
-        document.addEventListener('click', handlerDocClick);
-      }
-    }
   }
 }
 
-export default datePicker;
+export default DatePicker;

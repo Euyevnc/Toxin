@@ -1,16 +1,16 @@
 include ../double-date-picker/double-date-picker.pug
 include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
-mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker } = { } )
+mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, button, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
   article.booker.js-booker
     section.booker__information
       span.booker__main-info
         b.booker__font_color_black.booker__font_size_middle № 
         strong.booker__number.js-booker__number.booker__font_color_black.booker__font_size_large(data-number = number)
         b.booker__category.js-booker__category.booker__font_color_purple.booker__font_size_small.booker__font_uppercase(data-category = category)
-      span.booker__price-info
-        strong.booker__price.js-booker__price.booker__font_color_grey.booker__font_size_middle(data-price = price)
-        span.booker__font_color_grey.booker__font_size_small &nbsp;&nbsp;в сутки
+      span.js-booker__price-info.booker__price-info(data-price = price)
+        strong.booker__price.js-booker__price.booker__font_color_grey.booker__font_size_middle
+        span.booker__font_color_grey.booker__font_size_small &nbsp;&nbsp;#{perDay_local}
 
     section.booker__forms
       form(name='booker', action = '')
@@ -24,13 +24,13 @@ mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPr
         span
           span.booker__price.js-booker__price
           spant &nbsp;x&nbsp;
-          span.booker__amount.js-booker__amount
+          span.booker__amount.js-booker__amount(data-local = day_local)
         span.booker__rent-total.js-booker__rent-total
-      ul.booker__services.js-booker__services(data-price = servPrice, data-desc = servDesc)
+      ul.booker__services.js-booker__services(data-prices = servPrice, data-desces = servDesc, data-local = discount_local)
       .booker__total.js-booker__total.booker__font_color_black
-        strong Итого
+        strong #{total_local}
         span.booker__total-filler
         strong.js-booker__total-price
         
     section.booker__button-cont
-      +button({ text: 'забронировать', isHighlight: true, withArrow: true})
+      +button(button)
