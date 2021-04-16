@@ -1,63 +1,50 @@
-function checkboxes() {
-  const fieldsets = [];
-
-  document.querySelectorAll('.js-checkboxes').forEach((element) => {
-    const newFieldset = new Checkboxes(element);
-    newFieldset.init();
-    fieldsets.push(newFieldset);
-  });
-
-  if (fieldsets.length === 1) return fieldsets[0];
-  return fieldsets;
-}
-
 class Checkboxes {
-  constructor(root) {
-    this.root = root;
-    this.header = root.querySelector('.js-checkboxes__header');
-    this.arrow = root.querySelector('.js-checkboxes__arrow .arrow');
-    this.list = root.querySelector('.js-checkboxes__container');
+  constructor(area = document) {
+    this.root = area.querySelector('.js-checkboxes');
+    this.header = this.root.querySelector('.js-checkboxes__header');
+    this.arrow = this.root.querySelector('.js-checkboxes__arrow .arrow');
+    this.list = this.root.querySelector('.js-checkboxes__container');
     this.expanded = false;
+    if (this.header && this.header.classList.contains('js-checkboxes__header_expanding')) {
+      this.header.addEventListener('click', this.#handlerHeaderClick);
+      this.header.addEventListener('keydown', this.#handlerHeaderKeydown);
+    }
   }
 
   init() {
-    const {
-      arrow, list, header,
-    } = this;
-    const object = this;
-    if (header && header.classList.contains('js-checkboxes__header_expanding')) {
-      const expandedFromStart = Boolean('expanded' in this.header.dataset);
-      if (expandedFromStart) {
-        list.classList.add('checkboxes__container_visible');
-        arrow.innerHTML = 'expand_less';
-        object.expanded = !object.expanded;
-      }
-      header.addEventListener('click', handlerHeaderClick);
-      header.addEventListener('keydown', handlerHeaderKeydown);
+    const { arrow, list } = this;
+    const expandedFromStart = Boolean('expanded' in this.header.dataset);
+
+    if (expandedFromStart) {
+      list.classList.add('checkboxes__container_visible');
+      arrow.innerHTML = 'expand_less';
+      this.expanded = !this.expanded;
     }
-    function handlerHeaderClick() {
-      if (object.expanded) {
-        list.classList.remove('checkboxes__container_visible');
-        arrow.innerHTML = 'expand_more';
+  }
+
+  #handlerHeaderClick = () => {
+    if (this.expanded) {
+      this.list.classList.remove('checkboxes__container_visible');
+      this.arrow.innerHTML = 'expand_more';
+    } else {
+      this.list.classList.add('checkboxes__container_visible');
+      this.arrow.innerHTML = 'expand_less';
+    }
+    this.expanded = !this.expanded;
+  }
+
+  #handlerHeaderKeydown = (e) => {
+    if (e.code === 'Enter') {
+      if (this.expanded) {
+        this.list.classList.remove('checkboxes__container_visible');
+        this.arrow.innerHTML = 'expand_more';
       } else {
-        list.classList.add('checkboxes__container_visible');
-        arrow.innerHTML = 'expand_less';
+        this.list.classList.add('checkboxes__container_visible');
+        this.arrow.innerHTML = 'expand_less';
       }
-      object.expanded = !object.expanded;
-    }
-    function handlerHeaderKeydown(e) {
-      if (e.code === 'Enter') {
-        if (object.expanded) {
-          object.list.classList.remove('checkboxes__container_visible');
-          object.arrow.innerHTML = 'expand_more';
-        } else {
-          object.list.classList.add('checkboxes__container_visible');
-          object.arrow.innerHTML = 'expand_less';
-        }
-        object.expanded = !object.expanded;
-      }
+      this.expanded = !this.expanded;
     }
   }
 }
 
-export default checkboxes;
+export default Checkboxes;

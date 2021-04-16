@@ -1,58 +1,48 @@
-function review() {
-  const reviews = [];
-  document.querySelectorAll('.js-review').forEach((element) => {
-    const newReview = new Review(element);
-    newReview.init();
-    reviews.push(newReview);
-  });
-  if (reviews.length === 1) return reviews[0];
-  return reviews;
-}
-
 class Review {
-  constructor(root) {
-    this.root = root;
+  constructor(area = document) {
+    this.root = area.querySelector('.js-review');
+    this.timer = this.root.querySelector('.js-review__days-ago');
+    this.date = this.timer.dataset.date;
+    this.local_days = this.timer.dataset.local_days;
+    this.local_weeks = this.timer.dataset.local_weeks;
+    this.local_months = this.timer.dataset.local_months;
+    this.local_years = this.timer.dataset.local_years;
+    this.local_ago = this.timer.dataset.local_ago;
   }
 
   init() {
-    this.timer = this.root.querySelector('.review__days-ago');
-    this.date = this.timer.dataset.date;
-
     const daysAgo = Math.floor((new Date() - new Date(this.date)) / (24 * 3600000));
+    this.timer.textContent = `${this.#parseDate(daysAgo)} ${this.local_ago}`;
+  }
 
-    this.timer.textContent = parseDate(daysAgo);
+  #parseDate = (amountOfDays) => {
+    let days = amountOfDays;
+    const years = parseInt(days / 340, 10);
+    days -= years * 330;
+    const months = parseInt(days / 30, 10);
+    days -= months * 30;
+    const weeks = parseInt(days / 7, 10);
+    days -= weeks * 7;
+    let createdString = '';
+    if (years > 0) {
+      if (years === 1 || years % 10 === 1) createdString = `${years} ${this.local_years}`;
+      else if (years > 4 || years % 10 > 4) createdString = `${years} ${this.local_years}`;
+      else createdString = `${years} ${this.local_years}`;
+    } else if (months > 0) {
+      if (months === 1 || months % 10 === 1) createdString = `${months} ${this.local_months}`;
+      else if (months > 4 || months % 10 > 4) createdString = `${months} ${this.local_months}`;
+      else createdString = `${months} ${this.local_months}`;
+    } else if (weeks > 0) {
+      if (weeks === 1 || weeks % 10 === 1) createdString = `${weeks} ${this.local_weeks}`;
+      else if (weeks > 4 || weeks % 10 > 4) createdString = `${weeks} ${this.local_weeks}`;
+      else createdString = `${weeks} ${this.local_weeks}`;
+    } else if (days === 1 || days % 10 === 1) createdString = `${days} ${this.local_days}`;
 
-    function parseDate(amountOfDays) {
-      let days = amountOfDays;
-      const years = parseInt(days / 340, 10);
-      days -= years * 330;
-      const months = parseInt(days / 30, 10);
-      days -= months * 30;
-      const weeks = parseInt(days / 7, 10);
-      days -= weeks * 7;
-      let createdString = '';
-      // В этом случае, думаю допустимо кириллицу использовать,
-      // она тут без привязки к элементу
-      if (years > 0) {
-        if (years === 1 || years % 10 === 1) createdString = `${years} год`;
-        else if (years > 4 || years % 10 > 4) createdString = `${years} лет`;
-        else createdString = `${years} года`;
-      } else if (months > 0) {
-        if (months === 1 || months % 10 === 1) createdString = `${months} месяц`;
-        else if (months > 4 || months % 10 > 4) createdString = `${months} месяцев`;
-        else createdString = `${months} месяца`;
-      } else if (weeks > 0) {
-        if (weeks === 1 || weeks % 10 === 1) createdString = `${weeks} неделя`;
-        else if (weeks > 4 || weeks % 10 > 4) createdString = `${weeks} недель`;
-        else createdString = `${weeks} недели`;
-      } else if (days === 1 || days % 10 === 1) createdString = `${days} день`;
+    else if (days > 4 || days % 10 > 4) createdString = `${days} ${this.local_days}`;
+    else createdString = `${days} ${this.local_days}`;
 
-      else if (days > 4 || days % 10 > 4) createdString = `${days} дней`;
-      else createdString = `${days} дня`;
-
-      return createdString;
-    }
+    return createdString;
   }
 }
 
-export default review;
+export default Review;

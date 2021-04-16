@@ -1,4 +1,4 @@
-mixin review( {name = '', avatar = '', date = '01.01.1970', review = '', likes = 0, isLiked = false} = { })
+mixin review( {name = '', avatar = '', date = '01.01.1970', review = '', likes = 0, isLiked = false, local_days = 'days', local_weeks = 'weeks', local_months = 'months', local_years = 'years', local_ago = 'ago'} = { })
   include ../liker/liker.pug
   article.review.js-review
     section.review__header
@@ -6,7 +6,7 @@ mixin review( {name = '', avatar = '', date = '01.01.1970', review = '', likes =
         img.review__avatar(src = `${avatar}`, alt = 'user\'s avatar')
       span.review__info
         strong.review__name #{name}
-        p.review__days-ago(data-date = date) 
+        p.review__days-ago.js-review__days-ago(data-date = date, data-local_days = local_days, data-local_weeks = local_weeks, data-local_months = local_months, data-local_years = local_years, data-local_ago = local_ago) 
     section.review__body 
       .review__liker  
         +liker({ amount: likes, checked: isLiked })

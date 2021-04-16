@@ -1,24 +1,19 @@
 import './UI-kit.scss';
 
-import inputMask from '../blocks/date-mask/date-mask';
+import DateMask from '../blocks/date-mask/date-mask';
 import DoubleDatePicker from '../blocks/double-date-picker/double-date-picker';
 import DatePicker from '../blocks/date-picker/date-picker';
-import rangeSlider from '../blocks/range-picker/range-picker';
+import RangePicker from '../blocks/range-picker/range-picker';
 import Counter from '../blocks/input-with-counter/input-with-counter';
-import expandableCheckboxes from '../blocks/checkboxes/checkboxes';
+import Checkboxes from '../blocks/checkboxes/checkboxes';
 import Booker from '../blocks/number-booker/number-booker';
 import NumberFinder from '../blocks/number-finder/number-finder';
 import Header from '../blocks/header/header';
-import review from '../blocks/review/review';
-import demo from '../blocks/number-demo/number-demo';
+import Review from '../blocks/review/review';
+import NumberDemo from '../blocks/number-demo/number-demo';
+import Registration from '../blocks/registration/registration';
 
 function handlerDOMLoaded() {
-  demo();
-  inputMask();
-  rangeSlider();
-  expandableCheckboxes();
-  review();
-
   const doubleDatePicker = new DoubleDatePicker(document.querySelector('.forms'));
   doubleDatePicker.launch();
 
@@ -41,12 +36,34 @@ function handlerDOMLoaded() {
     const newHeader = new Header(header);
     headers.push(newHeader);
   });
+
+  document.querySelectorAll('.number-demonstration-container').forEach((cont) => {
+    const newDemo = new NumberDemo(cont);
+    newDemo.init();
+  });
+
+  const rangePicker = new RangePicker();
+  rangePicker.init();
+
+  document.querySelectorAll('.dropping-checkboxes-container').forEach((cont) => {
+    const newChckboxes = new Checkboxes(cont);
+    newChckboxes.init();
+  });
+
+  const review = new Review();
+  review.init();
+
+  const dateMask = new DateMask();
+  dateMask.init();
+
+  const registration = new Registration();
+  registration.init();
+
   document.querySelector('.textfield-active-container input').value = 'This is pretty awesome';
   setTimeout(() => {
     const calendar = document.querySelector('.ui-datepicker').cloneNode(true);
     const contForCalendar = document.querySelector('.expended-calendar-container');
     contForCalendar.appendChild(calendar);
   }, 700);
-  // Таймаут пришлось поставить. Плагин для календаря, к сожалению, асиинхронный
 }
 export default handlerDOMLoaded;

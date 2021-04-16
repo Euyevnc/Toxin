@@ -1,29 +1,16 @@
 import handlerButtonHover from '../../plugins/buttons-imgs-slider';
 import handlerArrowClick from '../../plugins/arrow-imgs-slider';
 
-function numberDemo() {
-  const demos = [];
-
-  document.querySelectorAll('.js-number-demo').forEach((element) => {
-    const newDemo = new NumberDemo(element);
-    newDemo.init();
-    demos.push(newDemo);
-  });
-  if (demos.length === 1) return demos[0];
-  return demos;
-}
-
 class NumberDemo {
-  constructor(root) {
-    this.root = root;
+  constructor(area = document) {
+    this.root = area.querySelector('.js-number-demo');
+    this.buttons = this.root.querySelectorAll('.js-number-demo__button');
+    this.imgs = this.root.querySelectorAll('.js-number-demo__image');
+    this.arrowPrev = this.root.querySelector('.js-number-demo__arrow_left');
+    this.arrowNext = this.root.querySelector('.js-number-demo__arrow_right');
   }
 
   init() {
-    const { root } = this;
-    this.buttons = root.querySelectorAll('.js-number-demo__button');
-    this.imgs = root.querySelectorAll('.js-number-demo__image');
-    this.arrowPrev = root.querySelector('.js-number-demo__arrow_left');
-    this.arrowNext = root.querySelector('.js-number-demo__arrow_right');
     const {
       buttons, imgs, arrowPrev, arrowNext,
     } = this;
@@ -37,4 +24,4 @@ class NumberDemo {
   }
 }
 
-export default numberDemo;
+export default NumberDemo;

@@ -4,22 +4,22 @@ include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
 mixin registration({ header = 'account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler} = { })
-  article.registration
+  article.registration.js-registration
     h1.registration__header #{header}
-    form.registration__form(name = 'registration', action = '')
-      .registration__data-name
+    form.registration__form.js-registration__form(name = 'registration', action = '')
+      .registration__data-name.js-registration__data-name
         +textfield( nameField )
-      .registration__data-name
+      .registration__data-surname.js-registration__data-surname
         +textfield( surnameField )
       .registration__data-sex
         +radios( sexRadio )
       
-      .registration__data-birthday
+      .registration__data-birthday.js-registration__data-birthday
         +date-mask( birthdayField )
 
-      .registration__data-email
+      .registration__data-email.js-registration__data-email
         +textfield( mailField )
-      .registration__data-password
+      .registration__data-password.js-registration__data-password
         +textfield( passwordField )
       .registration__data-offer
         +tumblers( offerTumbler )
