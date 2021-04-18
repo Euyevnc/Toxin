@@ -1,6 +1,8 @@
+const firElement = document.querySelector('.js-review');
+
 class Review {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-review');
+  constructor(root = firElement) {
+    this.root = root;
     this.timer = this.root.querySelector('.js-review__days-ago');
     this.date = this.timer.dataset.date;
     this.local_days = this.timer.dataset.local_days;

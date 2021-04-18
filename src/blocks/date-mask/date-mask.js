@@ -3,10 +3,11 @@ import Textfield from '../textfield/textfield';
 import 'jquery';
 import '../../plugins/jquery.maskinput.min';
 
+const firstElement = document.querySelector('.js-date-mask');
 class DateMask {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-date-mask');
-    this.textfield = new Textfield(this.root);
+  constructor(root = firstElement) {
+    this.root = root;
+    this.textfield = new Textfield(this.root.querySelector('.js-textfield'));
     this.input = this.textfield.input;
   }
 

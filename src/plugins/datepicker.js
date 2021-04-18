@@ -828,7 +828,7 @@
 
         $.datepicker._curInst = inst;
       }
-      const event = new CustomEvent('calendarshowing', { detail: { input } });
+      const event = new CustomEvent('calendarshowing', { detail: { input }, bubbles: true });
       document.dispatchEvent(event);
     },
 
@@ -966,7 +966,7 @@
         }
         this._inDialog = false;
       }
-      const event = new CustomEvent('calendarhiding', { detail: { input, datepickerShowing } });
+      const event = new CustomEvent('calendarhiding', { detail: { input, datepickerShowing }, bubbles: true });
       document.dispatchEvent(event);
     },
 

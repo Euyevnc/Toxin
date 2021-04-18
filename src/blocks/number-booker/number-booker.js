@@ -1,11 +1,12 @@
 import InputsWithCounter from '../input-with-counter/input-with-counter';
 import DoubleDatePicker from '../double-date-picker/double-date-picker';
 
+const firstElement = document.querySelector('.js-booker');
 class Booker {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-booker');
-    this.counter = new InputsWithCounter(this.root);
-    this.datePicker = new DoubleDatePicker(this.root);
+  constructor(root = firstElement) {
+    this.root = root;
+    this.counterObject = new InputsWithCounter(this.root.querySelector('.js-input-with-counter'));
+    this.datePickerObject = new DoubleDatePicker(this.root.querySelector('.js-double-date-picker'));
 
     this.arrival = 4;
     this.departure = 8;
@@ -104,8 +105,8 @@ class Booker {
   }
 
   init() {
-    this.counter.displayValue();
-    this.datePicker.launch();
+    this.counterObject.displayValue();
+    this.datePickerObject.init();
 
     this.#displayPrice(this.departure - this.arrival);
     this.#displayInfo();

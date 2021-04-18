@@ -1,12 +1,13 @@
 import Textfield from '../textfield/textfield';
 
+const firstElement = document.querySelector('.js-input-with-counter');
 class InputWithCounter {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-input-with-counter');
+  constructor(root = firstElement) {
+    this.root = root;
     this.items = [];
-    this.textfield = new Textfield(this.root);
-    this.input = this.textfield.input;
-    this.arrow = this.textfield.arrow;
+    this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
+    this.input = this.textfieldObject.input;
+    this.arrow = this.textfieldObject.arrow;
 
     this.menu = this.root.querySelector('.js-input-with-counter__menu');
     this.clearingButton = this.root.querySelector('.js-input-with-counter__button_delete');
@@ -14,6 +15,7 @@ class InputWithCounter {
 
     this.input.addEventListener('focus', this.#handlerInputFocus);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
+
     this.confirmingButton.addEventListener('click', this.#handlerConfirmButtonClick);
     this.clearingButton.addEventListener('click', this.#handlerClearButton);
 
@@ -25,7 +27,7 @@ class InputWithCounter {
 
   displayValue = () => {
     const generatedValue = this.#concat();
-    this.textfield.setValue(generatedValue);
+    this.textfieldObject.setValue(generatedValue);
 
     if (generatedValue) this.clearingButton.classList.add('input-with-counter__button_visible-delete');
     else this.clearingButton.classList.remove('input-with-counter__button_visible-delete');

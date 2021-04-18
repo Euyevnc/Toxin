@@ -1,19 +1,20 @@
 import Textfield from '../textfield/textfield';
 import DateMask from '../date-mask/date-mask';
 
+const firstElement = document.querySelector('.js-registration');
 class Registration {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-registration');
-    this.form = this.root.querySelector('.js-registration__form');
-    this.nameField = new Textfield(this.root.querySelector('.js-registration__data-name'));
-    this.surnameField = new Textfield(this.root.querySelector('.js-registration__data-surname'));
-    this.birthField = new DateMask(this.root.querySelector('.js-registration__data-birthday'));
-    this.emailField = new Textfield(this.root.querySelector('.js-registration__data-email'));
-    this.passwordField = new Textfield(this.root.querySelector('.js-registration__data-password'));
+  constructor(root = firstElement) {
+    this.root = root;
+    this.formObject = this.root.querySelector('.js-registration__form .js-textfield');
+    this.nameFieldObject = new Textfield(this.root.querySelector('.js-registration__data-name .js-textfield'));
+    this.surnameFieldObject = new Textfield(this.root.querySelector('.js-registration__data-surname .js-textfield'));
+    this.birthFieldObject = new DateMask(this.root.querySelector('.js-date-mask'));
+    this.emailFieldObject = new Textfield(this.root.querySelector('.js-registration__data-email .js-textfield'));
+    this.passwordFieldObject = new Textfield(this.root.querySelector('.js-registration__data-password .js-textfield'));
   }
 
   init() {
-    this.birthField.init();
+    this.birthFieldObject.init();
   }
 }
 

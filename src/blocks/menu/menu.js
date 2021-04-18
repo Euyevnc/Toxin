@@ -1,6 +1,8 @@
+const firstElement = document.querySelector('.js-menu');
+
 class Menu {
-  constructor(area) {
-    this.root = area.querySelector('.js-menu');
+  constructor(root = firstElement) {
+    this.root = root;
     this.submenus = this.root.querySelectorAll('.js-menu__submenu');
     this.submenus.forEach((it) => {
       const element = it.closest('.js-menu__element');

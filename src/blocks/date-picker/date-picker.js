@@ -3,9 +3,10 @@ import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
 import Textfield from '../textfield/textfield';
 
+const firstElement = document.querySelector('.js-date-picker');
 class DatePicker {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-date-picker');
+  constructor(root = firstElement) {
+    this.root = root;
     this.params = {
       closeText: 'Закрыть',
       prevText: 'Предыдущий',
@@ -27,11 +28,10 @@ class DatePicker {
     this.arriveDate = this.root.dataset.initarrive;
     this.departureDate = this.root.dataset.initdeparture;
 
-    this.textfield = new Textfield(this.root);
-    this.input = this.textfield.input;
-    this.arrow = this.textfield.arrow;
+    this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
+    this.input = this.textfieldObject.input;
+    this.arrow = this.textfieldObject.arrow;
     document.addEventListener('calendarshowing', this.#handlerDocShowing);
-    document.addEventListener('calendarhiding', this.#handlerDocHiding);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
   }
 
@@ -40,6 +40,8 @@ class DatePicker {
     const input = $(this.input);
     if (ev.target.closest('.ui-datepicker-button_clear')) {
       input.datepicker('setDate', '');
+      this.arriveDate = '';
+      this.departureDate = '';
     }
     if (ev.target.closest('.ui-datepicker-button_conf')) {
       input.datepicker('hide');
@@ -48,17 +50,29 @@ class DatePicker {
 
   #handlerDocShowing = (e) => {
     if (e.detail.input === this.input) {
+      $(this.input).datepicker('setDate', [this.arriveDate, this.departureDate]);
+      this.#displayValue();
+
       this.arrow.removeEventListener('click', this.#handlerArrowClick);
       this.arrow.querySelector('.arrow').textContent = 'expand_less';
+      document.addEventListener('calendarhiding', this.#handlerDocHiding);
       this.calendarIsShowing = true;
     }
   }
 
   #handlerDocHiding = (e) => {
+    if (!e.detail.datepickerShowing) return;
+    this.arrow.querySelector('.arrow').textContent = 'expand_more';
     if (e.detail.input === this.input) {
       document.addEventListener('click', this.#handlerDocClick);
-      this.calendarIsShowing = false;
-    }
+    } else this.input.addEventListener('click', this.#handlerArrowClick);
+    document.removeEventListener('calendarhiding', this.#handlerDocHiding);
+    this.calendarIsShowing = false;
+  }
+
+  #handlerDocClick = () => {
+    document.removeEventListener('click', this.#handlerDocClick);
+    this.arrow.addEventListener('click', this.#handlerArrowClick);
   }
 
   #handlerArrowClick = () => {
@@ -66,18 +80,23 @@ class DatePicker {
     input.datepicker('show');
   }
 
-  #handlerDocClick = () => {
-    document.removeEventListener('click', this.#handlerDocClick);
-    this.arrow.addEventListener('click', this.#handlerArrowClick);
-    this.arrow.querySelector('.arrow').textContent = 'expand_more';
+  #displayValue = () => {
+    if (this.arriveDate || this.departureDate) {
+      const input = $(this.input);
+      const extensionRange = input.datepicker('widget').data('datepickerExtensionRange');
+      const start = extensionRange.startDateText;
+      const end = extensionRange.endDateText;
+      input.val(`${start} - ${end}`);
+    }
   }
 
-  launch = () => {
+  init() {
     $.datepicker.regional.ru = this.params;
 
     $.datepicker.setDefaults($.datepicker.regional.ru);
 
     const object = this;
+    const displayValue = this.#displayValue;
     const { arriveDate, departureDate } = this;
     const input = $(this.input);
 
@@ -86,9 +105,7 @@ class DatePicker {
       minDate: 0,
       range: 'period',
       onSelect(dateText, inst, extensionRange) {
-        const start = extensionRange.startDateText;
-        const end = extensionRange.endDateText;
-        input.val(`${start} - ${end}`);
+        displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
         const select = new CustomEvent('ondateselect', { detail: extensionRange });
@@ -98,13 +115,8 @@ class DatePicker {
 
     const picker = document.querySelector('.js-ui-datepicker');
     picker.addEventListener('click', this.#handlerPickerClick);
-    if (arriveDate && departureDate) {
-      input.datepicker('setDate', [`+${arriveDate}d`, `+${departureDate}d`]);
-      const extensionRange = $('.js-date-picker input').datepicker('widget').data('datepickerExtensionRange');
-      const start = extensionRange.startDateText;
-      const end = extensionRange.endDateText;
-      input.val(`${start} - ${end}`);
-    }
+
+    input.datepicker('setDate', [arriveDate, departureDate]);
   }
 }
 

@@ -1,16 +1,17 @@
 import DoubleDatePicker from '../double-date-picker/double-date-picker';
 import Counter from '../input-with-counter/input-with-counter';
 
+const firstElement = document.querySelector('.js-number-finder');
 class NumberFinder {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-number-finder');
-    this.counter = new Counter(this.root);
-    this.datePicker = new DoubleDatePicker(this.root);
+  constructor(root = firstElement) {
+    this.root = root;
+    this.counterObject = new Counter(this.root.querySelector('.js-input-with-counter'));
+    this.datePickerObject = new DoubleDatePicker(this.root.querySelector('.js-double-date-picker'));
   }
 
   init() {
-    this.counter.displayValue();
-    this.datePicker.launch();
+    this.counterObject.displayValue();
+    this.datePickerObject.init();
   }
 }
 

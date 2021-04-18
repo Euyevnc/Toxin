@@ -1,9 +1,10 @@
 import handlerButtonHover from '../../plugins/buttons-imgs-slider';
 import handlerArrowClick from '../../plugins/arrow-imgs-slider';
 
+const firstElement = document.querySelector('.js-number-demo');
 class NumberDemo {
-  constructor(area = document) {
-    this.root = area.querySelector('.js-number-demo');
+  constructor(root = firstElement) {
+    this.root = root;
     this.buttons = this.root.querySelectorAll('.js-number-demo__button');
     this.imgs = this.root.querySelectorAll('.js-number-demo__image');
     this.arrowPrev = this.root.querySelector('.js-number-demo__arrow_left');

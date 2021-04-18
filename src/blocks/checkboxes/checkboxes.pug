@@ -1,8 +1,9 @@
 include ../checkbox/checkbox.pug
-mixin checkboxes({ header = '', checkboxes = [ ], expanding = false, expanded = false} = { })
-  fieldset.checkboxes.js-checkboxes
+mixin checkboxes({ header = '', checkboxes = [ ], expanding = false, expanded = true} = { })
+  fieldset.checkboxes.js-checkboxes(class = `${expanded ? '' : ' checkboxes_shrinked' }`, data-expanding = expanding, data-expanded_from_start = expanded)
     if header
-      legend.checkboxes__header.js-checkboxes__header(class = `${expanding ? 'js-checkboxes__header_expanding checkboxes__header_expanding' : ''}`, tabindex = expanding ? 0 : -1, data-expanded = expanded) #{header}
+      legend.checkboxes__header.js-checkboxes__header(tabindex = expanding ? 0 : '', style = `cursor: ${expanding ? 'pointer' : 'auto'}`) 
+        span #{header}
         if expanding 
           span.js-checkboxes__arrow.checkboxes__arrow
             +arrow({ direction: 'down' })

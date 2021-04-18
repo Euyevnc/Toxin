@@ -1,10 +1,12 @@
 import './Registration.scss';
-import header from '../../blocks/header/header';
-import registration from '../../blocks/registration/registration';
+import Header from '../../blocks/header/header';
+import Registration from '../../blocks/registration/registration';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
 function handlerDocumentDomLoaded() {
-  header();
-  registration();
+  /* eslint-disable no-unused-vars */
+  const headerObject = new Header();
+  const registrationObject = new Registration();
+  registrationObject.init();
 }

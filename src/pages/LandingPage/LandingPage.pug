@@ -7,37 +7,50 @@ block variables
   
 block head
   title LandingPage
-  meta(name="keywords", content="keywords")
-  meta(name="description", content="description")
+  meta(name='keywords', content='keywords')
+  meta(name='description', content='description')
 
 block header
-  +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+  +header({ 
+    menu: { 
+      login: false, 
+      issues: [ 
+        {name: 'О нас', href:'/about_us/'},
+        {name: 'Услуги', blocks:[{href:'/services1/', name:'Some'},{href:'/services3/', name:'Some else'}, {href:'/services3/', name:'Nevermind'} ]}, 
+        {name: 'Вакансии', href:'/list/' },
+        {name: 'Новости', href:'/news/' },
+        {name: 'Соглашения', blocks:[{href:'/convience1/', name:'Some'},{href:'/convience2/', name:'Some else'}] } 
+      ],
+      autorization: {
+        signinButton: 'войти',
+        signupButton: 'зарегестрироваться'
+      }
+    }, 
+  })
 block content   
-  div.content__searcher-container
-
+  .content__searcher-container
     +number-finder({ 
       header: 'Найдём номера под ваши пожелания',
-      datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
-      counter: { 
-        textfield: {
-          label: 'Гости', 
-          placeholder: 'Сколько гостей',
+        datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
+        counter: { 
+          textfield: {
+            label: 'гости', 
+            placeholder: 'Сколько гостей', 
+          },
+          items:[ 
+            {name: "взрослые", min: "0", max: "5", concat: true }, 
+            {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
+            {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+          ], 
+          deleteButtonText: 'очистить', 
+          confirmButtonText: 'подтвердить' 
         }, 
-        items:[ 
-          {name: "взрослые", min: "0", max: "5", concat: true }, 
-          {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
-          {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
-        ], 
-        deleteButtonText: 'очистить', 
-        confirmButtonText: 'подтвердить' 
-        }, 
-      buttonText: 'найти номер' 
-    })
-  div.content__text-container
+        buttonText: 'найти номер' 
+      })
+  .content__text-container
     p.content__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 block footer
-  +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
+  +footer({info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:'Навигация', links:[{href: '/about/',desc: 'О нас'},{href: '/news/',desc: 'Новости'},{href: '/support/',desc: 'Служба поддержки'},{href: '/services/',desc: 'Услуги'} ]}, {caption:'О нас', links:[{href: '/about_service/',desc: 'О сервисе'},{href: '/team/',desc: 'Наша команда'},{href: 'list/',desc: 'Вакансии'},{href: '/investors/',desc: 'Инвесторы'} ]}, {caption:'Служба поддержки', links:[{href: '/convience/',desc: 'Соглашения'},{href: '/comm/',desc: 'Сообщества'},{href: '/connection/',desc: 'Связь с нами'}] } ]} )
 block cellar  
-  +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+  +cellar({ text: 'Copyright © 2018 Toxin отель. Все права зачищены.', links: [{link: '/twit/', class: 'fa-twitter'}, {link:'/fb/', class: 'fa-facebook-square'}, {link:'/inst/', class: 'fa-instagram'}] })
 block script 
- 

@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 320px;
   color: $main-color_lighter;
   &__container {
     position: relative;

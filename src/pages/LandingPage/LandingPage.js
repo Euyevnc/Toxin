@@ -1,10 +1,12 @@
 import './LandingPage.scss';
-import header from '../../blocks/header/header';
-import finder from '../../blocks/number-finder/number-finder';
+import Header from '../../blocks/header/header';
+import NumberFinder from '../../blocks/number-finder/number-finder';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
 function handlerDocumentDOMLoaded() {
-  header();
-  finder();
+  /* eslint-disable no-unused-vars */
+  const headerObject = new Header();
+  const numberFinderObject = new NumberFinder();
+  numberFinderObject.init();
 }

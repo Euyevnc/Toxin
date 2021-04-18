@@ -1,19 +1,34 @@
 import './SearchRoom.scss';
 
-import header from '../../blocks/header/header';
-import datePicker from '../../blocks/date-picker/date-picker';
-import rangePicker from '../../blocks/range-picker/range-picker';
-import counter from '../../blocks/input-with-counter/input-with-counter';
-import checkboxes from '../../blocks/checkboxes/checkboxes';
-import numberDemo from '../../blocks/number-demo/number-demo';
+import Header from '../../blocks/header/header';
+import DatePicker from '../../blocks/date-picker/date-picker';
+import RangePicker from '../../blocks/range-picker/range-picker';
+import Counter from '../../blocks/input-with-counter/input-with-counter';
+import Checkboxes from '../../blocks/checkboxes/checkboxes';
+import NumberDemo from '../../blocks/number-demo/number-demo';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
 function handlerDocumentDomLoaded() {
-  header();
-  datePicker();
-  counter();
-  checkboxes();
-  numberDemo();
-  rangePicker();
+  /* eslint-disable no-unused-vars */
+  const headerObject = new Header();
+
+  const datePickerObject = new DatePicker();
+  datePickerObject.init();
+
+  const rangePickerObject = new RangePicker();
+  rangePickerObject.init();
+
+  document.querySelectorAll('.js-input-with-counter').forEach((demo) => {
+    const counterObject = new Counter(demo);
+    counterObject.displayValue();
+  });
+
+  const expandingCheckboxes = document.querySelector('.content__facilities .js-checkboxes');
+  const expandingCheckboxesObject = new Checkboxes(expandingCheckboxes);
+
+  document.querySelectorAll('.js-number-demo').forEach((demo) => {
+    const demoObject = new NumberDemo(demo);
+    demoObject.init();
+  });
 }

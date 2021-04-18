@@ -1,6 +1,7 @@
 @import '../../assets/styles/mixin-font';
 @import '../checkbox/checkbox.scss';
 .checkboxes {
+  max-width: 266px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -9,45 +10,39 @@
     @include default-font(
       $main-color_darkest,
       $size-small,
-      $size-small + 3,
+      44px,
       700,
       none,
       uppercase
     );
 
-    margin: 0;
-    margin-bottom: 16.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 44px;
     padding: 0;
-
-    &_expanding {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      min-height: 44px;
-      margin: 0;
-      padding: 0;
-      line-height: 44px;
-      cursor: pointer;
-      user-select: none;
-      & + .checkboxes__container {
-        display: none;
-        &_visible {
-          display: block;
-        }
-      }
-    }
+    user-select: none;
   }
   &__arrow {
+    display: inline-block;
     min-width: 44px;
     max-height: 44px;
     color: $main-color_lighter;
     line-height: 44px;
     text-align: center;
     text-transform: none;
+    transform: rotateX(180deg);
   }
   &__item {
     margin-bottom: 10px;
+  }
+  &_shrinked {
+    & .checkboxes__container {
+      display: none;
+    }
+    & .checkboxes__arrow {
+      transform: none;
+    }
   }
 }

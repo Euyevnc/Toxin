@@ -4,6 +4,7 @@
 
 .date-picker {
   position: relative;
+  max-width: 266px;
   color: $main-color_lighter;
   .textfield__value {
     &::placeholder {

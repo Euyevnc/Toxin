@@ -1,20 +1,8 @@
 import Chart from 'chart.js';
 
-function diagram() {
-  const diagrams = [];
-
-  document.querySelectorAll('.js-diagram').forEach((element) => {
-    const newDiagram = new Diagram(element);
-    newDiagram.init();
-    diagrams.push(newDiagram);
-  });
-
-  if (diagrams.length === 1) return diagrams[0];
-  return diagrams;
-}
-
+const firstElement = document.querySelector('.js-diagram');
 class Diagram {
-  constructor(root) {
+  constructor(root = firstElement) {
     this.root = root;
     this.canvas = this.root.querySelector('.js-diagram__canvas');
     this.subjectForm = Object.values(this.root.querySelector('.js-diagram__reviews-amount').dataset);
@@ -95,4 +83,4 @@ class Diagram {
   }
 }
 
-export default diagram;
+export default Diagram;

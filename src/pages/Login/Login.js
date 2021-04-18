@@ -1,8 +1,9 @@
 import './Login.scss';
-import header from '../../blocks/header/header';
+import Header from '../../blocks/header/header';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
 function handlerDocumentDOMLoaded() {
-  header();
+  /* eslint-disable no-unused-vars */
+  const headerObject = new Header();
 }

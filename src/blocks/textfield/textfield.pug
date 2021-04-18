@@ -1,4 +1,4 @@
-mixin textfield({ label = '', placeholder = 'enter text ', describe = '', arrow = false, type='text' } = { })
+mixin textfield({ label = '', placeholder = 'enter text ', describe = '', arrow = false, type='text', readonly = false, autocomplete = 'off' } = { })
   .textfield.js-textfield
     if arrow
       span.textfield__arrow.js-textfield__arrow
@@ -6,5 +6,5 @@ mixin textfield({ label = '', placeholder = 'enter text ', describe = '', arrow 
     label.textfield__label
       if label
         h3.textfield__subscribe  #{label}
-      input.textfield__value.js-textfield__value(placeholder = placeholder, type = type)
+      input.textfield__value.js-textfield__value(placeholder = placeholder, type = type, readonly = readonly, autocomplete = autocomplete)
     p.textfield__describe #{describe}

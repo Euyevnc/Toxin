@@ -1,7 +1,7 @@
 include ../double-date-picker/double-date-picker.pug
 include ../input-with-counter/input-with-counter.pug
 include ../button/button.pug
-mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, button, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
+mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, buttonText, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
   article.booker.js-booker
     section.booker__information
       span.booker__main-info
@@ -33,4 +33,4 @@ mixin number-booker( {number = '', category = '', price = 0, servDesc='', servPr
         strong.js-booker__total-price
         
     section.booker__button-cont
-      +button(button)
+      +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })

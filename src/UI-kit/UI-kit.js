@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './UI-kit.scss';
 
 import DateMask from '../blocks/date-mask/date-mask';
@@ -14,54 +15,55 @@ import NumberDemo from '../blocks/number-demo/number-demo';
 import Registration from '../blocks/registration/registration';
 
 function handlerDOMLoaded() {
-  const doubleDatePicker = new DoubleDatePicker(document.querySelector('.forms'));
-  doubleDatePicker.launch();
+  const doublePickerObject = new DoubleDatePicker();
+  doublePickerObject.init();
 
-  const datePicker = new DatePicker(document.querySelector('.forms'));
-  datePicker.launch();
+  const datePickerObject = new DatePicker();
+  datePickerObject.init();
 
-  document.querySelectorAll('.input-with-counter-container').forEach((cont) => {
-    const counter = new Counter(cont);
-    counter.displayValue();
+  document.querySelectorAll('.forms-dropdowns-wrapper .js-input-with-counter').forEach((cont) => {
+    const counterObject = new Counter(cont);
+    counterObject.displayValue();
   });
 
-  const numberFinder = new NumberFinder();
-  numberFinder.init();
+  const counter = document.querySelector('.forms .js-input-with-counter');
+  const counterObject = new Counter(counter);
 
-  const numberBooker = new Booker();
-  numberBooker.init();
+  const numberBookerObject = new Booker();
+  numberBookerObject.init();
 
-  const headers = [];
-  document.querySelectorAll('.headers-and-footers .header-container').forEach((header) => {
-    const newHeader = new Header(header);
-    headers.push(newHeader);
+  const numberFinderObject = new NumberFinder();
+  numberFinderObject.init();
+
+  document.querySelectorAll('.js-header').forEach((header) => {
+    const headerObject = new Header(header);
   });
 
   document.querySelectorAll('.number-demonstration-container').forEach((cont) => {
-    const newDemo = new NumberDemo(cont);
-    newDemo.init();
+    const demoObject = new NumberDemo(cont);
+    demoObject.init();
   });
 
-  const rangePicker = new RangePicker();
-  rangePicker.init();
+  const rangePickerObject = new RangePicker();
+  rangePickerObject.init();
 
-  document.querySelectorAll('.dropping-checkboxes-container').forEach((cont) => {
-    const newChckboxes = new Checkboxes(cont);
-    newChckboxes.init();
+  document.querySelectorAll('.dropping-checkboxes-container .js-checkboxes').forEach((cont) => {
+    const checkboxesObject = new Checkboxes(cont);
   });
 
-  const review = new Review();
-  review.init();
+  const reviewObject = new Review();
+  reviewObject.init();
 
-  const dateMask = new DateMask();
-  dateMask.init();
+  const dateMaskObject = new DateMask();
+  dateMaskObject.init();
 
-  const registration = new Registration();
-  registration.init();
+  const registrationObject = new Registration();
+  registrationObject.init();
 
   document.querySelector('.textfield-active-container input').value = 'This is pretty awesome';
+
   setTimeout(() => {
-    const calendar = document.querySelector('.ui-datepicker').cloneNode(true);
+    const calendar = document.querySelector('.js-ui-datepicker').cloneNode(true);
     const contForCalendar = document.querySelector('.expended-calendar-container');
     contForCalendar.appendChild(calendar);
   }, 700);

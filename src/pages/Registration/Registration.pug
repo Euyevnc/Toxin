@@ -8,15 +8,44 @@ block variables
   
 block head
   title Registration
-  meta(name="keywords", content="keywords")
-  meta(name="description", content="description")
+  meta(name='keywords', content='keywords')
+  meta(name='description', content='description')
 block header
-  +header({ menu: { login: false, issues: [ {name: "О нас", href:"/about_us/"},{name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, {name: "Вакансии", href:"/list/" },{name: "Новости", href:"/news/" },{name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } ] } })
+  +header({ 
+    menu: { 
+      login: false, 
+      issues: [ 
+        {name: 'О нас', href:'/about_us/'},
+        {name: 'Услуги', blocks:[{href:'/services1/', name:'Some'},{href:'/services3/', name:'Some else'}, {href:'/services3/', name:'Nevermind'} ]}, 
+        {name: 'Вакансии', href:'/list/' },
+        {name: 'Новости', href:'/news/' },
+        {name: 'Соглашения', blocks:[{href:'/convience1/', name:'Some'},{href:'/convience2/', name:'Some else'}] } 
+      ],
+      autorization: {
+        signinButton: 'войти',
+        signupButton: 'зарегестрироваться'
+      }
+    }, 
+  })
 block content    
-  +registration()
+  +registration({
+    header: 'Регистрация аккаунта',
+    signupBtn: {text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'},
+    signinBtn: { text:'войти' },
+    signinText: 'Уже есть аккаунт на Toxin',
+    nameField: { placeholder: 'Имя'},
+    surnameField: { placeholder: 'Фамилия'},
+    sexRadio: { 
+      name: 'sex', 
+      radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] 
+    },
+    birthdayField: { label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"},
+    mailField: {label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"},
+    passwordField: {placeholder: 'Пароль', type: "password"},
+    offerTumbler: { issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] },
+  })
 block footer
-  +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
+  +footer({info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:'Навигация', links:[{href: '/about/',desc: 'О нас'},{href: '/news/',desc: 'Новости'},{href: '/support/',desc: 'Служба поддержки'},{href: '/services/',desc: 'Услуги'} ]}, {caption:'О нас', links:[{href: '/about_service/',desc: 'О сервисе'},{href: '/team/',desc: 'Наша команда'},{href: 'list/',desc: 'Вакансии'},{href: '/investors/',desc: 'Инвесторы'} ]}, {caption:'Служба поддержки', links:[{href: '/convience/',desc: 'Соглашения'},{href: '/comm/',desc: 'Сообщества'},{href: '/connection/',desc: 'Связь с нами'}] } ]} )
 block cellar  
-  +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+  +cellar({ text: 'Copyright © 2018 Toxin отель. Все права зачищены.', links: [{link: '/twit/', class: 'fa-twitter'}, {link:'/fb/', class: 'fa-facebook-square'}, {link:'/inst/', class: 'fa-instagram'}] })
 block script
- 
