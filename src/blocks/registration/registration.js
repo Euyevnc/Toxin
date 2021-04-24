@@ -1,5 +1,5 @@
 import Textfield from '../textfield/textfield';
-import DateMask from '../date-mask/date-mask';
+import DateMaskedTextfield from '../date-masked-textfield/date-masked-textfield';
 
 const firstElement = document.querySelector('.js-registration');
 class Registration {
@@ -8,7 +8,7 @@ class Registration {
     this.formObject = this.root.querySelector('.js-registration__form .js-textfield');
     this.nameFieldObject = new Textfield(this.root.querySelector('.js-registration__data-name .js-textfield'));
     this.surnameFieldObject = new Textfield(this.root.querySelector('.js-registration__data-surname .js-textfield'));
-    this.birthFieldObject = new DateMask(this.root.querySelector('.js-date-mask'));
+    this.birthFieldObject = new DateMaskedTextfield(this.root.querySelector('.js-date-masked-textfield'));
     this.emailFieldObject = new Textfield(this.root.querySelector('.js-registration__data-email .js-textfield'));
     this.passwordFieldObject = new Textfield(this.root.querySelector('.js-registration__data-password .js-textfield'));
   }

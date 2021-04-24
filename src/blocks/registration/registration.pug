@@ -1,5 +1,5 @@
 include ../textfield/textfield.pug
-include ../date-mask/date-mask.pug
+include ../date-masked-textfield/date-masked-textfield.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
@@ -15,7 +15,7 @@ mixin registration({ header = 'account registration', signupBtn, signinBtn, sign
         +radios( sexRadio )
       
       .registration__data-birthday.js-registration__data-birthday
-        +date-mask( birthdayField )
+        +date-masked-textfield( birthdayField )
 
       .registration__data-email.js-registration__data-email
         +textfield( mailField )

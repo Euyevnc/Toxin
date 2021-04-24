@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './UI-kit.scss';
 
-import DateMask from '../blocks/date-mask/date-mask';
+import DateMaskedTextfield from '../blocks/date-masked-textfield/date-masked-textfield';
 import DoubleDatePicker from '../blocks/double-date-picker/double-date-picker';
 import DatePicker from '../blocks/date-picker/date-picker';
 import RangePicker from '../blocks/range-picker/range-picker';
@@ -54,7 +54,7 @@ function handlerDOMLoaded() {
   const reviewObject = new Review();
   reviewObject.init();
 
-  const dateMaskObject = new DateMask();
+  const dateMaskObject = new DateMaskedTextfield();
   dateMaskObject.init();
 
   const registrationObject = new Registration();

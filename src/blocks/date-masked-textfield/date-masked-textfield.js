@@ -3,8 +3,8 @@ import Textfield from '../textfield/textfield';
 import 'jquery';
 import '../../plugins/jquery.maskinput.min';
 
-const firstElement = document.querySelector('.js-date-mask');
-class DateMask {
+const firstElement = document.querySelector('.js-date-masked-textfield');
+class DateMaskedTextfield {
   constructor(root = firstElement) {
     this.root = root;
     this.textfield = new Textfield(this.root.querySelector('.js-textfield'));
@@ -16,4 +16,4 @@ class DateMask {
   }
 }
 
-export default DateMask;
+export default DateMaskedTextfield;

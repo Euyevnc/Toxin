@@ -2,7 +2,7 @@ include ./UI-blocks/color-icon/color-icon.pug
 include ./UI-blocks/font-icon/font-icon.pug
 include ../blocks/textfield/textfield.pug
 include ../blocks/input-with-counter/input-with-counter.pug
-include ../blocks/date-mask/date-mask.pug
+include ../blocks/date-masked-textfield/date-masked-textfield.pug
 include ../blocks/double-date-picker/double-date-picker.pug
 include ../blocks/date-picker/date-picker.pug
 include ../blocks/checkboxes/checkboxes.pug
@@ -73,7 +73,7 @@ include ../blocks/entry-form/entry-form.pug
           confirmButtonText: 'подтвердить',
         })
       .input-with-mask-container 
-        +date-mask({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+        +date-masked-textfield({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
       .double-range-calendar-container
         +double-date-picker( { 
           textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] 
