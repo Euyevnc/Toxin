@@ -7,11 +7,11 @@ import DatePicker from '../blocks/date-picker/date-picker';
 import RangePicker from '../blocks/range-picker/range-picker';
 import Counter from '../blocks/input-with-counter/input-with-counter';
 import Checkboxes from '../blocks/checkboxes/checkboxes';
-import Booker from '../blocks/number-booker/number-booker';
-import NumberFinder from '../blocks/number-finder/number-finder';
+import RoomBooker from '../blocks/room-booker/room-booker';
+import RoomFinder from '../blocks/room-finder/room-finder';
 import Header from '../blocks/header/header';
 import Review from '../blocks/review/review';
-import NumberDemo from '../blocks/number-demo/number-demo';
+import RoomDemo from '../blocks/room-demo/room-demo';
 import Registration from '../blocks/registration/registration';
 
 function handlerDOMLoaded() {
@@ -29,18 +29,18 @@ function handlerDOMLoaded() {
   const counter = document.querySelector('.forms .js-input-with-counter');
   const counterObject = new Counter(counter);
 
-  const numberBookerObject = new Booker();
-  numberBookerObject.init();
-
-  const numberFinderObject = new NumberFinder();
+  const numberFinderObject = new RoomFinder();
   numberFinderObject.init();
+
+  const numberBookerObject = new RoomBooker();
+  numberBookerObject.init();
 
   document.querySelectorAll('.js-header').forEach((header) => {
     const headerObject = new Header(header);
   });
 
-  document.querySelectorAll('.number-demonstration-container').forEach((cont) => {
-    const demoObject = new NumberDemo(cont);
+  document.querySelectorAll('.room-demonstration-container').forEach((cont) => {
+    const demoObject = new RoomDemo(cont);
     demoObject.init();
   });
 

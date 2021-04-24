@@ -10,7 +10,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "ignorePatterns": ["/dist/**/*.js","/src/plugins/*.js"]
+  "ignorePatterns": ["/dist/**/*.js","/src/plugins/*.js"],
   "extends": [ "airbnb"],
   "rules": {
     "linebreak-style": [2, "windows"],

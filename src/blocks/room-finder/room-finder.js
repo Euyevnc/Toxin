@@ -1,8 +1,8 @@
 import DoubleDatePicker from '../double-date-picker/double-date-picker';
 import Counter from '../input-with-counter/input-with-counter';
 
-const firstElement = document.querySelector('.js-number-finder');
-class NumberFinder {
+const firstElement = document.querySelector('.js-room-finder');
+class RoomFinder {
   constructor(root = firstElement) {
     this.root = root;
     this.counterObject = new Counter(this.root.querySelector('.js-input-with-counter'));
@@ -15,4 +15,4 @@ class NumberFinder {
   }
 }
 
-export default NumberFinder;
+export default RoomFinder;

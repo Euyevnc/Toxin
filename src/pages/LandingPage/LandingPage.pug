@@ -2,7 +2,7 @@ extends ../../layout/layout-for-hotel.pug
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/cellar/cellar.pug
-include ../../blocks/number-finder/number-finder.pug
+include ../../blocks/room-finder/room-finder.pug
 block variables
   
 block head
@@ -29,7 +29,7 @@ block header
   })
 block content   
   .content__searcher-container
-    +number-finder({ 
+    +room-finder({ 
       header: 'Найдём номера под ваши пожелания',
         datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
         counter: { 

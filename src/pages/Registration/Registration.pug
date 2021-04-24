@@ -37,12 +37,12 @@ block content
     surnameField: { placeholder: 'Фамилия'},
     sexRadio: { 
       name: 'sex', 
-      radios: [ {value: "man", describe:'Мужчина', checked:true},{value: "women", describe:'Женщина'} ] 
+      radios: [ {value: "man", title:'Мужчина', checked:true},{value: "women", title:'Женщина'} ] 
     },
     birthdayField: { label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"},
     mailField: {label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"},
     passwordField: {placeholder: 'Пароль', type: "password"},
-    offerTumbler: { issues: [ {value: 'agreement', name:'registration-allow-offers', desc:'Получать спецпредложения'} ] },
+    offerTumbler: { issues: [ {value: 'agreement', name:'registration-allow-offers', title:'Получать спецпредложения'} ] },
   })
 block footer
   +footer({info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:'Навигация', links:[{href: '/about/',desc: 'О нас'},{href: '/news/',desc: 'Новости'},{href: '/support/',desc: 'Служба поддержки'},{href: '/services/',desc: 'Услуги'} ]}, {caption:'О нас', links:[{href: '/about_service/',desc: 'О сервисе'},{href: '/team/',desc: 'Наша команда'},{href: 'list/',desc: 'Вакансии'},{href: '/investors/',desc: 'Инвесторы'} ]}, {caption:'Служба поддержки', links:[{href: '/convience/',desc: 'Соглашения'},{href: '/comm/',desc: 'Сообщества'},{href: '/connection/',desc: 'Связь с нами'}] } ]} )

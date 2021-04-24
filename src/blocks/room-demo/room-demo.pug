@@ -1,0 +1,39 @@
+include ../rate-stars/rate-stars.pug
+mixin room-demo({ number = 0, category = '', price = 0, rate = 0, reviews = 0, pictures = [] } = { })
+  - let amount = pictures.length 
+  - let validPrice = price.toLocaleString()
+  article.js-room-demo.room-demo
+    .js-room-demo__image-cont.room-demo__image-cont(tabindex = 0)
+      - for (let i = 0; i < amount; i++){
+        if i === 0
+          img.js-room-demo__image.room-demo__image(src = `${pictures[i]}`, alt = 'this number looks like ')
+        else
+          img.js-room-demo__image.room-demo__image.js-room-demo__image_disactive.room-demo__image_disactive(src = `${pictures[i]}`, alt = 'this number looks like ')
+      - }
+      span.room-demo__arrow.room-demo__arrow_left.js-room-demo__arrow_left(tabindex = 0) expand_more
+      span.room-demo__arrow.room-demo__arrow_right.js-room-demo__arrow_right(tabindex = 0) expand_less
+      span.js-room-demo__buttons.room-demo__buttons
+        - for (let i = 0; i < amount; i++){
+          if i === 0 
+            span.js-room-demo__button.room-demo__button
+          else
+            span.js-room-demo__button.room-demo__button.js-room-demo__button_disactive.room-demo__button_disactive
+        - }
+
+    .js-room-demo__main-info.room-demo__main-info
+      span 
+        b.room-demo__font_color_black.room-demo__font_size_middle №
+        strong.room-demo__font_color_black.room-demo__font_size_large &nbsp;#{number}
+        strong.room-demo__font_color_purple.room-demo__font_size_small.room-demo__font_uppercase &nbsp;&nbsp;#{category}
+      span.room-demo__price
+        b.room-demo__font_size_middle #{validPrice}₽
+        span.room-demo__font_size_small &nbsp;в сутки
+
+    .js-room-demo__rate.room-demo__rate 
+      span.js-room-demo__stars.room-demo__stars
+        - const complete = Math.floor(rate)
+        - const share = rate - complete
+        +rate-stars({complete, share})
+      span.js-room-demo__reviews.room-demo__reviews
+        b.room-demo__font_size_middle #{reviews}
+        span.room-demo__font_size_middle &nbsp;Отзывов

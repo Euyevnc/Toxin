@@ -7,7 +7,7 @@ include ../../blocks/stickers/stickers.pug
 include ../../blocks/diagram/diagram.pug
 include ../../blocks/review/review.pug
 include ../../blocks/marked-list/marked-list.pug
-include ../../blocks/number-booker/number-booker.pug
+include ../../blocks/room-booker/room-booker.pug
 
 block variables
   
@@ -38,7 +38,13 @@ block content
   section.content__information
     .content__stickers
       h2.content__header.content__header_margin_zero Сведения о номере
-      +stickers({ issues: [{icon: 'insert_emoticon', describe: 'Комфорт', subscribe: 'Шумопоглощающие стены'}, {icon: 'location_city', describe: 'Удобство',  subscribe: 'Окно в каждой из спален'}, {icon: 'whatshot', describe: 'Уют' , subscribe: 'Номер оснащён камином'}] })
+      +stickers({ 
+        issues: [
+          {icon: 'insert_emoticon', title: 'Комфорт', subtitle: 'Шумопоглощающие стены'}, 
+          {icon: 'location_city', title: 'Удобство',  subtitle: 'Окно в каждой из спален'}, 
+          {icon: 'whatshot', title: 'Уют' , subtitle: 'Номер оснащён камином'}
+        ] 
+      })
     
     .content__diogram
       h2.content__header Впечатления от номера
@@ -84,7 +90,7 @@ block content
       p.content__font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
   
   section.content__booking 
-    +number-booker({
+    +room-booker({
       number: 888, 
       category: 'люкс', 
       price: 9990, 

@@ -46,7 +46,7 @@
       }
     }
   }
-  &__text {
+  &__legend {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,7 +61,7 @@
     @include default-font($main-color_lighter, $size-small, $size-middle);
   }
 
-  &_with_subscription {
+  &_with_subtitle {
     .checkbox__main-text {
       @include default-font($weight: 700);
 

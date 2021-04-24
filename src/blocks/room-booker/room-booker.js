@@ -1,8 +1,8 @@
 import InputsWithCounter from '../input-with-counter/input-with-counter';
 import DoubleDatePicker from '../double-date-picker/double-date-picker';
 
-const firstElement = document.querySelector('.js-booker');
-class Booker {
+const firstElement = document.querySelector('.js-room-booker');
+class RoomBooker {
   constructor(root = firstElement) {
     this.root = root;
     this.counterObject = new InputsWithCounter(this.root.querySelector('.js-input-with-counter'));
@@ -11,12 +11,12 @@ class Booker {
     this.arrival = 4;
     this.departure = 8;
 
-    this.number = this.root.querySelector('.js-booker__number').dataset.number;
-    this.category = this.root.querySelector('.js-booker__category').dataset.category;
-    this.price = Number(this.root.querySelector('.js-booker__price-info').dataset.price);
+    this.number = this.root.querySelector('.js-room-booker__number').dataset.number;
+    this.category = this.root.querySelector('.js-room-booker__category').dataset.category;
+    this.price = Number(this.root.querySelector('.js-room-booker__price-info').dataset.price);
 
-    this.day_local = this.root.querySelector('.js-booker__amount').dataset.local;
-    this.discount_local = this.root.querySelector('.js-booker__services').dataset.local;
+    this.day_local = this.root.querySelector('.js-room-booker__amount').dataset.local;
+    this.discount_local = this.root.querySelector('.js-room-booker__services').dataset.local;
 
     this.services = this.#extractServicesObject();
     this.servicePrice = this.#countService();
@@ -36,8 +36,8 @@ class Booker {
 
   #extractServicesObject = () => {
     const serviceItems = [];
-    const prices = this.root.querySelector('.js-booker__services').dataset.prices.split(', ');
-    this.root.querySelector('.js-booker__services').dataset.desces.split(', ').forEach((elem, index) => {
+    const prices = this.root.querySelector('.js-room-booker__services').dataset.prices.split(', ');
+    this.root.querySelector('.js-room-booker__services').dataset.desces.split(', ').forEach((elem, index) => {
       const newService = {
         impact: +prices[index],
         describe: elem,
@@ -58,17 +58,17 @@ class Booker {
   }
 
   #displayPrice = (amount) => {
-    this.root.querySelectorAll('.js-booker__amount').forEach((el) => {
+    this.root.querySelectorAll('.js-room-booker__amount').forEach((el) => {
       const amountField = el;
       amountField.textContent = `${amount} ${this.day_local}`;
     });
 
-    this.root.querySelectorAll('.js-booker__rent-total').forEach((el) => {
+    this.root.querySelectorAll('.js-room-booker__rent-total').forEach((el) => {
       const totalRent = el;
       totalRent.textContent = `${(amount * this.price).toLocaleString()}₽`;
     });
 
-    const total = this.root.querySelector('.js-booker__total').lastElementChild;
+    const total = this.root.querySelector('.js-room-booker__total').lastElementChild;
     this.totalPrice = total;
     total.textContent = `${(Math.max(0, amount * this.price + this.servicePrice)).toLocaleString()}₽`;
   }
@@ -78,17 +78,17 @@ class Booker {
       number, category, price, root,
     } = this;
 
-    root.querySelectorAll('.js-booker__number').forEach((el) => {
+    root.querySelectorAll('.js-room-booker__number').forEach((el) => {
       const numberField = el;
       numberField.textContent = number;
     });
 
-    root.querySelectorAll('.js-booker__category').forEach((el) => {
+    root.querySelectorAll('.js-room-booker__category').forEach((el) => {
       const categoryField = el;
       categoryField.textContent = `   ${category}`;
     });
 
-    root.querySelectorAll('.js-booker__price').forEach((el) => {
+    root.querySelectorAll('.js-room-booker__price').forEach((el) => {
       const priceField = el;
       priceField.textContent = `${price.toLocaleString()}₽`;
     });
@@ -97,9 +97,9 @@ class Booker {
       const serviceItem = el;
       if (el.describe) {
         const servBlock = document.createElement('li');
-        servBlock.className = 'booker__service';
-        servBlock.innerHTML = `<span class='booker__service-desc'>${serviceItem.describe}</span><span class='booker__sign_i'>i</span><span class='booker__service-price'>${Math.max(el.impact, 0).toLocaleString()}₽</span>`;
-        this.root.querySelector('.js-booker__services').appendChild(servBlock);
+        servBlock.className = 'room-booker__service';
+        servBlock.innerHTML = `<span class='room-booker__service-desc'>${serviceItem.describe}</span><span class='room-booker__sign_i'>i</span><span class='room-booker__service-price'>${Math.max(el.impact, 0).toLocaleString()}₽</span>`;
+        this.root.querySelector('.js-room-booker__services').appendChild(servBlock);
       }
     });
   }
@@ -113,4 +113,4 @@ class Booker {
   }
 }
 
-export default Booker;
+export default RoomBooker;

@@ -3,22 +3,22 @@ include ../arrow/arrow.pug
 mixin menu({ login = '', issues, autorization })
   nav.menu.js-menu
     ul.menu__list.js-menu__list
-      each val in issues
-        - let modifier = val.modifier  ? `menu__element_type_${val.modifier}` : ''
+      each element in issues
+        - let modifier = element.modifier  ? `menu__element_type_${element.modifier}` : ''
 
-        if val.blocks
+        if element.blocks
           li(class=`js-menu__element menu__element ${modifier}`, tabindex=0) 
-            span.menu__link #{val.name}
+            span.menu__link #{element.name}
             span.menu__arrow
               +arrow({ direction: 'down' })
             ul.js-menu__submenu.menu__submenu
-              each block in val.blocks
+              each block in element.blocks
                 - let modifier = block.modifier  ? `menu__element_type_${block.modifier}` : ''
                 li(class=`js-menu__element menu__element ${modifier}`)
                   a.menu__link(href=`${block.href}`) #{block.name}
         else
           li(class = `js-menu__element menu__element ${modifier}`)
-            a.menu__link(href = `${val.href}`) #{val.name}
+            a.menu__link(href = `${element.href}`) #{element.name}
       if login   
         li.js-menu__element.menu__element
           a.menu__link(href = '/account/') #{login}

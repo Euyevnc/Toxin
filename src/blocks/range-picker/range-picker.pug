@@ -1,13 +1,13 @@
-mixin range-picker({ desc = '', subscribe = '', keys = "type, orient, scale, cloud, origin, range, step, initStart, initEnd", values = "range, horizontal, false, none, 0, 100, 0, 0, 50" } = { })
+mixin range-picker({ title = '', describe = '', keys = "type, orient, scale, cloud, origin, range, step, initStart, initEnd", values = "range, horizontal, false, none, 0, 100, 0, 0, 50" } = { })
   .range-picker.js-range-picker(data-keys = keys, data-values = values)
     .range-picker__header
-      h3.range-picker__title #{desc}
+      h3.range-picker__title #{title}
       span.range-picker__counter
         span.range-picker__min.js-range-picker__min
         span ₽ - 
         span.range-picker__max.js-range-picker__max
         span ₽
     .js-range-picker__container.range-picker__container
-    if subscribe
+    if describe
       div
-        p.range-picker__subscribe #{subscribe}
+        p.range-picker__describe #{describe}

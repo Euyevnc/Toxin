@@ -7,7 +7,6 @@
   "plugins": ["stylelint-order", "stylelint-scss", "stylelint-prettier"],
   "ignoreFiles": ["**/*.css", "**/*.js"], 
   "rules": {
-    "linebreaks": ["windows"],
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
     "prettier/prettier": true

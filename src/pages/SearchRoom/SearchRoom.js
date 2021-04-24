@@ -5,7 +5,7 @@ import DatePicker from '../../blocks/date-picker/date-picker';
 import RangePicker from '../../blocks/range-picker/range-picker';
 import Counter from '../../blocks/input-with-counter/input-with-counter';
 import Checkboxes from '../../blocks/checkboxes/checkboxes';
-import NumberDemo from '../../blocks/number-demo/number-demo';
+import RoomDemo from '../../blocks/room-demo/room-demo';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
@@ -27,8 +27,8 @@ function handlerDocumentDomLoaded() {
   const expandingCheckboxes = document.querySelector('.content__facilities .js-checkboxes');
   const expandingCheckboxesObject = new Checkboxes(expandingCheckboxes);
 
-  document.querySelectorAll('.js-number-demo').forEach((demo) => {
-    const demoObject = new NumberDemo(demo);
+  document.querySelectorAll('.js-room-demo').forEach((demo) => {
+    const demoObject = new RoomDemo(demo);
     demoObject.init();
   });
 }

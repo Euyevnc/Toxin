@@ -6,7 +6,7 @@ include ../../blocks/date-picker/date-picker.pug
 include ../../blocks/input-with-counter/input-with-counter.pug
 include ../../blocks/range-picker/range-picker.pug
 include ../../blocks/checkboxes/checkboxes.pug
-include ../../blocks/number-demo/number-demo.pug
+include ../../blocks/room-demo/room-demo.pug
 include ../../blocks/pagination/pagination.pug
 block variables
 
@@ -68,7 +68,8 @@ block content
         })     
       .content__price-picker
         +range-picker({ 
-          desc:"Диапазон цены", subscribe: "Стоимость за сутки прибывания в номере", 
+          title: "Диапазон цены", 
+          describe: "Стоимость за сутки прибывания в номере", 
           keys: "{type, orient, scale, cloud, origin, range, step, initStart, initEnd", 
           values: "range, horizontal, , none, 1000, 15000, 500, 5000, 10000" 
         })
@@ -77,17 +78,17 @@ block content
         +checkboxes({ 
           header: 'правила дома',
           checkboxes: [
-            {subscription:'Можно курить', value: 'smoking', name: 'smoking',}, 
-            {subscription:'Можно с питомцами', value: 'allowed', name: 'pets', checked:'true'},
-            {subscription:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:'true'}
+            {title:'Можно курить', value: 'smoking', name: 'smoking',}, 
+            {title:'Можно с питомцами', value: 'allowed', name: 'pets', checked:'true'},
+            {title:'Можно пригласить гостей (до 10 человек)', value: 'allowed', name: 'guests', checked:'true'}
           ] 
         })
       .content__availability
         +checkboxes({
           header: 'доступность', 
           checkboxes: [ 
-            {subscription:'Широкий коридор', description:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, 
-            {subscription:'Помощник для инвалидов', description:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} 
+            {title:'Широкий коридор', subtitle:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, 
+            {title:'Помощник для инвалидов', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} 
           ] 
         })
       
@@ -112,32 +113,32 @@ block content
           expanding: true, 
           expanded: false,
           checkboxes: [ 
-            {subscription:'Завтрак', name: 'breakfast', value: 'included'}, 
-            {subscription:'Письменный стол', checked:'true', name: 'desk', value: 'included'}, 
-            {subscription:'Стул для кормления', name: 'feeding table', value: 'included', checked:'true'}, 
-            {subscription:'Кроватка', name: 'crib', value: 'included', checked:'true'}, 
-            {subscription:'Телевизор', name: 'TV', value: 'included'}, 
-            {subscription:'Шампунь', name: 'shampoo', value:'included'}, 
-            {subscription:'Телевизор', name: 'TV', value:'included'}, 
-            {subscription:'Шампунь', name: 'shampoo', value: 'included'}
+            {title:'Завтрак', name: 'breakfast', value: 'included'}, 
+            {title:'Письменный стол', checked:'true', name: 'desk', value: 'included'}, 
+            {title:'Стул для кормления', name: 'feeding table', value: 'included', checked:'true'}, 
+            {title:'Кроватка', name: 'crib', value: 'included', checked:'true'}, 
+            {title:'Телевизор', name: 'TV', value: 'included'}, 
+            {title:'Шампунь', name: 'shampoo', value:'included'}, 
+            {title:'Телевизор', name: 'TV', value:'included'}, 
+            {title:'Шампунь', name: 'shampoo', value: 'included'}
           ] 
         })
   
   section.content__numbers-demonstration
     h1.content__heading Номера, которые мы для вас подобрали
     .content__numbers-list
-      +number-demo({ number: 888, category: 'люкс', price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img7] })
-      +number-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img9] })
-      +number-demo({ number: 980, category: 'люкс', price: 8500, rate: 3, reviews: 35, pictures:[img3,img2,img5,img9] })
-      +number-demo({ number: 856, price: 7300, rate: 5, reviews: 19, pictures:[img4,img2,img5,img9] })
-      +number-demo({ number: 740, price: 6000, rate: 4, reviews: 44, pictures:[img5,img2,img7,img9] })
-      +number-demo({ number: 982, price: 5800, rate: 3, reviews: 56, pictures:[img6,img2,img5,img9] })
-      +number-demo({ number: 678, price: 5500, rate: 5, reviews: 45, pictures:[img7,img2,img5,img9] })
-      +number-demo({ number: 450, price: 5300, rate: 4, reviews: 39, pictures:[img8, img3, img5, img7] })
-      +number-demo({ number: 350, price: 5000, rate: 3, reviews: 77, pictures:[img9,img2,img5,img1] })
-      +number-demo({ number: 666, price: 5000, rate: 5, reviews: 25, pictures:[img10,img2,img5,img9] })
-      +number-demo({ number: 444, price: 5000, rate: 3, reviews: 15, pictures:[img11,img2,img5,img9] })
-      +number-demo({ number: 352, price: 5000, rate: 3, reviews: 55, pictures:[img12,img2,img5,img9] })
+      +room-demo({ number: 888, category: 'люкс', price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img7] })
+      +room-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img9] })
+      +room-demo({ number: 980, category: 'люкс', price: 8500, rate: 3, reviews: 35, pictures:[img3,img2,img5,img9] })
+      +room-demo({ number: 856, price: 7300, rate: 5, reviews: 19, pictures:[img4,img2,img5,img9] })
+      +room-demo({ number: 740, price: 6000, rate: 4, reviews: 44, pictures:[img5,img2,img7,img9] })
+      +room-demo({ number: 982, price: 5800, rate: 3, reviews: 56, pictures:[img6,img2,img5,img9] })
+      +room-demo({ number: 678, price: 5500, rate: 5, reviews: 45, pictures:[img7,img2,img5,img9] })
+      +room-demo({ number: 450, price: 5300, rate: 4, reviews: 39, pictures:[img8, img3, img5, img7] })
+      +room-demo({ number: 350, price: 5000, rate: 3, reviews: 77, pictures:[img9,img2,img5,img1] })
+      +room-demo({ number: 666, price: 5000, rate: 5, reviews: 25, pictures:[img10,img2,img5,img9] })
+      +room-demo({ number: 444, price: 5000, rate: 3, reviews: 15, pictures:[img11,img2,img5,img9] })
+      +room-demo({ number: 352, price: 5000, rate: 3, reviews: 55, pictures:[img12,img2,img5,img9] })
     .content__pagination()
       +pagination({ amount:15} )
 block footer

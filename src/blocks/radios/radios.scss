@@ -18,7 +18,7 @@
   }
   &__checkbox {
     display: none;
-    & + .radios__label {
+    & + .radios__title {
       @include default-font(
         $color: $main-color_lighter,
         $line: $size-middle + 6

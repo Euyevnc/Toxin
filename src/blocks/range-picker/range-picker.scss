@@ -30,7 +30,7 @@
   &__counter {
     @include default-font($main-color_lighter, $size-small, $size-small);
   }
-  &__subscribe {
+  &__describe {
     margin-top: 3.5px;
     margin-bottom: 0;
     @include default-font($main-color_lighter, $size-small, $size-middle);

@@ -2,13 +2,10 @@ mixin radios({ label =  '', name = '', radios = [ ] } = { })
   .radios
     if label
       .radios__header #{label}
-    each val in radios
-      - let describe = val.describe
-      - let checked = Boolean(val.checked)
-      - let value = val.value
+    each radio in radios
+      - let title = radio.title
+      - let checked = Boolean(radio.checked)
+      - let value = radio.value
       label.radios__radio-container
-        if checked 
-          input.radios__checkbox(name = `${name}`, value = `${value}`, type = 'radio', checked)
-        else 
-          input.radios__checkbox(name = `${name}`, value = `${value}`, type = 'radio')
-        span.radios__label(tabindex = 0) #{describe}
+        input.radios__checkbox(name = `${name}`, value = `${value}`, type = 'radio', checked=checked)
+        span.radios__title(tabindex = 0) #{title}
