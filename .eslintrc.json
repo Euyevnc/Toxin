@@ -14,7 +14,7 @@
   
   "extends": [ "airbnb"],
   "rules": {
-    "linebreak-style": [2, "windows"],
+    "linebreak-style": 0,
     "no-underscore-dangle": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "max-classes-per-file": ["off"] 

@@ -30,7 +30,7 @@ class ArrowImgsSlider {
 
     arrowPrev.addEventListener('click', handlerArrowPrevClick);
     arrowNext.addEventListener('click', handlerArrowNextClick);
-    /// ////
+
     function handlerArrowPrevClick() {
       let newIndex = currentIndex - 1;
       if (newIndex < 0) newIndex = length - 1;
