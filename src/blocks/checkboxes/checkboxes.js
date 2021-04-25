@@ -1,7 +1,5 @@
-const firstElement = document.querySelector('.js-checkboxes');
-
 class Checkboxes {
-  constructor(root = firstElement) {
+  constructor(root) {
     this.root = root;
     this.header = this.root.querySelector('.js-checkboxes__header');
     this.arrow = this.root.querySelector('.js-checkboxes__arrow .arrow');

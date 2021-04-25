@@ -1,17 +1,16 @@
 import Textfield from '../textfield/textfield';
 
-const firstElement = document.querySelector('.js-input-with-counter');
-class InputWithCounter {
-  constructor(root = firstElement) {
+class Dropdown {
+  constructor(root) {
     this.root = root;
     this.items = [];
     this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
     this.input = this.textfieldObject.input;
     this.arrow = this.textfieldObject.arrow;
 
-    this.menu = this.root.querySelector('.js-input-with-counter__menu');
-    this.clearingButton = this.root.querySelector('.js-input-with-counter__button_delete');
-    this.confirmingButton = this.root.querySelector('.js-input-with-counter__button_confirm');
+    this.menu = this.root.querySelector('.js-dropdown__menu');
+    this.clearingButton = this.root.querySelector('.js-dropdown__button_delete');
+    this.confirmingButton = this.root.querySelector('.js-dropdown__button_confirm');
 
     this.input.addEventListener('focus', this.#handlerInputFocus);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
@@ -19,18 +18,22 @@ class InputWithCounter {
     this.confirmingButton.addEventListener('click', this.#handlerConfirmButtonClick);
     this.clearingButton.addEventListener('click', this.#handlerClearButton);
 
-    this.root.querySelectorAll('.js-input-with-counter__element').forEach((item) => {
-      const newItem = new InputWithCounterElement(item, this.displayValue);
+    this.root.querySelectorAll('.js-dropdown__element').forEach((item) => {
+      const newItem = new InputWithCounterElement(item, this.#displayValue);
       this.items.push(newItem);
     });
   }
 
-  displayValue = () => {
+  init = () => {
+    this.#displayValue();
+  }
+
+  #displayValue = () => {
     const generatedValue = this.#concat();
     this.textfieldObject.setValue(generatedValue);
 
-    if (generatedValue) this.clearingButton.classList.add('input-with-counter__button_visible-delete');
-    else this.clearingButton.classList.remove('input-with-counter__button_visible-delete');
+    if (generatedValue) this.clearingButton.classList.add('dropdown__button_visible-delete');
+    else this.clearingButton.classList.remove('dropdown__button_visible-delete');
   }
 
   #menuRollDown = () => {
@@ -40,7 +43,7 @@ class InputWithCounter {
     this.arrow.removeEventListener('click', this.#handlerArrowClick);
 
     this.input.classList.add('textfield__value_active');
-    this.menu.classList.remove('input-with-counter__menu_hidden');
+    this.menu.classList.remove('dropdown__menu_hidden');
     this.arrow.querySelector('.arrow').textContent = 'expand_less';
   }
 
@@ -51,7 +54,7 @@ class InputWithCounter {
     this.arrow.removeEventListener('click', this.#handlerArrowClosingClick);
 
     this.input.classList.remove('textfield__value_active');
-    this.menu.classList.add('input-with-counter__menu_hidden');
+    this.menu.classList.add('dropdown__menu_hidden');
     this.arrow.querySelector('.arrow').textContent = 'expand_more';
   }
 
@@ -86,14 +89,14 @@ class InputWithCounter {
   };
 
   #clear = () => {
-    this.clearingButton.classList.remove('input-with-counter__button_visible-delete');
+    this.clearingButton.classList.remove('dropdown__button_visible-delete');
     this.input.value = '';
     this.items = this.items.map((item) => {
       const itemCopy = item;
       itemCopy.value = itemCopy.min;
-      itemCopy.minus.classList.add('input-with-counter__tumbler_depricated');
+      itemCopy.minus.classList.add('dropdown__tumbler_depricated');
       if (itemCopy.min !== itemCopy.max) {
-        itemCopy.plus.classList.remove('input-with-counter__tumbler_depricated');
+        itemCopy.plus.classList.remove('dropdown__tumbler_depricated');
       }
       return itemCopy;
     });
@@ -138,10 +141,10 @@ class InputWithCounterElement {
   constructor(item, callback) {
     this.root = item;
     this.callback = callback;
-    this.name = this.root.querySelector('.js-input-with-counter__item-name');
-    this.minus = this.root.querySelector('.js-input-with-counter__tumbler:first-child');
-    this.plus = this.root.querySelector('.js-input-with-counter__tumbler:last-child');
-    this.number = this.root.querySelector('.js-input-with-counter__number');
+    this.name = this.root.querySelector('.js-dropdown__item-name');
+    this.minus = this.root.querySelector('.js-dropdown__tumbler:first-child');
+    this.plus = this.root.querySelector('.js-dropdown__tumbler:last-child');
+    this.number = this.root.querySelector('.js-dropdown__number');
 
     if (this.name.dataset.concat) this.concat = true;
     else {
@@ -169,10 +172,10 @@ class InputWithCounterElement {
   set value(number) {
     this._value = number;
     if (this.value === this.min) {
-      this.minus.classList.add('input-with-counter__tumbler_depricated');
+      this.minus.classList.add('dropdown__tumbler_depricated');
     }
     if (this.value === this.max) {
-      this.plus.classList.add('input-with-counter__tumbler_depricated');
+      this.plus.classList.add('dropdown__tumbler_depricated');
     }
     this.number.textContent = number;
   }
@@ -184,7 +187,7 @@ class InputWithCounterElement {
       this.value = newValue;
 
       if (this.value !== this.min) {
-        this.minus.classList.remove('input-with-counter__tumbler_depricated');
+        this.minus.classList.remove('dropdown__tumbler_depricated');
       }
     }
     this.callback();
@@ -197,11 +200,11 @@ class InputWithCounterElement {
       this.value = newValue;
 
       if (this.value !== this.max) {
-        this.plus.classList.remove('input-with-counter__tumbler_depricated');
+        this.plus.classList.remove('dropdown__tumbler_depricated');
       }
     }
     this.callback();
   }
 }
 
-export default InputWithCounter;
+export default Dropdown;

@@ -1,7 +1,7 @@
 mixin checkbox({ name = '', value = '', title = '', subtitle = '', checked = false} = { })
   label.checkbox(class = `${subtitle ? 'checkbox_with_subtitle' : ''}`)
     input.checkbox__checkbox(type = 'checkbox', value = value, name = name, checked = checked)
-    span.checkbox__label(tabindex=0) 
+    span.checkbox__label(tabindex = 0) 
       span.checkbox__legend
         span.checkbox__main-text #{title}
         span.checkbox__sub-text #{subtitle}

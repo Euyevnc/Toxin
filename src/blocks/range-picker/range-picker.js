@@ -2,9 +2,8 @@ import 'jquery';
 import 'range-slider-for-ml';
 import 'range-slider-for-ml/dist/styles.css';
 
-const firstElement = document.querySelector('.js-range-picker');
 class RangePicker {
-  constructor(root = firstElement) {
+  constructor(root) {
     this.root = root;
     this.container = $(this.root.querySelector('.js-range-picker__container'));
     this.min = this.root.querySelector('.js-range-picker__min');

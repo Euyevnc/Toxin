@@ -1,5 +1,5 @@
 include ../double-date-picker/double-date-picker.pug
-include ../input-with-counter/input-with-counter.pug
+include ../dropdown/dropdown.pug
 include ../button/button.pug
 mixin room-booker( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, buttonText, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
   article.room-booker.js-room-booker
@@ -17,7 +17,7 @@ mixin room-booker( {number = '', category = '', price = 0, servDesc='', servPric
         .room-booker__calendar
           +double-date-picker( datePicker )
         .room-booker__counter
-          +inputs-with-counter( counter )
+          +dropdown( counter )
     
     section.room-booker__rent-calculation
       .room-booker__rent

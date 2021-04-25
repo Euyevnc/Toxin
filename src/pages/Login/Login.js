@@ -5,5 +5,5 @@ document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
 function handlerDocumentDOMLoaded() {
   /* eslint-disable no-unused-vars */
-  const headerObject = new Header();
+  const headerObject = new Header(document.querySelector('.js-header'));
 }

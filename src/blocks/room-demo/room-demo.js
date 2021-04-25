@@ -1,9 +1,8 @@
 import handlerButtonHover from '../../plugins/buttons-imgs-slider';
 import handlerArrowClick from '../../plugins/arrow-imgs-slider';
 
-const firstElement = document.querySelector('.js-room-demo');
 class RoomDemo {
-  constructor(root = firstElement) {
+  constructor(root) {
     this.root = root;
     this.buttons = this.root.querySelectorAll('.js-room-demo__button');
     this.imgs = this.root.querySelectorAll('.js-room-demo__image');

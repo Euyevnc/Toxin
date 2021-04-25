@@ -1,7 +1,7 @@
 @import '../textfield/textfield.scss';
 @import '../../assets/styles/mixin-font';
 
-.input-with-counter {
+.dropdown {
   position: relative;
   z-index: 10;
   width: 100%;
@@ -118,7 +118,7 @@
   }
   &_simple {
     max-width: 266px;
-    & .input-with-counter__buttons {
+    & .dropdown__buttons {
       display: none;
     }
   }

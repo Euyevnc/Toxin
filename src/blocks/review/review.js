@@ -1,7 +1,5 @@
-const firElement = document.querySelector('.js-review');
-
 class Review {
-  constructor(root = firElement) {
+  constructor(root) {
     this.root = root;
     this.timer = this.root.querySelector('.js-review__days-ago');
     this.date = this.timer.dataset.date;

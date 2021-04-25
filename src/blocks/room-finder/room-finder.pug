@@ -1,5 +1,5 @@
 include ../double-date-picker/double-date-picker.pug
-include ../input-with-counter/input-with-counter.pug
+include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin room-finder({ header = 'We will find rooms according to your wishes', datePicker = { }, counter = { }, buttonText = 'find a number' } = { })
@@ -9,6 +9,6 @@ mixin room-finder({ header = 'We will find rooms according to your wishes', date
       .room-finder__container.room-finder__container_for_calendar
         +double-date-picker( datePicker )
       .room-finder__container.room-finder__container_for_input
-        +inputs-with-counter( counter )
+        +dropdown( counter )
       .room-finder__submit-button
         +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })

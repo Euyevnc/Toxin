@@ -7,7 +7,7 @@ mixin menu({ login = '', issues, autorization })
         - let modifier = element.modifier  ? `menu__element_type_${element.modifier}` : ''
 
         if element.blocks
-          li(class=`js-menu__element menu__element ${modifier}`, tabindex=0) 
+          li(class=`js-menu__element menu__element ${modifier}`, tabindex = 0) 
             span.menu__link #{element.name}
             span.menu__arrow
               +arrow({ direction: 'down' })

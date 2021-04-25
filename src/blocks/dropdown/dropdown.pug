@@ -1,0 +1,19 @@
+include ../textfield/textfield.pug
+mixin dropdown({ textfield, isSimple = false, items=[ ], deleteButtonText = 'delete', confirmButtonText = 'confirm' } = { })
+  div(class=`js-dropdown dropdown${isSimple ? ' dropdown_simple' : ''}`)
+    +textfield({ ...textfield, arrow: 'down', readonly: true })
+
+    ul.dropdown__menu.js-dropdown__menu.dropdown__menu_hidden
+      each item in items
+        li.js-dropdown__element.dropdown__element
+          if item.concat
+            strong.js-dropdown__item-name.dropdown__item-name(data-concat = 'true') #{item.name}
+          else
+            strong.js-dropdown__item-name.dropdown__item-name(data-form1 = item.nameForm1, data-form2 = item.nameForm2, data-form3 = item.nameForm3) #{item.name}
+          span.js-dropdown__counter.dropdown__counter
+            span.js-dropdown__tumbler.dropdown__tumbler(data-min = item.min, tabindex = 0) -
+            b.js-dropdown__number.dropdown__number(data-init = item.init) 
+            span.js-dropdown__tumbler.dropdown__tumbler(data-max = item.max, tabindex = 0) +
+      .js-dropdown__buttons.dropdown__buttons
+        button.js-dropdown__button_delete.dropdown__button.dropdown__button_delete(tabindex = 0, type = 'button') #{deleteButtonText}
+        button.js-dropdown__button_confirm.dropdown__button.dropdown__button_confirm(tabindex = 0, type = 'button') #{confirmButtonText}

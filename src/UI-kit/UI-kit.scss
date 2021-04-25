@@ -2,7 +2,7 @@
 @import './UI-blocks/font-icon/font-icon.scss';
 
 @import '../blocks/textfield/textfield.scss';
-@import '../blocks/input-with-counter/input-with-counter.scss';
+@import '../blocks/dropdown/dropdown.scss';
 @import '../blocks/date-masked-textfield/date-masked-textfield.scss';
 @import '../blocks/double-date-picker/double-date-picker.scss';
 @import '../blocks/date-picker/date-picker.scss';
@@ -170,7 +170,7 @@ h3 {
 
   & .default-input-drop-container {
     margin-bottom: 20px;
-    & .input-with-counter {
+    & .dropdown {
       z-index: 15;
     }
   }

@@ -1,7 +1,7 @@
 include ./UI-blocks/color-icon/color-icon.pug
 include ./UI-blocks/font-icon/font-icon.pug
 include ../blocks/textfield/textfield.pug
-include ../blocks/input-with-counter/input-with-counter.pug
+include ../blocks/dropdown/dropdown.pug
 include ../blocks/date-masked-textfield/date-masked-textfield.pug
 include ../blocks/double-date-picker/double-date-picker.pug
 include ../blocks/date-picker/date-picker.pug
@@ -58,8 +58,8 @@ include ../blocks/entry-form/entry-form.pug
         +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
       .textfield-active-container 
         +textfield( {label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'hover/focus'})
-      .input-with-counter-container 
-        +inputs-with-counter({ 
+      .dropdown-container 
+        +dropdown({ 
             textfield: {
             label: 'Гости',
             placeholder: 'Сколько гостей'
@@ -140,8 +140,8 @@ include ../blocks/entry-form/entry-form.pug
 
     section.forms-dropdowns-wrapper
       section
-        .input-with-counter-container.default-input-drop-container
-          +inputs-with-counter({
+        .dropdown-container.default-input-drop-container
+          +dropdown({
             textfield: {
               label: "удобства номера", 
               placeholder: 'Выберете комплектацию', 
@@ -156,8 +156,8 @@ include ../blocks/entry-form/entry-form.pug
             ] 
           })
 
-        .input-with-counter-container.expand-input-drop-container 
-          +inputs-with-counter({
+        .dropdown-container.expand-input-drop-container 
+          +dropdown({
             textfield: {
               label: "удобства номера", 
               placeholder: 'Выберете комплектацию', 
@@ -172,8 +172,8 @@ include ../blocks/entry-form/entry-form.pug
               ] 
             })
       section
-        .input-with-counter-container.expand-input-drop-container
-          +inputs-with-counter({ 
+        .dropdown-container.expand-input-drop-container
+          +dropdown({ 
             textfield: {
               label: 'Гости', 
               placeholder: 'Сколько гостей',
@@ -187,8 +187,8 @@ include ../blocks/entry-form/entry-form.pug
             ] 
           })
       section
-        .input-with-counter-container.expand-input-drop-container
-          +inputs-with-counter({ 
+        .dropdown-container.expand-input-drop-container
+          +dropdown({ 
             textfield: {
               label: 'Гости', 
               placeholder: 'Сколько гостей',

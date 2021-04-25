@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
 function handlerDocumentDomLoaded() {
   /* eslint-disable no-unused-vars */
-  const headerObject = new Header();
+  const headerObject = new Header(document.querySelector('.js-header'));
   const diagramObject = new Diagram();
   diagramObject.init();
-  const bookerObject = new RoomBooker();
+  const bookerObject = new RoomBooker(document.querySelector('.room-booker'));
   bookerObject.init();
   document.querySelectorAll('.js-review').forEach((review) => {
     const reviewObject = new Review(review);

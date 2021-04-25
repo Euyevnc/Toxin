@@ -3,9 +3,8 @@ import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
 import Textfield from '../textfield/textfield';
 
-const firstElement = document.querySelector('.js-date-picker');
 class DatePicker {
-  constructor(root = firstElement) {
+  constructor(root) {
     this.root = root;
     this.params = {
       closeText: 'Закрыть',

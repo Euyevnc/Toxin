@@ -3,7 +3,7 @@ include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/cellar/cellar.pug
 include ../../blocks/date-picker/date-picker.pug
-include ../../blocks/input-with-counter/input-with-counter.pug
+include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/range-picker/range-picker.pug
 include ../../blocks/checkboxes/checkboxes.pug
 include ../../blocks/room-demo/room-demo.pug
@@ -53,7 +53,7 @@ block content
           textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
         })
       .content__guest-counter
-        +inputs-with-counter({ 
+        +dropdown({ 
           textfield: {
             label: 'Гости', 
             placeholder: 'Сколько гостей',
@@ -93,7 +93,7 @@ block content
         })
       
       .content__equipment-counter
-        +inputs-with-counter({
+        +dropdown({
           textfield: {
             label: "удобства номера", 
             placeholder: 'Выберете комплектацию', 

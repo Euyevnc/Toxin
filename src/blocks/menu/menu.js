@@ -1,7 +1,5 @@
-const firstElement = document.querySelector('.js-menu');
-
 class Menu {
-  constructor(root = firstElement) {
+  constructor(root) {
     this.root = root;
     this.submenus = this.root.querySelectorAll('.js-menu__submenu');
     this.submenus.forEach((it) => {
