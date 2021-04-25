@@ -48,9 +48,9 @@
   &__submenu {
     position: absolute;
     top: 110%;
-    right: 0;
+    left: 0;
     display: none;
-    min-width: 150px;
+    min-width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;

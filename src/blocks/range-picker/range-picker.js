@@ -10,9 +10,11 @@ class RangePicker {
     this.max = this.root.querySelector('.js-range-picker__max');
     this.sliderData = this.#formConfig();
     this.sliderObject = { };
+
+    this.#init();
   }
 
-  init() {
+  #init = () => {
     const {
       container, min, max, sliderData,
     } = this;

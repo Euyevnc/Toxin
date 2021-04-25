@@ -14,14 +14,11 @@ function handlerDocumentDomLoaded() {
   const headerObject = new Header(document.querySelector('.js-header'));
 
   const datePickerObject = new DatePicker(document.querySelector('.date-picker'));
-  datePickerObject.init();
 
   const rangePickerObject = new RangePicker(document.querySelector('.range-picker'));
-  rangePickerObject.init();
 
   document.querySelectorAll('.js-dropdown').forEach((demo) => {
     const counterObject = new Dropdown(demo);
-    counterObject.init();
   });
 
   const expandingCheckboxes = document.querySelector('.content__facilities .js-checkboxes');
@@ -29,6 +26,5 @@ function handlerDocumentDomLoaded() {
 
   document.querySelectorAll('.js-room-demo').forEach((demo) => {
     const demoObject = new RoomDemo(demo);
-    demoObject.init();
   });
 }

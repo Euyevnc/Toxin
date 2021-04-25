@@ -1,4 +1,9 @@
 include ../textfield/textfield.pug
+include ../arrow/arrow.pug
+
 mixin date-picker({ textfield, initArrive = '', initDeparture = '' } = { })
   .js-date-picker.date-picker(data-initarrive = initArrive, data-initdeparture = initDeparture)
-    +textfield({ ...textfield, arrow: 'down', readonly: true })
+    +textfield({ ...textfield, readonly: true })
+    span.date-picker__arrow.js-date-picker__arrow
+      +arrow({ direction: 'down' })
+

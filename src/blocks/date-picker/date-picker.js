@@ -29,18 +29,22 @@ class DatePicker {
 
     this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
     this.input = this.textfieldObject.input;
-    this.arrow = this.textfieldObject.arrow;
+
+    this.arrow = this.root.querySelector('.js-date-picker__arrow');
+
     document.addEventListener('calendarshowing', this.#handlerDocShowing);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
+
+    this.#init();
   }
 
   #handlerPickerClick = (ev) => {
     if (!this.calendarIsShowing) return;
     const input = $(this.input);
     if (ev.target.closest('.ui-datepicker-button_clear')) {
-      input.datepicker('setDate', '');
       this.arriveDate = '';
       this.departureDate = '';
+      input.datepicker('setDate', '');
     }
     if (ev.target.closest('.ui-datepicker-button_conf')) {
       input.datepicker('hide');
@@ -89,7 +93,7 @@ class DatePicker {
     }
   }
 
-  init() {
+  #init = () => {
     $.datepicker.regional.ru = this.params;
 
     $.datepicker.setDefaults($.datepicker.regional.ru);

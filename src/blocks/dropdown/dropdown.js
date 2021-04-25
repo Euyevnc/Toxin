@@ -4,27 +4,34 @@ class Dropdown {
   constructor(root) {
     this.root = root;
     this.items = [];
+
     this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
     this.input = this.textfieldObject.input;
-    this.arrow = this.textfieldObject.arrow;
+
+    this.arrow = this.root.querySelector('.js-dropdown__arrow');
 
     this.menu = this.root.querySelector('.js-dropdown__menu');
-    this.clearingButton = this.root.querySelector('.js-dropdown__button_delete');
-    this.confirmingButton = this.root.querySelector('.js-dropdown__button_confirm');
 
     this.input.addEventListener('focus', this.#handlerInputFocus);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
 
-    this.confirmingButton.addEventListener('click', this.#handlerConfirmButtonClick);
-    this.clearingButton.addEventListener('click', this.#handlerClearButton);
+    this.buttonsPanel = this.root.querySelector('.js-dropdown__buttons');
+    if (this.buttonsPanel) {
+      this.clearingButton = this.root.querySelector('.js-dropdown__button_delete');
+      this.confirmingButton = this.root.querySelector('.js-dropdown__button_confirm');
+      this.confirmingButton.addEventListener('click', this.#handlerConfirmButtonClick);
+      this.clearingButton.addEventListener('click', this.#handlerClearButton);
+    }
 
     this.root.querySelectorAll('.js-dropdown__element').forEach((item) => {
       const newItem = new InputWithCounterElement(item, this.#displayValue);
       this.items.push(newItem);
     });
+
+    this.#init();
   }
 
-  init = () => {
+  #init = () => {
     this.#displayValue();
   }
 
@@ -32,8 +39,11 @@ class Dropdown {
     const generatedValue = this.#concat();
     this.textfieldObject.setValue(generatedValue);
 
-    if (generatedValue) this.clearingButton.classList.add('dropdown__button_visible-delete');
-    else this.clearingButton.classList.remove('dropdown__button_visible-delete');
+    if (this.buttonsPanel) {
+      generatedValue
+        ? this.clearingButton.classList.add('dropdown__button_visible-delete')
+        : this.clearingButton.classList.remove('dropdown__button_visible-delete');
+    }
   }
 
   #menuRollDown = () => {

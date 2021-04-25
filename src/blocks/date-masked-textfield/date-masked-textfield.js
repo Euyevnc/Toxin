@@ -8,10 +8,10 @@ class DateMaskedTextfield {
     this.root = root;
     this.textfield = new Textfield(this.root.querySelector('.js-textfield'));
     this.input = this.textfield.input;
-    this.init();
+    this.#init();
   }
 
-  init() {
+  #init = () => {
     $(this.input).mask('99.99.9999');
   }
 }

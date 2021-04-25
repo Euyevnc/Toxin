@@ -8,5 +8,4 @@ function handlerDocumentDOMLoaded() {
   /* eslint-disable no-unused-vars */
   const headerObject = new Header(document.querySelector('.js-header'));
   const numberFinderObject = new RoomFinder(document.querySelector('.room-finder'));
-  numberFinderObject.init();
 }

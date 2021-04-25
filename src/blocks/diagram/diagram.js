@@ -6,9 +6,11 @@ class Diagram {
     this.root = root;
     this.canvas = this.root.querySelector('.js-diagram__canvas');
     this.subjectForm = Object.values(this.root.querySelector('.js-diagram__reviews-amount').dataset);
+
+    this.#init();
   }
 
-  init() {
+  #init = () => {
     const { root, canvas, subjectForm } = this;
 
     const ctxM = canvas.getContext('2d');

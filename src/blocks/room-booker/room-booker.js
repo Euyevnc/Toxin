@@ -23,6 +23,8 @@ class RoomBooker {
     this.root.querySelectorAll('.js-double-date-picker input').forEach((input) => {
       input.addEventListener('ondateselect', this.#handlerInputChange);
     });
+
+    this.#init();
   }
 
   #handlerInputChange = (e) => {
@@ -103,10 +105,7 @@ class RoomBooker {
     });
   }
 
-  init() {
-    this.counterObject.init();
-    this.datePickerObject.init();
-
+  #init = () => {
     this.#displayPrice(this.departure - this.arrival);
     this.#displayInfo();
   }

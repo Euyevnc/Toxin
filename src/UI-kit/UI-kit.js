@@ -16,25 +16,19 @@ import Registration from '../blocks/registration/registration';
 
 function handlerDOMLoaded() {
   const doublePickerObject = new DoubleDatePicker(document.querySelector('.double-date-picker'));
-  doublePickerObject.init();
 
   const datePickerObject = new DatePicker(document.querySelector('.date-picker'));
-  datePickerObject.init();
 
   document.querySelectorAll('.forms-dropdowns-wrapper .js-dropdown').forEach((cont) => {
     const counterObject = new Dropdown(cont);
-    counterObject.init();
   });
 
   const counter = document.querySelector('.forms .js-dropdown');
   const counterObject = new Dropdown(counter);
-  counterObject.init();
 
   const numberFinderObject = new RoomFinder(document.querySelector('.room-finder'));
-  numberFinderObject.init();
 
   const numberBookerObject = new RoomBooker(document.querySelector('.room-booker'));
-  numberBookerObject.init();
 
   document.querySelectorAll('.js-header').forEach((header) => {
     const headerObject = new Header(header);
@@ -42,18 +36,15 @@ function handlerDOMLoaded() {
 
   document.querySelectorAll('.room-demonstration-container').forEach((cont) => {
     const demoObject = new RoomDemo(cont);
-    demoObject.init();
   });
 
   const rangePickerObject = new RangePicker(document.querySelector('.range-picker'));
-  rangePickerObject.init();
 
   document.querySelectorAll('.dropping-checkboxes-container .js-checkboxes').forEach((cont) => {
     const checkboxesObject = new Checkboxes(cont);
   });
 
   const reviewObject = new Review(document.querySelector('.review '));
-  reviewObject.init();
 
   const dateMaskObject = new DateMaskedTextfield(document.querySelector('.forms .js-date-masked-textfield'));
 

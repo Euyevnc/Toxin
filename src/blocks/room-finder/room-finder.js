@@ -7,11 +7,6 @@ class RoomFinder {
     this.counterObject = new Dropdown(this.root.querySelector('.js-dropdown'));
     this.datePickerObject = new DoubleDatePicker(this.root.querySelector('.js-double-date-picker'));
   }
-
-  init() {
-    this.counterObject.init();
-    this.datePickerObject.init();
-  }
 }
 
 export default RoomFinder;

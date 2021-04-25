@@ -8,6 +8,20 @@
   max-width: 320px;
   color: $main-color_lighter;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+  &__arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    min-width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    cursor: pointer;
+    &:focus {
+      box-shadow: none;
+    }
+  }
   &__element {
     display: block;
     display: flex;
@@ -116,11 +130,8 @@
       visibility: visible;
     }
   }
-  &_simple {
+  &_thin {
     max-width: 266px;
-    & .dropdown__buttons {
-      display: none;
-    }
   }
   .textfield__value {
     &::placeholder {

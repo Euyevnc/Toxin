@@ -69,6 +69,7 @@ include ../blocks/entry-form/entry-form.pug
             {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2},
             {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
           ],
+          buttons: true, 
           deleteButtonText: 'очистить', 
           confirmButtonText: 'подтвердить',
         })
@@ -142,13 +143,11 @@ include ../blocks/entry-form/entry-form.pug
       section
         .dropdown-container.default-input-drop-container
           +dropdown({
+            thin: true,
             textfield: {
               label: "удобства номера", 
               placeholder: 'Выберете комплектацию', 
             },
-            isSimple: true, 
-            deleteButtonText: 'очистить', 
-            confirmButtonText: 'подтвердить',
             items: [
               {name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2}, 
               {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, 
@@ -158,19 +157,17 @@ include ../blocks/entry-form/entry-form.pug
 
         .dropdown-container.expand-input-drop-container 
           +dropdown({
+            thin: true,
             textfield: {
               label: "удобства номера", 
               placeholder: 'Выберете комплектацию', 
             },
-            isSimple: true, 
-            deleteButtonText: 'очистить', 
-            confirmButtonText: 'подтвердить',
             items: [
               {name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень', init: 2},
               {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей', init: 2}, 
               {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат', init: 1}
               ] 
-            })
+          })
       section
         .dropdown-container.expand-input-drop-container
           +dropdown({ 
@@ -178,6 +175,7 @@ include ../blocks/entry-form/entry-form.pug
               label: 'Гости', 
               placeholder: 'Сколько гостей',
             },
+            buttons: true, 
             deleteButtonText: 'очистить', 
             confirmButtonText: 'подтвердить', 
             items:[ 
@@ -193,6 +191,7 @@ include ../blocks/entry-form/entry-form.pug
               label: 'Гости', 
               placeholder: 'Сколько гостей',
             },
+            buttons: true, 
             deleteButtonText: 'очистить', 
             confirmButtonText: 'подтвердить', 
             items:[ 
@@ -294,6 +293,7 @@ include ../blocks/entry-form/entry-form.pug
               {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5"}, 
               {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
             ], 
+            buttons: true,
             deleteButtonText: 'очистить', 
             confirmButtonText: 'подтвердить' 
           }, 
@@ -310,7 +310,10 @@ include ../blocks/entry-form/entry-form.pug
           surnameField: { placeholder: 'Фамилия'},
           sexRadio: { 
             name: 'sex', 
-            radios: [ {value: "man", title:'Мужчина', checked:true},{value: "women", title:'Женщина'} ] 
+            radios: [ 
+              {value: "man", title:'Мужчина', checked:true},
+              {value: "women", title:'Женщина'} 
+            ] 
           },
           birthdayField: { label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"},
           mailField: {label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"},
@@ -336,6 +339,7 @@ include ../blocks/entry-form/entry-form.pug
               {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: 1}, 
               {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
             ],
+            buttons: true,
             deleteButtonText: 'очистить', 
             confirmButtonText: 'подтвердить'
           },

@@ -26,23 +26,22 @@ class DoubleDatePicker {
       dateFormat: 'dd.mm.yy',
     };
     const arriveContainer = this.root.querySelector('.js-double-date-picker__container_for_first');
-    const departureContainer = this.root.querySelector('.js-double-date-picker__container_for_second');
-
-    this.arriveTextfieldObject = new Textfield(arriveContainer.querySelector('.js-textfield'));
-    this.departureTextfieldObject = new Textfield(departureContainer.querySelector('.js-textfield'));
-
-    this.arriveInput = this.arriveTextfieldObject.input;
-    this.departureInput = this.departureTextfieldObject.input;
-
-    this.arriveArrow = this.arriveTextfieldObject.arrow;
-    this.departureArrow = this.departureTextfieldObject.arrow;
-
     this.arriveDate = arriveContainer.dataset.init;
+    this.arriveArrow = arriveContainer.querySelector('.js-double-date-picker__arrow');
+    this.arriveTextfieldObject = new Textfield(arriveContainer.querySelector('.js-textfield'));
+    this.arriveInput = this.arriveTextfieldObject.input;
+
+    const departureContainer = this.root.querySelector('.js-double-date-picker__container_for_second');
     this.departureDate = departureContainer.dataset.init;
+    this.departureArrow = departureContainer.querySelector('.js-double-date-picker__arrow');
+    this.departureTextfieldObject = new Textfield(departureContainer.querySelector('.js-textfield'));
+    this.departureInput = this.departureTextfieldObject.input;
 
     document.addEventListener('calendarshowing', this.#handlerDocShowing);
     this.arriveArrow.addEventListener('click', this.#handlerArrowClick);
     this.departureArrow.addEventListener('click', this.#handlerArrowClick);
+
+    this.#init();
   }
 
   #handlerDocShowing = (e) => {
@@ -102,10 +101,10 @@ class DoubleDatePicker {
     const arriveInput = $(this.arriveInput);
     const departureInput = $(this.departureInput);
     if (ev.target.closest('.ui-datepicker-button_clear')) {
-      arriveInput.datepicker('setDate', '');
-      departureInput.datepicker('setDate', '');
       this.arriveDate = '';
       this.departureDate = '';
+      arriveInput.datepicker('setDate', '');
+      departureInput.datepicker('setDate', '');
     }
     if (ev.target.closest('.ui-datepicker-button_conf')) {
       arriveInput.datepicker('hide');
@@ -123,7 +122,7 @@ class DoubleDatePicker {
     if (this.departureDate) departureInput.val(end);
   }
 
-  init() {
+  #init = () => {
     const object = this;
     const arriveInput = $(this.arriveInput);
     const departureInput = $(this.departureInput);

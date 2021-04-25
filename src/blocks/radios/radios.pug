@@ -4,7 +4,7 @@ mixin radios({ label =  '', name = '', radios = [ ] } = { })
       .radios__header #{label}
     each radio in radios
       - let title = radio.title
-      - let checked = Boolean(radio.checked)
+      - let checked = radio.checked
       - let value = radio.value
       label.radios__radio-container
         input.radios__checkbox(name = `${name}`, value = `${value}`, type = 'radio', checked = checked)

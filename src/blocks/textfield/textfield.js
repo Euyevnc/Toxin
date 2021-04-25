@@ -2,7 +2,9 @@ class Textfield {
   constructor(root) {
     this.root = root;
     this.input = this.root.querySelector('.js-textfield__value');
-    this.arrow = this.root.querySelector('.js-textfield__arrow');
+
+    const arrow = this.root.querySelector('.js-textfield__arrow');
+    if (arrow) this.arrow = arrow;
   }
 
   setValue(value) {

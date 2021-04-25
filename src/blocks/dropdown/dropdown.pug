@@ -1,8 +1,9 @@
 include ../textfield/textfield.pug
-mixin dropdown({ textfield, isSimple = false, items=[ ], deleteButtonText = 'delete', confirmButtonText = 'confirm' } = { })
-  div(class=`js-dropdown dropdown${isSimple ? ' dropdown_simple' : ''}`)
-    +textfield({ ...textfield, arrow: 'down', readonly: true })
-
+mixin dropdown({ textfield, items=[ ], buttons = false, deleteButtonText = 'delete', confirmButtonText = 'confirm', thin = false } = { })
+  div(class=`js-dropdown dropdown ${thin ? 'dropdown_thin' : ''}`)
+    +textfield({ ...textfield, readonly: true })
+    span.dropdown__arrow.js-dropdown__arrow
+      +arrow({ direction: 'down' })
     ul.dropdown__menu.js-dropdown__menu.dropdown__menu_hidden
       each item in items
         li.js-dropdown__element.dropdown__element
@@ -14,6 +15,7 @@ mixin dropdown({ textfield, isSimple = false, items=[ ], deleteButtonText = 'del
             span.js-dropdown__tumbler.dropdown__tumbler(data-min = item.min, tabindex = 0) -
             b.js-dropdown__number.dropdown__number(data-init = item.init) 
             span.js-dropdown__tumbler.dropdown__tumbler(data-max = item.max, tabindex = 0) +
-      .js-dropdown__buttons.dropdown__buttons
-        button.js-dropdown__button_delete.dropdown__button.dropdown__button_delete(tabindex = 0, type = 'button') #{deleteButtonText}
-        button.js-dropdown__button_confirm.dropdown__button.dropdown__button_confirm(tabindex = 0, type = 'button') #{confirmButtonText}
+      if buttons
+        .js-dropdown__buttons.dropdown__buttons
+          button.js-dropdown__button_delete.dropdown__button.dropdown__button_delete(tabindex = 0, type = 'button') #{deleteButtonText}
+          button.js-dropdown__button_confirm.dropdown__button.dropdown__button_confirm(tabindex = 0, type = 'button') #{confirmButtonText}
