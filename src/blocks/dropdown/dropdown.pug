@@ -1,5 +1,5 @@
 include ../textfield/textfield.pug
-mixin dropdown({ textfield, items=[ ], buttons = false, deleteButtonText = 'delete', confirmButtonText = 'confirm', thin = false } = { })
+mixin dropdown({ textfield, items=[ ], displayButtons = false, deleteButtonText = 'delete', confirmButtonText = 'confirm', thin = false } = { })
   div(class=`js-dropdown dropdown ${thin ? 'dropdown_thin' : ''}`)
     +textfield({ ...textfield, readonly: true })
     span.dropdown__arrow.js-dropdown__arrow
@@ -15,7 +15,7 @@ mixin dropdown({ textfield, items=[ ], buttons = false, deleteButtonText = 'dele
             span.js-dropdown__tumbler.dropdown__tumbler(data-min = item.min, tabindex = 0) -
             b.js-dropdown__number.dropdown__number(data-init = item.init) 
             span.js-dropdown__tumbler.dropdown__tumbler(data-max = item.max, tabindex = 0) +
-      if buttons
+      if displayButtons
         .js-dropdown__buttons.dropdown__buttons
           button.js-dropdown__button_delete.dropdown__button.dropdown__button_delete(tabindex = 0, type = 'button') #{deleteButtonText}
           button.js-dropdown__button_confirm.dropdown__button.dropdown__button_confirm(tabindex = 0, type = 'button') #{confirmButtonText}
