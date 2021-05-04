@@ -7,7 +7,7 @@ include ../../blocks/stickers/stickers.pug
 include ../../blocks/diagram/diagram.pug
 include ../../blocks/review/review.pug
 include ../../blocks/marked-list/marked-list.pug
-include ../../blocks/room-booker/room-booker.pug
+include ../../blocks/room-preview/room-preview.pug
 
 block variables
   
@@ -90,7 +90,7 @@ block content
       p.content__font Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
   
   section.content__booking 
-    +room-booker({
+    +room-preview({
       number: 888, 
       category: 'люкс', 
       price: 9990, 

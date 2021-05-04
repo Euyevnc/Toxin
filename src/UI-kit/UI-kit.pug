@@ -24,8 +24,8 @@ include ../blocks/cellar/cellar.pug
 include ../blocks/card/card.pug
 include ../blocks/room-demo/room-demo.pug 
 include ../blocks/registration/registration.pug
-include ../blocks/room-finder/room-finder.pug
-include ../blocks/room-booker/room-booker.pug
+include ../blocks/room-search/room-search.pug
+include ../blocks/room-preview/room-preview.pug
 include ../blocks/entry-form/entry-form.pug
 
 - let img1 = require(`./UI-kit/img/UI-room-picture-1.jpg`).default
@@ -278,7 +278,7 @@ include ../blocks/entry-form/entry-form.pug
     section   
       .find-form-container
 
-        +room-finder({ 
+        +room-search({ 
           header: 'Найдём номера под ваши пожелания',
           datePicker: { 
             textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ], 
@@ -322,8 +322,8 @@ include ../blocks/entry-form/entry-form.pug
         })
 
     section
-      .room-booker-container
-        +room-booker({
+      .room-preview-container
+        +room-preview({
           number: 888, 
           category: 'люкс', 
           price: 9990, 

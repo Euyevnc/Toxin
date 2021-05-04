@@ -7,8 +7,8 @@ import DatePicker from '../blocks/date-picker/date-picker';
 import RangePicker from '../blocks/range-picker/range-picker';
 import Dropdown from '../blocks/dropdown/dropdown';
 import Checkboxes from '../blocks/checkboxes/checkboxes';
-import RoomBooker from '../blocks/room-booker/room-booker';
-import RoomFinder from '../blocks/room-finder/room-finder';
+import RoomBooker from '../blocks/room-preview/room-preview';
+import RoomFinder from '../blocks/room-search/room-search';
 import Header from '../blocks/header/header';
 import Review from '../blocks/review/review';
 import RoomDemo from '../blocks/room-demo/room-demo';
@@ -26,9 +26,9 @@ function handlerDOMLoaded() {
   const counter = document.querySelector('.forms .js-dropdown');
   const counterObject = new Dropdown(counter);
 
-  const numberFinderObject = new RoomFinder(document.querySelector('.room-finder'));
+  const numberFinderObject = new RoomFinder(document.querySelector('.room-search'));
 
-  const numberBookerObject = new RoomBooker(document.querySelector('.room-booker'));
+  const numberBookerObject = new RoomBooker(document.querySelector('.room-preview'));
 
   document.querySelectorAll('.js-header').forEach((header) => {
     const headerObject = new Header(header);

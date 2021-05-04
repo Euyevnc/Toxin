@@ -1,0 +1,36 @@
+include ../double-date-picker/double-date-picker.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+mixin room-preview( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, buttonText, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
+  article.room-preview.js-room-preview
+    section.room-preview__information
+      span.room-preview__main-info
+        b.room-preview__font_color_black.room-preview__font_size_middle № 
+        strong.room-preview__number.js-room-preview__number.room-preview__font_color_black.room-preview__font_size_large(data-number = number)
+        b.room-preview__category.js-room-preview__category.room-preview__font_color_purple.room-preview__font_size_small.room-preview__font_uppercase(data-category = category)
+      span.js-room-preview__price-info.room-preview__price-info(data-price = price)
+        strong.room-preview__price.js-room-preview__price.room-preview__font_color_grey.room-preview__font_size_middle
+        span.room-preview__font_color_grey.room-preview__font_size_small &nbsp;&nbsp;#{perDay_local}
+
+    section.room-preview__forms
+      form(name='room-preview', action = '')
+        .room-preview__calendar
+          +double-date-picker( datePicker )
+        .room-preview__counter
+          +dropdown( counter )
+    
+    section.room-preview__rent-calculation
+      .room-preview__rent
+        span
+          span.room-preview__price.js-room-preview__price
+          spant &nbsp;x&nbsp;
+          span.room-preview__amount.js-room-preview__amount(data-local = day_local)
+        span.room-preview__rent-total.js-room-preview__rent-total
+      ul.room-preview__services.js-room-preview__services(data-prices = servPrice, data-desces = servDesc, data-local = discount_local)
+      .room-preview__total.js-room-preview__total.room-preview__font_color_black
+        strong #{total_local}
+        span.room-preview__total-filler
+        strong.js-room-preview__total-price
+        
+    section.room-preview__button-cont
+      +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })
