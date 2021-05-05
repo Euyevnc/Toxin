@@ -130,30 +130,10 @@ module.exports = (env, options) => {
               options: {
                 postcssOptions: {
                   plugins: [
-                    [
-                      'postcss-preset-env',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'autoprefixer',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'cssnano',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'css-mqpacker',
-                      {
-                        // Options
-                      },
-                    ],
+                    'postcss-preset-env',
+                    'autoprefixer',
+                    'cssnano',
+                    'css-mqpacker',
                   ],
                 },
               },
@@ -184,30 +164,10 @@ module.exports = (env, options) => {
               options: {
                 postcssOptions: {
                   plugins: [
-                    [
-                      'postcss-preset-env',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'autoprefixer',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'cssnano',
-                      {
-                        // Options
-                      },
-                    ],
-                    [
-                      'css-mqpacker',
-                      {
-                        // Options
-                      },
-                    ],
+                    'postcss-preset-env',
+                    'autoprefixer',
+                    'cssnano',
+                    'css-mqpacker',
                   ],
                 },
               },
