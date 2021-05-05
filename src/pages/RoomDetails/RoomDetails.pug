@@ -102,9 +102,9 @@ block content
           placeholder: 'Сколько гостей', 
         },
         items:[ 
-          {name: "взрослые", min: "0", max: "5", concat: true, init: 2}, 
-          {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: 1}, 
-          {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5"} 
+            {name: "взрослые", min: "0", max: "5", concat: true, init: 1 }, 
+            {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5", init: 2}, 
+            {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
         ],
         displayButtons: true,
         deleteButton: {text: 'очистить', isHighlight: true}, 

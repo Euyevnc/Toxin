@@ -158,11 +158,7 @@ class InputWithCounterElement {
 
     if (this.name.dataset.concat) this.concat = true;
     else {
-      this.nameForms = [
-        this.name.dataset.form1,
-        this.name.dataset.form2,
-        this.name.dataset.form3,
-      ];
+      this.nameForms = this.name.dataset.nameForms.split(', ');
     }
 
     this.min = Number(this.minus.dataset.min);

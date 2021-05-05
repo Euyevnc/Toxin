@@ -9,9 +9,9 @@ mixin dropdown({ textfield, items=[ ], displayButtons = false, deleteButton = {}
       each item in items
         li.js-dropdown__element.dropdown__element
           if item.concat
-            strong.js-dropdown__item-name.dropdown__item-name(data-concat = 'true') #{item.name}
+            strong.js-dropdown__item-name.dropdown__item-name( data-concat = 'true') #{item.name}
           else
-            strong.js-dropdown__item-name.dropdown__item-name(data-form1 = item.nameForm1, data-form2 = item.nameForm2, data-form3 = item.nameForm3) #{item.name}
+            strong.js-dropdown__item-name.dropdown__item-name(data-name-forms = item.nameForms) #{item.name}
           span.js-dropdown__counter.dropdown__counter
             span.js-dropdown__tumbler.dropdown__tumbler.js-dropdown__tumbler_minus(data-min = item.min, tabindex = 0) -
             b.js-dropdown__number.dropdown__number(data-init = item.init) 

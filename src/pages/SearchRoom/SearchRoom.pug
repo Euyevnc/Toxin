@@ -59,9 +59,9 @@ block content
             placeholder: 'Сколько гостей',
           },
           items:[ 
-            {name: "взрослые", min: "0", max: "5", concat: true, init: initLI1}, 
-            {name: "дети", nameForm1:"гость", nameForm2:"гостя", nameForm3: "гостей", min: "0", max: "5", init: initLI2}, 
-            {name: "младенцы", nameForm1:"младенец", nameForm2: "младенца", nameForm3: "младенцев", min: "0" , max: "5", init: initLI3} 
+            {name: "взрослые", min: "0", max: "5", concat: true }, 
+            {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
+            {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
           ],
           buttons: true, 
           deleteButtonText: 'очистить', 
@@ -101,9 +101,9 @@ block content
             placeholder: 'Выберете комплектацию', 
           },
           items: [
-            {name: "спальни", min: "0", max: "5", nameForm1: 'спальня', nameForm2: 'спалень', nameForm3: 'спалень'}, 
-            {name: "кровати", min: "0", max: "5", nameForm1: 'кровать', nameForm2: 'кровати', nameForm3: 'кроватей'}, 
-            {name: "ванные комнаты", min: "0", max: "5", nameForm1: 'ванная комната', nameForm2: 'ванные комнаты', nameForm3: 'ванных комнат'}
+            {name: "спальни", min: "0", max: "5", nameForms: 'спальня, спальни, спалень'}, 
+            {name: "кровати", min: "0", max: "5", nameForms: 'кровать, кровати, кроватей'}, 
+            {name: "ванные комнаты", min: "0", max: "5", nameForms: 'ванная комната, ванные комнаты, ванных комнат'}
           ] 
         }) 
       .content__facilities 
