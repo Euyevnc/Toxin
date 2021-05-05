@@ -3,10 +3,7 @@ mixin tumblers( { header = ' ', issues = [ ] } = { })
     if header
       h3.tumblers__header #{header}
     each tumbler in issues
-      - let name = tumbler.name
-      - let value = tumbler.value 
-      - let title = tumbler.title
-      - let checked = Boolean(tumbler.checked)
+      - let { name, value, title, checked} = tumbler
       label.tumblers__item
         input.tumblers__checkbox(type = 'checkbox', name = name, value = value, checked = checked)
         span.tumblers__label(tabindex = 0) 
