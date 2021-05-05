@@ -13,8 +13,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
   &_highlight {
     color: $highlight-color;
+
     &:hover {
       color: $main-color_lighter;
     }

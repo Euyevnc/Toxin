@@ -85,9 +85,10 @@ class Dropdown {
 
           if (number === 1 || number % 10 === 1) {
             stringForValue = `${stringForValue} ${item.nameForms[0]}`;
-          } else if (number < 5 || (number % 10) < 5) {
+          } else if (number < 5 || (number % 10 && number % 10 < 5)) {
             stringForValue = `${stringForValue} ${item.nameForms[1]}`;
           } else stringForValue = `${stringForValue} ${item.nameForms[2]}`;
+
           prevNumber = null;
           amountOfWord += 1;
         } else prevNumber = number;
@@ -104,10 +105,7 @@ class Dropdown {
     this.items = this.items.map((item) => {
       const itemCopy = item;
       itemCopy.value = itemCopy.min;
-      itemCopy.minus.classList.add('dropdown__tumbler_depricated');
-      if (itemCopy.min !== itemCopy.max) {
-        itemCopy.plus.classList.remove('dropdown__tumbler_depricated');
-      }
+
       return itemCopy;
     });
   }
@@ -148,6 +146,8 @@ class Dropdown {
 }
 
 class InputWithCounterElement {
+  #value
+
   constructor(item, callback) {
     this.root = item;
     this.callback = callback;
@@ -161,59 +161,48 @@ class InputWithCounterElement {
       this.nameForms = [
         this.name.dataset.form1,
         this.name.dataset.form2,
-        this.name.dataset.form3];
+        this.name.dataset.form3,
+      ];
     }
 
     this.min = Number(this.minus.dataset.min);
     this.max = Number(this.plus.dataset.max);
 
-    this.value = Number(this.number.dataset.init) || this.min;
-
     this.minus.addEventListener('click', this.#handlerMinusClick);
     this.minus.addEventListener('keydown', this.#handlerMinusClick);
     this.plus.addEventListener('click', this.#handlerPlusClick);
     this.plus.addEventListener('keydown', this.#handlerPlusClick);
+    this.#value = Number(this.number.dataset.init) || this.min;
+    this.number.textContent = this.#value;
   }
 
   get value() {
-    return this._value;
+    return this.#value;
   }
 
   set value(number) {
-    this._value = number;
-    if (this.value === this.min) {
-      this.minus.classList.add('dropdown__tumbler_depricated');
-    }
-    if (this.value === this.max) {
-      this.plus.classList.add('dropdown__tumbler_depricated');
-    }
+    if (number > this.max || number < this.min) return;
+    this.#value = number;
+    this.value === this.min
+      ? this.minus.classList.add('dropdown__tumbler_depricated')
+      : this.minus.classList.remove('dropdown__tumbler_depricated');
+    this.value === this.max
+      ? this.plus.classList.add('dropdown__tumbler_depricated')
+      : this.plus.classList.remove('dropdown__tumbler_depricated');
     this.number.textContent = number;
+    this.callback();
   }
 
   #handlerPlusClick = (e) => {
     if (e.type === 'keydown' && e.code !== 'Enter') return;
     const newValue = this.value + 1;
-    if (newValue <= this.max) {
-      this.value = newValue;
-
-      if (this.value !== this.min) {
-        this.minus.classList.remove('dropdown__tumbler_depricated');
-      }
-    }
-    this.callback();
+    this.value = newValue;
   }
 
   #handlerMinusClick = (e) => {
     if (e.type === 'keydown' && e.code !== 'Enter') return;
     const newValue = this.value - 1;
-    if (newValue >= this.min) {
-      this.value = newValue;
-
-      if (this.value !== this.max) {
-        this.plus.classList.remove('dropdown__tumbler_depricated');
-      }
-    }
-    this.callback();
+    this.value = newValue;
   }
 }
 
