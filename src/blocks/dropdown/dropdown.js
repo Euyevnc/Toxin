@@ -169,11 +169,10 @@ class InputWithCounterElement {
     this.max = Number(this.plus.dataset.max);
 
     this.minus.addEventListener('click', this.#handlerMinusClick);
-    this.minus.addEventListener('keydown', this.#handlerMinusClick);
+    this.minus.addEventListener('keydown', this.#handlerMinusKeydown);
     this.plus.addEventListener('click', this.#handlerPlusClick);
-    this.plus.addEventListener('keydown', this.#handlerPlusClick);
-    this.#value = Number(this.number.dataset.init) || this.min;
-    this.number.textContent = this.#value;
+    this.plus.addEventListener('keydown', this.#handlerPlusKeydown);
+    this.value = Number(this.number.dataset.init) || this.min;
   }
 
   get value() {
@@ -193,14 +192,24 @@ class InputWithCounterElement {
     this.callback();
   }
 
-  #handlerPlusClick = (e) => {
-    if (e.type === 'keydown' && e.code !== 'Enter') return;
+  #handlerPlusClick = () => {
     const newValue = this.value + 1;
     this.value = newValue;
   }
 
-  #handlerMinusClick = (e) => {
-    if (e.type === 'keydown' && e.code !== 'Enter') return;
+  #handlerMinusClick = () => {
+    const newValue = this.value - 1;
+    this.value = newValue;
+  }
+
+  #handlerPlusKeydown = (e) => {
+    if (e.code !== 'Enter') return;
+    const newValue = this.value + 1;
+    this.value = newValue;
+  }
+
+  #handlerMinusKeydown = (e) => {
+    if (e.code !== 'Enter') return;
     const newValue = this.value - 1;
     this.value = newValue;
   }
