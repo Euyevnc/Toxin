@@ -152,8 +152,8 @@ class InputWithCounterElement {
     this.root = item;
     this.callback = callback;
     this.name = this.root.querySelector('.js-dropdown__item-name');
-    this.minus = this.root.querySelector('.js-dropdown__tumbler:first-child');
-    this.plus = this.root.querySelector('.js-dropdown__tumbler:last-child');
+    this.minus = this.root.querySelector('.js-dropdown__tumbler_minus');
+    this.plus = this.root.querySelector('.js-dropdown__tumbler_plus');
     this.number = this.root.querySelector('.js-dropdown__number');
 
     if (this.name.dataset.concat) this.concat = true;
