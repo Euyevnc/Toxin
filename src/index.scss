@@ -18,6 +18,7 @@ body {
   margin-bottom: 15px;
   box-shadow: 0 0 20px 20px rgba(21, 21, 34, 0.1);
 }
+
 .site-page-filler {
   width: 288px;
   height: 372px;
@@ -26,10 +27,12 @@ body {
   border: 4px dashed rgba(141, 130, 235, 1);
   box-shadow: 10px 10px 20px rgba(21, 21, 34, 0.1);
   transition-duration: 0.4s;
+
   &:hover {
     background: rgba(168, 159, 253, 0.5);
     transition-duration: 0.4s;
   }
+
   a {
     display: inline-block;
     box-sizing: border-box;

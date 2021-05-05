@@ -12,6 +12,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -23,39 +24,50 @@
     margin: 0;
     margin-bottom: 20px;
   }
+
   &__form {
     min-width: 320px;
     margin-bottom: 28px;
   }
+
   &__data-name {
     margin-bottom: 10px;
   }
+
   &__data-surname {
     margin-bottom: 10px;
   }
+
   &__data-sex {
     margin: 0.5px 0 23.5px;
   }
+
   &__data-birthday {
     margin-bottom: 21px;
   }
+
   &__data-email {
     margin-bottom: 10px;
   }
+
   &__data-password {
     margin-bottom: 10px;
   }
+
   &__data-offer {
     margin-bottom: 20px;
   }
+
   &__button {
     min-width: 99px;
   }
+
   &__text {
     @include default-font($color: $main-color_darkest);
 
     text-align: center;
   }
+
   &__entry {
     display: flex;
     align-items: center;

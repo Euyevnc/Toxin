@@ -2,6 +2,7 @@
 
 .checkbox {
   display: inline-block;
+
   &__checkbox {
     display: none;
 
@@ -9,6 +10,7 @@
       display: inline-block;
       min-height: 20px;
       user-select: none;
+
       &::before {
         position: relative;
         display: inline-block;
@@ -38,6 +40,7 @@
       }
     }
   }
+
   &__checkbox:checked {
     & + .checkbox__label {
       &::before {
@@ -46,6 +49,7 @@
       }
     }
   }
+
   &__legend {
     display: inline-flex;
     flex-direction: column;
@@ -54,9 +58,11 @@
     max-width: 230px;
     min-height: 20px;
   }
+
   &__main-text {
     @include default-font($main-color_lighter);
   }
+
   &__sub-text {
     @include default-font($main-color_lighter, $size-small, $size-middle);
   }
@@ -67,6 +73,7 @@
 
       margin-bottom: 5px;
     }
+
     .checkbox__sub-text {
       @include default-font($main-color_lighter, $size-small, $size-middle);
     }

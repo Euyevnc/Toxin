@@ -8,6 +8,7 @@
   position: relative;
   background-image: url('./img/login-background.jpg');
   background-position: bottom;
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -17,6 +18,7 @@
       min-height: 450px;
     }
   }
+
   &::after {
     position: absolute;
     top: 0;
@@ -35,12 +37,15 @@
   40% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

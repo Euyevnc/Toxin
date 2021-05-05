@@ -1,5 +1,6 @@
 @import '../social/social.scss';
 @import '../../assets/styles/mixin-font';
+
 .cellar {
   display: flex;
   align-items: center;
@@ -8,6 +9,7 @@
   width: 100%;
   min-height: 70px;
   background-color: white;
+
   &__text {
     @include default-font($line: $default-line - 1);
   }

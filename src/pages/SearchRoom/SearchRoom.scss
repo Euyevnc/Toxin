@@ -14,6 +14,7 @@
 .content {
   padding: 30px 0 70px;
   background-color: white;
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -31,24 +32,31 @@
       text-align: center;
     }
   }
+
   &__date-picker {
     margin-bottom: 20.5px;
   }
+
   &__guest-counter {
     margin-bottom: 32px;
   }
+
   &__price-picker {
     margin-bottom: 30px;
   }
+
   &__rules {
     margin-bottom: 25px;
   }
+
   &__availability {
     margin-bottom: 20px;
   }
+
   &__equipment-counter {
     margin-bottom: 16px;
   }
+
   &__facilities {
     margin-bottom: 30px;
   }
@@ -66,6 +74,7 @@
       text-align: center;
     }
   }
+
   &__numbers-list {
     display: flex;
     flex-wrap: wrap;
@@ -75,12 +84,14 @@
       justify-content: center;
     }
   }
+
   &__pagination {
     margin-top: 41px;
     padding-right: 9px;
     text-align: center;
   }
 }
+
 .footer-container {
   border-top: 2px solid rgba(31, 32, 65, 0.15);
 }

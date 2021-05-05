@@ -1,4 +1,5 @@
 @import '../../assets/styles/mixin-font';
+
 .link {
   @include default-font(
     $size: $size-small,

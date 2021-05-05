@@ -7,6 +7,7 @@
   & + .rate-stars {
     margin-left: 20px;
   }
+
   &__head {
     @include default-font(
       $main-color_darkest,
@@ -20,6 +21,7 @@
     margin: 0;
     margin-bottom: 15px;
   }
+
   &__star {
     position: relative;
     display: inline-block;
@@ -38,6 +40,7 @@
     );
     -webkit-background-clip: text;
     background-clip: text;
+
     &_outlined {
       & .rate-stars__star_colorized {
         position: absolute;

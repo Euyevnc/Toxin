@@ -1,7 +1,9 @@
 @import '../../assets/styles/font-faces/MaterialIcons.scss';
 @import '../../assets/styles/mixin-font';
+
 .stickers {
   min-width: 280px;
+
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -12,17 +14,21 @@
 
     margin: 0;
   }
+
   &__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
+
   &__item {
     padding: 23px 0 17px;
+
     &:not(:last-child) {
       border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     }
   }
+
   &__img {
     min-width: 48px;
     min-height: 48px;
@@ -39,15 +45,18 @@
     -webkit-background-clip: text;
     background-clip: text;
   }
+
   &__text {
     display: inline-block;
     vertical-align: middle;
   }
+
   &__title {
     @include default-font($line: $size-largest, $weight: 700);
 
     margin: 0;
   }
+
   &__subtitle {
     @include default-font($line: $size-largest);
 

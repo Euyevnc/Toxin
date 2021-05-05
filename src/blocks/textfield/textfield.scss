@@ -3,6 +3,7 @@
 .textfield {
   position: relative;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+
   &__value {
     box-sizing: border-box;
     width: 100%;
@@ -12,22 +13,26 @@
     border-radius: 4px;
     transition-duration: 0.7s;
     @include default-font($line: 44px);
+
     &::placeholder {
       @include default-font($color: $main-color_lightest, $line: 44px);
 
       opacity: 1;
       transition-duration: 0.7s;
     }
+
     &:hover,
     &:focus {
       color: $main-color;
       border: 1px solid $main-color_lighter;
       transition-duration: 0.7s;
+
       &::placeholder {
         color: $main-color_lighter;
         transition-duration: 0.7s;
       }
     }
+
     &_active {
       border-color: $main-color_lighter;
       border-radius: 0;
@@ -36,6 +41,7 @@
       outline: 0;
     }
   }
+
   &__title {
     @include default-font(
       $main-color_darkest,
@@ -48,6 +54,7 @@
 
     margin: 0 0 5.5px;
   }
+
   &__describe {
     @include default-font(
       $main-color_lighter,
@@ -63,6 +70,7 @@
     right: 0;
     margin: 0;
   }
+
   &__arrow {
     position: absolute;
     right: 0;
@@ -73,6 +81,7 @@
     line-height: 44px;
     text-align: center;
     cursor: pointer;
+
     &:focus {
       box-shadow: none;
     }

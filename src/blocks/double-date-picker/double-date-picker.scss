@@ -8,14 +8,17 @@
   width: 100%;
   max-width: 320px;
   color: $main-color_lighter;
+
   &__container {
     position: relative;
     display: inline-block;
     max-width: 150px;
+
     &_for_second {
       margin-left: 20px;
     }
   }
+
   &__arrow {
     position: absolute;
     right: 0;
@@ -26,6 +29,7 @@
     line-height: 44px;
     text-align: center;
     cursor: pointer;
+
     &:focus {
       box-shadow: none;
     }

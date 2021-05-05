@@ -6,6 +6,7 @@
   position: relative;
   max-width: 266px;
   color: $main-color_lighter;
+
   &__arrow {
     position: absolute;
     right: 0;
@@ -16,10 +17,12 @@
     line-height: 44px;
     text-align: center;
     cursor: pointer;
+
     &:focus {
       box-shadow: none;
     }
   }
+
   .textfield__value {
     &::placeholder {
       color: $main-color;

@@ -1,5 +1,6 @@
 @import '../../assets/styles/mixin-font';
 @import '../../assets/styles/font-faces/MaterialIcons.scss';
+
 .radios {
   &__header {
     @include default-font(
@@ -13,12 +14,15 @@
 
     margin-bottom: 15px;
   }
+
   &__radio-container {
     display: inline-block;
     margin-right: 20px;
   }
+
   &__checkbox {
     display: none;
+
     & + .radios__title {
       @include default-font(
         $color: $main-color_lighter,
@@ -29,6 +33,7 @@
       max-height: 24px;
       vertical-align: middle;
       cursor: pointer;
+
       &::before {
         display: inline-block;
         box-sizing: border-box;
@@ -46,9 +51,11 @@
       }
     }
   }
+
   &__checkbox:checked {
     & + .radios__title {
       color: $main-color;
+
       &::before {
         color: $highlight-color;
         background: linear-gradient(

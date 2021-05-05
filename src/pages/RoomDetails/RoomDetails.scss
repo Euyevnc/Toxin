@@ -14,12 +14,14 @@
 .content {
   padding-bottom: 60px;
   background-color: white;
+
   &__wrapper {
     position: static;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   &__header {
     margin: 0 0 20px;
     @include default-font(
@@ -28,23 +30,28 @@
       $size-largest,
       $weight: 700
     );
+
     &_margin_zero {
       margin: 0;
     }
+
     &_shift_right {
       padding-left: 21px;
     }
   }
+
   &__font {
     @include default-font($line: $size-largest);
 
     margin: 0;
   }
+
   &__pictures {
     width: 100%;
     min-height: 485px;
     padding-bottom: 70px;
   }
+
   &__information {
     display: flex;
     flex-wrap: wrap;
@@ -52,15 +59,18 @@
     justify-content: space-between;
     max-width: 710px;
   }
+
   &__reviews {
     margin-top: 13px;
     margin-bottom: 10px;
   }
+
   &__cancel-rules {
     max-width: 345px;
     padding-right: 5px;
     text-align: left;
   }
+
   & .pictures-demo {
     position: absolute;
     left: 50%;

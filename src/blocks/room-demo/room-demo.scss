@@ -11,6 +11,7 @@
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 17px 20px 0 rgba(34, 60, 80, 0.05);
+
   &__arrow {
     position: absolute;
     top: 50%;
@@ -27,22 +28,27 @@
     cursor: pointer;
     transition-duration: 0.1s;
     user-select: none;
+
     &_right {
       right: 0;
     }
+
     &:focus {
       visibility: visible;
       transition-duration: 0.1s;
+
       & ~ .room-demo__arrow {
         visibility: visible;
       }
     }
   }
+
   &__image-cont {
     position: relative;
     width: 100%;
     max-height: 151.3px;
     margin: 0;
+
     &:focus,
     &:hover {
       &::after {
@@ -59,6 +65,7 @@
         );
         content: '';
       }
+
       &::before {
         position: absolute;
         top: 0;
@@ -74,6 +81,7 @@
         transform: matrix(-1, 0, 0, 1, 0, 0);
         content: '';
       }
+
       & .room-demo__arrow {
         visibility: visible;
         transition-duration: 0.1s;
@@ -89,6 +97,7 @@
     border-top-right-radius: 4px;
     opacity: 1;
     transition-duration: 0.7s;
+
     &_disactive {
       display: none;
       opacity: 0;
@@ -102,6 +111,7 @@
     bottom: 12px;
     transform: translateX(50%);
   }
+
   &__button {
     display: inline-block;
     box-sizing: border-box;
@@ -112,10 +122,12 @@
     border-radius: 50%;
     cursor: pointer;
     transition-duration: 0.4s;
+
     &_disactive {
       background-color: transparent;
       transition-duration: 0.4s;
     }
+
     & + .room-demo__button {
       margin-left: 4px;
     }
@@ -129,34 +141,42 @@
     padding: 20px 0 10px 0;
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   }
+
   &__price {
     display: inline-block;
     min-width: 20px;
     line-height: 20px;
   }
+
   &__font {
     &_color_black {
       color: $main-color_darkest;
     }
+
     &_color_purple {
       color: $highlight-color;
     }
+
     &_uppercase {
       text-transform: uppercase;
     }
+
     &_size_small {
       font-size: $size-small;
       line-height: $default-line;
     }
+
     &_size_middle {
       font-size: $size-middle;
       line-height: $default-line;
     }
+
     &_size_large {
       font-size: $size-larger;
       line-height: $size-largest;
     }
   }
+
   &__rate {
     display: flex;
     align-items: center;
@@ -164,6 +184,7 @@
     min-height: 24px;
     padding: 8px 20px 19px 21px;
   }
+
   &__stars {
     min-height: 24px;
   }

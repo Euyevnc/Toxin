@@ -3,10 +3,12 @@
 .marked-list {
   margin: 0;
   padding: 0;
+
   &__item {
     margin-bottom: 10px;
     list-style-type: none;
   }
+
   &__circle {
     display: inline-block;
     min-width: 10px;
@@ -17,6 +19,7 @@
     background-color: $main-color_lightest;
     border-radius: 50%;
   }
+
   &__desc {
     @include default-font($line: $size-largest);
 

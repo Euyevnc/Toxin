@@ -1,5 +1,6 @@
 @import '../assets/styles/font-faces/Montserrat.scss';
 @import '../assets/styles/mixin_outline';
+
 html {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@ html {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: #f4f4f6;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -22,6 +24,7 @@ body {
   padding: 15px 0;
   background-color: white;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -31,6 +34,7 @@ body {
     padding: 0 10px;
   }
 }
+
 .content {
   position: relative;
   z-index: 9;
@@ -38,6 +42,7 @@ body {
   min-width: 320px;
   max-width: 1440px;
   margin: auto;
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -47,6 +52,7 @@ body {
     padding: 0 10px;
   }
 }
+
 .footer-container {
   position: relative;
   z-index: 10;
@@ -55,6 +61,7 @@ body {
   min-width: 320px;
   background-color: white;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -64,6 +71,7 @@ body {
     padding: 0 10px;
   }
 }
+
 .cellar-container {
   position: relative;
   z-index: 10;
@@ -72,6 +80,7 @@ body {
   min-width: 320px;
   background-color: white;
   border-top: 1px solid rgba(31, 32, 65, 0.1);
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;

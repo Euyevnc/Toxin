@@ -7,6 +7,7 @@
 .content {
   background-image: url('./img/registration-background.jpg');
   background-position: bottom;
+
   &__wrapper {
     display: flex;
     justify-content: center;
@@ -14,6 +15,7 @@
     min-height: 684px;
     padding: 19px 0;
   }
+
   &::after {
     position: absolute;
     top: 0;
@@ -32,12 +34,15 @@
   40% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

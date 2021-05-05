@@ -3,6 +3,7 @@
 /* stylelint-disable no-descending-specificity */
 
 //Стили написал к уже готовому плагину, так что БЭМа тут, понятно, нет
+
 .ui-datepicker {
   z-index: 100;
   display: none;
@@ -13,6 +14,7 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
   & .ui-widget-header {
     display: flex;
     justify-content: space-between;
@@ -23,15 +25,18 @@
     font-size: 19px;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     border: none;
+
     & > * {
       display: inline-block;
       line-height: 24px;
       vertical-align: middle;
+
       &:hover {
         background-color: white;
         border: none;
       }
     }
+
     & .material-icons {
       top: 0;
       margin-top: 0;
@@ -40,11 +45,14 @@
       cursor: pointer;
     }
   }
+
   .ui-datepicker-calendar {
     border-collapse: collapse;
+
     & thead {
       & th {
         padding: 0;
+
         & span {
           display: inline-block;
           width: 40px;
@@ -62,21 +70,25 @@
         }
       }
     }
+
     & tbody {
       & td {
         padding: 0;
         font-family: 'Montserrat', Arial, Helvetica, sans-serif;
         opacity: 1;
+
         &.ui-state-disabled {
           & .ui-state-default {
             color: rgba(31, 32, 65, 0.5);
           }
         }
+
         &.ui-datepicker-other-month {
           & .ui-state-default {
             color: rgba(31, 32, 65, 0.25);
           }
         }
+
         & .ui-state-default {
           display: inline-block;
           width: 40px;
@@ -90,11 +102,13 @@
           border: none;
           border-radius: 50%;
         }
+
         & .ui-state-highlight {
           color: white !important;
           font-weight: bold;
           background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
         }
+
         &.selected {
           & .ui-state-active {
             background: linear-gradient(
@@ -105,9 +119,11 @@
             border-radius: 0;
           }
         }
+
         &.selected-start {
           position: relative;
           z-index: 10;
+
           & .ui-state-active {
             z-index: 3;
             color: white;
@@ -116,6 +132,7 @@
             border-radius: 50%;
             opacity: 1;
           }
+
           &:not(.selected-end) {
             &::before {
               position: absolute;
@@ -130,9 +147,11 @@
             }
           }
         }
+
         &.selected-end {
           position: relative;
           z-index: 10;
+
           & .ui-state-active {
             z-index: 3;
             color: white;
@@ -141,6 +160,7 @@
             border-radius: 50%;
             opacity: 1;
           }
+
           &:not(.selected-start) {
             &::after {
               position: absolute;
@@ -158,10 +178,12 @@
       }
     }
   }
+
   & .ui-datepicker-ButtonPanel {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+
     & .ui-datepicker-button_conf,
     .ui-datepicker-button_clear {
       margin: 0;

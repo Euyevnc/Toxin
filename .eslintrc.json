@@ -12,7 +12,7 @@
   },
   "ignorePatterns": ["/dist/**/*.js","/src/plugins/*.js"],
   
-  "extends": [ "airbnb"],
+  "extends": [ "airbnb" ],
   "rules": {
     "linebreak-style": 0,
     "no-underscore-dangle": "off",

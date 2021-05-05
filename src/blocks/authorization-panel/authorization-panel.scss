@@ -1,4 +1,5 @@
 @import '../button/button.scss';
+
 .authorization-panel {
   &__entry-container {
     display: inline-block;
@@ -9,6 +10,7 @@
       margin: 10px;
     }
   }
+
   &__registration-container {
     display: inline-block;
     min-width: 196px;

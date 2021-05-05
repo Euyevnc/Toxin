@@ -12,14 +12,17 @@
   @media (max-width: 650px) {
     padding: 10px 10px;
   }
+
   &__sign {
     flex-shrink: 0;
   }
+
   &__logo {
     display: inline-block;
     max-height: 40px;
     vertical-align: middle;
   }
+
   &__brand {
     display: inline-block;
     max-height: 13px;

@@ -4,6 +4,7 @@
 
 .menu {
   margin-left: auto;
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -13,6 +14,7 @@
     padding: 0;
     list-style-type: none;
   }
+
   &__element {
     position: relative;
     max-height: 18px;
@@ -24,6 +26,7 @@
     user-select: none;
     @include default-font($color: $main-color_lighter);
   }
+
   &__arrow {
     display: inline-block;
     width: 25px;
@@ -31,15 +34,18 @@
     line-height: 20px;
     vertical-align: top;
   }
+
   &__link {
     display: inline-block;
     text-decoration: none;
     vertical-align: middle;
     user-select: none;
     @include default-font($color: $main-color_lighter, $line: $size-middle + 3);
+
     &_active {
       color: $main-color;
     }
+
     &:hover {
       color: $main-color;
     }
@@ -56,15 +62,18 @@
     list-style: none;
     background-color: white;
     border: 2px solid $main-color_lightest;
+
     &_active {
       z-index: 100;
       display: block;
     }
+
     & .menu__element {
       max-height: 45px;
       padding: 0;
       border-radius: 0;
     }
+
     & .menu__link {
       display: inline-block;
       width: 100%;
@@ -81,9 +90,11 @@
 
   @media (max-width: 650px) {
     visibility: hidden;
+
     &_expanded {
       visibility: visible;
     }
+
     &__list {
       position: absolute;
       top: 100%;
@@ -95,17 +106,20 @@
       background-color: white;
       border: 3px solid $highlight-color;
     }
+
     &__element {
       max-height: 45px;
       margin: 10px 0;
       font-size: 24px;
       vertical-align: middle;
     }
+
     &__link {
       font-size: 24px;
       line-height: 45px;
       vertical-align: middle;
     }
+
     &__arrow {
       vertical-align: middle;
     }

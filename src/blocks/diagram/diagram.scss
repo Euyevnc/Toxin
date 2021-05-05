@@ -1,10 +1,12 @@
 @import '../../assets/styles/mixin-font';
+
 .diagram {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 350px;
+
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -15,6 +17,7 @@
 
     margin: 0 0 20px;
   }
+
   &__title {
     position: absolute;
     top: 50%;
@@ -24,6 +27,7 @@
     align-items: center;
     transform: translateX(-50%) translateY(-50%);
   }
+
   &__reviews-amount {
     @include default-font(
       $highlight-color,
@@ -36,6 +40,7 @@
 
     min-height: 30px;
   }
+
   &__subtitle {
     @include default-font(
       $highlight-color,
@@ -46,16 +51,19 @@
       uppercase
     );
   }
+
   &__image {
     position: relative;
     width: 120px;
     height: 120px;
   }
+
   &__legend {
     display: inline-block;
     min-width: 200px;
     margin-left: 30px;
   }
+
   &__legend-circle {
     display: inline-block;
     width: 10px;
@@ -63,28 +71,33 @@
     margin-right: 5px;
     border-radius: 50%;
   }
+
   &__legend-item {
     &:nth-child(1) {
       & .diagram__legend-circle {
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
     }
+
     &:nth-child(2) {
       & .diagram__legend-circle {
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
     }
+
     &:nth-child(3) {
       & .diagram__legend-circle {
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       }
     }
+
     &:nth-child(4) {
       & .diagram__legend-circle {
         background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
     }
   }
+
   &__legend-lettering {
     display: inline-block;
     margin: 0;

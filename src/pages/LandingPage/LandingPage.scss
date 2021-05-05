@@ -9,6 +9,7 @@
   position: relative;
   background-image: url('./img/landing-background-3.jpg');
   background-position: bottom;
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -27,6 +28,7 @@
       width: auto;
     }
   }
+
   &__text-container {
     align-self: flex-end;
     padding-bottom: 20px;
@@ -34,6 +36,7 @@
       width: auto;
     }
   }
+
   &__text {
     @include default-font($line: $size-largest);
 
@@ -61,6 +64,7 @@
     animation: sliding-before 30s linear 0s infinite;
     content: '';
   }
+
   &::after {
     position: absolute;
     top: 0;
@@ -80,12 +84,15 @@
   26% {
     opacity: 0;
   }
+
   33% {
     opacity: 1;
   }
+
   60% {
     opacity: 1;
   }
+
   66% {
     opacity: 0;
   }
@@ -94,12 +101,15 @@
   60% {
     opacity: 0;
   }
+
   66% {
     opacity: 1;
   }
+
   92% {
     opacity: 1;
   }
+
   99% {
     opacity: 0;
   }

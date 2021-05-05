@@ -7,6 +7,7 @@
   &__header {
     position: relative;
   }
+
   &__avatar-container {
     display: inline-block;
     width: 48px;
@@ -20,35 +21,42 @@
     height: 100%;
     border-radius: 50%;
   }
+
   &__info {
     display: inline-block;
   }
+
   &__name {
     @include default-font($line: $size-largest, $weight: 700);
 
     margin: 0;
     text-transform: none;
   }
+
   &__days-ago {
     @include default-font($line: $size-largest);
 
     margin: 0;
   }
+
   &__body {
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
   }
+
   &__liker {
     min-width: 48px;
     margin-right: 10px;
     text-align: center;
   }
+
   &__content {
     @include default-font($line: $size-largest);
 
     margin: 0;
   }
+
   &__reviews-counter {
     @include default-font($line: $size-middle, $color: $main-color_lighter);
 

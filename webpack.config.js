@@ -71,7 +71,6 @@ module.exports = (env, options) => {
       liveReload: true,
     },
 
-    // devtool: 'eval',
     devtool: isProduction ? 'none' : 'eval',
 
     plugins: htmlPlugins.concat([

@@ -1,5 +1,6 @@
 @import '../../assets/styles/font-faces/MaterialIcons.scss';
 @import '../../assets/styles/mixin-font';
+
 .tumblers {
   &__header {
     @include default-font(
@@ -14,6 +15,7 @@
     margin: 0;
     margin-bottom: 15px;
   }
+
   &__label {
     position: relative;
     display: inline-block;
@@ -28,6 +30,7 @@
     cursor: pointer;
     transition-duration: 0.5s;
     user-select: none;
+
     &::before {
       position: absolute;
       top: 0;
@@ -40,12 +43,15 @@
       content: 'fiber_manual_record';
     }
   }
+
   &__checkbox {
     display: none;
+
     &:checked {
       & + .tumblers__label {
         border: 1px solid $highlight-color;
         transition-duration: 0.5s;
+
         &::before {
           left: 22px;
           color: $highlight-color;
@@ -61,10 +67,12 @@
       }
     }
   }
+
   &__item {
     display: block;
     min-height: 24px;
   }
+
   &__title {
     display: inline-block;
     vertical-align: top;

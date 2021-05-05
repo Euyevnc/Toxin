@@ -4,10 +4,12 @@
   justify-content: stretch;
   max-height: 485px;
   user-select: none;
+
   &__large-picture-container {
     width: auto;
     overflow: hidden;
   }
+
   &__small-pictures-container {
     display: flex;
     flex-direction: column;
@@ -15,6 +17,7 @@
     justify-content: stretch;
     overflow: hidden;
   }
+
   &__image {
     height: 100%;
     object-fit: cover;
