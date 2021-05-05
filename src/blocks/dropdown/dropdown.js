@@ -41,8 +41,8 @@ class Dropdown {
 
     if (this.buttonsPanel) {
       generatedValue
-        ? this.clearingButton.classList.add('dropdown__button_visible-delete')
-        : this.clearingButton.classList.remove('dropdown__button_visible-delete');
+        ? this.clearingButton.classList.remove('dropdown__button_invisible')
+        : this.clearingButton.classList.add('dropdown__button_invisible');
     }
   }
 
@@ -99,7 +99,7 @@ class Dropdown {
   };
 
   #clear = () => {
-    this.clearingButton.classList.remove('dropdown__button_visible-delete');
+    this.clearingButton.classList.add('dropdown__button_invisible');
     this.input.value = '';
     this.items = this.items.map((item) => {
       const itemCopy = item;

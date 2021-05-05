@@ -9,10 +9,10 @@
   );
 
   margin: 0;
-  margin-right: 20px;
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
   &_highlight {
     color: $highlight-color;
     &:hover {

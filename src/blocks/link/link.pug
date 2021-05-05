@@ -1,2 +1,2 @@
-mixin link({ text = '', isHighlight = false, href = '#', target = '_self' } = { })
-  a(class=`link ${isHighlight ? 'link_highlight' : ''}`, href = href, target = target) #{text}
+mixin link({ text = '', isHighlight = false, type = 'button' } = { })
+  button(class=`link ${isHighlight ? 'link_highlight' : ''}` type = type) #{text}

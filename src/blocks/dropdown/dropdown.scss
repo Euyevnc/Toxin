@@ -1,4 +1,5 @@
 @import '../textfield/textfield.scss';
+@import '../link/link.scss';
 @import '../../assets/styles/mixin-font';
 
 .dropdown {
@@ -8,6 +9,7 @@
   max-width: 320px;
   color: $main-color_lighter;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
+
   &__arrow {
     position: absolute;
     right: 0;
@@ -22,6 +24,7 @@
       box-shadow: none;
     }
   }
+
   &__element {
     display: block;
     display: flex;
@@ -33,6 +36,7 @@
     background-color: white;
     user-select: none;
   }
+
   &__item-name {
     @include default-font(
       $main-color_darkest,
@@ -63,6 +67,7 @@
       cursor: auto;
     }
   }
+
   &__number {
     display: inline-block;
     box-sizing: border-box;
@@ -101,38 +106,24 @@
       display: none;
     }
   }
+
   &__buttons {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 13px 0 0 0;
   }
-  &__button {
-    @include default-font(
-      $highlight-color,
-      $size-small,
-      $size-small + 3,
-      700,
-      none,
-      uppercase
-    );
 
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-    &_delete {
+  &__button {
+    &_invisible {
       visibility: hidden;
     }
-    &_visible-delete {
-      visibility: visible;
-    }
   }
+
   &_thin {
     max-width: 266px;
   }
+
   .textfield__value {
     &::placeholder {
       color: $main-color;
