@@ -52,6 +52,7 @@ module.exports = (env, options) => {
       publicPath: isProduction ? './' : '/',
 
     },
+
     optimization: {
       splitChunks: {
         cacheGroups: {
