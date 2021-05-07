@@ -14,9 +14,7 @@ import Review from '../blocks/review/review';
 import RoomDemo from '../blocks/room-demo/room-demo';
 import Registration from '../blocks/registration/registration';
 
-document.addEventListener('DOMContentLoaded', handlerDOMLoaded);
-
-function handlerDOMLoaded() {
+function uiKitInit() {
   const doublePickerObject = new DoubleDatePicker(document.querySelector('.double-date-picker'));
 
   const datePickerObject = new DatePicker(document.querySelector('.date-picker'));
@@ -60,4 +58,4 @@ function handlerDOMLoaded() {
     contForCalendar.appendChild(calendar);
   }, 700);
 }
-export default handlerDOMLoaded;
+export default uiKitInit;
