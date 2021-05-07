@@ -48,7 +48,35 @@ block content
     
     .content__diogram
       h2.content__header Впечатления от номера
-      +diagram({ statistic: [{amount: 155, name: 'Великолепно'}, {amount: 60, name: 'Хорошо'}, {amount: 60, name: 'Удовлетворительно'}, {amount: 0, name: 'Разочарован'}], subjects: ['голос', 'голоса', 'голосов'] }) 
+      +diagram({ 
+        statistic: [
+          {
+            amount: 155, 
+            name: 'Великолепно', 
+            firstColor: '#FFE39C',
+            secondColor: '#FFBA9C'
+          }, 
+          {
+            amount: 60, 
+            name: 'Хорошо',
+            firstColor: '#6FCF97',
+            secondColor: '#66D2EA'
+          }, 
+          {
+            amount: 60, 
+            name: 'Удовлетворительно',
+            firstColor: '#BC9CFF',
+            secondColor: '#8BA4F9'
+          }, 
+          {
+            amount: 0, 
+            name: 'Разочарован',
+            firstColor: '#919191',
+            secondColor: '#3D4975'           
+          }
+        ], 
+        forms: ['голос', 'голоса', 'голосов'] 
+      }) 
 
     .content__reviews
       h2.content__header Отзывы посетителей номера

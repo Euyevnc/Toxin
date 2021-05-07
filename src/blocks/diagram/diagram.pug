@@ -1,12 +1,13 @@
-mixin diagram( { statistic = [ ], subjects = [ ] } = { })
+mixin diagram( { statistic = [ ], forms = [ ] } = { })
   article.js-diagram.diagram
     section.diagram__image
       .js-diagram__title.diagram__title
-        b.js-diagram__reviews-amount.diagram__reviews-amount(data-form1 = subjects[0], data-form2 = subjects[1], data-form3 = subjects[2])
+        b.js-diagram__reviews-amount.diagram__reviews-amount(data-form1 = forms[0], data-form2 = forms[1], data-form3 = forms[2])
         b.js-diagram__subtitle.diagram__subtitle
       canvas.js-diagram__canvas.diagram__canvas(width='120px', height='120px')
     section.diagram__legend.js-diagram__legend
       each item in statistic
-        .diagram__legend-item(data-amount = item.amount)
-          span.diagram__legend-circle
-          p.diagram__legend-lettering #{item.name}
+        - const { amount, name, firstColor, secondColor } = item
+        .diagram__legend-item(data-amount = amount)
+          span.diagram__legend-circle(data-colors = `${firstColor}, ${secondColor}`)
+          p.diagram__legend-lettering(data-name = name)
