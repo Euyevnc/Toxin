@@ -1,7 +1,6 @@
 class Review {
   constructor(root) {
-    this.root = root;
-    this.timer = this.root.querySelector('.js-review__days-ago');
+    this.timer = root.querySelector('.js-review__days-ago');
     this.date = this.timer.dataset.date;
     this.local_days = this.timer.dataset.local_days;
     this.local_weeks = this.timer.dataset.local_weeks;

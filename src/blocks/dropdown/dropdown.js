@@ -5,8 +5,8 @@ class Dropdown {
     this.root = root;
     this.items = [];
 
-    this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
-    this.input = this.textfieldObject.input;
+    this.textfield = new Textfield(this.root.querySelector('.js-textfield'));
+    this.input = this.textfield.getInput();
 
     this.arrow = this.root.querySelector('.js-dropdown__arrow');
 
@@ -37,7 +37,7 @@ class Dropdown {
 
   #displayValue = () => {
     const generatedValue = this.#concat();
-    this.textfieldObject.setValue(generatedValue);
+    this.textfield.setValue(generatedValue);
 
     if (this.buttonsPanel) {
       generatedValue

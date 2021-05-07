@@ -3,11 +3,10 @@ import handlerArrowClick from '../../plugins/arrow-imgs-slider';
 
 class RoomDemo {
   constructor(root) {
-    this.root = root;
-    this.buttons = this.root.querySelectorAll('.js-room-demo__button');
-    this.imgs = this.root.querySelectorAll('.js-room-demo__image');
-    this.arrowPrev = this.root.querySelector('.js-room-demo__arrow_left');
-    this.arrowNext = this.root.querySelector('.js-room-demo__arrow_right');
+    this.buttons = root.querySelectorAll('.js-room-demo__button');
+    this.imgs = root.querySelectorAll('.js-room-demo__image');
+    this.arrowPrev = root.querySelector('.js-room-demo__arrow_left');
+    this.arrowNext = root.querySelector('.js-room-demo__arrow_right');
 
     this.#init();
   }

@@ -1,0 +1,327 @@
+@import './UI-blocks/color-icon/color-icon.scss';
+@import './UI-blocks/font-icon/font-icon.scss';
+
+@import '../blocks/textfield/textfield.scss';
+@import '../blocks/dropdown/dropdown.scss';
+@import '../blocks/date-masked-textfield/date-masked-textfield.scss';
+@import '../blocks/double-date-picker/double-date-picker.scss';
+@import '../blocks/date-picker/date-picker.scss';
+@import '../blocks/checkboxes/checkboxes.scss';
+@import '../blocks/checkbox/checkbox.scss';
+@import '../blocks/radios/radios.scss';
+@import '../blocks/tumblers/tumblers.scss';
+@import '../blocks/liker/liker.scss';
+@import '../blocks/rate-stars/rate-stars.scss';
+@import '../blocks/range-picker/range-picker.scss';
+@import '../blocks/button/button.scss';
+@import '../blocks/link/link.scss';
+@import '../blocks/pagination/pagination.scss';
+@import '../blocks/marked-list/marked-list.scss';
+@import '../blocks/stickers/stickers.scss';
+@import '../blocks/review/review.scss';
+@import '../blocks/entry-form/entry-form.scss';
+@import '../blocks/registration/registration.scss';
+@import '../blocks/room-preview/room-preview.scss';
+@import '../blocks/room-search/room-search.scss';
+@import '../blocks/header/header.scss';
+@import '../blocks/footer/footer.scss';
+@import '../blocks/cellar/cellar.scss';
+@import '../blocks/card/card.scss';
+@import '../blocks/room-demo/room-demo.scss';
+@import '../assets/styles/mixin-font';
+@import '../assets/styles/mixin_outline';
+/* stylelint-disable no-descending-specificity */
+
+h3 {
+  @include default-font(
+    $main-color_darkest,
+    $size-small,
+    $size-small + 4,
+    700,
+    none,
+    uppercase
+  );
+
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.ui-kit-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background: #e5e5e5;
+
+  & > * {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 1440px;
+    margin: 25px;
+    background-color: #fff;
+
+    & > svg {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+  }
+}
+
+.colors-and-type {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 900px;
+  padding: 145px 0 0;
+
+  & .colors-container {
+    margin-bottom: 20px;
+    padding-right: 10px;
+  }
+
+  & .fonts-container {
+    padding-left: 10px;
+  }
+}
+
+.forms {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 143px 0 132px;
+
+  &-fields-wrapper {
+    width: 320px;
+
+    & > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-checkers-wrapper {
+    width: 320px;
+    padding: 0 2px 0 56px;
+
+    & > * {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-buttons-wrapper {
+    width: 320px;
+
+    & > * {
+      margin-bottom: 40px;
+    }
+  }
+
+  & .rounded-button-container {
+    display: inline-block;
+    width: 99px;
+    margin-right: 19px;
+    margin-bottom: 30px;
+  }
+
+  & .simple-button-container {
+    margin-right: 20px;
+  }
+
+  &-dropdowns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+
+    & > section {
+      width: 320px;
+
+      &:nth-child(2) {
+        padding: 0 2px 0 56px;
+      }
+    }
+  }
+
+  &-check-blockes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 40px;
+
+    & > section {
+      width: 320px;
+
+      &:nth-child(2) {
+        padding: 0 2px 0 56px;
+      }
+    }
+  }
+
+  & .reviews-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  & .range-calendar-container {
+    max-width: 266px;
+  }
+
+  & .field-with-arrow-container {
+    max-width: 266px;
+    color: $highlight-color;
+  }
+
+  & .tumblers-container {
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
+
+  & .range-slider-container {
+    width: 320px;
+  }
+
+  & .buttons-container {
+    margin-bottom: 30px;
+  }
+
+  & .default-input-drop-container {
+    margin-bottom: 20px;
+
+    & .dropdown {
+      z-index: 15;
+    }
+  }
+
+  & .expand-input-drop-container {
+    margin-bottom: 158px;
+  }
+
+  & .stickers-container {
+    margin: 0 20px;
+  }
+
+  & .bullets-container {
+    & h3 {
+      margin: 0;
+      margin-bottom: 16.5px;
+      padding: 0;
+      color: rgba(31, 32, 65, 1);
+      font-weight: 700;
+      font-size: 12px;
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+  }
+
+  & .review-wrapper {
+    max-width: 710px;
+    padding-top: 15px;
+  }
+}
+
+.cards {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 140px 0 140px;
+  background: #f4f4f6;
+
+  & > section {
+    max-width: 380px;
+    margin: 0 20px;
+
+    & > * {
+      margin-bottom: 40px;
+    }
+  }
+
+  & .expended-calendar-container {
+    position: relative;
+    width: 320px;
+    height: 370px;
+
+    & .ui-datepicker {
+      top: 0;
+      left: 0;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+
+.headers-and-footers {
+  display: flex;
+  flex-direction: column;
+  padding: 140px 0;
+  background: #f4f4f6;
+
+  & > *section {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  & .header-container {
+    position: relative;
+    z-index: 10;
+    padding: 15px 0;
+    background: white;
+    box-shadow: 0 10px 20px 10px rgba(31, 32, 65, 0.05);
+
+    &:nth-child(2) {
+      z-index: 11;
+    }
+    @media (max-width: 1160px) {
+      padding: 10px;
+    }
+  }
+
+  & .footer-container {
+    position: relative;
+    z-index: 9;
+    margin-bottom: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    @media (max-width: 1160px) {
+      padding: 0 10px;
+    }
+  }
+
+  & .cellar-container {
+    z-index: 9;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    @media (max-width: 1160px) {
+      padding: 0 10px;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1160px;
+  margin: auto;
+  @media (max-width: 1160px) {
+    padding: 0 10px;
+  }
+}
+
+.slim-wrapper {
+  width: 100%;
+  max-width: 768px;
+  margin: auto;
+}
+
+*:focus {
+  @include outline();
+}

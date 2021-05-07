@@ -1,7 +1,6 @@
 class Menu {
   constructor(root) {
-    this.root = root;
-    this.submenus = this.root.querySelectorAll('.js-menu__submenu');
+    this.submenus = root.querySelectorAll('.js-menu__submenu');
     this.submenus.forEach((it) => {
       const element = it.closest('.js-menu__element');
       element.addEventListener('click', this.#handlerElementClick);

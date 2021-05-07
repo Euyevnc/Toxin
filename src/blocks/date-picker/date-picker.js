@@ -5,7 +5,6 @@ import Textfield from '../textfield/textfield';
 
 class DatePicker {
   constructor(root) {
-    this.root = root;
     this.params = {
       closeText: 'Закрыть',
       prevText: 'Предыдущий',
@@ -24,16 +23,16 @@ class DatePicker {
       showOtherMonths: true,
       selectOtherMonths: true,
     };
-    this.arriveDate = this.root.dataset.initarrive;
-    this.departureDate = this.root.dataset.initdeparture;
+    this.textfield = new Textfield(root.querySelector('.js-textfield'));
 
-    this.textfieldObject = new Textfield(this.root.querySelector('.js-textfield'));
-    this.input = this.textfieldObject.input;
+    this.arriveDate = root.dataset.initarrive;
+    this.departureDate = root.dataset.initdeparture;
 
-    this.arrow = this.root.querySelector('.js-date-picker__arrow');
+    this.input = this.textfield.getInput();
+    this.arrow = root.querySelector('.js-date-picker__arrow');
 
-    document.addEventListener('calendarshowing', this.#handlerDocShowing);
     this.arrow.addEventListener('click', this.#handlerArrowClick);
+    document.addEventListener('calendarshowing', this.#handlerDocShowing);
 
     this.#init();
   }
@@ -89,7 +88,7 @@ class DatePicker {
       const extensionRange = input.datepicker('widget').data('datepickerExtensionRange');
       const start = extensionRange.startDateText;
       const end = extensionRange.endDateText;
-      input.val(`${start} - ${end}`);
+      this.textfield.setValue(`${start} - ${end}`);
     }
   }
 
@@ -115,7 +114,6 @@ class DatePicker {
         input[0].dispatchEvent(select);
       },
     });
-
     const picker = document.querySelector('.js-ui-datepicker');
     picker.addEventListener('click', this.#handlerPickerClick);
 

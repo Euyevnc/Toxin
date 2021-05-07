@@ -5,7 +5,6 @@ import Textfield from '../textfield/textfield';
 
 class DoubleDatePicker {
   constructor(root) {
-    this.root = root;
     this.params = {
       closeText: 'Закрыть',
       prevText: 'Предыдущий',
@@ -25,17 +24,17 @@ class DoubleDatePicker {
       selectOtherMonths: true,
       dateFormat: 'dd.mm.yy',
     };
-    const arriveContainer = this.root.querySelector('.js-double-date-picker__container_for_first');
+    const arriveContainer = root.querySelector('.js-double-date-picker__container_for_first');
     this.arriveDate = arriveContainer.dataset.init;
     this.arriveArrow = arriveContainer.querySelector('.js-double-date-picker__arrow');
-    this.arriveTextfieldObject = new Textfield(arriveContainer.querySelector('.js-textfield'));
-    this.arriveInput = this.arriveTextfieldObject.input;
+    const arriveTextfield = new Textfield(arriveContainer.querySelector('.js-textfield'));
+    this.arriveInput = arriveTextfield.getInput();
 
-    const departureContainer = this.root.querySelector('.js-double-date-picker__container_for_second');
+    const departureContainer = root.querySelector('.js-double-date-picker__container_for_second');
     this.departureDate = departureContainer.dataset.init;
     this.departureArrow = departureContainer.querySelector('.js-double-date-picker__arrow');
-    this.departureTextfieldObject = new Textfield(departureContainer.querySelector('.js-textfield'));
-    this.departureInput = this.departureTextfieldObject.input;
+    const departureTextfield = new Textfield(departureContainer.querySelector('.js-textfield'));
+    this.departureInput = departureTextfield.getInput();
 
     document.addEventListener('calendarshowing', this.#handlerDocShowing);
     this.arriveArrow.addEventListener('click', this.#handlerArrowClick);
