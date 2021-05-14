@@ -37,10 +37,15 @@ class Diagram {
         }],
       },
       options: {
+        animation: false,
         cutoutPercentage: 90,
         legend: {
           display: false,
         },
+        tooltips: {
+          enabled: false,
+        },
+
       },
     });
     this.diagram = myChart;
