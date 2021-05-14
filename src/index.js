@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', handlerDOMLoaded);
 
 function handlerDOMLoaded() {
   const sections = document.querySelectorAll('.js-section');
-  // eslint-disable-next-line no-unused-vars
-  const navigator = new Navigation(document.querySelector('.js-navigation'), sections);
+  // eslint-disable-next-line no-new
+  new Navigation(document.querySelector('.js-navigation'), sections);
   uiKit();
 }
