@@ -32,4 +32,4 @@ Quicksand packeges_
 
 ### Deployed project
 
-[Github-pages](https://euyevnc.github.io/Ui-kit-and-SitePages/)
+[Github-pages](https://euyevnc.github.io/Toxin/)
