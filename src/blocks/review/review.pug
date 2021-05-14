@@ -7,7 +7,7 @@ mixin review( {name = '', avatar = '', date = '01.01.1970', review = '', likes =
         img.review__avatar(src = `${avatar}`, alt = 'user\'s avatar')
       span.review__info
         strong.review__name #{name}
-        p.review__days-ago.js-review__days-ago(data-date = date, data-local_days = local_days, data-local_weeks = local_weeks, data-local_months = local_months, data-local_years = local_years, data-local_ago = local_ago) 
+        p.review__days-ago.js-review__days-ago(data-date = date, data-local-days = local_days, data-local-weeks = local_weeks, data-local-months = local_months, data-local-years = local_years, data-local-ago = local_ago) 
     section.review__body 
       .review__liker  
         +liker({ amount: likes, checked: isLiked })

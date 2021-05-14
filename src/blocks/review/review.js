@@ -2,11 +2,11 @@ class Review {
   constructor(root) {
     this.timer = root.querySelector('.js-review__days-ago');
     this.date = this.timer.dataset.date;
-    this.local_days = this.timer.dataset.local_days;
-    this.local_weeks = this.timer.dataset.local_weeks;
-    this.local_months = this.timer.dataset.local_months;
-    this.local_years = this.timer.dataset.local_years;
-    this.local_ago = this.timer.dataset.local_ago;
+    this.local_days = this.timer.dataset.localDays;
+    this.local_weeks = this.timer.dataset.localWeeks;
+    this.local_months = this.timer.dataset.localMonths;
+    this.local_years = this.timer.dataset.localYears;
+    this.local_ago = this.timer.dataset.localAgo;
 
     this.#init();
   }
