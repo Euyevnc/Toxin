@@ -9,6 +9,7 @@
     & + .checkbox__label {
       display: inline-block;
       min-height: 20px;
+      font-size: 0;
       user-select: none;
 
       &::before {

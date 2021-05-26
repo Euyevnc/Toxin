@@ -8,6 +8,7 @@
 .registration {
   display: inline-block;
   padding: 39px 29px 29px;
+  font-size: 0;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -39,7 +40,7 @@
   }
 
   &__data-sex {
-    margin: 0.5px 0 23.5px;
+    margin: 0.5px 0 20px;
   }
 
   &__data-birthday {

@@ -39,7 +39,11 @@
   }
 
   &__item {
-    margin-bottom: 10px;
+    margin-top: 1px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &_shrinked {

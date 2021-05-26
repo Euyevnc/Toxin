@@ -2,6 +2,8 @@
 @import '../../assets/styles/font-faces/MaterialIcons.scss';
 
 .radios {
+  font-size: 0;
+
   &__header {
     @include default-font(
       $main-color_darkest,
