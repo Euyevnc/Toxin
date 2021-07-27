@@ -1,5 +1,6 @@
-@import '../arrow/arrow.scss';
 @import '../authorization-panel/authorization-panel';
+
+@import '../arrow/arrow.scss';
 @import '../../assets/styles/mixin-font';
 
 .menu {
@@ -7,7 +8,6 @@
 
   &__list {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     margin: 0;
@@ -87,8 +87,18 @@
     padding-left: 20px;
     border-left: 1px solid $main-color_lightest;
   }
+}
 
-  @media (max-width: 650px) {
+@media (max-width: $breakpoint-large) {
+  .menu {
+    &__element {
+      padding: 0 5px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-middle) {
+  .menu {
     visibility: hidden;
 
     &_expanded {

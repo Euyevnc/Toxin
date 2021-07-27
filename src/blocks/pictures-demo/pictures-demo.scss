@@ -1,25 +1,21 @@
 .pictures-demo {
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
   max-height: 485px;
   user-select: none;
 
   &__large-picture-container {
-    width: auto;
-    overflow: hidden;
+    display: inline-flex;
+    flex-shrink: 1;
   }
 
   &__small-pictures-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    align-content: stretch;
-    justify-content: stretch;
-    overflow: hidden;
+    flex-shrink: 1;
   }
 
   &__image {
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
   }
 }

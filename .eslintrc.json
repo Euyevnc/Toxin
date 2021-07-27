@@ -18,6 +18,7 @@
     "no-underscore-dangle": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "no-unused-expressions":  ["error", { "allowShortCircuit": true, "allowTernary": true  }],
-    "max-classes-per-file": ["off"]
+    "max-classes-per-file": ["off"],
+    "indent": ["error", 2]
   }
 }

@@ -68,3 +68,9 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-middle) {
+  .burger {
+    display: inline;
+  }
+}

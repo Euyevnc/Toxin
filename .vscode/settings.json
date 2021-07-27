@@ -11,5 +11,6 @@
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true,
   },
-  "editor.renderControlCharacters": true
+  "editor.renderControlCharacters": true,
+  "editor.tabSize": 2
 }

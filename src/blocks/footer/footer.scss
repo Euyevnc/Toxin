@@ -101,3 +101,56 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-large) {
+  .footer {
+    &__block {
+      margin: 14px 0 0;
+      white-space: 0;
+
+      &_width_wide {
+        max-width: 150px;
+      }
+
+      &_width_slim {
+        min-width: 100px;
+      }
+    }
+
+    &__list-element {
+      margin-bottom: 10px;
+    }
+
+    &__heading {
+      margin-bottom: 15px;
+      font-size: $size-small;
+    }
+
+    &__link {
+      font-size: $size-small - 2;
+    }
+
+    &__inscription {
+      font-size: $size-small;
+    }
+  }
+}
+@media (max-width: $breakpoint-middle) {
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+
+    &__block {
+      max-width: none;
+      text-align: center;
+    }
+
+    &__heading {
+      text-align: center;
+    }
+
+    &__list-element {
+      text-align: center;
+    }
+  }
+}

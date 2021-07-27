@@ -20,6 +20,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 1440px;
+    padding: 0;
+  }
+
+  &__wrapper_slim {
+    max-width: 1180px;
+    padding: 0 10px;
   }
 
   &__header {
@@ -47,8 +54,6 @@
   }
 
   &__pictures {
-    width: 100%;
-    min-height: 485px;
     padding-bottom: 70px;
   }
 
@@ -70,16 +75,65 @@
     padding-right: 5px;
     text-align: left;
   }
-
-  & .pictures-demo {
-    position: absolute;
-    left: 50%;
-    width: 100%;
-    max-width: 1440px;
-    transform: translateX(-50%);
-  }
 }
 
 .footer-container {
   border-top: 2px solid rgba(31, 32, 65, 0.15);
+}
+
+@media (max-width: $breakpoint-large) {
+  .content {
+    &__wrapper_slim {
+      justify-content: stretch;
+    }
+
+    &__information {
+      justify-content: space-evenly;
+      max-width: none;
+    }
+
+    &__reviews {
+      max-width: 700px;
+      margin: 50px 100px;
+    }
+
+    &__booking {
+      margin: 20px auto;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-middle) {
+  .content {
+    &__reviews {
+      max-width: 700px;
+      margin: 50px 0;
+    }
+
+    &__stickers {
+      margin: 0 0 20px;
+
+      & .content__header {
+        text-align: center;
+      }
+    }
+
+    &__diagram {
+      margin: 0 0 20px;
+
+      & .content__header {
+        text-align: center;
+      }
+    }
+
+    &__rules {
+      margin-right: auto;
+      margin-bottom: 15px;
+    }
+
+    &__cancel-rules {
+      margin-right: auto;
+      margin-bottom: 15px;
+    }
+  }
 }

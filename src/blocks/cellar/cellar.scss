@@ -14,3 +14,10 @@
     @include default-font($line: $default-line - 1);
   }
 }
+
+@media (min-width: $size-small) {
+  .cellar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

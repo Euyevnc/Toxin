@@ -6,7 +6,6 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 320px;
   color: $main-color_lighter;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 
@@ -121,10 +120,6 @@
     &_invisible {
       visibility: hidden;
     }
-  }
-
-  &_thin {
-    max-width: 266px;
   }
 
   .textfield__value {

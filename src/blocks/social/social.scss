@@ -3,6 +3,8 @@
 
 .social {
   &__link {
+    display: inline-block;
+    min-height: 20px;
     margin: 0;
     margin-left: 20px;
     text-align: center;

@@ -80,3 +80,12 @@
     @include default-font($line: $default-line);
   }
 }
+@media (max-width: $breakpoint-small) {
+  .diagram {
+    &__legend {
+      display: inline-block;
+      min-width: 180px;
+      margin-left: 10px;
+    }
+  }
+}

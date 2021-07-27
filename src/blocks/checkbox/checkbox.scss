@@ -79,4 +79,8 @@
       @include default-font($main-color_lighter, $size-small, $size-middle);
     }
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 }

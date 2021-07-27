@@ -51,7 +51,42 @@ block content
   .content__text-container
     p.content__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 block footer
-  +footer({info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', refs: [{caption:'Навигация', links:[{href: '/about/',desc: 'О нас'},{href: '/news/',desc: 'Новости'},{href: '/support/',desc: 'Служба поддержки'},{href: '/services/',desc: 'Услуги'} ]}, {caption:'О нас', links:[{href: '/about_service/',desc: 'О сервисе'},{href: '/team/',desc: 'Наша команда'},{href: 'list/',desc: 'Вакансии'},{href: '/investors/',desc: 'Инвесторы'} ]}, {caption:'Служба поддержки', links:[{href: '/convience/',desc: 'Соглашения'},{href: '/comm/',desc: 'Сообщества'},{href: '/connection/',desc: 'Связь с нами'}] } ]} )
+  +footer(
+    {
+      info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', 
+      heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', 
+      refs: [
+        {caption:'Навигация', 
+        links:[
+          {href: '/about/',desc: 'О нас'},
+          {href: '/news/',desc: 'Новости'},
+          {href: '/support/',desc: 'Служба поддержки'},
+          {href: '/services/',desc: 'Услуги'} 
+        ]}, 
+        {caption:'О нас', 
+        links:[
+          {href: '/about_service/',desc: 'О сервисе'},
+          {href: '/team/',desc: 'Наша команда'},
+          {href: 'list/',desc: 'Вакансии'},
+          {href: '/investors/',desc: 'Инвесторы'} 
+        ]}, 
+        {caption:'Служба поддержки', 
+        links:[
+          {href: '/convience/',desc: 'Соглашения'},
+          {href: '/comm/',desc: 'Сообщества'},
+          {href: '/connection/',desc: 'Связь с нами'}
+        ] } 
+      ]
+    })
 block cellar  
-  +cellar({ text: 'Copyright © 2018 Toxin отель. Все права зачищены.', links: [{link: '/twit/', class: 'fa-twitter'}, {link:'/fb/', class: 'fa-facebook-square'}, {link:'/inst/', class: 'fa-instagram'}] })
+  +cellar(
+    { 
+      text: 'Copyright © 2018 Toxin отель. Все права зачищены.', 
+      links: [
+        {link: 'https://twitter.com/', class: 'fa-twitter'}, 
+        {link:'https://www.facebook.com/', class: 'fa-facebook-square'}, 
+        {link:'https://www.instagram.com/', class: 'fa-instagram'}
+      ]  
+    }
+  )
 block script 

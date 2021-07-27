@@ -71,8 +71,10 @@
   &__rent-calculation {
     @include default-font($line: $default-line);
 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding-left: 1px;
-    vertical-align: top;
   }
 
   &__rent {
@@ -144,13 +146,24 @@
   &__button-cont {
     height: 44px;
   }
-  @media (max-width: 400px) {
-    padding: 29px 19px;
-  }
-  @media (max-width: 380px) {
+}
+
+@media (max-width: $breakpoint-small) {
+  .room-preview {
     padding: 29px 5px;
-  }
-  @media (max-width: 330px) {
-    padding: 29px 0;
+
+    &__rent-calculation {
+      padding: 0 5px;
+    }
+
+    &__total {
+      min-width: 0;
+      max-width: 290px;
+    }
+
+    &__button-cont {
+      max-width: 300px;
+      margin: auto;
+    }
   }
 }

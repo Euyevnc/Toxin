@@ -17,19 +17,12 @@
 
   &__wrapper {
     display: flex;
-    justify-content: space-between;
-    @media (max-width: 600px) {
-      flex-wrap: wrap;
-    }
+    justify-content: stretch;
   }
 
   &__forms {
     min-width: 266px;
     margin-right: 60px;
-    @media (max-width: 600px) {
-      margin: 0 20px 0;
-      text-align: center;
-    }
   }
 
   &__date-picker {
@@ -69,9 +62,6 @@
     );
 
     margin: 0;
-    @media (max-width: 600px) {
-      text-align: center;
-    }
   }
 
   &__numbers-list {
@@ -79,9 +69,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    @media (max-width: 600px) {
-      justify-content: center;
-    }
   }
 
   &__pagination {
@@ -93,4 +80,29 @@
 
 .footer-container {
   border-top: 2px solid rgba(31, 32, 65, 0.15);
+}
+
+@media (max-width: $breakpoint-large) {
+  .content {
+    &__forms {
+      margin-right: 20px;
+    }
+
+    &__numbers-list {
+      justify-content: space-evenly;
+    }
+
+    &__heading {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-middle) {
+  .content {
+    &__wrapper {
+      flex-direction: column;
+      align-content: stretch;
+    }
+  }
 }
