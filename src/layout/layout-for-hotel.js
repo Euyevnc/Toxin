@@ -1,7 +1,1 @@
-import './favicons/favicons';
-
-function commonScripts() {
-
-}
-
-export default commonScripts;
+import '../../assets/favicons/favicons';

@@ -3,8 +3,8 @@ mixin header({ menu } = { })
   .js-header.header
     .header__sign
       span.header__logo
-        include ../../assets/images/logo-icon-color.svg
+        include ./images/logo-icon-color.svg
       span.header__brand
-        include ../../assets/images/logo-text.svg
+        include ./images/logo-text.svg
     +menu(menu)
     include ../burger/burger.pug

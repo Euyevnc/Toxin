@@ -1,9 +1,11 @@
-@import '../../../assets/styles/font-faces/Montserrat.scss';
+@import '../../../scss/font-faces/Montserrat.scss';
+
 .font-icon__container {
   display: flex;
   justify-content: space-between;
   padding-bottom: 50px;
 }
+
 .font-icon__tag {
   display: inline-block;
   margin-right: 30px;
@@ -13,6 +15,7 @@
   vertical-align: top;
   opacity: 0.25;
 }
+
 .font-icon__text {
   display: inline-block;
   width: 377px;

@@ -1,5 +1,5 @@
 @import '../social/social.scss';
-@import '../../assets/styles/mixin-font';
+@import '../../scss/mixin-font';
 
 .cellar {
   display: flex;
@@ -15,7 +15,7 @@
   }
 }
 
-@media (min-width: $size-small) {
+@media (max-width: $breakpoint-small) {
   .cellar {
     flex-wrap: wrap;
     justify-content: center;

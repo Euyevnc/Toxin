@@ -28,15 +28,15 @@ include ../blocks/room-search/room-search.pug
 include ../blocks/room-preview/room-preview.pug
 include ../blocks/entry-form/entry-form.pug
 
-- let img1 = require(`./UI-kit/img/UI-room-picture-1.jpg`).default
-- let img2 = require(`./UI-kit/img/UI-room-picture-2.jpg`).default
-- let img3 = require(`./UI-kit/img/UI-room-picture-3.jpg`).default
-- let img4 = require(`./UI-kit/img/UI-room-picture-4.jpg`).default
-- let img5 = require(`./UI-kit/img/UI-room-picture-5.jpg`).default 
+- let img1 = require(`./UI-kit/images/UI-room-picture-1.jpg`).default
+- let img2 = require(`./UI-kit/images/UI-room-picture-2.jpg`).default
+- let img3 = require(`./UI-kit/images/UI-room-picture-3.jpg`).default
+- let img4 = require(`./UI-kit/images/UI-room-picture-4.jpg`).default
+- let img5 = require(`./UI-kit/images/UI-room-picture-5.jpg`).default 
 
 .ui-kit-container
   section.colors-and-type 
-    include ../assets/images/logo-icon.svg 
+    include ./images/logo-icon.svg 
     section.colors-container 
       +colorIcon('#1F2041', "Dark Shade 100%", 1)
       +colorIcon('#1F2041', "Dark Shade 75%", 0.75)
@@ -51,7 +51,7 @@ include ../blocks/entry-form/entry-form.pug
       +fontIcon('H3', 'Montserrat', '14px', '700', '15px', 'uppercase' , 'This is a label or CTA text.')
       +fontIcon('Body', 'Montserrat', '14px', '400', '24px', 'none', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', '0.75')
   section.forms
-    include ../assets/images/logo-icon.svg
+    include ./images/logo-icon.svg
     section.forms-fields-wrapper
       .textfield-container 
         +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
@@ -253,7 +253,7 @@ include ../blocks/entry-form/entry-form.pug
       .review-wrapper 
         +review({
           name: 'Мурад Сарафанов', 
-          avatar: require('./UI-kit/img/review-1-avatar.jpg').default, 
+          avatar: require('./UI-kit/images/review-1-avatar.jpg').default, 
           review:'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 
           date: '03.05.2021', 
           likes:12, 
@@ -265,7 +265,7 @@ include ../blocks/entry-form/entry-form.pug
           local_ago: 'назад'
           })
   section.cards 
-    include ../assets/images/logo-icon.svg
+    include ./images/logo-icon.svg
     section   
       .find-form-container
         +room-search({ 
@@ -356,7 +356,7 @@ include ../blocks/entry-form/entry-form.pug
       .room-demonstration-container
         +room-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img1] })
   section.headers-and-footers
-    include ../assets/images/logo-icon.svg
+    include ./images/logo-icon.svg
     section.header-container 
       .wrapper
         +header({ 
