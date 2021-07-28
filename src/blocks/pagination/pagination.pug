@@ -1,5 +1,6 @@
 include ../arrow/arrow.pug
-mixin pagination({ amount = 0} = { })
+
+mixin pagination({ amount = 0})
   .pagination.js-pagination
     ul.pagination__buttons-list
       - for (let i = 1; i <= amount; i++) {

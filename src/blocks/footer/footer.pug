@@ -1,5 +1,6 @@
 include ../textfield/textfield.pug
-mixin footer({ heading = '', info = '', heading2 = '', info2 = '', refs = [] } = { })
+
+mixin footer({ heading = '', info = '', offerHeading = '', offerText = '', refs = [] })
   .footer 
     section.footer__block.footer__block_width_wide
       if heading
@@ -19,8 +20,8 @@ mixin footer({ heading = '', info = '', heading2 = '', info2 = '', refs = [] } =
             li.footer__list-element
               a.footer__link(href = `${link.href}`) #{link.desc}
     section.footer__block.footer__block_width_wide
-      if heading2
-        h3.footer__heading #{heading2}
-      if info2
-        p.footer__inscription #{info2} 
+      if offerHeading
+        h3.footer__heading #{offerHeading}
+      if offerText
+        p.footer__inscription #{offerText} 
       +textfield({ placeholder: 'Email', type: "email", arrow: 'right'})

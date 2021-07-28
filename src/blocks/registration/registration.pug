@@ -3,7 +3,8 @@ include ../date-masked-textfield/date-masked-textfield.pug
 include ../tumblers/tumblers.pug
 include ../radios/radios.pug
 include ../button/button.pug
-mixin registration({ header = 'account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler} = { })
+
+mixin registration({ header = 'account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler})
   article.registration.js-registration
     h1.registration__header #{header}
     form.registration__form.js-registration__form(name = 'registration', action = '')

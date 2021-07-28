@@ -1,6 +1,7 @@
 include ../textfield/textfield.pug
 include ../link/link.pug
-mixin dropdown({ textfield, items=[ ], displayButtons = false, deleteButton = {}, confirmButton = {} } = { })
+
+mixin dropdown({ textfield, items=[ ], displayButtons = false, deleteButton = {}, confirmButton = {} })
   div(class='js-dropdown dropdown')
     +textfield({ ...textfield, readonly: true })
     span.dropdown__arrow.js-dropdown__arrow

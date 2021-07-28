@@ -1,6 +1,7 @@
 include ../button/button.pug
 include ../textfield/textfield.pug
-mixin entry-form( {header = 'Enter', signinBtn, signupBtn, signupText = 'Don\'t have a Toxin account?', mailField, passwordField } = { } )    
+
+mixin entry-form( {header = 'Enter', signinBtn, signupBtn, signupText = 'Don\'t have a Toxin account?', mailField, passwordField })    
   article.entry-form
     h1.entry-form__header #{header}
     form.entry-form__form(name = 'entry-form', action = '')

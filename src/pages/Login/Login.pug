@@ -5,10 +5,10 @@ include ../../blocks/cellar/cellar.pug
 include ../../blocks/entry-form/entry-form.pug
 
 block variables 
+
 block head
   title Login 
-  meta(name='keywords', content='keywords')
-  meta(name='description', content='description') 
+
 block header  
   +header({ 
     menu: { 
@@ -26,6 +26,7 @@ block header
       }
     }, 
   })
+
 block content 
   +entry-form({
     header: 'Войти',
@@ -40,7 +41,7 @@ block footer
   +footer(
     {
       info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', 
-      heading2: 'Подписка', info2: 'Получайте специальные предложения и новости сервиса', 
+      offerHeading: 'Подписка', offerText: 'Получайте специальные предложения и новости сервиса', 
       refs: [
         {caption:'Навигация', 
         links:[
@@ -65,6 +66,7 @@ block footer
       ]
     }
   )
+  
 block cellar  
   +cellar(
     { 

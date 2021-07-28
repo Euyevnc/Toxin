@@ -1,7 +1,8 @@
 include ../double-date-picker/double-date-picker.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
-mixin room-preview( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, buttonText, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' } = { } )
+
+mixin room-preview( {number = '', category = '', price = 0, servDesc='', servPrice = '', counter, datePicker, buttonText, day_local = 'days', perDay_local = 'per day', total_local = 'Total', discount_local = 'discount' })
   article.room-preview.js-room-preview
     section.room-preview__information
       span.room-preview__main-info

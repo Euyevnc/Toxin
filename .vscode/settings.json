@@ -10,7 +10,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true,
+
   },
   "editor.renderControlCharacters": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
 }

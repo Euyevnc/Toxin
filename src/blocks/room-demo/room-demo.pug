@@ -1,5 +1,6 @@
 include ../rate-stars/rate-stars.pug
-mixin room-demo({ number = 0, category = '', price = 0, rate = 0, reviews = 0, pictures = [] } = { })
+
+mixin room-demo({ number = 0, category = '', price = 0, rate = 0, reviews = 0, pictures = [] })
   - let amount = pictures.length 
   - let validPrice = price.toLocaleString()
   article.js-room-demo.room-demo

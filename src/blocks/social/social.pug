@@ -1,4 +1,4 @@
-mixin social({ icons = [ ] } = { } )
+mixin social({ icons = [ ] })
   span.social
     each icon in icons 
       a.social__link(href=`${icon.link}` target='_blank')
