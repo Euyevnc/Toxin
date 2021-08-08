@@ -1,9 +1,9 @@
 import DateMaskedTextfield from '../date-masked-textfield/date-masked-textfield';
 
-class Registration {
+class RegistrationForm {
   constructor(root) {
     this.birthField = new DateMaskedTextfield(root.querySelector('.js-date-masked-textfield'));
   }
 }
 
-export default Registration;
+export default RegistrationForm;

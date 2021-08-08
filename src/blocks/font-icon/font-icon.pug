@@ -1,4 +1,4 @@
-mixin fontIcon(tag, family, size, weight, line, transform, text, opacity)
+mixin fontIcon({tag, family, size, weight, line, transform, text, opacity = 1})
   - if (!text) {text='Lorem ipsum dolor sit amet, consectetur adipiscing elit'}
   - if (!opacity) {opacity = 1}
   .font-icon__container

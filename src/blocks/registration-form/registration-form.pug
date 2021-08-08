@@ -1,0 +1,33 @@
+include ../textfield/textfield.pug
+include ../date-masked-textfield/date-masked-textfield.pug
+include ../tumblers/tumblers.pug
+include ../radios/radios.pug
+include ../button/button.pug
+
+mixin registration-form({ header = 'account registration', signupBtn, signinBtn, signinText = 'Already have an account on Toxin', nameField, surnameField, sexRadio, birthdayField, mailField, passwordField, offerTumbler})
+  article.registration-form.js-registration-form
+    h1.registration-form__header #{header}
+    form.registration-form__form.js-registration-form__form(name = 'registration-form', action = '')
+      .registration-form__data-name.js-registration-form__data-name
+        +textfield( nameField )
+      .registration-form__data-surname.js-registration-form__data-surname
+        +textfield( surnameField )
+      .registration-form__data-sex
+        +radios( sexRadio )
+      
+      .registration-form__data-birthday.js-registration-form__data-birthday
+        +date-masked-textfield( birthdayField )
+
+      .registration-form__data-email.js-registration-form__data-email
+        +textfield( mailField )
+      .registration-form__data-password.js-registration-form__data-password
+        +textfield( passwordField )
+      .registration-form__data-offer
+        +tumblers( offerTumbler )
+
+      .registration-form__button
+        +button( signupBtn )
+    .registration-form__entry
+      p.registration-form__text #{signinText}
+      .registration-form__button
+        +button( signinBtn )

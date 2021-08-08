@@ -5,7 +5,8 @@ include ../../blocks/cellar/cellar.pug
 include ../../blocks/room-search/room-search.pug
 
 block variables
-  
+  - const blockClass = 'landing-page'
+
 block head
   title LandingPage
   meta(name='keywords', content='keywords')
@@ -30,7 +31,7 @@ block header
   })
 
 block content   
-  .content__searcher-container
+  .landing-page__searcher-container
     +room-search({ 
       header: 'Найдём номера под ваши пожелания',
         datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
@@ -50,8 +51,8 @@ block content
         }, 
         buttonText: 'подобрать номер' 
       })
-  .content__text-container
-    p.content__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+  .landing-page__text-container
+    p.landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 block footer
   +footer(

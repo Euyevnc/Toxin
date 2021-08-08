@@ -10,6 +10,7 @@ include ../../blocks/room-demo/room-demo.pug
 include ../../blocks/pagination/pagination.pug
 
 block variables
+  - const blockClass = 'search-room'
 
   - const img1 = require('../../../assets/images/room-picture-1.jpg').default
   - const img2 = require('../../../assets/images/room-picture-2.jpg').default
@@ -45,13 +46,13 @@ block header
     }, 
   })
 block content
-  section.content__filters 
-    form.content__forms(action = '')
-      .content__date-picker
+  section.search-room__filters 
+    form.search-room__forms(action = '')
+      .search-room__date-picker
         +date-picker({ 
           textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
         })
-      .content__guest-counter
+      .search-room__guest-counter
         +dropdown({
           textfield: {
             label: 'Гости', 
@@ -66,7 +67,7 @@ block content
           deleteButtonText: 'очистить', 
           confirmButtonText: 'подтвердить',
         })     
-      .content__price-picker
+      .search-room__price-picker
         +range-picker({ 
           title: "Диапазон цены", 
           describe: "Стоимость за сутки прибывания в номере", 
@@ -74,7 +75,7 @@ block content
           values: "range, horizontal, , none, 500, 15000, 500, 5000, 10000" 
         })
        
-      .content__rules
+      .search-room__rules
         +checkboxes({ 
           header: 'правила дома',
           checkboxes: [
@@ -83,7 +84,7 @@ block content
             {title:'Можно пригласить гостей (до  10  человек)', value: 'allowed', name: 'guests', checked:'true'}
           ] 
         })
-      .content__availability
+      .search-room__availability
         +checkboxes({
           header: 'доступность', 
           checkboxes: [ 
@@ -92,7 +93,7 @@ block content
           ] 
         })
       
-      .content__equipment-counter
+      .search-room__equipment-counter
         +dropdown({
           thin: true,
           textfield: {
@@ -105,7 +106,7 @@ block content
             {name: "ванные комнаты", min: "0", max: "5", nameForms: 'ванная комната, ванные комнаты, ванных комнат'}
           ] 
         }) 
-      .content__facilities 
+      .search-room__facilities 
         +checkboxes({ 
           header: 'дополнительные удобства', 
           expanding: true, 
@@ -122,9 +123,9 @@ block content
           ] 
         })
   
-  section.content__numbers-demonstration
-    h1.content__heading Номера, которые мы для вас подобрали
-    .content__numbers-list
+  section.search-room__numbers-demonstration
+    h1.search-room__heading Номера, которые мы для вас подобрали
+    .search-room__numbers-list
       +room-demo({ number: 888, category: 'люкс', price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img7] })
       +room-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img9] })
       +room-demo({ number: 980, category: 'люкс', price: 8500, rate: 3, reviews: 35, pictures:[img3,img2,img5,img9] })
@@ -137,7 +138,7 @@ block content
       +room-demo({ number: 666, price: 5000, rate: 5, reviews: 25, pictures:[img10,img2,img5,img9] })
       +room-demo({ number: 444, price: 5000, rate: 3, reviews: 15, pictures:[img11,img2,img5,img9] })
       +room-demo({ number: 352, price: 5000, rate: 3, reviews: 55, pictures:[img12,img2,img5,img9] })
-    .content__pagination()
+    .search-room__pagination()
       +pagination({ amount:15} )
 
 block footer

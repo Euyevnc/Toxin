@@ -2,10 +2,11 @@ extends ../../layout/layout-for-hotel.pug
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/cellar/cellar.pug
-include ../../blocks/registration/registration.pug
+include ../../blocks/registration-form/registration-form.pug
 
 block variables
-  
+  - const blockClass = 'registration'
+
 block head
   title Registration
 
@@ -28,7 +29,7 @@ block header
   })
 
 block content    
-  +registration({
+  +registration-form({
     header: 'Регистрация аккаунта',
     signupBtn: {text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'},
     signinBtn: { text:'войти' },

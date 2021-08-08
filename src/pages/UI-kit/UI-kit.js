@@ -1,18 +1,20 @@
 /* eslint-disable no-unused-vars */
 import './UI-kit.scss';
 
-import DateMaskedTextfield from '../blocks/date-masked-textfield/date-masked-textfield';
-import DoubleDatePicker from '../blocks/double-date-picker/double-date-picker';
-import DatePicker from '../blocks/date-picker/date-picker';
-import RangePicker from '../blocks/range-picker/range-picker';
-import Dropdown from '../blocks/dropdown/dropdown';
-import Checkboxes from '../blocks/checkboxes/checkboxes';
-import RoomBooker from '../blocks/room-preview/room-preview';
-import RoomFinder from '../blocks/room-search/room-search';
-import Header from '../blocks/header/header';
-import Review from '../blocks/review/review';
-import RoomDemo from '../blocks/room-demo/room-demo';
-import Registration from '../blocks/registration/registration';
+import DateMaskedTextfield from '../../blocks/date-masked-textfield/date-masked-textfield';
+import DoubleDatePicker from '../../blocks/double-date-picker/double-date-picker';
+import DatePicker from '../../blocks/date-picker/date-picker';
+import RangePicker from '../../blocks/range-picker/range-picker';
+import Dropdown from '../../blocks/dropdown/dropdown';
+import Checkboxes from '../../blocks/checkboxes/checkboxes';
+import RoomBooker from '../../blocks/room-preview/room-preview';
+import RoomFinder from '../../blocks/room-search/room-search';
+import Header from '../../blocks/header/header';
+import Review from '../../blocks/review/review';
+import RoomDemo from '../../blocks/room-demo/room-demo';
+import Registration from '../../blocks/registration-form/registration-form';
+
+document.addEventListener('DOMContentLoaded', uiKitInit);
 
 function uiKitInit() {
   const doublePickerObject = new DoubleDatePicker(document.querySelector('.double-date-picker'));
@@ -58,4 +60,3 @@ function uiKitInit() {
     contForCalendar.appendChild(calendar);
   }, 700);
 }
-export default uiKitInit;

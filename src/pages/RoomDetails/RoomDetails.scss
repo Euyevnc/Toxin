@@ -11,25 +11,78 @@
 @import '../../blocks/review/review.scss';
 @import '../../blocks/marked-list/marked-list.scss';
 
-.content {
+.room-details {
   padding-bottom: 60px;
   background-color: white;
 
   &__wrapper {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1440px;
-    padding: 0;
-  }
-
-  &__wrapper_slim {
+    position: relative;
+    box-sizing: border-box;
     max-width: 1180px;
+    height: 100%;
+    margin: auto;
     padding: 0 10px;
   }
 
   &__header {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 9;
+    box-sizing: border-box;
+    min-width: 320px;
+    margin: auto;
+    padding: 30px 0 75px;
+    background-color: white;
+
+    .room-details__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1440px;
+      padding: 0;
+
+      &_slim {
+        max-width: 1180px;
+        padding: 0 10px;
+        @media (max-width: $breakpoint-large) {
+          justify-content: stretch;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    border-top: 2px solid rgba(31, 32, 65, 0.15);
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__cellar {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    border-top: 1px solid rgba(31, 32, 65, 0.1);
+  }
+
+  &__heading {
     margin: 0 0 20px;
     @include default-font(
       $main-color_darkest,
@@ -63,75 +116,63 @@
     align-items: flex-start;
     justify-content: space-between;
     max-width: 710px;
+    @media (max-width: $breakpoint-large) {
+      justify-content: space-evenly;
+      max-width: none;
+    }
   }
 
   &__reviews {
     margin-top: 13px;
     margin-bottom: 10px;
+    @media (max-width: $breakpoint-large) {
+      max-width: 700px;
+      margin: 50px 100px;
+    }
+    @media (max-width: $breakpoint-middle) {
+      max-width: 700px;
+      margin: 50px 0;
+    }
   }
 
   &__cancel-rules {
     max-width: 345px;
     padding-right: 5px;
     text-align: left;
-  }
-}
-
-.footer-container {
-  border-top: 2px solid rgba(31, 32, 65, 0.15);
-}
-
-@media (max-width: $breakpoint-large) {
-  .content {
-    &__wrapper_slim {
-      justify-content: stretch;
-    }
-
-    &__information {
-      justify-content: space-evenly;
-      max-width: none;
-    }
-
-    &__reviews {
-      max-width: 700px;
-      margin: 50px 100px;
-    }
-
-    &__booking {
-      margin: 20px auto;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-middle) {
-  .content {
-    &__reviews {
-      max-width: 700px;
-      margin: 50px 0;
-    }
-
-    &__stickers {
-      margin: 0 0 20px;
-
-      & .content__header {
-        text-align: center;
-      }
-    }
-
-    &__diagram {
-      margin: 0 0 20px;
-
-      & .content__header {
-        text-align: center;
-      }
-    }
-
-    &__rules {
+    @media (max-width: $breakpoint-middle) {
       margin-right: auto;
       margin-bottom: 15px;
     }
+  }
 
-    &__cancel-rules {
+  &__booking {
+    @media (max-width: $breakpoint-large) {
+      margin: 20px auto;
+    }
+  }
+
+  &__stickers {
+    @media (max-width: $breakpoint-middle) {
+      margin: 0 0 20px;
+
+      & .content__header {
+        text-align: center;
+      }
+    }
+  }
+
+  &__diagram {
+    @media (max-width: $breakpoint-middle) {
+      margin: 0 0 20px;
+
+      & .content__header {
+        text-align: center;
+      }
+    }
+  }
+
+  &__rules {
+    @media (max-width: $breakpoint-middle) {
       margin-right: auto;
       margin-bottom: 15px;
     }

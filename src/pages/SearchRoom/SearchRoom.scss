@@ -11,18 +11,73 @@
 @import '../../blocks/room-demo/room-demo.scss';
 @import '../../blocks/range-picker/range-picker.scss';
 
-.content {
-  padding: 30px 0 75px;
-  background-color: white;
-
+.search-room {
   &__wrapper {
-    display: flex;
-    justify-content: stretch;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 1180px;
+    height: 100%;
+    margin: auto;
+    padding: 0 10px;
+  }
+
+  &__header {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 9;
+    box-sizing: border-box;
+    min-width: 320px;
+    margin: auto;
+    padding: 30px 0 75px;
+    background-color: white;
+
+    .search-room__wrapper {
+      display: flex;
+      justify-content: stretch;
+      @media (max-width: $breakpoint-middle) {
+        flex-direction: column;
+        align-content: stretch;
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    border-top: 2px solid rgba(31, 32, 65, 0.15);
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__cellar {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    border-top: 1px solid rgba(31, 32, 65, 0.1);
   }
 
   &__forms {
     min-width: 266px;
     margin-right: 60px;
+    @media (max-width: $breakpoint-large) {
+      margin-right: 20px;
+    }
   }
 
   &__date-picker {
@@ -62,6 +117,9 @@
     );
 
     margin: 0;
+    @media (max-width: $breakpoint-large) {
+      text-align: center;
+    }
   }
 
   &__numbers-list {
@@ -69,40 +127,14 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+    @media (max-width: $breakpoint-large) {
+      justify-content: space-evenly;
+    }
   }
 
   &__pagination {
     margin-top: 41px;
     padding-right: 9px;
     text-align: center;
-  }
-}
-
-.footer-container {
-  border-top: 2px solid rgba(31, 32, 65, 0.15);
-}
-
-@media (max-width: $breakpoint-large) {
-  .content {
-    &__forms {
-      margin-right: 20px;
-    }
-
-    &__numbers-list {
-      justify-content: space-evenly;
-    }
-
-    &__heading {
-      text-align: center;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-middle) {
-  .content {
-    &__wrapper {
-      flex-direction: column;
-      align-content: stretch;
-    }
   }
 }

@@ -1,15 +1,16 @@
 extends ./layout/layout-for-hotel.pug
-include ./UI-kit/UI-blocks/navigation/navigation.pug 
+
 block variables
+
 block head
   title UI-kit, WebsitePages and Slider
+
 block header 
-  +navigation(["UI-kit", "Pages"])
 
 block content 
-  section.section.js-section.ui-demonstrate 
-    include ./UI-kit/UI-kit.pug 
   section.section.js-section.links-demonstrate
+    div.site-page-filler
+      a(href = "./UI-kit.html") UI-kit
     div.site-page-filler
         a(href = "./LandingPage.html") Landing Page
     div.site-page-filler   
@@ -20,5 +21,5 @@ block content
         a(href = "./Registration.html") Registration  
     div.site-page-filler 
         a(href = "./Login.html") Sign In  
-    div.site-page-filler
+    
 block script

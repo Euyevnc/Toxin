@@ -1,4 +1,4 @@
-mixin colorIcon(color, name, opacity)
+mixin colorIcon({color, name, opacity = 1})
   .color-icon__container
     span.color-icon__color(style = `background-color: ${color}; opacity: ${opacity}`)
     span
