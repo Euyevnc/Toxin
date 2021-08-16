@@ -6,7 +6,8 @@
 @import '../../scss/mixin-font';
 
 .registration-form {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 39px 29px 29px;
   font-size: 0;
   background-color: white;

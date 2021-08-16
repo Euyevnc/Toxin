@@ -44,6 +44,7 @@
     .search-room__wrapper {
       display: flex;
       justify-content: stretch;
+      min-height: calc(100vh - 70px);
       @media (max-width: $breakpoint-middle) {
         flex-direction: column;
         align-content: stretch;
