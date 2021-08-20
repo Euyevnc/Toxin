@@ -17,7 +17,6 @@ const htmlPlugins = [
     chunks: ['common', 'index'],
     filename: 'index.html',
     template: `${PATHS.src}/index.pug`,
-
   }),
 ];
 

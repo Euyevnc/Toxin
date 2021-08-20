@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import './UI-kit.scss';
-
+import '../../../assets/favicons/favicons';
 import DateMaskedTextfield from '../../blocks/date-masked-textfield/date-masked-textfield';
 import DoubleDatePicker from '../../blocks/double-date-picker/double-date-picker';
 import DatePicker from '../../blocks/date-picker/date-picker';
@@ -13,6 +12,8 @@ import Header from '../../blocks/header/header';
 import Review from '../../blocks/review/review';
 import RoomDemo from '../../blocks/room-demo/room-demo';
 import Registration from '../../blocks/registration-form/registration-form';
+
+import './UI-kit.scss';
 
 document.addEventListener('DOMContentLoaded', uiKitInit);
 
