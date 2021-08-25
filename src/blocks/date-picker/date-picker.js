@@ -31,53 +31,54 @@ class DatePicker {
     this.input = this.textfield.getInput();
     this.arrow = root.querySelector('.js-date-picker__arrow');
 
-    this.arrow.addEventListener('click', this.#handlerArrowClick);
-    document.addEventListener('calendarshowing', this.#handlerDocShowing);
+    this.arrow.addEventListener('click', this.handlerArrowClick);
+    document.addEventListener('calendarshowing', this.handlerDocShowing);
 
     this.#init();
   }
 
-  #handlerPickerClick = (ev) => {
+  handlerPickerClick = (ev) => {
     if (!this.calendarIsShowing) return;
     const input = $(this.input);
     if (ev.target.closest('.ui-datepicker-button_clear')) {
       this.arriveDate = '';
       this.departureDate = '';
       input.datepicker('setDate', '');
-    }
-    if (ev.target.closest('.ui-datepicker-button_conf')) {
+    } else if (ev.target.closest('.ui-datepicker-button_conf')) {
       input.datepicker('hide');
     }
   }
 
-  #handlerDocShowing = (e) => {
+  handlerDocShowing = (e) => {
     if (e.detail.input === this.input) {
       $(this.input).datepicker('setDate', [this.arriveDate, this.departureDate]);
       this.#displayValue();
 
-      this.arrow.removeEventListener('click', this.#handlerArrowClick);
+      this.arrow.removeEventListener('click', this.handlerArrowClick);
       this.arrow.querySelector('.arrow').textContent = 'expand_less';
-      document.addEventListener('calendarhiding', this.#handlerDocHiding);
+      document.addEventListener('calendarhiding', this.handlerDocHiding);
       this.calendarIsShowing = true;
     }
   }
 
-  #handlerDocHiding = (e) => {
+  handlerDocHiding = (e) => {
     if (!e.detail.datepickerShowing) return;
     this.arrow.querySelector('.arrow').textContent = 'expand_more';
     if (e.detail.input === this.input) {
-      document.addEventListener('click', this.#handlerDocClick);
-    } else this.input.addEventListener('click', this.#handlerArrowClick);
-    document.removeEventListener('calendarhiding', this.#handlerDocHiding);
+      document.addEventListener('click', this.handlerDocClick);
+    } else {
+      this.input.addEventListener('click', this.handlerArrowClick);
+    }
+    document.removeEventListener('calendarhiding', this.handlerDocHiding);
     this.calendarIsShowing = false;
   }
 
-  #handlerDocClick = () => {
-    document.removeEventListener('click', this.#handlerDocClick);
-    this.arrow.addEventListener('click', this.#handlerArrowClick);
+  handlerDocClick = () => {
+    document.removeEventListener('click', this.handlerDocClick);
+    this.arrow.addEventListener('click', this.handlerArrowClick);
   }
 
-  #handlerArrowClick = () => {
+  handlerArrowClick = () => {
     const input = $(this.input);
     input.datepicker('show');
   }
@@ -106,7 +107,8 @@ class DatePicker {
       dateFormat: 'dd M',
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
+      onSelect(...args) {
+        const [, , extensionRange] = args;
         displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
@@ -115,7 +117,7 @@ class DatePicker {
       },
     });
     const picker = document.querySelector('.js-ui-datepicker');
-    picker.addEventListener('click', this.#handlerPickerClick);
+    picker.addEventListener('click', this.handlerPickerClick);
 
     input.datepicker('setDate', [arriveDate, departureDate]);
   }

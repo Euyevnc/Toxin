@@ -21,13 +21,13 @@ class RoomBooker {
     this.servicePrice = this.#countService();
 
     this.root.querySelectorAll('.js-double-date-picker input').forEach((input) => {
-      input.addEventListener('ondateselect', this.#handlerInputChange);
+      input.addEventListener('ondateselect', this.handlerInputChange);
     });
 
     this.#init();
   }
 
-  #handlerInputChange = (e) => {
+  handlerInputChange = (e) => {
     const arrival = new Date(e.detail.startDate);
     const departure = new Date(e.detail.endDate);
 

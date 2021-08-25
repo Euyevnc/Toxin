@@ -3,11 +3,11 @@ class Menu {
     this.submenus = root.querySelectorAll('.js-menu__submenu');
     this.submenus.forEach((it) => {
       const element = it.closest('.js-menu__element');
-      element.addEventListener('click', this.#handlerElementClick);
+      element.addEventListener('click', this.handlerElementClick);
     });
   }
 
-  #handlerElementClick = (e) => {
+  handlerElementClick = (e) => {
     const element = e.target.closest('.js-menu__element');
     const submenu = element.querySelector('.js-menu__submenu');
     element.classList.toggle('menu__element_active');

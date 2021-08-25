@@ -53,16 +53,26 @@ class Diagram {
 
   #createGradient = (context, colors) => {
     const newGrad = context.createLinearGradient(155, 0, 155, 120);
-    newGrad.addColorStop(0, colors[0]);
-    newGrad.addColorStop(1, colors[1]);
+
+    const [startGradient] = colors;
+    const [, endGradient] = colors;
+
+    newGrad.addColorStop(0, startGradient);
+    newGrad.addColorStop(1, endGradient);
     return newGrad;
   }
 
   #fillTheLabel = (total) => {
     let title;
-    if (total === 1 || total % 10 === 1) [title] = this.subjectForms;
-    else if (total > 4 || total % 10 > 4) [, , title] = this.subjectForms;
-    else [, title] = this.subjectForms;
+    [, title] = this.subjectForms;
+
+    if (total > 4) [, , title] = this.subjectForms;
+    if (total % 10 > 4) [, , title] = this.subjectForms;
+    if (total % 10 === 0) [, , title] = this.subjectForms;
+
+    if (total === 1) [title] = this.subjectForms;
+    if (total % 10 === 1) [title] = this.subjectForms;
+
     this.root.querySelector('.js-diagram__reviews-amount').textContent = total;
     this.root.querySelector('.js-diagram__subtitle').textContent = title;
   }
@@ -71,14 +81,17 @@ class Diagram {
 class DiagramSection {
   constructor(root) {
     this.root = root;
-    this.circle = root.querySelector('.diagram__legend-circle');
-    this.plate = root.querySelector('.diagram__legend-lettering');
+    this.circle = root.querySelector('.js-diagram__legend-circle');
+    this.plate = root.querySelector('.js-diagram__legend-lettering');
     this.amount = Number(root.dataset.amount);
     this.name = this.plate.dataset.name;
-    this.colors = this.circle.dataset.colors.split(', ');
-
     this.plate.textContent = this.name;
-    this.circle.style.background = `linear-gradient(180deg, ${this.colors[0]} 0%, ${this.colors[1]} 100%)`;
+
+    this.colors = this.circle.dataset.colors.split(', ');
+    [this.startGradient] = this.colors;
+    [, this.endGradient] = this.colors;
+
+    this.circle.style.background = `linear-gradient(180deg, ${this.startGradient} 0%, ${this.endGradient} 100%)`;
   }
 }
 

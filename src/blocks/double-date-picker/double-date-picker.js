@@ -36,14 +36,14 @@ class DoubleDatePicker {
     const departureTextfield = new Textfield(departureContainer.querySelector('.js-textfield'));
     this.departureInput = departureTextfield.getInput();
 
-    document.addEventListener('calendarshowing', this.#handlerDocShowing);
-    this.arriveArrow.addEventListener('click', this.#handlerArrowClick);
-    this.departureArrow.addEventListener('click', this.#handlerArrowClick);
+    document.addEventListener('calendarshowing', this.handlerDocShowing);
+    this.arriveArrow.addEventListener('click', this.handlerArrowClick);
+    this.departureArrow.addEventListener('click', this.handlerArrowClick);
 
     this.#init();
   }
 
-  #handlerDocShowing = (e) => {
+  handlerDocShowing = (e) => {
     if (e.detail.input === this.arriveInput || e.detail.input === this.departureInput) {
       $(this.arriveInput).datepicker('setDate', `${this.arriveDate}`);
       $(this.departureInput).datepicker('setDate', [this.arriveDate, this.departureDate]);
@@ -51,51 +51,51 @@ class DoubleDatePicker {
     }
 
     if (e.detail.input === this.arriveInput) {
-      this.arriveArrow.removeEventListener('click', this.#handlerArrowClick);
+      this.arriveArrow.removeEventListener('click', this.handlerArrowClick);
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_less';
-      document.addEventListener('calendarhiding', this.#handlerDocHiding);
+      document.addEventListener('calendarhiding', this.handlerDocHiding);
       this.calendarIsShowing = true;
     } else if (e.detail.input === this.departureInput) {
-      this.departureArrow.removeEventListener('click', this.#handlerArrowClick);
+      this.departureArrow.removeEventListener('click', this.handlerArrowClick);
       this.departureArrow.querySelector('.arrow').textContent = 'expand_less';
-      document.addEventListener('calendarhiding', this.#handlerDocHiding);
+      document.addEventListener('calendarhiding', this.handlerDocHiding);
       this.calendarIsShowing = true;
     }
   }
 
-  #handlerDocHiding = (e) => {
+  handlerDocHiding = (e) => {
     if (!e.detail.datepickerShowing) return;
 
     if (e.detail.input === this.arriveInput) {
       this.processingArrow = this.arriveArrow;
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
-      document.addEventListener('click', this.#handlerDocClick);
+      document.addEventListener('click', this.handlerDocClick);
     } else if (e.detail.input === this.departureInput) {
       this.processingArrow = this.departureArrow;
       this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
-      document.addEventListener('click', this.#handlerDocClick);
+      document.addEventListener('click', this.handlerDocClick);
     } else {
-      this.arriveArrow.addEventListener('click', this.#handlerArrowClick);
-      this.departureArrow.addEventListener('click', this.#handlerArrowClick);
+      this.arriveArrow.addEventListener('click', this.handlerArrowClick);
+      this.departureArrow.addEventListener('click', this.handlerArrowClick);
 
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
       this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
     }
-    document.removeEventListener('calendarhiding', this.#handlerDocHiding);
+    document.removeEventListener('calendarhiding', this.handlerDocHiding);
     this.calendarIsShowing = false;
   }
 
-  #handlerDocClick = () => {
-    document.removeEventListener('click', this.#handlerDocClick);
-    this.processingArrow.addEventListener('click', this.#handlerArrowClick);
+  handlerDocClick = () => {
+    document.removeEventListener('click', this.handlerDocClick);
+    this.processingArrow.addEventListener('click', this.handlerArrowClick);
   }
 
-  #handlerArrowClick = (e) => {
+  handlerArrowClick = (e) => {
     const input = e.target.closest('.js-double-date-picker__container').querySelector('input');
     $(input).datepicker('show');
   }
 
-  #handlerPickerClick = (ev) => {
+  handlerPickerClick = (ev) => {
     if (!this.calendarIsShowing) return;
     const arriveInput = $(this.arriveInput);
     const departureInput = $(this.departureInput);
@@ -104,8 +104,7 @@ class DoubleDatePicker {
       this.departureDate = '';
       arriveInput.datepicker('setDate', '');
       departureInput.datepicker('setDate', '');
-    }
-    if (ev.target.closest('.ui-datepicker-button_conf')) {
+    } else if (ev.target.closest('.ui-datepicker-button_conf')) {
       arriveInput.datepicker('hide');
       departureInput.datepicker('hide');
     }
@@ -134,7 +133,8 @@ class DoubleDatePicker {
     arriveInput.datepicker({
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
+      onSelect(...args) {
+        const [, , extensionRange] = args;
         displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
@@ -146,7 +146,8 @@ class DoubleDatePicker {
     departureInput.datepicker({
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
+      onSelect(...args) {
+        const [, , extensionRange] = args;
         displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
@@ -157,7 +158,7 @@ class DoubleDatePicker {
     });
 
     const picker = document.querySelector('.js-ui-datepicker');
-    picker.addEventListener('click', this.#handlerPickerClick);
+    picker.addEventListener('click', this.handlerPickerClick);
     arriveInput.datepicker('setDate', arriveDate);
     departureInput.datepicker('setDate', [arriveDate, departureDate]);
   }

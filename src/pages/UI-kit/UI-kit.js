@@ -51,7 +51,7 @@ function uiKitInit() {
 
   const dateMaskObject = new DateMaskedTextfield(document.querySelector('.forms .js-date-masked-textfield'));
 
-  const registrationObject = new Registration(document.querySelector('.js-registration'));
+  const registrationObject = new Registration(document.querySelector('.registration-form-container'));
 
   document.querySelector('.textfield-active-container input').value = 'This is pretty awesome';
 

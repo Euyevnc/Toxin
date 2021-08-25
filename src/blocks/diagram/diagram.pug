@@ -9,5 +9,5 @@ mixin diagram( { statistic = [ ], forms = [ ] })
       each item in statistic
         - const { amount, name, firstColor, secondColor } = item
         .diagram__legend-item(data-amount = amount)
-          span.diagram__legend-circle(data-colors = `${firstColor}, ${secondColor}`)
-          p.diagram__legend-lettering(data-name = name)
+          span.js-diagram__legend-circle.diagram__legend-circle(data-colors = `${firstColor}, ${secondColor}`)
+          p.js-diagram__legend-lettering.diagram__legend-lettering(data-name = name)
