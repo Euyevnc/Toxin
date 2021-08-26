@@ -13,15 +13,18 @@ function handlerDocumentDomLoaded() {
   /* eslint-disable no-unused-vars */
   const headerObject = new Header(document.querySelector('.js-header'));
 
-  const datePickerObject = new DatePicker(document.querySelector('.date-picker'));
+  const datePickerObject = new DatePicker(document
+    .querySelector('.date-picker'));
 
-  const rangePickerObject = new RangePicker(document.querySelector('.js-range-picker'));
+  const rangePickerObject = new RangePicker(document
+    .querySelector('.js-range-picker'));
 
   document.querySelectorAll('.js-dropdown').forEach((demo) => {
     const counterObject = new Dropdown(demo);
   });
 
-  const expandingCheckboxes = document.querySelector('.search-room__facilities .js-checkboxes');
+  const expandingCheckboxes = document
+    .querySelector('.search-room__facilities .js-checkboxes');
   const expandingCheckboxesObject = new Checkboxes(expandingCheckboxes);
 
   document.querySelectorAll('.js-room-demo').forEach((demo) => {

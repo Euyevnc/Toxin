@@ -4,7 +4,9 @@ import Dropdown from '../dropdown/dropdown';
 class RoomFinder {
   constructor(root) {
     this.counterObject = new Dropdown(root.querySelector('.js-dropdown'));
-    this.datePickerObject = new DoubleDatePicker(root.querySelector('.js-double-date-picker'));
+
+    this.datePickerObject = new DoubleDatePicker(root
+      .querySelector('.js-double-date-picker'));
   }
 }
 

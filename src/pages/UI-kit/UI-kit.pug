@@ -5,7 +5,7 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-masked-textfield/date-masked-textfield.pug
 include ../../blocks/double-date-picker/double-date-picker.pug
 include ../../blocks/date-picker/date-picker.pug
-include ../../blocks/checkboxes/checkboxes.pug
+include ../../blocks/checkboxes/checkboxes.pug 
 include ../../blocks/checkbox/checkbox.pug
 include ../../blocks/radios/radios.pug
 include ../../blocks/tumblers/tumblers.pug
@@ -39,15 +39,15 @@ html(lang = 'ru')
   head 
     title UI-kit
     meta(charset = 'utf-8')
-    meta(name = "viewport" content = "width=device-width")
-    meta(name = "viewport" content = "initial-scale=1.0, width=device-width")
-    link(rel = "apple-touch-icon" sizes = "180x180" href = "assets/favicons/apple-touch-icon.png")
-    link(rel = "icon" type = "image/png" sizes = "32x32" href = "assets/favicons/favicon-32x32.png")
-    link(rel = "icon" type = "image/png" sizes = "16x16" href = "assets/favicons/favicon-16x16.png")
-    link(rel = "manifest" href = "assets/favicons/site.webmanifest")
-    link(rel = "mask-icon" href = "assets/favicons/safari-pinned-tab.svg" color = "#5bbad5")
-    meta(name = "msapplication-TileColor" content = "#2b5797")
-    meta(name = "theme-color" content = "#c96464")
+    meta(name = 'viewport', content='width=device-width')
+    meta(name = 'viewport', content = 'initial-scale=1.0, width=device-width')
+    link(rel = 'apple-touch-icon', sizes = '180x180', href = 'assets/favicons/apple-touch-icon.png')
+    link(rel = 'icon', type = 'image/png', sizes = '32x32', href = 'assets/favicons/favicon-32x32.png')
+    link(rel = 'icon', type = 'image/png', sizes = '16x16', href = 'assets/favicons/favicon-16x16.png')
+    link(rel = 'manifest', href = 'assets/favicons/site.webmanifest')
+    link(rel = 'mask-icon', href = 'assets/favicons/safari-pinned-tab.svg', color = '#5bbad5')
+    meta(name = 'msapplication-TileColor', content = '#2b5797')
+    meta(name = 'theme-color', content = '#c96464')
 
   .ui-kit-container
     section.colors-and-type 
@@ -55,35 +55,35 @@ html(lang = 'ru')
       section.colors-container 
         +colorIcon({ 
           color: '#1F2041', 
-          name: "Dark Shade 100%" 
+          name: 'Dark Shade 100%' 
         })
         +colorIcon({ 
           color: '#1F2041', 
-          name: "Dark Shade 75%", 
+          name: 'Dark Shade 75%', 
           opacity: 0.75 
         })
         +colorIcon({ 
           color: '#1F2041', 
-          name: "Dark Shade 50%",
+          name: 'Dark Shade 50%',
           opacity: 0.5 
         })
         +colorIcon({ 
           color: '#1F2041', 
-          name: "Dark Shade 25%", 
+          name: 'Dark Shade 25%', 
           opacity: 0.25 
         })
         +colorIcon({ 
           color: '#1F2041', 
-          name: "Dark Shade 5%", 
+          name: 'Dark Shade 5%', 
           opacity: 0.05 
         })
         +colorIcon({ 
           color: '#BC9CFF', 
-          name: "Purple" 
+          name: 'Purple' 
         })
         +colorIcon({ 
           color: '#6FCF97', 
-          name: "Green" 
+          name: 'Green' 
         })    
 
       section.fonts-container
@@ -129,9 +129,19 @@ html(lang = 'ru')
       include ./images/logo-icon.svg
       section.forms-fields-wrapper
         .textfield-container 
-          +textfield({label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'default'})
+          +textfield({
+            label: 'textfield', 
+            text: 'text field', 
+            placeholder: 'Email', 
+            describe: 'default'
+          })
         .textfield-active-container 
-          +textfield( {label: 'textfield', text: 'text field', placeholder: 'Email', describe: 'hover/focus'})
+          +textfield( {
+            label: 'textfield', 
+            text: 'text field', 
+            placeholder: 'Email', 
+            describe: 'hover/focus'
+          })
         .dropdown-container 
           +dropdown({
             textfield: {
@@ -139,45 +149,93 @@ html(lang = 'ru')
               placeholder: 'Сколько гостей', 
             },
             items:[ 
-              {name: "взрослые", min: "0", max: "5", concat: true }, 
-              {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
-              {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
+              {name: 'взрослые', min: '0', max: '5', concat: true }, 
+
+              {name: 'дети', nameForms:'гость, гостя, гостей', 
+              min: '0', max: '5'}, 
+
+              {name: 'младенцы', nameForms: 'младенец, младенца, младенцев', 
+              min: '0' , max: '5'} 
+
             ], 
             displayButtons: true,
             deleteButton: {text: 'очистить', isHighlight: true}, 
             confirmButton: {text: 'подтвердить', isHighlight: true},
           })
         .input-with-mask-container 
-          +date-masked-textfield({label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"})
+          +date-masked-textfield({
+            label: 'дата рождения', 
+            placeholder: 'ДД.ММ.ГГГГ'
+          })
+
         .double-range-calendar-container
           +double-date-picker( { 
-            textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] 
+            textfields: [ {
+              placeholder: 'ДД.ММ.ГГГГ', 
+              label:'прибытие'
+            },{
+              placeholder: 'ДД.ММ.ГГГГ', 
+              label:'выезд'
+            } ] 
           } )
         .range-calendar-container 
           +date-picker({ 
-            textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
+            textfield: { 
+              label: 'Даты пребывания в отеле', 
+              placeholder: 'Выберете период'
+            },
           })
         .field-with-arrow-container 
-          +textfield({label: 'subscription text field', placeholder: "Email", arrow: 'right'})
+          +textfield({
+            label: 'subscription text field', 
+            placeholder: 'Email', 
+            arrow: 'right'
+          })
       section.forms-checkers-wrapper
         .default-checkboxes-container
           +checkboxes({ 
             header: '', 
             checkboxes: [
-              {title:'Можно курить', value: 'smoking', name: 'smoking',}, 
-              {title:'Можно с питомцами', value: 'allowed', name: 'pets', checked:"true"},
-              {title:'Можно пригласить гостей (до  10  человек)', value: 'allowed', name: 'guests', checked:'true'}
+              {
+                title:'Можно курить', 
+                value: 'smoking', 
+                name: 'smoking',}, 
+              {
+                title:'Можно с питомцами', 
+                value: 'allowed', 
+                name: 'pets', 
+                checked:'true'},
+              {
+                title:'Можно пригласить гостей (до  10  человек)', 
+                value: 'allowed', 
+                name: 'guests', 
+                checked:'true'
+              }
             ] 
           })
         .radios-container
           +radios({ 
             name: 'sex', radios: [ 
-              {value: "man", title:'Мужчина', checked:true},
-              {value: "women", title:'Женщина'} 
+              {value: 'man', title:'Мужчина', checked:true},
+              {value: 'women', title:'Женщина'} 
             ] 
           } )
         .tumblers-container 
-          +tumblers({issues: [ {value: 'agreement', name:'registration-allow-offers', title:'Получать спецпредложения', checked: "true"}, {value: 'agreement', name:'registration-allow-offers', title:'Получать спецпредложения'}  ] })
+          +tumblers({
+            issues: [ 
+              {
+                value: 'agreement', 
+                name:'registration-allow-offers', 
+                title:'Получать спецпредложения', 
+                checked: 'true'
+              }, 
+              {
+                value: 'agreement', 
+                name:'registration-allow-offers', 
+                title:'Получать спецпредложения'
+              }  
+            ] 
+          })
         .likers-container 
           h3 like button
           +liker({amount: 12, checked: 'checked'})
@@ -187,7 +245,12 @@ html(lang = 'ru')
           +rate-stars({compl: 5})
       section.forms-buttons-wrapper
         .range-slider-container 
-          +range-picker({ title:"Диапазон цены", describe: "Стоимость за сутки прибывания в номере", keys: "{type, orient, scale, cloud, origin, range, step, initStart, initEnd", values: "range, horizontal, , none, 1000, 15000, 500, 5000, 10000" })
+          +range-picker({ 
+            title:'Диапазон цены', 
+            describe: 'Стоимость за сутки прибывания в номере', 
+            keys: 'type, orient, scale, cloud, origin, range, step, initStart, initEnd', 
+            values: 'range, horizontal, , none, 1000, 15000, 500, 5000, 10000' 
+          })
         .buttons-container
           h3 buttons 
           .rounded-button-container 
@@ -204,7 +267,10 @@ html(lang = 'ru')
           span.simple-button-container
             +link({ text: 'click me'})
         .large-button-container 
-          +button({text: "перейти к оплате", isHighlight: true, withArrow:true}) 
+          +button({
+            text: 'перейти к оплате', 
+            isHighlight: true, 
+            withArrow:true}) 
         .pages-switcher-container 
           h3 pagination
           +pagination({amount: 15})
@@ -215,26 +281,60 @@ html(lang = 'ru')
             +dropdown({
               thin: true,
               textfield: {
-                label: "удобства номера", 
+                label: 'удобства номера', 
                 placeholder: 'Выберете комплектацию', 
               },
               items: [
-                {name: "спальни", min: "0", max: "5", nameForms: 'спальня, спальни, спалень', init:2}, 
-                {name: "кровати", min: "0", max: "5", nameForms: 'кровать, кровати, кроватей', init:2}, 
-                {name: "ванные комнаты", min: "0", max: "5", nameForms: 'ванная комната, ванные комнаты, ванных комнат'}
+                {
+                  name: 'спальни',
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'спальня, спальни, спалень', 
+                  init:2
+                }, 
+                {
+                  name: 'кровати', 
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'кровать, кровати, кроватей', 
+                  init:2
+                }, 
+                {
+                  name: 'ванные комнаты', 
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'ванная комната, ванные комнаты, ванных комнат'
+                }
               ] 
             }) 
           .dropdown-container.expand-input-drop-container 
             +dropdown({
               thin: true,
               textfield: {
-                label: "удобства номера", 
+                label: 'удобства номера', 
                 placeholder: 'Выберете комплектацию', 
               },
               items: [
-                {name: "спальни", min: "0", max: "5", nameForms: 'спальня, спальни, спалень', init: 2}, 
-                {name: "кровати", min: "0", max: "5", nameForms: 'кровать, кровати, кроватей', init: 2}, 
-                {name: "ванные комнаты", min: "0", max: "5", nameForms: 'ванная комната, ванные комнаты, ванных комнат'}
+                {
+                  name: 'спальни', 
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'спальня, спальни, спалень', 
+                  init: 2
+                }, 
+                {
+                  name: 'кровати', 
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'кровать, кровати, кроватей', 
+                  init: 2
+                }, 
+                {
+                  name: 'ванные комнаты', 
+                  min: '0', 
+                  max: '5', 
+                  nameForms: 'ванная комната, ванные комнаты, ванных комнат'
+                }
               ] 
             }) 
         section
@@ -245,9 +345,24 @@ html(lang = 'ru')
                 placeholder: 'Сколько гостей', 
               },
               items:[ 
-                {name: "взрослые", min: "0", max: "5", concat: true }, 
-                {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
-                {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
+                {
+                  name: 'взрослые', 
+                  min: '0', 
+                  max: '5', 
+                  concat: true 
+                }, 
+                {
+                  name: 'дети', 
+                  nameForms:'гость, гостя, гостей', 
+                  min: '0', 
+                  max: '5'
+                }, 
+                {
+                  name: 'младенцы', 
+                  nameForms: 'младенец, младенца, младенцев', 
+                  min: '0' , 
+                  max: '5'
+                } 
               ], 
               displayButtons: true,
               deleteButton: {text: 'очистить', isHighlight: true}, 
@@ -261,9 +376,23 @@ html(lang = 'ru')
                 placeholder: 'Сколько гостей', 
               },
               items:[ 
-                {name: "взрослые", min: "0", max: "5", concat: true }, 
-                {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
-                {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
+                {
+                  name: 'взрослые', 
+                  min: '0', max: '5', 
+                  concat: true 
+                }, 
+                {
+                  name: 'дети', 
+                  nameForms:'гость, гостя, гостей', 
+                  min: '0', 
+                  max: '5'
+                }, 
+                {
+                  name: 'младенцы', 
+                  nameForms: 'младенец, младенца, младенцев', 
+                  min: '0' , 
+                  max: '5'
+                } 
               ], 
               displayButtons: true,
               deleteButton: {text: 'очистить', isHighlight: true}, 
@@ -278,9 +407,24 @@ html(lang = 'ru')
               expanded: false,
               checkboxes: [ 
                 {title:'Завтрак', name: 'breakfast', value: 'included'}, 
-                {title:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, 
-                {title:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, 
-                {title:'Кроватка', name: 'crib', value: 'included', checked:"true"}, 
+                {
+                  title:'Письменный стол', 
+                  checked:'true', 
+                  name: 'desk', 
+                  value: 'included'
+                }, 
+                {
+                  title:'Стул для кормления', 
+                  name: 'feeding table', 
+                  value: 'included', 
+                  checked:'true'
+                }, 
+                {
+                  title:'Кроватка', 
+                  name: 'crib', 
+                  value: 'included', 
+                  checked:'true'
+                }, 
                 {title:'Телевизор', name: 'TV', value: 'included'}, 
                 {title:'Шампунь', name: 'shampoo', value:'included'}, 
                 {title:'Телевизор', name: 'TV', value:'included'}, 
@@ -294,9 +438,24 @@ html(lang = 'ru')
               expanded: true,
               checkboxes: [ 
                 {title:'Завтрак', name: 'breakfast', value: 'included'}, 
-                {title:'Письменный стол', checked:"true", name: 'desk', value: 'included'}, 
-                {title:'Стул для кормления', name: 'feeding table', value: 'included', checked:"true"}, 
-                {title:'Кроватка', name: 'crib', value: 'included', checked:"true"}, 
+                {
+                  title:'Письменный стол', 
+                  checked:'true',
+                  name: 'desk', 
+                  value: 'included'
+                }, 
+                {
+                  title:'Стул для кормления', 
+                  name: 'feeding table', 
+                  value: 'included', 
+                  checked:'true'
+                }, 
+                {
+                  title:'Кроватка', 
+                  name: 'crib', 
+                  value: 'included', 
+                  checked:'true'
+                }, 
                 {title:'Телевизор', name: 'TV', value: 'included'}, 
                 {title:'Шампунь', name: 'shampoo', value:'included'}, 
                 {title:'Телевизор', name: 'TV', value:'included'}, 
@@ -308,21 +467,45 @@ html(lang = 'ru')
             +checkboxes({ 
               header: 'richc checkbox button', 
               checkboxes: [ 
-                {title:'Широкий коридор', subtitle:'Ширина коридоров в номере не менее 91 см.', name: 'wide corridor', value: 'included'}, 
-                {title:'Помощник для инвалидов', subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper for the disabled', value: 'included'} 
+                {
+                  title:'Широкий коридор', 
+                  subtitle:'Ширина коридоров в номере не менее 91 см.', 
+                  name: 'wide corridor', 
+                  value: 'included'
+                }, 
+                {
+                  title:'Помощник для инвалидов', 
+                  subtitle:'На 1 этаже вас встретит специалист  и проводит до номера.', 
+                  name: 'helper for the disabled', 
+                  value: 'included'
+                } 
               ] 
             })
         section 
           .bullets-container
             h3 Bullet list
-            +marked-list({ elements: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"] })
+            +marked-list({
+               elements: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'] 
+            })
       section.reviews-wrapper  
         .stickers-container 
           +stickers({ 
             issues: [
-              {icon: "insert_emoticon", title: "Комфорт", subtitle: "Шумопоглощающие стены"}, 
-              {icon: "location_city", title: "Удобство",  subtitle: "Окно в каждой из спален"}, 
-              {icon: "whatshot", title: "Уют" , subtitle: "Номер оснащён камином"}
+              {
+                icon: 'insert_emoticon', 
+                title: 'Комфорт', 
+                subtitle: 'Шумопоглощающие стены'
+              }, 
+              {
+                icon: 'location_city', 
+                title: 'Удобство',  
+                subtitle: 'Окно в каждой из спален'
+              }, 
+              {
+                icon: 'whatshot', 
+                title: 'Уют' , 
+                subtitle: 'Номер оснащён камином'
+              }
             ] 
           })
         .review-wrapper 
@@ -336,12 +519,12 @@ html(lang = 'ru')
             datePicker: { 
               textfields: [ 
                 {
-                  placeholder: "ДД.ММ.ГГГГ", 
-                  label:"прибытие" 
+                  placeholder: 'ДД.ММ.ГГГГ', 
+                  label:'прибытие' 
                 }, 
                 {
-                  placeholder: "ДД.ММ.ГГГГ", 
-                  label:"выезд"
+                  placeholder: 'ДД.ММ.ГГГГ', 
+                  label:'выезд'
                 } 
               ] 
             }, 
@@ -351,9 +534,23 @@ html(lang = 'ru')
                 placeholder: 'Сколько гостей', 
               },
               items:[ 
-                {name: "взрослые", min: "0", max: "5", concat: true }, 
-                {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
-                {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
+                {
+                  name: 'взрослые', 
+                  min: '0', max: '5', 
+                  concat: true 
+                }, 
+                {
+                  name: 'дети', 
+                  nameForms:'гость, гостя, гостей', 
+                  min: '0', 
+                  max: '5'
+                }, 
+                {
+                  name: 'младенцы', 
+                  nameForms: 'младенец, младенца, младенцев', 
+                  min: '0' , 
+                  max: '5'
+                } 
               ], 
               displayButtons: true,
               deleteButton: {text: 'очистить', isHighlight: true}, 
@@ -364,7 +561,12 @@ html(lang = 'ru')
         .registration-form-container 
           +registration-form({
             header: 'Регистрация аккаунта',
-            signupBtn: {text: 'зарегестрироваться', isHighlight: true, withArrow: true, type: 'submit'},
+            signupBtn: {
+              text: 'зарегестрироваться', 
+              isHighlight: true, 
+              withArrow: true, 
+              type: 'submit'
+            },
             signinBtn: { text:'войти' },
             signinText: 'Уже есть аккаунт на Toxin',
             nameField: { placeholder: 'Имя'},
@@ -372,14 +574,29 @@ html(lang = 'ru')
             sexRadio: { 
               name: 'sex', 
               radios: [ 
-                {value: "man", title:'Мужчина', checked:true},
-                {value: "women", title:'Женщина'} 
+                {value: 'man', title:'Мужчина', checked:true},
+                {value: 'women', title:'Женщина'} 
               ] 
             },
-            birthdayField: { label: 'дата рождения', placeholder: "ДД.ММ.ГГГГ"},
-            mailField: {label: 'данные для входа в сервис', placeholder: 'Email',  type: "email"},
-            passwordField: {placeholder: 'Пароль', type: "password"},
-            offerTumbler: { issues: [ {value: 'agreement', name:'registration-allow-offers', title:'Получать спецпредложения'} ] },
+            birthdayField: { 
+              label: 'дата рождения', 
+              placeholder: 'ДД.ММ.ГГГГ'
+            },
+            mailField: {
+              label: 'данные для входа в сервис', 
+              placeholder: 'Email',  
+              type: 'email'
+            },
+            passwordField: {placeholder: 'Пароль', type: 'password'},
+            offerTumbler: { 
+              issues: [ 
+                {
+                  value: 'agreement', 
+                  name:'registration-allow-offers', 
+                  title:'Получать спецпредложения'
+                }
+              ] 
+            },
           })
       section
         .room-preview-container
@@ -395,16 +612,35 @@ html(lang = 'ru')
                 placeholder: 'Сколько гостей', 
               },
               items:[ 
-                {name: "взрослые", min: "0", max: "5", concat: true, init: 2 }, 
-                {name: "дети", nameForms:"гость, гостя, гостей", min: "0", max: "5"}, 
-                {name: "младенцы", nameForms: "младенец, младенца, младенцев", min: "0" , max: "5"} 
+                {name: 'взрослые', min: '0', max: '5', concat: true, init: 2 }, 
+                {
+                  name: 'дети', 
+                  nameForms:'гость, гостя, гостей', 
+                  min: '0', 
+                  max: '5'
+                }, 
+                {
+                  name: 'младенцы', 
+                  nameForms: 'младенец, младенца, младенцев', 
+                  min: '0' ,
+                  max: '5'
+                } 
               ], 
               displayButtons: true,
               deleteButton: {text: 'очистить', isHighlight: true}, 
               confirmButton: {text: 'подтвердить', isHighlight: true},
             },
             datePicker: {  
-              textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие"},{placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ],
+              textfields: [ 
+                {
+                  placeholder: 'ДД.ММ.ГГГГ', 
+                  label:'прибытие'
+                },
+                {
+                  placeholder: 'ДД.ММ.ГГГГ', 
+                  label:'выезд'
+                } 
+              ],
               initArrive: '4d',
               initDeparture: '8d'
             },
@@ -417,18 +653,36 @@ html(lang = 'ru')
         .entry-form-container
           +entry-form({
             header: 'Войти',
-            signinBtn: { text: 'Войти', isHighlight: true, withArrow: 'arrow', type: 'submit'},
+            signinBtn: { 
+              text: 'Войти', 
+              isHighlight: true, 
+              withArrow: 'arrow', 
+              type: 'submit'
+            },
             signupBtn: { text: 'создать'},
             signupText: 'Нет аккаунта на Toxin?',
-            mailField: {placeholder: 'Email', type: "email"},
-            passwordField: {placeholder: 'Пароль', type: "password"}
+            mailField: {placeholder: 'Email', type: 'email'},
+            passwordField: {placeholder: 'Пароль', type: 'password'}
           })
       section 
         .expended-calendar-container 
         .room-demonstration-container
-          +room-demo({ number: 888, category: "люкс", price: 9990, rate: 5, reviews: 145, pictures:[img1, img3, img5, img4] })
+          +room-demo({ 
+            number: 888, 
+            category: 'люкс', 
+            price: 9990, 
+            rate: 5, 
+            reviews: 145, 
+            pictures:[img1, img3, img5, img4] 
+          })
         .room-demonstration-container
-          +room-demo({ number: 840, price: 9900, rate: 4, reviews: 65, pictures:[img2,img4,img5,img1] })
+          +room-demo({ 
+            number: 840, 
+            price: 9900, 
+            rate: 4, 
+            reviews: 65, 
+            pictures:[img2,img4,img5,img1]
+          })
     section.headers-and-footers
       include ./images/logo-icon.svg
       section.header-container 
@@ -437,11 +691,39 @@ html(lang = 'ru')
             menu: { 
               login: false, 
               issues: [ 
-                {name: "О нас", href:"/about_us/"},
-                {name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, 
-                {name: "Вакансии", href:"/list/" },
-                {name: "Новости", href:"/news/" },
-                {name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } 
+                {name: 'О нас', href:'/about_us/'},
+                {
+                  name: 'Услуги', 
+                  blocks:[
+                    { 
+                      href:'/services1/', 
+                      name:'Some'
+                    },
+                    {
+                      href:'/services3/', 
+                      name:'Some else'
+                    },
+                    {
+                      href:'/services3/', 
+                      name:'Nevermind'
+                    } 
+                  ]
+                }, 
+                {name: 'Вакансии', href:'/list/' },
+                {name: 'Новости', href:'/news/' },
+                {
+                  name: 'Соглашения', 
+                  blocks:[
+                    {
+                      href:'/convience1/', 
+                      name:'Some'
+                    },
+                    {
+                      href:'/convience2/', 
+                      name:'Some else'
+                    }
+                  ] 
+                } 
               ],
               autorization: {
                 signinButton: 'войти',
@@ -455,11 +737,33 @@ html(lang = 'ru')
             menu: { 
               login: 'Юлий Цезарь', 
               issues: [ 
-                {name: "О нас", href:"/about_us/"},
-                {name: "Услуги", blocks:[{href:"/services1/", name:"Some"},{href:"/services3/", name:"Some else"}, {href:"/services3/", name:"Nevermind"} ]}, 
-                {name: "Вакансии", href:"/list/" },
-                {name: "Новости", href:"/news/" },
-                {name: "Соглашения", blocks:[{href:"/convience1/", name:"Some"},{href:"/convience2/", name:"Some else"}] } 
+                {name: 'О нас', href:'/about_us/'},
+                {
+                  name: 'Услуги', 
+                  blocks:[
+                    {
+                      href:'/services1/', 
+                      name:'Some'
+                    },
+                    {
+                      href:'/services3/', 
+                      name:'Some else'
+                    }, 
+                    {
+                      href:'/services3/', 
+                      name:'Nevermind'
+                    } 
+                  ]
+                }, 
+                {name: 'Вакансии', href:'/list/' },
+                {name: 'Новости', href:'/news/' },
+                {
+                  name: 'Соглашения', 
+                  blocks:[
+                    {href:'/convience1/', name:'Some'},
+                    {href:'/convience2/', name:'Some else'}
+                  ] 
+                } 
               ],
               autorization: {
                 signinButton: 'войти',
@@ -469,10 +773,56 @@ html(lang = 'ru')
           })    
       section.footer-container 
         .wrapper
-          +footer({info: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", offerHeading: 'Подписка', offerText: 'Получайте специальные предложения и новости сервиса', refs: [{caption:"Навигация", links:[{href: "/about/",desc: "О нас"},{href: "/news/",desc: "Новости"},{href: "/support/",desc: "Служба поддержки"},{href: "/services/",desc: "Услуги"} ]}, {caption:"О нас", links:[{href: "/about_service/",desc: "О сервисе"},{href: "/team/",desc: "Наша команда"},{href: "list/",desc: "Вакансии"},{href: "/investors/",desc: "Инвесторы"} ]}, {caption:"Служба поддержки", links:[{href: "/convience/",desc: "Соглашения"},{href: "/comm/",desc: "Сообщества"},{href: "/connection/",desc: "Связь с нами"}] } ]} )
+          +footer({
+            info: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', 
+            offerHeading: 'Подписка', 
+            offerText: 'Получайте специальные предложения и новости сервиса', 
+            refs: [
+              {
+                caption:'Навигация', 
+                links:[
+                  {href: '/about/',desc: 'О нас'},
+                  {href: '/news/',desc: 'Новости'},
+                  {href: '/support/',desc: 'Служба поддержки'},
+                  {href: '/services/',desc: 'Услуги'} 
+                ]
+              }, 
+              {
+                caption:'О нас', 
+                links:[
+                  {href: '/about_service/',desc: 'О сервисе'},
+                  {href: '/team/',desc: 'Наша команда'},
+                  {href: 'list/',desc: 'Вакансии'},
+                  {href: '/investors/',desc: 'Инвесторы'} 
+                ]
+              }, 
+              {
+                caption:'Служба поддержки', 
+                links:[
+                  {href: '/convience/',desc: 'Соглашения'},
+                  {href: '/comm/',desc: 'Сообщества'},
+                  {href: '/connection/',desc: 'Связь с нами'}
+                ] 
+              } 
+            ]
+          })
       section.cellar-container 
         .wrapper
-          +cellar({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+          +cellar({ 
+            text: 'Copyright © 2018 Toxin отель. Все права зачищены.', 
+            links: [
+              {link: '/twit/', class: 'fa-twitter'}, 
+              {link:'/fb/', class: 'fa-facebook-square'}, 
+              {link:'/inst/', class: 'fa-instagram'}
+            ] 
+          })
       section.card-container 
         .slim-wrapper
-          +card({ text: "Copyright © 2018 Toxin отель. Все права зачищены.", links: [{link: "/twit/", class: "fa-twitter"}, {link:"/fb/", class: "fa-facebook-square"}, {link:"/inst/", class: "fa-instagram"}] })
+          +card({ 
+            text: 'Copyright © 2018 Toxin отель. Все права зачищены.', 
+            links: [
+              {link: '/twit/', class: 'fa-twitter'}, 
+              {link:'/fb/', class: 'fa-facebook-square'}, 
+              {link:'/inst/W', class: 'fa-instagram'}
+            ] 
+          })

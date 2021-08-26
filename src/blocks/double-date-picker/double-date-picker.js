@@ -10,9 +10,15 @@ class DoubleDatePicker {
       prevText: 'Предыдущий',
       nextText: 'Следующий',
       currentText: 'Сегодня',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-      dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+
+      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+        'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+
+      dayNames: ['воскресенье', 'понедельник', 'вторник',
+        'среда', 'четверг', 'пятница', 'суббота'],
+
       dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
       dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
       weekHeader: 'Не',
@@ -24,16 +30,27 @@ class DoubleDatePicker {
       selectOtherMonths: true,
       dateFormat: 'dd.mm.yy',
     };
-    const arriveContainer = root.querySelector('.js-double-date-picker__container_for_first');
+    const arriveContainer = root
+      .querySelector('.js-double-date-picker__container_for_first');
+
     this.arriveDate = arriveContainer.dataset.init;
-    this.arriveArrow = arriveContainer.querySelector('.js-double-date-picker__arrow');
-    const arriveTextfield = new Textfield(arriveContainer.querySelector('.js-textfield'));
+
+    this.arriveArrow = arriveContainer
+      .querySelector('.js-double-date-picker__arrow');
+
+    const arriveTextfield = new Textfield(arriveContainer
+      .querySelector('.js-textfield'));
     this.arriveInput = arriveTextfield.getInput();
 
-    const departureContainer = root.querySelector('.js-double-date-picker__container_for_second');
+    const departureContainer = root
+      .querySelector('.js-double-date-picker__container_for_second');
     this.departureDate = departureContainer.dataset.init;
-    this.departureArrow = departureContainer.querySelector('.js-double-date-picker__arrow');
-    const departureTextfield = new Textfield(departureContainer.querySelector('.js-textfield'));
+
+    this.departureArrow = departureContainer
+      .querySelector('.js-double-date-picker__arrow');
+
+    const departureTextfield = new Textfield(departureContainer
+      .querySelector('.js-textfield'));
     this.departureInput = departureTextfield.getInput();
 
     document.addEventListener('calendarshowing', this.handlerDocShowing);
@@ -44,13 +61,17 @@ class DoubleDatePicker {
   }
 
   handlerDocShowing = (e) => {
-    if (e.detail.input === this.arriveInput || e.detail.input === this.departureInput) {
+    const currentInput = e.detail.input;
+    if (currentInput === this.arriveInput
+      || currentInput === this.departureInput) {
       $(this.arriveInput).datepicker('setDate', `${this.arriveDate}`);
-      $(this.departureInput).datepicker('setDate', [this.arriveDate, this.departureDate]);
+      $(this.departureInput)
+        .datepicker('setDate', [this.arriveDate, this.departureDate]);
+
       this.#displayValue();
     }
 
-    if (e.detail.input === this.arriveInput) {
+    if (currentInput === this.arriveInput) {
       this.arriveArrow.removeEventListener('click', this.handlerArrowClick);
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_less';
       document.addEventListener('calendarhiding', this.handlerDocHiding);
@@ -91,7 +112,9 @@ class DoubleDatePicker {
   }
 
   handlerArrowClick = (e) => {
-    const input = e.target.closest('.js-double-date-picker__container').querySelector('input');
+    const input = e.target
+      .closest('.js-double-date-picker__container').querySelector('input');
+
     $(input).datepicker('show');
   }
 
@@ -113,7 +136,9 @@ class DoubleDatePicker {
   #displayValue = () => {
     const arriveInput = $(this.arriveInput);
     const departureInput = $(this.departureInput);
-    const extensionRange = arriveInput.datepicker('widget').data('datepickerExtensionRange');
+    const extensionRange = arriveInput
+      .datepicker('widget').data('datepickerExtensionRange');
+
     const start = extensionRange.startDateText;
     const end = extensionRange.endDateText;
     if (this.arriveDate) arriveInput.val(start);
@@ -138,7 +163,10 @@ class DoubleDatePicker {
         displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
-        const select = new CustomEvent('ondateselect', { detail: extensionRange });
+
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+
         arriveInput[0].dispatchEvent(select);
       },
     });
@@ -152,7 +180,9 @@ class DoubleDatePicker {
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
 
-        const select = new CustomEvent('ondateselect', { detail: extensionRange });
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+
         departureInput[0].dispatchEvent(select);
       },
     });

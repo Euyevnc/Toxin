@@ -17,10 +17,18 @@ class RoomDemo {
     } = this;
 
     handlerButtonHover({
-      buttons, imgs, buttonDisactiveClass: 'room-demo__button_disactive', imgDisactiveClass: 'room-demo__image_disactive',
+      buttons,
+      imgs,
+      buttonDisactiveClass: 'room-demo__button_disactive',
+      imgDisactiveClass: 'room-demo__image_disactive',
     });
     handlerArrowClick({
-      arrowPrev, arrowNext, imgs, buttons, imgDisactiveClass: 'room-demo__image_disactive', buttonDisactiveClass: 'room-demo__button_disactive',
+      arrowPrev,
+      arrowNext,
+      imgs,
+      buttons,
+      imgDisactiveClass: 'room-demo__image_disactive',
+      buttonDisactiveClass: 'room-demo__button_disactive',
     });
   }
 }

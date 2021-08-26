@@ -18,10 +18,17 @@ class Dropdown {
     this.buttonsPanel = this.root.querySelector('.js-dropdown__buttons');
 
     if (this.buttonsPanel) {
-      this.clearingButton = this.root.querySelector('.js-dropdown__button_delete');
-      this.confirmingButton = this.root.querySelector('.js-dropdown__button_confirm');
-      this.confirmingButton.addEventListener('click', this.handlerConfirmButtonClick);
-      this.clearingButton.addEventListener('click', this.handlerClearButton);
+      this.clearingButton = this.root
+        .querySelector('.js-dropdown__button_delete');
+
+      this.confirmingButton = this.root
+        .querySelector('.js-dropdown__button_confirm');
+
+      this.confirmingButton
+        .addEventListener('click', this.handlerConfirmButtonClick);
+
+      this.clearingButton
+        .addEventListener('click', this.handlerClearButton);
     }
 
     this.root.querySelectorAll('.js-dropdown__element').forEach((item) => {

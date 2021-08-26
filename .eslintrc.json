@@ -19,6 +19,7 @@
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "no-unused-expressions":  ["error", { "allowShortCircuit": true, "allowTernary": true  }],
     "max-classes-per-file": ["off"],
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "max-len": ["error", { "code": 80 }]
   }
 }

@@ -7,5 +7,6 @@ document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 function handlerDocumentDomLoaded() {
   /* eslint-disable no-unused-vars */
   const headerObject = new Header(document.querySelector('.js-header'));
-  const registrationObject = new Registration(document.querySelector('.js-registration-form'));
+  const registrationObject = new Registration(document
+    .querySelector('.js-registration-form'));
 }

@@ -10,9 +10,15 @@ class DatePicker {
       prevText: 'Предыдущий',
       nextText: 'Следующий',
       currentText: 'Сегодня',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-      dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+
+      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+        'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+
+      dayNames: ['воскресенье', 'понедельник', 'вторник',
+        'среда', 'четверг', 'пятница', 'суббота'],
+
       dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
       dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
       weekHeader: 'Не',
@@ -51,7 +57,8 @@ class DatePicker {
 
   handlerDocShowing = (e) => {
     if (e.detail.input === this.input) {
-      $(this.input).datepicker('setDate', [this.arriveDate, this.departureDate]);
+      $(this.input)
+        .datepicker('setDate', [this.arriveDate, this.departureDate]);
       this.#displayValue();
 
       this.arrow.removeEventListener('click', this.handlerArrowClick);
@@ -86,7 +93,9 @@ class DatePicker {
   #displayValue = () => {
     if (this.arriveDate || this.departureDate) {
       const input = $(this.input);
-      const extensionRange = input.datepicker('widget').data('datepickerExtensionRange');
+      const extensionRange = input
+        .datepicker('widget').data('datepickerExtensionRange');
+
       const start = extensionRange.startDateText;
       const end = extensionRange.endDateText;
       this.textfield.setValue(`${start} - ${end}`);
@@ -112,7 +121,10 @@ class DatePicker {
         displayValue();
         object.arriveDate = extensionRange.startDate;
         object.departureDate = extensionRange.endDate;
-        const select = new CustomEvent('ondateselect', { detail: extensionRange });
+
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+
         input[0].dispatchEvent(select);
       },
     });

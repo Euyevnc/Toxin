@@ -5,24 +5,35 @@ class RoomBooker {
   constructor(root) {
     this.root = root;
     this.counterObject = new Dropdown(this.root.querySelector('.js-dropdown'));
-    this.datePickerObject = new DoubleDatePicker(this.root.querySelector('.js-double-date-picker'));
+
+    this.datePickerObject = new DoubleDatePicker(this.root
+      .querySelector('.js-double-date-picker'));
 
     this.arrival = 4;
     this.departure = 8;
 
-    this.number = this.root.querySelector('.js-room-preview__number').dataset.number;
-    this.category = this.root.querySelector('.js-room-preview__category').dataset.category;
-    this.price = Number(this.root.querySelector('.js-room-preview__price-info').dataset.price);
+    this.number = this.root
+      .querySelector('.js-room-preview__number').dataset.number;
 
-    this.day_local = this.root.querySelector('.js-room-preview__amount').dataset.local;
-    this.discount_local = this.root.querySelector('.js-room-preview__services').dataset.local;
+    this.category = this.root
+      .querySelector('.js-room-preview__category').dataset.category;
+
+    this.price = Number(this.root
+      .querySelector('.js-room-preview__price-info').dataset.price);
+
+    this.day_local = this.root
+      .querySelector('.js-room-preview__amount').dataset.local;
+
+    this.discount_local = this.root
+      .querySelector('.js-room-preview__services').dataset.local;
 
     this.services = this.#extractServicesObject();
     this.servicePrice = this.#countService();
 
-    this.root.querySelectorAll('.js-double-date-picker input').forEach((input) => {
-      input.addEventListener('ondateselect', this.handlerInputChange);
-    });
+    this.root.querySelectorAll('.js-double-date-picker input')
+      .forEach((input) => {
+        input.addEventListener('ondateselect', this.handlerInputChange);
+      });
 
     this.#init();
   }
@@ -37,14 +48,17 @@ class RoomBooker {
 
   #extractServicesObject = () => {
     const serviceItems = [];
-    const prices = this.root.querySelector('.js-room-preview__services').dataset.prices.split(', ');
-    this.root.querySelector('.js-room-preview__services').dataset.desces.split(', ').forEach((elem, index) => {
-      const newService = {
-        impact: +prices[index],
-        describe: elem,
-      };
-      serviceItems.push(newService);
-    });
+    const prices = this.root
+      .querySelector('.js-room-preview__services').dataset.prices.split(', ');
+
+    this.root.querySelector('.js-room-preview__services')
+      .dataset.desces.split(', ').forEach((elem, index) => {
+        const newService = {
+          impact: +prices[index],
+          describe: elem,
+        };
+        serviceItems.push(newService);
+      });
     return serviceItems;
   }
 
@@ -53,7 +67,10 @@ class RoomBooker {
     this.services.forEach((el) => {
       const serviceItem = el;
       totalServicePrice += serviceItem.impact;
-      if (serviceItem.impact < 0) serviceItem.describe += `: ${this.discount_local} ${(-serviceItem.impact).toLocaleString()}₽`;
+      if (serviceItem.impact < 0) {
+        serviceItem.describe += `: ${this.discount_local} 
+        ${(-serviceItem.impact).toLocaleString()}₽`;
+      }
     });
     return totalServicePrice;
   }
@@ -69,9 +86,13 @@ class RoomBooker {
       totalRent.textContent = `${(amount * this.price).toLocaleString()}₽`;
     });
 
-    const total = this.root.querySelector('.js-room-preview__total').lastElementChild;
+    const total = this.root
+      .querySelector('.js-room-preview__total').lastElementChild;
+
     this.totalPrice = total;
-    total.textContent = `${(Math.max(0, amount * this.price + this.servicePrice)).toLocaleString()}₽`;
+
+    total.textContent = `${(Math
+      .max(0, amount * this.price + this.servicePrice)).toLocaleString()}₽`;
   }
 
   #displayInfo = () => {
@@ -99,8 +120,14 @@ class RoomBooker {
       if (el.describe) {
         const servBlock = document.createElement('li');
         servBlock.className = 'room-preview__service';
-        servBlock.innerHTML = `<span class='room-preview__service-desc'>${serviceItem.describe}</span><span class='room-preview__sign_i'>i</span><span class='room-preview__service-price'>${Math.max(el.impact, 0).toLocaleString()}₽</span>`;
-        this.root.querySelector('.js-room-preview__services').appendChild(servBlock);
+        servBlock.innerHTML = `<span class='room-preview__service-desc'>
+        ${serviceItem.describe}</span>
+        <span class='room-preview__sign_i'>i</span>
+        <span class='room-preview__service-price'>
+        ${Math.max(el.impact, 0).toLocaleString()}₽</span>`;
+
+        this.root.querySelector('.js-room-preview__services')
+          .appendChild(servBlock);
       }
     });
   }

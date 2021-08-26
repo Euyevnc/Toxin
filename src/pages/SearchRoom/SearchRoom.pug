@@ -34,10 +34,23 @@ block header
       login: false, 
       issues: [ 
         {name: 'О нас', href:'/about_us/'},
-        {name: 'Услуги', blocks:[{href:'/services1/', name:'Some'},{href:'/services3/', name:'Some else'}, {href:'/services3/', name:'Nevermind'} ]}, 
+        {
+          name: 'Услуги', 
+          blocks:[
+            {href:'/services1/', name:'Some'},
+          {href:'/services3/', name:'Some else'}, 
+          {href:'/services3/', name:'Nevermind'} 
+          ]
+        }, 
         {name: 'Вакансии', href:'/list/' },
         {name: 'Новости', href:'/news/' },
-        {name: 'Соглашения', blocks:[{href:'/convience1/', name:'Some'},{href:'/convience2/', name:'Some else'}] } 
+        {
+          name: 'Соглашения',
+          blocks:[
+            {href:'/convience1/', name:'Some'},
+            {href:'/convience2/', name:'Some else'}
+          ] 
+        } 
       ],
       autorization: {
         signinButton: 'войти',

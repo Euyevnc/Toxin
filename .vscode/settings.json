@@ -1,5 +1,4 @@
 {
-  
   "scss.validate": false,
   "css.validate": false,
   "less.validate": false,
@@ -10,7 +9,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true,
     "source.fixAll.eslint": true,
-
+    "source.fixAll.puglint": true,
   },
   "editor.renderControlCharacters": true,
   "editor.tabSize": 2,

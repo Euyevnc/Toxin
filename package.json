@@ -10,8 +10,8 @@
     "dev": "webpack-dev-server --mode development --config webpack.config.js --open",
     "build": "webpack --mode production --config webpack.config.js",
     "deploy": "gh-pages -d dist",
-    "lint": "eslint src/**/*.js --ignore-pattern plugins/ && stylelint **/*.scss",
-    "autofix": "eslint src/**/*.js --ignore-pattern plugins/ --fix && stylelint **/*.scss --fix"
+    "lint": "eslint src/**/*.js --ignore-pattern plugins/ && stylelint src/**/*.scss && pug-lint ./src",
+    "autofix": "eslint src/**/*.js --ignore-pattern plugins/ --fix && stylelint src/**/*.scss --fix"
   },
   "author": "Evgeny",
   "license": "ISC",
