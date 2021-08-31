@@ -2,15 +2,13 @@
 @import '../scss/mixin_outline';
 
 html {
-  margin: 0;
-  padding: 0;
   color: rgba(31, 32, 65, 0.75);
   font-size: 10px;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: #f4f4f6;
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
 }

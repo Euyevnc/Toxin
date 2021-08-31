@@ -1,6 +1,4 @@
-import 'jquery';
-import 'range-slider-for-ml';
-import 'range-slider-for-ml/dist/styles.css';
+import RangeSlider from '../../libs/slider';
 
 class RangePicker {
   constructor(root) {
@@ -18,12 +16,13 @@ class RangePicker {
     const {
       container, min, max, sliderData,
     } = this;
-    this.sliderObject = container.rangeSlider(sliderData);
-    this.sliderObject.model.observer.subscribe(() => {
-      min.textContent = this.sliderObject.getValue()[0].toLocaleString();
-      max.textContent = this.sliderObject.getValue()[1].toLocaleString();
-    });
-    this.sliderObject.init(sliderData.initStart, sliderData.initEnd);
+
+    const sliderCallback = (startValue, endValue) => {
+      min.textContent = startValue.toLocaleString();
+      max.textContent = endValue.toLocaleString();
+    };
+
+    this.sliderObject = new RangeSlider(container, sliderData, sliderCallback);
   }
 
   #formConfig = () => {
