@@ -486,7 +486,10 @@ html(lang = 'ru')
           .bullets-container
             h3 Bullet list
             +marked-list({
-               elements: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'] 
+              elements: [
+                'Нельзя с питомцами', 'Без вечеринок и мероприятий', 
+                'Время прибытия — после 13:00, а выезд до 12:00'
+              ] 
             })
       section.reviews-wrapper  
         .stickers-container 
@@ -510,7 +513,14 @@ html(lang = 'ru')
             ] 
           })
         .review-wrapper 
-          +review(reviewsData[0])
+          +review(
+            {...reviewsData[0],   
+              local_days: 'дней',
+              local_weeks: 'недель',
+              local_months: 'месяцев',
+              local_years: 'лет',
+              local_ago: 'назад'
+            })
     section.cards 
       include ./images/logo-icon.svg
       section   

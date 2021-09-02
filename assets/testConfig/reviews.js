@@ -8,11 +8,6 @@ const review1 = {
   date: '03,05,2021',
   likes: 12,
   isLiked: true,
-  local_days: 'дней',
-  local_weeks: 'недель',
-  local_months: 'месяцев',
-  local_years: 'лет',
-  local_ago: 'назад',
 };
 
 const review2 = {
@@ -22,11 +17,6 @@ const review2 = {
   date: '08,21,2021',
   likes: 2,
   isLiked: false,
-  local_days: 'дней',
-  local_weeks: 'недель',
-  local_months: 'месяцев',
-  local_years: 'лет',
-  local_ago: 'назад',
 };
 
 export default [review1, review2];

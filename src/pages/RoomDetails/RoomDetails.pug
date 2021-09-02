@@ -16,6 +16,8 @@ block variables
   - const smallDemoImg = require('../../../assets/images/room-detail-2.jpg').default
   - const smallDemoImg2 = require('../../../assets/images/room-detail-3.jpg').default
   - const reviewsData = require('../../../assets/testConfig/reviews.js').default
+  - const reviewLocal = {  local_days: 'дней', local_weeks: 'недель', local_months: 'месяцев',
+  - local_years: 'лет', local_ago: 'назад'}
   
 block head
   title RoomDetails
@@ -103,10 +105,10 @@ block content
       
         h2.room-details__heading Отзывы посетителей номера
         .room-details__review-container.js-room-details__review-container
-          +review(reviewsData[0])
+          +review({...reviewsData[0], ...reviewLocal})
         
         .room-details__review-container.js-room-details__review-container
-          +review(reviewsData[1])
+          +review({...reviewsData[1], ...reviewLocal})
 
       .room-details__rules
         h2.room-details__heading.room-details__heading_shift_right Правила
