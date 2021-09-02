@@ -1,8 +1,8 @@
 include ../menu/menu.pug
 
-mixin header({ menu = { } })
+mixin header({ menu = { }, indexHref = ''})
   .js-header.header
-    .header__sign
+    #{indexHref ? 'a' : 'span'}.header__sign(href = indexHref ? indexHref : false, rel = indexHref ? 'first' : false)
       span.header__logo
         include ./images/logo-icon-color.svg
       span.header__brand

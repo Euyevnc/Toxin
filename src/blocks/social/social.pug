@@ -1,5 +1,5 @@
 mixin social({ icons = [ ] })
   span.social
     each icon in icons 
-      a.social__link(href=`${icon.link}` target='_blank')
+      a.social__link(href=`${icon.link}`, target='_blank')
         i.social__icon(class = `fab ${icon.class}`)

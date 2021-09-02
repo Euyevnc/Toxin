@@ -3,8 +3,7 @@ import DateMaskedTextfield from
 
 class RegistrationForm {
   constructor(root) {
-    this.element = root.querySelector('.js-registration-form');
-    this.birthField = new DateMaskedTextfield(this.element
+    this.birthField = new DateMaskedTextfield(root
       .querySelector('.js-date-masked-textfield'));
   }
 }
