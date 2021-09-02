@@ -2,6 +2,11 @@ include ../social/social.pug
 
 mixin cellar({ text='', links=[ ] })
   .cellar 
+    .cellar__sign
+      span.cellar__logo
+        include ./images/logo-icon-color.svg
+      span.cellar__brand
+        include ./images/logo-text.svg
     span.cellar__text-container
       p.cellar__text #{text}
     span.cellar__social-container

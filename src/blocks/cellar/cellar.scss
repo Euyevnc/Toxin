@@ -10,8 +10,15 @@
   min-height: 70px;
   background-color: white;
 
+  &__sign {
+    display: none;
+  }
+
   &__text {
     @include default-font($line: $default-line - 1);
+
+    margin: 0;
+    text-align: center;
   }
 }
 
@@ -19,5 +26,19 @@
   .cellar {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cellar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 367px;
+    row-gap: 20px;
+
+    &__sign {
+      display: block;
+    }
   }
 }
