@@ -1,0 +1,14 @@
+include ../double-date-picker/double-date-picker.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin room-searcher({ header = 'We will find rooms according to your wishes', datePicker = { }, counter = { }, buttonText = 'find a number' })
+  article.js-room-searcher.room-searcher
+    h1.room-searcher__header #{header}
+    form.room-searcher__form(name = 'room-search', action = '')
+      .room-searcher__container.room-searcher__container_for_calendar
+        +double-date-picker( datePicker )
+      .room-searcher__container.room-searcher__container_for_input
+        +dropdown( counter )
+      .room-searcher__submit-button
+        +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })

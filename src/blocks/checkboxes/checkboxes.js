@@ -1,5 +1,5 @@
 class Checkboxes {
-  constructor(root) {
+  constructor({ root }) {
     this.root = root;
     this.header = this.root.querySelector('.js-checkboxes__header');
     this.expanding = 'expanding' in this.root.dataset;

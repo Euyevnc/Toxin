@@ -1,7 +1,7 @@
 import RangeSlider from '../../libs/slider';
 
 class RangePicker {
-  constructor(root) {
+  constructor({ root }) {
     this.root = root;
     this.container = $(this.root.querySelector('.js-range-picker__container'));
     this.min = this.root.querySelector('.js-range-picker__min');

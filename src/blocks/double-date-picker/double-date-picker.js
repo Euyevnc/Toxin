@@ -1,17 +1,22 @@
 import DoublePicker from '../../libs/double-date-picker';
-import Textfield from '../textfield/textfield';
+
+import textfield from '../textfield';
 
 class DoubleDatePicker {
-  constructor(root) {
+  constructor({ root }) {
     const arriveContainer = root
       .querySelector('.js-double-date-picker__container_for_first');
     const departureContainer = root
       .querySelector('.js-double-date-picker__container_for_second');
 
-    this.arriveTextfield = new Textfield(arriveContainer
-      .querySelector('.js-textfield'));
-    this.departureTextfield = new Textfield(departureContainer
-      .querySelector('.js-textfield'));
+    this.arriveTextfield = textfield({
+      root: arriveContainer
+        .querySelector('.js-textfield'),
+    });
+    this.departureTextfield = textfield({
+      root: departureContainer
+        .querySelector('.js-textfield'),
+    });
 
     this.arriveInput = this.arriveTextfield.getInput();
     this.departureInput = this.departureTextfield.getInput();

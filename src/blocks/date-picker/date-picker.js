@@ -1,10 +1,11 @@
-import Textfield from '../textfield/textfield';
 import Picker from '../../libs/date-picker';
 
+import textfield from '../textfield';
+
 class DatePicker {
-  constructor(root) {
+  constructor({ root }) {
     this.root = root;
-    this.textfield = new Textfield(root.querySelector('.js-textfield'));
+    this.textfield = textfield({ root: root.querySelector('.js-textfield') });
 
     this.input = this.textfield.getInput();
     this.arrow = root.querySelector('.js-date-picker__arrow');

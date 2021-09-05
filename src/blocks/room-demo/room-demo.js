@@ -2,7 +2,7 @@ import handlerButtonHover from '../../plugins/buttons-imgs-slider';
 import handlerArrowClick from '../../plugins/arrow-imgs-slider';
 
 class RoomDemo {
-  constructor(root) {
+  constructor({ root }) {
     this.buttons = root.querySelectorAll('.js-room-demo__button');
     this.imgs = root.querySelectorAll('.js-room-demo__image');
     this.arrowPrev = root.querySelector('.js-room-demo__arrow_left');

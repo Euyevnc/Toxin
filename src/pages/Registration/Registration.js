@@ -1,12 +1,14 @@
 import './Registration.scss';
-import Header from '../../blocks/header/header';
-import Registration from '../../blocks/registration-form/registration-form';
+import header from '../../blocks/header';
+import registration from '../../blocks/registration-form';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDomLoaded);
 
 function handlerDocumentDomLoaded() {
   /* eslint-disable no-unused-vars */
-  const headerObject = new Header(document.querySelector('.js-header'));
-  const registrationObject = new Registration(document
-    .querySelector('.js-registration-form'));
+  header({ root: document.querySelector('.js-header') });
+  registration({
+    root: document
+      .querySelector('.js-registration-form'),
+  });
 }

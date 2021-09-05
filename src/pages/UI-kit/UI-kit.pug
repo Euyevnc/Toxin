@@ -24,7 +24,7 @@ include ../../blocks/cellar/cellar.pug
 include ../../blocks/card/card.pug
 include ../../blocks/room-demo/room-demo.pug 
 include ../../blocks/registration-form/registration-form.pug
-include ../../blocks/room-search/room-search.pug
+include ../../blocks/room-searcher/room-searcher.pug
 include ../../blocks/room-preview/room-preview.pug
 include ../../blocks/entry-form/entry-form.pug
 
@@ -525,7 +525,7 @@ html(lang = 'ru')
       include ./images/logo-icon.svg
       section   
         .find-form-container
-          +room-search({ 
+          +room-searcher({ 
             header: 'Найдём номера под ваши пожелания',
             datePicker: { 
               textfields: [ 

@@ -2,7 +2,7 @@ extends ../../layout/layout-for-hotel.pug
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/cellar/cellar.pug
-include ../../blocks/room-search/room-search.pug
+include ../../blocks/room-searcher/room-searcher.pug
 
 block variables
   - const blockClass = 'landing-page'
@@ -45,7 +45,7 @@ block header
 
 block content   
   .landing-page__searcher-container
-    +room-search({ 
+    +room-searcher({ 
       header: 'Найдём номера под ваши пожелания',
         datePicker: { textfields: [ {placeholder: "ДД.ММ.ГГГГ", label:"прибытие" }, {placeholder: "ДД.ММ.ГГГГ", label:"выезд"} ] }, 
         counter: { 

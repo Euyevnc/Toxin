@@ -1,10 +1,12 @@
-import DateMaskedTextfield from
-  '../date-masked-textfield/date-masked-textfield';
+import dateMaskedInput from
+  '../date-masked-textfield';
 
 class RegistrationForm {
-  constructor(root) {
-    this.birthField = new DateMaskedTextfield(root
-      .querySelector('.js-date-masked-textfield'));
+  constructor({ root }) {
+    this.birthField = dateMaskedInput({
+      root: root
+        .querySelector('.js-date-masked-textfield'),
+    });
   }
 }
 

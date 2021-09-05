@@ -1,13 +1,18 @@
-import Dropdown from '../dropdown/dropdown';
-import DoubleDatePicker from '../double-date-picker/double-date-picker';
+import dropdown from '../dropdown';
+import doubleDatePicker from '../double-date-picker';
 
-class RoomBooker {
-  constructor(root) {
+class RoomPreview {
+  constructor({ root }) {
     this.root = root;
-    this.counterObject = new Dropdown(this.root.querySelector('.js-dropdown'));
+    this.counterObject = dropdown({
+      root: this.root
+        .querySelector('.js-dropdown'),
+    });
 
-    this.datePickerObject = new DoubleDatePicker(this.root
-      .querySelector('.js-double-date-picker'));
+    this.datePickerObject = doubleDatePicker({
+      root: this.root
+        .querySelector('.js-double-date-picker'),
+    });
 
     this.arrival = 4;
     this.departure = 8;
@@ -138,4 +143,4 @@ class RoomBooker {
   }
 }
 
-export default RoomBooker;
+export default RoomPreview;

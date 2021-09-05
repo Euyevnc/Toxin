@@ -1,8 +1,7 @@
 import Chart from 'chart.js';
 
-const firstElement = document.querySelector('.js-diagram');
 class Diagram {
-  constructor(root = firstElement) {
+  constructor({ root }) {
     this.root = root;
     this.canvas = root.querySelector('.js-diagram__canvas');
     this.subjectForms = Object

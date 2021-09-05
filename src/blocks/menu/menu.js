@@ -1,5 +1,5 @@
 class Menu {
-  constructor(root) {
+  constructor({ root }) {
     this.submenus = root.querySelectorAll('.js-menu__submenu');
     this.submenus.forEach((it) => {
       const element = it.closest('.js-menu__element');

@@ -1,12 +1,14 @@
 import './LandingPage.scss';
-import Header from '../../blocks/header/header';
-import RoomFinder from '../../blocks/room-search/room-search';
+import header from '../../blocks/header';
+import roomSearcher from '../../blocks/room-searcher';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
 
 function handlerDocumentDOMLoaded() {
   /* eslint-disable no-unused-vars */
-  const headerObject = new Header(document.querySelector('.js-header'));
-  const numberFinderObject = new RoomFinder(document
-    .querySelector('.room-search'));
+  header({ root: document.querySelector('.js-header') });
+  roomSearcher({
+    root: document
+      .querySelector('.js-room-searcher'),
+  });
 }
