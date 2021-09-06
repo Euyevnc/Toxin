@@ -128,6 +128,10 @@ class DoubleDatePicker {
       onSelect(dateText, inst, extensionRange) {
         rewriteDates(extensionRange.startDate, extensionRange.endDate);
         updateHandler({ dateText, inst, extensionRange });
+
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+        arriveInput[0].dispatchEvent(select);
       },
     });
 
@@ -137,6 +141,10 @@ class DoubleDatePicker {
       onSelect(dateText, inst, extensionRange) {
         rewriteDates(extensionRange.startDate, extensionRange.endDate);
         updateHandler({ dateText, inst, extensionRange });
+
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+        departureInput[0].dispatchEvent(select);
       },
     });
 

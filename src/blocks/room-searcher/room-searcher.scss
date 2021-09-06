@@ -4,6 +4,9 @@
 @import '../../scss/mixin-font';
 
 .room-searcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
   box-sizing: border-box;
   max-width: 380px;
   padding: 39px 29px 29px;
@@ -27,12 +30,10 @@
   }
 
   &__form {
-    min-width: 320px;
+    // min-width: 320px;
   }
 
   &__container {
-    min-width: 320px;
-
     &_for_calendar {
       display: flex;
       justify-content: space-between;
@@ -48,11 +49,7 @@
     height: 44px;
   }
   @media (max-width: 380px) {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  @media (max-width: 340px) {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }

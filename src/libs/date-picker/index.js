@@ -118,6 +118,10 @@ class DatePicker {
         rewriteDates(extensionRange.startDate, extensionRange.endDate);
 
         updateHandler({ dateText, inst, extensionRange });
+
+        const select = new CustomEvent('ondateselect',
+          { detail: extensionRange });
+        input[0].dispatchEvent(select);
       },
     });
 
