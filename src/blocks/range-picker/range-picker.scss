@@ -1,0 +1,44 @@
+@import '../../scss/mixin-font';
+
+.range-picker {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  user-select: none;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__title {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 3,
+      700,
+      none,
+      uppercase
+    );
+
+    margin: 0;
+    margin-bottom: 5.5px;
+    padding: 0;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  &__counter {
+    @include default-font($main-color_lighter, $size-small, $size-small);
+  }
+
+  &__description {
+    margin-top: 5px;
+    margin-bottom: 0;
+    @include default-font($main-color_lighter, $size-small, $size-middle);
+  }
+}

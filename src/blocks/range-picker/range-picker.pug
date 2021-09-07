@@ -4,10 +4,10 @@ mixin range-picker({ title = '', describe = '', keys = "type, orient, scale, clo
       h3.range-picker__title #{title}
       span.range-picker__counter
         span.range-picker__min.js-range-picker__min
-        span ₽ - 
+        span.range-picker__ruble-sign ₽ - 
         span.range-picker__max.js-range-picker__max
-        span ₽
+        span.range-picker__ruble-sign ₽
     .js-range-picker__container.range-picker__container
     if describe
-      div
-        p.range-picker__describe #{describe}
+      .range-picker__description
+        p.range-picker__text #{describe}
