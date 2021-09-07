@@ -1,8 +1,24 @@
 @import '../../scss/mixin-font';
 
 .marked-list {
-  margin: 0;
-  padding: 0;
+  &__header {
+    @include default-font(
+      $main-color_darkest,
+      $size-small,
+      $size-small + 3,
+      700,
+      none,
+      uppercase
+    );
+
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
 
   &__item {
     margin-bottom: 10px;

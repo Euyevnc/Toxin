@@ -1,7 +1,7 @@
-mixin tumblers( { header = '', issues = [ ] })
+mixin tumblers( { label = '', issues = [ ] })
   .tumblers
-    if header
-      h3.tumblers__header #{header}
+    if label
+      h3.tumblers__header #{label}
     each tumbler in issues
       - let { name, value, title, checked} = tumbler
       label.tumblers__item

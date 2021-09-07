@@ -22,21 +22,23 @@ document.addEventListener('DOMContentLoaded', uiKitInit);
 function uiKitInit() {
   doubleDatePicker({
     root: document
-      .querySelector('.double-date-picker'),
+      .querySelector('.js-double-date-picker'),
   });
 
   datePicker({
     root: document
-      .querySelector('.date-picker'),
+      .querySelector('.js-date-picker'),
   });
 
-  document.querySelectorAll('.forms-dropdowns-wrapper .js-dropdown')
+  document.querySelectorAll('.ui-kit__inputs .js-dropdown')
     .forEach((cont) => {
       dropdown({ root: cont });
     });
 
-  const counter = document.querySelector('.forms .js-dropdown');
-  dropdown({ root: counter });
+  dateMaskedInput({
+    root: document
+      .querySelector('.ui-kit__inputs .js-date-masked-textfield'),
+  });
 
   roomSearcher({
     root: document
@@ -61,32 +63,26 @@ function uiKitInit() {
       .querySelector('.js-range-picker'),
   });
 
-  document.querySelectorAll('.dropping-checkboxes-container .js-checkboxes')
+  document.querySelectorAll('.ui-kit__checkboxes .js-checkboxes')
     .forEach((cont) => {
       checkboxes({ root: cont });
     });
 
   review({ root: document.querySelector('.review ') });
 
-  dateMaskedInput({
-    root: document
-      .querySelector('.forms .js-date-masked-textfield'),
-  });
-
   registration({
     root: document
-      .querySelector('.registration-form-container'),
+      .querySelector('.js-registration-form'),
   });
-
-  document.querySelector('.textfield-active-container input')
-    .value = 'This is pretty awesome';
 
   setTimeout(() => {
     const calendar = document
       .querySelector('.js-ui-datepicker').cloneNode(true);
     const contForCalendar = document
-
-      .querySelector('.expended-calendar-container');
+      .querySelector('.ui-kit__calendar');
     contForCalendar.appendChild(calendar);
+    calendar.style.display = 'block';
+    calendar.style.pointerEvents = 'none';
+    calendar.style.userSelect = 'none';
   }, 700);
 }

@@ -1,6 +1,9 @@
-mixin marked-list({ elements = [ ] })
-  ul.marked-list
-    each desc in elements
-      li.marked-list__item
-        span.marked-list__circle   
-        p.marked-list__desc #{desc} 
+mixin marked-list({ label = '', elements = [ ] })
+  .marked-list
+    if label
+      h3.marked-list__header #{label}
+    ul.marked-list__list
+      each desc in elements
+        li.marked-list__item
+          span.marked-list__circle   
+          p.marked-list__desc #{desc} 

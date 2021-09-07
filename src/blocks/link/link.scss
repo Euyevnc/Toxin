@@ -3,6 +3,7 @@
 .link {
   @include default-font(
     $size: $size-small,
+    $color: $main-color_lighter,
     $line: $size-small + 2.5,
     $decor: none,
     $weight: 700,

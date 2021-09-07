@@ -8,7 +8,7 @@ class Burger {
   }
 
   handlerBurgerClick = () => {
-    this.root.classList.toggle('burger_cond_active');
+    this.root.classList.toggle('burger_active');
     this.menu.classList.toggle(this.activeClass);
   }
 }

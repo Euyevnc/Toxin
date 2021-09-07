@@ -1,6 +1,6 @@
 include ../social/social.pug   
 
-mixin card({ text = '', links = [ ] }) 
+mixin card({ text = '', icons = [ ] }) 
   .card
     span.card__sign 
       span.card__logo
@@ -10,4 +10,4 @@ mixin card({ text = '', links = [ ] })
     span.card__subscribe #{text}
   
     span.card__social
-      +social(links)
+      +social({icons})

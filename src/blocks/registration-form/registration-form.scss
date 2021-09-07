@@ -8,6 +8,9 @@
 .registration-form {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 380px;
   padding: 39px 29px 29px;
   font-size: 0;
   background-color: white;
