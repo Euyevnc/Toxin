@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import '../../../assets/favicons/favicons';
 import dateMaskedInput
   from '../../blocks/date-masked-textfield';
 import doubleDatePicker
