@@ -15,7 +15,7 @@ import review from '../../blocks/review';
 import roomDemo from '../../blocks/room-demo';
 import registration from '../../blocks/registration-form';
 
-import './UI-kit.scss';
+import './ui-kit.scss';
 
 document.addEventListener('DOMContentLoaded', uiKitInit);
 

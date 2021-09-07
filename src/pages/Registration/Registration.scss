@@ -4,83 +4,86 @@
 @import '../../blocks/cellar/cellar.scss';
 @import '../../blocks/registration-form/registration-form.scss';
 
-.registration__wrapper {
-  position: relative;
-  box-sizing: border-box;
-  max-width: 1180px;
-  height: 100%;
-  margin: auto;
-  padding: 0 10px;
-}
-
-.registration__header {
-  position: relative;
-  z-index: 10;
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 320px;
-  padding: 15px 0;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-}
-
-.registration__content {
-  position: relative;
-  z-index: 9;
-  box-sizing: border-box;
-  min-width: 320px;
-  margin: auto;
-  background-image: url('./img/registration-background.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  .registration__wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    min-width: 320px;
-    min-height: calc(100vh - 70px);
-    padding: 19px 0;
+.registration {
+  &__wrapper {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 1180px;
+    height: 100%;
+    margin: auto;
+    padding: 0 10px;
   }
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+  &__header {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
     width: 100%;
-    height: 100%;
-    background-image: url('./img/registration-background-2.jpg');
+    min-width: 320px;
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 9;
+    box-sizing: border-box;
+    min-width: 320px;
+    margin: auto;
+    background-image: url('./img/registration-background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    opacity: 0;
-    animation: sliding 20s linear 0s infinite;
-    content: '';
+
+    .registration__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 320px;
+      min-height: calc(100vh - 70px);
+      padding-top: 19px;
+      padding-bottom: 19px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('./img/registration-background-2.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 0;
+      animation: sliding 20s linear 0s infinite;
+      content: '';
+    }
   }
-}
 
-.registration__footer {
-  position: relative;
-  z-index: 10;
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 320px;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-}
+  &__footer {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  }
 
-.registration__cellar {
-  position: relative;
-  z-index: 10;
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 320px;
-  background-color: white;
-  border-top: 1px solid rgba(31, 32, 65, 0.1);
+  &__cellar {
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 320px;
+    background-color: white;
+    border-top: 1px solid rgba(31, 32, 65, 0.1);
+  }
 }
 
 @keyframes sliding {

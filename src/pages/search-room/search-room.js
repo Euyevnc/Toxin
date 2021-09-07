@@ -1,4 +1,4 @@
-import './SearchRoom.scss';
+import './search-room.scss';
 
 import header from '../../blocks/header';
 import datePicker from '../../blocks/date-picker';

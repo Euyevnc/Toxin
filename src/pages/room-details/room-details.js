@@ -1,4 +1,4 @@
-import './RoomDetails.scss';
+import './room-details.scss';
 import header from '../../blocks/header';
 import diagram from '../../blocks/diagram';
 import roomPreview from '../../blocks/room-preview';

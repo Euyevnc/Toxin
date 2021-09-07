@@ -1,4 +1,4 @@
-import './LandingPage.scss';
+import './landing.scss';
 import header from '../../blocks/header';
 import roomSearcher from '../../blocks/room-searcher';
 

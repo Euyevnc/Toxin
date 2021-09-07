@@ -1,4 +1,4 @@
-import './Registration.scss';
+import './registration.scss';
 import header from '../../blocks/header';
 import registration from '../../blocks/registration-form';
 

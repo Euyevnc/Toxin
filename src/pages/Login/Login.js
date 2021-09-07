@@ -1,4 +1,4 @@
-import './Login.scss';
+import './login.scss';
 import header from '../../blocks/header';
 
 document.addEventListener('DOMContentLoaded', handlerDocumentDOMLoaded);
