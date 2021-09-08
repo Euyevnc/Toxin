@@ -1,5 +1,4 @@
-@import '../../scss/font-faces/OpenSans.scss';
-@import '../../scss/font-faces/Montserrat.scss';
+@import '../../scss/mixin-default-font';
 /* stylelint-disable no-descending-specificity */
 
 //Стили написал к уже готовому плагину, так что БЭМа тут, понятно, нет
@@ -14,6 +13,7 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  @include default-font();
 
   & .ui-widget-header {
     display: flex;
@@ -23,7 +23,6 @@
     color: #1f2041;
     font-weight: 700;
     font-size: 19px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     border: none;
 
     & > * {
@@ -61,7 +60,6 @@
           color: rgba(31, 32, 65, 0.5);
           color: #bc9cff;
           font-size: 12px;
-          font-family: 'Montserrat', Arial, Helvetica, sans-serif;
           line-height: 40px;
           text-align: center;
           background-color: white;
@@ -74,7 +72,6 @@
     & tbody {
       & td {
         padding: 0;
-        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
         opacity: 1;
 
         &.ui-state-disabled {
@@ -191,7 +188,6 @@
       color: #bc9cff;
       font-weight: 700;
       font-size: 12px;
-      font-family: Montserrat, Arial, Helvetica, sans-serif;
       text-transform: uppercase;
       cursor: pointer;
     }

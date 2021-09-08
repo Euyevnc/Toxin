@@ -1,4 +1,5 @@
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-mi-font';
 
 .liker {
   display: inline-block;
@@ -50,7 +51,8 @@
         position: absolute;
         left: 5px;
         display: inline-block;
-        font-family: 'Material Icons', fantasy;
+        @include mi-font($size: $size-small - 2);
+
         vertical-align: middle;
         transition-duration: 0.2s;
         content: 'favorite_border';
@@ -73,11 +75,7 @@
     & + .liker__label {
       display: inline-block;
       color: $highlight-color;
-      background: linear-gradient(
-        180deg,
-        $highlight-color,
-        $highlight-color_skew
-      );
+      background: $gradient_purple;
       transition-duration: 0.5s;
 
       &::after {

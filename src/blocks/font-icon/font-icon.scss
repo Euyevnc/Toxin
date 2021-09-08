@@ -1,4 +1,4 @@
-@import '../../scss/font-faces/Montserrat.scss';
+@import '../../scss/_mixin-default-font.scss';
 
 .font-icon__container {
   display: flex;
@@ -9,8 +9,8 @@
 .font-icon__tag {
   display: inline-block;
   margin-right: 30px;
-  font-weight: 400;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  @include default-font($decor: none, $weight: 400);
+
   text-align: left;
   vertical-align: top;
   opacity: 0.25;

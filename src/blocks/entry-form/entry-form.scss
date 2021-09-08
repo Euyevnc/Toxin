@@ -1,4 +1,4 @@
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 @import '../button/button.scss';
 @import '../textfield/textfield.scss';
 
@@ -9,7 +9,6 @@
   width: 100%;
   max-width: 380px;
   padding: 39px 29px 31px;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;

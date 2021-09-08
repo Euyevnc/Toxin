@@ -1,0 +1,7 @@
+@import './variables';
+@import './font-faces/FontAwesome.scss';
+
+@mixin fa-font($size: $size-middle) {
+  font-size: $size;
+  font-family: 'Font Awesome 5 Free', fantasy;
+}

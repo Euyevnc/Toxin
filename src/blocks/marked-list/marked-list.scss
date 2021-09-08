@@ -1,6 +1,8 @@
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .marked-list {
+  @include default-font($main-color, $size-small + 2, $size-largest);
+
   &__header {
     @include default-font(
       $main-color_darkest,

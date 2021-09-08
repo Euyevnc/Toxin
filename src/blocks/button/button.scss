@@ -1,4 +1,4 @@
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 @import '../arrow/arrow.scss';
 
 .button {
@@ -10,11 +10,7 @@
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
-  background: linear-gradient(
-    180deg,
-    $highlight-color 0%,
-    $highlight-color_skew 100%
-  );
+  background: $gradient_purple;
   border: none;
   border-radius: 22px;
   cursor: pointer;
@@ -41,20 +37,12 @@
 
   &:hover,
   &:focus {
-    background: linear-gradient(
-      180deg,
-      $highlight-color_depr 0%,
-      $highlight-color_skew_depr 100%
-    );
+    background: $gradient_purple_depr;
   }
 
   &_highlight {
     color: white;
-    background: linear-gradient(
-      180deg,
-      $highlight-color 0%,
-      $highlight-color_skew 100%
-    );
+    background: $gradient_purple;
 
     &::after {
       background-color: transparent;
@@ -62,11 +50,7 @@
 
     &:hover,
     &:focus {
-      background: linear-gradient(
-        180deg,
-        $highlight-color_depr 0%,
-        $highlight-color_skew_depr 100%
-      );
+      background: $gradient_purple_depr;
     }
   }
 

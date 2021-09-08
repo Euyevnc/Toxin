@@ -1,9 +1,7 @@
-@import '../../scss/mixin-font';
-@import '../../scss/font-faces/MaterialIcons.scss';
+@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-mi-font';
 
 .radios {
-  font-size: 0;
-
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -43,8 +41,8 @@
         height: 24px;
         margin-right: 8px;
         color: $main-color_lightest;
-        font-size: 24px;
-        font-family: 'Material Icons', fantasy;
+        @include mi-font($size: $size-largest);
+
         line-height: 24px;
         text-align: center;
         vertical-align: middle;
@@ -60,11 +58,7 @@
 
       &::before {
         color: $highlight-color;
-        background: linear-gradient(
-          180deg,
-          $highlight-color,
-          $highlight-color_skew
-        );
+        background: $gradient_purple;
         -webkit-background-clip: text;
         content: 'radio_button_checked';
         -webkit-text-fill-color: transparent;

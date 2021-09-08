@@ -1,22 +1,23 @@
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .textfield {
   position: relative;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  @include default-font($main-color, $size-middle);
 
   &__value {
     box-sizing: border-box;
     width: 100%;
     height: 44px;
     padding-left: 15px;
+    color: $main-color;
+    line-height: 44px;
     border: 1px solid $main-color_lightest;
     border-radius: 4px;
     transition-duration: 0.7s;
-    @include default-font($line: 44px);
 
     &::placeholder {
-      @include default-font($color: $main-color_lightest, $line: 44px);
-
+      color: $main-color_lightest;
+      line-height: 44px;
       opacity: 1;
       transition-duration: 0.7s;
     }
@@ -28,7 +29,7 @@
       transition-duration: 0.7s;
 
       &::placeholder {
-        color: $main-color_lighter;
+        color: $main-color;
         transition-duration: 0.7s;
       }
     }
@@ -43,32 +44,23 @@
   }
 
   &__title {
-    @include default-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 2.5,
-      700,
-      none,
-      uppercase
-    );
-
     margin: 0 0 5.5px;
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 2.5;
+    text-transform: uppercase;
   }
 
   &__describe {
-    @include default-font(
-      $main-color_lighter,
-      $size-small,
-      $size-small + 3,
-      400,
-      none,
-      uppercase
-    );
-
     position: absolute;
     top: 0;
     right: 0;
     margin: 0;
+    color: $main-color_lighter;
+    font-size: $size-small;
+    line-height: $size-small + 3;
+    text-transform: uppercase;
   }
 
   &__arrow {

@@ -1,7 +1,7 @@
 @import '../double-date-picker/double-date-picker.scss';
 @import '../dropdown/dropdown.scss';
 @import '../button/button.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .room-preview {
   display: flex;
@@ -10,11 +10,11 @@
   width: 100%;
   max-width: 380px;
   padding: 40px 29px 29px;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(151, 125, 125, 0.2);
+  @include default-font($line: $default-line, $color: $main-color);
 
   &__font {
     &_color_black {
@@ -73,12 +73,11 @@
   }
 
   &__rent-calculation {
-    @include default-font($line: $default-line);
-
     display: flex;
     flex-direction: column;
     align-items: stretch;
     padding-left: 1px;
+    line-height: $default-line;
   }
 
   &__rent {
@@ -123,15 +122,13 @@
     width: 20px;
     height: 20px;
     margin-right: auto;
+    color: $main-color_lightest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 8;
     text-align: center;
     border: 1px solid $main-color_lightest;
     border-radius: 50%;
-    @include default-font(
-      $size: $size-small,
-      $line: $size-small + 8,
-      $color: $main-color_lightest,
-      $weight: 700
-    );
   }
 
   &__total {

@@ -1,12 +1,11 @@
 @import '../textfield/textfield.scss';
 @import '../link/link.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .dropdown {
   position: relative;
   width: 100%;
-  color: $main-color_lighter;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  @include default-font($color: $main-color_lighter);
 
   &__arrow {
     position: absolute;
@@ -123,6 +122,8 @@
   }
 
   .textfield__value {
+    color: $main-color;
+
     &::placeholder {
       color: $main-color;
     }

@@ -1,10 +1,11 @@
 @import '../arrow/arrow.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .pagination {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include default-font($main-color_lighter, $size-small, 40px, none, none);
 
   &__buttons-list {
     display: inline;
@@ -17,8 +18,9 @@
     display: block;
     box-sizing: border-box;
     height: 100%;
+    color: $main-color_lighter;
+    text-decoration: none;
     border-radius: 50%;
-    @include default-font($main-color_lighter, $size-small, 40px);
 
     &:focus {
       outline: 0;
@@ -36,7 +38,7 @@
     cursor: pointer;
 
     &_type_arrow {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      background: $gradient_green;
 
       & .pagination__link {
         color: white;
@@ -44,11 +46,7 @@
     }
 
     &_active {
-      background: linear-gradient(
-        180deg,
-        $highlight-color 0%,
-        $highlight-color_skew 100%
-      );
+      background: $gradient_purple;
 
       & .pagination__link {
         color: white;
@@ -64,17 +62,15 @@
     display: inline-block;
     width: 40px;
     height: 40px;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    @include default-font($main-color_lighter, $size-small, 40px);
   }
 
   &__text {
-    @include default-font();
-
     margin: 0;
+    color: $main-color;
+    line-height: $size-largest;
     text-align: center;
   }
 }

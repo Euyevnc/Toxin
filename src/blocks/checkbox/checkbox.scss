@@ -1,7 +1,8 @@
-@import '../../scss/font-faces/MaterialIcons.scss';
+@import '../../scss/mixin-fa-font';
 
 .checkbox {
   display: inline-block;
+  @include default-font($main-color_lighter, $size-middle, $default-line);
 
   &__checkbox {
     display: none;
@@ -9,7 +10,6 @@
     & + .checkbox__label {
       display: inline-block;
       min-height: 20px;
-      font-size: 0;
       user-select: none;
 
       &::before {
@@ -21,16 +21,12 @@
         margin-right: 10px;
         color: $highlight-color;
         font-weight: bold;
-        font-size: 11px;
-        font-family: 'Font Awesome 5 Free', fantasy;
+        @include fa-font($size-small - 1);
+
         line-height: 18px;
         text-align: center;
         vertical-align: top;
-        background: linear-gradient(
-          180deg,
-          $highlight-color,
-          $highlight-color_skew
-        );
+        background: $gradient_purple;
         -webkit-background-clip: text;
         border: 1px solid $main-color_lightest;
         border-radius: 4px;
@@ -61,22 +57,19 @@
   }
 
   &__main-text {
-    @include default-font($main-color_lighter);
+    color: $main-color_lighter;
   }
 
   &__sub-text {
-    @include default-font($main-color_lighter, $size-small, $size-middle);
+    font-size: $size-small;
+    line-height: $size-small + 2;
   }
 
   &_with_subtitle {
     .checkbox__main-text {
-      @include default-font($weight: 700);
-
       margin-bottom: 5px;
-    }
-
-    .checkbox__sub-text {
-      @include default-font($main-color_lighter, $size-small, $size-middle);
+      color: $main-color;
+      font-weight: 700;
     }
   }
 

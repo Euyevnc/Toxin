@@ -3,7 +3,7 @@
 @import '../tumblers/tumblers.scss';
 @import '../radios/radios.scss';
 @import '../button/button.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .registration-form {
   display: flex;
@@ -12,7 +12,8 @@
   width: 100%;
   max-width: 380px;
   padding: 39px 29px 29px;
-  font-size: 0;
+  @include default-font($main-color_darkest);
+
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -67,8 +68,7 @@
   }
 
   &__text {
-    @include default-font($color: $main-color_darkest);
-
+    color: $main-color_darkest;
     text-align: center;
   }
 

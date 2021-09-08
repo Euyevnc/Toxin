@@ -1,11 +1,10 @@
-@import '../scss/font-faces/Montserrat.scss';
 @import '../scss/mixin_outline';
+@import '../scss/mixin-default-font';
 
 html {
-  color: rgba(31, 32, 65, 0.75);
-  font-size: 10px;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
   background-color: #f4f4f6;
+
+  @include default-font($size: $size-middle, $color: $main-color);
 }
 
 body,

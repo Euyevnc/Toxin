@@ -46,14 +46,14 @@ function uiKitInit() {
 
   roomPreview({
     root: document
-      .querySelector('.room-preview'),
+      .querySelector('.js-room-preview'),
   });
 
   document.querySelectorAll('.js-header').forEach((headerElem) => {
     header({ root: headerElem });
   });
 
-  document.querySelectorAll('.room-demonstration-container').forEach((cont) => {
+  document.querySelectorAll('.js-room-demo').forEach((cont) => {
     roomDemo({ root: cont });
   });
 
@@ -67,7 +67,7 @@ function uiKitInit() {
       checkboxes({ root: cont });
     });
 
-  review({ root: document.querySelector('.review ') });
+  review({ root: document.querySelector('.js-review') });
 
   registration({
     root: document

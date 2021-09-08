@@ -1,3 +1,4 @@
+@import '../../layout/layout-for-hotel.scss';
 @import '../../blocks/color-icon/color-icon.scss';
 @import '../../blocks/font-icon/font-icon.scss';
 @import '../../blocks/textfield/textfield.scss';
@@ -27,7 +28,7 @@
 @import '../../blocks/cellar/cellar.scss';
 @import '../../blocks/card/card.scss';
 @import '../../blocks/room-demo/room-demo.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 @import '../../scss/mixin_outline';
 
 /* stylelint-disable no-descending-specificity */
@@ -215,8 +216,4 @@
     max-width: 768px;
     margin: auto;
   }
-}
-
-*:focus {
-  @include outline();
 }

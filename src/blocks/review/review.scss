@@ -1,8 +1,9 @@
 @import '../liker/liker.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-default-font';
 
 .review {
   margin-bottom: 22px;
+  @include default-font($main-color, $size-middle, $size-largest);
 
   &__header {
     position: relative;
@@ -27,15 +28,12 @@
   }
 
   &__name {
-    @include default-font($line: $size-largest, $weight: 700);
-
     margin: 0;
+    font-weight: 700;
     text-transform: none;
   }
 
   &__days-ago {
-    @include default-font($line: $size-largest);
-
     margin: 0;
   }
 
@@ -52,17 +50,15 @@
   }
 
   &__content {
-    @include default-font($line: $size-largest);
-
     margin: 0;
   }
 
   &__reviews-counter {
-    @include default-font($line: $size-middle, $color: $main-color_lighter);
-
     position: absolute;
     top: 0;
     right: 0;
     padding-top: 6px;
+    color: $main-color_lighter;
+    line-height: $size-middle;
   }
 }

@@ -1,11 +1,12 @@
 @import '../../scss/variables';
 @import '../textfield/textfield.scss';
+@import '../../scss/_mixin-default-font.scss';
 
 .double-date-picker {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  color: $main-color_lighter;
+  @include default-font($main-color_lighter);
 
   &__container {
     position: relative;

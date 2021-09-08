@@ -1,13 +1,13 @@
 @import '../rate-stars/rate-stars.scss';
-@import '../../scss/font-faces/MaterialIcons.scss';
-@import '../../scss/font-faces/Montserrat.scss';
-@import '../../scss/variables';
+@import '../../scss/mixin-mi-font';
+@import '../../scss/_mixin-default-font.scss';
 
 .room-demo {
   max-width: 270px;
   margin-top: 20.5px;
   color: $main-color_lighter;
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  @include default-font();
+
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 17px 20px 0 rgba(34, 60, 80, 0.05);
@@ -19,8 +19,8 @@
     width: 44px;
     height: 44px;
     color: white;
-    font-size: 24px;
-    font-family: 'Material Icons', fantasy;
+    @include mi-font($size: $size-largest);
+
     line-height: 44px;
     text-align: center;
     transform: rotate(90deg) translateX(-50%);
@@ -57,12 +57,7 @@
         left: 0;
         width: 42px;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0) 99.99%,
-          rgba(255, 255, 255, 0) 100%
-        );
+        background: $gradient_dark;
         content: '';
       }
 
@@ -72,12 +67,7 @@
         right: 0;
         width: 42px;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0) 99.99%,
-          rgba(255, 255, 255, 0) 100%
-        );
+        background: $gradient_dark;
         transform: matrix(-1, 0, 0, 1, 0, 0);
         content: '';
       }

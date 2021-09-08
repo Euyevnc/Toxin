@@ -1,7 +1,9 @@
-@import '../../scss/font-faces/MaterialIcons.scss';
-@import '../../scss/mixin-font';
+@import '../../scss/mixin-mi-font';
+@import '../../scss/mixin-default-font';
 
 .tumblers {
+  @include default-font($main-color, $size-small + 2, $size-largest, 400, none);
+
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -37,8 +39,8 @@
       left: 0;
       display: inline-block;
       color: $main-color_lightest;
-      font-size: 18px;
-      font-family: 'Material Icons', fantasy;
+      @include mi-font($size: $size-larger - 1);
+
       transition-duration: 0.5s;
       content: 'fiber_manual_record';
     }
@@ -55,11 +57,7 @@
         &::before {
           left: 22px;
           color: $highlight-color;
-          background: linear-gradient(
-            180deg,
-            $highlight-color,
-            $highlight-color_skew
-          );
+          background: $gradient_purple;
           -webkit-background-clip: text;
           transition-duration: 0.5s;
           -webkit-text-fill-color: transparent;
@@ -77,6 +75,5 @@
     display: inline-block;
     vertical-align: top;
     user-select: none;
-    @include default-font();
   }
 }
