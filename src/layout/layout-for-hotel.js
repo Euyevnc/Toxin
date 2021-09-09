@@ -4,3 +4,10 @@ const faviconsContext = require.context(
   /\.(svg|png|ico|xml|json)$/,
 );
 faviconsContext.keys().forEach(faviconsContext);
+
+const fontsContext = require.context(
+  '!!file-loader?name=assets/fonts/[name].[ext]!../../assets/fonts',
+  true,
+  /\.(ttf|woff|woff2|eot|svg)$/,
+);
+fontsContext.keys().forEach(fontsContext);
