@@ -63,6 +63,29 @@ html(lang = 'ru')
             format('truetype'),
           url('assets/fonts/MaterialIcons-Regular.svg')
             format('svg');
+          unicode-range: U+0030-U+10FFFD;
+      }
+      @font-face {
+        font-weight: normal;
+        font-family: 'Montserrat';
+        font-style: normal;
+        src: local('Montserrat'),
+          url('/assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+          url('/assets/fonts/Montserrat-Regular.woff') format('woff'),
+          url('/assets/fonts/Montserrat-Regular.ttf') format('truetype'),
+          url('/assets/fonts/Montserrat-Regular.svg') format('svg');
+        unicode-range: U+000D-U+FB02;
+
+      }
+      @font-face {
+        font-weight: bold;
+        font-family: 'Montserrat';
+        font-style: normal;
+        src: local('Montserrat'),
+          url('/assets/fonts/Montserrat-Bold.woff2') format('woff2'),
+          url('/assets/fonts/Montserrat-Bold.ttf') format('truetype'),
+          url('/assets/fonts/Montserrat-Bold.svg') format('svg');
+        unicode-range: U+000D-U+FB02;
       }
 
   .ui-kit__container
