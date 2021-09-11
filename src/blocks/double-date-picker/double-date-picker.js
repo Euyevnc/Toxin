@@ -112,15 +112,15 @@ class DoubleDatePicker {
   }
 
   _init = () => {
+    this.arriveArrow.addEventListener('click', this._handlerArrowClick);
+    this.departureArrow.addEventListener('click', this._handlerArrowClick);
+
     const initialArrive = this.arriveInput
       .closest('.js-double-date-picker__container').dataset.init;
-    const initialDeparture = this.arriveInput
+    const initialDeparture = this.departureInput
       .closest('.js-double-date-picker__container').dataset.init;
 
     this.setDates(initialArrive, initialDeparture);
-
-    this.arriveArrow.addEventListener('click', this._handlerArrowClick);
-    this.departureArrow.addEventListener('click', this._handlerArrowClick);
   }
 }
 

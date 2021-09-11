@@ -9,15 +9,6 @@ class RoomPreview {
         .querySelector('.js-dropdown'),
     });
 
-    this.datePickerObject = doubleDatePicker({
-      root: this.root
-        .querySelector('.js-double-date-picker'),
-      selectUserCallback: this.handlerInputChange,
-    });
-
-    this.arrival = 4;
-    this.departure = 8;
-
     this.number = this.root
       .querySelector('.js-room-preview__number').dataset.number;
 
@@ -33,21 +24,21 @@ class RoomPreview {
     this.discount_local = this.root
       .querySelector('.js-room-preview__services').dataset.local;
 
-    this.services = this.#extractServicesObject();
-    this.servicePrice = this.#countService();
+    this.services = this._extractServicesObject();
+    this.servicePrice = this._countService();
 
-    this.#init();
+    this._init();
   }
 
-  handlerInputChange = (data) => {
+  _handlerInputChange = (data) => {
     const arrival = new Date(data.startDate);
     const departure = new Date(data.endDate);
 
     const days = (departure - arrival) / (24 * 3600000);
-    this.#displayPrice(days);
+    this._displayPrice(days);
   }
 
-  #extractServicesObject = () => {
+  _extractServicesObject = () => {
     const serviceItems = [];
     const prices = this.root
       .querySelector('.js-room-preview__services').dataset.prices.split(', ');
@@ -63,7 +54,7 @@ class RoomPreview {
     return serviceItems;
   }
 
-  #countService = () => {
+  _countService = () => {
     let totalServicePrice = 0;
     this.services.forEach((el) => {
       const serviceItem = el;
@@ -76,7 +67,7 @@ class RoomPreview {
     return totalServicePrice;
   }
 
-  #displayPrice = (amount) => {
+  _displayPrice = (amount) => {
     this.root.querySelectorAll('.js-room-preview__amount').forEach((el) => {
       const amountField = el;
       amountField.textContent = `${amount} ${this.day_local}`;
@@ -96,7 +87,7 @@ class RoomPreview {
       .max(0, amount * this.price + this.servicePrice)).toLocaleString()}₽`;
   }
 
-  #displayInfo = () => {
+  _displayInfo = () => {
     const {
       number, category, price, root,
     } = this;
@@ -133,9 +124,14 @@ class RoomPreview {
     });
   }
 
-  #init = () => {
-    this.#displayPrice(this.departure - this.arrival);
-    this.#displayInfo();
+  _init = () => {
+    this._displayInfo();
+
+    this.datePickerObject = doubleDatePicker({
+      root: this.root
+        .querySelector('.js-double-date-picker'),
+      selectUserCallback: this._handlerInputChange,
+    });
   }
 }
 

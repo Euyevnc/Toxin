@@ -18,7 +18,7 @@ class DatePicker {
       showingCallback: this._handlerCalendarShowing,
     });
 
-    this.arrow.addEventListener('click', this._handlerArrowClick);
+    this._init();
   }
 
   setDates = (arrive, departure) => {
@@ -67,6 +67,15 @@ class DatePicker {
   _handlerArrowClick = () => {
     const { picker } = this;
     picker.showCalendar();
+  }
+
+  _init = () => {
+    this.arrow.addEventListener('click', this._handlerArrowClick);
+
+    const initialArrive = this.root.dataset.initarrive;
+    const initialDeparture = this.root.dataset.initdeparture;
+
+    this.setDates(initialArrive, initialDeparture);
   }
 }
 

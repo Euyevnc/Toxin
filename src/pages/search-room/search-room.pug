@@ -72,6 +72,8 @@ block content
       .search-room__date-picker
         +date-picker({ 
           textfield: { label: 'Даты пребывания в отеле', placeholder: 'Выберете период' },
+          initArrive: 4, 
+          initDeparture:8
         })
       .search-room__guest-counter
         +dropdown({
