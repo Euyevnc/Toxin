@@ -1,4 +1,4 @@
-class DropdownElement {
+class DropdownItem {
   constructor(item, callback) {
     this.root = item;
     this.callback = callback;
@@ -67,4 +67,4 @@ class DropdownElement {
   }
 }
 
-export default DropdownElement;
+export default DropdownItem;

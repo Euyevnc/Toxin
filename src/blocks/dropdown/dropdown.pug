@@ -8,7 +8,7 @@ mixin dropdown({ textfield, items=[ ], displayButtons = false, deleteButton = {}
       +arrow({ direction: 'down' })
     ul.dropdown__menu.js-dropdown__menu.dropdown__menu_hidden
       each item in items
-        li.js-dropdown__element.dropdown__element
+        li.js-dropdown__item.dropdown__item
           if item.concat
             strong.js-dropdown__item-name.dropdown__item-name( data-concat = 'true') #{item.name}
           else

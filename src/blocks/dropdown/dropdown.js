@@ -1,4 +1,4 @@
-import DropdownElement from './dropdownElement';
+import DropdownItem from './dropdownItem';
 import textfield from '../textfield';
 
 class Dropdown {
@@ -155,8 +155,8 @@ class Dropdown {
         .addEventListener('click', this._handlerClearButton);
     }
 
-    this.root.querySelectorAll('.js-dropdown__element').forEach((item) => {
-      const newItem = new DropdownElement(item, this._displayValue);
+    this.root.querySelectorAll('.js-dropdown__item').forEach((item) => {
+      const newItem = new DropdownItem(item, this._displayValue);
       this.items.push(newItem);
     });
   }
