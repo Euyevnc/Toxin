@@ -11,7 +11,9 @@
 @import '../../blocks/room-demo/room-demo.scss';
 @import '../../blocks/range-picker/range-picker.scss';
 
-.search-room {
+$block: '.search-room';
+
+#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -41,7 +43,7 @@
     padding: 30px 0 75px;
     background-color: white;
 
-    .search-room__wrapper {
+    #{$block}__wrapper {
       display: flex;
       justify-content: stretch;
       min-height: calc(100vh - 70px);

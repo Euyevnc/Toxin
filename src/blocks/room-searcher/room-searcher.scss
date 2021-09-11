@@ -16,6 +16,11 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
+  @media (max-width: 380px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -48,9 +53,5 @@
 
   &__submit-button {
     height: 44px;
-  }
-  @media (max-width: 380px) {
-    padding-right: 15px;
-    padding-left: 15px;
   }
 }

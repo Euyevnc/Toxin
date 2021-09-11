@@ -2,7 +2,9 @@
 @import '../../scss/mixin-mi-font';
 @import '../../scss/_mixin-default-font.scss';
 
-.room-demo {
+$block: '.room-demo';
+
+#{$block} {
   max-width: 270px;
   margin-top: 20.5px;
   color: $main-color_lighter;
@@ -72,7 +74,7 @@
         content: '';
       }
 
-      & .room-demo__arrow {
+      & #{$block}__arrow {
         visibility: visible;
         transition-duration: 0.1s;
       }
@@ -118,7 +120,7 @@
       transition-duration: 0.4s;
     }
 
-    & + .room-demo__button {
+    & + #{$block}__button {
       margin-left: 4px;
     }
   }

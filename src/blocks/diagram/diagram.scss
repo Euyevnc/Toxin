@@ -62,6 +62,11 @@
     display: inline-block;
     min-width: 200px;
     margin-left: 30px;
+    @media (max-width: $breakpoint-small) {
+      display: inline-block;
+      min-width: 180px;
+      margin-left: 10px;
+    }
   }
 
   &__legend-circle {
@@ -78,14 +83,5 @@
     margin-top: 6px;
     vertical-align: baseline;
     @include default-font($line: $default-line);
-  }
-}
-@media (max-width: $breakpoint-small) {
-  .diagram {
-    &__legend {
-      display: inline-block;
-      min-width: 180px;
-      margin-left: 10px;
-    }
   }
 }

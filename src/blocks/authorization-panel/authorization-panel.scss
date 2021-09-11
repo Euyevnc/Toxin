@@ -6,23 +6,17 @@
     min-width: 87px;
     height: 34px;
     margin: 0 20px 0 10px;
+    @media (max-width: $breakpoint-large) {
+      min-width: 65px;
+      margin: 10px;
+    }
   }
 
   &__registration-container {
     display: inline-block;
     min-width: 196px;
     height: 34px;
-  }
-}
-
-@media (max-width: $breakpoint-large) {
-  .authorization-panel {
-    &__entry-container {
-      min-width: 65px;
-      margin: 10px;
-    }
-
-    &__registration-container {
+    @media (max-width: $breakpoint-large) {
       min-width: 150px;
       margin: 10px;
     }

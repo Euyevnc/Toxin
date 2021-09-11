@@ -15,6 +15,7 @@ class Dropdown {
     this.menu = this.root.querySelector('.js-dropdown__menu');
 
     this.buttonsPanel = this.root.querySelector('.js-dropdown__buttons');
+    this._init();
   }
 
   _displayValue = () => {
@@ -36,7 +37,7 @@ class Dropdown {
 
     this.input.classList.add('textfield__value_active');
     this.menu.classList.remove('dropdown__menu_hidden');
-    this.arrow.querySelector('.arrow').textContent = 'expand_less';
+    this.arrow.querySelector('.js-arrow').textContent = 'expand_less';
   }
 
   _menuRollUp = () => {
@@ -47,7 +48,7 @@ class Dropdown {
 
     this.input.classList.remove('textfield__value_active');
     this.menu.classList.add('dropdown__menu_hidden');
-    this.arrow.querySelector('.arrow').textContent = 'expand_more';
+    this.arrow.querySelector('.js-arrow').textContent = 'expand_more';
   }
 
   _concat = () => {

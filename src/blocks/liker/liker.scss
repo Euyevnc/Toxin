@@ -1,7 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-.liker {
+$block: '.liker';
+
+#{$block} {
   display: inline-block;
   text-align: center;
 
@@ -22,7 +24,7 @@
   &__item {
     text-align: center;
 
-    & + .liker__item {
+    & + #{$block}__item {
       margin-left: 10px;
     }
   }
@@ -30,7 +32,7 @@
   &__box {
     display: none;
 
-    & + .liker__label {
+    & + #{$block}__label {
       position: relative;
       display: inline-block;
       box-sizing: border-box;
@@ -72,7 +74,7 @@
   }
 
   &__box:checked {
-    & + .liker__label {
+    & + #{$block}__label {
       display: inline-block;
       color: $highlight-color;
       background: $gradient_purple;

@@ -4,7 +4,9 @@
 @import '../../blocks/entry-form/entry-form.scss';
 @import '../../layout/layout-for-hotel.scss';
 
-.login {
+$block: '.login';
+
+#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -36,7 +38,7 @@
     background-position: center center;
     background-size: cover;
 
-    .login__wrapper {
+    #{$block}__wrapper {
       display: flex;
       align-items: center;
       justify-content: center;

@@ -168,7 +168,7 @@ html(lang = 'ru')
     section.ui-kit__forms
       span.ui-kit__logo
         include ./images/logo-icon.svg
-      section.ui-kit__inputs
+      section.js-ui-kit__inputs.ui-kit__inputs
         +textfield({
           label: 'textfield', 
           text: 'text field', 
@@ -221,7 +221,7 @@ html(lang = 'ru')
           placeholder: 'Email', 
           arrow: 'right'
         })
-      section.ui-kit__inputs
+      section.js-ui-kit__inputs.ui-kit__inputs
         +checkboxes({ 
           header: 'Checkbox Buttons', 
           checkboxes: [
@@ -302,7 +302,7 @@ html(lang = 'ru')
           h3.ui-kit__heading pagination
           +pagination({amount: 15})
       section.ui-kit__inputs.ui-kit__inputs_horizontal
-        section.ui-kit__inputs
+        section.js-ui-kit__inputs.ui-kit__inputs
           +dropdown({
             thin: true,
             textfield: {
@@ -361,7 +361,7 @@ html(lang = 'ru')
               }
             ] 
           }) 
-        section.ui-kit__inputs
+        section.js-ui-kit__inputs.ui-kit__inputs
           +dropdown({ 
             textfield: {
               label: 'гости', 
@@ -391,7 +391,7 @@ html(lang = 'ru')
             deleteButton: {text: 'очистить', isHighlight: true}, 
             confirmButton: {text: 'подтвердить', isHighlight: true},
           })
-        section.ui-kit__inputs
+        section.js-ui-kit__inputs.ui-kit__inputs
           +dropdown({ 
             textfield: {
               label: 'гости', 
@@ -680,7 +680,7 @@ html(lang = 'ru')
         mailField: {placeholder: 'Email', type: 'email'},
         passwordField: {placeholder: 'Пароль', type: 'password'}
       })
-      .ui-kit__calendar
+      .js-ui-kit__calendar.ui-kit__calendar
       +room-demo({ 
         number: 888, 
         category: 'люкс', 

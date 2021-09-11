@@ -36,7 +36,7 @@ function uiKitInit() {
 
   dateMaskedInput({
     root: document
-      .querySelector('.ui-kit__inputs .js-date-masked-textfield'),
+      .querySelector('.js-ui-kit__inputs .js-date-masked-textfield'),
   });
 
   roomSearcher({
@@ -78,7 +78,7 @@ function uiKitInit() {
     const calendar = document
       .querySelector('.js-ui-datepicker').cloneNode(true);
     const contForCalendar = document
-      .querySelector('.ui-kit__calendar');
+      .querySelector('.js-ui-kit__calendar');
     contForCalendar.appendChild(calendar);
     calendar.style.display = 'block';
     calendar.style.pointerEvents = 'none';

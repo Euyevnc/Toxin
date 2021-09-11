@@ -45,13 +45,13 @@ class DatePicker {
 
   _handlerCalendarShowing = () => {
     this.arrow.removeEventListener('click', this._handlerArrowClick);
-    this.arrow.querySelector('.arrow').textContent = 'expand_less';
+    this.arrow.querySelector('.js-arrow').textContent = 'expand_less';
 
     this._displayValue();
   }
 
   _handlerCalendarHiding = (e) => {
-    this.arrow.querySelector('.arrow').textContent = 'expand_more';
+    this.arrow.querySelector('.js-arrow').textContent = 'expand_more';
     if (e.detail.input === this.input) {
       document.addEventListener('click', this._handlerDocClick);
     } else {

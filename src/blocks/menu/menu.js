@@ -12,7 +12,7 @@ class Menu {
     const submenu = element.querySelector('.js-menu__submenu');
     element.classList.toggle('menu__element_active');
     submenu.classList.toggle('menu__submenu_active');
-    element.querySelector('.arrow').textContent = element
+    element.querySelector('.js-arrow').textContent = element
       .classList.contains('menu__element_active')
       ? 'expand_less'
       : 'expand_more';

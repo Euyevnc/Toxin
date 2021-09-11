@@ -1,7 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-.radios {
+$block: '.radios';
+
+#{$block} {
   &__header {
     @include default-font(
       $main-color_darkest,
@@ -23,7 +25,7 @@
   &__checkbox {
     display: none;
 
-    & + .radios__title {
+    & + #{$block}__title {
       @include default-font(
         $color: $main-color_lighter,
         $line: $size-middle + 6
@@ -53,7 +55,7 @@
   }
 
   &__checkbox:checked {
-    & + .radios__title {
+    & + #{$block}__title {
       color: $main-color;
 
       &::before {

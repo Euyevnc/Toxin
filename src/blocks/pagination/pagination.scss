@@ -1,7 +1,9 @@
 @import '../arrow/arrow.scss';
 @import '../../scss/mixin-default-font';
 
-.pagination {
+$block: '.pagination';
+
+#{$block} {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +42,7 @@
     &_type_arrow {
       background: $gradient_green;
 
-      & .pagination__link {
+      & #{$block}__link {
         color: white;
       }
     }
@@ -48,7 +50,7 @@
     &_active {
       background: $gradient_purple;
 
-      & .pagination__link {
+      & #{$block}__link {
         color: white;
       }
     }

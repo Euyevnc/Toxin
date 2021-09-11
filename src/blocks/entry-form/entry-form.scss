@@ -14,6 +14,10 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
+  @media (max-width: 380px) {
+    padding: 40px 20px 30px;
+  }
+
   &__text {
     @include default-font($color: $main-color_darkest);
 
@@ -58,8 +62,5 @@
     &_for_regist {
       min-width: 99px;
     }
-  }
-  @media (max-width: 380px) {
-    padding: 40px 20px 30px;
   }
 }

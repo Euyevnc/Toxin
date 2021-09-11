@@ -1,11 +1,13 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-.rate-stars {
+$block: '.rate-stars';
+
+#{$block} {
   display: inline-block;
   vertical-align: bottom;
 
-  & + .rate-stars {
+  & + #{$block} {
     margin-left: 20px;
   }
 
@@ -39,7 +41,7 @@
     background-clip: text;
 
     &_outlined {
-      & .rate-stars__star_colorized {
+      & #{$block}__star_colorized {
         position: absolute;
         top: 0;
         left: 0;

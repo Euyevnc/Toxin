@@ -1,7 +1,9 @@
 @import '../../scss/mixin-mi-font';
 @import '../../scss/mixin-default-font';
 
-.tumblers {
+$block: '.tumblers';
+
+#{$block} {
   @include default-font($main-color, $size-small + 2, $size-largest, 400, none);
 
   &__header {
@@ -50,7 +52,7 @@
     display: none;
 
     &:checked {
-      & + .tumblers__label {
+      & + #{$block}__label {
         border: 1px solid $highlight-color;
         transition-duration: 0.5s;
 

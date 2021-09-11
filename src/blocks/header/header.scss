@@ -11,6 +11,10 @@
   height: 100%;
   background-color: transparent;
 
+  @media (max-width: $breakpoint-middle) {
+    padding: 10px 10px;
+  }
+
   &__sign {
     flex-shrink: 0;
   }
@@ -26,11 +30,5 @@
     max-height: 13px;
     margin-left: 12.5px;
     vertical-align: middle;
-  }
-}
-
-@media (max-width: $breakpoint-middle) {
-  .header {
-    padding: 10px 10px;
   }
 }

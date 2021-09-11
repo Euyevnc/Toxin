@@ -10,8 +10,22 @@
   min-height: 70px;
   background-color: white;
 
+  @media (max-width: $breakpoint-small) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 367px;
+    row-gap: 20px;
+  }
+
   &__sign {
     display: none;
+    align-items: center;
+    column-gap: 12.5px;
+    @media (max-width: $breakpoint-small) {
+      display: flex;
+    }
   }
 
   &__text {
@@ -19,26 +33,5 @@
 
     margin: 0;
     text-align: center;
-  }
-}
-
-@media (max-width: $breakpoint-small) {
-  .cellar {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .cellar {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 367px;
-    row-gap: 20px;
-
-    &__sign {
-      display: block;
-    }
   }
 }

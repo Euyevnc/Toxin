@@ -1,13 +1,15 @@
 @import '../../scss/mixin-fa-font';
 
-.checkbox {
+$block: '.checkbox';
+
+#{$block} {
   display: inline-block;
   @include default-font($main-color_lighter, $size-middle, $default-line);
 
   &__checkbox {
     display: none;
 
-    & + .checkbox__label {
+    & + #{$block}__label {
       display: inline-block;
       min-height: 20px;
       user-select: none;
@@ -39,7 +41,7 @@
   }
 
   &__checkbox:checked {
-    & + .checkbox__label {
+    & + #{$block}__label {
       &::before {
         border: 1px solid $highlight-color;
         content: '\f00c';
@@ -66,7 +68,7 @@
   }
 
   &_with_subtitle {
-    .checkbox__main-text {
+    #{$block}__main-text {
       margin-bottom: 5px;
       color: $main-color;
       font-weight: 700;

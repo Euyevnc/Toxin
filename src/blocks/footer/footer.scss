@@ -1,7 +1,9 @@
-@import '../../scss/mixin-default-font';
 @import '../textfield/textfield.scss';
+@import '../../scss/mixin-default-font';
 
-.footer {
+$block: '.footer';
+
+#{$block} {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -9,6 +11,15 @@
   width: 100%;
   padding: 90px 0 80px;
   background-color: #fff;
+
+  @media (max-width: $breakpoint-middle) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @media (max-width: $breakpoint-small) {
+    display: none;
+  }
 
   &__heading {
     margin: 0 0 22px;
@@ -21,16 +32,37 @@
       none,
       uppercase
     );
+
+    @media (max-width: $breakpoint-large) {
+      margin-bottom: 15px;
+      font-size: $size-small;
+    }
+
+    @media (max-width: $breakpoint-middle) {
+      text-align: center;
+    }
   }
 
   &__block {
     margin: 14px 0 0;
     white-space: 0;
+    @media (max-width: $breakpoint-large) {
+      margin: 14px 0 0;
+      white-space: 0;
+    }
+
+    @media (max-width: $breakpoint-middle) {
+      max-width: none;
+      text-align: center;
+    }
 
     &_width_wide {
       max-width: 260px;
+      @media (max-width: $breakpoint-large) {
+        max-width: 150px;
+      }
 
-      & .footer__heading {
+      & #{$block}__heading {
         margin-bottom: 18px;
       }
 
@@ -41,6 +73,9 @@
 
     &_width_slim {
       min-width: 160px;
+      @media (max-width: $breakpoint-large) {
+        min-width: 100px;
+      }
     }
   }
 
@@ -71,6 +106,12 @@
     min-height: 18px;
     margin-bottom: 20px;
     list-style-type: none;
+    @media (max-width: $breakpoint-large) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: $breakpoint-middle) {
+      text-align: center;
+    }
   }
 
   &__link {
@@ -83,6 +124,10 @@
     text-align: left;
     text-decoration: none;
 
+    @media (max-width: $breakpoint-large) {
+      font-size: $size-small - 2;
+    }
+
     &:hover {
       color: $main-color;
     }
@@ -93,71 +138,15 @@
     margin: 0 0 23px;
     vertical-align: baseline;
     @include default-font($color: $main-color, $line: $size-largest);
+
+    @media (max-width: $breakpoint-large) {
+      font-size: $size-small;
+    }
   }
 
   .textfield__arrow {
     .arrow {
       color: $highlight-color;
     }
-  }
-}
-
-@media (max-width: $breakpoint-large) {
-  .footer {
-    &__block {
-      margin: 14px 0 0;
-      white-space: 0;
-
-      &_width_wide {
-        max-width: 150px;
-      }
-
-      &_width_slim {
-        min-width: 100px;
-      }
-    }
-
-    &__list-element {
-      margin-bottom: 10px;
-    }
-
-    &__heading {
-      margin-bottom: 15px;
-      font-size: $size-small;
-    }
-
-    &__link {
-      font-size: $size-small - 2;
-    }
-
-    &__inscription {
-      font-size: $size-small;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-middle) {
-  .footer {
-    flex-direction: column;
-    align-items: stretch;
-
-    &__block {
-      max-width: none;
-      text-align: center;
-    }
-
-    &__heading {
-      text-align: center;
-    }
-
-    &__list-element {
-      text-align: center;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    display: none;
   }
 }

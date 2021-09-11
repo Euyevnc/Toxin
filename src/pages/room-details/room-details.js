@@ -10,7 +10,7 @@ function handlerDocumentDomLoaded() {
   /* eslint-disable no-unused-vars */
   header({ root: document.querySelector('.js-header') });
   diagram({ root: document.querySelector('.js-diagram') });
-  roomPreview({ root: document.querySelector('.room-preview') });
+  roomPreview({ root: document.querySelector('.js-room-preview') });
   document.querySelectorAll('.js-review').forEach((reviewElem) => {
     review({ root: reviewElem });
   });

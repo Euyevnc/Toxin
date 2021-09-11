@@ -68,10 +68,11 @@ class DoubleDatePicker {
 
     if (currentInput === this.arriveInput) {
       this.arriveArrow.removeEventListener('click', this._handlerArrowClick);
-      this.arriveArrow.querySelector('.arrow').textContent = 'expand_less';
+      this.arriveArrow.querySelector('.js-arrow').textContent = 'expand_less';
     } else if (e.detail.input === this.departureInput) {
       this.departureArrow.removeEventListener('click', this._handlerArrowClick);
-      this.departureArrow.querySelector('.arrow').textContent = 'expand_less';
+      this.departureArrow.querySelector('.js-arrow')
+        .textContent = 'expand_less';
     }
   }
 
@@ -81,18 +82,20 @@ class DoubleDatePicker {
     const currentInput = e.detail.input;
     if (currentInput === this.arriveInput) {
       this.processingArrow = this.arriveArrow;
-      this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
+      this.arriveArrow.querySelector('.js-arrow').textContent = 'expand_more';
       document.addEventListener('click', this._handlerDocClick);
     } else if (currentInput === this.departureInput) {
       this.processingArrow = this.departureArrow;
-      this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
+      this.departureArrow.querySelector('.js-arrow')
+        .textContent = 'expand_more';
       document.addEventListener('click', this._handlerDocClick);
     } else {
       this.arriveArrow.addEventListener('click', this._handlerArrowClick);
       this.departureArrow.addEventListener('click', this._handlerArrowClick);
 
-      this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
-      this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
+      this.arriveArrow.querySelector('.js-arrow').textContent = 'expand_more';
+      this.departureArrow.querySelector('.js-arrow')
+        .textContent = 'expand_more';
     }
   }
 

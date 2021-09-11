@@ -1,7 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../checkbox/checkbox.scss';
 
-.checkboxes {
+$block: '.checkboxes';
+
+#{$block} {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -47,11 +49,11 @@
   }
 
   &_shrinked {
-    & .checkboxes__container {
+    & #{$block}__container {
       display: none;
     }
 
-    & .checkboxes__arrow {
+    & #{$block}__arrow {
       transform: none;
     }
   }

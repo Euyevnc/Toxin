@@ -4,7 +4,9 @@
 @import '../../blocks/cellar/cellar.scss';
 @import '../../blocks/registration-form/registration-form.scss';
 
-.registration {
+$block: '.registration';
+
+#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -36,7 +38,7 @@
     background-position: center center;
     background-size: cover;
 
-    .registration__wrapper {
+    #{$block}__wrapper {
       display: flex;
       align-items: center;
       justify-content: center;

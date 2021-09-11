@@ -15,7 +15,7 @@ function handlerDocumentDomLoaded() {
 
   datePicker({
     root: document
-      .querySelector('.date-picker'),
+      .querySelector('.js-date-picker'),
   });
 
   rangePicker({
@@ -28,7 +28,7 @@ function handlerDocumentDomLoaded() {
   });
 
   const expandingCheckboxes = document
-    .querySelector('.search-room__facilities .js-checkboxes');
+    .querySelector('.js-search-room__facilities .js-checkboxes');
   checkboxes({ root: expandingCheckboxes });
 
   document.querySelectorAll('.js-room-demo').forEach((demo) => {
