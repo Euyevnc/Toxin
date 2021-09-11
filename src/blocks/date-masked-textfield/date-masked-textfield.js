@@ -1,16 +1,12 @@
-import textfield from '../textfield';
-
 import 'jquery';
 import '../../plugins/jquery.maskinput.min';
+
+import textfield from '../textfield';
 
 class DateMaskedTextfield {
   constructor({ root }) {
     this.textfield = textfield({ root: root.querySelector('.js-textfield') });
     this.input = this.textfield.getInput();
-    this.#init();
-  }
-
-  #init = () => {
     $(this.input).mask('99.99.9999');
   }
 

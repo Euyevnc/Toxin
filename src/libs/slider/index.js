@@ -8,10 +8,10 @@ class RangeSlider {
     this.parent = parent;
     this.config = config;
     this.callback = callback;
-    this.init();
+    this._init();
   }
 
-  init() {
+  _init() {
     const { parent, config, callback } = this;
 
     this.sliderObject = parent.rangeSlider(config);

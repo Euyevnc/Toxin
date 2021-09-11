@@ -1,7 +1,6 @@
 @import '../../scss/mixin-default-font';
+@import '../../scss/_mixin-mi-font.scss';
 /* stylelint-disable no-descending-specificity */
-
-//Стили написал к уже готовому плагину, так что БЭМа тут, понятно, нет
 
 .ui-datepicker {
   z-index: 100;
@@ -191,5 +190,9 @@
       text-transform: uppercase;
       cursor: pointer;
     }
+  }
+
+  & .material-icons {
+    @include mi-font($size: 24px);
   }
 }

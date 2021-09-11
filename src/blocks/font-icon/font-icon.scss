@@ -1,25 +1,27 @@
 @import '../../scss/_mixin-default-font.scss';
 
-.font-icon__container {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 50px;
-}
+.font-icon {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
 
-.font-icon__tag {
-  display: inline-block;
-  margin-right: 30px;
-  @include default-font($decor: none, $weight: 400);
+  &__tag {
+    display: inline-block;
+    margin-right: 30px;
+    @include default-font($decor: none, $weight: 400);
 
-  text-align: left;
-  vertical-align: top;
-  opacity: 0.25;
-}
+    text-align: left;
+    vertical-align: top;
+    opacity: 0.25;
+  }
 
-.font-icon__text {
-  display: inline-block;
-  width: 377px;
-  margin: 0;
-  color: #1f2041;
-  vertical-align: middle;
+  &__text {
+    display: inline-block;
+    width: 377px;
+    margin: 0;
+    color: #1f2041;
+    vertical-align: middle;
+  }
 }

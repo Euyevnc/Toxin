@@ -8,10 +8,10 @@ class RoomDemo {
     this.arrowPrev = root.querySelector('.js-room-demo__arrow_left');
     this.arrowNext = root.querySelector('.js-room-demo__arrow_right');
 
-    this.#init();
+    this._init();
   }
 
-  #init = () => {
+  _init = () => {
     const {
       buttons, imgs, arrowPrev, arrowNext,
     } = this;

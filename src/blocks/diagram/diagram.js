@@ -1,5 +1,7 @@
 import Chart from 'chart.js';
 
+import DiagramSection from './diagramSection';
+
 class Diagram {
   constructor({ root }) {
     this.root = root;
@@ -11,19 +13,19 @@ class Diagram {
     this.sections = [...this.legendItems]
       .map((item) => new DiagramSection(item));
 
-    this.#init();
+    this._init();
   }
 
-  #init = () => {
+  _init = () => {
     const { canvas } = this;
     const ctxM = canvas.getContext('2d');
     const amounts = this.sections.map((item) => item.amount);
     const names = this.sections.map((item) => item.name);
     const gradients = this.sections
-      .map((item) => this.#createGradient(ctxM, item.colors));
+      .map((item) => this._createGradient(ctxM, item.colors));
 
     const total = this.sections.reduce((prev, cur) => prev + cur.amount, 0);
-    this.#fillTheLabel(total);
+    this._fillTheLabel(total);
 
     const myChart = new Chart(canvas, {
       type: 'doughnut',
@@ -53,7 +55,7 @@ class Diagram {
     this.diagram = myChart;
   }
 
-  #createGradient = (context, colors) => {
+  _createGradient = (context, colors) => {
     const newGrad = context.createLinearGradient(155, 0, 155, 120);
 
     const [startGradient] = colors;
@@ -64,7 +66,7 @@ class Diagram {
     return newGrad;
   }
 
-  #fillTheLabel = (total) => {
+  _fillTheLabel = (total) => {
     let title;
     [, title] = this.subjectForms;
 
@@ -77,24 +79,6 @@ class Diagram {
 
     this.root.querySelector('.js-diagram__reviews-amount').textContent = total;
     this.root.querySelector('.js-diagram__subtitle').textContent = title;
-  }
-}
-
-class DiagramSection {
-  constructor(root) {
-    this.root = root;
-    this.circle = root.querySelector('.js-diagram__legend-circle');
-    this.plate = root.querySelector('.js-diagram__legend-lettering');
-    this.amount = Number(root.dataset.amount);
-    this.name = this.plate.dataset.name;
-    this.plate.textContent = this.name;
-
-    this.colors = this.circle.dataset.colors.split(', ');
-    [this.startGradient] = this.colors;
-    [, this.endGradient] = this.colors;
-
-    this.circle.style.background = `linear-gradient(180deg, 
-      ${this.startGradient} 0%, ${this.endGradient} 100%)`;
   }
 }
 

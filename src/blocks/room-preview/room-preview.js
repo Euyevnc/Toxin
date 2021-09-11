@@ -12,6 +12,7 @@ class RoomPreview {
     this.datePickerObject = doubleDatePicker({
       root: this.root
         .querySelector('.js-double-date-picker'),
+      selectUserCallback: this.handlerInputChange,
     });
 
     this.arrival = 4;
@@ -35,17 +36,12 @@ class RoomPreview {
     this.services = this.#extractServicesObject();
     this.servicePrice = this.#countService();
 
-    this.root.querySelectorAll('.js-double-date-picker input')
-      .forEach((input) => {
-        input.addEventListener('ondateselect', this.handlerInputChange);
-      });
-
     this.#init();
   }
 
-  handlerInputChange = (e) => {
-    const arrival = new Date(e.detail.startDate);
-    const departure = new Date(e.detail.endDate);
+  handlerInputChange = (data) => {
+    const arrival = new Date(data.startDate);
+    const departure = new Date(data.endDate);
 
     const days = (departure - arrival) / (24 * 3600000);
     this.#displayPrice(days);

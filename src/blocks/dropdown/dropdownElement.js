@@ -1,6 +1,4 @@
 class DropdownElement {
-  #value
-
   constructor(item, callback) {
     this.root = item;
     this.callback = callback;
@@ -9,28 +7,26 @@ class DropdownElement {
     this.plus = this.root.querySelector('.js-dropdown__tumbler_plus');
     this.number = this.root.querySelector('.js-dropdown__number');
 
+    this.min = Number(this.minus.dataset.min);
+    this.max = Number(this.plus.dataset.max);
+
     if (this.name.dataset.concat) this.concat = true;
     else {
       this.nameForms = this.name.dataset.nameForms.split(', ');
     }
 
-    this.min = Number(this.minus.dataset.min);
-    this.max = Number(this.plus.dataset.max);
-
-    this.minus.addEventListener('click', this.handlerMinusClick);
-    this.minus.addEventListener('keydown', this.handlerMinusKeydown);
-    this.plus.addEventListener('click', this.handlerPlusClick);
-    this.plus.addEventListener('keydown', this.handlerPlusKeydown);
     this.value = Number(this.number.dataset.init) || this.min;
+
+    this._init();
   }
 
   get value() {
-    return this.#value;
+    return this._value;
   }
 
   set value(number) {
     if (number > this.max || number < this.min) return;
-    this.#value = number;
+    this._value = number;
     this.value === this.min
       ? this.minus.classList.add('dropdown__tumbler_depricated')
       : this.minus.classList.remove('dropdown__tumbler_depricated');
@@ -41,26 +37,33 @@ class DropdownElement {
     this.callback();
   }
 
-  handlerPlusClick = () => {
+  _handlerPlusClick = () => {
     const newValue = this.value + 1;
     this.value = newValue;
   }
 
-  handlerMinusClick = () => {
+  _handlerMinusClick = () => {
     const newValue = this.value - 1;
     this.value = newValue;
   }
 
-  handlerPlusKeydown = (e) => {
+  _handlerPlusKeydown = (e) => {
     if (e.code !== 'Enter') return;
     const newValue = this.value + 1;
     this.value = newValue;
   }
 
-  handlerMinusKeydown = (e) => {
+  _handlerMinusKeydown = (e) => {
     if (e.code !== 'Enter') return;
     const newValue = this.value - 1;
     this.value = newValue;
+  }
+
+  _init = () => {
+    this.minus.addEventListener('click', this._handlerMinusClick);
+    this.minus.addEventListener('keydown', this._handlerMinusKeydown);
+    this.plus.addEventListener('click', this._handlerPlusClick);
+    this.plus.addEventListener('keydown', this._handlerPlusKeydown);
   }
 }
 

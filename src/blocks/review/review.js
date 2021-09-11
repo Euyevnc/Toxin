@@ -8,17 +8,13 @@ class Review {
     this.local_years = this.timer.dataset.localYears;
     this.local_ago = this.timer.dataset.localAgo;
 
-    this.#init();
-  }
-
-  #init = () => {
     const daysAgo = Math
       .floor((new Date() - new Date(this.date)) / (24 * 3600000));
 
-    this.timer.textContent = `${this.#parseDate(daysAgo)} ${this.local_ago}`;
+    this.timer.textContent = `${this._parseDate(daysAgo)} ${this.local_ago}`;
   }
 
-  #parseDate = (amountOfDays) => {
+  _parseDate = (amountOfDays) => {
     let days = amountOfDays;
     const years = parseInt(days / 340, 10);
     days -= years * 330;

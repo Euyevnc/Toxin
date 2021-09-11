@@ -1,22 +1,8 @@
-// jscs:disable maximumLineLength
-/* jscs:disable requireCamelCaseOrUpperCaseIdentifiers */
-/*!
- * jQuery UI Datepicker 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
+import {
+  HIDE_CALENDAR_EVENT_NAME,
+  SHOW_CALENDAR_EVENT_NAME,
+} from '../../assets/consts';
 
-// >>label: Datepicker
-// >>group: Widgets
-// >>description: Displays a calendar from an input or inline for selecting dates.
-// >>docs: http://api.jqueryui.com/datepicker/
-// >>demos: http://jqueryui.com/datepicker/
-// >>css.structure: ../../themes/base/core.css
-// >>css.structure: ../../themes/base/datepicker.css
-// >>css.theme: ../../themes/base/theme.css
 
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
@@ -828,7 +814,7 @@
 
         $.datepicker._curInst = inst;
       }
-      const event = new CustomEvent('calendarshowing', { detail: { input }, bubbles: true });
+      const event = new CustomEvent(SHOW_CALENDAR_EVENT_NAME, { detail: { input }, bubbles: true });
       document.dispatchEvent(event);
     },
 
@@ -858,9 +844,10 @@
       inst.dpDiv[`${this._get(inst, 'isRTL') ? 'add' : 'remove'
 			 }Class`]('ui-datepicker-rtl');
 
-      if (inst === $.datepicker._curInst && $.datepicker._datepickerShowing && $.datepicker._shouldFocusInput(inst)) {
-        inst.input.trigger('focus');
-      }
+    //   if (inst === $.datepicker._curInst && $.datepicker._datepickerShowing && $.datepicker._shouldFocusInput(inst)) {
+    //     console.log('focus')
+    //     inst.input.trigger('focus');
+    //   }
 
       // Deffered render of the years select (to avoid flashes on Firefox)
       if (inst.yearshtml) {
@@ -873,6 +860,7 @@
           origyearshtml = inst.yearshtml = null;
         }, 0);
       }
+
     },
 
     // #6694 - don't focus the input if it's already focused
@@ -966,7 +954,7 @@
         }
         this._inDialog = false;
       }
-      const event = new CustomEvent('calendarhiding', { detail: { input, datepickerShowing }, bubbles: true });
+      const event = new CustomEvent(HIDE_CALENDAR_EVENT_NAME, { detail: { input, datepickerShowing }, bubbles: true });
       document.dispatchEvent(event);
     },
 
@@ -1002,9 +990,11 @@
       if (this._isDisabledDatepicker(target[0])) {
         return;
       }
+
       this._adjustInstDate(inst, offset
 			+ (period === 'M' ? this._get(inst, 'showCurrentAtPos') : 0), // undo positioning
       period);
+
       this._updateDatepicker(inst);
     },
 
@@ -1609,6 +1599,7 @@
       if ((origMonth !== inst.selectedMonth || origYear !== inst.selectedYear) && !noChange) {
         this._notifyChange(inst);
       }
+
       this._adjustInstDate(inst);
       if (inst.input) {
         inst.input.val(clear ? '' : this._formatDate(inst));

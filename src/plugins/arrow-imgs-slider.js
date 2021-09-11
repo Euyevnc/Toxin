@@ -1,6 +1,5 @@
 function arrowImgsSlider(data) {
   const slider = new ArrowImgsSlider(data);
-  slider.init();
   return slider;
 }
 
@@ -10,60 +9,51 @@ class ArrowImgsSlider {
   }) {
     this.arrowPrev = arrowPrev;
     this.arrowNext = arrowNext;
-    this.imags = imgs;
     this.buttons = buttons;
+    this.images = imgs;
     this.disactImgClass = imgDisactiveClass;
     this.disactBtnClass = buttonDisactiveClass;
+    this.currentIndex = 0;
+
+    arrowPrev.addEventListener('click', this._handlerArrowPrevClick);
+    arrowNext.addEventListener('click', this._handlerArrowNextClick);
   }
 
-  init() {
-    const { arrowPrev } = this;
-    const { arrowNext } = this;
+  _handlerArrowPrevClick = () => {
+    const {images, currentIndex, buttons, disactImgClass,  disactBtnClass} = this
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) newIndex = images.length - 1;
 
-    const imgs = this.imags;
-    const { buttons } = this;
-    const disactImg = this.disactImgClass;
-    const disactBtn = this.disactBtnClass;
+    images.forEach((image, iIndex) => {
+      if (iIndex === newIndex) {
+        image.classList.remove(disactImgClass);
+        buttons[iIndex].classList.remove(disactBtnClass);
+      } else {
+        image.classList.add(disactImgClass);
+        buttons[iIndex].classList.add(disactBtnClass);
+      }
+    });
 
-    let currentIndex = 0;
-    const { length } = imgs;
+    this.currentIndex = newIndex;
+  }
 
-    arrowPrev.addEventListener('click', handlerArrowPrevClick);
-    arrowNext.addEventListener('click', handlerArrowNextClick);
+  _handlerArrowNextClick = () => {
+    const {images, currentIndex, buttons, disactImgClass,  disactBtnClass} = this
 
-    function handlerArrowPrevClick() {
-      let newIndex = currentIndex - 1;
-      if (newIndex < 0) newIndex = length - 1;
+    let newIndex = currentIndex + 1;
+    if (newIndex >= images.length) newIndex = 0;
 
-      imgs.forEach((image, iIndex) => {
-        if (iIndex === newIndex) {
-          image.classList.remove(disactImg);
-          buttons[iIndex].classList.remove(disactBtn);
-        } else {
-          image.classList.add(disactImg);
-          buttons[iIndex].classList.add(disactBtn);
-        }
-      });
+    images.forEach((image, iIndex) => {
+      if (iIndex === newIndex) {
+        image.classList.remove(disactImgClass);
+        buttons[iIndex].classList.remove(disactBtnClass);
+      } else {
+        image.classList.add(disactImgClass);
+        buttons[iIndex].classList.add(disactBtnClass);
+      }
+    });
 
-      currentIndex = newIndex;
-    }
-
-    function handlerArrowNextClick() {
-      let newIndex = currentIndex + 1;
-      if (newIndex >= length) newIndex = 0;
-
-      imgs.forEach((image, iIndex) => {
-        if (iIndex === newIndex) {
-          image.classList.remove(disactImg);
-          buttons[iIndex].classList.remove(disactBtn);
-        } else {
-          image.classList.add(disactImg);
-          buttons[iIndex].classList.add(disactBtn);
-        }
-      });
-
-      currentIndex = newIndex;
-    }
+    this.currentIndex = newIndex;
   }
 }
 

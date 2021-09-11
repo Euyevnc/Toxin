@@ -5,17 +5,17 @@ class Checkboxes {
     this.expanding = 'expanding' in this.root.dataset;
     this.expanded = 'expandedInitially' in this.root.dataset;
     if (this.expanding) {
-      this.header.addEventListener('click', this.handlerHeaderClick);
-      this.header.addEventListener('keydown', this.handlerHeaderKeydown);
+      this.header.addEventListener('click', this._handlerHeaderClick);
+      this.header.addEventListener('keydown', this._handlerHeaderKeydown);
     }
   }
 
-  handlerHeaderClick = () => {
+  _handlerHeaderClick = () => {
     this.root.classList.toggle('checkboxes_shrinked');
     this.expanded = !this.expanded;
   }
 
-  handlerHeaderKeydown = (e) => {
+  _handlerHeaderKeydown = (e) => {
     if (e.code !== 'Enter') return;
     this.root.classList.toggle('checkboxes_shrinked');
     this.expanded = !this.expanded;

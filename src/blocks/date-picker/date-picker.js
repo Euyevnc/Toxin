@@ -1,35 +1,37 @@
 import Picker from '../../libs/date-picker';
-
 import textfield from '../textfield';
 
 class DatePicker {
-  constructor({ root }) {
+  constructor({ root, selectUserCallback }) {
     this.root = root;
     this.textfield = textfield({ root: root.querySelector('.js-textfield') });
 
     this.input = this.textfield.getInput();
     this.arrow = root.querySelector('.js-date-picker__arrow');
 
+    this.userCallback = selectUserCallback;
+
     this.picker = new Picker({
       input: this.input,
-      updateHandler: this.displayValue,
-      hidingCallback: this.handlerCalendarHiding,
-      showingCallback: this.handlerCalendarShowing,
+      updateHandler: this._updateHandler,
+      hidingCallback: this._handlerCalendarHiding,
+      showingCallback: this._handlerCalendarShowing,
     });
 
-    this.setDates('', '');
-
-    this.arrow.addEventListener('click', this.handlerArrowClick);
+    this.arrow.addEventListener('click', this._handlerArrowClick);
   }
 
   setDates = (arrive, departure) => {
     const { picker } = this;
     picker.setDates(arrive, departure);
-
-    this.displayValue();
   }
 
-  displayValue = () => {
+  _updateHandler = () => {
+    this._displayValue();
+    if (this.userCallback) this.userCallback(this.picker.getData());
+  };
+
+  _displayValue = () => {
     const valuesIsNotEmpty = this.picker.getData().startDate
     && this.picker.getData().endDate;
 
@@ -41,28 +43,28 @@ class DatePicker {
     }
   }
 
-  handlerCalendarShowing = () => {
-    this.arrow.removeEventListener('click', this.handlerArrowClick);
+  _handlerCalendarShowing = () => {
+    this.arrow.removeEventListener('click', this._handlerArrowClick);
     this.arrow.querySelector('.arrow').textContent = 'expand_less';
 
-    this.displayValue();
+    this._displayValue();
   }
 
-  handlerCalendarHiding = (e) => {
+  _handlerCalendarHiding = (e) => {
     this.arrow.querySelector('.arrow').textContent = 'expand_more';
     if (e.detail.input === this.input) {
-      document.addEventListener('click', this.handlerDocClick);
+      document.addEventListener('click', this._handlerDocClick);
     } else {
-      this.input.addEventListener('click', this.handlerArrowClick);
+      this.input.addEventListener('click', this._handlerArrowClick);
     }
   }
 
-  handlerDocClick = () => {
-    document.removeEventListener('click', this.handlerDocClick);
-    this.arrow.addEventListener('click', this.handlerArrowClick);
+  _handlerDocClick = () => {
+    document.removeEventListener('click', this._handlerDocClick);
+    this.arrow.addEventListener('click', this._handlerArrowClick);
   }
 
-  handlerArrowClick = () => {
+  _handlerArrowClick = () => {
     const { picker } = this;
     picker.showCalendar();
   }

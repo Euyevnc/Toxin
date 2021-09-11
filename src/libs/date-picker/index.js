@@ -1,6 +1,10 @@
 import 'jquery';
 import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
+import {
+  HIDE_CALENDAR_EVENT_NAME,
+  SHOW_CALENDAR_EVENT_NAME,
+} from '../../../assets/consts';
 
 import './date-picker.scss';
 
@@ -43,7 +47,15 @@ class DatePicker {
 
     this.calendarIsShowing = false;
 
-    this.#init();
+    this._init();
+  }
+
+  showCalendar = () => {
+    this.input.datepicker('show');
+  }
+
+  hideCalendar = () => {
+    this.input.datepicker('hide');
   }
 
   getData = () => {
@@ -60,36 +72,29 @@ class DatePicker {
     this.updateHandler();
   };
 
-  showCalendar = () => {
-    this.input.datepicker('show');
-  }
+  _handlerDocShowing =
+    (e) => {
+      if (e.detail.input === this.input[0]) {
+        const { arriveDate, departureDate } = this;
+        this.setDates(arriveDate, departureDate);
+        this.showingCallback(e);
 
-  hideCalendar = () => {
-    this.input.datepicker('hide');
-  }
-
-  handlerDocShowing = (e) => {
-    if (e.detail.input === this.input[0] && !this.calendarIsShowing) {
-      const { arriveDate, departureDate } = this;
-      this.setDates(arriveDate, departureDate);
-
-      this.showingCallback(e);
-
-      document.addEventListener('calendarhiding', this.handlerDocHiding);
-      this.calendarIsShowing = true;
+        document.addEventListener(HIDE_CALENDAR_EVENT_NAME,
+          this._handlerDocHiding);
+        this.calendarIsShowing = true;
+      }
     }
-  }
 
-  handlerDocHiding = (e) => {
+  _handlerDocHiding = (e) => {
     if (!e.detail.datepickerShowing) return;
-
     this.hidingCallback(e);
 
-    document.removeEventListener('calendarhiding', this.handlerDocHiding);
+    document.removeEventListener(HIDE_CALENDAR_EVENT_NAME,
+      this._handlerDocHiding);
     this.calendarIsShowing = false;
   }
 
-  handlerCalendarClick = (ev) => {
+  _handlerCalendarClick = (ev) => {
     if (!this.calendarIsShowing) return;
 
     if (ev.target.closest('.ui-datepicker-button_clear')) {
@@ -99,7 +104,7 @@ class DatePicker {
     }
   }
 
-  #init = () => {
+  _init = () => {
     const { input, params, updateHandler } = this;
     $.datepicker.regional.ru = params;
 
@@ -114,20 +119,18 @@ class DatePicker {
       dateFormat: 'dd M',
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
+      onSelect(...args) {
+        const [,, extensionRange] = args;
         rewriteDates(extensionRange.startDate, extensionRange.endDate);
 
-        updateHandler({ dateText, inst, extensionRange });
-
-        const select = new CustomEvent('ondateselect',
-          { detail: extensionRange });
-        input[0].dispatchEvent(select);
+        updateHandler();
       },
     });
 
     const calendar = document.querySelector('.js-ui-datepicker');
-    calendar.addEventListener('click', this.handlerCalendarClick);
-    document.addEventListener('calendarshowing', this.handlerDocShowing);
+    calendar.addEventListener('click', this._handlerCalendarClick);
+    document.addEventListener(SHOW_CALENDAR_EVENT_NAME,
+      this._handlerDocShowing);
   }
 }
 

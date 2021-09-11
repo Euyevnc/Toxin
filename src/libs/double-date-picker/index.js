@@ -1,6 +1,10 @@
 import $ from 'jquery';
 import '../../plugins/datepicker';
 import '../../plugins/jquery.datepicker.extension.range.min';
+import {
+  HIDE_CALENDAR_EVENT_NAME,
+  SHOW_CALENDAR_EVENT_NAME,
+} from '../../../assets/consts';
 
 import './double-date-picker.scss';
 
@@ -48,7 +52,17 @@ class DoubleDatePicker {
     this.hidingCallback = hidingCallback;
     this.showingCallback = showingCallback;
 
-    this.#init();
+    this._init();
+  }
+
+  showCalendar = (input) => {
+    if (input === this.arriveInput[0]) this.arriveInput.datepicker('show');
+    else this.departureInput.datepicker('show');
+  }
+
+  hideCalendar = () => {
+    this.arriveInput.datepicker('hide');
+    this.departureInput.datepicker('hide');
   }
 
   setDates = (arriveDate, departureDate) => {
@@ -67,40 +81,32 @@ class DoubleDatePicker {
     return extensionRange;
   }
 
-  showCalendar = (input) => {
-    if (input === this.arriveInput[0]) this.arriveInput.datepicker('show');
-    else this.departureInput.datepicker('show');
-  }
-
-  hideCalendar = () => {
-    this.arriveInput.datepicker('hide');
-    this.departureInput.datepicker('hide');
-  }
-
-  handlerDocShowing = (e) => {
+  _handlerDocShowing = (e) => {
     const currentInput = e.detail.input;
 
-    if (currentInput !== this.arriveInput[0]
-      && currentInput !== this.departureInput[0]) return;
+    const isNotOwnEvent = (currentInput !== this.arriveInput[0]
+      && currentInput !== this.departureInput[0]);
+    if (isNotOwnEvent) return;
 
     this.setDates(this.arriveDate, this.departureDate);
 
     this.showingCallback(e);
 
-    document.addEventListener('calendarhiding', this.handlerDocHiding);
+    document.addEventListener(HIDE_CALENDAR_EVENT_NAME, this._handlerDocHiding);
     this.calendarIsShowing = true;
   }
 
-  handlerDocHiding = (e) => {
+  _handlerDocHiding = (e) => {
     if (!e.detail.datepickerShowing) return;
 
     this.hidingCallback(e);
 
-    document.removeEventListener('calendarhiding', this.handlerDocHiding);
+    document.removeEventListener(HIDE_CALENDAR_EVENT_NAME,
+      this._handlerDocHiding);
     this.calendarIsShowing = false;
   }
 
-  handlerPickerClick = (ev) => {
+  _handlerPickerClick = (ev) => {
     if (!this.calendarIsShowing) return;
     const { arriveInput, departureInput } = this;
     if (ev.target.closest('.ui-datepicker-button_clear')) {
@@ -113,7 +119,7 @@ class DoubleDatePicker {
     }
   }
 
-  #init = () => {
+  _init = () => {
     const { arriveInput, departureInput } = this;
 
     const rewriteDates = (arrive, departure) => {
@@ -125,33 +131,29 @@ class DoubleDatePicker {
     arriveInput.datepicker({
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
+      onSelect(...args) {
+        const [,, extensionRange] = args;
         rewriteDates(extensionRange.startDate, extensionRange.endDate);
-        updateHandler({ dateText, inst, extensionRange });
-
-        const select = new CustomEvent('ondateselect',
-          { detail: extensionRange });
-        arriveInput[0].dispatchEvent(select);
+        updateHandler();
       },
     });
 
     departureInput.datepicker({
       minDate: 0,
       range: 'period',
-      onSelect(dateText, inst, extensionRange) {
-        rewriteDates(extensionRange.startDate, extensionRange.endDate);
-        updateHandler({ dateText, inst, extensionRange });
+      onSelect(...args) {
+        const [,, extensionRange] = args;
 
-        const select = new CustomEvent('ondateselect',
-          { detail: extensionRange });
-        departureInput[0].dispatchEvent(select);
+        rewriteDates(extensionRange.startDate, extensionRange.endDate);
+        updateHandler();
       },
     });
 
-    document.addEventListener('calendarshowing', this.handlerDocShowing);
+    document.addEventListener(SHOW_CALENDAR_EVENT_NAME,
+      this._handlerDocShowing);
 
     const picker = document.querySelector('.js-ui-datepicker');
-    picker.addEventListener('click', this.handlerPickerClick);
+    picker.addEventListener('click', this._handlerPickerClick);
   }
 }
 

@@ -3,7 +3,7 @@ import DoublePicker from '../../libs/double-date-picker';
 import textfield from '../textfield';
 
 class DoubleDatePicker {
-  constructor({ root }) {
+  constructor({ root, selectUserCallback }) {
     const arriveContainer = root
       .querySelector('.js-double-date-picker__container_for_first');
     const departureContainer = root
@@ -28,25 +28,27 @@ class DoubleDatePicker {
 
     this.picker = new DoublePicker({
       inputs: [this.arriveInput, this.departureInput],
-      updateHandler: this.displayValues,
-      hidingCallback: this.handlerDocHiding,
-      showingCallback: this.handlerDocShowing,
+      updateHandler: this._updateHandler,
+      hidingCallback: this._handlerCalendarHiding,
+      showingCallback: this._handlerCalendarShowing,
 
     });
 
-    const initialArrive = arriveContainer.dataset.init;
-    const initialDeparture = departureContainer.dataset.init;
-    this.setDates(initialArrive, initialDeparture);
+    this.userCallback = selectUserCallback;
 
-    this.arriveArrow.addEventListener('click', this.handlerArrowClick);
-    this.departureArrow.addEventListener('click', this.handlerArrowClick);
+    this._init();
   }
 
   setDates = (arrive, departure) => {
     this.picker.setDates(arrive, departure);
   }
 
-  displayValues = () => {
+  _updateHandler =() => {
+    this._displayValues();
+    if (this.userCallback) this.userCallback(this.picker.getData());
+  };
+
+  _displayValues = () => {
     const valuesIsNotEmpty = this.picker.getData().startDate
     && this.picker.getData().endDate;
 
@@ -61,49 +63,61 @@ class DoubleDatePicker {
     }
   }
 
-  handlerDocShowing = (e) => {
+  _handlerCalendarShowing = (e) => {
     const currentInput = e.detail.input;
 
     if (currentInput === this.arriveInput) {
-      this.arriveArrow.removeEventListener('click', this.handlerArrowClick);
+      this.arriveArrow.removeEventListener('click', this._handlerArrowClick);
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_less';
     } else if (e.detail.input === this.departureInput) {
-      this.departureArrow.removeEventListener('click', this.handlerArrowClick);
+      this.departureArrow.removeEventListener('click', this._handlerArrowClick);
       this.departureArrow.querySelector('.arrow').textContent = 'expand_less';
     }
   }
 
-  handlerDocHiding = (e) => {
+  _handlerCalendarHiding = (e) => {
     if (!e.detail.datepickerShowing) return;
 
     const currentInput = e.detail.input;
     if (currentInput === this.arriveInput) {
       this.processingArrow = this.arriveArrow;
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
-      document.addEventListener('click', this.handlerDocClick);
+      document.addEventListener('click', this._handlerDocClick);
     } else if (currentInput === this.departureInput) {
       this.processingArrow = this.departureArrow;
       this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
-      document.addEventListener('click', this.handlerDocClick);
+      document.addEventListener('click', this._handlerDocClick);
     } else {
-      this.arriveArrow.addEventListener('click', this.handlerArrowClick);
-      this.departureArrow.addEventListener('click', this.handlerArrowClick);
+      this.arriveArrow.addEventListener('click', this._handlerArrowClick);
+      this.departureArrow.addEventListener('click', this._handlerArrowClick);
 
       this.arriveArrow.querySelector('.arrow').textContent = 'expand_more';
       this.departureArrow.querySelector('.arrow').textContent = 'expand_more';
     }
   }
 
-  handlerDocClick = () => {
-    document.removeEventListener('click', this.handlerDocClick);
-    this.processingArrow.addEventListener('click', this.handlerArrowClick);
+  _handlerDocClick = () => {
+    document.removeEventListener('click', this._handlerDocClick);
+    this.processingArrow.addEventListener('click', this._handlerArrowClick);
   }
 
-  handlerArrowClick = (e) => {
+  _handlerArrowClick = (e) => {
     const input = e.target
       .closest('.js-double-date-picker__container').querySelector('input');
 
     this.picker.showCalendar(input);
+  }
+
+  _init = () => {
+    const initialArrive = this.arriveInput
+      .closest('.js-double-date-picker__container').dataset.init;
+    const initialDeparture = this.arriveInput
+      .closest('.js-double-date-picker__container').dataset.init;
+
+    this.setDates(initialArrive, initialDeparture);
+
+    this.arriveArrow.addEventListener('click', this._handlerArrowClick);
+    this.departureArrow.addEventListener('click', this._handlerArrowClick);
   }
 }
 
