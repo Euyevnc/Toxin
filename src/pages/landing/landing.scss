@@ -5,7 +5,9 @@
 @import '../../blocks/room-searcher/room-searcher.scss';
 @import '../../layout/layout-for-hotel.scss';
 
-.landing {
+$block: '.landing';
+
+#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -37,7 +39,7 @@
     background-position: center center;
     background-size: cover;
 
-    & .landing__wrapper {
+    & #{$block}__wrapper {
       display: flex;
       justify-content: space-between;
       min-height: calc(100vh - 70px);
