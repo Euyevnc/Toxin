@@ -8,19 +8,12 @@ const PATHS = {
   dist: path.join(__dirname, './dist'),
 };
 
-const PAGES = {
-  index: `${PATHS.src}/index.js`,
-};
+const PAGES = { };
 
-const htmlPlugins = [
-  new HtmlWebpackPlugin({
-    chunks: ['common', 'index'],
-    filename: 'index.html',
-    template: `${PATHS.src}/index.pug`,
-  }),
-];
+const htmlPlugins = [];
 
 const PAGES_DIRS = `${PATHS.src}/pages`;
+
 fs.readdirSync(PAGES_DIRS).forEach(
   (item) => {
     const itemPath = `${PATHS.src}/pages/${item}/${item}`;
