@@ -1,5 +1,5 @@
 import 'jquery';
-import '../../plugins/jquery.maskinput.min';
+import 'jquery.maskedinput/src/jquery.maskedinput';
 
 import textfield from '../textfield';
 
