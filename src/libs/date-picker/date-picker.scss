@@ -1,198 +1,144 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/_mixin-mi-font.scss';
-/* stylelint-disable no-descending-specificity */
 
-.ui-datepicker {
-  z-index: 100;
-  display: none;
+.datepicker {
   box-sizing: border-box;
-  width: auto;
-  padding: 19px;
-  background-color: white;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  @include default-font();
+  min-width: 320px;
+  padding: 20px;
 
-  & .ui-widget-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+  &--pointer {
+    display: none;
+  }
+
+  &--nav {
+    height: 24px;
     padding: 0;
-    color: #1f2041;
-    font-weight: 700;
-    font-size: 19px;
+    border: none;
+  }
+
+  &--nav-title {
+    @include default-font($main-color_darkest, 19px, 23px, bold);
+  }
+
+  &--nav-action {
+    @include mi-font(24px);
+
+    color: $highlight-color;
+    line-height: 24px;
+  }
+
+  &--content {
+    padding: 0;
+  }
+
+  &--day-name {
+    @include default-font($highlight-color, 12px, 40px, bold, none, none);
+  }
+
+  &--cell {
+    @include default-font($main-color_lighter, 12px, 40px, 400, none, none);
+
+    min-height: 40px;
+    padding: 0;
     border: none;
 
-    & > * {
-      display: inline-block;
-      line-height: 24px;
-      vertical-align: middle;
+    &.-other-month- {
+      color: $main-color_lightest;
+    }
 
-      &:hover {
-        background-color: white;
-        border: none;
+    &.-current-,
+    &.-current-.-selected- {
+      color: $light-color;
+      font-weight: bold;
+      background: $gradient_green;
+      border-radius: 50%;
+    }
+
+    &.-selected- {
+      color: $light-color;
+      font-weight: bold;
+      background: $gradient_purple;
+      border-radius: 50%;
+    }
+
+    &.-range-from- {
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #bc9cff;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        opacity: 0.25;
+        content: '';
       }
     }
 
-    & .material-icons {
-      top: 0;
-      margin-top: 0;
-      color: #bc9cff;
-      line-height: 24px;
-      cursor: pointer;
+    &.-range-to- {
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #bc9cff;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        opacity: 0.25;
+        content: '';
+      }
+    }
+
+    &.-in-range-,
+    &.-other-month-.-in-range- {
+      color: $main-color_lighter;
+      background: linear-gradient(
+        180deg,
+        rgba(188, 156, 255, 0.25) 0%,
+        rgba(139, 164, 249, 0.25) 100%
+      );
+      border-radius: 0;
+    }
+
+    &.-focus-,
+    &.-other-month-.-focus-,
+    &.-disabled-.-focus-,
+    &.-current-.-focus- {
+      color: $light-color;
+      font-weight: bold;
+      background: $gradient_purple_depr;
+      border: none;
+      border-radius: 50%;
+    }
+
+    &.-focus-.-in-range- {
+      border-radius: 0;
     }
   }
 
-  .ui-datepicker-calendar {
-    border-collapse: collapse;
-
-    & thead {
-      & th {
-        padding: 0;
-
-        & span {
-          display: inline-block;
-          width: 40px;
-          height: 40px;
-          padding: 0;
-          color: rgba(31, 32, 65, 0.5);
-          color: #bc9cff;
-          font-size: 12px;
-          line-height: 40px;
-          text-align: center;
-          background-color: white;
-          border: none;
-          border-radius: 50%;
-        }
-      }
-    }
-
-    & tbody {
-      & td {
-        padding: 0;
-        opacity: 1;
-
-        &.ui-state-disabled {
-          & .ui-state-default {
-            color: rgba(31, 32, 65, 0.5);
-          }
-        }
-
-        &.ui-datepicker-other-month {
-          & .ui-state-default {
-            color: rgba(31, 32, 65, 0.25);
-          }
-        }
-
-        & .ui-state-default {
-          display: inline-block;
-          width: 40px;
-          height: 40px;
-          color: rgba(31, 32, 65, 0.5);
-          font-size: 12px;
-          line-height: 40px;
-          text-align: center;
-          text-decoration: none;
-          background-color: white;
-          border: none;
-          border-radius: 50%;
-        }
-
-        & .ui-state-highlight {
-          color: white !important;
-          font-weight: bold;
-          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-        }
-
-        &.selected {
-          & .ui-state-active {
-            background: linear-gradient(
-              180deg,
-              rgba(188, 156, 255, 0.25) 0%,
-              rgba(139, 164, 249, 0.25) 100%
-            );
-            border-radius: 0;
-          }
-        }
-
-        &.selected-start {
-          position: relative;
-          z-index: 10;
-
-          & .ui-state-active {
-            z-index: 3;
-            color: white;
-            font-weight: bold;
-            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-            border-radius: 50%;
-            opacity: 1;
-          }
-
-          &:not(.selected-end) {
-            &::before {
-              position: absolute;
-              top: 0;
-              right: 0;
-              z-index: -1;
-              width: 50%;
-              height: 100%;
-              background: #bc9cff;
-              opacity: 0.25;
-              content: '';
-            }
-          }
-        }
-
-        &.selected-end {
-          position: relative;
-          z-index: 10;
-
-          & .ui-state-active {
-            z-index: 3;
-            color: white;
-            font-weight: bold;
-            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-            border-radius: 50%;
-            opacity: 1;
-          }
-
-          &:not(.selected-start) {
-            &::after {
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: -1;
-              width: 50%;
-              height: 100%;
-              background: #bc9cff;
-              opacity: 0.25;
-              content: '';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  & .ui-datepicker-ButtonPanel {
-    display: flex;
+  &--buttons {
+    flex-direction: row-reverse;
+    align-items: flex-end;
     justify-content: space-between;
     margin-top: 20px;
-
-    & .ui-datepicker-button_conf,
-    .ui-datepicker-button_clear {
-      margin: 0;
-      padding: 0;
-      color: #bc9cff;
-      font-weight: 700;
-      font-size: 12px;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
+    padding: 0;
+    border: none;
   }
 
-  & .material-icons {
-    @include mi-font($size: 24px);
+  &--button {
+    @include default-font($highlight-color, 12px, 15px, 700, none, uppercase);
+
+    display: inline;
+    flex-grow: 0;
+    height: auto;
+
+    &:hover {
+      color: $main-color_lighter;
+      background-color: transparent;
+    }
   }
 }

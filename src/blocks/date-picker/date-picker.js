@@ -2,66 +2,54 @@ import Picker from '../../libs/date-picker';
 import textfield from '../textfield';
 
 class DatePicker {
-  constructor({ root, selectUserCallback }) {
+  constructor({ root, handlerDateSelected, options }) {
     this.root = root;
     this.textfield = textfield({ root: root.querySelector('.js-textfield') });
 
-    this.input = this.textfield.getInput();
-    this.arrow = root.querySelector('.js-date-picker__arrow');
-
-    this.userCallback = selectUserCallback;
+    this._input = this.textfield.getInput();
+    this._arrow = root.querySelector('.js-date-picker__arrow');
 
     this.picker = new Picker({
-      input: this.input,
-      updateHandler: this._updateHandler,
-      hidingCallback: this._handlerCalendarHiding,
-      showingCallback: this._handlerCalendarShowing,
+      input: this._input,
+      handlerCalendarShown: this._handlerCalendarShowing,
+      handlerCalendarHidden: this._handlerCalendarHiding,
+      handlerDateSelected,
+      options,
     });
 
-    this._init();
+    setTimeout(this._init, 100);
   }
 
-  setDates = (arrive, departure) => {
+  setDates = (values) => {
     const { picker } = this;
-    picker.setDates(arrive, departure);
+    picker.setDates(values);
   }
 
-  _updateHandler = () => {
-    this._displayValue();
-    if (this.userCallback) this.userCallback(this.picker.getData());
-  };
+  getDates = () => {
+    const { picker } = this;
+    return picker.getDates();
+  }
 
-  _displayValue = () => {
-    const valuesIsNotEmpty = this.picker.getData().startDate
-    && this.picker.getData().endDate;
+  getOptions = () => {
+    const { picker } = this;
+    return picker.getOptions();
+  }
 
-    if (valuesIsNotEmpty) {
-      const arriveText = this.picker.getData().startDateText;
-      const departureText = this.picker.getData().endDateText;
-
-      this.textfield.setValue(`${arriveText} - ${departureText}`);
-    }
+  clearDates = () => {
+    const { picker } = this;
+    picker.clearDates();
   }
 
   _handlerCalendarShowing = () => {
-    this.arrow.removeEventListener('click', this._handlerArrowClick);
-    this.arrow.querySelector('.js-arrow').textContent = 'expand_less';
-
-    this._displayValue();
+    const { _arrow: arrow } = this;
+    arrow.removeEventListener('click', this._handlerArrowClick);
+    arrow.querySelector('.js-arrow').textContent = 'expand_less';
   }
 
-  _handlerCalendarHiding = (e) => {
-    this.arrow.querySelector('.js-arrow').textContent = 'expand_more';
-    if (e.detail.input === this.input) {
-      document.addEventListener('click', this._handlerDocClick);
-    } else {
-      this.input.addEventListener('click', this._handlerArrowClick);
-    }
-  }
-
-  _handlerDocClick = () => {
-    document.removeEventListener('click', this._handlerDocClick);
-    this.arrow.addEventListener('click', this._handlerArrowClick);
+  _handlerCalendarHiding = () => {
+    const { _arrow: arrow } = this;
+    arrow.querySelector('.js-arrow').textContent = 'expand_more';
+    arrow.addEventListener('click', this._handlerArrowClick);
   }
 
   _handlerArrowClick = () => {
@@ -70,12 +58,17 @@ class DatePicker {
   }
 
   _init = () => {
-    this.arrow.addEventListener('click', this._handlerArrowClick);
+    const { _arrow: arrow } = this;
 
-    const initialArrive = this.root.dataset.initarrive;
-    const initialDeparture = this.root.dataset.initdeparture;
+    const MILLISECONDS_IN_DAY = 86400000;
+    arrow.addEventListener('click', this._handlerArrowClick);
 
-    this.setDates(initialArrive, initialDeparture);
+    const initialArrive = new Date(Math.round(Date.now()
+      + this.root.dataset.initarrive * MILLISECONDS_IN_DAY));
+    const initialDeparture = new Date(Math.round(Date.now()
+      + this.root.dataset.initdeparture * MILLISECONDS_IN_DAY));
+
+    this.setDates([initialArrive, initialDeparture]);
   }
 }
 

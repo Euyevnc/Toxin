@@ -76,7 +76,7 @@ function uiKitInit() {
 
   setTimeout(() => {
     const calendar = document
-      .querySelector('.js-ui-datepicker').cloneNode(true);
+      .querySelector('.datepicker ').cloneNode(true);
     const contForCalendar = document
       .querySelector('.js-ui-kit__calendar');
     contForCalendar.appendChild(calendar);

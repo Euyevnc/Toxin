@@ -1,5 +1,4 @@
-@import '../../scss/variables';
-@import '../textfield/textfield.scss';
+@import '../date-picker/date-picker.scss';
 @import '../../scss/_mixin-default-font.scss';
 
 .double-date-picker {
@@ -15,28 +14,6 @@
 
     &_for_second {
       margin-left: auto;
-    }
-  }
-
-  &__arrow {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: inline-block;
-    min-width: 44px;
-    height: 44px;
-    line-height: 44px;
-    text-align: center;
-    cursor: pointer;
-
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
-  .textfield__value {
-    &::placeholder {
-      color: $main-color;
     }
   }
 }

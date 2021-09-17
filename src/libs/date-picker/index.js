@@ -1,136 +1,88 @@
 import 'jquery';
-import '../../plugins/datepicker';
-import '../../plugins/jquery.datepicker.extension.range.min';
-import {
-  HIDE_CALENDAR_EVENT_NAME,
-  SHOW_CALENDAR_EVENT_NAME,
-} from '../../../assets/consts';
-
+import 'air-datepicker';
+import 'air-datepicker/dist/css/datepicker.min.css';
 import './date-picker.scss';
 
 class DatePicker {
   constructor({
-    input, updateHandler, hidingCallback, showingCallback,
+    input, handlerCalendarShown, handlerCalendarHidden,
+    handlerDateSelected, options,
   }) {
     this.input = $(input);
-    this.params = {
-      closeText: 'Закрыть',
-      prevText: 'Предыдущий',
-      nextText: 'Следующий',
-      currentText: 'Сегодня',
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
 
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
-        'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    this._handlerCalendarShown = handlerCalendarShown;
+    this._handlerCalendarHidden = handlerCalendarHidden;
+    this._handlerDateSelected = handlerDateSelected;
 
-      dayNames: ['воскресенье', 'понедельник', 'вторник',
-        'среда', 'четверг', 'пятница', 'суббота'],
-
-      dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      weekHeader: 'Не',
-      firstDay: 1,
-      isRTL: false,
-      showMonthAfterYear: false,
-      yearSuffix: '',
-      showOtherMonths: true,
-      selectOtherMonths: true,
-    };
-
-    this.arriveDate = null;
-    this.departureDate = null;
-
-    this.updateHandler = updateHandler;
-    this.hidingCallback = hidingCallback || null;
-    this.showingCallback = showingCallback || null;
-
-    this.calendarIsShowing = false;
-
+    this._userOptions = options;
     this._init();
   }
 
   showCalendar = () => {
-    this.input.datepicker('show');
+    this._control.show();
   }
 
   hideCalendar = () => {
-    this.input.datepicker('hide');
+    this._control.hide();
   }
 
-  getData = () => {
-    const extensionRange = this.input
-      .datepicker('widget').data('datepickerExtensionRange');
-    return extensionRange;
-  }
+  getDates = () => this._control.selectedDates
 
-  setDates = (arriveDate, departureDate) => {
-    this.arriveDate = arriveDate || '';
-    this.departureDate = departureDate || '';
-    this.input
-      .datepicker('setDate', [this.arriveDate, this.departureDate]);
-    this.updateHandler();
+  setDates = (values) => {
+    this._control.selectDate(values);
   };
 
-  _handlerDocShowing =
-    (e) => {
-      if (e.detail.input === this.input[0]) {
-        const { arriveDate, departureDate } = this;
-        this.setDates(arriveDate, departureDate);
-        this.showingCallback(e);
-
-        document.addEventListener(HIDE_CALENDAR_EVENT_NAME,
-          this._handlerDocHiding);
-        this.calendarIsShowing = true;
-      }
-    }
-
-  _handlerDocHiding = (e) => {
-    if (!e.detail.datepickerShowing) return;
-    this.hidingCallback(e);
-
-    document.removeEventListener(HIDE_CALENDAR_EVENT_NAME,
-      this._handlerDocHiding);
-    this.calendarIsShowing = false;
+  clearDates = () => {
+    this._control.clear();
   }
 
-  _handlerCalendarClick = (ev) => {
-    if (!this.calendarIsShowing) return;
-
-    if (ev.target.closest('.ui-datepicker-button_clear')) {
-      this.setDates('', '');
-    } else if (ev.target.closest('.ui-datepicker-button_conf')) {
-      this.hideCalendar();
-    }
-  }
+  getOptions = () => this._control.opts
 
   _init = () => {
-    const { input, params, updateHandler } = this;
-    $.datepicker.regional.ru = params;
-
-    $.datepicker.setDefaults($.datepicker.regional.ru);
-
-    const rewriteDates = (arrive, departure) => {
-      this.arriveDate = arrive;
-      this.departureDate = departure;
+    const onShow = (_, completed) => {
+      if (!completed) return;
+      this._handlerCalendarShown();
     };
 
-    input.datepicker({
+    const onHide = (_, completed) => {
+      if (!completed) return;
+      if (this.getDates().length < 2) this._control.clear();
+      this._handlerCalendarHidden();
+    };
+
+    const handlerConfirmClick = (event) => {
+      if (!this._control.visible) return;
+      event.preventDefault();
+      this.hideCalendar();
+    };
+
+    this.input.datepicker({
+      range: true,
+      multipleDatesSeparator: ' - ',
       dateFormat: 'dd M',
-      minDate: 0,
-      range: 'period',
-      onSelect(...args) {
-        const [,, extensionRange] = args;
-        rewriteDates(extensionRange.startDate, extensionRange.endDate);
-
-        updateHandler();
+      clearButton: true,
+      todayButton: true,
+      minDate: new Date(),
+      navTitles: {
+        days: 'MM yyyy',
       },
+      language: {
+        today: 'Применить',
+      },
+      nextHtml: 'arrow_forward',
+      prevHtml: 'arrow_back',
+      classes: 'air-datepicker js-air-datepicker',
+      onShow,
+      onHide,
+      onSelect: this._handlerDateSelected,
+      ...this._userOptions,
     });
+    this._control = this.input.data('datepicker');
 
-    const calendar = document.querySelector('.js-ui-datepicker');
-    calendar.addEventListener('click', this._handlerCalendarClick);
-    document.addEventListener(SHOW_CALENDAR_EVENT_NAME,
-      this._handlerDocShowing);
+    const confirmButton = this._control.$datepicker[0]
+      .querySelector('.datepicker--button');
+
+    confirmButton.addEventListener('click', handlerConfirmClick);
   }
 }
 
