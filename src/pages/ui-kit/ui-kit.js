@@ -13,7 +13,7 @@ import header from '../../blocks/header';
 import review from '../../blocks/review';
 import roomDemo from '../../blocks/room-demo';
 import registration from '../../blocks/registration-form';
-
+import Picker from '../../libs/date-picker';
 import './ui-kit.scss';
 
 document.addEventListener('DOMContentLoaded', uiKitInit);
@@ -26,7 +26,7 @@ function uiKitInit() {
 
   datePicker({
     root: document
-      .querySelector('.js-date-picker'),
+      .querySelector('.js-ui-kit__inputs>.js-date-picker'),
   });
 
   document.querySelectorAll('.ui-kit__inputs .js-dropdown')
@@ -74,14 +74,7 @@ function uiKitInit() {
       .querySelector('.js-registration-form'),
   });
 
-  setTimeout(() => {
-    const calendar = document
-      .querySelector('.datepicker ').cloneNode(true);
-    const contForCalendar = document
-      .querySelector('.js-ui-kit__calendar');
-    contForCalendar.appendChild(calendar);
-    calendar.style.display = 'block';
-    calendar.style.pointerEvents = 'none';
-    calendar.style.userSelect = 'none';
-  }, 700);
+  const contForCalendar = document
+    .querySelector('.js-ui-kit__calendar');
+  const staticCalendar = new Picker({ input: contForCalendar });
 }

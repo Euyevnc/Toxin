@@ -11,9 +11,9 @@
 @import '../../blocks/review/review.scss';
 @import '../../blocks/marked-list/marked-list.scss';
 
-$block: '.room-details';
+.room-details {
+  $block: &;
 
-#{$block} {
   padding-bottom: 60px;
   background-color: white;
 

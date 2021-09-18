@@ -1,9 +1,9 @@
 @import '../arrow/arrow.scss';
 @import '../../scss/mixin-default-font';
 
-$block: '.pagination';
+.pagination {
+  $block: &;
 
-#{$block} {
   display: flex;
   flex-direction: column;
   align-items: center;

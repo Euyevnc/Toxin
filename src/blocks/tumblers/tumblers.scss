@@ -1,9 +1,9 @@
 @import '../../scss/mixin-mi-font';
 @import '../../scss/mixin-default-font';
 
-$block: '.tumblers';
+.tumblers {
+  $block: &;
 
-#{$block} {
   @include default-font($main-color, $size-small + 2, $size-largest, 400, none);
 
   &__header {

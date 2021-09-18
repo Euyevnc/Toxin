@@ -3,9 +3,9 @@
 @import '../arrow/arrow.scss';
 @import '../../scss/mixin-default-font';
 
-$block: '.menu';
+.menu {
+  $block: &;
 
-#{$block} {
   margin-left: auto;
   @media (max-width: $breakpoint-middle) {
     visibility: hidden;

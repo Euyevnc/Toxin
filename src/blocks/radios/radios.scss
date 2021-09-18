@@ -1,9 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-$block: '.radios';
+.radios {
+  $block: &;
 
-#{$block} {
   &__header {
     @include default-font(
       $main-color_darkest,

@@ -2,9 +2,9 @@
 @import '../../scss/mixin-mi-font';
 @import '../../scss/_mixin-default-font.scss';
 
-$block: '.room-demo';
+.room-demo {
+  $block: &;
 
-#{$block} {
   max-width: 270px;
   margin-top: 20.5px;
   color: $main-color_lighter;

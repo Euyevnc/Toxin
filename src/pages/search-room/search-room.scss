@@ -11,9 +11,9 @@
 @import '../../blocks/room-demo/room-demo.scss';
 @import '../../blocks/range-picker/range-picker.scss';
 
-$block: '.search-room';
+.search-room {
+  $block: &;
 
-#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;

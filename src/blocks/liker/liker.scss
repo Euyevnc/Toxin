@@ -1,9 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-$block: '.liker';
+.liker {
+  $block: &;
 
-#{$block} {
   display: inline-block;
   text-align: center;
 

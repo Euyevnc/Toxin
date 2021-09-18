@@ -4,9 +4,9 @@
 @import '../../blocks/cellar/cellar.scss';
 @import '../../blocks/registration-form/registration-form.scss';
 
-$block: '.registration';
+.registration {
+  $block: &;
 
-#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;

@@ -1,9 +1,9 @@
 @import '../textfield/textfield.scss';
 @import '../../scss/mixin-default-font';
 
-$block: '.footer';
+.footer {
+  $block: &;
 
-#{$block} {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

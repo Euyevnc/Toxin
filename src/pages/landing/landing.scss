@@ -5,9 +5,9 @@
 @import '../../blocks/room-searcher/room-searcher.scss';
 @import '../../layout/layout-for-hotel.scss';
 
-$block: '.landing';
+.landing {
+  $block: &;
 
-#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;

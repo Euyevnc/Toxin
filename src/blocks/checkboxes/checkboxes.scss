@@ -1,9 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../checkbox/checkbox.scss';
 
-$block: '.checkboxes';
+.checkboxes {
+  $block: &;
 
-#{$block} {
   width: 100%;
   margin: 0;
   padding: 0;

@@ -1,9 +1,9 @@
 @import '../../scss/mixin-default-font';
 @import '../../scss/mixin-mi-font';
 
-$block: '.rate-stars';
+.rate-stars {
+  $block: &;
 
-#{$block} {
   display: inline-block;
   vertical-align: bottom;
 

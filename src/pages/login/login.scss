@@ -4,9 +4,9 @@
 @import '../../blocks/entry-form/entry-form.scss';
 @import '../../layout/layout-for-hotel.scss';
 
-$block: '.login';
+.login {
+  $block: &;
 
-#{$block} {
   &__wrapper {
     position: relative;
     box-sizing: border-box;

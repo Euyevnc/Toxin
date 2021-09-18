@@ -1,8 +1,8 @@
 @import '../../scss/mixin-fa-font';
 
-$block: '.checkbox';
+.checkbox {
+  $block: &;
 
-#{$block} {
   display: inline-block;
   @include default-font($main-color_lighter, $size-middle, $default-line);
 
