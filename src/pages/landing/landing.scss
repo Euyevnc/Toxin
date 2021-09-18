@@ -8,6 +8,12 @@
 .landing {
   $block: &;
 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  min-height: 100vh;
+
   &__wrapper {
     position: relative;
     box-sizing: border-box;
@@ -31,9 +37,10 @@
   &__content {
     position: relative;
     z-index: 9;
+    flex-grow: 1;
     box-sizing: border-box;
+    width: 100%;
     min-width: 320px;
-    margin: auto;
     background-image: url('./img/landing-background-3.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -42,7 +49,6 @@
     & #{$block}__wrapper {
       display: flex;
       justify-content: space-between;
-      min-height: calc(100vh - 70px);
 
       @media (max-width: 660px) {
         flex-wrap: wrap;
@@ -115,7 +121,8 @@
   }
 
   &__footer {
-    position: relative;
+    position: absolute;
+    top: 100%;
     z-index: 10;
     box-sizing: border-box;
     width: 100%;

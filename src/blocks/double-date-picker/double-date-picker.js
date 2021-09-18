@@ -29,8 +29,6 @@ class DoubleDatePicker {
   }
 
   _handlerArriveCalendarSelection = (formatedDates, dates) => {
-    if (!dates) this.departurePicker.clearDates();
-
     const separator = this.arrivePicker.getOptions().multipleDatesSeparator;
     this.arrivePicker.textfield
       .setValue(formatedDates.split(separator)[0] || '');
@@ -46,13 +44,13 @@ class DoubleDatePicker {
     const needToSync = !(startIsSync && endIsSync) && dates.length !== 1;
 
     if (!needToSync) return;
-    this.departurePicker.setDates(dates);
+
+    !dates ? this.departurePicker.clearDates()
+      : this.departurePicker.setDates(dates);
     if (this.userCallback) this.userCallback(this.arrivePicker.getDates());
   }
 
   _handlerDepartureCalendarSelection = (formatedDates, dates) => {
-    if (!dates) this.arrivePicker.clearDates();
-
     const separator = this.departurePicker.getOptions().multipleDatesSeparator;
     this.departurePicker.textfield
       .setValue(formatedDates.split(separator)[1] || '');
@@ -68,7 +66,9 @@ class DoubleDatePicker {
     const needToSync = !(startIsSync && endIsSync) && dates.length !== 1;
 
     if (!needToSync) return;
-    this.arrivePicker.setDates(dates);
+
+    !dates ? this.arrivePicker.clearDates() : this.arrivePicker.setDates(dates);
+
     if (this.userCallback) this.userCallback(this.arrivePicker.getDates());
   }
 }

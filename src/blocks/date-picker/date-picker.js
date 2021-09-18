@@ -61,12 +61,16 @@ class DatePicker {
     arrow.addEventListener('click', this._handlerArrowClick);
 
     const MILLISECONDS_IN_DAY = 86400000;
-    const initialArrive = new Date(Math.round(Date.now()
-      + this.root.dataset.initarrive * MILLISECONDS_IN_DAY));
-    const initialDeparture = new Date(Math.round(Date.now()
-      + this.root.dataset.initdeparture * MILLISECONDS_IN_DAY));
+    const arriveAfter = this.root.dataset.initarrive;
+    const departureAfter = this.root.dataset.initdeparture;
 
-    if (initialArrive || initialDeparture) return;
+    if (!arriveAfter || !departureAfter) return;
+
+    const initialArrive = new Date(Math.round(Date.now()
+      + arriveAfter * MILLISECONDS_IN_DAY));
+    const initialDeparture = new Date(Math.round(Date.now()
+      + departureAfter * MILLISECONDS_IN_DAY));
+
     this.setDates([initialArrive, initialDeparture]);
   }
 }

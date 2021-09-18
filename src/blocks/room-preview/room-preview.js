@@ -31,11 +31,10 @@ class RoomPreview {
   }
 
   _handlerInputChange = (data) => {
-    const arrival = new Date(data.startDate);
-    const departure = new Date(data.endDate);
-
+    const arrival = data[0];
+    const departure = data[1];
     const days = (departure - arrival) / (24 * 3600000);
-    this._displayPrice(days);
+    this._displayPrice(days || 0);
   }
 
   _extractServicesObject = () => {
@@ -73,18 +72,18 @@ class RoomPreview {
       amountField.textContent = `${amount} ${this.day_local}`;
     });
 
-    this.root.querySelectorAll('.js-room-preview__rent-total').forEach((el) => {
-      const totalRent = el;
-      totalRent.textContent = `${(amount * this.price).toLocaleString()}₽`;
-    });
+    this.root.querySelector('.js-room-preview__rent-total')
+      .textContent = `${(amount * this.price).toLocaleString()}₽`;
 
-    const total = this.root
+    const totalElement = this.root
+      .querySelector('.js-room-preview__total');
+    const totalPriceElement = this.root
       .querySelector('.js-room-preview__total').lastElementChild;
 
-    this.totalPrice = total;
-
-    total.textContent = `${(Math
-      .max(0, amount * this.price + this.servicePrice)).toLocaleString()}₽`;
+    this.totalPrice = Math.max(0, amount * this.price + this.servicePrice);
+    totalPriceElement.textContent = `${this.totalPrice.toLocaleString()}₽`;
+    if (amount > 1) totalElement.classList.add('room-preview__total_shown');
+    else totalElement.classList.remove('room-preview__total_shown');
   }
 
   _displayInfo = () => {
@@ -126,6 +125,7 @@ class RoomPreview {
 
   _init = () => {
     this._displayInfo();
+    this._displayPrice(0);
 
     this.datePickerObject = doubleDatePicker({
       root: this.root

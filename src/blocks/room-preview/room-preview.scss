@@ -146,9 +146,14 @@
     margin: 30px 0 21px;
     font-size: $size-larger;
     line-height: $size-largest;
+    visibility: hidden;
     @media (max-width: $breakpoint-small) {
       min-width: 0;
       max-width: 290px;
+    }
+
+    &_shown {
+      visibility: visible;
     }
   }
 
