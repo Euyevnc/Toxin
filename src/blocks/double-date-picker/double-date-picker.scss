@@ -1,5 +1,5 @@
-@import '../date-picker/date-picker.scss';
 @import '../../scss/_mixin-default-font.scss';
+@import '../date-picker/date-picker.scss';
 
 .double-date-picker {
   display: flex;
@@ -11,9 +11,5 @@
     position: relative;
     display: inline-block;
     max-width: 150px;
-
-    &_for_second {
-      margin-left: auto;
-    }
   }
 }

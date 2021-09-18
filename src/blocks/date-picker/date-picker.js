@@ -11,8 +11,8 @@ class DatePicker {
 
     this.picker = new Picker({
       input: this._input,
-      handlerCalendarShown: this._handlerCalendarShowing,
-      handlerCalendarHidden: this._handlerCalendarHiding,
+      handlerCalendarShown: this._handlerCalendarShown,
+      handlerCalendarHidden: this._handlerCalendarHidden,
       handlerDateSelected,
       options,
     });
@@ -40,34 +40,33 @@ class DatePicker {
     picker.clearDates();
   }
 
-  _handlerCalendarShowing = () => {
+  _handlerCalendarShown = () => {
     const { _arrow: arrow } = this;
     arrow.removeEventListener('click', this._handlerArrowClick);
     arrow.querySelector('.js-arrow').textContent = 'expand_less';
   }
 
-  _handlerCalendarHiding = () => {
+  _handlerCalendarHidden = () => {
     const { _arrow: arrow } = this;
     arrow.querySelector('.js-arrow').textContent = 'expand_more';
     arrow.addEventListener('click', this._handlerArrowClick);
   }
 
   _handlerArrowClick = () => {
-    const { picker } = this;
-    picker.showCalendar();
+    this._input.focus();
   }
 
   _init = () => {
     const { _arrow: arrow } = this;
-
-    const MILLISECONDS_IN_DAY = 86400000;
     arrow.addEventListener('click', this._handlerArrowClick);
 
+    const MILLISECONDS_IN_DAY = 86400000;
     const initialArrive = new Date(Math.round(Date.now()
       + this.root.dataset.initarrive * MILLISECONDS_IN_DAY));
     const initialDeparture = new Date(Math.round(Date.now()
       + this.root.dataset.initdeparture * MILLISECONDS_IN_DAY));
 
+    if (initialArrive || initialDeparture) return;
     this.setDates([initialArrive, initialDeparture]);
   }
 }

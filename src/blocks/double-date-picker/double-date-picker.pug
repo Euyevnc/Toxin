@@ -1,6 +1,6 @@
 include ../date-picker/date-picker.pug
 
-mixin double-date-picker({ initArrive = '', initDeparture = '' , textfields = [ { }, { } ] })
+mixin double-date-picker({ initArrive = null, initDeparture = null , textfields = [ { }, { } ] })
   .js-double-date-picker.double-date-picker
     .double-date-picker__container.js-double-date-picker__container(data-init = initArrive)
       +date-picker({ textfield: textfields[0], initArrive, initDeparture})

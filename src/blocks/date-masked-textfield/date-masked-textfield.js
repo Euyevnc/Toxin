@@ -1,13 +1,10 @@
-import 'jquery';
-import 'jquery.maskedinput/src/jquery.maskedinput';
-
+import Datemask from '../../libs/datemask';
 import textfield from '../textfield';
 
 class DateMaskedTextfield {
   constructor({ root }) {
     this.textfield = textfield({ root: root.querySelector('.js-textfield') });
-    this.input = this.textfield.getInput();
-    $(this.input).mask('99.99.9999');
+    this.mask = new Datemask({ input: this.textfield.getInput() });
   }
 
   setValue = (value) => {
