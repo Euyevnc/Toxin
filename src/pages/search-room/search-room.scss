@@ -14,6 +14,7 @@
 .search-room {
   $block: &;
 
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -84,8 +85,8 @@
   &__forms {
     min-width: 266px;
     margin-right: 60px;
-    @media (max-width: $breakpoint-large) {
-      margin-right: 20px;
+    @media (max-width: $breakpoint-middle) {
+      margin-right: 0;
     }
   }
 

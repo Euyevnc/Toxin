@@ -27,9 +27,9 @@ class RangePicker {
       container, min, max, sliderData,
     } = this;
 
-    const sliderCallback = (startValue, endValue) => {
-      min.textContent = startValue.toLocaleString();
-      max.textContent = endValue.toLocaleString();
+    const sliderCallback = ({ values }) => {
+      min.textContent = values.start;
+      max.textContent = values.end;
     };
 
     this.sliderObject = new RangeSlider(container, sliderData, sliderCallback);

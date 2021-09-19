@@ -17,15 +17,11 @@ class RangeSlider {
     this.sliderObject = parent.rangeSlider(config);
 
     if (callback) {
-      this.sliderObject.model.observer.subscribe(() => {
-        const start = this.sliderObject.getValue()[0];
-        const end = this.sliderObject.getValue()[1];
-
-        callback(start, end);
+      this.sliderObject.addValuesUpdateListener((args) => {
+        callback(args);
       });
+      this.sliderObject.setValues();
     }
-
-    this.sliderObject.init(config.initStart, config.initEnd);
   }
 }
 
