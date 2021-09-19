@@ -41,6 +41,12 @@
       border-top-right-radius: 4px;
       outline: 0;
     }
+
+    &_readonly {
+      &::placeholder {
+        color: $main-color;
+      }
+    }
   }
 
   &__title {

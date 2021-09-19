@@ -120,10 +120,4 @@
       visibility: hidden;
     }
   }
-
-  .textfield__value {
-    &::placeholder {
-      color: $main-color;
-    }
-  }
 }
