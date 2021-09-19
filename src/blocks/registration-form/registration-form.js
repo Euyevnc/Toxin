@@ -4,8 +4,13 @@ import dateMaskedInput from
 class RegistrationForm {
   constructor({ root }) {
     this.root = root;
+
+    this._init();
+  }
+
+  _init = () => {
     this.birthField = dateMaskedInput({
-      root: root
+      root: this.root
         .querySelector('.js-date-masked-textfield'),
     });
   }

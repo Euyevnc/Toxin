@@ -2,30 +2,10 @@ import createDatepicker from '../date-picker';
 
 class DoubleDatePicker {
   constructor({ root, selectUserCallback }) {
+    this.root = root;
     this.userCallback = selectUserCallback;
 
-    const arrivePickerRoot = root
-      .querySelector('.js-double-date-picker__container:first-child'
-      + ' .js-date-picker');
-    const departurePickerRoot = root
-      .querySelector('.js-double-date-picker__container:last-child'
-      + ' .js-date-picker');
-
-    this.arrivePicker = createDatepicker({
-      root: arrivePickerRoot,
-      handlerDateSelected:
-        this._handlerArriveCalendarSelection,
-      options: { dateFormat: 'dd.mm.yyyy' },
-
-    });
-
-    this.departurePicker = createDatepicker({
-      root: departurePickerRoot,
-      handlerDateSelected:
-        this._handlerDepartureCalendarSelection,
-      options: { dateFormat: 'dd.mm.yyyy' },
-
-    });
+    this._init();
   }
 
   _handlerArriveCalendarSelection = (formatedDates, dates) => {
@@ -70,6 +50,31 @@ class DoubleDatePicker {
     !dates ? this.arrivePicker.clearDates() : this.arrivePicker.setDates(dates);
 
     if (this.userCallback) this.userCallback(this.arrivePicker.getDates());
+  }
+
+  _init = () => {
+    const arrivePickerRoot = this.root
+      .querySelector('.js-double-date-picker__container:first-child'
+      + ' .js-date-picker');
+    const departurePickerRoot = this.root
+      .querySelector('.js-double-date-picker__container:last-child'
+      + ' .js-date-picker');
+
+    this.arrivePicker = createDatepicker({
+      root: arrivePickerRoot,
+      handlerDateSelected:
+        this._handlerArriveCalendarSelection,
+      options: { dateFormat: 'dd.mm.yyyy' },
+
+    });
+
+    this.departurePicker = createDatepicker({
+      root: departurePickerRoot,
+      handlerDateSelected:
+        this._handlerDepartureCalendarSelection,
+      options: { dateFormat: 'dd.mm.yyyy' },
+
+    });
   }
 }
 

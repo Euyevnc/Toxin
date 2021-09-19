@@ -4,28 +4,6 @@ import doubleDatePicker from '../double-date-picker';
 class RoomPreview {
   constructor({ root }) {
     this.root = root;
-    this.counterObject = dropdown({
-      root: this.root
-        .querySelector('.js-dropdown'),
-    });
-
-    this.number = this.root
-      .querySelector('.js-room-preview__number').dataset.number;
-
-    this.category = this.root
-      .querySelector('.js-room-preview__category').dataset.category;
-
-    this.price = Number(this.root
-      .querySelector('.js-room-preview__price-info').dataset.price);
-
-    this.day_local = this.root
-      .querySelector('.js-room-preview__amount').dataset.local;
-
-    this.discount_local = this.root
-      .querySelector('.js-room-preview__services').dataset.local;
-
-    this.services = this._extractServicesObject();
-    this.servicePrice = this._countService();
 
     this._init();
   }
@@ -124,6 +102,29 @@ class RoomPreview {
   }
 
   _init = () => {
+    this.counterObject = dropdown({
+      root: this.root
+        .querySelector('.js-dropdown'),
+    });
+
+    this.number = this.root
+      .querySelector('.js-room-preview__number').dataset.number;
+
+    this.category = this.root
+      .querySelector('.js-room-preview__category').dataset.category;
+
+    this.price = Number(this.root
+      .querySelector('.js-room-preview__price-info').dataset.price);
+
+    this.day_local = this.root
+      .querySelector('.js-room-preview__amount').dataset.local;
+
+    this.discount_local = this.root
+      .querySelector('.js-room-preview__services').dataset.local;
+
+    this.services = this._extractServicesObject();
+    this.servicePrice = this._countService();
+
     this._displayInfo();
     this._displayPrice(0);
 

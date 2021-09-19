@@ -3,10 +3,18 @@ import burger from '../burger';
 
 class Header {
   constructor({ root }) {
-    this.menuObject = menu({ root: root.querySelector('.js-menu') });
+    this.root = root;
+
+    this._init();
+  }
+
+  _init = () => {
+    this.menu = this.root.querySelector('.js-menu');
+    this.menuObject = menu({ root: this.menu });
+    this.burger = this.root.querySelector('.js-burger');
     this.burgerObject = burger({
-      area: root,
-      menuSelector: '.js-menu',
+      root: this.burger,
+      menu: this.menu,
       activeClass: 'menu_expanded',
     });
   }

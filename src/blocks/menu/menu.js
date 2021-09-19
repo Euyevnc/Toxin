@@ -1,10 +1,8 @@
 class Menu {
   constructor({ root }) {
-    this.submenus = root.querySelectorAll('.js-menu__submenu');
-    this.submenus.forEach((it) => {
-      const element = it.closest('.js-menu__element');
-      element.addEventListener('click', this._handlerElementClick);
-    });
+    this.root = root;
+
+    this._init();
   }
 
   _handlerElementClick = (e) => {
@@ -16,6 +14,14 @@ class Menu {
       .classList.contains('menu__element_active')
       ? 'expand_less'
       : 'expand_more';
+  }
+
+  _init = () => {
+    this.submenus = this.root.querySelectorAll('.js-menu__submenu');
+    this.submenus.forEach((it) => {
+      const element = it.closest('.js-menu__element');
+      element.addEventListener('click', this._handlerElementClick);
+    });
   }
 }
 

@@ -1,15 +1,19 @@
 class Burger {
-  constructor({ area = document, menuSelector = '', activeClass = '' }) {
-    this.root = area.querySelector('.js-burger');
-    this.menu = area.querySelector(menuSelector);
-    this.root.addEventListener('click', this._handlerBurgerClick);
-
+  constructor({ root, menu, activeClass = '' }) {
+    this.root = root;
+    this.menu = menu;
     this.activeClass = activeClass;
+
+    this._init();
   }
 
   _handlerBurgerClick = () => {
     this.root.classList.toggle('burger_active');
     this.menu.classList.toggle(this.activeClass);
+  }
+
+  _init = () => {
+    this.root.addEventListener('click', this._handlerBurgerClick);
   }
 }
 

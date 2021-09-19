@@ -1,20 +1,12 @@
 import DropdownItem from './dropdownItem';
 import textfield from '../textfield';
+import { findWordForm } from '../../utils/utils';
 
 class Dropdown {
   constructor({ root }) {
     this.root = root;
     this.items = [];
 
-    this.textfield = textfield({
-      root: this.root
-        .querySelector('.js-textfield'),
-    });
-    this.input = this.textfield.getInput();
-    this.arrow = this.root.querySelector('.js-dropdown__arrow');
-    this.menu = this.root.querySelector('.js-dropdown__menu');
-
-    this.buttonsPanel = this.root.querySelector('.js-dropdown__buttons');
     this._init();
   }
 
@@ -52,43 +44,37 @@ class Dropdown {
   }
 
   _concat = () => {
-    let stringForValue = '';
     let amountOfWord = 0;
-    let prevNumber = 0;
-    this.items.forEach((item) => {
-      let number = item.value;
+    let storedNumber = 0;
 
-      if (item.concat) {
-        prevNumber = number + prevNumber;
-        return;
+    function formString(stringToDisplay, currentItem) {
+      let newString = stringToDisplay;
+      let amount = currentItem.value;
+
+      if (currentItem.concat) {
+        storedNumber += amount;
+        return newString;
       }
-
-      if (amountOfWord > 2) return;
-
+      if (amountOfWord > 2) return newString;
       if (amountOfWord === 2) {
-        stringForValue += number === 0 ? '' : '...';
-        return;
+        newString += amount === 0 ? '' : '...';
+        amountOfWord += 1;
+        return newString;
       }
 
-      number += prevNumber;
-      if (number === 0) return;
+      amount += storedNumber;
+      if (amount === 0) return newString;
 
-      let [, nameForm] = item.nameForms;
+      const nameForm = findWordForm(amount, currentItem.nameForms);
+      if (newString) newString += ', ';
+      newString += `${amount} ${nameForm}`;
 
-      if (number % 10 > 4) [, , nameForm] = item.nameForms;
-      if (number > 4) [, , nameForm] = item.nameForms;
-      if (number % 10 === 0) [, , nameForm] = item.nameForms;
-
-      if (number === 1) [nameForm] = item.nameForms;
-      if (number % 10 === 1) [nameForm] = item.nameForms;
-
-      if (stringForValue) stringForValue += ', ';
-      stringForValue += `${number} ${nameForm}`;
-
-      prevNumber = 0;
+      storedNumber = 0;
       amountOfWord += 1;
-    });
-    return stringForValue;
+      return newString;
+    }
+
+    return (this.items.reduce(formString, ''));
   };
 
   _clear = () => {
@@ -139,6 +125,15 @@ class Dropdown {
   }
 
   _init = () => {
+    this.textfield = textfield({
+      root: this.root
+        .querySelector('.js-textfield'),
+    });
+    this.input = this.textfield.getInput();
+    this.arrow = this.root.querySelector('.js-dropdown__arrow');
+    this.menu = this.root.querySelector('.js-dropdown__menu');
+    this.buttonsPanel = this.root.querySelector('.js-dropdown__buttons');
+
     this.input.addEventListener('focus', this._handlerInputFocus);
     this.arrow.addEventListener('click', this._handlerArrowClick);
 

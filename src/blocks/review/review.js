@@ -1,17 +1,8 @@
 class Review {
   constructor({ root }) {
-    this.timer = root.querySelector('.js-review__days-ago');
-    this.date = this.timer.dataset.date;
-    this.local_days = this.timer.dataset.localDays;
-    this.local_weeks = this.timer.dataset.localWeeks;
-    this.local_months = this.timer.dataset.localMonths;
-    this.local_years = this.timer.dataset.localYears;
-    this.local_ago = this.timer.dataset.localAgo;
+    this.root = root;
 
-    const daysAgo = Math
-      .floor((new Date() - new Date(this.date)) / (24 * 3600000));
-
-    this.timer.textContent = `${this._parseDate(daysAgo)} ${this.local_ago}`;
+    this._init();
   }
 
   _parseDate = (amountOfDays) => {
@@ -32,6 +23,21 @@ class Review {
     else createdString = 'today';
 
     return createdString;
+  }
+
+  _init = () => {
+    this.timer = this.root.querySelector('.js-review__days-ago');
+    this.date = this.timer.dataset.date;
+    this.local_days = this.timer.dataset.localDays;
+    this.local_weeks = this.timer.dataset.localWeeks;
+    this.local_months = this.timer.dataset.localMonths;
+    this.local_years = this.timer.dataset.localYears;
+    this.local_ago = this.timer.dataset.localAgo;
+
+    const daysAgo = Math
+      .floor((new Date() - new Date(this.date)) / (24 * 3600000));
+
+    this.timer.textContent = `${this._parseDate(daysAgo)} ${this.local_ago}`;
   }
 }
 

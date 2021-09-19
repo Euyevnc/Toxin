@@ -3,9 +3,18 @@ import dropdown from '../dropdown';
 
 class RoomSearcher {
   constructor({ root }) {
-    this.counterObject = dropdown({ root: root.querySelector('.js-dropdown') });
+    this.root = root;
+
+    this._init();
+  }
+
+  _init = () => {
+    this.counterObject = dropdown({
+      root: this.root.querySelector('.js-dropdown'),
+    });
+
     this.datePickerObject = doubleDatePicker({
-      root: root
+      root: this.root
         .querySelector('.js-double-date-picker'),
     });
   }

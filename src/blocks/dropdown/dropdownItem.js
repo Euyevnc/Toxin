@@ -2,20 +2,6 @@ class DropdownItem {
   constructor(item, callback) {
     this.root = item;
     this.callback = callback;
-    this.name = this.root.querySelector('.js-dropdown__item-name');
-    this.minus = this.root.querySelector('.js-dropdown__tumbler_minus');
-    this.plus = this.root.querySelector('.js-dropdown__tumbler_plus');
-    this.number = this.root.querySelector('.js-dropdown__number');
-
-    this.min = Number(this.minus.dataset.min);
-    this.max = Number(this.plus.dataset.max);
-
-    if (this.name.dataset.concat) this.concat = true;
-    else {
-      this.nameForms = this.name.dataset.nameForms.split(', ');
-    }
-
-    this.value = Number(this.number.dataset.init) || this.min;
 
     this._init();
   }
@@ -25,7 +11,8 @@ class DropdownItem {
   }
 
   set value(number) {
-    if (number > this.max || number < this.min) return;
+    const outOfBounds = number > this.max || number < this.min;
+    if (outOfBounds) return;
     this._value = number;
     this.value === this.min
       ? this.minus.classList.add('dropdown__tumbler_depricated')
@@ -60,6 +47,20 @@ class DropdownItem {
   }
 
   _init = () => {
+    this.name = this.root.querySelector('.js-dropdown__item-name');
+    this.minus = this.root.querySelector('.js-dropdown__tumbler_minus');
+    this.plus = this.root.querySelector('.js-dropdown__tumbler_plus');
+    this.number = this.root.querySelector('.js-dropdown__number');
+
+    this.min = Number(this.minus.dataset.min);
+    this.max = Number(this.plus.dataset.max);
+    this.value = Number(this.number.dataset.init) || this.min;
+
+    if (this.name.dataset.concat) this.concat = true;
+    else {
+      this.nameForms = this.name.dataset.nameForms.split(', ');
+    }
+
     this.minus.addEventListener('click', this._handlerMinusClick);
     this.minus.addEventListener('keydown', this._handlerMinusKeydown);
     this.plus.addEventListener('click', this._handlerPlusClick);

@@ -3,12 +3,20 @@ import textfield from '../textfield';
 
 class DateMaskedTextfield {
   constructor({ root }) {
-    this.textfield = textfield({ root: root.querySelector('.js-textfield') });
-    this.mask = new Datemask({ input: this.textfield.getInput() });
+    this.root = root;
+
+    this._init();
   }
 
   setValue = (value) => {
     this.textfield.setValue(value);
+  }
+
+  _init = () => {
+    this.textfield = textfield({
+      root: this.root.querySelector('.js-textfield'),
+    });
+    this.mask = new Datemask({ input: this.textfield.getInput() });
   }
 }
 

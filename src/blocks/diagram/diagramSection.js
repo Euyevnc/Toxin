@@ -1,9 +1,14 @@
 class DiagramSection {
   constructor(root) {
     this.root = root;
-    this.circle = root.querySelector('.js-diagram__legend-circle');
-    this.plate = root.querySelector('.js-diagram__legend-lettering');
-    this.amount = Number(root.dataset.amount);
+
+    this.amount = Number(this.root.dataset.amount);
+    this._init();
+  }
+
+  _init = () => {
+    this.circle = this.root.querySelector('.js-diagram__legend-circle');
+    this.plate = this.root.querySelector('.js-diagram__legend-lettering');
     this.name = this.plate.dataset.name;
     this.plate.textContent = this.name;
 

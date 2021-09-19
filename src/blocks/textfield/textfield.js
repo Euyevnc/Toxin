@@ -1,29 +1,31 @@
 class Textfield {
-  #input
-
-  #arrow
-
   constructor({ root }) {
-    this.#input = root.querySelector('.js-textfield__value');
+    this.root = root;
 
-    const arrow = root.querySelector('.js-textfield__arrow');
-    if (arrow) this.#arrow = arrow;
+    this._init();
   }
 
   setValue(value) {
-    this.#input.value = value;
+    this._input.value = value;
   }
 
   getValue() {
-    return this.#input.value;
+    return this._input.value;
   }
 
   getInput() {
-    return this.#input;
+    return this._input;
   }
 
   getArrow() {
-    return this.#arrow;
+    return this._arrow;
+  }
+
+  _init = () => {
+    this._input = this.root.querySelector('.js-textfield__value');
+
+    const arrow = this.root.querySelector('.js-textfield__arrow');
+    if (arrow) this._arrow = arrow;
   }
 }
 

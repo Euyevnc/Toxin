@@ -4,20 +4,9 @@ import textfield from '../textfield';
 class DatePicker {
   constructor({ root, handlerDateSelected, options }) {
     this.root = root;
-    this.textfield = textfield({ root: root.querySelector('.js-textfield') });
-
-    this._input = this.textfield.getInput();
-    this._arrow = root.querySelector('.js-date-picker__arrow');
-
-    this.picker = new Picker({
-      input: this._input,
-      handlerCalendarShown: this._handlerCalendarShown,
-      handlerCalendarHidden: this._handlerCalendarHidden,
-      handlerDateSelected,
-      options,
-    });
-
-    setTimeout(this._init, 100);
+    this.options = options;
+    this.handlerDateSelected = handlerDateSelected;
+    this._init();
   }
 
   setDates = (values) => {
@@ -57,8 +46,20 @@ class DatePicker {
   }
 
   _init = () => {
-    const { _arrow: arrow } = this;
-    arrow.addEventListener('click', this._handlerArrowClick);
+    this.textfield = textfield({
+      root: this.root.querySelector('.js-textfield'),
+    });
+    this._input = this.textfield.getInput();
+    this._arrow = this.root.querySelector('.js-date-picker__arrow');
+    this._arrow.addEventListener('click', this._handlerArrowClick);
+
+    this.picker = new Picker({
+      input: this._input,
+      handlerCalendarShown: this._handlerCalendarShown,
+      handlerCalendarHidden: this._handlerCalendarHidden,
+      handlerDateSelected: this.handlerDateSelected,
+      options: this.options,
+    });
 
     const MILLISECONDS_IN_DAY = 86400000;
     const arriveAfter = this.root.dataset.initarrive;
@@ -71,7 +72,9 @@ class DatePicker {
     const initialDeparture = new Date(Math.round(Date.now()
       + departureAfter * MILLISECONDS_IN_DAY));
 
-    this.setDates([initialArrive, initialDeparture]);
+    setTimeout(() => {
+      this.setDates([initialArrive, initialDeparture]);
+    }, 100);
   }
 }
 

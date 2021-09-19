@@ -3,11 +3,7 @@ import RangeSlider from '../../libs/slider';
 class RangePicker {
   constructor({ root }) {
     this.root = root;
-    this.container = $(this.root.querySelector('.js-range-picker__container'));
-    this.min = this.root.querySelector('.js-range-picker__min');
-    this.max = this.root.querySelector('.js-range-picker__max');
     this.sliderData = this._formConfig();
-    this.sliderObject = { };
 
     this._init();
   }
@@ -22,17 +18,21 @@ class RangePicker {
     return config;
   }
 
+  _sliderCallback = ({ values }) => {
+    this.min.textContent = values.start;
+    this.max.textContent = values.end;
+  };
+
   _init = () => {
-    const {
-      container, min, max, sliderData,
-    } = this;
+    this.container = $(this.root.querySelector('.js-range-picker__container'));
+    this.min = this.root.querySelector('.js-range-picker__min');
+    this.max = this.root.querySelector('.js-range-picker__max');
 
-    const sliderCallback = ({ values }) => {
-      min.textContent = values.start;
-      max.textContent = values.end;
-    };
-
-    this.sliderObject = new RangeSlider(container, sliderData, sliderCallback);
+    this.sliderObject = new RangeSlider(
+      this.container,
+      this.sliderData,
+      this._sliderCallback,
+    );
   }
 }
 
