@@ -9,9 +9,9 @@ mixin entry-form( {header = 'Enter', signinBtn, signupBtn, signupText = 'Don\'t 
         +textfield( mailField )
       .entry-form__input-container   
         +textfield( passwordField )
-      .entry-form__button.entry-form__button_for_submit
+      .entry-form__button.entry-form__button_size_large
         +button( signinBtn )
     .entry-form__registration
       p.entry-form__text #{signupText}
-      span.entry-form__button.entry-form__button_for_regist
+      span.entry-form__button.entry-form__button_size_small
         +button( signupBtn )

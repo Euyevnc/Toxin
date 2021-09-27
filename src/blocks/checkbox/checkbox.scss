@@ -21,7 +21,7 @@
         width: 20px;
         height: 20px;
         margin-right: 10px;
-        color: $highlight-color;
+        color: $bright-color;
         font-weight: bold;
         @include fa-font($size-small - 1);
 
@@ -43,7 +43,7 @@
   &__checkbox:checked {
     & + #{$block}__label {
       &::before {
-        border: 1px solid $highlight-color;
+        border: 1px solid $bright-color;
         content: '\f00c';
       }
     }
@@ -67,7 +67,7 @@
     line-height: $size-small + 2;
   }
 
-  &_with_subtitle {
+  &_with-subtitle {
     #{$block}__main-text {
       margin-bottom: 5px;
       color: $main-color;

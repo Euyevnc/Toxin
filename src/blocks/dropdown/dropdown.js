@@ -139,10 +139,10 @@ class Dropdown {
 
     if (this.buttonsPanel) {
       this.clearingButton = this.root
-        .querySelector('.js-dropdown__button_delete');
+        .querySelector('.js-dropdown__button_role_delete');
 
       this.confirmingButton = this.root
-        .querySelector('.js-dropdown__button_confirm');
+        .querySelector('.js-dropdown__button_role_confirm');
 
       this.confirmingButton
         .addEventListener('click', this._handlerConfirmButtonClick);

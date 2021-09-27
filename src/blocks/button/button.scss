@@ -5,7 +5,7 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  min-width: 100%;
+  width: 100%;
   height: 44px;
   padding-top: 0;
   padding-bottom: 0;
@@ -17,7 +17,7 @@
   user-select: none;
   @include default-font(
     $size: $size-small,
-    $color: $highlight-color,
+    $color: $bright-color,
     $line: 44px,
     $weight: 700,
     $transform: uppercase
@@ -40,7 +40,7 @@
     background: $gradient_purple_depr;
   }
 
-  &_highlight {
+  &_colorized {
     color: white;
     background: $gradient_purple;
 

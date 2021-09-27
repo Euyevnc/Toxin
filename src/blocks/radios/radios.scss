@@ -59,7 +59,7 @@
       color: $main-color;
 
       &::before {
-        color: $highlight-color;
+        color: $bright-color;
         background: $gradient_purple;
         -webkit-background-clip: text;
         content: 'radio_button_checked';

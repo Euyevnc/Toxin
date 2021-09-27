@@ -5,20 +5,17 @@ mixin menu({ login = '', issues, autorization })
   nav.menu.js-menu
     ul.menu__list.js-menu__list
       each element in issues
-        - let modifier = element.modifier  ? `menu__element_type_${element.modifier}` : ''
-
         if element.blocks
-          li(class=`js-menu__element menu__element ${modifier}`, tabindex = 0) 
+          li.js-menu__element.menu__element(tabindex = 0) 
             span.menu__link #{element.name}
             span.menu__arrow
               +arrow({ direction: 'down' })
             ul.js-menu__submenu.menu__submenu
               each block in element.blocks
-                - let modifier = block.modifier  ? `menu__element_type_${block.modifier}` : ''
-                li(class=`js-menu__element menu__element ${modifier}`)
+                li.js-menu__element.menu__element
                   a.menu__link(href=`${block.href}`) #{block.name}
         else
-          li(class = `js-menu__element menu__element ${modifier}`)
+          li.js-menu__element.menu__element
             a.menu__link(href = `${element.href}`) #{element.name}
       if login   
         li.js-menu__element.menu__element

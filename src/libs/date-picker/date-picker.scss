@@ -23,7 +23,7 @@
   &--nav-action {
     @include mi-font(24px);
 
-    color: $highlight-color;
+    color: $bright-color;
     line-height: 24px;
   }
 
@@ -32,7 +32,7 @@
   }
 
   &--day-name {
-    @include default-font($highlight-color, 12px, 40px, bold, none, none);
+    @include default-font($bright-color, 12px, 40px, bold, none, none);
   }
 
   &--cell {
@@ -130,7 +130,7 @@
   }
 
   &--button {
-    @include default-font($highlight-color, 12px, 15px, 700, none, uppercase);
+    @include default-font($bright-color, 12px, 15px, 700, none, uppercase);
 
     display: inline;
     flex-grow: 0;

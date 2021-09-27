@@ -35,20 +35,14 @@
     padding: 0;
   }
 
-  &__form {
-    // min-width: 320px;
+  &__calendars-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
   }
 
-  &__container {
-    &_for_calendar {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 21px;
-    }
-
-    &_for_input {
-      margin-bottom: 31px;
-    }
+  &__counter-container {
+    margin-bottom: 31px;
   }
 
   &__submit-button {

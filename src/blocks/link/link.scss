@@ -16,8 +16,8 @@
   border: none;
   cursor: pointer;
 
-  &_highlight {
-    color: $highlight-color;
+  &_colorized {
+    color: $bright-color;
 
     &:hover {
       color: $main-color_lighter;

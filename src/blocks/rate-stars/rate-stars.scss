@@ -40,7 +40,7 @@
     -webkit-background-clip: text;
     background-clip: text;
 
-    &_outlined {
+    &_fill_outlined {
       & #{$block}__star_colorized {
         position: absolute;
         top: 0;

@@ -6,9 +6,9 @@ mixin room-searcher({ header = 'We will find rooms according to your wishes', da
   article.js-room-searcher.room-searcher
     h1.room-searcher__header #{header}
     form.room-searcher__form(name = 'room-search', action = '')
-      .room-searcher__container.room-searcher__container_for_calendar
+      .room-searcher__calendars-container
         +double-date-picker( datePicker )
-      .room-searcher__container.room-searcher__container_for_input
+      .room-searcher__counter-container
         +dropdown( counter )
       .room-searcher__submit-button
         +button({ text: buttonText, isHighlight: true, withArrow: true, type: 'submit' })

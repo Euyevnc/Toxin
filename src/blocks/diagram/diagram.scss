@@ -30,7 +30,7 @@
 
   &__reviews-amount {
     @include default-font(
-      $highlight-color,
+      $bright-color,
       $size-largest,
       $size-largest + 5,
       700,
@@ -43,7 +43,7 @@
 
   &__subtitle {
     @include default-font(
-      $highlight-color,
+      $bright-color,
       $size-small,
       $size-small + 3,
       700,

@@ -5,8 +5,8 @@
   display: none;
   width: 40px;
   height: 20px;
-  border-top: 5px solid $highlight-color;
-  border-bottom: 5px solid $highlight-color;
+  border-top: 5px solid $bright-color;
+  border-bottom: 5px solid $bright-color;
   cursor: pointer;
   transition-duration: 0.2s;
   @media (max-width: $breakpoint-middle) {
@@ -18,7 +18,7 @@
     top: 7.5px;
     left: 0;
     width: 100%;
-    border-top: 5px solid $highlight-color;
+    border-top: 5px solid $bright-color;
     transition-duration: 0.3s;
     content: '';
   }
@@ -28,7 +28,7 @@
     top: -5px;
     left: 0;
     width: 100%;
-    border-top: 5px solid $highlight-color;
+    border-top: 5px solid $bright-color;
     transition-duration: 0.3s;
     content: '';
   }
@@ -38,8 +38,8 @@
     width: 40px;
     height: 20px;
     border: none;
-    border-top: 0 solid $highlight-color;
-    border-bottom: 0 solid $highlight-color;
+    border-top: 0 solid $bright-color;
+    border-bottom: 0 solid $bright-color;
     transition-duration: 0.2s;
 
     &::before {
@@ -47,7 +47,7 @@
       top: 7.5px;
       left: 0;
       width: 100%;
-      border-top: 5px solid $highlight-color;
+      border-top: 5px solid $bright-color;
       transform: rotate(45deg);
       transition-duration: 0.3s;
       content: '';
@@ -58,7 +58,7 @@
       top: 7.5px;
       left: 0;
       width: 100%;
-      border-top: 5px solid $highlight-color;
+      border-top: 5px solid $bright-color;
       transform: rotate(-45deg);
       transition-duration: 0.3s;
       content: '';

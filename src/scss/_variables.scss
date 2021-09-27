@@ -5,10 +5,10 @@ $main-color_darkest: rgba(31, 32, 65, 1);
 
 $light-color: rgb(255, 255, 255);
 
-$highlight-color: rgba(188, 156, 255, 1);
-$highlight-color_skew: rgba(139, 164, 249, 1);
-$highlight-color_depr: rgba(188, 156, 255, 0.5);
-$highlight-color_skew_depr: rgba(139, 164, 249, 0.5);
+$bright-color: rgba(188, 156, 255, 1);
+$bright-color_skew: rgba(139, 164, 249, 1);
+$bright-color_depr: rgba(188, 156, 255, 0.5);
+$bright-color_skew_depr: rgba(139, 164, 249, 0.5);
 
 $size-small: 12px;
 $size-middle: 14px;
@@ -23,14 +23,14 @@ $breakpoint-small: 550px;
 
 $gradient_purple: linear-gradient(
   180deg,
-  $highlight-color 0%,
-  $highlight-color_skew 100%
+  $bright-color 0%,
+  $bright-color_skew 100%
 );
 
 $gradient_purple_depr: linear-gradient(
   180deg,
-  $highlight-color_depr 0%,
-  $highlight-color_skew_depr 100%
+  $bright-color_depr 0%,
+  $bright-color_skew_depr 100%
 );
 
 $gradient_green: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);

@@ -53,12 +53,12 @@
 
     &:checked {
       & + #{$block}__label {
-        border: 1px solid $highlight-color;
+        border: 1px solid $bright-color;
         transition-duration: 0.5s;
 
         &::before {
           left: 22px;
-          color: $highlight-color;
+          color: $bright-color;
           background: $gradient_purple;
           -webkit-background-clip: text;
           transition-duration: 0.5s;

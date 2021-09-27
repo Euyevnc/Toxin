@@ -76,7 +76,7 @@
   &__box:checked {
     & + #{$block}__label {
       display: inline-block;
-      color: $highlight-color;
+      color: $bright-color;
       background: $gradient_purple;
       transition-duration: 0.5s;
 

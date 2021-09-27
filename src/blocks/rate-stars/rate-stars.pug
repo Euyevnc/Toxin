@@ -6,12 +6,12 @@ mixin rate-stars({ label = '', complete = 0, share = 0})
       h3.rate-stars__head #{label}
     .rate-stars__container
       - for (let x = 0; x < complete; x++)
-        span.rate-stars__star.rate-stars__star_colorized star
+        span.rate-stars__star.rate-stars__star_fill_colorized star
       
       if(share)
         - const pers = (share*100)
-        span.rate-stars__star.rate-stars__star_outlined star_outline
-          span.rate-stars__star.rate-stars__star_colorized(style=`width: ${pers}%`) star
+        span.rate-stars__star.rate-stars__star_fill_outlined star_outline
+          span.rate-stars__star.rate-stars__star_fill_colorized(style=`width: ${pers}%`) star
 
       - for (let y = 0; y < added; y++)
-        span.rate-stars__star.rate-stars__star_outlined star_outline
+        span.rate-stars__star.rate-stars__star_fill_outlined star_outline

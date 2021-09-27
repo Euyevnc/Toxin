@@ -31,7 +31,7 @@
     transition-duration: 0.1s;
     user-select: none;
 
-    &_right {
+    &_course_right {
       right: 0;
     }
 
@@ -146,7 +146,7 @@
     }
 
     &_color_purple {
-      color: $highlight-color;
+      color: $bright-color;
     }
 
     &_uppercase {

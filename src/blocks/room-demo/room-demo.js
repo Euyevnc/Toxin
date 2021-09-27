@@ -11,8 +11,10 @@ class RoomDemo {
   _init = () => {
     this.buttons = this.root.querySelectorAll('.js-room-demo__button');
     this.imgs = this.root.querySelectorAll('.js-room-demo__image');
-    this.arrowPrev = this.root.querySelector('.js-room-demo__arrow_left');
-    this.arrowNext = this.root.querySelector('.js-room-demo__arrow_right');
+    this.arrowPrev = this.root
+      .querySelector('.js-room-demo__arrow_course_left');
+    this.arrowNext = this.root
+      .querySelector('.js-room-demo__arrow_course_right');
 
     const {
       buttons, imgs, arrowPrev, arrowNext,

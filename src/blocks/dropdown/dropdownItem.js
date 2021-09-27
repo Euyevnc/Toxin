@@ -48,8 +48,8 @@ class DropdownItem {
 
   _init = () => {
     this.name = this.root.querySelector('.js-dropdown__item-name');
-    this.minus = this.root.querySelector('.js-dropdown__tumbler_minus');
-    this.plus = this.root.querySelector('.js-dropdown__tumbler_plus');
+    this.minus = this.root.querySelector('.js-dropdown__tumbler_role_minus');
+    this.plus = this.root.querySelector('.js-dropdown__tumbler_role_plus');
     this.number = this.root.querySelector('.js-dropdown__number');
 
     this.min = Number(this.minus.dataset.min);
