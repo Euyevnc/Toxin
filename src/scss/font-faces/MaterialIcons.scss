@@ -1,0 +1,10 @@
+@font-face {
+  font-weight: 400;
+  font-family: 'Material Icons';
+  font-style: normal;
+  src: url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2')
+      format('woff2'),
+    url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.woff') format('woff'),
+    url('/assets/fonts/MaterialIcons/MaterialIcons-Regular.svg') format('svg');
+  unicode-range: U+0030- U+10FFFD;
+}
