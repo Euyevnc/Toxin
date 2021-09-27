@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../blocks/header/header.scss';
 @import '../../blocks/footer/footer.scss';
 @import '../../blocks/cellar/cellar.scss';
@@ -107,7 +107,7 @@
   }
 
   &__text {
-    @include default-font($line: $size-largest);
+    @include montserrat-font($line: $size-largest);
 
     max-width: 280px;
     min-height: 48px;

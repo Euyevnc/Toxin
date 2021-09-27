@@ -65,8 +65,7 @@ class DatePicker {
     const arriveAfter = this.root.dataset.initarrive;
     const departureAfter = this.root.dataset.initdeparture;
 
-    const initDatesAreInvalid = (typeof +arriveAfter !== 'number'
-      || typeof +departureAfter !== 'number');
+    const initDatesAreInvalid = !arriveAfter || !departureAfter;
     if (initDatesAreInvalid) return;
 
     const initialArrive = new Date(Math.round(Date.now()

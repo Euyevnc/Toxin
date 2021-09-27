@@ -1,11 +1,13 @@
+@import '../../scss/mixin-montserrat-font';
 @import '../textfield/textfield.scss';
 @import '../link/link.scss';
-@import '../../scss/mixin-default-font';
 
 .dropdown {
   position: relative;
   width: 100%;
-  @include default-font($color: $main-color_lighter);
+  @include montserrat-font();
+
+  color: $main-color_lighter;
 
   &__arrow {
     position: absolute;
@@ -36,14 +38,13 @@
   }
 
   &__item-name {
-    @include default-font(
-      $main-color_darkest,
-      $size-small,
-      30px,
-      700,
-      none,
-      uppercase
-    );
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-largest + 6;
+    text-transform: uppercase;
   }
 
   &__tumbler {

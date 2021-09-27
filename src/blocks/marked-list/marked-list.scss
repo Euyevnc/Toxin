@@ -1,10 +1,10 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .marked-list {
-  @include default-font($main-color, $size-small + 2, $size-largest);
+  @include montserrat-font($main-color, $size-small + 2, $size-largest);
 
   &__header {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 3,
@@ -39,7 +39,7 @@
   }
 
   &__desc {
-    @include default-font($line: $size-largest);
+    @include montserrat-font($line: $size-largest);
 
     display: inline-block;
     max-width: 240px;

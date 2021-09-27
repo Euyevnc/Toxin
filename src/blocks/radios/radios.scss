@@ -1,11 +1,11 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../scss/mixin-mi-font';
 
 .radios {
   $block: &;
 
   &__header {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 3,
@@ -26,7 +26,7 @@
     display: none;
 
     & + #{$block}__title {
-      @include default-font(
+      @include montserrat-font(
         $color: $main-color_lighter,
         $line: $size-middle + 6
       );

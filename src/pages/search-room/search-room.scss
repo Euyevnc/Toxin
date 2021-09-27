@@ -1,5 +1,5 @@
 @import '../../scss/variables';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../layout/layout-for-hotel.scss';
 @import '../../blocks/header/header.scss';
 @import '../../blocks/footer/footer.scss';
@@ -119,7 +119,7 @@
   }
 
   &__heading {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-largest,
       $size-largest + 6,

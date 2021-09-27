@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .range-picker {
   display: flex;
@@ -13,7 +13,7 @@
   }
 
   &__title {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 3,
@@ -33,12 +33,12 @@
   }
 
   &__counter {
-    @include default-font($main-color_lighter, $size-small, $size-small);
+    @include montserrat-font($main-color_lighter, $size-small, $size-small);
   }
 
   &__description {
     margin-top: 5px;
     margin-bottom: 0;
-    @include default-font($main-color_lighter, $size-small, $size-middle);
+    @include montserrat-font($main-color_lighter, $size-small, $size-middle);
   }
 }

@@ -3,7 +3,7 @@
 @import '../tumblers/tumblers.scss';
 @import '../radios/radios.scss';
 @import '../button/button.scss';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .registration-form {
   display: flex;
@@ -12,7 +12,7 @@
   width: 100%;
   max-width: 380px;
   padding: 39px 29px 29px;
-  @include default-font($main-color_darkest);
+  @include montserrat-font($main-color_darkest);
 
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -24,7 +24,7 @@
   }
 
   &__header {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-largest,
       $size-largest + 6,

@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .color-icon {
   &__container {
@@ -23,11 +23,11 @@
     display: inline-block;
     margin: 0;
     padding: 0;
-    @include default-font(
-      $size: $size-larger,
-      $line: $size-largest + 1,
-      $weight: 700
-    );
+    @include montserrat-font();
+
+    font-weight: 700;
+    font-size: $size-larger;
+    line-height: $size-largest;
   }
 
   &__subtitle {

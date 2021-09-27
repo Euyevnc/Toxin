@@ -1,18 +1,13 @@
-@import '../scss/mixin_outline';
-@import '../scss/mixin-default-font';
+@import '../scss/mixin-montserrat-font';
 
 html {
   background-color: #f4f4f6;
 
-  @include default-font($size: $size-middle, $color: $main-color);
+  @include montserrat-font($size: $size-middle, $color: $main-color);
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
-}
-
-*:focus {
-  @include outline();
 }

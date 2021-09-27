@@ -28,8 +28,7 @@
 @import '../../blocks/cellar/cellar.scss';
 @import '../../blocks/card/card.scss';
 @import '../../blocks/room-demo/room-demo.scss';
-@import '../../scss/mixin-default-font';
-@import '../../scss/mixin_outline';
+@import '../../scss/mixin-montserrat-font';
 
 .ui-kit {
   &__container {
@@ -49,7 +48,7 @@
   }
 
   &__heading {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 4,

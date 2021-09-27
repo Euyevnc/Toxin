@@ -1,9 +1,9 @@
 @import '../../scss/mixin-mi-font';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .stickers {
   min-width: 280px;
-  @include default-font($main-color, $size-middle, $size-largest);
+  @include montserrat-font($main-color, $size-middle, $size-largest);
 
   &__header {
     margin: 0;

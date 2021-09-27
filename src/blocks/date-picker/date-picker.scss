@@ -1,10 +1,12 @@
+@import '../../scss/_mixin-montserrat-font.scss';
 @import '../textfield/textfield.scss';
-@import '../../scss/_mixin-default-font.scss';
 
 .date-picker {
   position: relative;
   width: 100%;
-  @include default-font($main-color_lighter);
+  @include montserrat-font();
+
+  color: $main-color_lighter;
 
   &__arrow {
     position: absolute;

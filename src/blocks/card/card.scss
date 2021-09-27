@@ -1,5 +1,5 @@
-@import '../../blocks/social/social.scss';
-@import '../../scss/variables';
+@import '../../scss/_mixin-montserrat-font.scss';
+@import '../social/social.scss';
 
 .card {
   display: flex;
@@ -21,9 +21,10 @@
   }
 
   &__subscribe {
-    @include default-font($line: $default-line - 0.5);
+    @include montserrat-font();
 
     margin-top: 20px;
+    line-height: $default-line - 0.5px;
   }
 
   &__social {

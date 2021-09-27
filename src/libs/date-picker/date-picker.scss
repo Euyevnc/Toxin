@@ -1,4 +1,4 @@
-@import '../../scss/_mixin-default-font';
+@import '../../scss/_mixin-montserrat-font';
 @import '../../scss/_mixin-mi-font.scss';
 
 .datepicker {
@@ -17,7 +17,7 @@
   }
 
   &--nav-title {
-    @include default-font($main-color_darkest, 19px, 23px, bold);
+    @include montserrat-font($main-color_darkest, 19px, 23px, bold);
   }
 
   &--nav-action {
@@ -32,11 +32,11 @@
   }
 
   &--day-name {
-    @include default-font($bright-color, 12px, 40px, bold, none, none);
+    @include montserrat-font($bright-color, 12px, 40px, bold, none, none);
   }
 
   &--cell {
-    @include default-font($main-color_lighter, 12px, 40px, 400, none, none);
+    @include montserrat-font($main-color_lighter, 12px, 40px, 400, none, none);
 
     min-height: 40px;
     padding: 0;
@@ -130,7 +130,7 @@
   }
 
   &--button {
-    @include default-font($bright-color, 12px, 15px, 700, none, uppercase);
+    @include montserrat-font($bright-color, 12px, 15px, 700, none, uppercase);
 
     display: inline;
     flex-grow: 0;

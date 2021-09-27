@@ -1,7 +1,7 @@
 @import '../authorization-panel/authorization-panel';
 
 @import '../arrow/arrow.scss';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .menu {
   $block: &;
@@ -42,7 +42,7 @@
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-    @include default-font($color: $main-color_lighter);
+    @include montserrat-font($color: $main-color_lighter);
 
     @media (max-width: $breakpoint-large) {
       padding: 0 5px;
@@ -72,7 +72,10 @@
     text-decoration: none;
     vertical-align: middle;
     user-select: none;
-    @include default-font($color: $main-color_lighter, $line: $size-middle + 3);
+    @include montserrat-font(
+      $color: $main-color_lighter,
+      $line: $size-middle + 3
+    );
 
     &_active {
       color: $main-color;

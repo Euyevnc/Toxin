@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../scss/mixin-mi-font';
 
 .liker {
@@ -8,17 +8,15 @@
   text-align: center;
 
   &__head {
-    @include default-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 4,
-      700,
-      none,
-      uppercase
-    );
-
     margin: 0;
     margin-bottom: 15px;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 4;
+    text-transform: uppercase;
   }
 
   &__item {
@@ -40,24 +38,27 @@
       min-height: 20px;
       padding-right: 5px;
       padding-left: 20px;
+      @include montserrat-font();
+
+      color: $main-color_lightest;
+      font-size: $size-small -2;
       line-height: 20px;
+      line-height: $size-larger + 1;
       text-align: left;
       background-color: $main-color_lightest;
       border-radius: 10px / 50%;
       cursor: pointer;
       transition-duration: 0.5s;
       user-select: none;
-      @include default-font($main-color_lightest, $size-small - 2, 20px);
 
       &::after {
         position: absolute;
         left: 5px;
         display: inline-block;
-        @include mi-font($size: $size-small - 2);
-
         vertical-align: middle;
         transition-duration: 0.2s;
         content: 'favorite_border';
+        @include mi-font($size: $size-small - 2);
       }
 
       &::before {

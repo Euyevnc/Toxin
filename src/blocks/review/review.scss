@@ -1,9 +1,9 @@
 @import '../liker/liker.scss';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .review {
   margin-bottom: 22px;
-  @include default-font($main-color, $size-middle, $size-largest);
+  @include montserrat-font($main-color, $size-middle, $size-largest);
 
   &__header {
     position: relative;

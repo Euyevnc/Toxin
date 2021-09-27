@@ -1,17 +1,15 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .link {
-  @include default-font(
-    $size: $size-small,
-    $color: $main-color_lighter,
-    $line: $size-small + 2.5,
-    $decor: none,
-    $weight: 700,
-    $transform: uppercase
-  );
-
   margin: 0;
   padding: 0;
+  @include montserrat-font();
+
+  color: $size-larger;
+  font-weight: 700;
+  font-size: $size-small;
+  line-height: $size-small + 2.5;
+  text-transform: uppercase;
   background-color: transparent;
   border: none;
   cursor: pointer;

@@ -1,4 +1,4 @@
-@import '../../scss/_mixin-default-font.scss';
+@import '../../scss/_mixin-montserrat-font.scss';
 
 .font-icon {
   &__container {
@@ -10,9 +10,11 @@
   &__tag {
     display: inline-block;
     margin-right: 30px;
-    @include default-font($decor: none, $weight: 400);
+    @include montserrat-font();
 
+    font-weight: 400;
     text-align: left;
+    text-decoration: none;
     vertical-align: top;
     opacity: 0.25;
   }

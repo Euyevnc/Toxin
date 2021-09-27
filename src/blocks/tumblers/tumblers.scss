@@ -1,13 +1,19 @@
 @import '../../scss/mixin-mi-font';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .tumblers {
   $block: &;
 
-  @include default-font($main-color, $size-small + 2, $size-largest, 400, none);
+  @include montserrat-font(
+    $main-color,
+    $size-small + 2,
+    $size-largest,
+    400,
+    none
+  );
 
   &__header {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 3,

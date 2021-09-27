@@ -1,6 +1,0 @@
-@import '_variables.scss';
-
-@mixin outline($weight: 2px, $color: $main-color_lighter) {
-  outline: none;
-  box-shadow: 0 0 0 $weight $color inset;
-}

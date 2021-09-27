@@ -1,8 +1,8 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .textfield {
   position: relative;
-  @include default-font($main-color, $size-middle);
+  @include montserrat-font($main-color, $size-middle);
 
   &__value {
     box-sizing: border-box;

@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../scss/mixin-mi-font';
 
 .rate-stars {
@@ -12,7 +12,7 @@
   }
 
   &__head {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-small,
       $size-small + 3,

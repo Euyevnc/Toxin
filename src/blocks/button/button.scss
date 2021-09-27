@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../arrow/arrow.scss';
 
 .button {
@@ -9,19 +9,19 @@
   height: 44px;
   padding-top: 0;
   padding-bottom: 0;
+  @include montserrat-font();
+
+  color: $bright-color;
+  font-weight: 700;
+  font-size: $size-small;
+  line-height: 44px;
   text-align: center;
+  text-transform: uppercase;
   background: $gradient_purple;
   border: none;
   border-radius: 22px;
   cursor: pointer;
   user-select: none;
-  @include default-font(
-    $size: $size-small,
-    $color: $bright-color,
-    $line: 44px,
-    $weight: 700,
-    $transform: uppercase
-  );
 
   &::after {
     position: absolute;

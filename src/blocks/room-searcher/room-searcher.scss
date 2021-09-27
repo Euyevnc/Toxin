@@ -1,7 +1,7 @@
 @import '../double-date-picker/double-date-picker.scss';
 @import '../dropdown/dropdown.scss';
 @import '../button/button.scss';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .room-searcher {
   display: flex;
@@ -22,7 +22,7 @@
   }
 
   &__header {
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-largest,
       $size-largest + 5,

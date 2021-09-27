@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../../scss/variables';
 @import '../../layout/layout-for-hotel.scss';
 @import '../../blocks/header/header.scss';
@@ -96,7 +96,7 @@
 
   &__heading {
     margin: 0 0 20px;
-    @include default-font(
+    @include montserrat-font(
       $main-color_darkest,
       $size-larger,
       $size-largest,
@@ -113,7 +113,7 @@
   }
 
   &__font {
-    @include default-font($line: $size-largest);
+    @include montserrat-font($line: $size-largest);
 
     margin: 0;
   }

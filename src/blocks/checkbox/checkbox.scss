@@ -1,10 +1,15 @@
-@import '../../scss/mixin-fa-font';
+@import '../../scss/_mixin-fa-font';
+@import '../../scss/_mixin-montserrat-font.scss';
 
 .checkbox {
   $block: &;
 
   display: inline-block;
-  @include default-font($main-color_lighter, $size-middle, $default-line);
+  @include montserrat-font();
+
+  color: $main-color_lighter;
+  font-size: $size-middle;
+  line-height: $default-line;
 
   &__checkbox {
     display: none;

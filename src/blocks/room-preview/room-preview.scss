@@ -1,7 +1,7 @@
 @import '../double-date-picker/double-date-picker.scss';
 @import '../dropdown/dropdown.scss';
 @import '../button/button.scss';
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 
 .room-preview {
   display: flex;
@@ -14,7 +14,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(151, 125, 125, 0.2);
-  @include default-font($line: $default-line, $color: $main-color);
+  @include montserrat-font($line: $default-line, $color: $main-color);
 
   @media (max-width: $breakpoint-small) {
     padding: 20px;

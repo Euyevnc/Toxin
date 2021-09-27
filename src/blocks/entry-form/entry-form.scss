@@ -1,4 +1,4 @@
-@import '../../scss/mixin-default-font';
+@import '../../scss/mixin-montserrat-font';
 @import '../button/button.scss';
 @import '../textfield/textfield.scss';
 
@@ -19,22 +19,22 @@
   }
 
   &__text {
-    @include default-font($color: $main-color_darkest);
-
     margin: 0;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
     text-align: center;
   }
 
   &__header {
-    @include default-font(
-      $main-color_darkest,
-      $size-largest,
-      $size-largest + 6,
-      700
-    );
-
     margin: 0;
     margin-bottom: 20px;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-largest;
+    line-height: $size-largest + 6;
   }
 
   &__form {
