@@ -65,7 +65,9 @@ class DatePicker {
     const arriveAfter = this.root.dataset.initarrive;
     const departureAfter = this.root.dataset.initdeparture;
 
-    if (!arriveAfter || !departureAfter) return;
+    const initDatesAreInvalid = (typeof +arriveAfter !== 'number'
+      || typeof +departureAfter !== 'number');
+    if (initDatesAreInvalid) return;
 
     const initialArrive = new Date(Math.round(Date.now()
       + arriveAfter * MILLISECONDS_IN_DAY));

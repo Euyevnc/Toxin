@@ -13,7 +13,7 @@ class RangePicker {
     const dataKeys = this.root.dataset.keys.split(', ');
     const dataValues = this.root.dataset.values.split(', ');
     dataKeys.forEach((key, index) => {
-      config[key] = Number(dataValues[index]) || dataValues[index];
+      config[key] = Number(dataValues[index]) ?? dataValues[index];
     });
     return config;
   }
