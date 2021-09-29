@@ -41,7 +41,7 @@
       @include montserrat-font();
 
       color: $main-color_lightest;
-      font-size: $size-small -2;
+      font-size: $size-small - 2;
       line-height: 20px;
       line-height: $size-larger + 1;
       text-align: left;
@@ -55,10 +55,12 @@
         position: absolute;
         left: 5px;
         display: inline-block;
+        @include mi-font();
+
+        font-size: $size-small - 2;
         vertical-align: middle;
         transition-duration: 0.2s;
         content: 'favorite_border';
-        @include mi-font($size: $size-small - 2);
       }
 
       &::before {

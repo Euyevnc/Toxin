@@ -5,16 +5,14 @@
   $block: &;
 
   &__header {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 3,
-      700,
-      none,
-      uppercase
-    );
-
     margin-bottom: 15px;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 3;
+    text-transform: uppercase;
   }
 
   &__radio-container {
@@ -26,13 +24,12 @@
     display: none;
 
     & + #{$block}__title {
-      @include montserrat-font(
-        $color: $main-color_lighter,
-        $line: $size-middle + 6
-      );
-
       display: inline-block;
       max-height: 24px;
+      @include montserrat-font();
+
+      color: $main-color_lighter;
+      line-height: $size-middle + 6;
       vertical-align: middle;
       cursor: pointer;
 
@@ -42,9 +39,10 @@
         width: 24px;
         height: 24px;
         margin-right: 8px;
-        color: $main-color_lightest;
-        @include mi-font($size: $size-largest);
+        @include mi-font();
 
+        color: $main-color_lightest;
+        font-size: $size-largest;
         line-height: 24px;
         text-align: center;
         vertical-align: middle;

@@ -1,7 +1,6 @@
 @import './font-faces/MaterialIcons.scss';
 @import './variables';
 
-@mixin mi-font($size: $size-middle) {
-  font-size: $size;
+@mixin mi-font() {
   font-family: 'Material Icons', fantasy;
 }

@@ -7,7 +7,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include montserrat-font($main-color_lighter, $size-small, 40px, none, none);
+  @include montserrat-font();
+
+  color: $main-color_lighter;
+  font-size: $size-small;
+  line-height: 40px;
 
   &__buttons-list {
     display: inline;

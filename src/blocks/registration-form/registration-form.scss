@@ -12,8 +12,9 @@
   width: 100%;
   max-width: 380px;
   padding: 39px 29px 29px;
-  @include montserrat-font($main-color_darkest);
+  @include montserrat-font();
 
+  color: $main-color;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -24,15 +25,14 @@
   }
 
   &__header {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-largest,
-      $size-largest + 6,
-      700
-    );
+    @include montserrat-font();
 
     margin: 0;
     margin-bottom: 20px;
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-largest;
+    line-height: $size-largest + 6;
   }
 
   &__form {

@@ -107,12 +107,13 @@
   }
 
   &__text {
-    @include montserrat-font($line: $size-largest);
-
     max-width: 280px;
     min-height: 48px;
     margin: 0;
     margin-right: -6px;
+    @include montserrat-font();
+
+    line-height: $size-largest;
     text-align: right;
 
     @media (max-width: 1165px) {

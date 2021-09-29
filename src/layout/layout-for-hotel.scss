@@ -1,9 +1,11 @@
 @import '../scss/mixin-montserrat-font';
 
 html {
-  background-color: #f4f4f6;
+  @include montserrat-font();
 
-  @include montserrat-font($size: $size-middle, $color: $main-color);
+  color: $main-color;
+  font-size: $size-small;
+  background-color: #f4f4f6;
 }
 
 body,

@@ -1,37 +1,6 @@
 @import './font-faces/Montserrat.scss';
 @import './variables';
 
-@mixin montserrat-font(
-  $color: '',
-  $size: '',
-  $line: '',
-  $weight: '',
-  $decor: '',
-  $transform: ''
-) {
-  @if $color != '' {
-    color: $color;
-  }
-
-  @if $size != '' {
-    font-size: $size;
-  }
-
-  @if $line != '' {
-    line-height: $line;
-  }
-
-  @if $weight != '' {
-    font-weight: $weight;
-  }
-
-  @if $decor != '' {
-    text-decoration: $decor;
-  }
-
-  @if $transform != '' {
-    text-transform: $transform;
-  }
-
+@mixin montserrat-font {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }

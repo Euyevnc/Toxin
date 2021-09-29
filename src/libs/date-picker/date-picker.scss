@@ -17,13 +17,19 @@
   }
 
   &--nav-title {
-    @include montserrat-font($main-color_darkest, 19px, 23px, bold);
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-larger;
+    line-height: $size-largest - 1;
   }
 
   &--nav-action {
-    @include mi-font(24px);
+    @include mi-font();
 
     color: $bright-color;
+    font-size: $size-largest;
     line-height: 24px;
   }
 
@@ -32,14 +38,27 @@
   }
 
   &--day-name {
-    @include montserrat-font($bright-color, 12px, 40px, bold, none, none);
+    @include montserrat-font();
+
+    color: $bright-color;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: 40px;
+    text-transform: none;
+    text-decoration: none;
   }
 
   &--cell {
-    @include montserrat-font($main-color_lighter, 12px, 40px, 400, none, none);
-
     min-height: 40px;
     padding: 0;
+    @include montserrat-font();
+
+    color: $main-color_lighter;
+    font-weight: 400;
+    font-size: $size-small;
+    line-height: 40px;
+    text-transform: none;
+    text-decoration: none;
     border: none;
 
     &.-other-month- {
@@ -130,11 +149,16 @@
   }
 
   &--button {
-    @include montserrat-font($bright-color, 12px, 15px, 700, none, uppercase);
-
     display: inline;
     flex-grow: 0;
     height: auto;
+    color: $bright-color;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-middle + 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include montserrat-font();
 
     &:hover {
       color: $main-color_lighter;

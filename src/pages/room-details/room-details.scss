@@ -96,12 +96,12 @@
 
   &__heading {
     margin: 0 0 20px;
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-larger,
-      $size-largest,
-      $weight: 700
-    );
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-larger;
+    line-height: $size-largest;
 
     &_margin_zero {
       margin: 0;
@@ -113,9 +113,10 @@
   }
 
   &__font {
-    @include montserrat-font($line: $size-largest);
-
     margin: 0;
+    @include montserrat-font();
+
+    line-height: $size-largest;
   }
 
   &__information {

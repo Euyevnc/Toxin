@@ -28,8 +28,9 @@
         margin-right: 10px;
         color: $bright-color;
         font-weight: bold;
-        @include fa-font($size-small - 1);
+        @include fa-font();
 
+        font-size: $size-small -1;
         line-height: 18px;
         text-align: center;
         vertical-align: top;

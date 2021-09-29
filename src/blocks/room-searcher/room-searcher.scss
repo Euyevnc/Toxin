@@ -22,17 +22,16 @@
   }
 
   &__header {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-largest,
-      $size-largest + 5,
-      700
-    );
-
     min-height: 59px;
     margin: 0;
     margin-bottom: 21px;
     padding: 0;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-largest;
+    line-height: $size-largest + 5;
   }
 
   &__calendars-container {

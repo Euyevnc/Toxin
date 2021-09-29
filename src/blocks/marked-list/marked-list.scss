@@ -1,20 +1,22 @@
 @import '../../scss/mixin-montserrat-font';
 
 .marked-list {
-  @include montserrat-font($main-color, $size-small + 2, $size-largest);
+  @include montserrat-font();
+
+  color: $main-color;
+  font-size: $size-small + 2;
+  line-height: $size-largest;
 
   &__header {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 3,
-      700,
-      none,
-      uppercase
-    );
-
     margin: 0;
     margin-bottom: 15px;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 3;
+    text-transform: uppercase;
   }
 
   &__list {
@@ -39,11 +41,12 @@
   }
 
   &__desc {
-    @include montserrat-font($line: $size-largest);
-
     display: inline-block;
     max-width: 240px;
     margin: 0;
+    @include montserrat-font();
+
+    line-height: $size-largest;
     vertical-align: top;
   }
 }

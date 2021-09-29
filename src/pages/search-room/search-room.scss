@@ -119,14 +119,13 @@
   }
 
   &__heading {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-largest,
-      $size-largest + 6,
-      700
-    );
-
     margin: 0;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-largest;
+    line-height: $size-largest + 6;
     @media (max-width: $breakpoint-large) {
       text-align: center;
     }

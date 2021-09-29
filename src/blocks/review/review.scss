@@ -3,7 +3,11 @@
 
 .review {
   margin-bottom: 22px;
-  @include montserrat-font($main-color, $size-middle, $size-largest);
+  @include montserrat-font();
+
+  color: $main-color;
+  font-size: $size-middle;
+  line-height: $size-largest;
 
   &__header {
     position: relative;

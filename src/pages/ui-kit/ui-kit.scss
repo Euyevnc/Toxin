@@ -48,18 +48,16 @@
   }
 
   &__heading {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 4,
-      700,
-      none,
-      uppercase
-    );
-
     width: 100%;
     margin: 0;
     margin-bottom: 15px;
+    @include montserrat-font();
+
+    color: $main-color_darkest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 4;
+    text-transform: uppercase;
   }
 
   &__styles-demo {

@@ -3,7 +3,11 @@
 
 .stickers {
   min-width: 280px;
-  @include montserrat-font($main-color, $size-middle, $size-largest);
+  @include montserrat-font();
+
+  color: $main-color;
+  font-size: $size-middle;
+  line-height: $size-largest;
 
   &__header {
     margin: 0;
@@ -33,12 +37,14 @@
     min-width: 48px;
     min-height: 48px;
     margin-right: 10px;
+    @include mi-font();
+
     color: transparent;
+    font-size: $size-largest * 2;
     line-height: 48px;
     background: $gradient_purple;
     -webkit-background-clip: text;
     background-clip: text;
-    @include mi-font($size: $size-largest * 2);
   }
 
   &__text {

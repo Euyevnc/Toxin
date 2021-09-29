@@ -4,26 +4,22 @@
 .tumblers {
   $block: &;
 
-  @include montserrat-font(
-    $main-color,
-    $size-small + 2,
-    $size-largest,
-    400,
-    none
-  );
+  @include montserrat-font();
+
+  color: $main-color;
+  font-size: $size-small + 2;
+  line-height: $size-largest;
 
   &__header {
-    @include montserrat-font(
-      $main-color_darkest,
-      $size-small,
-      $size-small + 3,
-      700,
-      none,
-      uppercase
-    );
-
     margin: 0;
     margin-bottom: 15px;
+    @include montserrat-font();
+
+    color: $size-largest;
+    font-weight: 700;
+    font-size: $size-small;
+    line-height: $size-small + 3;
+    text-transform: uppercase;
   }
 
   &__label {
@@ -46,9 +42,10 @@
       top: 0;
       left: 0;
       display: inline-block;
-      color: $main-color_lightest;
-      @include mi-font($size: $size-larger - 1);
+      @include mi-font();
 
+      color: $main-color_lightest;
+      font-size: $size-larger - 1;
       transition-duration: 0.5s;
       content: 'fiber_manual_record';
     }

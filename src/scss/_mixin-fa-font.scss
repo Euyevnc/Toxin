@@ -1,7 +1,6 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import './variables';
 
-@mixin fa-font($size: $size-middle) {
-  font-size: $size;
+@mixin fa-font() {
   font-family: 'Font Awesome 5 Free', fantasy;
 }

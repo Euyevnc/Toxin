@@ -38,11 +38,13 @@
     max-height: 18px;
     margin: 0;
     padding: 0 10px;
+    @include montserrat-font();
+
+    color: $main-color_lighter;
     vertical-align: middle;
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-    @include montserrat-font($color: $main-color_lighter);
 
     @media (max-width: $breakpoint-large) {
       padding: 0 5px;
@@ -69,13 +71,13 @@
 
   &__link {
     display: inline-block;
+    @include montserrat-font();
+
+    color: $main-color_lighter;
+    line-height: $size-middle + 3;
     text-decoration: none;
     vertical-align: middle;
     user-select: none;
-    @include montserrat-font(
-      $color: $main-color_lighter,
-      $line: $size-middle + 3
-    );
 
     &_active {
       color: $main-color;
